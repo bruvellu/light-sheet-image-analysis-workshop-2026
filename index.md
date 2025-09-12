@@ -2,6 +2,4 @@
 title: "Light-Sheet Image Analysis Workshop 2026"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Main repository for the Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile.
