@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Light-Sheet Image Analysis Workshop 2026"
+  title: "🔬 Light-Sheet Image Analysis Workshop 2026"
   #image: "quarto-dark-bg.jpeg"
   #favicon: "favicon.png"
   open-graph: true
