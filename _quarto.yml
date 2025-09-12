@@ -1,13 +1,69 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Light-Sheet Image Analysis Workshop 2026"
+  #image: "quarto-dark-bg.jpeg"
+  #favicon: "favicon.png"
+  open-graph: true
+  twitter-card: true
+  site-url: https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026
+  repo-url: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
+  issue-url: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  search:
+    show-item-context: true
+    type: overlay
+  page-footer:
+    left: LiSIUM
+    center:
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
+        aria-label: GitHub
+
   navbar:
+    #background: light
+    #logo: quarto.png
+    #logo-alt: "Quarto logo."
+    #title: false
+    #collapse-below: lg
     left:
-      - href: index.md
-        text: Home
-      - about.md
+      - text: "Home"
+        href: index.md
+      - text: "About"
+        href: about.md
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues"
+    tools:
+      - icon: github
+        href: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
+        text: GitHub
+
+  sidebar:
+    - id: about
+      title: "About"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - docs/get-started/index.qmd
+        - text: "Tutorial: Hello, Quarto"
+          href: docs/get-started/hello/
+        - text: "Tutorial: Computations"
+          href: docs/get-started/computations/
+        - text: "Tutorial: Authoring"
+          href: docs/get-started/authoring/
+
+bibliography: references.bib
 
 format:
   html:
@@ -16,4 +72,6 @@ format:
       - brand
     css: styles.css
     toc: true
-
+    code-copy: true
+    code-overflow: wrap
+    #respect-user-color-scheme: true
