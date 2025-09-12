@@ -35,16 +35,18 @@ website:
     #logo-alt: "Quarto logo."
     #title: false
     #collapse-below: lg
-    left:
+    right:
       - text: "Home"
         href: index.md
       - text: "About"
         href: about.md
+      - text: "Program"
+        href: program.md
       - text: "Help"
         menu:
           - text: "Report a Bug"
             icon: "bug"
-            href: "https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues"
+            href: "https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new"
     tools:
       - icon: github
         href: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
