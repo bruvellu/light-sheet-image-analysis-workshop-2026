@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
@@ -106,13 +106,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./program.html"> 
+<span class="menu-text">Program</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Help</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues"><i class="bi bi-bug" role="img">
+    <a class="dropdown-item" href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new"><i class="bi bi-bug" role="img">
 </i> 
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
@@ -157,23 +161,19 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./program.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Program</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#day-1-introduction-to-light-sheet-and-3d-visualization" id="toc-day-1-introduction-to-light-sheet-and-3d-visualization" class="nav-link active" data-scroll-target="#day-1-introduction-to-light-sheet-and-3d-visualization">📅 Day 1 – Introduction to Light-Sheet and 3D Visualization</a></li>
-  <li><a href="#day-2-image-analysis-fundamentals" id="toc-day-2-image-analysis-fundamentals" class="nav-link" data-scroll-target="#day-2-image-analysis-fundamentals">📅 Day 2 – Image Analysis Fundamentals</a></li>
-  <li><a href="#day-3-machine-learning-and-ai-for-image-analysis" id="toc-day-3-machine-learning-and-ai-for-image-analysis" class="nav-link" data-scroll-target="#day-3-machine-learning-and-ai-for-image-analysis">📅 Day 3 – Machine Learning and AI for Image Analysis</a></li>
-  <li><a href="#day-4-applications-independent-project-work" id="toc-day-4-applications-independent-project-work" class="nav-link" data-scroll-target="#day-4-applications-independent-project-work">📅 Day 4 – Applications &amp; Independent Project Work</a></li>
-  <li><a href="#day-5-final-projects-presentations" id="toc-day-5-final-projects-presentations" class="nav-link" data-scroll-target="#day-5-final-projects-presentations">📅 Day 5 – Final Projects &amp; Presentations</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -197,87 +197,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Main repository for the Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile.</p>
+<p>Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile.</p>
 <ul>
 <li><strong>Target Audience:</strong> Scientists with access to light-sheet microscopy data who want to learn how to perform quantitative analysis in volumetric data. Knowing basic concepts of fluorescent microscopy and image analysis is ideal.</li>
 <li><strong>Format:</strong> Mornings – Theory | Afternoons – Practical Workshops | Clinic with own or example data.</li>
 <li><strong>Goal:</strong> Equip participants with fundamental and advanced tools for analyzing volumetric microscopy datasets. Students will work with their own data or provided datasets, culminating in short presentations.</li>
 </ul>
-<hr>
-<section id="day-1-introduction-to-light-sheet-and-3d-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="day-1-introduction-to-light-sheet-and-3d-visualization">📅 Day 1 – Introduction to Light-Sheet and 3D Visualization</h2>
-<p><strong>🧠 Morning Session</strong><br>
-- Welcome &amp; Course Overview<br>
-- Principles of Light-Sheet Microscopy<br>
-- Optical setup &amp; acquisition strategies<br>
-- Experiment planning and sample mounting<br>
-- Common image artifacts and how to avoid/fix them<br>
-- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity</p>
-<p><strong>🖥️ Afternoon Workshop</strong><br>
-- Multiview reconstruction in <strong>Fiji</strong><br>
-- Hands-on with 3D visualization in <strong>Fiji</strong> and <strong>Napari</strong></p>
-<hr>
-</section>
-<section id="day-2-image-analysis-fundamentals" class="level2">
-<h2 class="anchored" data-anchor-id="day-2-image-analysis-fundamentals">📅 Day 2 – Image Analysis Fundamentals</h2>
-<p><strong>🧠 Morning Session</strong><br>
-- Fundamentals of BioImage Analysis<br>
-- Image types and bit depth<br>
-- Noise, background correction, filters<br>
-- Thresholding, segmentation basics (pixel vs object)<br>
-- ROI handling and masks<br>
-- Overview of available open-source tools</p>
-<p><strong>🖥️ Afternoon Workshop</strong><br>
-- Segmentation workflows in Fiji and Napari (2D/3D)<br>
-- Intro to cell tracking methods</p>
-<hr>
-</section>
-<section id="day-3-machine-learning-and-ai-for-image-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="day-3-machine-learning-and-ai-for-image-analysis">📅 Day 3 – Machine Learning and AI for Image Analysis</h2>
-<p><strong>🧠 Morning Session</strong><br>
-- Introduction to AI and deep learning in microscopy<br>
-- When and why to use DL models<br>
-- Overview of StarDist, CellPose</p>
-<p><strong>🖥️ Afternoon Workshop</strong><br>
-- Using <strong>BioImage Model Zoo</strong> models with Napari<br>
-- Hands-on with <strong>Labkit</strong> and <strong>ilastik</strong> (interactive annotation &amp; classification)<br>
-- Deploying pre-trained models on user data<br>
-- Optional: Train your own simple model (time permitting)</p>
-<hr>
-</section>
-<section id="day-4-applications-independent-project-work" class="level2">
-<h2 class="anchored" data-anchor-id="day-4-applications-independent-project-work">📅 Day 4 – Applications &amp; Independent Project Work</h2>
-<p><strong>🧠 Morning Session</strong><br>
-- Research applications of BioImage Analysis<br>
-- Talks or case studies using light-sheet imaging<br>
-- Highlight multi-disciplinary projects (e.g.&nbsp;developmental biology, neuroscience, plant science)<br>
-- Tips for designing an effective analysis pipeline</p>
-<p><strong>🖥️ Afternoon Workshop</strong><br>
-- Begin working on personal projects or example datasets<br>
-- Q&amp;A with instructors (project clinic)<br>
-- Begin structuring project presentations (suggested format below)</p>
-<hr>
-</section>
-<section id="day-5-final-projects-presentations" class="level2">
-<h2 class="anchored" data-anchor-id="day-5-final-projects-presentations">📅 Day 5 – Final Projects &amp; Presentations</h2>
-<p><strong>🧠 Morning Session</strong><br>
-- Continue work on projects<br>
-- Finalize analysis and prepare presentations<br>
-- Instructor support for polishing visuals and conclusions</p>
-<p><strong>🖥️ Afternoon Session</strong><br>
-- Student Presentations (10 min each + 5 min Q&amp;A)<br>
-- Suggested format:<br>
-1. Dataset and biological question<br>
-2. Analysis goal<br>
-3. Method and tools used<br>
-4. Results<br>
-5. Challenges &amp; next steps<br>
-- Group Discussion and Feedback<br>
-- Closing Remarks &amp; Certificate Distribution<br>
-- Group Dinner 🎉</p>
+<p>See the <a href="./program.html">program</a></p>
 
 
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -694,7 +622,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
