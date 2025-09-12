@@ -14,6 +14,8 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: true
+  back-to-top-navigation: true
+  reader-mode: true
   search:
     show-item-context: true
     type: overlay
@@ -49,19 +51,21 @@ website:
         text: GitHub
 
   sidebar:
-    - id: about
-      title: "About"
-      style: "floating"
-      collapse-level: 2
-      align: left
-      contents:
-        - docs/get-started/index.qmd
-        - text: "Tutorial: Hello, Quarto"
-          href: docs/get-started/hello/
-        - text: "Tutorial: Computations"
-          href: docs/get-started/computations/
-        - text: "Tutorial: Authoring"
-          href: docs/get-started/authoring/
+    style: "floating"
+    contents: auto
+
+    #- id: about
+      #title: "About"
+      #collapse-level: 2
+      #align: left
+      #contents:
+        #- docs/get-started/index.qmd
+        #- text: "Tutorial: Hello, Quarto"
+          #href: docs/get-started/hello/
+        #- text: "Tutorial: Computations"
+          #href: docs/get-started/computations/
+        #- text: "Tutorial: Authoring"
+          #href: docs/get-started/authoring/
 
 bibliography: references.bib
 
