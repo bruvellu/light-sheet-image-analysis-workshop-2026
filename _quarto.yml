@@ -15,7 +15,7 @@ website:
   page-navigation: true
   bread-crumbs: true
   back-to-top-navigation: true
-  reader-mode: true
+  #reader-mode: true
   search:
     show-item-context: true
     type: overlay

@@ -8,5 +8,5 @@ Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 
 - **Format:** Mornings – Theory | Afternoons – Practical Workshops | Clinic with own or example data.
 - **Goal:** Equip participants with fundamental and advanced tools for analyzing volumetric microscopy datasets. Students will work with their own data or provided datasets, culminating in short presentations.
 
-See the [program](program.md)
+See the [program](program.md).
 

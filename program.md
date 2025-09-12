@@ -16,8 +16,6 @@ title: "Program"
 - Multiview reconstruction  in **Fiji**  
 - Hands-on with 3D visualization in **Fiji** and **Napari**  
 
----
-
 ## 📅 Day 2 – Image Analysis Fundamentals
 
 **🧠 Morning Session**  
@@ -32,8 +30,6 @@ title: "Program"
 - Segmentation workflows in Fiji and Napari (2D/3D)  
 - Intro to cell tracking methods  
 
----
-
 ## 📅 Day 3 – Machine Learning and AI for Image Analysis
 
 **🧠 Morning Session**  
@@ -47,8 +43,6 @@ title: "Program"
 - Deploying pre-trained models on user data  
 - Optional: Train your own simple model (time permitting)
 
----
-
 ## 📅 Day 4 – Applications & Independent Project Work
 
 **🧠 Morning Session**  
@@ -61,8 +55,6 @@ title: "Program"
 - Begin working on personal projects or example datasets  
 - Q&A with instructors (project clinic)  
 - Begin structuring project presentations (suggested format below)  
-
----
 
 ## 📅 Day 5 – Final Projects & Presentations
 
