@@ -2,7 +2,9 @@
 title: "Welcome"
 ---
 
-⚠️ UNDER CONSTRUCTION ⚠️
+::: {.callout-warning}
+The contents of this page are under construction!
+:::
 
 Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile.
 
