@@ -70,6 +70,16 @@
     ]
   },
   {
+    "objectID": "organizers.html",
+    "href": "organizers.html",
+    "title": "Course organizers",
+    "section": "",
+    "text": "Course organizers\nUs",
+    "crumbs": [
+      "Course organizers"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
@@ -91,13 +101,43 @@
     "text": "Program\nPlease see the program."
   },
   {
-    "objectID": "organizers.html",
-    "href": "organizers.html",
-    "title": "Course organizers",
-    "section": "",
-    "text": "Course organizers\nUs",
+    "objectID": "presentation.html#getting-up",
+    "href": "presentation.html#getting-up",
+    "title": "Habits",
+    "section": "Getting up",
+    "text": "Getting up\n\nTurn off alarm\nGet out of bed",
     "crumbs": [
-      "Course organizers"
+      "Habits"
+    ]
+  },
+  {
+    "objectID": "presentation.html#breakfast",
+    "href": "presentation.html#breakfast",
+    "title": "Habits",
+    "section": "Breakfast",
+    "text": "Breakfast\n\nEat eggs\nDrink coffee",
+    "crumbs": [
+      "Habits"
+    ]
+  },
+  {
+    "objectID": "presentation.html#dinner",
+    "href": "presentation.html#dinner",
+    "title": "Habits",
+    "section": "Dinner",
+    "text": "Dinner\n\nEat spaghetti\nDrink wine",
+    "crumbs": [
+      "Habits"
+    ]
+  },
+  {
+    "objectID": "presentation.html#going-to-sleep",
+    "href": "presentation.html#going-to-sleep",
+    "title": "Habits",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep",
+    "crumbs": [
+      "Habits"
     ]
   },
   {
