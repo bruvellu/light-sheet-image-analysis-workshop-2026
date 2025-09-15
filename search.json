@@ -60,34 +60,13 @@
     ]
   },
   {
-    "objectID": "organizers.html",
-    "href": "organizers.html",
-    "title": "Course organizers",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "Course organizers\nUs",
+    "text": "Resources\n\nAdd contents here. \n\nCompilation of tools and resources for image analysis.",
     "crumbs": [
-      "Course organizers"
-    ]
-  },
-  {
-    "objectID": "program/day1.html",
-    "href": "program/day1.html",
-    "title": "Day 1 – Light-Sheet Principles",
-    "section": "",
-    "text": "Day 1 – Light-Sheet Principles\nContents",
-    "crumbs": [
-      "Program under subdir",
-      "Day 1 -- Light-Sheet Principles"
-    ]
-  },
-  {
-    "objectID": "program/index.html",
-    "href": "program/index.html",
-    "title": "Program under subdir",
-    "section": "",
-    "text": "Program under subdir\nTest.",
-    "crumbs": [
-      "Program under subdir"
+      "Resources"
     ]
   },
   {
@@ -112,13 +91,33 @@
     "text": "Program\nPlease see the program."
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Resources",
+    "objectID": "organizers.html",
+    "href": "organizers.html",
+    "title": "Course organizers",
     "section": "",
-    "text": "Resources\n\nAdd contents here. \n\nCompilation of tools and resources for image analysis.",
+    "text": "Course organizers\nUs",
     "crumbs": [
-      "Resources"
+      "Course organizers"
+    ]
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto reference guide",
+    "section": "",
+    "text": "Here are some of the markdown basics we can use with Quarto.\nitalics, bold, bold italics, superscript2 / subscript2, strikethrough, verbatim code\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\nTask 1\nTask 2\n\n\nterm\n\ndefinition\n\n\n\nBlockquote\n\n\n\n\nElephant\n\n\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.\nHere is a footnote reference,1 and another.2.\nHere is an inline note.3\n\n\n\nTable 1: My Caption\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\nSee Table 1.\nLife is good (Citation?).\n1 + 1\ninline math: \\(E = mc^{2}\\)\ndisplay math:\n\\[E = mc^{2}\\]\n\n\n\n\n\n\n\nNote\n\n\n\nNote callout block.\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip callout block.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWarning callout block.",
+    "crumbs": [
+      "Quarto reference guide"
+    ]
+  },
+  {
+    "objectID": "quarto.html#footnotes",
+    "href": "quarto.html#footnotes",
+    "title": "Quarto reference guide",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nHere is the footnote.↩︎\nHere’s one with multiple blocks.↩︎\nInlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.↩︎",
+    "crumbs": [
+      "Quarto reference guide"
     ]
   }
 ]
