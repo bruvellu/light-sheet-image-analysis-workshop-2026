@@ -1,3 +1,3 @@
-# Testing subfolders for Days
+# Day 1 -- Light-Sheet Principles
 
 Contents
