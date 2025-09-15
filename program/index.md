@@ -1,3 +1,0 @@
-# Program under subdir
-
-Test.
