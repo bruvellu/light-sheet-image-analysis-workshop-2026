@@ -1,5 +1,5 @@
 ---
-title: "Habits"
+title: "Example presentation"
 author: "John Doe"
 format: revealjs
 ---
