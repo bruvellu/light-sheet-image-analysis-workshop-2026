@@ -1,6 +1,4 @@
----
-title: "Welcome"
----
+# Welcome
 
 ::: {.callout-warning}
 The contents of this page are under construction!
@@ -17,3 +15,15 @@ Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 
 ## Program
 
 Please see the [program](program.md).
+
+## Organizers
+
+- Aníbal Vargas Ríos
+- Luz Fuentealba
+- Charlotte Buckley
+
+### Co-organizers and instructors
+
+- Marina Cuenca
+- Agustín Corbat
+- Bruno Vellutini
