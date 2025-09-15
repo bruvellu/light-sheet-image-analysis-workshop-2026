@@ -76,8 +76,18 @@
     "section": "",
     "text": "Testing subfolders for Days\nContents",
     "crumbs": [
-      "Program",
+      "Program under subdir",
       "Testing subfolders for Days"
+    ]
+  },
+  {
+    "objectID": "program/index.html",
+    "href": "program/index.html",
+    "title": "Program under subdir",
+    "section": "",
+    "text": "Program under subdir\nTest.",
+    "crumbs": [
+      "Program under subdir"
     ]
   },
   {
