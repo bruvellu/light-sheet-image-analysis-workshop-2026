@@ -64,7 +64,7 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "Resources\n\nAdd contents here. \n\nCompilation of tools and resources for image analysis.",
+    "text": "Resources\nCompilation of tools and resources for image analysis, focused on what we will use.\nTODO: Add links.\nFor more: - https://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis - https://github.com/hallvaaw/awesome-biological-image-analysis/",
     "crumbs": [
       "Resources"
     ]
