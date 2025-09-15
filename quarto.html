@@ -139,12 +139,10 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/elephant.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/elephant.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -221,7 +219,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quarto-reference-guide" id="toc-quarto-reference-guide" class="nav-link active" data-scroll-target="#quarto-reference-guide">Quarto reference guide</a></li>
+  <li><a href="#quarto-reference-guide" id="toc-quarto-reference-guide" class="nav-link active" data-scroll-target="#quarto-reference-guide">Quarto reference guide</a>
+  <ul class="collapse">
+  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text formatting</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
+  <li><a href="#code-blocks-and-math" id="toc-code-blocks-and-math" class="nav-link" data-scroll-target="#code-blocks-and-math">Code blocks and math</a></li>
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
+  <li><a href="#callout-blocks" id="toc-callout-blocks" class="nav-link" data-scroll-target="#callout-blocks">Callout blocks</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/quarto.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -234,6 +242,8 @@ window.Quarto = {
 <section id="quarto-reference-guide" class="level1">
 <h1>Quarto reference guide</h1>
 <p>Here are some of the markdown basics we can use with <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a>.</p>
+<section id="text-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="text-formatting">Text formatting</h2>
 <p><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong>, superscript<sup>2</sup> / subscript<sub>2</sub>, <del>strikethrough</del>, <code>verbatim code</code></p>
 <ul>
 <li>unordered list
@@ -256,16 +266,19 @@ definition
 <blockquote class="blockquote">
 <p>Blockquote</p>
 </blockquote>
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="elephant.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://quarto.org/docs/authoring/elephant.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Elephant</figcaption>
 </figure>
 </div>
 <div id="fig-elephant" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="elephant.png" class="img-fluid figure-img">
+<img src="https://quarto.org/docs/authoring/elephant.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: An Elephant
@@ -273,8 +286,9 @@ Figure&nbsp;1: An Elephant
 </figure>
 </div>
 <p>This is illustrated well by <a href="#fig-elephant" class="quarto-xref">Figure&nbsp;1</a>.</p>
-<p>Here is a footnote reference,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and another.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p>Here is an inline note.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <div id="tbl-letters" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-letters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -315,12 +329,29 @@ Table&nbsp;1: My Caption
 </figure>
 </div>
 <p>See <a href="#tbl-letters" class="quarto-xref">Table&nbsp;1</a>.</p>
-<p>Life is good <span class="citation" data-cites="Citation">(<a href="#ref-Citation" role="doc-biblioref"><strong>Citation?</strong></a>)</span>.</p>
+</section>
+<section id="citations" class="level2">
+<h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<p>Life is good <span class="citation" data-cites="Citation">(<a href="#ref-Citation" role="doc-biblioref"><strong>Citation?</strong></a>)</span>. (put bibref formatted in references.bib)</p>
+</section>
+<section id="footnotes" class="level2">
+<h2 class="anchored" data-anchor-id="footnotes">Footnotes</h2>
+<p>Here is a footnote reference,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and another.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Here is an inline note.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+<section id="code-blocks-and-math" class="level2">
+<h2 class="anchored" data-anchor-id="code-blocks-and-math">Code blocks and math</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>inline math: <span class="math inline">\(E = mc^{2}\)</span></p>
 <p>display math:</p>
 <p><span class="math display">\[E = mc^{2}\]</span></p>
+</section>
+<section id="videos" class="level2">
+<h2 class="anchored" data-anchor-id="videos">Videos</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="callout-blocks" class="level2">
+<h2 class="anchored" data-anchor-id="callout-blocks">Callout blocks</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -388,6 +419,7 @@ Important
 </div>
 
 
+</section>
 </section>
 
 
