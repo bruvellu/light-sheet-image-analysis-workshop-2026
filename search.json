@@ -60,6 +60,27 @@
     ]
   },
   {
+    "objectID": "organizers.html",
+    "href": "organizers.html",
+    "title": "Course organizers",
+    "section": "",
+    "text": "Course organizers\nUs",
+    "crumbs": [
+      "Course organizers"
+    ]
+  },
+  {
+    "objectID": "program/day1.html",
+    "href": "program/day1.html",
+    "title": "Testing subfolders for Days",
+    "section": "",
+    "text": "Testing subfolders for Days\nContents",
+    "crumbs": [
+      "Program",
+      "Testing subfolders for Days"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
@@ -81,24 +102,13 @@
     "text": "Program\nPlease see the program."
   },
   {
-    "objectID": "program/day1.html",
-    "href": "program/day1.html",
-    "title": "Testing subfolders for Days",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "Testing subfolders for Days\nContents",
+    "text": "Resources\n\nAdd contents here. \n\nCompilation of tools and resources for image analysis.",
     "crumbs": [
-      "Program",
-      "Testing subfolders for Days"
-    ]
-  },
-  {
-    "objectID": "organizers.html",
-    "href": "organizers.html",
-    "title": "Course organizers",
-    "section": "",
-    "text": "Course organizers\nUs",
-    "crumbs": [
-      "Course organizers"
+      "Resources"
     ]
   }
 ]
