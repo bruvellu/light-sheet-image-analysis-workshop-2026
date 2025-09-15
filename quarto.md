@@ -2,6 +2,8 @@
 
 Here are some of the markdown basics we can use with [Quarto](https://quarto.org/docs/authoring/markdown-basics.html).
 
+## Text formatting
+
 *italics*, **bold**, ***bold italics***, superscript^2^ / subscript~2~, ~~strikethrough~~, `verbatim code`
 
 * unordered list
@@ -17,19 +19,15 @@ term
 
 > Blockquote
 
-![Elephant](elephant.png){width=80%}
+## Figures
 
-![An Elephant](elephant.png){#fig-elephant}
+![Elephant](https://quarto.org/docs/authoring/elephant.png){width=80%}
+
+![An Elephant](https://quarto.org/docs/authoring/elephant.png){#fig-elephant}
 
 This is illustrated well by @fig-elephant.
 
-Here is a footnote reference,[^1] and another.[^longnote].
-
-Here is an inline note.^[Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.]
-
-[^1]: Here is the footnote.
-
-[^longnote]: Here's one with multiple blocks.
+## Tables
 
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
@@ -41,7 +39,21 @@ Here is an inline note.^[Inlines notes are easier to write, since you don't have
 
 See @tbl-letters.
 
-Life is good [@Citation].
+## Citations
+
+Life is good [@Citation]. (put bibref formatted in references.bib)
+
+## Footnotes
+
+Here is a footnote reference,[^1] and another.[^longnote].
+
+Here is an inline note.^[Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+## Code blocks and math
 
 ```python
 1 + 1
@@ -53,7 +65,11 @@ display math:
 
 $$E = mc^{2}$$
 
+## Videos
+
 {{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+## Callout blocks
 
 :::{.callout-note}
 Note callout block.
