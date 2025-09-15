@@ -42,6 +42,8 @@ website:
         href: about.md
       - text: "Program"
         href: program.md
+      - text: "Organizers"
+        href: organizers.md
       - text: "Help"
         menu:
           - text: "Report a Bug"
