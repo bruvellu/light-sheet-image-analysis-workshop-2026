@@ -1,8 +1,6 @@
----
-title: "Program"
----
+# Program
 
-This is an edit.
+TODO: Update with draft schedule.
 
 ## 📅 Day 1 – Introduction to Light-Sheet and 3D Visualization
 
