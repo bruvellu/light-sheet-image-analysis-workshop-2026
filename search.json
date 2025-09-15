@@ -74,21 +74,28 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Warning\n\n\n\nThe contents of this page are under construction!\nLight-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile."
+    "text": "Warning\n\n\n\nThe contents of this page are under construction!\n\n\nLight-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile.\n\n\n\nTarget Audience: Scientists with access to light-sheet microscopy data who want to learn how to perform quantitative analysis in volumetric data. Knowing basic concepts of fluorescent microscopy and image analysis is ideal.\nFormat: Mornings – Theory | Afternoons – Practical Workshops | Clinic with own or example data.\nGoal: Equip participants with fundamental and advanced tools for analyzing volumetric microscopy datasets. Students will work with their own data or provided datasets, culminating in short presentations.\n\n\n\n\nPlease see the program.\n\n\n\n\nAníbal Vargas Ríos\nLuz Fuentealba\nCharlotte Buckley\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
     "title": "Welcome",
-    "section": "About",
-    "text": "About\n\nTarget Audience: Scientists with access to light-sheet microscopy data who want to learn how to perform quantitative analysis in volumetric data. Knowing basic concepts of fluorescent microscopy and image analysis is ideal.\nFormat: Mornings – Theory | Afternoons – Practical Workshops | Clinic with own or example data.\nGoal: Equip participants with fundamental and advanced tools for analyzing volumetric microscopy datasets. Students will work with their own data or provided datasets, culminating in short presentations."
+    "section": "",
+    "text": "Target Audience: Scientists with access to light-sheet microscopy data who want to learn how to perform quantitative analysis in volumetric data. Knowing basic concepts of fluorescent microscopy and image analysis is ideal.\nFormat: Mornings – Theory | Afternoons – Practical Workshops | Clinic with own or example data.\nGoal: Equip participants with fundamental and advanced tools for analyzing volumetric microscopy datasets. Students will work with their own data or provided datasets, culminating in short presentations."
   },
   {
     "objectID": "index.html#program",
     "href": "index.html#program",
     "title": "Welcome",
-    "section": "Program",
-    "text": "Program\nPlease see the program."
+    "section": "",
+    "text": "Please see the program."
+  },
+  {
+    "objectID": "index.html#organizers",
+    "href": "index.html#organizers",
+    "title": "Welcome",
+    "section": "",
+    "text": "Aníbal Vargas Ríos\nLuz Fuentealba\nCharlotte Buckley\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
   },
   {
     "objectID": "presentation.html#getting-up",
