@@ -53,14 +53,6 @@ display math:
 
 $$E = mc^{2}$$
 
-```{mermaid}
-flowchart LR
-  A[Hard edge] --> B(Round edge)
-  B --> C{Decision}
-  C --> D[Result one]
-  C --> E[Result two]
-```
-
 {{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
 
 :::{.callout-note}
@@ -83,13 +75,3 @@ Warning callout block.
 Warning callout block.
 :::
 
----
-title: "matplotlib demo"
-format:
-  html:
-    code-fold: true
-jupyter: python3
----
-
-plt.show()
-```
