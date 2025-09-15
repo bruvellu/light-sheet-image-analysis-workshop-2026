@@ -4,7 +4,7 @@
     "href": "program.html",
     "title": "Program",
     "section": "",
-    "text": "This is an edit.",
+    "text": "TODO: Update with draft schedule.\n\n\n🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari\n\n\n\n🧠 Morning Session\n- Fundamentals of BioImage Analysis\n- Image types and bit depth\n- Noise, background correction, filters\n- Thresholding, segmentation basics (pixel vs object)\n- ROI handling and masks\n- Overview of available open-source tools\n🖥️ Afternoon Workshop\n- Segmentation workflows in Fiji and Napari (2D/3D)\n- Intro to cell tracking methods\n\n\n\n🧠 Morning Session\n- Introduction to AI and deep learning in microscopy\n- When and why to use DL models\n- Overview of StarDist, CellPose\n🖥️ Afternoon Workshop\n- Using BioImage Model Zoo models with Napari\n- Hands-on with Labkit and ilastik (interactive annotation & classification)\n- Deploying pre-trained models on user data\n- Optional: Train your own simple model (time permitting)\n\n\n\n🧠 Morning Session\n- Research applications of BioImage Analysis\n- Talks or case studies using light-sheet imaging\n- Highlight multi-disciplinary projects (e.g. developmental biology, neuroscience, plant science)\n- Tips for designing an effective analysis pipeline\n🖥️ Afternoon Workshop\n- Begin working on personal projects or example datasets\n- Q&A with instructors (project clinic)\n- Begin structuring project presentations (suggested format below)\n\n\n\n🧠 Morning Session\n- Continue work on projects\n- Finalize analysis and prepare presentations\n- Instructor support for polishing visuals and conclusions\n🖥️ Afternoon Session\n- Student Presentations (10 min each + 5 min Q&A)\n- Suggested format:\n1. Dataset and biological question\n2. Analysis goal\n3. Method and tools used\n4. Results\n5. Challenges & next steps\n- Group Discussion and Feedback\n- Closing Remarks & Certificate Distribution\n- Group Dinner 🎉",
     "crumbs": [
       "Program"
     ]
@@ -13,8 +13,8 @@
     "objectID": "program.html#day-1-introduction-to-light-sheet-and-3d-visualization",
     "href": "program.html#day-1-introduction-to-light-sheet-and-3d-visualization",
     "title": "Program",
-    "section": "📅 Day 1 – Introduction to Light-Sheet and 3D Visualization",
-    "text": "📅 Day 1 – Introduction to Light-Sheet and 3D Visualization\n🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari",
+    "section": "",
+    "text": "🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari",
     "crumbs": [
       "Program"
     ]
@@ -23,8 +23,8 @@
     "objectID": "program.html#day-2-image-analysis-fundamentals",
     "href": "program.html#day-2-image-analysis-fundamentals",
     "title": "Program",
-    "section": "📅 Day 2 – Image Analysis Fundamentals",
-    "text": "📅 Day 2 – Image Analysis Fundamentals\n🧠 Morning Session\n- Fundamentals of BioImage Analysis\n- Image types and bit depth\n- Noise, background correction, filters\n- Thresholding, segmentation basics (pixel vs object)\n- ROI handling and masks\n- Overview of available open-source tools\n🖥️ Afternoon Workshop\n- Segmentation workflows in Fiji and Napari (2D/3D)\n- Intro to cell tracking methods",
+    "section": "",
+    "text": "🧠 Morning Session\n- Fundamentals of BioImage Analysis\n- Image types and bit depth\n- Noise, background correction, filters\n- Thresholding, segmentation basics (pixel vs object)\n- ROI handling and masks\n- Overview of available open-source tools\n🖥️ Afternoon Workshop\n- Segmentation workflows in Fiji and Napari (2D/3D)\n- Intro to cell tracking methods",
     "crumbs": [
       "Program"
     ]
@@ -33,8 +33,8 @@
     "objectID": "program.html#day-3-machine-learning-and-ai-for-image-analysis",
     "href": "program.html#day-3-machine-learning-and-ai-for-image-analysis",
     "title": "Program",
-    "section": "📅 Day 3 – Machine Learning and AI for Image Analysis",
-    "text": "📅 Day 3 – Machine Learning and AI for Image Analysis\n🧠 Morning Session\n- Introduction to AI and deep learning in microscopy\n- When and why to use DL models\n- Overview of StarDist, CellPose\n🖥️ Afternoon Workshop\n- Using BioImage Model Zoo models with Napari\n- Hands-on with Labkit and ilastik (interactive annotation & classification)\n- Deploying pre-trained models on user data\n- Optional: Train your own simple model (time permitting)",
+    "section": "",
+    "text": "🧠 Morning Session\n- Introduction to AI and deep learning in microscopy\n- When and why to use DL models\n- Overview of StarDist, CellPose\n🖥️ Afternoon Workshop\n- Using BioImage Model Zoo models with Napari\n- Hands-on with Labkit and ilastik (interactive annotation & classification)\n- Deploying pre-trained models on user data\n- Optional: Train your own simple model (time permitting)",
     "crumbs": [
       "Program"
     ]
@@ -43,8 +43,8 @@
     "objectID": "program.html#day-4-applications-independent-project-work",
     "href": "program.html#day-4-applications-independent-project-work",
     "title": "Program",
-    "section": "📅 Day 4 – Applications & Independent Project Work",
-    "text": "📅 Day 4 – Applications & Independent Project Work\n🧠 Morning Session\n- Research applications of BioImage Analysis\n- Talks or case studies using light-sheet imaging\n- Highlight multi-disciplinary projects (e.g. developmental biology, neuroscience, plant science)\n- Tips for designing an effective analysis pipeline\n🖥️ Afternoon Workshop\n- Begin working on personal projects or example datasets\n- Q&A with instructors (project clinic)\n- Begin structuring project presentations (suggested format below)",
+    "section": "",
+    "text": "🧠 Morning Session\n- Research applications of BioImage Analysis\n- Talks or case studies using light-sheet imaging\n- Highlight multi-disciplinary projects (e.g. developmental biology, neuroscience, plant science)\n- Tips for designing an effective analysis pipeline\n🖥️ Afternoon Workshop\n- Begin working on personal projects or example datasets\n- Q&A with instructors (project clinic)\n- Begin structuring project presentations (suggested format below)",
     "crumbs": [
       "Program"
     ]
@@ -53,8 +53,8 @@
     "objectID": "program.html#day-5-final-projects-presentations",
     "href": "program.html#day-5-final-projects-presentations",
     "title": "Program",
-    "section": "📅 Day 5 – Final Projects & Presentations",
-    "text": "📅 Day 5 – Final Projects & Presentations\n🧠 Morning Session\n- Continue work on projects\n- Finalize analysis and prepare presentations\n- Instructor support for polishing visuals and conclusions\n🖥️ Afternoon Session\n- Student Presentations (10 min each + 5 min Q&A)\n- Suggested format:\n1. Dataset and biological question\n2. Analysis goal\n3. Method and tools used\n4. Results\n5. Challenges & next steps\n- Group Discussion and Feedback\n- Closing Remarks & Certificate Distribution\n- Group Dinner 🎉",
+    "section": "",
+    "text": "🧠 Morning Session\n- Continue work on projects\n- Finalize analysis and prepare presentations\n- Instructor support for polishing visuals and conclusions\n🖥️ Afternoon Session\n- Student Presentations (10 min each + 5 min Q&A)\n- Suggested format:\n1. Dataset and biological question\n2. Analysis goal\n3. Method and tools used\n4. Results\n5. Challenges & next steps\n- Group Discussion and Feedback\n- Closing Remarks & Certificate Distribution\n- Group Dinner 🎉",
     "crumbs": [
       "Program"
     ]
