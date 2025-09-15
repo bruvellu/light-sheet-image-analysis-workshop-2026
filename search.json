@@ -4,7 +4,7 @@
     "href": "program.html",
     "title": "Program",
     "section": "",
-    "text": "🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari",
+    "text": "This is an edit.",
     "crumbs": [
       "Home",
       "Program"
@@ -14,8 +14,8 @@
     "objectID": "program.html#day-1-introduction-to-light-sheet-and-3d-visualization",
     "href": "program.html#day-1-introduction-to-light-sheet-and-3d-visualization",
     "title": "Program",
-    "section": "",
-    "text": "🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari",
+    "section": "📅 Day 1 – Introduction to Light-Sheet and 3D Visualization",
+    "text": "📅 Day 1 – Introduction to Light-Sheet and 3D Visualization\n🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari",
     "crumbs": [
       "Home",
       "Program"
