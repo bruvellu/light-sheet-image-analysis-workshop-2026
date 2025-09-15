@@ -1,4 +1,13 @@
-# Executable block
+# Executable blocks
+
+
+```{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
 
 For a demonstration of a line plot on a polar axis, see @fig-polar.
 
@@ -17,3 +26,14 @@ fig, ax = plt.subplots(
 ax.plot(theta, r)
 ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
+
+---
+title: "matplotlib demo"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+plt.show()
+```
