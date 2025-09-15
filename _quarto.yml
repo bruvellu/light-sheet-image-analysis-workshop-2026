@@ -14,20 +14,23 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: true
-  back-to-top-navigation: true
+  #back-to-top-navigation: true
   #reader-mode: true
   search:
     show-item-context: true
     type: overlay
   page-footer:
-    left: LiSIUM
     center:
-      - text: "About"
-        href: about.qmd
-    right:
-      - icon: github
-        href: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
-        aria-label: GitHub
+      - text: "LiSIUM"
+        href: https://lightsheetchile.cl/light-sheet-image-analysis-workshop-2026-2/
+    #left: LiSIUM
+    #center:
+    #  - text: "About"
+    #    href: about.qmd
+    #right:
+    #  - icon: github
+    #    href: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
+    #    aria-label: GitHub
 
   navbar:
     #background: light
@@ -35,20 +38,20 @@ website:
     #logo-alt: "Quarto logo."
     #title: false
     #collapse-below: lg
-    right:
-      - text: "Home"
-        href: index.md
-      - text: "About"
-        href: about.md
-      - text: "Program"
-        href: program.md
-      - text: "Organizers"
-        href: organizers.md
-      - text: "Help"
-        menu:
-          - text: "Report a Bug"
-            icon: "bug"
-            href: "https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new"
+    #right:
+    #  - text: "Home"
+    #    href: index.md
+    #  - text: "About"
+    #    href: about.md
+    #  - text: "Program"
+    #    href: program.md
+    #  - text: "Organizers"
+    #    href: organizers.md
+    #  - text: "Help"
+    #    menu:
+    #      - text: "Report a Bug"
+    #        icon: "bug"
+    #        href: "https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new"
     tools:
       - icon: github
         href: https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026
