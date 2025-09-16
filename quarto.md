@@ -39,7 +39,7 @@ See @tbl-letters.
 
 ## Citations
 
-Life is good [@Citation]. (put bibref formatted in references.bib)
+Life is good [@Weigert2018-ti]. (bibkey should be in [references.bib](references.bib))
 
 ## Footnotes
 
