@@ -82,10 +82,10 @@ Warning callout block.
 :::
 
 :::{.callout-caution}
-Warning callout block.
+Caution callout block.
 :::
 
 :::{.callout-important}
-Warning callout block.
+Important callout block.
 :::
 
