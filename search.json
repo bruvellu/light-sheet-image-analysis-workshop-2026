@@ -4,7 +4,7 @@
     "href": "program.html",
     "title": "Program",
     "section": "",
-    "text": "This is the latest version of the program. Edit this page!\nThe original draft program is here for our reference.\n\n\nMonday, 5 Jan 2026\n\n\n\n09:00–09:15 - Welcome session and course overview\n09:15–10:00 - Concepts in lightsheet microscopy\n10:00–11:00 - Experimental design and sample mounting\n\n\n\n\n\nVisualization and processing of digital images (45min)\nBest practices in imaging data management (30min)\n\n\n\n\n\nBasics of 2D image visualization in Fiji/Napari (1.5h)\nBasics of 3D image visualization in Fiji/Napari (1.5h)\n\n\n\n\n\nDate: Tuesday, 6 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1.5h)\nActivity (1.5h)\n\n\n\n\n\nMachine learning and advanced imaging workflows\n\n\nLecture (1h) Lecture (1h)\n\n\n\nActivity (1h) Activity (1h)\n\n\n\nActivity (1.5h) Activity (1.5h)\n🗓️ Day 4: Thursday, 8 Jan 2026 Scientific application of lightsheet microscopy and projects 🧠 Theory morning session (09:00–11:00) Lecture (1h) Lecture (1h) 🖥️ Practical morning session (11:00–13:00) Activity (1h) Activity (1h) 🖥️ Practical afternoon session (14:00–17:00) Activity (1.5h) Activity (1.5h)\n🗓️ Day 5: Friday, 9 Jan 2026 Projects and presentations 🖥️ Practical morning session (09:00–11:00) Lecture (1h) Lecture (1h) 🖥️ Practical morning session (11:00–13:00) Activity (1h) Activity (1h) 🧠 Theory afternoon session (14:00–17:00) Activity (1.5h) Activity (1.5h)\n\n\n\n\n🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari\n\n\n\n🧠 Morning Session\n- Fundamentals of BioImage Analysis\n- Image types and bit depth\n- Noise, background correction, filters\n- Thresholding, segmentation basics (pixel vs object)\n- ROI handling and masks\n- Overview of available open-source tools\n🖥️ Afternoon Workshop\n- Segmentation workflows in Fiji and Napari (2D/3D)\n- Intro to cell tracking methods\n\n\n\n🧠 Morning Session\n- Introduction to AI and deep learning in microscopy\n- When and why to use DL models\n- Overview of StarDist, CellPose\n🖥️ Afternoon Workshop\n- Using BioImage Model Zoo models with Napari\n- Hands-on with Labkit and ilastik (interactive annotation & classification)\n- Deploying pre-trained models on user data\n- Optional: Train your own simple model (time permitting)\n\n\n\n🧠 Morning Session\n- Research applications of BioImage Analysis\n- Talks or case studies using light-sheet imaging\n- Highlight multi-disciplinary projects (e.g. developmental biology, neuroscience, plant science)\n- Tips for designing an effective analysis pipeline\n🖥️ Afternoon Workshop\n- Begin working on personal projects or example datasets\n- Q&A with instructors (project clinic)\n- Begin structuring project presentations (suggested format below)\n\n\n\n🧠 Morning Session\n- Continue work on projects\n- Finalize analysis and prepare presentations\n- Instructor support for polishing visuals and conclusions\n🖥️ Afternoon Session\n- Student Presentations (10 min each + 5 min Q&A)\n- Suggested format:\n1. Dataset and biological question\n2. Analysis goal\n3. Method and tools used\n4. Results\n5. Challenges & next steps\n- Group Discussion and Feedback\n- Closing Remarks & Certificate Distribution\n- Group Dinner 🎉",
+    "text": "This is the latest version of the program. Edit this page!\nThe original draft program is here.\n\n\nMonday, 5 Jan 2026\n\n\n\n09:00–09:15 - Welcome session and course overview\n09:15–10:00 - Concepts in lightsheet microscopy\n10:00–11:00 - Experimental design and sample mounting\n\n\n\n\n\nVisualization and processing of digital images (45min)\nBest practices in imaging data management (30min)\n\n\n\n\n\nBasics of 2D image visualization in Fiji/Napari (1.5h)\nBasics of 3D image visualization in Fiji/Napari (1.5h)\n\n\n\n\n\nDate: Tuesday, 6 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1.5h)\nActivity (1.5h)\n\n\n\n\n\nWednesday, 7 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1.5h)\nActivity (1.5h)\n\n\n\n\n\nThursday, 8 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\nActivity (1.5h) Activity (1.5h)\n\n\n\n\nFriday, 9 Jan 2026\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nLecture (1.5h)\nLecture (1.5h)\nClosing Remarks & Certificate Distribution\n\nGroup Dinner 🎉",
     "crumbs": [
       "Program"
     ]
@@ -30,61 +30,31 @@
     ]
   },
   {
-    "objectID": "program.html#day-3-wednesday-7-jan-2026",
-    "href": "program.html#day-3-wednesday-7-jan-2026",
+    "objectID": "program.html#day-3-machine-learning-and-advanced-workflows",
+    "href": "program.html#day-3-machine-learning-and-advanced-workflows",
     "title": "Program",
     "section": "",
-    "text": "Machine learning and advanced imaging workflows\n\n\nLecture (1h) Lecture (1h)\n\n\n\nActivity (1h) Activity (1h)\n\n\n\nActivity (1.5h) Activity (1.5h)\n🗓️ Day 4: Thursday, 8 Jan 2026 Scientific application of lightsheet microscopy and projects 🧠 Theory morning session (09:00–11:00) Lecture (1h) Lecture (1h) 🖥️ Practical morning session (11:00–13:00) Activity (1h) Activity (1h) 🖥️ Practical afternoon session (14:00–17:00) Activity (1.5h) Activity (1.5h)\n🗓️ Day 5: Friday, 9 Jan 2026 Projects and presentations 🖥️ Practical morning session (09:00–11:00) Lecture (1h) Lecture (1h) 🖥️ Practical morning session (11:00–13:00) Activity (1h) Activity (1h) 🧠 Theory afternoon session (14:00–17:00) Activity (1.5h) Activity (1.5h)",
+    "text": "Wednesday, 7 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1.5h)\nActivity (1.5h)",
     "crumbs": [
       "Program"
     ]
   },
   {
-    "objectID": "program.html#day-1-introduction-to-light-sheet-and-3d-visualization",
-    "href": "program.html#day-1-introduction-to-light-sheet-and-3d-visualization",
+    "objectID": "program.html#day-4-scientific-applications-and-project-work",
+    "href": "program.html#day-4-scientific-applications-and-project-work",
     "title": "Program",
     "section": "",
-    "text": "🧠 Morning Session\n- Welcome & Course Overview\n- Principles of Light-Sheet Microscopy\n- Optical setup & acquisition strategies\n- Experiment planning and sample mounting\n- Common image artifacts and how to avoid/fix them\n- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity\n🖥️ Afternoon Workshop\n- Multiview reconstruction in Fiji\n- Hands-on with 3D visualization in Fiji and Napari",
+    "text": "Thursday, 8 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\nActivity (1.5h) Activity (1.5h)",
     "crumbs": [
       "Program"
     ]
   },
   {
-    "objectID": "program.html#day-2-image-analysis-fundamentals",
-    "href": "program.html#day-2-image-analysis-fundamentals",
+    "objectID": "program.html#day-5-project-work-and-presentations",
+    "href": "program.html#day-5-project-work-and-presentations",
     "title": "Program",
     "section": "",
-    "text": "🧠 Morning Session\n- Fundamentals of BioImage Analysis\n- Image types and bit depth\n- Noise, background correction, filters\n- Thresholding, segmentation basics (pixel vs object)\n- ROI handling and masks\n- Overview of available open-source tools\n🖥️ Afternoon Workshop\n- Segmentation workflows in Fiji and Napari (2D/3D)\n- Intro to cell tracking methods",
-    "crumbs": [
-      "Program"
-    ]
-  },
-  {
-    "objectID": "program.html#day-3-machine-learning-and-ai-for-image-analysis",
-    "href": "program.html#day-3-machine-learning-and-ai-for-image-analysis",
-    "title": "Program",
-    "section": "",
-    "text": "🧠 Morning Session\n- Introduction to AI and deep learning in microscopy\n- When and why to use DL models\n- Overview of StarDist, CellPose\n🖥️ Afternoon Workshop\n- Using BioImage Model Zoo models with Napari\n- Hands-on with Labkit and ilastik (interactive annotation & classification)\n- Deploying pre-trained models on user data\n- Optional: Train your own simple model (time permitting)",
-    "crumbs": [
-      "Program"
-    ]
-  },
-  {
-    "objectID": "program.html#day-4-applications-independent-project-work",
-    "href": "program.html#day-4-applications-independent-project-work",
-    "title": "Program",
-    "section": "",
-    "text": "🧠 Morning Session\n- Research applications of BioImage Analysis\n- Talks or case studies using light-sheet imaging\n- Highlight multi-disciplinary projects (e.g. developmental biology, neuroscience, plant science)\n- Tips for designing an effective analysis pipeline\n🖥️ Afternoon Workshop\n- Begin working on personal projects or example datasets\n- Q&A with instructors (project clinic)\n- Begin structuring project presentations (suggested format below)",
-    "crumbs": [
-      "Program"
-    ]
-  },
-  {
-    "objectID": "program.html#day-5-final-projects-presentations",
-    "href": "program.html#day-5-final-projects-presentations",
-    "title": "Program",
-    "section": "",
-    "text": "🧠 Morning Session\n- Continue work on projects\n- Finalize analysis and prepare presentations\n- Instructor support for polishing visuals and conclusions\n🖥️ Afternoon Session\n- Student Presentations (10 min each + 5 min Q&A)\n- Suggested format:\n1. Dataset and biological question\n2. Analysis goal\n3. Method and tools used\n4. Results\n5. Challenges & next steps\n- Group Discussion and Feedback\n- Closing Remarks & Certificate Distribution\n- Group Dinner 🎉",
+    "text": "Friday, 9 Jan 2026\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nLecture (1.5h)\nLecture (1.5h)\nClosing Remarks & Certificate Distribution\n\nGroup Dinner 🎉",
     "crumbs": [
       "Program"
     ]
