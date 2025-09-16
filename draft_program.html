@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>draft_program – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./resources.html" rel="next">
-<link href="./program.html" rel="prev">
+<link href="./presentation.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -106,35 +70,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
@@ -169,7 +104,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto.html">Quarto reference guide</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./draft_program.html">Original draft program</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -187,7 +122,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./draft_program.html" class="sidebar-item-text sidebar-link">
+  <a href="./draft_program.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Original draft program</span></a>
   </div>
 </li>
@@ -205,7 +140,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link active">
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto reference guide</span></a>
   </div>
 </li>
@@ -225,19 +160,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quarto-reference-guide" id="toc-quarto-reference-guide" class="nav-link active" data-scroll-target="#quarto-reference-guide">Quarto reference guide</a>
+  <li><a href="#original-draft-program" id="toc-original-draft-program" class="nav-link active" data-scroll-target="#original-draft-program">Original draft program</a>
   <ul class="collapse">
-  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text formatting</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
-  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a></li>
-  <li><a href="#code-blocks-and-math" id="toc-code-blocks-and-math" class="nav-link" data-scroll-target="#code-blocks-and-math">Code blocks and math</a></li>
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
-  <li><a href="#callout-blocks" id="toc-callout-blocks" class="nav-link" data-scroll-target="#callout-blocks">Callout blocks</a></li>
+  <li><a href="#day-1-introduction-to-light-sheet-and-3d-visualization" id="toc-day-1-introduction-to-light-sheet-and-3d-visualization" class="nav-link" data-scroll-target="#day-1-introduction-to-light-sheet-and-3d-visualization">📅 Day 1 – Introduction to Light-Sheet and 3D Visualization</a></li>
+  <li><a href="#day-2-image-analysis-fundamentals" id="toc-day-2-image-analysis-fundamentals" class="nav-link" data-scroll-target="#day-2-image-analysis-fundamentals">📅 Day 2 – Image Analysis Fundamentals</a></li>
+  <li><a href="#day-3-machine-learning-and-ai-for-image-analysis" id="toc-day-3-machine-learning-and-ai-for-image-analysis" class="nav-link" data-scroll-target="#day-3-machine-learning-and-ai-for-image-analysis">📅 Day 3 – Machine Learning and AI for Image Analysis</a></li>
+  <li><a href="#day-4-applications-independent-project-work" id="toc-day-4-applications-independent-project-work" class="nav-link" data-scroll-target="#day-4-applications-independent-project-work">📅 Day 4 – Applications &amp; Independent Project Work</a></li>
+  <li><a href="#day-5-final-projects-presentations" id="toc-day-5-final-projects-presentations" class="nav-link" data-scroll-target="#day-5-final-projects-presentations">📅 Day 5 – Final Projects &amp; Presentations</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/quarto.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/draft_program.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -245,198 +177,83 @@ window.Quarto = {
 
 
 
-<section id="quarto-reference-guide" class="level1">
-<h1>Quarto reference guide</h1>
-<p>Here are some of the markdown basics we can use with <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a>.</p>
-<section id="text-formatting" class="level2">
-<h2 class="anchored" data-anchor-id="text-formatting">Text formatting</h2>
-<p><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong>, superscript<sup>2</sup> / subscript<sub>2</sub>, <del>strikethrough</del>, <code>verbatim code</code></p>
-<ul>
-<li>unordered list
-<ul>
-<li>sub-item 1</li>
-<li>sub-item 2
-<ul>
-<li>sub-sub-item 1</li>
-</ul></li>
-</ul></li>
-<li><label><input type="checkbox">Task 1</label></li>
-<li><label><input type="checkbox" checked="">Task 2</label></li>
-</ul>
-<dl>
-<dt>term</dt>
-<dd>
-definition
-</dd>
-</dl>
-<blockquote class="blockquote">
-<p>Blockquote</p>
-</blockquote>
+<section id="original-draft-program" class="level1">
+<h1>Original draft program</h1>
+<p>Initial draft of the program written by Marina. Keeping it here as a reference.</p>
+<p>See the current program <a href="./program.html">here</a>.</p>
+<section id="day-1-introduction-to-light-sheet-and-3d-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-introduction-to-light-sheet-and-3d-visualization">📅 Day 1 – Introduction to Light-Sheet and 3D Visualization</h2>
+<p><strong>🧠 Morning Session</strong><br>
+- Welcome &amp; Course Overview<br>
+- Principles of Light-Sheet Microscopy<br>
+- Optical setup &amp; acquisition strategies<br>
+- Experiment planning and sample mounting<br>
+- Common image artifacts and how to avoid/fix them<br>
+- Introduction to light-sheet datasets: file types, metadata, scale, volume/time complexity</p>
+<p><strong>🖥️ Afternoon Workshop</strong><br>
+- Multiview reconstruction in <strong>Fiji</strong><br>
+- Hands-on with 3D visualization in <strong>Fiji</strong> and <strong>Napari</strong></p>
 </section>
-<section id="figures" class="level2">
-<h2 class="anchored" data-anchor-id="figures">Figures</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://quarto.org/docs/authoring/elephant.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Elephant</figcaption>
-</figure>
-</div>
-<div id="fig-elephant" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://quarto.org/docs/authoring/elephant.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elephant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: An Elephant
-</figcaption>
-</figure>
-</div>
-<p>This is illustrated well by <a href="#fig-elephant" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<section id="day-2-image-analysis-fundamentals" class="level2">
+<h2 class="anchored" data-anchor-id="day-2-image-analysis-fundamentals">📅 Day 2 – Image Analysis Fundamentals</h2>
+<p><strong>🧠 Morning Session</strong><br>
+- Fundamentals of BioImage Analysis<br>
+- Image types and bit depth<br>
+- Noise, background correction, filters<br>
+- Thresholding, segmentation basics (pixel vs object)<br>
+- ROI handling and masks<br>
+- Overview of available open-source tools</p>
+<p><strong>🖥️ Afternoon Workshop</strong><br>
+- Segmentation workflows in Fiji and Napari (2D/3D)<br>
+- Intro to cell tracking methods</p>
 </section>
-<section id="tables" class="level2">
-<h2 class="anchored" data-anchor-id="tables">Tables</h2>
-<div id="tbl-letters" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-letters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: My Caption
-</figcaption>
-<div aria-describedby="tbl-letters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Right</th>
-<th style="text-align: left;">Left</th>
-<th>Default</th>
-<th style="text-align: center;">Center</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">12</td>
-<td>12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">123</td>
-<td style="text-align: left;">123</td>
-<td>123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">1</td>
-<td>1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p>See <a href="#tbl-letters" class="quarto-xref">Table&nbsp;1</a>.</p>
+<section id="day-3-machine-learning-and-ai-for-image-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="day-3-machine-learning-and-ai-for-image-analysis">📅 Day 3 – Machine Learning and AI for Image Analysis</h2>
+<p><strong>🧠 Morning Session</strong><br>
+- Introduction to AI and deep learning in microscopy<br>
+- When and why to use DL models<br>
+- Overview of StarDist, CellPose</p>
+<p><strong>🖥️ Afternoon Workshop</strong><br>
+- Using <strong>BioImage Model Zoo</strong> models with Napari<br>
+- Hands-on with <strong>Labkit</strong> and <strong>ilastik</strong> (interactive annotation &amp; classification)<br>
+- Deploying pre-trained models on user data<br>
+- Optional: Train your own simple model (time permitting)</p>
 </section>
-<section id="citations" class="level2">
-<h2 class="anchored" data-anchor-id="citations">Citations</h2>
-<p>Life is good <span class="citation" data-cites="Citation">(<a href="#ref-Citation" role="doc-biblioref"><strong>Citation?</strong></a>)</span>. (put bibref formatted in references.bib)</p>
+<section id="day-4-applications-independent-project-work" class="level2">
+<h2 class="anchored" data-anchor-id="day-4-applications-independent-project-work">📅 Day 4 – Applications &amp; Independent Project Work</h2>
+<p><strong>🧠 Morning Session</strong><br>
+- Research applications of BioImage Analysis<br>
+- Talks or case studies using light-sheet imaging<br>
+- Highlight multi-disciplinary projects (e.g.&nbsp;developmental biology, neuroscience, plant science)<br>
+- Tips for designing an effective analysis pipeline</p>
+<p><strong>🖥️ Afternoon Workshop</strong><br>
+- Begin working on personal projects or example datasets<br>
+- Q&amp;A with instructors (project clinic)<br>
+- Begin structuring project presentations (suggested format below)</p>
 </section>
-<section id="footnotes" class="level2">
-<h2 class="anchored" data-anchor-id="footnotes">Footnotes</h2>
-<p>Here is a footnote reference,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and another.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p>Here is an inline note.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</section>
-<section id="code-blocks-and-math" class="level2">
-<h2 class="anchored" data-anchor-id="code-blocks-and-math">Code blocks and math</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>inline math: <span class="math inline">\(E = mc^{2}\)</span></p>
-<p>display math:</p>
-<p><span class="math display">\[E = mc^{2}\]</span></p>
-</section>
-<section id="videos" class="level2">
-<h2 class="anchored" data-anchor-id="videos">Videos</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="callout-blocks" class="level2">
-<h2 class="anchored" data-anchor-id="callout-blocks">Callout blocks</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note callout block.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Tip callout block.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Warning callout block.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Warning callout block.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Warning callout block.</p>
-</div>
-</div>
+<section id="day-5-final-projects-presentations" class="level2">
+<h2 class="anchored" data-anchor-id="day-5-final-projects-presentations">📅 Day 5 – Final Projects &amp; Presentations</h2>
+<p><strong>🧠 Morning Session</strong><br>
+- Continue work on projects<br>
+- Finalize analysis and prepare presentations<br>
+- Instructor support for polishing visuals and conclusions</p>
+<p><strong>🖥️ Afternoon Session</strong><br>
+- Student Presentations (10 min each + 5 min Q&amp;A)<br>
+- Suggested format:<br>
+1. Dataset and biological question<br>
+2. Analysis goal<br>
+3. Method and tools used<br>
+4. Results<br>
+5. Challenges &amp; next steps<br>
+- Group Discussion and Feedback<br>
+- Closing Remarks &amp; Certificate Distribution<br>
+- Group Dinner 🎉</p>
 
 
 </section>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Here is the footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Here’s one with multiple blocks.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Inlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -839,13 +656,10 @@ Important
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./program.html" class="pagination-link" aria-label="Program">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Program</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./resources.html" class="pagination-link" aria-label="Resources">
-        <span class="nav-page-text">Resources</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./presentation.html" class="pagination-link" aria-label="Example presentation">
+        <span class="nav-page-text">Example presentation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -863,7 +677,7 @@ Important
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/quarto.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/draft_program.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
