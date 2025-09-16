@@ -78,8 +78,4 @@ Friday, 9 Jan 2026
 
 ### 🧠 Theory afternoon session (14:00–17:00)
 - Lecture (1.5h)
-- Lecture (1.5h)
-
-- Closing Remarks & Certificate Distribution  
-- Group Dinner 🎉  
-
+- Lecture (1.5h) 
