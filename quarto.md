@@ -21,9 +21,7 @@ term
 
 ## Figures
 
-![Elephant](https://quarto.org/docs/authoring/elephant.png){width=80%}
-
-![An Elephant](https://quarto.org/docs/authoring/elephant.png){#fig-elephant}
+![An Elephant](https://quarto.org/docs/authoring/elephant.png){#fig-elephant width=80%}
 
 This is illustrated well by @fig-elephant.
 
