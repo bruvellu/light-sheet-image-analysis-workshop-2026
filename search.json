@@ -202,7 +202,7 @@
     "href": "quarto.html",
     "title": "Quarto reference guide",
     "section": "",
-    "text": "Here are some of the markdown basics we can use with Quarto.\n\n\nitalics, bold, bold italics, superscript2 / subscript2, strikethrough, verbatim code\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\nTask 1\nTask 2\n\n\nterm\n\ndefinition\n\n\n\nBlockquote\n\n\n\n\n\n\n\nElephant\n\n\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.\n\n\n\n\n\n\nTable 1: My Caption\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\nSee Table 1.\n\n\n\nLife is good (Citation?). (put bibref formatted in references.bib)\n\n\n\nHere is a footnote reference,1 and another.2.\nHere is an inline note.3\n\n\n\n1 + 1\ninline math: \\(E = mc^{2}\\)\ndisplay math:\n\\[E = mc^{2}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote callout block.\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip callout block.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWarning callout block.",
+    "text": "Here are some of the markdown basics we can use with Quarto.\n\n\nitalics, bold, bold italics, superscript2 / subscript2, strikethrough, verbatim code\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\nTask 1\nTask 2\n\n\nterm\n\ndefinition\n\n\n\nBlockquote\n\n\n\n\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.\n\n\n\n\n\n\nTable 1: My Caption\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\nSee Table 1.\n\n\n\nLife is good (Citation?). (put bibref formatted in references.bib)\n\n\n\nHere is a footnote reference,1 and another.2.\nHere is an inline note.3\n\n\n\n1 + 1\ninline math: \\(E = mc^{2}\\)\ndisplay math:\n\\[E = mc^{2}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote callout block.\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip callout block.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWarning callout block.",
     "crumbs": [
       "Quarto reference guide"
     ]
@@ -222,7 +222,7 @@
     "href": "quarto.html#figures",
     "title": "Quarto reference guide",
     "section": "",
-    "text": "Elephant\n\n\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.",
+    "text": "Figure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.",
     "crumbs": [
       "Quarto reference guide"
     ]
