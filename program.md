@@ -1,6 +1,8 @@
 # Program
 
-Latest version of the workshop program. Add and edit contents here. For the original draft program, check [here](draft_program.md).
+This is the latest version of the program. Edit this page!
+
+The original draft program is [here](draft_program.md) for our reference.
 
 ## 📅 Day 1 – Introduction to Light-Sheet and 3D Visualization
 
