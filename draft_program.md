@@ -1,8 +1,10 @@
 # Original draft program
 
-Initial draft of the program written by Marina. Keeping it here as a reference.
+Initial draft written by Marina. Please don't edit this page (for now). Keeping it here as a reference.
 
-See the current program [here](program.md).
+The current program is [here](program.md).
+
+---
 
 ## 📅 Day 1 – Introduction to Light-Sheet and 3D Visualization
 
