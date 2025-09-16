@@ -1,6 +1,6 @@
 # Program
 
-TODO: Update with draft schedule.
+Latest version of the workshop program. Add and edit contents here. For the original draft program, check [here](draft_program.md).
 
 ## 📅 Day 1 – Introduction to Light-Sheet and 3D Visualization
 
