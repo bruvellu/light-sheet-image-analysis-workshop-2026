@@ -19,7 +19,7 @@ Please see the [program](program.md).
 ## Organizers
 
 - Aníbal Vargas Ríos
-- Luz Fuentealba
+- Luz María Fuentealba
 - Charlotte Buckley
 
 ### Co-organizers and instructors
