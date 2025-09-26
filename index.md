@@ -1,29 +1,44 @@
-# Welcome
+# Home
 
 ::: {.callout-warning}
-The contents of this page are under construction!
+This website is under construction!
 :::
 
-Light-Sheet Image Analysis Workshop 2026 organized by LiSIUM from 5–9 January 2026 at the Center for Integrative Biology, Universidad Mayor, Huechuraba Campus, in Santiago, Chile.
+Welcome! This website contains the materials for the [Light-Sheet Image Analysis Workshop](https://lightsheetchile.cl/light-sheet-image-analysis-workshop-2026-2/) organized by the [Light-Sheet Imaging at Universidad Mayor](https://lightsheetchile.cl/) (LiSIUM). The course will be held at the [Center for Integrative Biology](https://cib.umayor.cl/en/) of [Universidad Mayor](https://www.umayor.cl/santiago) between 5–9 January 2026 in Santiago, Chile.
+
+## Shortcuts
+
+[Program](program.md){.btn .btn-primary .rounded}
+[Resources](resources.md){.btn .btn-primary .rounded}
 
 ## About
 
-- **Target Audience:** Scientists with access to light-sheet microscopy data who want to learn how to perform quantitative analysis in volumetric data. Knowing basic concepts of fluorescent microscopy and image analysis is ideal.
-- **Format:** Mornings – Theory | Afternoons – Practical Workshops | Clinic with own or example data.
-- **Goal:** Equip participants with fundamental and advanced tools for analyzing volumetric microscopy datasets. Students will work with their own data or provided datasets, culminating in short presentations.
+The *Light-Sheet Image Analysis Workshop* is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.
 
-## Program
 
-Please see the [program](program.md).
 
-## Organizers
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Organizers
 
 - Aníbal Vargas Ríos
 - Luz María Fuentealba
 - Charlotte Buckley
+
+:::
+
+::: {.column width="50%"}
 
 ### Co-organizers and instructors
 
 - Marina Cuenca
 - Agustín Corbat
 - Bruno Vellutini
+
+:::
+
+:::
+
+
