@@ -85,4 +85,5 @@ format:
     toc: true
     code-copy: true
     code-overflow: wrap
+    #from: markdown+emoji
     #respect-user-color-scheme: true
