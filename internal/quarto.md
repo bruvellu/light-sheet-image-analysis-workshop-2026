@@ -41,6 +41,11 @@ See @tbl-letters.
 
 Life is good [@Weigert2018-ti]. (bibkey should be in [references.bib](references.bib))
 
+## Buttons
+
+[Program](../program.md){.btn .btn-primary .rounded}
+[Resources](../resources.md){.btn .btn-primary .rounded}
+
 ## Footnotes
 
 Here is a footnote reference,[^1] and another.[^longnote].

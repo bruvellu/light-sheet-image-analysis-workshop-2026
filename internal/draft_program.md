@@ -1,8 +1,8 @@
 # Original draft program
 
-Initial draft written by Marina. Please don't edit this page (for now). Keeping it here as a reference.
+Initial draft of the program written by Marina. Keeping it here as a reference.
 
-The current program is [here](program.md).
+Please don't edit this page. The current program is [here](../program.md).
 
 ---
 
