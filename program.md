@@ -41,27 +41,44 @@ Tuesday, 6 Jan 2026
 
 ### 🖥️ Practical morning session (11:00–13:00)
 
+<!--TODO: Proposal to have only multiview before lunch-->
+
 - 11:00--13:00 - [Multiview reconstruction](practicals/practical_multiview_reconstruction.md) (Bruno)
 
+### 🥗 Lunch break (13:00--14:00)
+
 ### 🖥️ Practical afternoon session (14:00–17:00)
+
+<!--TODO: Proposal of image analysis the entire afternoon-->
 
 - 14:00--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_image_processing.md) (Agustín/Marina)
 - 16:00--17:00 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Bruno/Marina)
 
 ## 🗓️ Day 3: Machine learning and advanced workflows
+
 Wednesday, 7 Jan 2026
 
 ### 🧠 Theory morning session (09:00–11:00)
-- Lecture (1h)
-- Lecture (1h)
+
+<!--TODO: Subdivide these talks into tools?-->
+
+- 09:00--09:30 - [Machine learning](talks/talk_machine_learning.md) (Agustín)
+- 09:30--11:00 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Marina/Bruno)
+
+### 🫖 Coffee break (11:00--11:30)
 
 ### 🖥️ Practical morning session (11:00–13:00)
-- Activity (1h)
-- Activity (1h)
+
+- 11:00--13:00 - [3D segmentation using machine/deep learning](practicals/practical_3d_segmentation.md) (Marina/Agustín)
+
+### 🥗 Lunch break (13:00--14:00)
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
-- Activity (1.5h)
-- Activity (1.5h)
+
+<!--TODO: Revise the slots-->
+
+- 14:00--16:00 - [Tissue cartography](practicals/practical_tissue_cartography.md) (Bruno)
+- 16:00--17:00 - [Cell tracking](practicals/practical_cell_tracking.md) (Marina/Bruno)
 
 ## 🗓️ Day 4: Scientific applications and project work
 Thursday, 8 Jan 2026
@@ -94,3 +111,25 @@ Friday, 9 Jan 2026
 - Lecture (1.5h) 
 
 
+---
+
+
+### Day 4 (applications and independent project work)
+
+* Talks or case studies using light-sheet imaging (2 hs)  
+  * 30 min talks \+ 15 min discussion  
+  * Bruno  
+  * Marina  
+  * Break  
+  * Charlotte  
+  * Leo (invite)?  
+* Lunch  
+* Practical sessions \- Work on own data/project/sample data
+
+### Day 5 (independent project work and presentations)
+
+* Work on own projects  
+* Lunch  
+* Group presentations (8+2 minutes)  
+* Closing remarks  
+* Group dinner
