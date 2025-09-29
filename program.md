@@ -33,16 +33,20 @@ Monday, 5 Jan 2026
 Tuesday, 6 Jan 2026
 
 ### 🧠 Theory morning session (09:00–11:00)
-- Lecture (1h)
-- Lecture (1h)
+
+- 09:00--10:00 - [Image processing and analysis](talks/talk_image_processing.md) (Agustín)
+- 10:00--11:00 - [Multiview reconstruction and tissue cartography](talks/talk_multiview_cartography.md) (Bruno)
+
+### 🪧 Poster session and coffee break (11:00--11:45)
 
 ### 🖥️ Practical morning session (11:00–13:00)
-- Activity (1h)
-- Activity (1h)
+
+- 11:00--13:00 - [Multiview reconstruction](practicals/practical_multiview_reconstruction.md) (Bruno)
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
-- Activity (1.5h)
-- Activity (1.5h)
+
+- 14:00--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_image_processing.md) (Agustín/Marina)
+- 16:00--17:00 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Bruno/Marina)
 
 ## 🗓️ Day 3: Machine learning and advanced workflows
 Wednesday, 7 Jan 2026
@@ -88,4 +92,5 @@ Friday, 9 Jan 2026
 ### 🧠 Theory afternoon session (14:00–17:00)
 - Lecture (1.5h)
 - Lecture (1.5h) 
+
 
