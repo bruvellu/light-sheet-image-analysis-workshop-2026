@@ -58,7 +58,7 @@ Here is an inline note.^[Inlines notes are easier to write, since you don't have
 
 ## Code blocks and math
 
-```python
+```{python}
 1 + 1
 ```
 

@@ -1,8 +1,12 @@
 # Program
 
-This is the current program. Edit this page!
 
-For our own reference, the original draft program is [here](internal/draft_program.md).
+:::{.callout-note}
+
+This is the current program. Edit this page! The original draft program is [here](internal/draft_program.md).
+
+:::
+
 
 ## 🗓️ Day 1: Light-Sheet principles and digital images
 

@@ -1,8 +1,12 @@
 # Original draft program
 
-Initial draft of the program written by Marina. Keeping it here as a reference.
+:::{.callout-caution}
 
 Please don't edit this page. The current program is [here](../program.md).
+
+:::
+
+Initial draft of the program written by Marina. Keeping it here as a reference.
 
 ---
 
