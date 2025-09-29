@@ -39,11 +39,11 @@ Tuesday, 6 Jan 2026
 
 ### 🪧 Poster session and coffee break (11:00--11:45)
 
-### 🖥️ Practical morning session (11:00–13:00)
+### 🖥️ Practical morning session (11:45–13:00)
 
 <!--TODO: Proposal to have only multiview before lunch-->
 
-- 11:00--13:00 - [Multiview reconstruction](practicals/practical_multiview_reconstruction.md) (Bruno)
+- 11:45--13:00 - [Multiview reconstruction](practicals/practical_multiview_reconstruction.md) (Bruno)
 
 ### 🥗 Lunch break (13:00--14:00)
 
@@ -67,9 +67,9 @@ Wednesday, 7 Jan 2026
 
 ### 🫖 Coffee break (11:00--11:30)
 
-### 🖥️ Practical morning session (11:00–13:00)
+### 🖥️ Practical morning session (11:30–13:00)
 
-- 11:00--13:00 - [3D segmentation using machine/deep learning](practicals/practical_3d_segmentation.md) (Marina/Agustín)
+- 11:30--13:00 - [3D segmentation using machine/deep learning](practicals/practical_3d_segmentation.md) (Marina/Agustín)
 
 ### 🥗 Lunch break (13:00--14:00)
 
@@ -81,55 +81,43 @@ Wednesday, 7 Jan 2026
 - 16:00--17:00 - [Cell tracking](practicals/practical_cell_tracking.md) (Marina/Bruno)
 
 ## 🗓️ Day 4: Scientific applications and project work
+
 Thursday, 8 Jan 2026
 
 ### 🧠 Theory morning session (09:00–11:00)
-- Lecture (1h)
-- Lecture (1h)
 
-### 🖥️ Practical morning session (11:00–13:00)
-- Activity (1h)
-- Activity (1h)
+- 09:00--09:30 - [Talk Bruno](talks/talk_bruno.md) (Bruno)
+- 09:30--10:00 - [Talk Marina](talks/talk_marina.md) (Marina)
+- 10:00--10:30 - [Talk Charlotte](talks/talk_charlotte.md) (Charlotte)
+- 10:30--11:00 - [Talk Leo](talks/talk_leo.md) (Leo)
+
+### 🫖 Coffee break (11:00--11:30)
+
+### 🖥️ Practical morning session (11:30–13:00)
+
+- 11:30--13:00 - **Project work** (Groups)
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
-Activity (1.5h)
-Activity (1.5h)
+
+- 14:00--17:00 - **Project work** (Groups)
 
 ## 🗓️ Day 5: Project work and presentations
+
 Friday, 9 Jan 2026
 
 ### 🖥️ Practical morning session (09:00–11:00)
-- Activity (1h)
-- Activity (1h)
 
-### 🖥️ Practical morning session (11:00–13:00)
-- Activity (1h)
-- Activity (1h)
+- 09:00--11:00 - **Project work** (Groups)
+
+### 🫖 Coffee break (11:30--11:30)
+
+### 🖥️ Practical morning session (11:30–13:00)
+
+- 11:30--13:00 - **Project work** (Groups)
 
 ### 🧠 Theory afternoon session (14:00–17:00)
-- Lecture (1.5h)
-- Lecture (1.5h) 
 
+- 14:00--16:30 - [Group presentations](help.md#group-presentations) (Groups)
+- 16:30--17:00 - **Closing remarks** (Organizers)
+- 17:00--onwards - **Group dinner** (Everyone)
 
----
-
-
-### Day 4 (applications and independent project work)
-
-* Talks or case studies using light-sheet imaging (2 hs)  
-  * 30 min talks \+ 15 min discussion  
-  * Bruno  
-  * Marina  
-  * Break  
-  * Charlotte  
-  * Leo (invite)?  
-* Lunch  
-* Practical sessions \- Work on own data/project/sample data
-
-### Day 5 (independent project work and presentations)
-
-* Work on own projects  
-* Lunch  
-* Group presentations (8+2 minutes)  
-* Closing remarks  
-* Group dinner
