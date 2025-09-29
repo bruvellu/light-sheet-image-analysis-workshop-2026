@@ -58,12 +58,6 @@ Here is an inline note.^[Inlines notes are easier to write, since you don't have
 
 ## Code blocks and math
 
-````
-```{python}
-1 + 1
-```
-````
-
 inline math: $E = mc^{2}$
 
 display math:
