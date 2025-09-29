@@ -1,111 +1,140 @@
 [
   {
-    "objectID": "talks/talk_deep_learning.html",
-    "href": "talks/talk_deep_learning.html",
-    "title": "Deep learning",
+    "objectID": "datasets.html",
+    "href": "datasets.html",
+    "title": "Datasets",
     "section": "",
-    "text": "Deep learning\n\nDeep Learning Theory\n\nCellpose (? Maybe AC) (Check trackmate for 3D CellPose)\n\nStardist\n\nPlantSeg (MC)\n\nBioImage Zoo (AC)\n\nCARE - noise2void (BV)",
+    "text": "Datasets\nFind here the example datasets available for the course.",
+    "crumbs": [
+      "Datasets"
+    ]
+  },
+  {
+    "objectID": "talks/talk_machine_learning.html",
+    "href": "talks/talk_machine_learning.html",
+    "title": "Machine learning",
+    "section": "",
+    "text": "Machine learning\n\nPixel Classification Theory\n\nExamples: ilastik, weka, APOC, labkit",
     "crumbs": [
       "Talks",
-      "Deep learning"
+      "Machine learning"
     ]
   },
   {
-    "objectID": "talks/talk_lightsheet_concepts.html",
-    "href": "talks/talk_lightsheet_concepts.html",
-    "title": "Concepts in light-sheet microscopy",
+    "objectID": "talks/talk_experimental_design.html",
+    "href": "talks/talk_experimental_design.html",
+    "title": "Experimental design and sample mounting",
     "section": "",
-    "text": "Concepts in light-sheet microscopy\n\nConcept behind LSM in contrast with other imaging methods",
+    "text": "Experimental design and sample mounting\n\nExperimental setup\n\nRecognizing image artifacts\nTouch upon clearing, but focus on showing who (or which review article) to refer to.",
     "crumbs": [
       "Talks",
-      "Concepts in light-sheet microscopy"
+      "Experimental design and sample mounting"
     ]
   },
   {
-    "objectID": "talks/talk_image_processing.html",
-    "href": "talks/talk_image_processing.html",
-    "title": "Image processing and analysis",
+    "objectID": "talks/talk_digital_images.html",
+    "href": "talks/talk_digital_images.html",
+    "title": "Visualization and processing of digital images",
     "section": "",
-    "text": "Image processing and analysis\n\nWhat is Bioimage Analysis?\nWhat is a workflow or a pipeline?\nDenoising\nBackground subtraction\nTheory of Macro programming and Napari assistant (mention checklist)\nSegmentation (only classical algorithms) and labeling\nMorphological operations?\nBIA ecosystem: open source tools, licensed tools, image.sc\nhttps://zenodo.org/records/16920518",
+    "text": "Visualization and processing of digital images\n\nWhat is an image? (bit depth, voxel size)\n\nCameras?\n\nHistograms\n\nLUT\n\nDimensions\n\nB+C\n\nFormats (focus on HDF5)\n\nBased on this lecture",
     "crumbs": [
       "Talks",
-      "Image processing and analysis"
+      "Visualization and processing of digital images"
     ]
   },
   {
-    "objectID": "talks/talk_data_management.html",
-    "href": "talks/talk_data_management.html",
-    "title": "Best practices in microscopy data management",
+    "objectID": "talks/talk_multiview_cartography.html",
+    "href": "talks/talk_multiview_cartography.html",
+    "title": "Multiview reconstruction and tissue cartography",
     "section": "",
-    "text": "Best practices in microscopy data management\n\nNumbered directories\nFile names\nREADMEs",
+    "text": "Multiview reconstruction and tissue cartography\n\nPrinciples of multiview acquisition\nOptimal settings\nExperimental optimization\nBigStitcher\nRegistration\nFusion/Deconvolution\nTissue cartography\nMaps\nSoftware tools",
     "crumbs": [
       "Talks",
-      "Best practices in microscopy data management"
+      "Multiview reconstruction and tissue cartography"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "practicals/practical_image_processing.html",
+    "href": "practicals/practical_image_processing.html",
+    "title": "Image processing, denoising, segmentation",
     "section": "",
-    "text": "Warning\n\n\n\nThis website is under construction!\n\n\nWelcome! This website contains the materials for the Light-Sheet Image Analysis Workshop organized by the Light-Sheet Imaging at Universidad Mayor (LiSIUM). The course will be held at the Center for Integrative Biology of Universidad Mayor between 5–9 January 2026 in Santiago, Chile.\n\n\nProgram Resources\n\n\n\nThe Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
-  },
-  {
-    "objectID": "index.html#shortcuts",
-    "href": "index.html#shortcuts",
-    "title": "Home",
-    "section": "",
-    "text": "Program Resources"
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Home",
-    "section": "",
-    "text": "The Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
-  },
-  {
-    "objectID": "practicals/practical_tissue_cartography.html",
-    "href": "practicals/practical_tissue_cartography.html",
-    "title": "Tissue cartography",
-    "section": "",
-    "text": "Tissue cartography\n\nPipelines\nSetup\nSegmentation\nSurface detection\nMesh editing\nMesh painting\nMap projection\nExport\nMeasurements",
+    "text": "Image processing, denoising, segmentation\n\nNoise2Void in local if GPU and small model, otherwise we can show it on catalyst\nSpatial Filtering for noise reduction (MorphoLibJ in Fiji, napari-assistant)\nBackground subtraction\nSegmentation\nMorphological operations?\nLabeling\nNapari assistant (MC I could do it based on RH talk - 30 min)",
     "crumbs": [
       "Practicals",
-      "Tissue cartography"
+      "Image processing, denoising, segmentation"
     ]
   },
   {
-    "objectID": "practicals/practical_3d_segmentation.html",
-    "href": "practicals/practical_3d_segmentation.html",
-    "title": "3D segmentation using machine/deep learning",
+    "objectID": "practicals/practical_3d_visualization.html",
+    "href": "practicals/practical_3d_visualization.html",
+    "title": "Visualization of 3D images",
     "section": "",
-    "text": "3D segmentation using machine/deep learning\nPractical - Machine and Deep learning - Segmentation of 3D structures (2h)\n\nPixel classification in labkit and napari (MC) (30 min)\n\nCellpose - BioImage Zoo (pre-trained models, fine tunning) (1 hr)",
+    "text": "Visualization of 3D images\n\nMax projections\n\nOrthogonal views\n\nReslicing\n\nBigData viewer\n\n3D script",
     "crumbs": [
       "Practicals",
-      "3D segmentation using machine/deep learning"
+      "Visualization of 3D images"
     ]
   },
   {
-    "objectID": "practicals/practical_2d_visualization.html",
-    "href": "practicals/practical_2d_visualization.html",
-    "title": "Visualization of 2D images",
+    "objectID": "practicals/practical_cell_tracking.html",
+    "href": "practicals/practical_cell_tracking.html",
+    "title": "Cell tracking",
     "section": "",
-    "text": "Visualization of 2D images\n\nOpening an image\n\nExploring dimensions, scale, formats, bits, metadata\n\nB+C\n\nLUTs\n\nScalebar",
+    "text": "Cell tracking\n\nCreate a TrackMate project\nCreate a Mastodon project\nManual tracking\nSemi-automated tracking\nAutomated tracking\nVisualization\nBlender",
     "crumbs": [
       "Practicals",
-      "Visualization of 2D images"
+      "Cell tracking"
     ]
   },
   {
-    "objectID": "practicals/practical_imagej_macros.html",
-    "href": "practicals/practical_imagej_macros.html",
-    "title": "ImageJ macros",
+    "objectID": "practicals/practical_multiview_reconstruction.html",
+    "href": "practicals/practical_multiview_reconstruction.html",
+    "title": "Multiview reconstruction",
     "section": "",
-    "text": "ImageJ macros\n\nWhy?\nTypes of macros\nHow to record",
+    "text": "Multiview reconstruction\n\nDefining dataset\nresaving h5\nvisualizing\nregistering\nfusing.",
     "crumbs": [
       "Practicals",
-      "ImageJ macros"
+      "Multiview reconstruction"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Compilation of tools and resources for image analysis focused on what we will use.\nTODO: Add more links for tools and resources here.\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#general",
+    "href": "resources.html#general",
+    "title": "Resources",
+    "section": "",
+    "text": "Desktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#community",
+    "href": "resources.html#community",
+    "title": "Resources",
+    "section": "",
+    "text": "Spaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#compilations",
+    "href": "resources.html#compilations",
+    "title": "Resources",
+    "section": "",
+    "text": "Other curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "crumbs": [
+      "Resources"
     ]
   },
   {
@@ -223,7 +252,7 @@
     "href": "program.html",
     "title": "Program",
     "section": "",
-    "text": "This is the current program. Edit this page!\nFor our own reference, the original draft program is here.\n\n\nMonday, 5 Jan 2026\n\n\n\n09:00–09:15 - Welcome session and course overview\n09:15–10:00 - Concepts in light-sheet microscopy (Marina)\n10:00–11:00 - Experimental design and sample mounting (Marina)\n\n\n\n\n\n\n\n\n11:45–12:30 - Visualization and processing of digital images (Agustín)\n12:30–13:00 - Best practices in microscopy data management (Bruno)\n\n\n\n\n\n\n\n\n14:00–15:30 - Visualization of 2D images (Agustín)\n15:30–17:00 - Visualization of 3D images (Bruno)\n\n\n\n\n\nTuesday, 6 Jan 2026\n\n\n\n09:00–10:00 - Image processing and analysis (Agustín)\n10:00–11:00 - Multiview reconstruction and tissue cartography (Bruno)\n\n\n\n\n\n\n\n\n\n11:00–13:00 - Multiview reconstruction (Bruno)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Pre-processing, denoising, segmentation (Agustín/Marina)\n16:00–17:00 - ImageJ macro programming (Bruno/Marina)\n\n\n\n\n\nWednesday, 7 Jan 2026\n\n\n\n\n09:00–09:30 - Machine learning (Agustín)\n09:30–11:00 - Deep learning (Agustín/Marina/Bruno)\n\n\n\n\n\n\n\n\n11:00–13:00 - 3D segmentation using machine/deep learning (Marina/Agustín)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Tissue cartography (Bruno)\n16:00–17:00 - Cell tracking (Marina/Bruno)\n\n\n\n\n\nThursday, 8 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\nActivity (1.5h) Activity (1.5h)\n\n\n\n\nFriday, 9 Jan 2026\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nLecture (1.5h)\nLecture (1.5h)\n\n\n\n\n\n\nTalks or case studies using light-sheet imaging (2 hs)\n\n30 min talks + 15 min discussion\n\nBruno\n\nMarina\n\nBreak\n\nCharlotte\n\nLeo (invite)?\n\n\nLunch\n\nPractical sessions - Work on own data/project/sample data\n\n\n\n\n\nWork on own projects\n\nLunch\n\nGroup presentations (8+2 minutes)\n\nClosing remarks\n\nGroup dinner",
+    "text": "This is the current program. Edit this page!\nFor our own reference, the original draft program is here.\n\n\nMonday, 5 Jan 2026\n\n\n\n09:00–09:15 - Welcome session and course overview\n09:15–10:00 - Concepts in light-sheet microscopy (Marina)\n10:00–11:00 - Experimental design and sample mounting (Marina)\n\n\n\n\n\n\n\n\n11:45–12:30 - Visualization and processing of digital images (Agustín)\n12:30–13:00 - Best practices in microscopy data management (Bruno)\n\n\n\n\n\n\n\n\n14:00–15:30 - Visualization of 2D images (Agustín)\n15:30–17:00 - Visualization of 3D images (Bruno)\n\n\n\n\n\nTuesday, 6 Jan 2026\n\n\n\n09:00–10:00 - Image processing and analysis (Agustín)\n10:00–11:00 - Multiview reconstruction and tissue cartography (Bruno)\n\n\n\n\n\n\n\n\n\n11:45–13:00 - Multiview reconstruction (Bruno)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Pre-processing, denoising, segmentation (Agustín/Marina)\n16:00–17:00 - ImageJ macro programming (Bruno/Marina)\n\n\n\n\n\nWednesday, 7 Jan 2026\n\n\n\n\n09:00–09:30 - Machine learning (Agustín)\n09:30–11:00 - Deep learning (Agustín/Marina/Bruno)\n\n\n\n\n\n\n\n\n11:30–13:00 - 3D segmentation using machine/deep learning (Marina/Agustín)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Tissue cartography (Bruno)\n16:00–17:00 - Cell tracking (Marina/Bruno)\n\n\n\n\n\nThursday, 8 Jan 2026\n\n\n\n09:00–09:30 - Talk Bruno (Bruno)\n09:30–10:00 - Talk Marina (Marina)\n10:00–10:30 - Talk Charlotte (Charlotte)\n10:30–11:00 - Talk Leo (Leo)\n\n\n\n\n\n\n\n\n11:30–13:00 - Project work (Groups)\n\n\n\n\n\n14:00–17:00 - Project work (Groups)\n\n\n\n\n\nFriday, 9 Jan 2026\n\n\n\n09:00–11:00 - Project work (Groups)\n\n\n\n\n\n\n\n\n11:30–13:00 - Project work (Groups)\n\n\n\n\n\n14:00–16:30 - Group presentations (Groups)\n16:30–17:00 - Closing remarks (Organizers)\n17:00–onwards - Group dinner (Everyone)",
     "crumbs": [
       "Program"
     ]
@@ -243,7 +272,7 @@
     "href": "program.html#day-2-image-processing-and-multiview-reconstruction",
     "title": "Program",
     "section": "",
-    "text": "Tuesday, 6 Jan 2026\n\n\n\n09:00–10:00 - Image processing and analysis (Agustín)\n10:00–11:00 - Multiview reconstruction and tissue cartography (Bruno)\n\n\n\n\n\n\n\n\n\n11:00–13:00 - Multiview reconstruction (Bruno)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Pre-processing, denoising, segmentation (Agustín/Marina)\n16:00–17:00 - ImageJ macro programming (Bruno/Marina)",
+    "text": "Tuesday, 6 Jan 2026\n\n\n\n09:00–10:00 - Image processing and analysis (Agustín)\n10:00–11:00 - Multiview reconstruction and tissue cartography (Bruno)\n\n\n\n\n\n\n\n\n\n11:45–13:00 - Multiview reconstruction (Bruno)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Pre-processing, denoising, segmentation (Agustín/Marina)\n16:00–17:00 - ImageJ macro programming (Bruno/Marina)",
     "crumbs": [
       "Program"
     ]
@@ -253,7 +282,7 @@
     "href": "program.html#day-3-machine-learning-and-advanced-workflows",
     "title": "Program",
     "section": "",
-    "text": "Wednesday, 7 Jan 2026\n\n\n\n\n09:00–09:30 - Machine learning (Agustín)\n09:30–11:00 - Deep learning (Agustín/Marina/Bruno)\n\n\n\n\n\n\n\n\n11:00–13:00 - 3D segmentation using machine/deep learning (Marina/Agustín)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Tissue cartography (Bruno)\n16:00–17:00 - Cell tracking (Marina/Bruno)",
+    "text": "Wednesday, 7 Jan 2026\n\n\n\n\n09:00–09:30 - Machine learning (Agustín)\n09:30–11:00 - Deep learning (Agustín/Marina/Bruno)\n\n\n\n\n\n\n\n\n11:30–13:00 - 3D segmentation using machine/deep learning (Marina/Agustín)\n\n\n\n\n\n\n\n\n\n14:00–16:00 - Tissue cartography (Bruno)\n16:00–17:00 - Cell tracking (Marina/Bruno)",
     "crumbs": [
       "Program"
     ]
@@ -263,7 +292,7 @@
     "href": "program.html#day-4-scientific-applications-and-project-work",
     "title": "Program",
     "section": "",
-    "text": "Thursday, 8 Jan 2026\n\n\n\nLecture (1h)\nLecture (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\nActivity (1.5h) Activity (1.5h)",
+    "text": "Thursday, 8 Jan 2026\n\n\n\n09:00–09:30 - Talk Bruno (Bruno)\n09:30–10:00 - Talk Marina (Marina)\n10:00–10:30 - Talk Charlotte (Charlotte)\n10:30–11:00 - Talk Leo (Leo)\n\n\n\n\n\n\n\n\n11:30–13:00 - Project work (Groups)\n\n\n\n\n\n14:00–17:00 - Project work (Groups)",
     "crumbs": [
       "Program"
     ]
@@ -273,7 +302,7 @@
     "href": "program.html#day-5-project-work-and-presentations",
     "title": "Program",
     "section": "",
-    "text": "Friday, 9 Jan 2026\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nActivity (1h)\nActivity (1h)\n\n\n\n\n\nLecture (1.5h)\nLecture (1.5h)\n\n\n\n\n\n\nTalks or case studies using light-sheet imaging (2 hs)\n\n30 min talks + 15 min discussion\n\nBruno\n\nMarina\n\nBreak\n\nCharlotte\n\nLeo (invite)?\n\n\nLunch\n\nPractical sessions - Work on own data/project/sample data\n\n\n\n\n\nWork on own projects\n\nLunch\n\nGroup presentations (8+2 minutes)\n\nClosing remarks\n\nGroup dinner",
+    "text": "Friday, 9 Jan 2026\n\n\n\n09:00–11:00 - Project work (Groups)\n\n\n\n\n\n\n\n\n11:30–13:00 - Project work (Groups)\n\n\n\n\n\n14:00–16:30 - Group presentations (Groups)\n16:30–17:00 - Closing remarks (Organizers)\n17:00–onwards - Group dinner (Everyone)",
     "crumbs": [
       "Program"
     ]
@@ -378,131 +407,182 @@
     ]
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Resources",
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Help",
     "section": "",
-    "text": "Compilation of tools and resources for image analysis focused on what we will use.\nTODO: Add more links for tools and resources here.\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "text": "Find answers to your questions about the course.\n\n\n\nInstitute\nTransportation stop\nTheory sessions: …\nCoffee breaks: …\nPoster sessions: …\nPractical sessions: …\nLunch breaks: …\nDinner?\n\n\n\n\n\nBackground and base for practicals\n\n\n\n\n\nTwo per computer\nDetails of systems\n\n\n\n\n\nDefine achievable goal based on your needs and on what you want to learn.\nUse your own data or example data provided by organizers\n\n\n\n\n\n8 min + 2 min questions\n\n\n\n\n\nTime, location, etc",
     "crumbs": [
-      "Resources"
+      "Help"
     ]
   },
   {
-    "objectID": "resources.html#general",
-    "href": "resources.html#general",
-    "title": "Resources",
+    "objectID": "help.html#locations",
+    "href": "help.html#locations",
+    "title": "Help",
     "section": "",
-    "text": "Desktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/",
+    "text": "Institute\nTransportation stop\nTheory sessions: …\nCoffee breaks: …\nPoster sessions: …\nPractical sessions: …\nLunch breaks: …\nDinner?",
     "crumbs": [
-      "Resources"
+      "Help"
     ]
   },
   {
-    "objectID": "resources.html#community",
-    "href": "resources.html#community",
-    "title": "Resources",
+    "objectID": "help.html#theory-sessions",
+    "href": "help.html#theory-sessions",
+    "title": "Help",
     "section": "",
-    "text": "Spaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/",
+    "text": "Background and base for practicals",
     "crumbs": [
-      "Resources"
+      "Help"
     ]
   },
   {
-    "objectID": "resources.html#compilations",
-    "href": "resources.html#compilations",
-    "title": "Resources",
+    "objectID": "help.html#practical-sessions",
+    "href": "help.html#practical-sessions",
+    "title": "Help",
     "section": "",
-    "text": "Other curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "text": "Two per computer\nDetails of systems",
     "crumbs": [
-      "Resources"
+      "Help"
     ]
   },
   {
-    "objectID": "practicals/practical_multiview_reconstruction.html",
-    "href": "practicals/practical_multiview_reconstruction.html",
-    "title": "Multiview reconstruction",
+    "objectID": "help.html#project-work",
+    "href": "help.html#project-work",
+    "title": "Help",
     "section": "",
-    "text": "Multiview reconstruction\n\nDefining dataset\nresaving h5\nvisualizing\nregistering\nfusing.",
+    "text": "Define achievable goal based on your needs and on what you want to learn.\nUse your own data or example data provided by organizers",
+    "crumbs": [
+      "Help"
+    ]
+  },
+  {
+    "objectID": "help.html#group-presentations",
+    "href": "help.html#group-presentations",
+    "title": "Help",
+    "section": "",
+    "text": "8 min + 2 min questions",
+    "crumbs": [
+      "Help"
+    ]
+  },
+  {
+    "objectID": "help.html#group-dinner",
+    "href": "help.html#group-dinner",
+    "title": "Help",
+    "section": "",
+    "text": "Time, location, etc",
+    "crumbs": [
+      "Help"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_imagej_macros.html",
+    "href": "practicals/practical_imagej_macros.html",
+    "title": "ImageJ macros",
+    "section": "",
+    "text": "ImageJ macros\n\nWhy?\nTypes of macros\nHow to record",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction"
+      "ImageJ macros"
     ]
   },
   {
-    "objectID": "practicals/practical_cell_tracking.html",
-    "href": "practicals/practical_cell_tracking.html",
-    "title": "Cell tracking",
+    "objectID": "practicals/practical_2d_visualization.html",
+    "href": "practicals/practical_2d_visualization.html",
+    "title": "Visualization of 2D images",
     "section": "",
-    "text": "Cell tracking\n\nCreate a TrackMate project\nCreate a Mastodon project\nManual tracking\nSemi-automated tracking\nAutomated tracking\nVisualization\nBlender",
+    "text": "Visualization of 2D images\n\nOpening an image\n\nExploring dimensions, scale, formats, bits, metadata\n\nB+C\n\nLUTs\n\nScalebar",
     "crumbs": [
       "Practicals",
-      "Cell tracking"
+      "Visualization of 2D images"
     ]
   },
   {
-    "objectID": "practicals/practical_3d_visualization.html",
-    "href": "practicals/practical_3d_visualization.html",
-    "title": "Visualization of 3D images",
+    "objectID": "practicals/practical_3d_segmentation.html",
+    "href": "practicals/practical_3d_segmentation.html",
+    "title": "3D segmentation using machine/deep learning",
     "section": "",
-    "text": "Visualization of 3D images\n\nMax projections\n\nOrthogonal views\n\nReslicing\n\nBigData viewer\n\n3D script",
+    "text": "3D segmentation using machine/deep learning\nPractical - Machine and Deep learning - Segmentation of 3D structures (2h)\n\nPixel classification in labkit and napari (MC) (30 min)\n\nCellpose - BioImage Zoo (pre-trained models, fine tunning) (1 hr)",
     "crumbs": [
       "Practicals",
-      "Visualization of 3D images"
+      "3D segmentation using machine/deep learning"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html",
-    "href": "practicals/practical_image_processing.html",
-    "title": "Image processing, denoising, segmentation",
+    "objectID": "practicals/practical_tissue_cartography.html",
+    "href": "practicals/practical_tissue_cartography.html",
+    "title": "Tissue cartography",
     "section": "",
-    "text": "Image processing, denoising, segmentation\n\nNoise2Void in local if GPU and small model, otherwise we can show it on catalyst\nSpatial Filtering for noise reduction (MorphoLibJ in Fiji, napari-assistant)\nBackground subtraction\nSegmentation\nMorphological operations?\nLabeling\nNapari assistant (MC I could do it based on RH talk - 30 min)",
+    "text": "Tissue cartography\n\nPipelines\nSetup\nSegmentation\nSurface detection\nMesh editing\nMesh painting\nMap projection\nExport\nMeasurements",
     "crumbs": [
       "Practicals",
-      "Image processing, denoising, segmentation"
+      "Tissue cartography"
     ]
   },
   {
-    "objectID": "talks/talk_multiview_cartography.html",
-    "href": "talks/talk_multiview_cartography.html",
-    "title": "Multiview reconstruction and tissue cartography",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "Multiview reconstruction and tissue cartography\n\nPrinciples of multiview acquisition\nOptimal settings\nExperimental optimization\nBigStitcher\nRegistration\nFusion/Deconvolution\nTissue cartography\nMaps\nSoftware tools",
+    "text": "Warning\n\n\n\nThis website is under construction!\n\n\nWelcome! This website contains the materials for the Light-Sheet Image Analysis Workshop organized by the Light-Sheet Imaging at Universidad Mayor (LiSIUM). The course will be held at the Center for Integrative Biology of Universidad Mayor between 5–9 January 2026 in Santiago, Chile.\n\n\nProgram Resources\n\n\n\nThe Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
+  },
+  {
+    "objectID": "index.html#shortcuts",
+    "href": "index.html#shortcuts",
+    "title": "Home",
+    "section": "",
+    "text": "Program Resources"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Home",
+    "section": "",
+    "text": "The Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
+  },
+  {
+    "objectID": "talks/talk_data_management.html",
+    "href": "talks/talk_data_management.html",
+    "title": "Best practices in microscopy data management",
+    "section": "",
+    "text": "Best practices in microscopy data management\n\nNumbered directories\nFile names\nREADMEs",
     "crumbs": [
       "Talks",
-      "Multiview reconstruction and tissue cartography"
+      "Best practices in microscopy data management"
     ]
   },
   {
-    "objectID": "talks/talk_digital_images.html",
-    "href": "talks/talk_digital_images.html",
-    "title": "Visualization and processing of digital images",
+    "objectID": "talks/talk_image_processing.html",
+    "href": "talks/talk_image_processing.html",
+    "title": "Image processing and analysis",
     "section": "",
-    "text": "Visualization and processing of digital images\n\nWhat is an image? (bit depth, voxel size)\n\nCameras?\n\nHistograms\n\nLUT\n\nDimensions\n\nB+C\n\nFormats (focus on HDF5)\n\nBased on this lecture",
+    "text": "Image processing and analysis\n\nWhat is Bioimage Analysis?\nWhat is a workflow or a pipeline?\nDenoising\nBackground subtraction\nTheory of Macro programming and Napari assistant (mention checklist)\nSegmentation (only classical algorithms) and labeling\nMorphological operations?\nBIA ecosystem: open source tools, licensed tools, image.sc\nhttps://zenodo.org/records/16920518",
     "crumbs": [
       "Talks",
-      "Visualization and processing of digital images"
+      "Image processing and analysis"
     ]
   },
   {
-    "objectID": "talks/talk_experimental_design.html",
-    "href": "talks/talk_experimental_design.html",
-    "title": "Experimental design and sample mounting",
+    "objectID": "talks/talk_lightsheet_concepts.html",
+    "href": "talks/talk_lightsheet_concepts.html",
+    "title": "Concepts in light-sheet microscopy",
     "section": "",
-    "text": "Experimental design and sample mounting\n\nExperimental setup\n\nRecognizing image artifacts\nTouch upon clearing, but focus on showing who (or which review article) to refer to.",
+    "text": "Concepts in light-sheet microscopy\n\nConcept behind LSM in contrast with other imaging methods",
     "crumbs": [
       "Talks",
-      "Experimental design and sample mounting"
+      "Concepts in light-sheet microscopy"
     ]
   },
   {
-    "objectID": "talks/talk_machine_learning.html",
-    "href": "talks/talk_machine_learning.html",
-    "title": "Machine learning",
+    "objectID": "talks/talk_deep_learning.html",
+    "href": "talks/talk_deep_learning.html",
+    "title": "Deep learning",
     "section": "",
-    "text": "Machine learning\n\nPixel Classification Theory\n\nExamples: ilastik, weka, APOC, labkit",
+    "text": "Deep learning\n\nDeep Learning Theory\n\nCellpose (? Maybe AC) (Check trackmate for 3D CellPose)\n\nStardist\n\nPlantSeg (MC)\n\nBioImage Zoo (AC)\n\nCARE - noise2void (BV)",
     "crumbs": [
       "Talks",
-      "Machine learning"
+      "Deep learning"
     ]
   }
 ]
