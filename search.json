@@ -535,7 +535,7 @@
     "href": "practicals/practical_image_processing.html",
     "title": "Image processing, denoising, segmentation",
     "section": "",
-    "text": "Image processing, denoising, segmentation\nAgus (1 hs) - Noise2Void in local if GPU and small model, otherwise we can show it on catalyst - Spatial Filtering for noise reduction - Background subtraction —— Marina (1 hs) - Segmentation, Morphological operations, Labeling (MorphoLibJ in Fiji) - Napari assistant (MC I could do it based on RH talk - 30 min)",
+    "text": "Image processing, denoising, segmentation\nAgus (1 hs) - Noise2Void in local if GPU and small model, otherwise we can show it on catalyst - Spatial Filtering for noise reduction - Background subtraction\n\nMarina (1 hs) - Segmentation, Morphological operations, Labeling (MorphoLibJ in Fiji) - Napari assistant (MC I could do it based on RH talk - 30 min)",
     "crumbs": [
       "Practicals",
       "Image processing, denoising, segmentation"
