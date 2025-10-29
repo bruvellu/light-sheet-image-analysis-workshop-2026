@@ -90,7 +90,7 @@
     "href": "practicals/practical_3d_segmentation.html",
     "title": "3D segmentation using machine/deep learning",
     "section": "",
-    "text": "3D segmentation using machine/deep learning\nPractical - Machine and Deep learning - Segmentation of 3D structures (2h)\n\nPixel classification in labkit and napari (MC) (30 min)\n\nCellpose - BioImage Zoo (pre-trained models, fine tunning) (1 hr)",
+    "text": "3D segmentation using machine/deep learning\nPractical - Machine and Deep learning - Segmentation of 3D structures (2h)\n\nPixel classification in labkit and napari (MC) (30 min) https://scads.github.io/napari-tutorial-2023/intro.html https://www.youtube.com/watch?v=QDS5t7oZH-c\nCellpose - BioImage Zoo (pre-trained models, fine tunning) Is this Agus? (1 hr)",
     "crumbs": [
       "Practicals",
       "3D segmentation using machine/deep learning"
