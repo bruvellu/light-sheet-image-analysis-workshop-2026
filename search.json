@@ -513,7 +513,7 @@
     "href": "practicals/practical_cell_tracking.html",
     "title": "Cell tracking",
     "section": "",
-    "text": "Cell tracking\n\nCreate a TrackMate project\nCreate a Mastodon project\nManual tracking\nSemi-automated tracking\nAutomated tracking\nVisualization\nBlender",
+    "text": "Cell tracking\n\nCreate a TrackMate project\nCreate a Mastodon project\nManual tracking\nSemi-automated tracking\nAutomated tracking\nVisualization\nBlender\n\nThis is currently scheduled for 1 hr but ut seems a lot. Should we remove it to leave space for talks from companies?",
     "crumbs": [
       "Practicals",
       "Cell tracking"
