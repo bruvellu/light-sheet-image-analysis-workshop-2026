@@ -342,6 +342,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#apply-local-otsu" id="toc-apply-local-otsu" class="nav-link" data-scroll-target="#apply-local-otsu">6.1 Apply Local Otsu</a></li>
   <li><a href="#clean-the-mask-with-binary-operations" id="toc-clean-the-mask-with-binary-operations" class="nav-link" data-scroll-target="#clean-the-mask-with-binary-operations">6.2 Clean the mask with binary operations</a></li>
   </ul></li>
+  <li><a href="#object-labeling-with-morpholibj" id="toc-object-labeling-with-morpholibj" class="nav-link" data-scroll-target="#object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</a></li>
+  <li><a href="#measuring-object-properties" id="toc-measuring-object-properties" class="nav-link" data-scroll-target="#measuring-object-properties">8. Measuring object properties</a></li>
+  <li><a href="#filtering-objects-by-size" id="toc-filtering-objects-by-size" class="nav-link" data-scroll-target="#filtering-objects-by-size">9. Filtering objects by size</a></li>
   </ul></li>
   <li><a href="#image-processing-denoising-segmentation" id="toc-image-processing-denoising-segmentation" class="nav-link" data-scroll-target="#image-processing-denoising-segmentation">Image processing, denoising, segmentation</a></li>
   </ul>
@@ -357,16 +360,22 @@ ul.task-list li input[type="checkbox"] {
 <h1>Introduction to Thresholding in Fiji</h1>
 <p>In this exercise we will:</p>
 <ul>
-<li>Open an image in Fiji<br>
+<li>Compare global and local thresholding methods and understand when each is useful.<br>
 </li>
-<li>Look at its histogram to relate intensities to thresholding<br>
+<li>Improve segmentation using background subtraction and Gaussian smoothing.<br>
 </li>
-<li>Apply all <strong>global Auto Threshold</strong> methods<br>
+<li>Refine masks using binary operations, including <strong>Fill Holes</strong> and <strong>Kill Borders</strong>.<br>
 </li>
-<li>Apply all <strong>Auto Local Threshold</strong> methods (after converting to 8-bit)<br>
+<li>Generate labeled objects using MorphoLibJ’s Connected Components Labeling.<br>
 </li>
-<li>Visually compare the results</li>
+<li>Extract object-level measurements (area, perimeter, circularity, etc.).<br>
+</li>
+<li>Visualize measurement values on labeled images.<br>
+</li>
+<li>Filter segmented objects based on size or other properties.</li>
 </ul>
+<p>These steps form a complete workflow:<br>
+<strong>from raw image → segmentation → cleanup → labeling → measurement → filtered results.</strong></p>
 <p>We’ll use <code>MAX_Lund.tif</code> as the example image.</p>
 <hr>
 <section id="open-the-image-and-inspect-the-histogram" class="level2">
@@ -519,8 +528,76 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Refined mask</figcaption>
 </figure>
 </div>
-<hr>
+<p>In addition to <em>Erode</em> and <em>Dilate</em>, we now also apply <strong>Fill Holes</strong>, which fills empty pixels inside objects.</p>
+<ol type="1">
+<li>Run <strong>Fill Holes</strong> to ensure each object is internally solid.<br>
+</li>
+<li>Run <strong>Kill Borders</strong> to remove partial objects touching the border.<br>
+</li>
+<li>Save the result as <code>MAX_Lund_Mask-killBorders.png</code>.<br>
+</li>
+<li>If useful, apply <strong>Erode</strong> and <strong>Dilate</strong> to further separate or regularize objects.</li>
+</ol>
+<p><strong>Result after filling holes and removing border objects:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAX_Lund_Mask-killBorders.png" class="img-fluid figure-img"></p>
+<figcaption>Filled + border-removed mask</figcaption>
+</figure>
+</div>
 </section>
+</section>
+<section id="object-labeling-with-morpholibj" class="level2">
+<h2 class="anchored" data-anchor-id="object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</h2>
+<p>Once we have a clean binary mask, the next step is to turn each connected region into a uniquely labeled object.<br>
+This gives us a “segmentation map” where each detected structure receives its own ID.</p>
+<p>We use <strong>Connected Components Labeling</strong>, which assigns a different label value to every object.</p>
+<p><strong>Labeled objects (each with a unique color):</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAX_Lund_Mask-killBorders-lbl.png" class="img-fluid figure-img"></p>
+<figcaption>Connected components labeling</figcaption>
+</figure>
+</div>
+</section>
+<section id="measuring-object-properties" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-object-properties">8. Measuring object properties</h2>
+<p>After labeling, we can extract quantitative features of each object.<br>
+This is important because segmentation is usually not the end goal — the goal is to <em>measure</em> something.</p>
+<p>Using <strong>Analyze Regions</strong> (MorphoLibJ), we obtain:</p>
+<ul>
+<li>Area and pixel count<br>
+</li>
+<li>Perimeter<br>
+</li>
+<li>Circularity / shape descriptors<br>
+</li>
+<li>Ellipse fitting (center, elongation)<br>
+</li>
+<li>Bounding box geometry</li>
+</ul>
+<p>These values appear as a table:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot2.png" class="img-fluid figure-img"></p>
+<figcaption>Morphometry table</figcaption>
+</figure>
+</div>
+<p>Such measurements allow downstream analysis such as size distributions, morphology comparisons, or filtering objects based on properties.</p>
+</section>
+<section id="filtering-objects-by-size" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-objects-by-size">9. Filtering objects by size</h2>
+<p>MorphoLibJ also allows filtering objects according to measured properties.<br>
+A common step is removing very small or noise-like detections.</p>
+<p>Using <strong>Label Size Filtering</strong>, we keep only objects above a chosen size threshold (e.g., 100 px).</p>
+<p><strong>Result after removing small objects:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAX_Lund_Mask-killBorders-lbl-sizeFilt.png" class="img-fluid figure-img"></p>
+<figcaption>Size filtering</figcaption>
+</figure>
+</div>
+<hr>
 </section>
 </section>
 <section id="image-processing-denoising-segmentation" class="level1">
