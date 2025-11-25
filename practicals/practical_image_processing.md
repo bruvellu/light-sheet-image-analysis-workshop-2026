@@ -17,12 +17,13 @@ We’ll use `MAX_Lund.tif` as the example image.
 1. Start **Fiji**.
 2. Open the image  
    `File → Open… → MAX_Lund.tif`
-3. Open the Brightness & Contrast window:  
+   ![Brightness/Contrast histogram](MAX_Lund.tif)
+4. Open the Brightness & Contrast window:  
    `Image → Adjust → Brightness/Contrast…`
 
 You should see a histogram like this:
 
-![Brightness/Contrast histogram](Screenshot-2025-11-25-at-15.14.31.png)
+![Brightness/Contrast histogram](Screenshot 2025-11-25 at 15.14.31.png)
 
 **Idea:** thresholding is just choosing an intensity value that separates “foreground” (objects) from “background”. The histogram shows how many pixels have each intensity; a threshold is one vertical cut in this histogram.
 
