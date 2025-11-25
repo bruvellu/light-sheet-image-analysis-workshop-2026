@@ -344,7 +344,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#object-labeling-with-morpholibj" id="toc-object-labeling-with-morpholibj" class="nav-link" data-scroll-target="#object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</a></li>
   <li><a href="#measuring-object-properties" id="toc-measuring-object-properties" class="nav-link" data-scroll-target="#measuring-object-properties">8. Measuring object properties</a></li>
-  <li><a href="#filtering-objects-by-size" id="toc-filtering-objects-by-size" class="nav-link" data-scroll-target="#filtering-objects-by-size">9. Filtering objects by size</a></li>
+  <li><a href="#visualizing-label-properties" id="toc-visualizing-label-properties" class="nav-link" data-scroll-target="#visualizing-label-properties">9. Visualizing label properties</a></li>
+  <li><a href="#filtering-objects-by-size" id="toc-filtering-objects-by-size" class="nav-link" data-scroll-target="#filtering-objects-by-size">10. Filtering objects by size</a></li>
   </ul></li>
   <li><a href="#image-processing-denoising-segmentation" id="toc-image-processing-denoising-segmentation" class="nav-link" data-scroll-target="#image-processing-denoising-segmentation">Image processing, denoising, segmentation</a></li>
   </ul>
@@ -585,8 +586,30 @@ This is important because segmentation is usually not the end goal — the goal 
 </div>
 <p>Such measurements allow downstream analysis such as size distributions, morphology comparisons, or filtering objects based on properties.</p>
 </section>
+<section id="visualizing-label-properties" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-label-properties">9. Visualizing label properties</h2>
+<p>Before filtering or removing any objects, it is useful to visualize a specific measurement across all labeled regions.<br>
+This helps confirm that the segmentation is meaningful and that measurements behave as expected.</p>
+<p>Using MorphoLibJ, we can map any measurement (e.g., area, circularity, elongation) onto the labeled image.<br>
+Each object is then colored according to its numeric value.</p>
+<p>Here we visualize the <strong>Area</strong> of each object using a viridis colormap:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAX_Lund_Mask-killBorders-lbl-Area.png" class="img-fluid figure-img"></p>
+<figcaption>Area visualization on labels</figcaption>
+</figure>
+</div>
+<p>Such visual maps are helpful for:</p>
+<ul>
+<li>spotting unusually large or small objects<br>
+</li>
+<li>deciding appropriate thresholds for filtering<br>
+</li>
+<li>checking whether measurements reflect true object morphology</li>
+</ul>
+</section>
 <section id="filtering-objects-by-size" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-objects-by-size">9. Filtering objects by size</h2>
+<h2 class="anchored" data-anchor-id="filtering-objects-by-size">10. Filtering objects by size</h2>
 <p>MorphoLibJ also allows filtering objects according to measured properties.<br>
 A common step is removing very small or noise-like detections.</p>
 <p>Using <strong>Label Size Filtering</strong>, we keep only objects above a chosen size threshold (e.g., 100 px).</p>
