@@ -7,5 +7,7 @@ Agus (1 hs)
   ------
 Marina (1 hs)
 - Segmentation, Morphological operations, Labeling (MorphoLibJ in Fiji)
+  
+  https://knowhowspot.blog/fiji-morphological-segmentation-plugin-guide
 - Napari assistant (MC I could do it based on RH talk - 30 min)
 
