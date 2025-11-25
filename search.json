@@ -531,8 +531,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html",
-    "href": "practicals/practical_image_processing.html",
+    "objectID": "practicals/04.practical_image_processing.html",
+    "href": "practicals/04.practical_image_processing.html",
     "title": "Introduction to Thresholding in Fiji",
     "section": "",
     "text": "In this exercise we will:\n\nOpen an image in Fiji\n\nLook at its histogram to relate intensities to thresholding\n\nApply all global Auto Threshold methods\n\nApply all Auto Local Threshold methods (after converting to 8-bit)\n\nVisually compare the results\n\nWe’ll use MAX_Lund.tif as the example image.\n\n\n\n\nStart Fiji.\nOpen the image\nFile → Open… → MAX_Lund.tif \nOpen the Brightness & Contrast window:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: thresholding is just choosing an intensity value that separates “foreground” (objects) from “background”. The histogram shows how many pixels have each intensity; a threshold is one vertical cut in this histogram.\n\n\n\n\nGlobal thresholding uses one single threshold value for the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nIn the dialog:\n\nChoose Method: Try all\nSet White objects (so objects will be white on black background)\nConfirm.\n\n\nFiji will generate a montage showing the result of each global method, similar to:\n\n\n\nGlobal auto threshold montage\n\n\nLook at how different methods handle background, noise, and object boundaries. All of them use a single threshold value across the whole image.\n\n\n\n\nLocal thresholding in Fiji requires an 8-bit image.\n\nSelect the original image again:\nWindow → MAX_Lund.tif\nConvert to 8-bit:\nImage → Type → 8-bit\n(If needed, enable scaling via Edit → Options → Conversions… and tick Scale when converting.)\n\nNow the image is ready for local thresholding.\n\n\n\n\nLocal thresholding computes a different threshold in each neighborhood (e.g. within a radius of 15 pixels). This adapts to uneven illumination and local contrast.\n\nRun:\nPlugins → Auto Local Threshold…\n(or Image → Adjust → Auto Local Threshold… depending on your Fiji version)\nIn the dialog:\n\nMethod: Try all\nRadius: 15\nParameter 1: 0\nParameter 2: 0\nWhite objects\n\nConfirm.\n\nFiji will generate a montage with all local methods:\n\n\n\nLocal auto threshold montage\n\n\nCompare these results to the global methods. Local methods often segment structures better when the background is uneven or objects have varying brightness.",
@@ -542,8 +542,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#open-the-image-and-inspect-the-histogram",
-    "href": "practicals/practical_image_processing.html#open-the-image-and-inspect-the-histogram",
+    "objectID": "practicals/04.practical_image_processing.html#open-the-image-and-inspect-the-histogram",
+    "href": "practicals/04.practical_image_processing.html#open-the-image-and-inspect-the-histogram",
     "title": "Introduction to Thresholding in Fiji",
     "section": "",
     "text": "Start Fiji.\nOpen the image\nFile → Open… → MAX_Lund.tif \nOpen the Brightness & Contrast window:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: thresholding is just choosing an intensity value that separates “foreground” (objects) from “background”. The histogram shows how many pixels have each intensity; a threshold is one vertical cut in this histogram.",
@@ -553,8 +553,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#try-all-global-auto-threshold-methods",
-    "href": "practicals/practical_image_processing.html#try-all-global-auto-threshold-methods",
+    "objectID": "practicals/04.practical_image_processing.html#try-all-global-auto-threshold-methods",
+    "href": "practicals/04.practical_image_processing.html#try-all-global-auto-threshold-methods",
     "title": "Introduction to Thresholding in Fiji",
     "section": "",
     "text": "Global thresholding uses one single threshold value for the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nIn the dialog:\n\nChoose Method: Try all\nSet White objects (so objects will be white on black background)\nConfirm.\n\n\nFiji will generate a montage showing the result of each global method, similar to:\n\n\n\nGlobal auto threshold montage\n\n\nLook at how different methods handle background, noise, and object boundaries. All of them use a single threshold value across the whole image.",
@@ -564,8 +564,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
-    "href": "practicals/practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
+    "objectID": "practicals/04.practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
+    "href": "practicals/04.practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
     "title": "Introduction to Thresholding in Fiji",
     "section": "",
     "text": "Local thresholding in Fiji requires an 8-bit image.\n\nSelect the original image again:\nWindow → MAX_Lund.tif\nConvert to 8-bit:\nImage → Type → 8-bit\n(If needed, enable scaling via Edit → Options → Conversions… and tick Scale when converting.)\n\nNow the image is ready for local thresholding.",
@@ -575,8 +575,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#try-all-auto-local-threshold-methods",
-    "href": "practicals/practical_image_processing.html#try-all-auto-local-threshold-methods",
+    "objectID": "practicals/04.practical_image_processing.html#try-all-auto-local-threshold-methods",
+    "href": "practicals/04.practical_image_processing.html#try-all-auto-local-threshold-methods",
     "title": "Introduction to Thresholding in Fiji",
     "section": "",
     "text": "Local thresholding computes a different threshold in each neighborhood (e.g. within a radius of 15 pixels). This adapts to uneven illumination and local contrast.\n\nRun:\nPlugins → Auto Local Threshold…\n(or Image → Adjust → Auto Local Threshold… depending on your Fiji version)\nIn the dialog:\n\nMethod: Try all\nRadius: 15\nParameter 1: 0\nParameter 2: 0\nWhite objects\n\nConfirm.\n\nFiji will generate a montage with all local methods:\n\n\n\nLocal auto threshold montage\n\n\nCompare these results to the global methods. Local methods often segment structures better when the background is uneven or objects have varying brightness.",
