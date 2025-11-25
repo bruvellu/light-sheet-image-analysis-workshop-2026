@@ -333,6 +333,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#try-all-global-auto-threshold-methods" id="toc-try-all-global-auto-threshold-methods" class="nav-link" data-scroll-target="#try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</a></li>
   <li><a href="#prepare-the-image-for-auto-local-threshold" id="toc-prepare-the-image-for-auto-local-threshold" class="nav-link" data-scroll-target="#prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</a></li>
   <li><a href="#try-all-auto-local-threshold-methods" id="toc-try-all-auto-local-threshold-methods" class="nav-link" data-scroll-target="#try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</a></li>
+  <li><a href="#improving-segmentation-with-background-subtraction-and-smoothing" id="toc-improving-segmentation-with-background-subtraction-and-smoothing" class="nav-link" data-scroll-target="#improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</a>
+  <ul class="collapse">
+  <li><a href="#remove-background-and-apply-gaussian-blur" id="toc-remove-background-and-apply-gaussian-blur" class="nav-link" data-scroll-target="#remove-background-and-apply-gaussian-blur">5.1 Remove background and apply Gaussian blur</a></li>
+  </ul></li>
+  <li><a href="#selecting-a-method-local-otsu-and-binary-cleanup" id="toc-selecting-a-method-local-otsu-and-binary-cleanup" class="nav-link" data-scroll-target="#selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</a>
+  <ul class="collapse">
+  <li><a href="#apply-local-otsu" id="toc-apply-local-otsu" class="nav-link" data-scroll-target="#apply-local-otsu">6.1 Apply Local Otsu</a></li>
+  <li><a href="#clean-the-mask-with-binary-operations" id="toc-clean-the-mask-with-binary-operations" class="nav-link" data-scroll-target="#clean-the-mask-with-binary-operations">6.2 Clean the mask with binary operations</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#image-processing-denoising-segmentation" id="toc-image-processing-denoising-segmentation" class="nav-link" data-scroll-target="#image-processing-denoising-segmentation">Image processing, denoising, segmentation</a></li>
   </ul>
@@ -440,7 +449,78 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Compare these results to the global methods. Local methods often segment structures better when the background is uneven or objects have varying brightness.</p>
+</section>
+<section id="improving-segmentation-with-background-subtraction-and-smoothing" class="level2">
+<h2 class="anchored" data-anchor-id="improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</h2>
+<p>Sometimes segmentation improves if we reduce background and noise before thresholding. Here we apply a rolling-ball background subtraction and a small Gaussian blur to the raw image, and then compare results.</p>
+<section id="remove-background-and-apply-gaussian-blur" class="level3">
+<h3 class="anchored" data-anchor-id="remove-background-and-apply-gaussian-blur">5.1 Remove background and apply Gaussian blur</h3>
+<ol type="1">
+<li>Open <code>MAX_Lund.png</code>.</li>
+<li>Run <strong>Subtract Background…</strong> with a rolling ball radius of <strong>50</strong>.<br>
+</li>
+<li>Save the background-corrected image as <code>MAX_Lund_Bkg.png</code>.</li>
+<li>Apply <strong>Gaussian Blur…</strong> with <strong>sigma = 1</strong> to smooth noise.</li>
+</ol>
+<p>After preprocessing, we run <strong>Auto Local Threshold (Try all)</strong> again to compare the effect of background removal and smoothing.</p>
+<p><strong>Results after preprocessing:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/AutoLocalThresh2.tif" class="img-fluid figure-img"></p>
+<figcaption>Auto Local Threshold after preprocessing</figcaption>
+</figure>
+</div>
 <hr>
+</section>
+</section>
+<section id="selecting-a-method-local-otsu-and-binary-cleanup" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</h2>
+<p>From the local thresholding methods, we now choose <strong>Otsu</strong> with a radius of 15 and generate a cleaner binary mask.</p>
+<section id="apply-local-otsu" class="level3">
+<h3 class="anchored" data-anchor-id="apply-local-otsu">6.1 Apply Local Otsu</h3>
+<ol type="1">
+<li>Open <code>MAX_Lund_Bkg.png</code>.</li>
+<li>Run <strong>Auto Local Threshold</strong> with:
+<ul>
+<li>Method: <strong>Otsu</strong><br>
+</li>
+<li>Radius: <strong>15</strong><br>
+</li>
+</ul></li>
+<li>Save the result as <code>MAX_Lund_Mask.png</code>.</li>
+</ol>
+<p><strong>Local Otsu mask:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAX_Lund_Mask.png" class="img-fluid figure-img"></p>
+<figcaption>Local Otsu mask</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="clean-the-mask-with-binary-operations" class="level3">
+<h3 class="anchored" data-anchor-id="clean-the-mask-with-binary-operations">6.2 Clean the mask with binary operations</h3>
+<p>Binary operations allow us to refine the segmentation (e.g., separating touching objects or removing noise).</p>
+<ol type="1">
+<li>Ensure <strong>Process → Binary → Options… → Black background</strong> is enabled.<br>
+</li>
+<li>Run <strong>Erode</strong> to slightly shrink objects and break small connections.<br>
+</li>
+<li>Optionally draw/restore edges or boundaries if needed.<br>
+</li>
+<li>Run <strong>Dilate</strong> to grow objects back after erosion.<br>
+</li>
+<li>Save the final mask as <code>MAX_Lund_MaskErode.png</code>.</li>
+</ol>
+<p><strong>Refined mask after binary operations:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAX_Lund_MaskErode.png" class="img-fluid figure-img"></p>
+<figcaption>Refined mask</figcaption>
+</figure>
+</div>
+<hr>
+</section>
 </section>
 </section>
 <section id="image-processing-denoising-segmentation" class="level1">
