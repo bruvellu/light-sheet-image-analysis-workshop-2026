@@ -568,7 +568,7 @@
     "href": "talks/talk_image_processing.html",
     "title": "Image processing and analysis",
     "section": "",
-    "text": "Image processing and analysis\n\nWhat is Bioimage Analysis?\nWhat is a workflow or a pipeline?\nDenoising\nBackground subtraction\nTheory of Macro programming and Napari assistant (mention checklist)\nSegmentation (only classical algorithms) and labeling\nMorphological operations?\nBIA ecosystem: open source tools, licensed tools, image.sc\nhttps://zenodo.org/records/16920518",
+    "text": "Image processing and analysis\n\nWhat is Bioimage Analysis?\nWhat is a workflow or a pipeline?\nDenoising\nBackground subtraction\nTheory of Macro programming and Napari assistant (mention checklist)\nSegmentation (only classical algorithms) and labeling (MC Found this presentation https://imagej.net/media/arganda-carreras-segmentation-bioimage-course-mdc-berlin-2016.pdf)\nMorphological operations?\nBIA ecosystem: open source tools, licensed tools, image.sc\nhttps://zenodo.org/records/16920518",
     "crumbs": [
       "Talks",
       "Image processing and analysis"
