@@ -75,10 +75,12 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/Screenshot-2025-11-25-at-15.14.31.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/Screenshot-2025-11-25-at-15.14.31.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -103,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Image processing, denoising, segmentation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Introduction to Thresholding in Fiji</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -204,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/practical_image_processing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Image processing, denoising, segmentation</span></a>
+ <span class="menu-text">Introduction to Thresholding in Fiji</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -302,21 +304,125 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#image-processing-denoising-segmentation" id="toc-image-processing-denoising-segmentation" class="nav-link active" data-scroll-target="#image-processing-denoising-segmentation">Image processing, denoising, segmentation</a></li>
+  <li><a href="#introduction-to-thresholding-in-fiji" id="toc-introduction-to-thresholding-in-fiji" class="nav-link active" data-scroll-target="#introduction-to-thresholding-in-fiji">Introduction to Thresholding in Fiji</a>
+  <ul class="collapse">
+  <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link" data-scroll-target="#open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</a></li>
+  <li><a href="#try-all-global-auto-threshold-methods" id="toc-try-all-global-auto-threshold-methods" class="nav-link" data-scroll-target="#try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</a></li>
+  <li><a href="#prepare-the-image-for-auto-local-threshold" id="toc-prepare-the-image-for-auto-local-threshold" class="nav-link" data-scroll-target="#prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</a></li>
+  <li><a href="#try-all-auto-local-threshold-methods" id="toc-try-all-auto-local-threshold-methods" class="nav-link" data-scroll-target="#try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</a></li>
+  </ul></li>
+  <li><a href="#image-processing-denoising-segmentation" id="toc-image-processing-denoising-segmentation" class="nav-link" data-scroll-target="#image-processing-denoising-segmentation">Image processing, denoising, segmentation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_image_processing.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Image processing, denoising, segmentation</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Introduction to Thresholding in Fiji</a></li></ol></nav></header>
 
 
 
 
+<section id="introduction-to-thresholding-in-fiji" class="level1">
+<h1>Introduction to Thresholding in Fiji</h1>
+<p>In this exercise we will:</p>
+<ul>
+<li>Open an image in Fiji<br>
+</li>
+<li>Look at its histogram to relate intensities to thresholding<br>
+</li>
+<li>Apply all <strong>global Auto Threshold</strong> methods<br>
+</li>
+<li>Apply all <strong>Auto Local Threshold</strong> methods (after converting to 8-bit)<br>
+</li>
+<li>Visually compare the results</li>
+</ul>
+<p>We’ll use <code>MAX_Lund.tif</code> as the example image.</p>
+<hr>
+<section id="open-the-image-and-inspect-the-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</h2>
+<ol type="1">
+<li>Start <strong>Fiji</strong>.</li>
+<li>Open the image<br>
+<code>File → Open… → MAX_Lund.tif</code></li>
+<li>Open the Brightness &amp; Contrast window:<br>
+<code>Image → Adjust → Brightness/Contrast…</code></li>
+</ol>
+<p>You should see a histogram like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Screenshot-2025-11-25-at-15.14.31.png" class="img-fluid figure-img"></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
+<p><strong>Idea:</strong> thresholding is just choosing an intensity value that separates “foreground” (objects) from “background”. The histogram shows how many pixels have each intensity; a threshold is one vertical cut in this histogram.</p>
+<hr>
+</section>
+<section id="try-all-global-auto-threshold-methods" class="level2">
+<h2 class="anchored" data-anchor-id="try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</h2>
+<p>Global thresholding uses <strong>one single threshold value for the whole image</strong>.</p>
+<ol type="1">
+<li>With <code>MAX_Lund.tif</code> active, run:<br>
+<code>Image → Adjust → Auto Threshold…</code></li>
+<li>In the dialog:
+<ul>
+<li>Choose <code>Method: Try all</code></li>
+<li>Set <code>White objects</code> (so objects will be white on black background)</li>
+<li>Confirm.</li>
+</ul></li>
+</ol>
+<p>Fiji will generate a montage showing the result of each global method, similar to:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="AutoThresh.tif" class="img-fluid figure-img"></p>
+<figcaption>Global auto threshold montage</figcaption>
+</figure>
+</div>
+<p>Look at how different methods handle background, noise, and object boundaries. All of them use a <strong>single</strong> threshold value across the whole image.</p>
+<hr>
+</section>
+<section id="prepare-the-image-for-auto-local-threshold" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</h2>
+<p>Local thresholding in Fiji requires an <strong>8-bit</strong> image.</p>
+<ol type="1">
+<li>Select the original image again:<br>
+<code>Window → MAX_Lund.tif</code></li>
+<li>Convert to 8-bit:<br>
+<code>Image → Type → 8-bit</code><br>
+(If needed, enable scaling via <code>Edit → Options → Conversions…</code> and tick <em>Scale when converting</em>.)</li>
+</ol>
+<p>Now the image is ready for local thresholding.</p>
+<hr>
+</section>
+<section id="try-all-auto-local-threshold-methods" class="level2">
+<h2 class="anchored" data-anchor-id="try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</h2>
+<p>Local thresholding computes a <strong>different threshold in each neighborhood</strong> (e.g.&nbsp;within a radius of 15 pixels). This adapts to uneven illumination and local contrast.</p>
+<ol type="1">
+<li>Run:<br>
+<code>Plugins → Auto Local Threshold…</code><br>
+(or <code>Image → Adjust → Auto Local Threshold…</code> depending on your Fiji version)</li>
+<li>In the dialog:
+<ul>
+<li><code>Method: Try all</code></li>
+<li><code>Radius: 15</code></li>
+<li><code>Parameter 1: 0</code></li>
+<li><code>Parameter 2: 0</code></li>
+<li><code>White objects</code></li>
+</ul></li>
+<li>Confirm.</li>
+</ol>
+<p>Fiji will generate a montage with all local methods:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="AutoLocalThresh1.tif" class="img-fluid figure-img"></p>
+<figcaption>Local auto threshold montage</figcaption>
+</figure>
+</div>
+<p>Compare these results to the global methods. Local methods often segment structures better when the background is uneven or objects have varying brightness.</p>
+<hr>
+</section>
+</section>
 <section id="image-processing-denoising-segmentation" class="level1">
 <h1>Image processing, denoising, segmentation</h1>
-<p>Agus (1 hs) - Noise2Void in local if GPU and small model, otherwise we can show it on catalyst - Spatial Filtering for noise reduction - Background subtraction</p>
-<hr>
-<p>Marina (1 hs) - Segmentation, Morphological operations, Labeling (MorphoLibJ in Fiji)</p>
+<p>Marina (1 hs) - Segmentation, post-processing, Morphological operations, Labeling (MorphoLibJ in Fiji)</p>
 <p>https://knowhowspot.blog/fiji-morphological-segmentation-plugin-guide - Napari assistant (MC I could do it based on RH talk - 30 min)</p>
 
 
