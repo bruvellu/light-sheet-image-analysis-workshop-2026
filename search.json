@@ -545,122 +545,122 @@
   {
     "objectID": "practicals/04.practical_image_processing.html",
     "href": "practicals/04.practical_image_processing.html",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "In this exercise we will:\n\nCompare global and local thresholding methods and understand when each is useful.\n\nImprove segmentation using background subtraction and Gaussian smoothing.\n\nRefine masks using binary operations, including Fill Holes and Kill Borders.\n\nGenerate labeled objects using MorphoLibJ’s Connected Components Labeling.\n\nExtract object-level measurements (area, perimeter, circularity, etc.).\n\nVisualize measurement values on labeled images.\n\nFilter segmented objects based on size or other properties.\n\nThese steps form a complete workflow:\nraw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering\nWe’ll use MAX_Lund.tif as the example image.\n\n\n\n\nStart Fiji.\n\nOpen the image:\nFile → Open… → MAX_Lund.tif\n\n\nOpen the histogram and visualization tools:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.\n\n\n\n\nGlobal thresholding applies one single threshold to the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nChoose:\n\nMethod: Try all\n\nWhite objects\n\n\nConfirm.\n\nFiji generates a montage of all global methods:\n\n\n\nGlobal auto threshold montage\n\n\n\n\n\n\nLocal thresholding requires 8-bit input.\n\nSelect the original image:\nWindow → MAX_Lund.tif\n\nConvert to 8-bit:\nImage → Type → 8-bit\n\nNow the image is ready for local methods.\n\n\n\n\nLocal thresholding computes a threshold for each local neighborhood.\n\nRun:\nImage → Adjust → Auto Local Threshold…\nChoose:\n\nMethod: Try all\n\nRadius: 15\n\nParameter 1: 0\n\nParameter 2: 0\n\nWhite objects\n\nConfirm.\n\n\n\n\nLocal auto threshold montage\n\n\n\n\n\n\nGood segmentation often benefits from reducing background and noise first.\n\n\n\nOpen MAX_Lund.png.\n\nSubtract background:\nProcess → Subtract Background…\n\nRolling ball radius: 50\n\n\nSmooth noise:\nProcess → Filters → Gaussian Blur…\n\nSigma: 1\n\n\nAfter preprocessing:\n\n\n\nAuto Local Threshold after preprocessing\n\n\n\n\n\n\n\n\n\n\nRun:\nImage → Adjust → Auto Local Threshold…\n\nMethod: Otsu\n\nRadius: 15\n\n\nLocal Otsu mask:\n\n\n\nLocal Otsu mask\n\n\n\n\n\n\n\nFill holes inside objects:\nProcess → Binary → Fill Holes\n\nSlightly shrink objects:\nProcess → Binary → Erode\n\nOptionally restore outlines:\nEdit → Draw\n\nExpand objects after erosion:\nProcess → Binary → Dilate\n\nRefined mask:\n\n\n\nRefined mask\n\n\n\n\n\n\n\nRemove partial objects touching image borders:\nPlugins → MorphoLibJ → Filtering → Kill Borders\n\n\n\n\nFilled + border-removed mask\n\n\n\n\n\n\n\nConvert each connected region into a uniquely labeled object:\nPlugins → MorphoLibJ → Label → Connected Components Labeling\n\nConnectivity: 4\n\nOutput type: 16-bit\n\nLabeled objects:\n\n\n\nConnected components labeling\n\n\n\n\n\n\nQuantifying each object is often the main goal after segmentation.\nRun measurements:\nPlugins → MorphoLibJ → Analyze → Analyze Regions\nThis extracts a number of morphological associated features. We will select:\n\nArea\n\nPixel count\n\nPerimeter\n\nCircularity\n\nEllipse geometry\n\nBounding box\n\n\n\n\nMorphometry table\n\n\n\n\n\n\nVisualize one measurement (e.g. area) mapped onto the label image:\nPlugins → MorphoLibJ → Label Images → Assign Measure to Label\nChoose Area and apply a colormap.\n\n\n\nArea visualization on labels\n\n\nUseful for:\n\nspotting unusually big/small objects\n\ndeciding filtering thresholds\n\nchecking measurement correctness\n\n\n\n\n\nRemove small objects based on size:\nPlugins → MorphoLibJ → Label Images → Label Size Filtering\n\nOperation: Lower Than\n\nSize threshold: 100 px\n\n\n\n\nSize filtering\n\n\n\n```",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#open-the-image-and-inspect-the-histogram",
     "href": "practicals/04.practical_image_processing.html#open-the-image-and-inspect-the-histogram",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Start Fiji.\n\nOpen the image:\nFile → Open… → MAX_Lund.tif\n\n\nOpen the histogram and visualization tools:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#try-all-global-auto-threshold-methods",
     "href": "practicals/04.practical_image_processing.html#try-all-global-auto-threshold-methods",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Global thresholding applies one single threshold to the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nChoose:\n\nMethod: Try all\n\nWhite objects\n\n\nConfirm.\n\nFiji generates a montage of all global methods:\n\n\n\nGlobal auto threshold montage",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
     "href": "practicals/04.practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Local thresholding requires 8-bit input.\n\nSelect the original image:\nWindow → MAX_Lund.tif\n\nConvert to 8-bit:\nImage → Type → 8-bit\n\nNow the image is ready for local methods.",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#try-all-auto-local-threshold-methods",
     "href": "practicals/04.practical_image_processing.html#try-all-auto-local-threshold-methods",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Local thresholding computes a threshold for each local neighborhood.\n\nRun:\nImage → Adjust → Auto Local Threshold…\nChoose:\n\nMethod: Try all\n\nRadius: 15\n\nParameter 1: 0\n\nParameter 2: 0\n\nWhite objects\n\nConfirm.\n\n\n\n\nLocal auto threshold montage",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#improving-segmentation-with-background-subtraction-and-smoothing",
     "href": "practicals/04.practical_image_processing.html#improving-segmentation-with-background-subtraction-and-smoothing",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Good segmentation often benefits from reducing background and noise first.\n\n\n\nOpen MAX_Lund.png.\n\nSubtract background:\nProcess → Subtract Background…\n\nRolling ball radius: 50\n\n\nSmooth noise:\nProcess → Filters → Gaussian Blur…\n\nSigma: 1\n\n\nAfter preprocessing:\n\n\n\nAuto Local Threshold after preprocessing",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#selecting-a-method-local-otsu-and-binary-cleanup",
     "href": "practicals/04.practical_image_processing.html#selecting-a-method-local-otsu-and-binary-cleanup",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Run:\nImage → Adjust → Auto Local Threshold…\n\nMethod: Otsu\n\nRadius: 15\n\n\nLocal Otsu mask:\n\n\n\nLocal Otsu mask\n\n\n\n\n\n\n\nFill holes inside objects:\nProcess → Binary → Fill Holes\n\nSlightly shrink objects:\nProcess → Binary → Erode\n\nOptionally restore outlines:\nEdit → Draw\n\nExpand objects after erosion:\nProcess → Binary → Dilate\n\nRefined mask:\n\n\n\nRefined mask\n\n\n\n\n\n\n\nRemove partial objects touching image borders:\nPlugins → MorphoLibJ → Filtering → Kill Borders\n\n\n\n\nFilled + border-removed mask",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#object-labeling-with-morpholibj",
     "href": "practicals/04.practical_image_processing.html#object-labeling-with-morpholibj",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Convert each connected region into a uniquely labeled object:\nPlugins → MorphoLibJ → Label → Connected Components Labeling\n\nConnectivity: 4\n\nOutput type: 16-bit\n\nLabeled objects:\n\n\n\nConnected components labeling",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#measuring-object-properties",
     "href": "practicals/04.practical_image_processing.html#measuring-object-properties",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Quantifying each object is often the main goal after segmentation.\nRun measurements:\nPlugins → MorphoLibJ → Analyze → Analyze Regions\nThis extracts a number of morphological associated features. We will select:\n\nArea\n\nPixel count\n\nPerimeter\n\nCircularity\n\nEllipse geometry\n\nBounding box\n\n\n\n\nMorphometry table",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#visualizing-label-properties",
     "href": "practicals/04.practical_image_processing.html#visualizing-label-properties",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Visualize one measurement (e.g. area) mapped onto the label image:\nPlugins → MorphoLibJ → Label Images → Assign Measure to Label\nChoose Area and apply a colormap.\n\n\n\nArea visualization on labels\n\n\nUseful for:\n\nspotting unusually big/small objects\n\ndeciding filtering thresholds\n\nchecking measurement correctness",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
     "objectID": "practicals/04.practical_image_processing.html#filtering-objects-by-size",
     "href": "practicals/04.practical_image_processing.html#filtering-objects-by-size",
-    "title": "Introduction to Thresholding in Fiji",
+    "title": "Post-processing, segmentation and labelling",
     "section": "",
     "text": "Remove small objects based on size:\nPlugins → MorphoLibJ → Label Images → Label Size Filtering\n\nOperation: Lower Than\n\nSize threshold: 100 px\n\n\n\n\nSize filtering\n\n\n\n```",
     "crumbs": [
       "Practicals",
-      "Introduction to Thresholding in Fiji"
+      "Post-processing, segmentation and labelling"
     ]
   },
   {
