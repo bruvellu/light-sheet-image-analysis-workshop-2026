@@ -339,8 +339,9 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#selecting-a-method-local-otsu-and-binary-cleanup" id="toc-selecting-a-method-local-otsu-and-binary-cleanup" class="nav-link" data-scroll-target="#selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</a>
   <ul class="collapse">
-  <li><a href="#apply-local-otsu" id="toc-apply-local-otsu" class="nav-link" data-scroll-target="#apply-local-otsu">6.1 Apply Local Otsu</a></li>
-  <li><a href="#clean-the-mask-with-binary-operations" id="toc-clean-the-mask-with-binary-operations" class="nav-link" data-scroll-target="#clean-the-mask-with-binary-operations">6.2 Clean the mask with binary operations</a></li>
+  <li><a href="#apply-local-otsu-thresholding" id="toc-apply-local-otsu-thresholding" class="nav-link" data-scroll-target="#apply-local-otsu-thresholding">6.1 Apply Local Otsu thresholding</a></li>
+  <li><a href="#refine-the-mask-with-binary-operations" id="toc-refine-the-mask-with-binary-operations" class="nav-link" data-scroll-target="#refine-the-mask-with-binary-operations">6.2 Refine the mask with binary operations</a></li>
+  <li><a href="#remove-border-touching-objects" id="toc-remove-border-touching-objects" class="nav-link" data-scroll-target="#remove-border-touching-objects">6.3 Remove border-touching objects</a></li>
   </ul></li>
   <li><a href="#object-labeling-with-morpholibj" id="toc-object-labeling-with-morpholibj" class="nav-link" data-scroll-target="#object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</a></li>
   <li><a href="#measuring-object-properties" id="toc-measuring-object-properties" class="nav-link" data-scroll-target="#measuring-object-properties">8. Measuring object properties</a></li>
@@ -376,16 +377,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Filter segmented objects based on size or other properties.</li>
 </ul>
 <p>These steps form a complete workflow:<br>
-<strong>from raw image → segmentation → cleanup → labeling → measurement → filtered results.</strong></p>
+<strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
 <p>We’ll use <code>MAX_Lund.tif</code> as the example image.</p>
 <hr>
 <section id="open-the-image-and-inspect-the-histogram" class="level2">
 <h2 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</h2>
 <ol type="1">
-<li>Start <strong>Fiji</strong>.</li>
-<li>Open the image<br>
-<code>File → Open… → MAX_Lund.tif</code> <img src="images/MAX_Lund.png" class="img-fluid" alt="Brightness/Contrast histogram"></li>
-<li>Open the Brightness &amp; Contrast window:<br>
+<li>Start <strong>Fiji</strong>.<br>
+</li>
+<li>Open the image:<br>
+<code>File → Open… → MAX_Lund.tif</code><br>
+<img src="images/MAX_Lund.png" class="img-fluid" alt="Brightness/Contrast histogram"><br>
+</li>
+<li>Open the histogram and visualization tools:<br>
 <code>Image → Adjust → Brightness/Contrast…</code></li>
 </ol>
 <p>You should see a histogram like this:</p>
@@ -395,85 +399,95 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-<p><strong>Idea:</strong> thresholding is just choosing an intensity value that separates “foreground” (objects) from “background”. The histogram shows how many pixels have each intensity; a threshold is one vertical cut in this histogram.</p>
+<p><strong>Idea:</strong> Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.</p>
 <hr>
 </section>
 <section id="try-all-global-auto-threshold-methods" class="level2">
 <h2 class="anchored" data-anchor-id="try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</h2>
-<p>Global thresholding uses <strong>one single threshold value for the whole image</strong>.</p>
+<p>Global thresholding applies <strong>one single threshold</strong> to the whole image.</p>
 <ol type="1">
 <li>With <code>MAX_Lund.tif</code> active, run:<br>
 <code>Image → Adjust → Auto Threshold…</code></li>
-<li>In the dialog:
+<li>Choose:
 <ul>
-<li>Choose <code>Method: Try all</code></li>
-<li>Set <code>White objects</code> (so objects will be white on black background)</li>
-<li>Confirm.</li>
+<li><strong>Method:</strong> <em>Try all</em><br>
+</li>
+<li><strong>White objects</strong><br>
+</li>
 </ul></li>
+<li>Confirm.</li>
 </ol>
-<p>Fiji will generate a montage showing the result of each global method, similar to:</p>
+<p>Fiji generates a montage of all global methods:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/04.AutoThresh.tif" class="img-fluid figure-img"></p>
 <figcaption>Global auto threshold montage</figcaption>
 </figure>
 </div>
-<p>Look at how different methods handle background, noise, and object boundaries. All of them use a <strong>single</strong> threshold value across the whole image.</p>
 <hr>
 </section>
 <section id="prepare-the-image-for-auto-local-threshold" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</h2>
-<p>Local thresholding in Fiji requires an <strong>8-bit</strong> image.</p>
+<p>Local thresholding requires <strong>8-bit</strong> input.</p>
 <ol type="1">
-<li>Select the original image again:<br>
-<code>Window → MAX_Lund.tif</code></li>
+<li>Select the original image:<br>
+<code>Window → MAX_Lund.tif</code><br>
+</li>
 <li>Convert to 8-bit:<br>
-<code>Image → Type → 8-bit</code><br>
-(If needed, enable scaling via <code>Edit → Options → Conversions…</code> and tick <em>Scale when converting</em>.)</li>
+<code>Image → Type → 8-bit</code></li>
 </ol>
-<p>Now the image is ready for local thresholding.</p>
+<p>Now the image is ready for local methods.</p>
 <hr>
 </section>
 <section id="try-all-auto-local-threshold-methods" class="level2">
 <h2 class="anchored" data-anchor-id="try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</h2>
-<p>Local thresholding computes a <strong>different threshold in each neighborhood</strong> (e.g.&nbsp;within a radius of 15 pixels). This adapts to uneven illumination and local contrast.</p>
+<p>Local thresholding computes a threshold for each <strong>local neighborhood</strong>.</p>
 <ol type="1">
 <li>Run:<br>
-<code>Plugins → Auto Local Threshold…</code><br>
-(or <code>Image → Adjust → Auto Local Threshold…</code> depending on your Fiji version)</li>
-<li>In the dialog:
+<code>Image → Adjust → Auto Local Threshold…</code></li>
+<li>Choose:
 <ul>
-<li><code>Method: Try all</code></li>
-<li><code>Radius: 15</code></li>
-<li><code>Parameter 1: 0</code></li>
-<li><code>Parameter 2: 0</code></li>
-<li><code>White objects</code></li>
+<li><strong>Method:</strong> <em>Try all</em><br>
+</li>
+<li><strong>Radius:</strong> 15<br>
+</li>
+<li><strong>Parameter 1:</strong> 0<br>
+</li>
+<li><strong>Parameter 2:</strong> 0<br>
+</li>
+<li><strong>White objects</strong></li>
 </ul></li>
 <li>Confirm.</li>
 </ol>
-<p>Fiji will generate a montage with all local methods:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/04.AutoLocalThresh1.tif" class="img-fluid figure-img"></p>
 <figcaption>Local auto threshold montage</figcaption>
 </figure>
 </div>
-<p>Compare these results to the global methods. Local methods often segment structures better when the background is uneven or objects have varying brightness.</p>
+<hr>
 </section>
 <section id="improving-segmentation-with-background-subtraction-and-smoothing" class="level2">
 <h2 class="anchored" data-anchor-id="improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</h2>
-<p>Sometimes segmentation improves if we reduce background and noise before thresholding. Here we apply a rolling-ball background subtraction and a small Gaussian blur to the raw image, and then compare results.</p>
+<p>Good segmentation often benefits from reducing background and noise first.</p>
 <section id="remove-background-and-apply-gaussian-blur" class="level3">
 <h3 class="anchored" data-anchor-id="remove-background-and-apply-gaussian-blur">5.1 Remove background and apply Gaussian blur</h3>
 <ol type="1">
-<li>Open <code>MAX_Lund.png</code>.</li>
-<li>Run <strong>Subtract Background…</strong> with a rolling ball radius of <strong>50</strong>.<br>
+<li>Open <code>MAX_Lund.png</code>.<br>
 </li>
-<li>Save the background-corrected image as <code>MAX_Lund_Bkg.png</code>.</li>
-<li>Apply <strong>Gaussian Blur…</strong> with <strong>sigma = 1</strong> to smooth noise.</li>
+<li>Subtract background:<br>
+<code>Process → Subtract Background…</code>
+<ul>
+<li>Rolling ball radius: <strong>50</strong><br>
+</li>
+</ul></li>
+<li>Smooth noise:<br>
+<code>Process → Filters → Gaussian Blur…</code>
+<ul>
+<li>Sigma: <strong>1</strong></li>
+</ul></li>
 </ol>
-<p>After preprocessing, we run <strong>Auto Local Threshold (Try all)</strong> again to compare the effect of background removal and smoothing.</p>
-<p><strong>Results after preprocessing:</strong></p>
+<p>After preprocessing:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/AutoLocalThresh2.tif" class="img-fluid figure-img"></p>
@@ -485,19 +499,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="selecting-a-method-local-otsu-and-binary-cleanup" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</h2>
-<p>From the local thresholding methods, we now choose <strong>Otsu</strong> with a radius of 15 and generate a cleaner binary mask.</p>
-<section id="apply-local-otsu" class="level3">
-<h3 class="anchored" data-anchor-id="apply-local-otsu">6.1 Apply Local Otsu</h3>
+<section id="apply-local-otsu-thresholding" class="level3">
+<h3 class="anchored" data-anchor-id="apply-local-otsu-thresholding">6.1 Apply Local Otsu thresholding</h3>
 <ol type="1">
-<li>Open <code>MAX_Lund_Bkg.png</code>.</li>
-<li>Run <strong>Auto Local Threshold</strong> with:
+<li>Run:<br>
+<code>Image → Adjust → Auto Local Threshold…</code>
 <ul>
-<li>Method: <strong>Otsu</strong><br>
+<li><strong>Method:</strong> Otsu<br>
 </li>
-<li>Radius: <strong>15</strong><br>
-</li>
+<li><strong>Radius:</strong> 15</li>
 </ul></li>
-<li>Save the result as <code>MAX_Lund_Mask.png</code>.</li>
 </ol>
 <p><strong>Local Otsu mask:</strong></p>
 <div class="quarto-figure quarto-figure-center">
@@ -508,118 +519,128 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <hr>
 </section>
-<section id="clean-the-mask-with-binary-operations" class="level3">
-<h3 class="anchored" data-anchor-id="clean-the-mask-with-binary-operations">6.2 Clean the mask with binary operations</h3>
-<p>Binary operations allow us to refine the segmentation (e.g., separating touching objects or removing noise).</p>
-<ol type="1">
-<li>Ensure <strong>Process → Binary → Options… → Black background</strong> is enabled.<br>
+<section id="refine-the-mask-with-binary-operations" class="level3">
+<h3 class="anchored" data-anchor-id="refine-the-mask-with-binary-operations">6.2 Refine the mask with binary operations</h3>
+<ol start="2" type="1">
+<li>Fill holes inside objects:<br>
+<code>Process → Binary → Fill Holes</code><br>
 </li>
-<li>Run <strong>Erode</strong> to slightly shrink objects and break small connections.<br>
+<li>Slightly shrink objects:<br>
+<code>Process → Binary → Erode</code><br>
 </li>
-<li>Optionally draw/restore edges or boundaries if needed.<br>
+<li>Optionally restore outlines:<br>
+<code>Edit → Draw</code><br>
 </li>
-<li>Run <strong>Dilate</strong> to grow objects back after erosion.<br>
-</li>
-<li>Save the final mask as <code>MAX_Lund_MaskErode.png</code>.</li>
+<li>Expand objects after erosion:<br>
+<code>Process → Binary → Dilate</code></li>
 </ol>
-<p><strong>Refined mask after binary operations:</strong></p>
+<p><strong>Refined mask:</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/MAX_Lund_MaskErode.png" class="img-fluid figure-img"></p>
 <figcaption>Refined mask</figcaption>
 </figure>
 </div>
-<p>In addition to <em>Erode</em> and <em>Dilate</em>, we now also apply <strong>Fill Holes</strong>, which fills empty pixels inside objects.</p>
-<ol type="1">
-<li>Run <strong>Fill Holes</strong> to ensure each object is internally solid.<br>
-</li>
-<li>Run <strong>Kill Borders</strong> to remove partial objects touching the border.<br>
-</li>
-<li>Save the result as <code>MAX_Lund_Mask-killBorders.png</code>.<br>
-</li>
-<li>If useful, apply <strong>Erode</strong> and <strong>Dilate</strong> to further separate or regularize objects.</li>
+<hr>
+</section>
+<section id="remove-border-touching-objects" class="level3">
+<h3 class="anchored" data-anchor-id="remove-border-touching-objects">6.3 Remove border-touching objects</h3>
+<ol start="6" type="1">
+<li>Remove partial objects touching image borders:<br>
+<code>Plugins → MorphoLibJ → Filtering → Kill Borders</code></li>
 </ol>
-<p><strong>Result after filling holes and removing border objects:</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/MAX_Lund_Mask-killBorders.png" class="img-fluid figure-img"></p>
 <figcaption>Filled + border-removed mask</figcaption>
 </figure>
 </div>
+<hr>
 </section>
 </section>
 <section id="object-labeling-with-morpholibj" class="level2">
 <h2 class="anchored" data-anchor-id="object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</h2>
-<p>Once we have a clean binary mask, the next step is to turn each connected region into a uniquely labeled object.<br>
-This gives us a “segmentation map” where each detected structure receives its own ID.</p>
-<p>We use <strong>Connected Components Labeling</strong>, which assigns a different label value to every object.</p>
-<p><strong>Labeled objects (each with a unique color):</strong></p>
+<p>Convert each connected region into a uniquely labeled object:</p>
+<p><code>Plugins → MorphoLibJ → Label → Connected Components Labeling</code></p>
+<ul>
+<li>Connectivity: <strong>4</strong><br>
+</li>
+<li>Output type: <strong>16-bit</strong></li>
+</ul>
+<p><strong>Labeled objects:</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/MAX_Lund_Mask-killBorders-lbl.png" class="img-fluid figure-img"></p>
 <figcaption>Connected components labeling</figcaption>
 </figure>
 </div>
+<hr>
 </section>
 <section id="measuring-object-properties" class="level2">
 <h2 class="anchored" data-anchor-id="measuring-object-properties">8. Measuring object properties</h2>
-<p>After labeling, we can extract quantitative features of each object.<br>
-This is important because segmentation is usually not the end goal — the goal is to <em>measure</em> something.</p>
-<p>Using <strong>Analyze Regions</strong> (MorphoLibJ), we obtain:</p>
+<p>Quantifying each object is often the main goal after segmentation.</p>
+<p>Run measurements:</p>
+<p><code>Plugins → MorphoLibJ → Analyze → Analyze Regions</code></p>
+<p>This extracts a number of morphological associated features. We will select:</p>
 <ul>
-<li>Area and pixel count<br>
+<li>Area<br>
+</li>
+<li>Pixel count<br>
 </li>
 <li>Perimeter<br>
 </li>
-<li>Circularity / shape descriptors<br>
+<li>Circularity<br>
 </li>
-<li>Ellipse fitting (center, elongation)<br>
+<li>Ellipse geometry<br>
 </li>
-<li>Bounding box geometry</li>
+<li>Bounding box</li>
 </ul>
-<p>These values appear as a table:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Screenshot2.png" class="img-fluid figure-img"></p>
 <figcaption>Morphometry table</figcaption>
 </figure>
 </div>
-<p>Such measurements allow downstream analysis such as size distributions, morphology comparisons, or filtering objects based on properties.</p>
+<hr>
 </section>
 <section id="visualizing-label-properties" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-label-properties">9. Visualizing label properties</h2>
-<p>Before filtering or removing any objects, it is useful to visualize a specific measurement across all labeled regions.<br>
-This helps confirm that the segmentation is meaningful and that measurements behave as expected.</p>
-<p>Using MorphoLibJ, we can map any measurement (e.g., area, circularity, elongation) onto the labeled image.<br>
-Each object is then colored according to its numeric value.</p>
-<p>Here we visualize the <strong>Area</strong> of each object using a viridis colormap:</p>
+<p>Visualize one measurement (e.g.&nbsp;area) mapped onto the label image:</p>
+<p><code>Plugins → MorphoLibJ → Label Images → Assign Measure to Label</code></p>
+<p>Choose <strong>Area</strong> and apply a colormap.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/MAX_Lund_Mask-killBorders-lbl-Area.png" class="img-fluid figure-img"></p>
 <figcaption>Area visualization on labels</figcaption>
 </figure>
 </div>
-<p>Such visual maps are helpful for:</p>
+<p>Useful for:</p>
 <ul>
-<li>spotting unusually large or small objects<br>
+<li>spotting unusually big/small objects<br>
 </li>
-<li>deciding appropriate thresholds for filtering<br>
+<li>deciding filtering thresholds<br>
 </li>
-<li>checking whether measurements reflect true object morphology</li>
+<li>checking measurement correctness</li>
 </ul>
+<hr>
 </section>
 <section id="filtering-objects-by-size" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-objects-by-size">10. Filtering objects by size</h2>
-<p>MorphoLibJ also allows filtering objects according to measured properties.<br>
-A common step is removing very small or noise-like detections.</p>
-<p>Using <strong>Label Size Filtering</strong>, we keep only objects above a chosen size threshold (e.g., 100 px).</p>
-<p><strong>Result after removing small objects:</strong></p>
+<p>Remove small objects based on size:</p>
+<p><code>Plugins → MorphoLibJ → Label Images → Label Size Filtering</code></p>
+<ul>
+<li><strong>Operation:</strong> Lower Than<br>
+</li>
+<li><strong>Size threshold:</strong> 100 px</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/MAX_Lund_Mask-killBorders-lbl-sizeFilt.png" class="img-fluid figure-img"></p>
 <figcaption>Size filtering</figcaption>
 </figure>
 </div>
+<hr>
+<p>```</p>
 <hr>
 </section>
 </section>
