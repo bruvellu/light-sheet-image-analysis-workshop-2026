@@ -29,8 +29,9 @@ Monday, 5 Jan 2026
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--15:30 - [Visualization of 2D images](practicals/practical_2d_visualization.md) (Agustín)
-- 15:30--17:00 - [Visualization of 3D images](practicals/practical_3d_visualization.md) (Bruno)
+- 14:00--14:30 - [Talk from companies] (Company 1)
+- 14:30--15:30 - [Visualization of 2D images](practicals/practical_2d_visualization.md) (Agustín)
+- 15:30--17:30 - [Visualization of 3D images](practicals/practical_3d_visualization.md) (Bruno)
 
 ## 🗓️ Day 2: Image processing and multiview reconstruction
 
@@ -55,8 +56,9 @@ Tuesday, 6 Jan 2026
 
 <!--TODO: Proposal of image analysis the entire afternoon-->
 
-- 14:00--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_image_processing.md) (Agustín/Marina)
-- 16:00--17:00 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Bruno/Marina)
+- 14:00--14:30 - [Talk from companies] (Company 2)
+- 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_image_processing.md) (Marina)
+- 16:00--17:30 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Marina)
 
 ## 🗓️ Day 3: Machine learning and advanced workflows
 
@@ -66,8 +68,8 @@ Wednesday, 7 Jan 2026
 
 <!--TODO: Subdivide these talks into tools?-->
 
-- 09:00--09:30 - [Machine learning](talks/talk_machine_learning.md) (Agustín)
-- 09:30--11:00 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Marina/Bruno)
+- 09:00--09:30 - [Talk from companies] (Company 3)
+- 09:30--11:00 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Bruno)
 
 ### 🫖 Coffee break (11:00--11:30)
 
@@ -82,7 +84,7 @@ Wednesday, 7 Jan 2026
 <!--TODO: Revise the slots-->
 
 - 14:00--16:00 - [Tissue cartography](practicals/practical_tissue_cartography.md) (Bruno)
-- 16:00--17:00 - [Cell tracking](practicals/practical_cell_tracking.md) (Bruno)
+- 16:00--17:30 - [Cell tracking](practicals/practical_cell_tracking.md) (Bruno)
 
 ## 🗓️ Day 4: Scientific applications and project work
 
@@ -103,7 +105,7 @@ Thursday, 8 Jan 2026
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--17:00 - **Project work** (Groups)
+- 14:00--17:30 - **Project work** (Groups)
 
 ## 🗓️ Day 5: Project work and presentations
 
