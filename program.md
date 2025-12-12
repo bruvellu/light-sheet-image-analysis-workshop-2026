@@ -56,7 +56,7 @@ Tuesday, 6 Jan 2026
 
 <!--TODO: Proposal of image analysis the entire afternoon-->
 
-- 14:00--14:30 - [Talk from companies] (Company 2)
+- 14:00--14:30 - [Talk from companies] (Company 2-Galenica)
 - 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_image_processing.md) (Marina)
 - 16:00--17:30 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Marina)
 
@@ -68,7 +68,7 @@ Wednesday, 7 Jan 2026
 
 <!--TODO: Subdivide these talks into tools?-->
 
-- 09:00--09:30 - [Talk from companies] (Company 3)
+- 09:00--09:30 - [Talk from companies] (Company 3-Bruker)
 - 09:30--11:00 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Bruno)
 
 ### 🫖 Coffee break (11:00--11:30)
