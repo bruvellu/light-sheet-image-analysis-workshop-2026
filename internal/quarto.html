@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -227,7 +247,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/practical_cell_tracking.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cell tracking</span></a>
+ <span class="menu-text">Cell tracking using Mastodon in Fiji</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -456,7 +476,7 @@ Table&nbsp;1: My Caption
 </section>
 <section id="citations" class="level2">
 <h2 class="anchored" data-anchor-id="citations">Citations</h2>
-<p>Life is good <span class="citation" data-cites="Weigert2018-ti">(<a href="#ref-Weigert2018-ti" role="doc-biblioref"><strong>Weigert2018-ti?</strong></a>)</span>. (bibkey should be in <a href="references.bib">references.bib</a>)</p>
+<p>Life is good <span class="citation" data-cites="Weigert2018-ti">(<a href="#ref-Weigert2018-ti" role="doc-biblioref">Weigert et al. 2018</a>)</span>. (bibkey should be in <a href="references.bib">references.bib</a>)</p>
 </section>
 <section id="buttons" class="level2">
 <h2 class="anchored" data-anchor-id="buttons">Buttons</h2>
@@ -546,11 +566,16 @@ Important
 </div>
 
 
+
 </section>
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Weigert2018-ti" class="csl-entry" role="listitem">
+Weigert, Martin, Uwe Schmidt, Tobias Boothe, Andreas Müller, Alexandr Dibrov, Akanksha Jain, Benjamin Wilhelm, et al. 2018. <span>“Content-Aware Image Restoration: Pushing the Limits of Fluorescence Microscopy.”</span> <em>Nat. Methods</em> 15 (December): 1090–97. <a href="https://doi.org/10.1038/s41592-018-0216-7">https://doi.org/10.1038/s41592-018-0216-7</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Here is the footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

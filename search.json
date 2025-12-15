@@ -100,12 +100,133 @@
   {
     "objectID": "practicals/practical_cell_tracking.html",
     "href": "practicals/practical_cell_tracking.html",
-    "title": "Cell tracking",
+    "title": "Cell tracking using Mastodon in Fiji",
     "section": "",
-    "text": "Cell tracking\n\nCreate a TrackMate project\nCreate a Mastodon project\nManual tracking\nSemi-automated tracking\nAutomated tracking\nVisualization\nBlender\n\nThis is currently scheduled for 1 hr but ut seems a lot. Should we remove it to leave space for talks from companies?",
+    "text": "This is a (very) basic tutorial on how to track cells using Mastodon (Girstmair et al. 2025) in Fiji (Schindelin et al. 2012).\n\nObjectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis\nWe will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688\nThe original data is from this paper https://elifesciences.org/articles/34410\nMastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/",
     "crumbs": [
       "Practicals",
-      "Cell tracking"
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-summary",
+    "href": "practicals/practical_cell_tracking.html#sec-summary",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "",
+    "text": "This is a (very) basic tutorial on how to track cells using Mastodon (Girstmair et al. 2025) in Fiji (Schindelin et al. 2012).\n\nObjectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis\nWe will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688\nThe original data is from this paper https://elifesciences.org/articles/34410\nMastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-requirements",
+    "href": "practicals/practical_cell_tracking.html#sec-requirements",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Requirements",
+    "text": "Requirements\n\nParhyale dataset\nFiji/ImageJ\nMastodon",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-setup",
+    "href": "practicals/practical_cell_tracking.html#sec-setup",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Setup",
+    "text": "Setup\n\nDownload Dataset\n\nGo to https://zenodo.org/records/13944688\nClick to download https://zenodo.org/records/13944688/files/Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip?download=1\nWait. It’s a 4.3GB ZIP file\nMove the file to a working directory\nUnzip Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip\nWait. It’ll be unzipped to 23GB\n\n\n\nDownload Fiji\n\nGo to https://fiji.sc\nChoose Distribution: Stable\nClick the big download button\nCopy fiji-stable-linux64-jdk.zip to working directory and unzip it\nOpen the new directory fiji-stable-linux64-jdk/Fiji.app/\nDouble-click on fiji-linux-x64 launcher\nFiji will open\n\n\n\nInstall Mastodon\n\nClick on Help &gt; Update...\nThe updater will open and say Fiji is up-to-date\nClick Manage Update Sites\nList of plugins available to install in Fiji\nSearch for “mastodon”\nSeveral Mastodon related plugins will appear\nClick on the checkbox for Mastodon\nClick Apply and Close\nClick Apply Changes\nWait until downloads are finished\nRestart Fiji (close window and double-click the launcher)\n\n\n\n\n\n\n\nFigure 1: Start Fiji and install Mastodon.",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-open-project",
+    "href": "practicals/practical_cell_tracking.html#sec-open-project",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Open Mastodon Project",
+    "text": "Open Mastodon Project\n\nIn Fiji click on Plugins &gt; Tracking &gt; Mastodon &gt; Mastodon Launcher\nMastodon Launcher window will open\nClick on “open Mastodon project” (top left) and “Open another project” (bottom right)\nNavigate to the directory Mastodon_Auto-Tracking_Demo_Ph-limb-dev/\nSelect the file Parhyale_LimbDev_30tps.mastodon\nSeveral new windows will open (Console, Mastodon, BigDataViewer, TrackScheme, Data table)",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-inspect-dataset",
+    "href": "practicals/practical_cell_tracking.html#sec-inspect-dataset",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Inspect the Dataset",
+    "text": "Inspect the Dataset\n\nLet’s focus on the Mastodon window. Close Console, BigDataViewer, TrackScheme, Data table\nThis is the main project menu from where you can open windows, set options, process data and save the project\nThe most important buttons for this tutorial are bdv (BigDataViewer) and trackscheme\nClick on bdv and make the window larger\nDrag the timepoint slider at the bottom to see cells moving and dividing\nUsing your acquired BigDataViewer skills, focus on the surface of the embryo\nIf you get lost, press Shift+Z to re-orient the embryo\nFind a cell that divides before timepoint 15 and looks trackable\nZoom on it using Ctrl+Shift+scroll and center it by holding the right button and dragging the mouse\nUse Shift+scroll to navigate through z and M-N to go through time\nYou are ready to track",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-manual-tracking",
+    "href": "practicals/practical_cell_tracking.html#sec-manual-tracking",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Manual Tracking",
+    "text": "Manual Tracking\n\nOn the Mastodon project window, click on the trackscheme button\nThe TrackScheme window will appear\nResize the bdv window to be side-by-side with the TrackScheme\nClick on the bdv window, set the timepoint to some frames before mitosis, Shift+scroll to find the center of the nucleus, put your mouse pointer there and press A\nA round magenta circle will appear over the nucleus and in the TrackScheme\nWith your mouse over the circle, use Shift+Q and Shift+E to adjust the size of the spot to roughly the nucleus diameter\nZoom in on the new spot in the TrackScheme, hover and click on it and watch what happens in the bdv window\nGo back to the bdv, hover the pointer over the circle and hold the spacebar to adjust the position of the circle and the nucleus\nNow let’s add a second spot\nHover the mouse inside the circle and hold A. This will advance to the next frame showing you the first spot in white dashed line and the second spot in white solid line with a white solid link between the two. Still holding A, position the second spot, then release A to create the new linked spot\nCheck how the second spot and a link were created in the TrackScheme automatically\nContinue to track the nucleus for a few more frames, until the frame immediately before division\nNote that when you click on a spot in the bdv window, the corresponding spot is highlighted in the TrackScheme window\nSee what happens to the bdv when clicking the spots in TrackScheme… (nothing, unless it is the spot in view)\nLet’s change that\nIn the menu bar of bdv and TrackScheme windows there are locks 1, 2, 3. Click on lock 1 in both windows\nNow click through spots in the TrackScheme; the view in the bdv will change to show the selected spot at the center\nBefore we continue tracking the cell division, let’s check one of the amazing Mastodon features\nClick on the bdv button in the Mastodon project window and another bdv window will open\nNow activate lock 1 and click on one of the TrackScheme spots; both windows will be synchronized!\nWhy is this useful for manual tracking? Adjust the view to center the spot in the second bdv window, press Shift+Y, and select a spot from the TrackScheme. Now we have both XY and ZY views of the same nucleus! Which is great for tracking in 3D. You can check, for instance, that your spot is well centered in Z and adjust it in this window\nOK. Continue the tracking of one of the daughter cells. Select the last spot in the TrackScheme, go to the XY bdv, hover the mouse over the circle and hold A, move the spot, and release A to add it. Do it for a few frames\nThen go back to the pre-division spot and do the same for the other daughter cell\nThis will create the first branch of the lineage tree (adjust the TrackScheme view to see it)",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-semiauto-tracking",
+    "href": "practicals/practical_cell_tracking.html#sec-semiauto-tracking",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Semi-Automated Tracking",
+    "text": "Semi-Automated Tracking\n\nThis mode will try to guess where the next nucleus is and automatically create the spots and links\nIt requires you to set one spot, so let’s pick a different nucleus. Choose a bright one you like\nNow, hovering above the circle press Ctrl+T\nA lineage will appear in the TrackScheme. Check how accurate it is by clicking on the spots and watching their position relative to the nucleus in the bdv windows\nTry going further by hovering on a spot and pressing Ctrl+T to continue the semi-automated tracking. See how long you can go, how it behaves with cell divisions, and which cells work well with it and which don’t\nThere are many parameters that can be adjusted to tweak the semi-automated tracking behavior, check the documentation",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-auto-tracking",
+    "href": "practicals/practical_cell_tracking.html#sec-auto-tracking",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Automatic Detection and Linking",
+    "text": "Automatic Detection and Linking\n\nThe final part of this tutorial is to try automatic detection and linking of spots\nThis is the dream: loading your data and getting out your lineage. However, in practice, it’s a lot messier. Cleaning, fixing, and curating the data is required to get a nice informative lineage\nWe will use a simplified version of the protocol included in this dataset in the file Protocol_Auto-Detection_Auto-Linking.docx\nIn the Mastodon window, go to Plugins &gt; Tracking &gt; Detection...\nPress Next twice (leave options as is)\nChoose Advanced DoG detector and press Next\nKeep Detect: bright blobs, change Estimated diameter to 35px and Quality threshold to 100. Behavior should remain as Add\nClick Preview and see how well the detection will work by exploring a new bdv window. Do you observe too many false positives? You can change the diameter, for example, and try the preview again to see what happens to the detected spots\nOnce satisfied, press Next and wait\nWhen the detection is done, press Finish\nThe bdv windows and the TrackScheme will be showing all the spots. Explore a bit the bdv and TrackScheme. If you zoom in a lot you’ll see the unlinked, individual spots per frame\nBefore we try to automatically link these spots, let’s remove low quality detections\nOn the Mastodon window click on Table, resize it to have more space, and resize the column Detection q... to show Detection quality\nClick on Detection quality to sort the table\nClick on the first row to select it. Select all rows where Detection quality is &lt;400\nThen click Edit &gt; Delete Selection\nClose the table\nYou can also manually delete obviously wrong spots by hovering and pressing D. Clean up the ones outside the embryo\nNow let’s try linking\nIn the main Mastodon window click on Plugins &gt; Tracking &gt; Linking...\nKeep All spots selected for all timepoints (0-29) and press Next\nChoose Lap linker and click Next\nChange the parameters to:\n\nFrame to frame linking: Max distance to 40px\nGap closing: Max distance to 60px (keep others as is)\nTrack division: Check Allow track division, set Max distance to 40px, and press + to add a Feature penalty and set it to Center ch1 to 0.3\n\nPress Next to start linking and wait… then press Finish\nNote that there are now tracks in the bdv and TrackScheme windows. Explore them a bit\nMastodon can calculate features (position, displacement, velocity, etc.) of individual spots, links and branches. Let’s do that\nIn the main Mastodon window press compute features. A Feature calculation window will open\nPress compute and wait… when it’s done, close it",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-feature-visualization",
+    "href": "practicals/practical_cell_tracking.html#sec-feature-visualization",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Basic Feature Visualization",
+    "text": "Basic Feature Visualization\n\nFinally, let’s visualize the computed features that might be interesting or useful\nIn the bdv window press File &gt; Preferences to open the feature color coding visualization parameters\nOn Settings &gt; Feature Color Modes click on Duplicate (it’ll generate a Number of links (2)) and then Rename. Rename it to Velocity\nOn the Coloring Spots change Read spot color from to Incoming link and change Feature to Link velocity. Then click on autoscale in the range\nOn the Coloring Links change Read link color from to Link and change Feature to Link velocity. Then also click on autoscale\nClick Apply (nothing will happen) then OK\nOn the bdv window press View &gt; Coloring &gt; Velocity\nDo the same for the other bdv window and the TrackScheme\nThis gives a visual representation of cells which have a high displacement per frame. These might be artifacts in linking unrelated spots or, in a good processed lineage, reveal some biological process like cell migration",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-graph-plotting",
+    "href": "practicals/practical_cell_tracking.html#sec-graph-plotting",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "Graph Plotting",
+    "text": "Graph Plotting\n\nTo finalize, a simple example of plotting\nClick on grapher in the main Mastodon window, a plot window will open\nPress the lock 1 to lock the windows, select Link velocity - outgoing for X axis and Detection quality for Y axis and press Plot\nFind out if the spots with the highest link velocity are properly linked or if it is an artifact",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cell_tracking.html#sec-references",
+    "href": "practicals/practical_cell_tracking.html#sec-references",
+    "title": "Cell tracking using Mastodon in Fiji",
+    "section": "References",
+    "text": "References\n\n\nGirstmair, Johannes, Tobias Pietzsch, Vladimir Ulman, Stefan Hahmann, Matthias Arzt, Mette Handberg-Thorsager, Ko Sugawara, et al. 2025. “Mastodon: The Command Center for Large-Scale Lineage-Tracing Microscopy Datasets.” bioRxiv, December, 2025.12.10.693416. https://doi.org/10.64898/2025.12.10.693416.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon in Fiji"
     ]
   },
   {
@@ -334,7 +455,7 @@
     "href": "internal/quarto.html",
     "title": "Quarto reference guide",
     "section": "",
-    "text": "Here are some of the markdown basics we can use with Quarto.\n\n\nitalics, bold, bold italics, superscript2 / subscript2, strikethrough, verbatim code\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\nTask 1\nTask 2\n\n\nterm\n\ndefinition\n\n\n\nBlockquote\n\n\n\n\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.\n\n\n\n\n\n\nTable 1: My Caption\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\nSee Table 1.\n\n\n\nLife is good (Weigert2018-ti?). (bibkey should be in references.bib)\n\n\n\nProgram Resources\n\n\n\nHere is a footnote reference,1 and another.2.\nHere is an inline note.3\n\n\n\ninline math: \\(E = mc^{2}\\)\ndisplay math:\n\\[E = mc^{2}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote callout block.\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip callout block.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nCaution callout block.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant callout block.",
+    "text": "Here are some of the markdown basics we can use with Quarto.\n\n\nitalics, bold, bold italics, superscript2 / subscript2, strikethrough, verbatim code\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\nTask 1\nTask 2\n\n\nterm\n\ndefinition\n\n\n\nBlockquote\n\n\n\n\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\nThis is illustrated well by Figure 1.\n\n\n\n\n\n\nTable 1: My Caption\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\nSee Table 1.\n\n\n\nLife is good (Weigert et al. 2018). (bibkey should be in references.bib)\n\n\n\nProgram Resources\n\n\n\nHere is a footnote reference,1 and another.2.\nHere is an inline note.3\n\n\n\ninline math: \\(E = mc^{2}\\)\ndisplay math:\n\\[E = mc^{2}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote callout block.\n\n\n\n\n\n\n\n\nTip\n\n\n\nTip callout block.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nWarning callout block.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nCaution callout block.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nImportant callout block.",
     "crumbs": [
       "Internal",
       "Quarto reference guide"
@@ -378,7 +499,7 @@
     "href": "internal/quarto.html#citations",
     "title": "Quarto reference guide",
     "section": "",
-    "text": "Life is good (Weigert2018-ti?). (bibkey should be in references.bib)",
+    "text": "Life is good (Weigert et al. 2018). (bibkey should be in references.bib)",
     "crumbs": [
       "Internal",
       "Quarto reference guide"

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Bruno C. Vellutini">
+<meta name="dcterms.date" content="2025-12-15">
 
-<title>practical_cell_tracking – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -43,6 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,10 +97,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:title" content="Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:title" content="Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -103,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking.html">Cell tracking</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking.html">Cell tracking using Mastodon in Fiji</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -198,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/practical_cell_tracking.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Cell tracking</span></a>
+ <span class="menu-text">Cell tracking using Mastodon in Fiji</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -319,28 +343,267 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cell-tracking" id="toc-cell-tracking" class="nav-link active" data-scroll-target="#cell-tracking">Cell tracking</a></li>
+  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link active" data-scroll-target="#sec-summary">Summary</a></li>
+  <li><a href="#sec-requirements" id="toc-sec-requirements" class="nav-link" data-scroll-target="#sec-requirements">Requirements</a></li>
+  <li><a href="#sec-setup" id="toc-sec-setup" class="nav-link" data-scroll-target="#sec-setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#sec-setup-dataset" id="toc-sec-setup-dataset" class="nav-link" data-scroll-target="#sec-setup-dataset">Download Dataset</a></li>
+  <li><a href="#sec-setup-fiji" id="toc-sec-setup-fiji" class="nav-link" data-scroll-target="#sec-setup-fiji">Download Fiji</a></li>
+  <li><a href="#sec-setup-mastodon" id="toc-sec-setup-mastodon" class="nav-link" data-scroll-target="#sec-setup-mastodon">Install Mastodon</a></li>
+  </ul></li>
+  <li><a href="#sec-open-project" id="toc-sec-open-project" class="nav-link" data-scroll-target="#sec-open-project">Open Mastodon Project</a></li>
+  <li><a href="#sec-inspect-dataset" id="toc-sec-inspect-dataset" class="nav-link" data-scroll-target="#sec-inspect-dataset">Inspect the Dataset</a></li>
+  <li><a href="#sec-manual-tracking" id="toc-sec-manual-tracking" class="nav-link" data-scroll-target="#sec-manual-tracking">Manual Tracking</a></li>
+  <li><a href="#sec-semiauto-tracking" id="toc-sec-semiauto-tracking" class="nav-link" data-scroll-target="#sec-semiauto-tracking">Semi-Automated Tracking</a></li>
+  <li><a href="#sec-auto-tracking" id="toc-sec-auto-tracking" class="nav-link" data-scroll-target="#sec-auto-tracking">Automatic Detection and Linking</a></li>
+  <li><a href="#sec-feature-visualization" id="toc-sec-feature-visualization" class="nav-link" data-scroll-target="#sec-feature-visualization">Basic Feature Visualization</a></li>
+  <li><a href="#sec-graph-plotting" id="toc-sec-graph-plotting" class="nav-link" data-scroll-target="#sec-graph-plotting">Graph Plotting</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_cell_tracking.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking.html">Cell tracking</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_2d_visualization.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking.html">Cell tracking using Mastodon in Fiji</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Cell tracking using Mastodon in Fiji</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="cell-tracking" class="level1">
-<h1>Cell tracking</h1>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bruno C. Vellutini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 15, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-summary">Summary</h2>
+<p>This is a (very) basic tutorial on how to track cells using Mastodon <span class="citation" data-cites="Girstmair2025-qd">(<a href="#ref-Girstmair2025-qd" role="doc-biblioref">Girstmair et al. 2025</a>)</span> in Fiji <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span>.</p>
 <ul>
-<li>Create a TrackMate project</li>
-<li>Create a Mastodon project</li>
-<li>Manual tracking</li>
-<li>Semi-automated tracking</li>
-<li>Automated tracking</li>
-<li>Visualization</li>
-<li>Blender</li>
+<li>Objectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis</li>
+<li>We will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688</li>
+<li>The original data is from this paper https://elifesciences.org/articles/34410</li>
+<li>Mastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/</li>
 </ul>
-<p>This is currently scheduled for 1 hr but ut seems a lot. Should we remove it to leave space for talks from companies?</p>
+</section>
+<section id="sec-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="sec-requirements">Requirements</h2>
+<ul>
+<li>Parhyale dataset</li>
+<li>Fiji/ImageJ</li>
+<li>Mastodon</li>
+</ul>
+</section>
+<section id="sec-setup" class="level2">
+<h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
+<section id="sec-setup-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="sec-setup-dataset">Download Dataset</h3>
+<ul>
+<li>Go to https://zenodo.org/records/13944688</li>
+<li>Click to download https://zenodo.org/records/13944688/files/Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip?download=1</li>
+<li>Wait. It’s a 4.3GB ZIP file</li>
+<li>Move the file to a working directory</li>
+<li>Unzip <code>Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip</code></li>
+<li>Wait. It’ll be unzipped to 23GB</li>
+</ul>
+</section>
+<section id="sec-setup-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="sec-setup-fiji">Download Fiji</h3>
+<ul>
+<li>Go to https://fiji.sc</li>
+<li>Choose <code>Distribution: Stable</code></li>
+<li>Click the big download button</li>
+<li>Copy <code>fiji-stable-linux64-jdk.zip</code> to working directory and unzip it</li>
+<li>Open the new directory <code>fiji-stable-linux64-jdk/Fiji.app/</code></li>
+<li>Double-click on <code>fiji-linux-x64</code> launcher</li>
+<li>Fiji will open</li>
+</ul>
+</section>
+<section id="sec-setup-mastodon" class="level3">
+<h3 class="anchored" data-anchor-id="sec-setup-mastodon">Install Mastodon</h3>
+<ul>
+<li>Click on <code>Help &gt; Update...</code></li>
+<li>The updater will open and say Fiji is up-to-date</li>
+<li>Click <code>Manage Update Sites</code></li>
+<li>List of plugins available to install in Fiji</li>
+<li>Search for “mastodon”</li>
+<li>Several Mastodon related plugins will appear</li>
+<li>Click on the checkbox for <code>Mastodon</code></li>
+<li>Click <code>Apply and Close</code></li>
+<li>Click <code>Apply Changes</code></li>
+<li>Wait until downloads are finished</li>
+<li>Restart Fiji (close window and double-click the launcher)</li>
+</ul>
+<div id="fig-setup-fiji" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-setup-fiji-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="media/Video1-Start_Fiji_and_install_Mastodon.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setup-fiji-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Start Fiji and install Mastodon.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-open-project" class="level2">
+<h2 class="anchored" data-anchor-id="sec-open-project">Open Mastodon Project</h2>
+<ul>
+<li>In Fiji click on <code>Plugins &gt; Tracking &gt; Mastodon &gt; Mastodon Launcher</code></li>
+<li>Mastodon Launcher window will open</li>
+<li>Click on “open Mastodon project” (top left) and “Open another project” (bottom right)</li>
+<li>Navigate to the directory <code>Mastodon_Auto-Tracking_Demo_Ph-limb-dev/</code></li>
+<li>Select the file <code>Parhyale_LimbDev_30tps.mastodon</code></li>
+<li>Several new windows will open (Console, Mastodon, BigDataViewer, TrackScheme, Data table)</li>
+</ul>
+</section>
+<section id="sec-inspect-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="sec-inspect-dataset">Inspect the Dataset</h2>
+<ul>
+<li>Let’s focus on the Mastodon window. Close Console, BigDataViewer, TrackScheme, Data table</li>
+<li>This is the main project menu from where you can open windows, set options, process data and save the project</li>
+<li>The most important buttons for this tutorial are <code>bdv</code> (BigDataViewer) and <code>trackscheme</code></li>
+<li>Click on <code>bdv</code> and make the window larger</li>
+<li>Drag the timepoint slider at the bottom to see cells moving and dividing</li>
+<li>Using your acquired BigDataViewer skills, focus on the surface of the embryo</li>
+<li>If you get lost, press <code>Shift+Z</code> to re-orient the embryo</li>
+<li>Find a cell that divides before timepoint 15 and looks trackable</li>
+<li>Zoom on it using <code>Ctrl+Shift+scroll</code> and center it by holding the right button and dragging the mouse</li>
+<li>Use <code>Shift+scroll</code> to navigate through z and <code>M-N</code> to go through time</li>
+<li>You are ready to track</li>
+</ul>
+</section>
+<section id="sec-manual-tracking" class="level2">
+<h2 class="anchored" data-anchor-id="sec-manual-tracking">Manual Tracking</h2>
+<ul>
+<li>On the Mastodon project window, click on the <code>trackscheme</code> button</li>
+<li>The TrackScheme window will appear</li>
+<li>Resize the bdv window to be side-by-side with the TrackScheme</li>
+<li>Click on the bdv window, set the timepoint to some frames before mitosis, <code>Shift+scroll</code> to find the center of the nucleus, put your mouse pointer there and press <code>A</code></li>
+<li>A round magenta circle will appear over the nucleus and in the TrackScheme</li>
+<li>With your mouse over the circle, use <code>Shift+Q</code> and <code>Shift+E</code> to adjust the size of the spot to roughly the nucleus diameter</li>
+<li>Zoom in on the new spot in the TrackScheme, hover and click on it and watch what happens in the bdv window</li>
+<li>Go back to the bdv, hover the pointer over the circle and hold the spacebar to adjust the position of the circle and the nucleus</li>
+<li>Now let’s add a second spot</li>
+<li>Hover the mouse inside the circle and hold <code>A</code>. This will advance to the next frame showing you the first spot in white dashed line and the second spot in white solid line with a white solid link between the two. Still holding <code>A</code>, position the second spot, then release <code>A</code> to create the new linked spot</li>
+<li>Check how the second spot and a link were created in the TrackScheme automatically</li>
+<li>Continue to track the nucleus for a few more frames, until the frame immediately before division</li>
+<li>Note that when you click on a spot in the bdv window, the corresponding spot is highlighted in the TrackScheme window</li>
+<li>See what happens to the bdv when clicking the spots in TrackScheme… (nothing, unless it is the spot in view)</li>
+<li>Let’s change that</li>
+<li>In the menu bar of bdv and TrackScheme windows there are locks 1, 2, 3. Click on lock 1 in both windows</li>
+<li>Now click through spots in the TrackScheme; the view in the bdv will change to show the selected spot at the center</li>
+<li>Before we continue tracking the cell division, let’s check one of the amazing Mastodon features</li>
+<li>Click on the <code>bdv</code> button in the Mastodon project window and another bdv window will open</li>
+<li>Now activate lock 1 and click on one of the TrackScheme spots; both windows will be synchronized!</li>
+<li>Why is this useful for manual tracking? Adjust the view to center the spot in the second bdv window, press <code>Shift+Y</code>, and select a spot from the TrackScheme. Now we have both XY and ZY views of the same nucleus! Which is great for tracking in 3D. You can check, for instance, that your spot is well centered in Z and adjust it in this window</li>
+<li>OK. Continue the tracking of one of the daughter cells. Select the last spot in the TrackScheme, go to the XY bdv, hover the mouse over the circle and hold <code>A</code>, move the spot, and release <code>A</code> to add it. Do it for a few frames</li>
+<li>Then go back to the pre-division spot and do the same for the other daughter cell</li>
+<li>This will create the first branch of the lineage tree (adjust the TrackScheme view to see it)</li>
+</ul>
+</section>
+<section id="sec-semiauto-tracking" class="level2">
+<h2 class="anchored" data-anchor-id="sec-semiauto-tracking">Semi-Automated Tracking</h2>
+<ul>
+<li>This mode will try to guess where the next nucleus is and automatically create the spots and links</li>
+<li>It requires you to set one spot, so let’s pick a different nucleus. Choose a bright one you like</li>
+<li>Now, hovering above the circle press <code>Ctrl+T</code></li>
+<li>A lineage will appear in the TrackScheme. Check how accurate it is by clicking on the spots and watching their position relative to the nucleus in the bdv windows</li>
+<li>Try going further by hovering on a spot and pressing <code>Ctrl+T</code> to continue the semi-automated tracking. See how long you can go, how it behaves with cell divisions, and which cells work well with it and which don’t</li>
+<li>There are many parameters that can be adjusted to tweak the semi-automated tracking behavior, check the documentation</li>
+</ul>
+</section>
+<section id="sec-auto-tracking" class="level2">
+<h2 class="anchored" data-anchor-id="sec-auto-tracking">Automatic Detection and Linking</h2>
+<ul>
+<li>The final part of this tutorial is to try automatic detection and linking of spots</li>
+<li>This is the dream: loading your data and getting out your lineage. However, in practice, it’s a lot messier. Cleaning, fixing, and curating the data is required to get a nice informative lineage</li>
+<li>We will use a simplified version of the protocol included in this dataset in the file <code>Protocol_Auto-Detection_Auto-Linking.docx</code></li>
+<li>In the Mastodon window, go to <code>Plugins &gt; Tracking &gt; Detection...</code></li>
+<li>Press <code>Next</code> twice (leave options as is)</li>
+<li>Choose <code>Advanced DoG detector</code> and press <code>Next</code></li>
+<li>Keep <code>Detect: bright blobs</code>, change <code>Estimated diameter</code> to <code>35px</code> and <code>Quality threshold</code> to <code>100</code>. <code>Behavior</code> should remain as <code>Add</code></li>
+<li>Click <code>Preview</code> and see how well the detection will work by exploring a new bdv window. Do you observe too many false positives? You can change the diameter, for example, and try the preview again to see what happens to the detected spots</li>
+<li>Once satisfied, press <code>Next</code> and wait</li>
+<li>When the detection is done, press <code>Finish</code></li>
+<li>The bdv windows and the TrackScheme will be showing all the spots. Explore a bit the bdv and TrackScheme. If you zoom in a lot you’ll see the unlinked, individual spots per frame</li>
+<li>Before we try to automatically link these spots, let’s remove low quality detections</li>
+<li>On the Mastodon window click on <code>Table</code>, resize it to have more space, and resize the column <code>Detection q...</code> to show <code>Detection quality</code></li>
+<li>Click on <code>Detection quality</code> to sort the table</li>
+<li>Click on the first row to select it. Select all rows where <code>Detection quality</code> is &lt;400</li>
+<li>Then click <code>Edit &gt; Delete Selection</code></li>
+<li>Close the table</li>
+<li>You can also manually delete obviously wrong spots by hovering and pressing <code>D</code>. Clean up the ones outside the embryo</li>
+<li>Now let’s try linking</li>
+<li>In the main Mastodon window click on <code>Plugins &gt; Tracking &gt; Linking...</code></li>
+<li>Keep <code>All spots</code> selected for all timepoints (0-29) and press <code>Next</code></li>
+<li>Choose <code>Lap linker</code> and click <code>Next</code></li>
+<li>Change the parameters to:
+<ul>
+<li><code>Frame to frame linking</code>: <code>Max distance</code> to <code>40px</code></li>
+<li><code>Gap closing</code>: <code>Max distance</code> to <code>60px</code> (keep others as is)</li>
+<li><code>Track division</code>: Check <code>Allow track division</code>, set <code>Max distance</code> to <code>40px</code>, and press <code>+</code> to add a <code>Feature penalty</code> and set it to <code>Center ch1</code> to <code>0.3</code></li>
+</ul></li>
+<li>Press <code>Next</code> to start linking and wait… then press <code>Finish</code></li>
+<li>Note that there are now tracks in the bdv and TrackScheme windows. Explore them a bit</li>
+<li>Mastodon can calculate features (position, displacement, velocity, etc.) of individual spots, links and branches. Let’s do that</li>
+<li>In the main Mastodon window press <code>compute features</code>. A Feature calculation window will open</li>
+<li>Press <code>compute</code> and wait… when it’s done, close it</li>
+</ul>
+</section>
+<section id="sec-feature-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="sec-feature-visualization">Basic Feature Visualization</h2>
+<ul>
+<li>Finally, let’s visualize the computed features that might be interesting or useful</li>
+<li>In the bdv window press <code>File &gt; Preferences</code> to open the feature color coding visualization parameters</li>
+<li>On <code>Settings &gt; Feature Color Modes</code> click on <code>Duplicate</code> (it’ll generate a <code>Number of links (2)</code>) and then <code>Rename</code>. Rename it to <code>Velocity</code></li>
+<li>On the <code>Coloring Spots</code> change <code>Read spot color from</code> to <code>Incoming link</code> and change <code>Feature</code> to <code>Link velocity</code>. Then click on <code>autoscale</code> in the range</li>
+<li>On the <code>Coloring Links</code> change <code>Read link color from</code> to <code>Link</code> and change <code>Feature</code> to <code>Link velocity</code>. Then also click on <code>autoscale</code></li>
+<li>Click <code>Apply</code> (nothing will happen) then <code>OK</code></li>
+<li>On the bdv window press <code>View &gt; Coloring &gt; Velocity</code></li>
+<li>Do the same for the other bdv window and the TrackScheme</li>
+<li>This gives a visual representation of cells which have a high displacement per frame. These might be artifacts in linking unrelated spots or, in a good processed lineage, reveal some biological process like cell migration</li>
+</ul>
+</section>
+<section id="sec-graph-plotting" class="level2">
+<h2 class="anchored" data-anchor-id="sec-graph-plotting">Graph Plotting</h2>
+<ul>
+<li>To finalize, a simple example of plotting</li>
+<li>Click on <code>grapher</code> in the main Mastodon window, a plot window will open</li>
+<li>Press the lock 1 to lock the windows, select <code>Link velocity - outgoing</code> for X axis and <code>Detection quality</code> for Y axis and press <code>Plot</code></li>
+<li>Find out if the spots with the highest link velocity are properly linked or if it is an artifact</li>
+</ul>
+</section>
+<section id="sec-references" class="level2">
+<h2 class="anchored" data-anchor-id="sec-references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Girstmair2025-qd" class="csl-entry" role="listitem">
+Girstmair, Johannes, Tobias Pietzsch, Vladimir Ulman, Stefan Hahmann, Matthias Arzt, Mette Handberg-Thorsager, Ko Sugawara, et al. 2025. <span>“Mastodon: The Command Center for Large-Scale Lineage-Tracing Microscopy Datasets.”</span> <em>bioRxiv</em>, December, 2025.12.10.693416. <a href="https://doi.org/10.64898/2025.12.10.693416">https://doi.org/10.64898/2025.12.10.693416</a>.
+</div>
+<div id="ref-Schindelin2012-di" class="csl-entry" role="listitem">
+Schindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. <span>“Fiji: An Open-Source Platform for Biological-Image Analysis.”</span> <em>Nat. Methods</em> 9 (June): 676–82. <a href="https://doi.org/10.1038/nmeth.2019">https://doi.org/10.1038/nmeth.2019</a>.
+</div>
+</div>
 
 
 </section>
@@ -778,6 +1041,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
