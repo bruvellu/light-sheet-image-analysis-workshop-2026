@@ -6,15 +6,7 @@ date-format: long
 created: 15 December 2025
 modified: today
 toc: true
-toc-depth: 3
-#embed-resources: true
-#bibliography: references.bib
-lang: en
-format: html
-link-citations: true
-colorlinks: true
-citecolor: Maroon
-urlcolor: MidnightBlue
+#toc-depth: 3
 ---
 
 ## Summary {#sec-summary}
