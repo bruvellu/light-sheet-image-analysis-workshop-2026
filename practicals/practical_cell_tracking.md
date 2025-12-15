@@ -1,12 +1,10 @@
 ---
 title: Cell tracking using Mastodon in Fiji
 author: Bruno C. Vellutini
-date: today
-date-format: long
-created: 15 December 2025
-modified: today
-toc: true
-#toc-depth: 3
+date: 14 December 2025
+#date-format: long
+#created: 15 December 2025
+#modified: today
 ---
 
 ## Summary {#sec-summary}
