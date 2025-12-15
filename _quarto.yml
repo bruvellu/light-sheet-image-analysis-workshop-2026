@@ -83,6 +83,7 @@ format:
       - brand
     css: styles.css
     toc: true
+    date-format: long
     code-copy: true
     code-overflow: wrap
     #from: markdown+emoji
