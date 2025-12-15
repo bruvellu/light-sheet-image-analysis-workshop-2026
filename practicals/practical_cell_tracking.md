@@ -8,7 +8,7 @@ modified: today
 toc: true
 toc-depth: 3
 #embed-resources: true
-bibliography: references.bib
+#bibliography: references.bib
 lang: en
 format: html
 link-citations: true
