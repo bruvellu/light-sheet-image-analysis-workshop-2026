@@ -9,7 +9,7 @@
 <meta name="author" content="Marina Cuenca">
 <meta name="dcterms.date" content="2026-01-05">
 
-<title>Post-processing, segmentation and labelling in Fiji (2D) – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Post-processing, segmentation and labelling – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,14 +78,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Post-processing, segmentation and labelling in Fiji (2D) – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:title" content="Post-processing, segmentation and labelling – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_segmentation/images/MAX_Lund.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:image:alt" content="Brightness/Contrast histogram">
 <meta property="og:image:height" content="256">
 <meta property="og:image:width" content="256">
-<meta name="twitter:title" content="Post-processing, segmentation and labelling in Fiji (2D) – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:title" content="Post-processing, segmentation and labelling – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_segmentation/images/MAX_Lund.png">
 <meta name="twitter:image:alt" content="Brightness/Contrast histogram">
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_segmentation/index.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_segmentation/index.html">Post-processing, segmentation and labelling</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -235,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../practicals/practical_segmentation/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Post-processing, segmentation and labelling in Fiji (2D)</span></a>
+ <span class="menu-text">Post-processing, segmentation and labelling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -337,25 +337,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link active" data-scroll-target="#open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</a></li>
+  <li><a href="#d-segmentation-in-fiji" id="toc-d-segmentation-in-fiji" class="nav-link active" data-scroll-target="#d-segmentation-in-fiji">2D segmentation in Fiji</a>
+  <ul class="collapse">
+  <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link" data-scroll-target="#open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</a></li>
   <li><a href="#try-all-global-auto-threshold-methods" id="toc-try-all-global-auto-threshold-methods" class="nav-link" data-scroll-target="#try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</a></li>
   <li><a href="#prepare-the-image-for-auto-local-threshold" id="toc-prepare-the-image-for-auto-local-threshold" class="nav-link" data-scroll-target="#prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</a></li>
   <li><a href="#try-all-auto-local-threshold-methods" id="toc-try-all-auto-local-threshold-methods" class="nav-link" data-scroll-target="#try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</a></li>
-  <li><a href="#improving-segmentation-with-background-subtraction-and-smoothing" id="toc-improving-segmentation-with-background-subtraction-and-smoothing" class="nav-link" data-scroll-target="#improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</a>
-  <ul class="collapse">
-  <li><a href="#remove-background-and-apply-gaussian-blur" id="toc-remove-background-and-apply-gaussian-blur" class="nav-link" data-scroll-target="#remove-background-and-apply-gaussian-blur">5.1 Remove background and apply Gaussian blur</a></li>
-  </ul></li>
-  <li><a href="#selecting-a-method-local-otsu-and-binary-cleanup" id="toc-selecting-a-method-local-otsu-and-binary-cleanup" class="nav-link" data-scroll-target="#selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</a>
-  <ul class="collapse">
-  <li><a href="#apply-local-otsu-thresholding" id="toc-apply-local-otsu-thresholding" class="nav-link" data-scroll-target="#apply-local-otsu-thresholding">6.1 Apply Local Otsu thresholding</a></li>
-  <li><a href="#refine-the-mask-with-binary-operations" id="toc-refine-the-mask-with-binary-operations" class="nav-link" data-scroll-target="#refine-the-mask-with-binary-operations">6.2 Refine the mask with binary operations</a></li>
-  <li><a href="#remove-border-touching-objects" id="toc-remove-border-touching-objects" class="nav-link" data-scroll-target="#remove-border-touching-objects">6.3 Remove border-touching objects</a></li>
-  </ul></li>
+  <li><a href="#improving-segmentation-with-background-subtraction-and-smoothing" id="toc-improving-segmentation-with-background-subtraction-and-smoothing" class="nav-link" data-scroll-target="#improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</a></li>
+  <li><a href="#selecting-a-method-local-otsu-and-binary-cleanup" id="toc-selecting-a-method-local-otsu-and-binary-cleanup" class="nav-link" data-scroll-target="#selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</a></li>
   <li><a href="#object-labeling-with-morpholibj" id="toc-object-labeling-with-morpholibj" class="nav-link" data-scroll-target="#object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</a></li>
   <li><a href="#measuring-object-properties" id="toc-measuring-object-properties" class="nav-link" data-scroll-target="#measuring-object-properties">8. Measuring object properties</a></li>
   <li><a href="#visualizing-label-properties" id="toc-visualizing-label-properties" class="nav-link" data-scroll-target="#visualizing-label-properties">9. Visualizing label properties</a></li>
   <li><a href="#filtering-objects-by-size" id="toc-filtering-objects-by-size" class="nav-link" data-scroll-target="#filtering-objects-by-size">10. Filtering objects by size</a></li>
-  <li><a href="#post-processing-segmentation-and-labeling-in-napari-3d" id="toc-post-processing-segmentation-and-labeling-in-napari-3d" class="nav-link" data-scroll-target="#post-processing-segmentation-and-labeling-in-napari-3d">Post-processing, segmentation and labeling in Napari (3D)</a>
+  </ul></li>
+  <li><a href="#d-segmentation-in-napari" id="toc-d-segmentation-in-napari" class="nav-link" data-scroll-target="#d-segmentation-in-napari">3D segmentation in Napari</a>
   <ul class="collapse">
   <li><a href="#open-a-3d-stack" id="toc-open-a-3d-stack" class="nav-link" data-scroll-target="#open-a-3d-stack">1. Open a 3D stack</a></li>
   <li><a href="#remove-background-binarization-and-labeling" id="toc-remove-background-binarization-and-labeling" class="nav-link" data-scroll-target="#remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</a></li>
@@ -368,9 +363,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_segmentation/index.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_segmentation/index.html">Post-processing, segmentation and labelling</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Post-processing, segmentation and labelling in Fiji (2D)</h1>
+<h1 class="title">Post-processing, segmentation and labelling</h1>
 </div>
 
 
@@ -399,6 +394,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="d-segmentation-in-fiji" class="level2">
+<h2 class="anchored" data-anchor-id="d-segmentation-in-fiji">2D segmentation in Fiji</h2>
 <p>In this exercise we will:</p>
 <ul>
 <li>Compare global and local thresholding methods and understand when each is useful.<br>
@@ -417,8 +414,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>These steps form a complete workflow: <strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
 <p>We’ll use <code>MAX_Lund.tif</code> as the example image.</p>
-<section id="open-the-image-and-inspect-the-histogram" class="level2">
-<h2 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</h2>
+<section id="open-the-image-and-inspect-the-histogram" class="level3">
+<h3 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</h3>
 <ol type="1">
 <li>Start <strong>Fiji</strong>.<br>
 </li>
@@ -437,8 +434,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><strong>Idea:</strong> Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.</p>
 </section>
-<section id="try-all-global-auto-threshold-methods" class="level2">
-<h2 class="anchored" data-anchor-id="try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</h2>
+<section id="try-all-global-auto-threshold-methods" class="level3">
+<h3 class="anchored" data-anchor-id="try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</h3>
 <p>Global thresholding applies <strong>one single threshold</strong> to the whole image.</p>
 <ol type="1">
 <li>With <code>MAX_Lund.tif</code> active, run:<br>
@@ -460,8 +457,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="prepare-the-image-for-auto-local-threshold" class="level2">
-<h2 class="anchored" data-anchor-id="prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</h2>
+<section id="prepare-the-image-for-auto-local-threshold" class="level3">
+<h3 class="anchored" data-anchor-id="prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</h3>
 <p>Local thresholding requires <strong>8-bit</strong> input.</p>
 <ol type="1">
 <li>Select the original image:<br>
@@ -471,8 +468,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Now the image is ready for local methods.</p>
 </section>
-<section id="try-all-auto-local-threshold-methods" class="level2">
-<h2 class="anchored" data-anchor-id="try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</h2>
+<section id="try-all-auto-local-threshold-methods" class="level3">
+<h3 class="anchored" data-anchor-id="try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</h3>
 <p>Local thresholding computes a threshold for each <strong>local neighborhood</strong>.</p>
 <ol type="1">
 <li>Run:<br>
@@ -498,11 +495,11 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="improving-segmentation-with-background-subtraction-and-smoothing" class="level2">
-<h2 class="anchored" data-anchor-id="improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</h2>
+<section id="improving-segmentation-with-background-subtraction-and-smoothing" class="level3">
+<h3 class="anchored" data-anchor-id="improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</h3>
 <p>Good segmentation often benefits from reducing background and noise first.</p>
-<section id="remove-background-and-apply-gaussian-blur" class="level3">
-<h3 class="anchored" data-anchor-id="remove-background-and-apply-gaussian-blur">5.1 Remove background and apply Gaussian blur</h3>
+<section id="remove-background-and-apply-gaussian-blur" class="level4">
+<h4 class="anchored" data-anchor-id="remove-background-and-apply-gaussian-blur">5.1 Remove background and apply Gaussian blur</h4>
 <ol type="1">
 <li>Open <code>MAX_Lund.png</code>.<br>
 </li>
@@ -527,10 +524,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="selecting-a-method-local-otsu-and-binary-cleanup" class="level2">
-<h2 class="anchored" data-anchor-id="selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</h2>
-<section id="apply-local-otsu-thresholding" class="level3">
-<h3 class="anchored" data-anchor-id="apply-local-otsu-thresholding">6.1 Apply Local Otsu thresholding</h3>
+<section id="selecting-a-method-local-otsu-and-binary-cleanup" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-a-method-local-otsu-and-binary-cleanup">6. Selecting a method: Local Otsu and binary cleanup</h3>
+<section id="apply-local-otsu-thresholding" class="level4">
+<h4 class="anchored" data-anchor-id="apply-local-otsu-thresholding">6.1 Apply Local Otsu thresholding</h4>
 <ol type="1">
 <li>Run:<br>
 <code>Image → Adjust → Auto Local Threshold…</code>
@@ -548,8 +545,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="refine-the-mask-with-binary-operations" class="level3">
-<h3 class="anchored" data-anchor-id="refine-the-mask-with-binary-operations">6.2 Refine the mask with binary operations</h3>
+<section id="refine-the-mask-with-binary-operations" class="level4">
+<h4 class="anchored" data-anchor-id="refine-the-mask-with-binary-operations">6.2 Refine the mask with binary operations</h4>
 <ol start="2" type="1">
 <li>Fill holes inside objects:<br>
 <code>Process → Binary → Fill Holes</code></li>
@@ -568,8 +565,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="remove-border-touching-objects" class="level3">
-<h3 class="anchored" data-anchor-id="remove-border-touching-objects">6.3 Remove border-touching objects</h3>
+<section id="remove-border-touching-objects" class="level4">
+<h4 class="anchored" data-anchor-id="remove-border-touching-objects">6.3 Remove border-touching objects</h4>
 <ol start="6" type="1">
 <li>Remove partial objects touching image borders:<br>
 <code>Plugins → MorphoLibJ → Filtering → Kill Borders</code></li>
@@ -582,8 +579,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="object-labeling-with-morpholibj" class="level2">
-<h2 class="anchored" data-anchor-id="object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</h2>
+<section id="object-labeling-with-morpholibj" class="level3">
+<h3 class="anchored" data-anchor-id="object-labeling-with-morpholibj">7. Object labeling with MorphoLibJ</h3>
 <p>Convert each connected region into a uniquely labeled object:</p>
 <p><code>Plugins → MorphoLibJ → Label → Connected Components Labeling</code></p>
 <ul>
@@ -599,8 +596,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="measuring-object-properties" class="level2">
-<h2 class="anchored" data-anchor-id="measuring-object-properties">8. Measuring object properties</h2>
+<section id="measuring-object-properties" class="level3">
+<h3 class="anchored" data-anchor-id="measuring-object-properties">8. Measuring object properties</h3>
 <p>Quantifying each object is often the main goal after segmentation.</p>
 <p>Run measurements:</p>
 <p><code>Plugins → MorphoLibJ → Analyze → Analyze Regions</code></p>
@@ -625,8 +622,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="visualizing-label-properties" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-label-properties">9. Visualizing label properties</h2>
+<section id="visualizing-label-properties" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-label-properties">9. Visualizing label properties</h3>
 <p>Visualize one measurement (e.g.&nbsp;area) mapped onto the label image:</p>
 <p><code>Plugins → MorphoLibJ → Label Images → Assign Measure to Label</code></p>
 <p>Choose <strong>Area</strong> and apply a colormap.</p>
@@ -645,8 +642,8 @@ ul.task-list li input[type="checkbox"] {
 <li>checking measurement correctness</li>
 </ul>
 </section>
-<section id="filtering-objects-by-size" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-objects-by-size">10. Filtering objects by size</h2>
+<section id="filtering-objects-by-size" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-objects-by-size">10. Filtering objects by size</h3>
 <p>Remove small objects based on size:</p>
 <p><code>Plugins → MorphoLibJ → Label Images → Label Size Filtering</code></p>
 <ul>
@@ -661,8 +658,9 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="post-processing-segmentation-and-labeling-in-napari-3d" class="level1">
-<h1>Post-processing, segmentation and labeling in Napari (3D)</h1>
+</section>
+<section id="d-segmentation-in-napari" class="level2">
+<h2 class="anchored" data-anchor-id="d-segmentation-in-napari">3D segmentation in Napari</h2>
 <p>In this exercise we will:</p>
 <ul>
 <li>Use Napari to open a 3D image</li>
@@ -672,29 +670,29 @@ ul.task-list li input[type="checkbox"] {
 <p>These steps form a complete workflow:<br>
 <strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
 <p>We’ll use <code>Lund.tif</code> as the example image.</p>
-<section id="open-a-3d-stack" class="level2">
-<h2 class="anchored" data-anchor-id="open-a-3d-stack">1. Open a 3D stack</h2>
+<section id="open-a-3d-stack" class="level3">
+<h3 class="anchored" data-anchor-id="open-a-3d-stack">1. Open a 3D stack</h3>
 <p>Drag and drop the file or</p>
 <p><code>File → Open File</code></p>
 <p>We will be able to see and explore the stack, and we can change to a 3D rendering with the option <code>Toogle 2D/3D view</code> in the lower left button pannel. We can also make orthogonal views by clicking the button to the right <code>Change order of the visible axis</code>.</p>
 <p>In the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.</p>
 </section>
-<section id="remove-background-binarization-and-labeling" class="level2">
-<h2 class="anchored" data-anchor-id="remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</h2>
+<section id="remove-background-binarization-and-labeling" class="level3">
+<h3 class="anchored" data-anchor-id="remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</h3>
 <p>Select <code>Remove Background → White top hat  → radius = 10</code></p>
 <p>Then select <code>Binarize → Threshold Yen</code>, making sure to select the Result of White top-hat image.</p>
 <p>Finally, we can select <code>Label → Connected component labeling</code>, make sure to select the Result of Threshold image. We can additionally select the <code>exclude on edges option</code>.</p>
 <p>Then explore the labels in 3D. Some of them are stuck together. Let’s try and fix that.</p>
 </section>
-<section id="fix-labels" class="level2">
-<h2 class="anchored" data-anchor-id="fix-labels">3. Fix labels</h2>
+<section id="fix-labels" class="level3">
+<h3 class="anchored" data-anchor-id="fix-labels">3. Fix labels</h3>
 <p>Let’s select again the previous layer Result of Threshold. Then select <code>Process labels → Binary erosion → radius = 3</code>. This will reduce the objects of the binary segmentation.</p>
 <p>Now let’s recreate the labels <code>Label → Connected component labeling</code>, make sure to select the Result of Binary Erosion.</p>
 <p>Then <code>Process labels → Expand Labels → radius = 3</code>. Explore the labels in 3D.</p>
 <p>Now we can accurately measure morphological features of these labels. You can close the assistant pannel now.</p>
 </section>
-<section id="measure-morphological-properties" class="level2">
-<h2 class="anchored" data-anchor-id="measure-morphological-properties">4. Measure morphological properties</h2>
+<section id="measure-morphological-properties" class="level3">
+<h3 class="anchored" data-anchor-id="measure-morphological-properties">4. Measure morphological properties</h3>
 <p>Select <code>Tools → Measure Tables → Object Features/Properties</code>. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format.</p>
 <p>by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.</p>
 
