@@ -2,7 +2,6 @@
 title: Post-processing, segmentation and labelling
 author: Marina Cuenca
 date: 05 January 2026
-toc-depth: 4
 ---
 
 ## 2D segmentation in Fiji

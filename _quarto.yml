@@ -83,6 +83,7 @@ format:
       - brand
     css: styles.css
     toc: true
+    toc-depth: 4
     code-copy: true
     code-overflow: wrap
     lightbox: true
