@@ -57,7 +57,7 @@ Tuesday, 6 Jan 2026
 <!--TODO: Proposal of image analysis the entire afternoon-->
 
 - 14:00--14:30 - [Talk from companies] (Company 2-Galenica)
-- 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_image_processing.md) (Marina)
+- 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_segmentation/index.md) (Marina)
 - 16:00--17:30 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Marina)
 
 ## 🗓️ Day 3: Machine learning and advanced workflows
@@ -84,7 +84,7 @@ Wednesday, 7 Jan 2026
 <!--TODO: Revise the slots-->
 
 - 14:00--16:00 - [Tissue cartography](practicals/practical_tissue_cartography.md) (Bruno)
-- 16:00--17:30 - [Cell tracking](practicals/practical_cell_tracking/index.md) (Bruno)
+- 16:00--17:30 - [Cell tracking](practicals/practical_tracking/index.md) (Bruno)
 
 ## 🗓️ Day 4: Scientific applications and project work
 
