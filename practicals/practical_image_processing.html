@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Post-processing, segmentation and labelling</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -215,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/practical_image_processing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Post-processing, segmentation and labelling</span></a>
+ <span class="menu-text">Post-processing, segmentation and labelling in Fiji (2D)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -330,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#post-processing-segmentation-and-labelling" id="toc-post-processing-segmentation-and-labelling" class="nav-link active" data-scroll-target="#post-processing-segmentation-and-labelling">Post-processing, segmentation and labelling</a>
+  <li><a href="#post-processing-segmentation-and-labelling-in-fiji-2d" id="toc-post-processing-segmentation-and-labelling-in-fiji-2d" class="nav-link active" data-scroll-target="#post-processing-segmentation-and-labelling-in-fiji-2d">Post-processing, segmentation and labelling in Fiji (2D)</a>
   <ul class="collapse">
   <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link" data-scroll-target="#open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</a></li>
   <li><a href="#try-all-global-auto-threshold-methods" id="toc-try-all-global-auto-threshold-methods" class="nav-link" data-scroll-target="#try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</a></li>
@@ -351,18 +351,24 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#visualizing-label-properties" id="toc-visualizing-label-properties" class="nav-link" data-scroll-target="#visualizing-label-properties">9. Visualizing label properties</a></li>
   <li><a href="#filtering-objects-by-size" id="toc-filtering-objects-by-size" class="nav-link" data-scroll-target="#filtering-objects-by-size">10. Filtering objects by size</a></li>
   </ul></li>
-  <li><a href="#image-processing-denoising-segmentation" id="toc-image-processing-denoising-segmentation" class="nav-link" data-scroll-target="#image-processing-denoising-segmentation">Image processing, denoising, segmentation</a></li>
+  <li><a href="#post-processing-segmentation-and-labeling-in-napari-3d" id="toc-post-processing-segmentation-and-labeling-in-napari-3d" class="nav-link" data-scroll-target="#post-processing-segmentation-and-labeling-in-napari-3d">Post-processing, segmentation and labeling in Napari (3D)</a>
+  <ul class="collapse">
+  <li><a href="#open-a-3d-stack" id="toc-open-a-3d-stack" class="nav-link" data-scroll-target="#open-a-3d-stack">1. Open a 3D stack</a></li>
+  <li><a href="#remove-background-binarization-and-labeling" id="toc-remove-background-binarization-and-labeling" class="nav-link" data-scroll-target="#remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</a></li>
+  <li><a href="#fix-labels" id="toc-fix-labels" class="nav-link" data-scroll-target="#fix-labels">3. Fix labels</a></li>
+  <li><a href="#measure-morphological-properties" id="toc-measure-morphological-properties" class="nav-link" data-scroll-target="#measure-morphological-properties">4. Measure morphological properties</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_image_processing.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Post-processing, segmentation and labelling</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav></header>
 
 
 
 
-<section id="post-processing-segmentation-and-labelling" class="level1">
-<h1>Post-processing, segmentation and labelling</h1>
+<section id="post-processing-segmentation-and-labelling-in-fiji-2d" class="level1">
+<h1>Post-processing, segmentation and labelling in Fiji (2D)</h1>
 <p>In this exercise we will:</p>
 <ul>
 <li>Compare global and local thresholding methods and understand when each is useful.<br>
@@ -643,16 +649,47 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <hr>
-<p>```</p>
-<hr>
 </section>
 </section>
-<section id="image-processing-denoising-segmentation" class="level1">
-<h1>Image processing, denoising, segmentation</h1>
-<p>Marina (1 hs) - Segmentation, post-processing, Morphological operations, Labeling (MorphoLibJ in Fiji)</p>
-<p>https://knowhowspot.blog/fiji-morphological-segmentation-plugin-guide - Napari assistant (MC I could do it based on RH talk - 30 min)</p>
+<section id="post-processing-segmentation-and-labeling-in-napari-3d" class="level1">
+<h1>Post-processing, segmentation and labeling in Napari (3D)</h1>
+<p>In this exercise we will:</p>
+<ul>
+<li>Use Napari to open a 3D image</li>
+<li>Use Napari assistant to visualize a workflow for 3D image segmentation and labelling</li>
+<li>Use region props to quantify morphological parameters and make colorcoded plots</li>
+</ul>
+<p>These steps form a complete workflow:<br>
+<strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
+<p>We’ll use <code>Lund.tif</code> as the example image.</p>
+<section id="open-a-3d-stack" class="level2">
+<h2 class="anchored" data-anchor-id="open-a-3d-stack">1. Open a 3D stack</h2>
+<p>Drag and drop the file or</p>
+<p><code>File → Open File</code></p>
+<p>We will be able to see and explore the stack, and we can change to a 3D rendering with the option <code>Toogle 2D/3D view</code> in the lower left button pannel. We can also make orthogonal views by clicking the button to the right <code>Change order of the visible axis</code>.</p>
+<p>In the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.</p>
+</section>
+<section id="remove-background-binarization-and-labeling" class="level2">
+<h2 class="anchored" data-anchor-id="remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</h2>
+<p>Select <code>Remove Background → White top hat  → radius = 10</code></p>
+<p>Then select <code>Binarize → Threshold Yen</code>, making sure to select the Result of White top-hat image.</p>
+<p>Finally, we can select <code>Label → Connected component labeling</code>, make sure to select the Result of Threshold image. We can additionally select the <code>exclude on edges option</code>.</p>
+<p>Then explore the labels in 3D. Some of them are stuck together. Let’s try and fix that.</p>
+</section>
+<section id="fix-labels" class="level2">
+<h2 class="anchored" data-anchor-id="fix-labels">3. Fix labels</h2>
+<p>Let’s select again the previous layer Result of Threshold. Then select <code>Process labels → Binary erosion → radius = 3</code>. This will reduce the objects of the binary segmentation.</p>
+<p>Now let’s recreate the labels <code>Label → Connected component labeling</code>, make sure to select the Result of Binary Erosion.</p>
+<p>Then <code>Process labels → Expand Labels → radius = 3</code>. Explore the labels in 3D.</p>
+<p>Now we can accurately measure morphological features of these labels. You can close the assistant pannel now.</p>
+</section>
+<section id="measure-morphological-properties" class="level2">
+<h2 class="anchored" data-anchor-id="measure-morphological-properties">4. Measure morphological properties</h2>
+<p>Select <code>Tools → Measure Tables → Object Features/Properties</code>. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format.</p>
+<p>by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
