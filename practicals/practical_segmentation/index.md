@@ -1,5 +1,8 @@
-
-# Post-processing, segmentation and labelling in Fiji (2D) 
+---
+title: Post-processing, segmentation and labelling in Fiji (2D)
+author: Marina Cuenca
+date: 05 January 2026
+---
 
 In this exercise we will:
 
@@ -11,29 +14,25 @@ In this exercise we will:
 - Visualize measurement values on labeled images.  
 - Filter segmented objects based on size or other properties.  
 
-These steps form a complete workflow:  
+These steps form a complete workflow:
 **raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering**
 
 We’ll use `MAX_Lund.tif` as the example image.
-
----
 
 ## 1. Open the image and inspect the histogram
 
 1. Start **Fiji**.  
 2. Open the image:  
    `File → Open… → MAX_Lund.tif`  
-   ![Brightness/Contrast histogram](images/MAX_Lund.png)  
+   ![Brightness/Contrast histogram](images/MAX_Lund.png)
 3. Open the histogram and visualization tools:  
    `Image → Adjust → Brightness/Contrast…`
 
 You should see a histogram like this:
 
-![Brightness/Contrast histogram](images/04.Screenshot1.png)
+![Brightness/Contrast histogram](images/Screenshot1.png)
 
 **Idea:** Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.
-
----
 
 ## 2. Try all global Auto Threshold methods
 
@@ -48,22 +47,18 @@ Global thresholding applies **one single threshold** to the whole image.
 
 Fiji generates a montage of all global methods:
 
-![Global auto threshold montage](images/04.AutoThresh.tif)
-
----
+![Global auto threshold montage](images/AutoThresh.png)
 
 ## 3. Prepare the image for Auto Local Threshold
 
 Local thresholding requires **8-bit** input.
 
 1. Select the original image:  
-   `Window → MAX_Lund.tif`  
+   `Window → MAX_Lund.tif`
 2. Convert to 8-bit:  
    `Image → Type → 8-bit`
 
 Now the image is ready for local methods.
-
----
 
 ## 4. Try all Auto Local Threshold methods
 
@@ -79,9 +74,7 @@ Local thresholding computes a threshold for each **local neighborhood**.
    - **White objects**
 3. Confirm.
 
-![Local auto threshold montage](images/04.AutoLocalThresh1.tif)
-
----
+![Local auto threshold montage](images/AutoLocalThresh1.png)
 
 ## 5. Improving segmentation with background subtraction and smoothing
 
@@ -91,24 +84,22 @@ Good segmentation often benefits from reducing background and noise first.
 
 1. Open `MAX_Lund.png`.  
 2. Subtract background:  
-   `Process → Subtract Background…`  
+   `Process → Subtract Background…`
    - Rolling ball radius: **50**  
 3. Smooth noise:  
-   `Process → Filters → Gaussian Blur…`  
+   `Process → Filters → Gaussian Blur…`
    - Sigma: **1**
 
 After preprocessing:
 
-![Auto Local Threshold after preprocessing](images/AutoLocalThresh2.tif)
-
----
+![Auto Local Threshold after preprocessing](images/AutoLocalThresh2.png)
 
 ## 6. Selecting a method: Local Otsu and binary cleanup
 
 ### 6.1 Apply Local Otsu thresholding
 
 1. Run:  
-   `Image → Adjust → Auto Local Threshold…`  
+   `Image → Adjust → Auto Local Threshold…`
    - **Method:** Otsu  
    - **Radius:** 15  
 
@@ -116,16 +107,14 @@ After preprocessing:
 
 ![Local Otsu mask](images/MAX_Lund_Mask.png)
 
----
-
 ### 6.2 Refine the mask with binary operations
 
 2. Fill holes inside objects:  
-   `Process → Binary → Fill Holes`  
+   `Process → Binary → Fill Holes`
 3. Slightly shrink objects:  
-   `Process → Binary → Erode`  
+   `Process → Binary → Erode`
 4. Optionally restore outlines:  
-   `Edit → Draw`  
+   `Edit → Draw`
 5. Expand objects after erosion:  
    `Process → Binary → Dilate`
 
@@ -133,16 +122,12 @@ After preprocessing:
 
 ![Refined mask](images/MAX_Lund_MaskErode.png)
 
----
-
 ### 6.3 Remove border-touching objects
 
 6. Remove partial objects touching image borders:  
    `Plugins → MorphoLibJ → Filtering → Kill Borders`  
 
 ![Filled + border-removed mask](images/MAX_Lund_Mask-killBorders.png)
-
----
 
 ## 7. Object labeling with MorphoLibJ
 
@@ -156,8 +141,6 @@ Convert each connected region into a uniquely labeled object:
 **Labeled objects:**
 
 ![Connected components labeling](images/MAX_Lund_Mask-killBorders-lbl.png)
-
----
 
 ## 8. Measuring object properties
 
@@ -178,8 +161,6 @@ This extracts a number of morphological associated features. We will select:
 
 ![Morphometry table](images/Screenshot2.png)
 
----
-
 ## 9. Visualizing label properties
 
 Visualize one measurement (e.g. area) mapped onto the label image:
@@ -196,8 +177,6 @@ Useful for:
 - deciding filtering thresholds  
 - checking measurement correctness  
 
----
-
 ## 10. Filtering objects by size
 
 Remove small objects based on size:
@@ -208,8 +187,6 @@ Remove small objects based on size:
 - **Size threshold:** 100 px  
 
 ![Size filtering](images/MAX_Lund_Mask-killBorders-lbl-sizeFilt.png)
-
----
 
 # Post-processing, segmentation and labeling in Napari (3D) 
 
