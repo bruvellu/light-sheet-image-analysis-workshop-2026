@@ -75,26 +75,27 @@
     "text": "The Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
   },
   {
-    "objectID": "practicals/practical_tissue_cartography.html",
-    "href": "practicals/practical_tissue_cartography.html",
-    "title": "Tissue cartography",
-    "section": "",
-    "text": "Tissue cartography\n\nPipelines\nSetup\nSegmentation\nSurface detection\nMesh editing\nMesh painting\nMap projection\nExport\nMeasurements\nhttps://zenodo.org/records/7628300",
-    "crumbs": [
-      "Practicals",
-      "Tissue cartography"
-    ]
-  },
-  {
-    "objectID": "practicals/images/readme.html",
-    "href": "practicals/images/readme.html",
+    "objectID": "practicals/practical_segmentation/images/readme.html",
+    "href": "practicals/practical_segmentation/images/readme.html",
     "title": "🔬 Light-Sheet Image Analysis Workshop 2026",
     "section": "",
     "text": "Images for the practical 04 Image Postprocessing",
     "crumbs": [
       "Practicals",
+      "Post-processing, segmentation and labelling in Fiji (2D)",
       "Images",
       "Readme"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d_visualization.html",
+    "href": "practicals/practical_3d_visualization.html",
+    "title": "Visualization of 3D images",
+    "section": "",
+    "text": "Visualization of 3D images\n\nMax projections\n\nOrthogonal views\n\nReslicing\n\nBigData viewer\n\n3D script",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D images"
     ]
   },
   {
@@ -653,140 +654,140 @@
     ]
   },
   {
-    "objectID": "practicals/practical_3d_visualization.html",
-    "href": "practicals/practical_3d_visualization.html",
-    "title": "Visualization of 3D images",
+    "objectID": "practicals/practical_tissue_cartography.html",
+    "href": "practicals/practical_tissue_cartography.html",
+    "title": "Tissue cartography",
     "section": "",
-    "text": "Visualization of 3D images\n\nMax projections\n\nOrthogonal views\n\nReslicing\n\nBigData viewer\n\n3D script",
+    "text": "Tissue cartography\n\nPipelines\nSetup\nSegmentation\nSurface detection\nMesh editing\nMesh painting\nMap projection\nExport\nMeasurements\nhttps://zenodo.org/records/7628300",
     "crumbs": [
       "Practicals",
-      "Visualization of 3D images"
+      "Tissue cartography"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html",
-    "href": "practicals/practical_image_processing.html",
+    "objectID": "practicals/practical_segmentation/index.html",
+    "href": "practicals/practical_segmentation/index.html",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
     "section": "",
-    "text": "In this exercise we will:\n\nCompare global and local thresholding methods and understand when each is useful.\n\nImprove segmentation using background subtraction and Gaussian smoothing.\n\nRefine masks using binary operations, including Fill Holes and Kill Borders.\n\nGenerate labeled objects using MorphoLibJ’s Connected Components Labeling.\n\nExtract object-level measurements (area, perimeter, circularity, etc.).\n\nVisualize measurement values on labeled images.\n\nFilter segmented objects based on size or other properties.\n\nThese steps form a complete workflow:\nraw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering\nWe’ll use MAX_Lund.tif as the example image.\n\n\n\n\nStart Fiji.\n\nOpen the image:\nFile → Open… → MAX_Lund.tif\n\n\nOpen the histogram and visualization tools:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.\n\n\n\n\nGlobal thresholding applies one single threshold to the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nChoose:\n\nMethod: Try all\n\nWhite objects\n\n\nConfirm.\n\nFiji generates a montage of all global methods:\n\n\n\nGlobal auto threshold montage\n\n\n\n\n\n\nLocal thresholding requires 8-bit input.\n\nSelect the original image:\nWindow → MAX_Lund.tif\n\nConvert to 8-bit:\nImage → Type → 8-bit\n\nNow the image is ready for local methods.\n\n\n\n\nLocal thresholding computes a threshold for each local neighborhood.\n\nRun:\nImage → Adjust → Auto Local Threshold…\nChoose:\n\nMethod: Try all\n\nRadius: 15\n\nParameter 1: 0\n\nParameter 2: 0\n\nWhite objects\n\nConfirm.\n\n\n\n\nLocal auto threshold montage\n\n\n\n\n\n\nGood segmentation often benefits from reducing background and noise first.\n\n\n\nOpen MAX_Lund.png.\n\nSubtract background:\nProcess → Subtract Background…\n\nRolling ball radius: 50\n\n\nSmooth noise:\nProcess → Filters → Gaussian Blur…\n\nSigma: 1\n\n\nAfter preprocessing:\n\n\n\nAuto Local Threshold after preprocessing\n\n\n\n\n\n\n\n\n\n\nRun:\nImage → Adjust → Auto Local Threshold…\n\nMethod: Otsu\n\nRadius: 15\n\n\nLocal Otsu mask:\n\n\n\nLocal Otsu mask\n\n\n\n\n\n\n\nFill holes inside objects:\nProcess → Binary → Fill Holes\n\nSlightly shrink objects:\nProcess → Binary → Erode\n\nOptionally restore outlines:\nEdit → Draw\n\nExpand objects after erosion:\nProcess → Binary → Dilate\n\nRefined mask:\n\n\n\nRefined mask\n\n\n\n\n\n\n\nRemove partial objects touching image borders:\nPlugins → MorphoLibJ → Filtering → Kill Borders\n\n\n\n\nFilled + border-removed mask\n\n\n\n\n\n\n\nConvert each connected region into a uniquely labeled object:\nPlugins → MorphoLibJ → Label → Connected Components Labeling\n\nConnectivity: 4\n\nOutput type: 16-bit\n\nLabeled objects:\n\n\n\nConnected components labeling\n\n\n\n\n\n\nQuantifying each object is often the main goal after segmentation.\nRun measurements:\nPlugins → MorphoLibJ → Analyze → Analyze Regions\nThis extracts a number of morphological associated features. We will select:\n\nArea\n\nPixel count\n\nPerimeter\n\nCircularity\n\nEllipse geometry\n\nBounding box\n\n\n\n\nMorphometry table\n\n\n\n\n\n\nVisualize one measurement (e.g. area) mapped onto the label image:\nPlugins → MorphoLibJ → Label Images → Assign Measure to Label\nChoose Area and apply a colormap.\n\n\n\nArea visualization on labels\n\n\nUseful for:\n\nspotting unusually big/small objects\n\ndeciding filtering thresholds\n\nchecking measurement correctness\n\n\n\n\n\nRemove small objects based on size:\nPlugins → MorphoLibJ → Label Images → Label Size Filtering\n\nOperation: Lower Than\n\nSize threshold: 100 px\n\n\n\n\nSize filtering",
+    "text": "In this exercise we will:\nThese steps form a complete workflow: raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering\nWe’ll use MAX_Lund.tif as the example image.",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#open-the-image-and-inspect-the-histogram",
-    "href": "practicals/practical_image_processing.html#open-the-image-and-inspect-the-histogram",
+    "objectID": "practicals/practical_segmentation/index.html#open-the-image-and-inspect-the-histogram",
+    "href": "practicals/practical_segmentation/index.html#open-the-image-and-inspect-the-histogram",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Start Fiji.\n\nOpen the image:\nFile → Open… → MAX_Lund.tif\n\n\nOpen the histogram and visualization tools:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.",
+    "section": "1. Open the image and inspect the histogram",
+    "text": "1. Open the image and inspect the histogram\n\nStart Fiji.\n\nOpen the image:\nFile → Open… → MAX_Lund.tif\n\nOpen the histogram and visualization tools:\nImage → Adjust → Brightness/Contrast…\n\nYou should see a histogram like this:\n\n\n\nBrightness/Contrast histogram\n\n\nIdea: Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#try-all-global-auto-threshold-methods",
-    "href": "practicals/practical_image_processing.html#try-all-global-auto-threshold-methods",
+    "objectID": "practicals/practical_segmentation/index.html#try-all-global-auto-threshold-methods",
+    "href": "practicals/practical_segmentation/index.html#try-all-global-auto-threshold-methods",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Global thresholding applies one single threshold to the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nChoose:\n\nMethod: Try all\n\nWhite objects\n\n\nConfirm.\n\nFiji generates a montage of all global methods:\n\n\n\nGlobal auto threshold montage",
+    "section": "2. Try all global Auto Threshold methods",
+    "text": "2. Try all global Auto Threshold methods\nGlobal thresholding applies one single threshold to the whole image.\n\nWith MAX_Lund.tif active, run:\nImage → Adjust → Auto Threshold…\nChoose:\n\nMethod: Try all\n\nWhite objects\n\n\nConfirm.\n\nFiji generates a montage of all global methods:\n\n\n\nGlobal auto threshold montage",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
-    "href": "practicals/practical_image_processing.html#prepare-the-image-for-auto-local-threshold",
+    "objectID": "practicals/practical_segmentation/index.html#prepare-the-image-for-auto-local-threshold",
+    "href": "practicals/practical_segmentation/index.html#prepare-the-image-for-auto-local-threshold",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Local thresholding requires 8-bit input.\n\nSelect the original image:\nWindow → MAX_Lund.tif\n\nConvert to 8-bit:\nImage → Type → 8-bit\n\nNow the image is ready for local methods.",
+    "section": "3. Prepare the image for Auto Local Threshold",
+    "text": "3. Prepare the image for Auto Local Threshold\nLocal thresholding requires 8-bit input.\n\nSelect the original image:\nWindow → MAX_Lund.tif\nConvert to 8-bit:\nImage → Type → 8-bit\n\nNow the image is ready for local methods.",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#try-all-auto-local-threshold-methods",
-    "href": "practicals/practical_image_processing.html#try-all-auto-local-threshold-methods",
+    "objectID": "practicals/practical_segmentation/index.html#try-all-auto-local-threshold-methods",
+    "href": "practicals/practical_segmentation/index.html#try-all-auto-local-threshold-methods",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Local thresholding computes a threshold for each local neighborhood.\n\nRun:\nImage → Adjust → Auto Local Threshold…\nChoose:\n\nMethod: Try all\n\nRadius: 15\n\nParameter 1: 0\n\nParameter 2: 0\n\nWhite objects\n\nConfirm.\n\n\n\n\nLocal auto threshold montage",
+    "section": "4. Try all Auto Local Threshold methods",
+    "text": "4. Try all Auto Local Threshold methods\nLocal thresholding computes a threshold for each local neighborhood.\n\nRun:\nImage → Adjust → Auto Local Threshold…\nChoose:\n\nMethod: Try all\n\nRadius: 15\n\nParameter 1: 0\n\nParameter 2: 0\n\nWhite objects\n\nConfirm.\n\n\n\n\nLocal auto threshold montage",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#improving-segmentation-with-background-subtraction-and-smoothing",
-    "href": "practicals/practical_image_processing.html#improving-segmentation-with-background-subtraction-and-smoothing",
+    "objectID": "practicals/practical_segmentation/index.html#improving-segmentation-with-background-subtraction-and-smoothing",
+    "href": "practicals/practical_segmentation/index.html#improving-segmentation-with-background-subtraction-and-smoothing",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Good segmentation often benefits from reducing background and noise first.\n\n\n\nOpen MAX_Lund.png.\n\nSubtract background:\nProcess → Subtract Background…\n\nRolling ball radius: 50\n\n\nSmooth noise:\nProcess → Filters → Gaussian Blur…\n\nSigma: 1\n\n\nAfter preprocessing:\n\n\n\nAuto Local Threshold after preprocessing",
+    "section": "5. Improving segmentation with background subtraction and smoothing",
+    "text": "5. Improving segmentation with background subtraction and smoothing\nGood segmentation often benefits from reducing background and noise first.\n\n5.1 Remove background and apply Gaussian blur\n\nOpen MAX_Lund.png.\n\nSubtract background:\nProcess → Subtract Background…\n\nRolling ball radius: 50\n\n\nSmooth noise:\nProcess → Filters → Gaussian Blur…\n\nSigma: 1\n\n\nAfter preprocessing:\n\n\n\nAuto Local Threshold after preprocessing",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#selecting-a-method-local-otsu-and-binary-cleanup",
-    "href": "practicals/practical_image_processing.html#selecting-a-method-local-otsu-and-binary-cleanup",
+    "objectID": "practicals/practical_segmentation/index.html#selecting-a-method-local-otsu-and-binary-cleanup",
+    "href": "practicals/practical_segmentation/index.html#selecting-a-method-local-otsu-and-binary-cleanup",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Run:\nImage → Adjust → Auto Local Threshold…\n\nMethod: Otsu\n\nRadius: 15\n\n\nLocal Otsu mask:\n\n\n\nLocal Otsu mask\n\n\n\n\n\n\n\nFill holes inside objects:\nProcess → Binary → Fill Holes\n\nSlightly shrink objects:\nProcess → Binary → Erode\n\nOptionally restore outlines:\nEdit → Draw\n\nExpand objects after erosion:\nProcess → Binary → Dilate\n\nRefined mask:\n\n\n\nRefined mask\n\n\n\n\n\n\n\nRemove partial objects touching image borders:\nPlugins → MorphoLibJ → Filtering → Kill Borders\n\n\n\n\nFilled + border-removed mask",
+    "section": "6. Selecting a method: Local Otsu and binary cleanup",
+    "text": "6. Selecting a method: Local Otsu and binary cleanup\n\n6.1 Apply Local Otsu thresholding\n\nRun:\nImage → Adjust → Auto Local Threshold…\n\nMethod: Otsu\n\nRadius: 15\n\n\nLocal Otsu mask:\n\n\n\nLocal Otsu mask\n\n\n\n\n6.2 Refine the mask with binary operations\n\nFill holes inside objects:\nProcess → Binary → Fill Holes\nSlightly shrink objects:\nProcess → Binary → Erode\nOptionally restore outlines:\nEdit → Draw\nExpand objects after erosion:\nProcess → Binary → Dilate\n\nRefined mask:\n\n\n\nRefined mask\n\n\n\n\n6.3 Remove border-touching objects\n\nRemove partial objects touching image borders:\nPlugins → MorphoLibJ → Filtering → Kill Borders\n\n\n\n\nFilled + border-removed mask",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#object-labeling-with-morpholibj",
-    "href": "practicals/practical_image_processing.html#object-labeling-with-morpholibj",
+    "objectID": "practicals/practical_segmentation/index.html#object-labeling-with-morpholibj",
+    "href": "practicals/practical_segmentation/index.html#object-labeling-with-morpholibj",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Convert each connected region into a uniquely labeled object:\nPlugins → MorphoLibJ → Label → Connected Components Labeling\n\nConnectivity: 4\n\nOutput type: 16-bit\n\nLabeled objects:\n\n\n\nConnected components labeling",
+    "section": "7. Object labeling with MorphoLibJ",
+    "text": "7. Object labeling with MorphoLibJ\nConvert each connected region into a uniquely labeled object:\nPlugins → MorphoLibJ → Label → Connected Components Labeling\n\nConnectivity: 4\n\nOutput type: 16-bit\n\nLabeled objects:\n\n\n\nConnected components labeling",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#measuring-object-properties",
-    "href": "practicals/practical_image_processing.html#measuring-object-properties",
+    "objectID": "practicals/practical_segmentation/index.html#measuring-object-properties",
+    "href": "practicals/practical_segmentation/index.html#measuring-object-properties",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Quantifying each object is often the main goal after segmentation.\nRun measurements:\nPlugins → MorphoLibJ → Analyze → Analyze Regions\nThis extracts a number of morphological associated features. We will select:\n\nArea\n\nPixel count\n\nPerimeter\n\nCircularity\n\nEllipse geometry\n\nBounding box\n\n\n\n\nMorphometry table",
+    "section": "8. Measuring object properties",
+    "text": "8. Measuring object properties\nQuantifying each object is often the main goal after segmentation.\nRun measurements:\nPlugins → MorphoLibJ → Analyze → Analyze Regions\nThis extracts a number of morphological associated features. We will select:\n\nArea\n\nPixel count\n\nPerimeter\n\nCircularity\n\nEllipse geometry\n\nBounding box\n\n\n\n\nMorphometry table",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#visualizing-label-properties",
-    "href": "practicals/practical_image_processing.html#visualizing-label-properties",
+    "objectID": "practicals/practical_segmentation/index.html#visualizing-label-properties",
+    "href": "practicals/practical_segmentation/index.html#visualizing-label-properties",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Visualize one measurement (e.g. area) mapped onto the label image:\nPlugins → MorphoLibJ → Label Images → Assign Measure to Label\nChoose Area and apply a colormap.\n\n\n\nArea visualization on labels\n\n\nUseful for:\n\nspotting unusually big/small objects\n\ndeciding filtering thresholds\n\nchecking measurement correctness",
+    "section": "9. Visualizing label properties",
+    "text": "9. Visualizing label properties\nVisualize one measurement (e.g. area) mapped onto the label image:\nPlugins → MorphoLibJ → Label Images → Assign Measure to Label\nChoose Area and apply a colormap.\n\n\n\nArea visualization on labels\n\n\nUseful for:\n\nspotting unusually big/small objects\n\ndeciding filtering thresholds\n\nchecking measurement correctness",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#filtering-objects-by-size",
-    "href": "practicals/practical_image_processing.html#filtering-objects-by-size",
+    "objectID": "practicals/practical_segmentation/index.html#filtering-objects-by-size",
+    "href": "practicals/practical_segmentation/index.html#filtering-objects-by-size",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
-    "section": "",
-    "text": "Remove small objects based on size:\nPlugins → MorphoLibJ → Label Images → Label Size Filtering\n\nOperation: Lower Than\n\nSize threshold: 100 px\n\n\n\n\nSize filtering",
+    "section": "10. Filtering objects by size",
+    "text": "10. Filtering objects by size\nRemove small objects based on size:\nPlugins → MorphoLibJ → Label Images → Label Size Filtering\n\nOperation: Lower Than\n\nSize threshold: 100 px\n\n\n\n\nSize filtering",
     "crumbs": [
       "Practicals",
       "Post-processing, segmentation and labelling in Fiji (2D)"
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#open-a-3d-stack",
-    "href": "practicals/practical_image_processing.html#open-a-3d-stack",
+    "objectID": "practicals/practical_segmentation/index.html#open-a-3d-stack",
+    "href": "practicals/practical_segmentation/index.html#open-a-3d-stack",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
     "section": "1. Open a 3D stack",
     "text": "1. Open a 3D stack\nDrag and drop the file or\nFile → Open File\nWe will be able to see and explore the stack, and we can change to a 3D rendering with the option Toogle 2D/3D view in the lower left button pannel. We can also make orthogonal views by clicking the button to the right Change order of the visible axis.\nIn the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.",
@@ -796,8 +797,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#remove-background-binarization-and-labeling",
-    "href": "practicals/practical_image_processing.html#remove-background-binarization-and-labeling",
+    "objectID": "practicals/practical_segmentation/index.html#remove-background-binarization-and-labeling",
+    "href": "practicals/practical_segmentation/index.html#remove-background-binarization-and-labeling",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
     "section": "2. Remove background, binarization and labeling",
     "text": "2. Remove background, binarization and labeling\nSelect Remove Background → White top hat  → radius = 10\nThen select Binarize → Threshold Yen, making sure to select the Result of White top-hat image.\nFinally, we can select Label → Connected component labeling, make sure to select the Result of Threshold image. We can additionally select the exclude on edges option.\nThen explore the labels in 3D. Some of them are stuck together. Let’s try and fix that.",
@@ -807,8 +808,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#fix-labels",
-    "href": "practicals/practical_image_processing.html#fix-labels",
+    "objectID": "practicals/practical_segmentation/index.html#fix-labels",
+    "href": "practicals/practical_segmentation/index.html#fix-labels",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
     "section": "3. Fix labels",
     "text": "3. Fix labels\nLet’s select again the previous layer Result of Threshold. Then select Process labels → Binary erosion → radius = 3. This will reduce the objects of the binary segmentation.\nNow let’s recreate the labels Label → Connected component labeling, make sure to select the Result of Binary Erosion.\nThen Process labels → Expand Labels → radius = 3. Explore the labels in 3D.\nNow we can accurately measure morphological features of these labels. You can close the assistant pannel now.",
@@ -818,8 +819,8 @@
     ]
   },
   {
-    "objectID": "practicals/practical_image_processing.html#measure-morphological-properties",
-    "href": "practicals/practical_image_processing.html#measure-morphological-properties",
+    "objectID": "practicals/practical_segmentation/index.html#measure-morphological-properties",
+    "href": "practicals/practical_segmentation/index.html#measure-morphological-properties",
     "title": "Post-processing, segmentation and labelling in Fiji (2D)",
     "section": "4. Measure morphological properties",
     "text": "4. Measure morphological properties\nSelect Tools → Measure Tables → Object Features/Properties. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format.\nby double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.",

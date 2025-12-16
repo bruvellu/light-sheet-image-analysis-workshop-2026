@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marina Cuenca">
+<meta name="dcterms.date" content="2026-01-05">
 
-<title>practical_image_processing – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Post-processing, segmentation and labelling in Fiji (2D) – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../practicals/practical_imagej_macros.html" rel="next">
-<link href="../practicals/practical_3d_visualization.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../practicals/practical_segmentation/images/readme.html" rel="next">
+<link href="../../practicals/practical_tissue_cartography.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,17 +77,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Post-processing, segmentation and labelling in Fiji (2D) – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/images/MAX_Lund.png">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_segmentation/images/MAX_Lund.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:image:alt" content="Brightness/Contrast histogram">
 <meta property="og:image:height" content="256">
 <meta property="og:image:width" content="256">
-<meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:title" content="Post-processing, segmentation and labelling in Fiji (2D) – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/images/MAX_Lund.png">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_segmentation/images/MAX_Lund.png">
 <meta name="twitter:image:alt" content="Brightness/Contrast histogram">
 <meta name="twitter:image-height" content="256">
 <meta name="twitter:image-width" content="256">
@@ -99,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">🔬 Light-Sheet Image Analysis Workshop 2026</span>
     </a>
   </div>
@@ -114,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_segmentation/index.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -128,25 +130,25 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../help.html" class="sidebar-item-text sidebar-link">
+  <a href="../../help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Help</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../program.html" class="sidebar-item-text sidebar-link">
+  <a href="../../program.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
 </li>
@@ -161,19 +163,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../internal/draft_program.html" class="sidebar-item-text sidebar-link">
+  <a href="../../internal/draft_program.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Original draft program</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../internal/presentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../internal/presentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Example presentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../internal/quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../../internal/quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto reference guide</span></a>
   </div>
 </li>
@@ -190,64 +192,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_cell_tracking/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_cell_tracking/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cell tracking using Mastodon in Fiji</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_2d_visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_2d_visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization of 2D images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_3d_segmentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_3d_segmentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D segmentation using machine/deep learning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_3d_visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_3d_visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization of 3D images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_image_processing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Post-processing, segmentation and labelling in Fiji (2D)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_imagej_macros.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_imagej_macros.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ImageJ macros</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_multiview_reconstruction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_multiview_reconstruction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiview reconstruction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/practical_tissue_cartography.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_tissue_cartography.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tissue cartography</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Images</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../practicals/practical_segmentation/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Post-processing, segmentation and labelling in Fiji (2D)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Images</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/images/readme.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practicals/practical_segmentation/images/readme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Readme</span></a>
   </div>
 </li>
@@ -255,66 +260,68 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Talks</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_data_management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_data_management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best practices in microscopy data management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_deep_learning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_deep_learning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Deep learning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_digital_images.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_digital_images.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization and processing of digital images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_experimental_design.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_experimental_design.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Experimental design and sample mounting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_image_processing.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_image_processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Image processing and analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_lightsheet_concepts.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_lightsheet_concepts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Concepts in light-sheet microscopy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_machine_learning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_machine_learning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine learning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_multiview_cartography.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_multiview_cartography.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiview reconstruction and tissue cartography</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../talks/talk_welcome.html" class="sidebar-item-text sidebar-link">
+  <a href="../../talks/talk_welcome.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Talk Welcome</span></a>
   </div>
 </li>
@@ -330,9 +337,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#post-processing-segmentation-and-labelling-in-fiji-2d" id="toc-post-processing-segmentation-and-labelling-in-fiji-2d" class="nav-link active" data-scroll-target="#post-processing-segmentation-and-labelling-in-fiji-2d">Post-processing, segmentation and labelling in Fiji (2D)</a>
-  <ul class="collapse">
-  <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link" data-scroll-target="#open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</a></li>
+  <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link active" data-scroll-target="#open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</a></li>
   <li><a href="#try-all-global-auto-threshold-methods" id="toc-try-all-global-auto-threshold-methods" class="nav-link" data-scroll-target="#try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</a></li>
   <li><a href="#prepare-the-image-for-auto-local-threshold" id="toc-prepare-the-image-for-auto-local-threshold" class="nav-link" data-scroll-target="#prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</a></li>
   <li><a href="#try-all-auto-local-threshold-methods" id="toc-try-all-auto-local-threshold-methods" class="nav-link" data-scroll-target="#try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</a></li>
@@ -350,7 +355,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#measuring-object-properties" id="toc-measuring-object-properties" class="nav-link" data-scroll-target="#measuring-object-properties">8. Measuring object properties</a></li>
   <li><a href="#visualizing-label-properties" id="toc-visualizing-label-properties" class="nav-link" data-scroll-target="#visualizing-label-properties">9. Visualizing label properties</a></li>
   <li><a href="#filtering-objects-by-size" id="toc-filtering-objects-by-size" class="nav-link" data-scroll-target="#filtering-objects-by-size">10. Filtering objects by size</a></li>
-  </ul></li>
   <li><a href="#post-processing-segmentation-and-labeling-in-napari-3d" id="toc-post-processing-segmentation-and-labeling-in-napari-3d" class="nav-link" data-scroll-target="#post-processing-segmentation-and-labeling-in-napari-3d">Post-processing, segmentation and labeling in Napari (3D)</a>
   <ul class="collapse">
   <li><a href="#open-a-3d-stack" id="toc-open-a-3d-stack" class="nav-link" data-scroll-target="#open-a-3d-stack">1. Open a 3D stack</a></li>
@@ -359,16 +363,42 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#measure-morphological-properties" id="toc-measure-morphological-properties" class="nav-link" data-scroll-target="#measure-morphological-properties">4. Measure morphological properties</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_image_processing.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_segmentation/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../practicals/practical_image_processing.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_cell_tracking/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_segmentation/index.html">Post-processing, segmentation and labelling in Fiji (2D)</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Post-processing, segmentation and labelling in Fiji (2D)</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="post-processing-segmentation-and-labelling-in-fiji-2d" class="level1">
-<h1>Post-processing, segmentation and labelling in Fiji (2D)</h1>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marina Cuenca </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <p>In this exercise we will:</p>
 <ul>
 <li>Compare global and local thresholding methods and understand when each is useful.<br>
@@ -385,10 +415,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Filter segmented objects based on size or other properties.</li>
 </ul>
-<p>These steps form a complete workflow:<br>
-<strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
+<p>These steps form a complete workflow: <strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
 <p>We’ll use <code>MAX_Lund.tif</code> as the example image.</p>
-<hr>
 <section id="open-the-image-and-inspect-the-histogram" class="level2">
 <h2 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</h2>
 <ol type="1">
@@ -396,20 +424,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Open the image:<br>
 <code>File → Open… → MAX_Lund.tif</code><br>
-<img src="images/MAX_Lund.png" class="img-fluid" alt="Brightness/Contrast histogram"><br>
-</li>
+<img src="images/MAX_Lund.png" class="img-fluid" alt="Brightness/Contrast histogram"></li>
 <li>Open the histogram and visualization tools:<br>
 <code>Image → Adjust → Brightness/Contrast…</code></li>
 </ol>
 <p>You should see a histogram like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/04.Screenshot1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Brightness/Contrast histogram"><img src="images/04.Screenshot1.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<p><a href="images/Screenshot1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Brightness/Contrast histogram"><img src="images/Screenshot1.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
 <p><strong>Idea:</strong> Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.</p>
-<hr>
 </section>
 <section id="try-all-global-auto-threshold-methods" class="level2">
 <h2 class="anchored" data-anchor-id="try-all-global-auto-threshold-methods">2. Try all global Auto Threshold methods</h2>
@@ -429,24 +455,21 @@ ul.task-list li input[type="checkbox"] {
 <p>Fiji generates a montage of all global methods:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/04.AutoThresh.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Global auto threshold montage"><img src="images/04.AutoThresh.tif" class="img-fluid figure-img" alt="Global auto threshold montage"></a></p>
+<p><a href="images/AutoThresh.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Global auto threshold montage"><img src="images/AutoThresh.png" class="img-fluid figure-img" alt="Global auto threshold montage"></a></p>
 <figcaption>Global auto threshold montage</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 <section id="prepare-the-image-for-auto-local-threshold" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-the-image-for-auto-local-threshold">3. Prepare the image for Auto Local Threshold</h2>
 <p>Local thresholding requires <strong>8-bit</strong> input.</p>
 <ol type="1">
 <li>Select the original image:<br>
-<code>Window → MAX_Lund.tif</code><br>
-</li>
+<code>Window → MAX_Lund.tif</code></li>
 <li>Convert to 8-bit:<br>
 <code>Image → Type → 8-bit</code></li>
 </ol>
 <p>Now the image is ready for local methods.</p>
-<hr>
 </section>
 <section id="try-all-auto-local-threshold-methods" class="level2">
 <h2 class="anchored" data-anchor-id="try-all-auto-local-threshold-methods">4. Try all Auto Local Threshold methods</h2>
@@ -470,11 +493,10 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/04.AutoLocalThresh1.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Local auto threshold montage"><img src="images/04.AutoLocalThresh1.tif" class="img-fluid figure-img" alt="Local auto threshold montage"></a></p>
+<p><a href="images/AutoLocalThresh1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Local auto threshold montage"><img src="images/AutoLocalThresh1.png" class="img-fluid figure-img" alt="Local auto threshold montage"></a></p>
 <figcaption>Local auto threshold montage</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 <section id="improving-segmentation-with-background-subtraction-and-smoothing" class="level2">
 <h2 class="anchored" data-anchor-id="improving-segmentation-with-background-subtraction-and-smoothing">5. Improving segmentation with background subtraction and smoothing</h2>
@@ -499,11 +521,10 @@ ul.task-list li input[type="checkbox"] {
 <p>After preprocessing:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/AutoLocalThresh2.tif" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Auto Local Threshold after preprocessing"><img src="images/AutoLocalThresh2.tif" class="img-fluid figure-img" alt="Auto Local Threshold after preprocessing"></a></p>
+<p><a href="images/AutoLocalThresh2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Auto Local Threshold after preprocessing"><img src="images/AutoLocalThresh2.png" class="img-fluid figure-img" alt="Auto Local Threshold after preprocessing"></a></p>
 <figcaption>Auto Local Threshold after preprocessing</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 </section>
 <section id="selecting-a-method-local-otsu-and-binary-cleanup" class="level2">
@@ -526,20 +547,16 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Local Otsu mask</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 <section id="refine-the-mask-with-binary-operations" class="level3">
 <h3 class="anchored" data-anchor-id="refine-the-mask-with-binary-operations">6.2 Refine the mask with binary operations</h3>
 <ol start="2" type="1">
 <li>Fill holes inside objects:<br>
-<code>Process → Binary → Fill Holes</code><br>
-</li>
+<code>Process → Binary → Fill Holes</code></li>
 <li>Slightly shrink objects:<br>
-<code>Process → Binary → Erode</code><br>
-</li>
+<code>Process → Binary → Erode</code></li>
 <li>Optionally restore outlines:<br>
-<code>Edit → Draw</code><br>
-</li>
+<code>Edit → Draw</code></li>
 <li>Expand objects after erosion:<br>
 <code>Process → Binary → Dilate</code></li>
 </ol>
@@ -550,7 +567,6 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Refined mask</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 <section id="remove-border-touching-objects" class="level3">
 <h3 class="anchored" data-anchor-id="remove-border-touching-objects">6.3 Remove border-touching objects</h3>
@@ -564,7 +580,6 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Filled + border-removed mask</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 </section>
 <section id="object-labeling-with-morpholibj" class="level2">
@@ -583,7 +598,6 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Connected components labeling</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 <section id="measuring-object-properties" class="level2">
 <h2 class="anchored" data-anchor-id="measuring-object-properties">8. Measuring object properties</h2>
@@ -610,7 +624,6 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Morphometry table</figcaption>
 </figure>
 </div>
-<hr>
 </section>
 <section id="visualizing-label-properties" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-label-properties">9. Visualizing label properties</h2>
@@ -631,7 +644,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>checking measurement correctness</li>
 </ul>
-<hr>
 </section>
 <section id="filtering-objects-by-size" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-objects-by-size">10. Filtering objects by size</h2>
@@ -648,8 +660,6 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Size filtering</figcaption>
 </figure>
 </div>
-<hr>
-</section>
 </section>
 <section id="post-processing-segmentation-and-labeling-in-napari-3d" class="level1">
 <h1>Post-processing, segmentation and labeling in Napari (3D)</h1>
@@ -1095,13 +1105,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../practicals/practical_3d_visualization.html" class="pagination-link" aria-label="Visualization of 3D images">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visualization of 3D images</span>
+      <a href="../../practicals/practical_tissue_cartography.html" class="pagination-link" aria-label="Tissue cartography">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tissue cartography</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../practicals/practical_imagej_macros.html" class="pagination-link" aria-label="ImageJ macros">
-        <span class="nav-page-text">ImageJ macros</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../practicals/practical_segmentation/images/readme.html" class="pagination-link" aria-label="Readme">
+        <span class="nav-page-text">Readme</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1119,7 +1129,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_image_processing.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_segmentation/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
