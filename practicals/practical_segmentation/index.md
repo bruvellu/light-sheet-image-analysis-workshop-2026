@@ -1,8 +1,10 @@
 ---
-title: Post-processing, segmentation and labelling in Fiji (2D)
+title: Post-processing, segmentation and labelling
 author: Marina Cuenca
 date: 05 January 2026
 ---
+
+## 2D segmentation in Fiji
 
 In this exercise we will:
 
@@ -19,7 +21,7 @@ These steps form a complete workflow:
 
 We’ll use `MAX_Lund.tif` as the example image.
 
-## 1. Open the image and inspect the histogram
+### 1. Open the image and inspect the histogram
 
 1. Start **Fiji**.  
 2. Open the image:  
@@ -34,7 +36,7 @@ You should see a histogram like this:
 
 **Idea:** Thresholding chooses an intensity value that separates “foreground” from “background”. The histogram shows how many pixels exist at each intensity.
 
-## 2. Try all global Auto Threshold methods
+### 2. Try all global Auto Threshold methods
 
 Global thresholding applies **one single threshold** to the whole image.
 
@@ -49,7 +51,7 @@ Fiji generates a montage of all global methods:
 
 ![Global auto threshold montage](images/AutoThresh.png)
 
-## 3. Prepare the image for Auto Local Threshold
+### 3. Prepare the image for Auto Local Threshold
 
 Local thresholding requires **8-bit** input.
 
@@ -60,7 +62,7 @@ Local thresholding requires **8-bit** input.
 
 Now the image is ready for local methods.
 
-## 4. Try all Auto Local Threshold methods
+### 4. Try all Auto Local Threshold methods
 
 Local thresholding computes a threshold for each **local neighborhood**.
 
@@ -76,11 +78,11 @@ Local thresholding computes a threshold for each **local neighborhood**.
 
 ![Local auto threshold montage](images/AutoLocalThresh1.png)
 
-## 5. Improving segmentation with background subtraction and smoothing
+### 5. Improving segmentation with background subtraction and smoothing
 
 Good segmentation often benefits from reducing background and noise first.
 
-### 5.1 Remove background and apply Gaussian blur
+#### 5.1 Remove background and apply Gaussian blur
 
 1. Open `MAX_Lund.png`.  
 2. Subtract background:  
@@ -94,9 +96,9 @@ After preprocessing:
 
 ![Auto Local Threshold after preprocessing](images/AutoLocalThresh2.png)
 
-## 6. Selecting a method: Local Otsu and binary cleanup
+### 6. Selecting a method: Local Otsu and binary cleanup
 
-### 6.1 Apply Local Otsu thresholding
+#### 6.1 Apply Local Otsu thresholding
 
 1. Run:  
    `Image → Adjust → Auto Local Threshold…`
@@ -107,7 +109,7 @@ After preprocessing:
 
 ![Local Otsu mask](images/MAX_Lund_Mask.png)
 
-### 6.2 Refine the mask with binary operations
+#### 6.2 Refine the mask with binary operations
 
 2. Fill holes inside objects:  
    `Process → Binary → Fill Holes`
@@ -122,14 +124,14 @@ After preprocessing:
 
 ![Refined mask](images/MAX_Lund_MaskErode.png)
 
-### 6.3 Remove border-touching objects
+#### 6.3 Remove border-touching objects
 
 6. Remove partial objects touching image borders:  
    `Plugins → MorphoLibJ → Filtering → Kill Borders`  
 
 ![Filled + border-removed mask](images/MAX_Lund_Mask-killBorders.png)
 
-## 7. Object labeling with MorphoLibJ
+### 7. Object labeling with MorphoLibJ
 
 Convert each connected region into a uniquely labeled object:
 
@@ -142,7 +144,7 @@ Convert each connected region into a uniquely labeled object:
 
 ![Connected components labeling](images/MAX_Lund_Mask-killBorders-lbl.png)
 
-## 8. Measuring object properties
+### 8. Measuring object properties
 
 Quantifying each object is often the main goal after segmentation.
 
@@ -161,7 +163,7 @@ This extracts a number of morphological associated features. We will select:
 
 ![Morphometry table](images/Screenshot2.png)
 
-## 9. Visualizing label properties
+### 9. Visualizing label properties
 
 Visualize one measurement (e.g. area) mapped onto the label image:
 
@@ -177,7 +179,7 @@ Useful for:
 - deciding filtering thresholds  
 - checking measurement correctness  
 
-## 10. Filtering objects by size
+### 10. Filtering objects by size
 
 Remove small objects based on size:
 
@@ -188,7 +190,7 @@ Remove small objects based on size:
 
 ![Size filtering](images/MAX_Lund_Mask-killBorders-lbl-sizeFilt.png)
 
-# Post-processing, segmentation and labeling in Napari (3D) 
+## 3D segmentation in Napari
 
 In this exercise we will:
 
@@ -201,7 +203,7 @@ These steps form a complete workflow:
 
 We’ll use `Lund.tif` as the example image.
 
-## 1. Open a 3D stack
+### 1. Open a 3D stack
 
 Drag and drop the file or
 
@@ -211,7 +213,7 @@ We will be able to see and explore the stack, and we can change to a 3D renderin
 
 In the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.
 
-## 2. Remove background, binarization and labeling
+### 2. Remove background, binarization and labeling
 
 Select `Remove Background → White top hat  → radius = 10`
 
@@ -221,7 +223,7 @@ Finally, we can select `Label → Connected component labeling`, make sure to se
 
 Then explore the labels in 3D. Some of them are stuck together. Let's try and fix that.
 
-## 3. Fix labels
+### 3. Fix labels
 
 Let's select again the previous layer Result of Threshold. Then select `Process labels → Binary erosion → radius = 3`. This will reduce the objects of the binary segmentation.
 
@@ -231,10 +233,9 @@ Then `Process labels → Expand Labels → radius = 3`. Explore the labels in 3D
 
 Now we can accurately measure morphological features of these labels. You can close the assistant pannel now.
 
-## 4. Measure morphological properties
+### 4. Measure morphological properties
 
 Select `Tools → Measure Tables → Object Features/Properties`. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format. 
 
 by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.
-
 
