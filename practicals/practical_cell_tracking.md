@@ -23,12 +23,22 @@ This is a (very) basic tutorial on how to track cells using Mastodon [@Girstmair
 
 ### Download Dataset {#sec-setup-dataset}
 
+Note! If you are following this during the course, the dataset has already been downloaded.
+
 - Go to https://zenodo.org/records/13944688
 - Click to download https://zenodo.org/records/13944688/files/Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip?download=1
 - Wait. It's a 4.3GB ZIP file
 - Move the file to a working directory
 - Unzip `Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip`
 - Wait. It'll be unzipped to 23GB
+
+::: {layout-ncol=2}
+
+![Your working directory after downloading and unzipping the dataset file.](media/01-dataset-zip.png)
+
+![Contents of the dataset directory.](media/02-dataset-dir.png)
+
+:::
 
 ### Download Fiji {#sec-setup-fiji}
 
@@ -40,28 +50,54 @@ This is a (very) basic tutorial on how to track cells using Mastodon [@Girstmair
 - Double-click on `fiji-linux-x64` launcher
 - Fiji will open
 
+![](media/03-fiji-dir.png)
+
 ### Install Mastodon {#sec-setup-mastodon}
 
 - Click on `Help > Update...`
+
+![](media/04-fiji-update.png)
+
 - The updater will open and say Fiji is up-to-date
 - Click `Manage Update Sites`
-- List of plugins available to install in Fiji
-- Search for "mastodon"
-- Several Mastodon related plugins will appear
-- Click on the checkbox for `Mastodon`
-- Click `Apply and Close`
-- Click `Apply Changes`
-- Wait until downloads are finished
-- Restart Fiji (close window and double-click the launcher)
 
 
-::: {#fig-setup-fiji}
+::: {layout-ncol=2}
 
-{{< video "media/Video1-Start_Fiji_and_install_Mastodon.mp4" >}}
+![](media/05-fiji-up-to-date.png)
 
-Start Fiji and install Mastodon.
+![](media/06-fiji-manage.png)
 
 :::
+
+- A window will open with a list of plugins available to install in Fiji
+
+![](media/07-fiji-plugins.png)
+
+- Search for "mastodon"
+
+![](media/08-fiji-search.png)
+
+- Several Mastodon related plugins will appear
+- Click on the checkbox for `Mastodon`
+
+![](media/09-fiji-mastodon.png)
+
+- Click `Apply and Close` and then `Apply Changes`
+
+![](media/10-fiji-apply.png)
+
+- Wait... until the downloads are finished. Then, click `OK`
+
+::: {layout-ncol=2}
+
+![](media/11-fiji-download.png)
+
+![](media/12-fiji-restart.png)
+
+:::
+
+- Restart Fiji (close window and double-click the launcher)
 
 ## Open Mastodon Project {#sec-open-project}
 
