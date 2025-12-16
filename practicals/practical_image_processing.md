@@ -1,5 +1,5 @@
 
-# Post-processing, segmentation and labelling 
+# Post-processing, segmentation and labelling in Fiji (2D) 
 
 In this exercise we will:
 
@@ -211,16 +211,53 @@ Remove small objects based on size:
 
 ---
 
-```
+# Post-processing, segmentation and labeling in Napari (3D) 
 
+In this exercise we will:
 
----
+- Use Napari to open a 3D image
+- Use Napari assistant to visualize a workflow for 3D image segmentation and labelling
+- Use region props to quantify morphological parameters and make colorcoded plots
 
-# Image processing, denoising, segmentation
+These steps form a complete workflow:  
+**raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering**
 
-Marina (1 hs)
-- Segmentation, post-processing, Morphological operations, Labeling (MorphoLibJ in Fiji)
-  
-  https://knowhowspot.blog/fiji-morphological-segmentation-plugin-guide
-- Napari assistant (MC I could do it based on RH talk - 30 min)
+We’ll use `Lund.tif` as the example image.
+
+## 1. Open a 3D stack
+
+Drag and drop the file or
+
+`File → Open File`
+
+We will be able to see and explore the stack, and we can change to a 3D rendering with the option `Toogle 2D/3D view` in the lower left button pannel. We can also make orthogonal views by clicking the button to the right `Change order of the visible axis`.
+
+In the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.
+
+## 2. Remove background, binarization and labeling
+
+Select `Remove Background → White top hat  → radius = 10`
+
+Then select `Binarize → Threshold Yen`, making sure to select the Result of White top-hat image.
+
+Finally, we can select `Label → Connected component labeling`, make sure to select the Result of Threshold image. We can additionally select the `exclude on edges option`.
+
+Then explore the labels in 3D. Some of them are stuck together. Let's try and fix that.
+
+## 3. Fix labels
+
+Let's select again the previous layer Result of Threshold. Then select `Process labels → Binary erosion → radius = 3`. This will reduce the objects of the binary segmentation.
+
+Now let's recreate the labels `Label → Connected component labeling`, make sure to select the Result of Binary Erosion.
+
+Then `Process labels → Expand Labels → radius = 3`. Explore the labels in 3D.
+
+Now we can accurately measure morphological features of these labels. You can close the assistant pannel now.
+
+## 4. Measure morphological properties
+
+Select `Tools → Measure Tables → Object Features/Properties`. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format. 
+
+by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.
+
 
