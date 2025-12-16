@@ -84,7 +84,7 @@ Wednesday, 7 Jan 2026
 <!--TODO: Revise the slots-->
 
 - 14:00--16:00 - [Tissue cartography](practicals/practical_tissue_cartography.md) (Bruno)
-- 16:00--17:30 - [Cell tracking](practicals/practical_cell_tracking.md) (Bruno)
+- 16:00--17:30 - [Cell tracking](practicals/practical_cell_tracking/index.md) (Bruno)
 
 ## 🗓️ Day 4: Scientific applications and project work
 
