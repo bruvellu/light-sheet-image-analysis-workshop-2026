@@ -65,8 +65,9 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -99,10 +100,18 @@ div.csl-indent {
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/media/01-dataset-zip.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:image:alt" content="Your working directory after downloading and unzipping the dataset file.">
+<meta property="og:image:height" content="882">
+<meta property="og:image:width" content="994">
 <meta name="twitter:title" content="Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/media/01-dataset-zip.png">
+<meta name="twitter:image:alt" content="Your working directory after downloading and unzipping the dataset file.">
+<meta name="twitter:image-height" content="882">
+<meta name="twitter:image-width" content="994">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -418,6 +427,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
 <section id="sec-setup-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="sec-setup-dataset">Download Dataset</h3>
+<p>Note! If you are following this during the course, the dataset has already been downloaded.</p>
 <ul>
 <li>Go to https://zenodo.org/records/13944688</li>
 <li>Click to download https://zenodo.org/records/13944688/files/Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip?download=1</li>
@@ -426,6 +436,26 @@ div.csl-indent {
 <li>Unzip <code>Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip</code></li>
 <li>Wait. It’ll be unzipped to 23GB</li>
 </ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/01-dataset-zip.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Your working directory after downloading and unzipping the dataset file."><img src="media/01-dataset-zip.png" class="img-fluid figure-img" alt="Your working directory after downloading and unzipping the dataset file."></a></p>
+<figcaption>Your working directory after downloading and unzipping the dataset file.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/02-dataset-dir.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Contents of the dataset directory."><img src="media/02-dataset-dir.png" class="img-fluid figure-img" alt="Contents of the dataset directory."></a></p>
+<figcaption>Contents of the dataset directory.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="sec-setup-fiji" class="level3">
 <h3 class="anchored" data-anchor-id="sec-setup-fiji">Download Fiji</h3>
@@ -438,32 +468,61 @@ div.csl-indent {
 <li>Double-click on <code>fiji-linux-x64</code> launcher</li>
 <li>Fiji will open</li>
 </ul>
+<p><a href="media/03-fiji-dir.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/03-fiji-dir.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-setup-mastodon" class="level3">
 <h3 class="anchored" data-anchor-id="sec-setup-mastodon">Install Mastodon</h3>
 <ul>
 <li>Click on <code>Help &gt; Update...</code></li>
+</ul>
+<p><a href="media/04-fiji-update.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/04-fiji-update.png" class="img-fluid"></a></p>
+<ul>
 <li>The updater will open and say Fiji is up-to-date</li>
 <li>Click <code>Manage Update Sites</code></li>
-<li>List of plugins available to install in Fiji</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/05-fiji-up-to-date.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/05-fiji-up-to-date.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/06-fiji-manage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="media/06-fiji-manage.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>A window will open with a list of plugins available to install in Fiji</li>
+</ul>
+<p><a href="media/07-fiji-plugins.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/07-fiji-plugins.png" class="img-fluid"></a></p>
+<ul>
 <li>Search for “mastodon”</li>
+</ul>
+<p><a href="media/08-fiji-search.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="media/08-fiji-search.png" class="img-fluid"></a></p>
+<ul>
 <li>Several Mastodon related plugins will appear</li>
 <li>Click on the checkbox for <code>Mastodon</code></li>
-<li>Click <code>Apply and Close</code></li>
-<li>Click <code>Apply Changes</code></li>
-<li>Wait until downloads are finished</li>
+</ul>
+<p><a href="media/09-fiji-mastodon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/09-fiji-mastodon.png" class="img-fluid"></a></p>
+<ul>
+<li>Click <code>Apply and Close</code> and then <code>Apply Changes</code></li>
+</ul>
+<p><a href="media/10-fiji-apply.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="media/10-fiji-apply.png" class="img-fluid"></a></p>
+<ul>
+<li>Wait… until the downloads are finished. Then, click <code>OK</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/11-fiji-download.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="media/11-fiji-download.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/12-fiji-restart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="media/12-fiji-restart.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>Restart Fiji (close window and double-click the launcher)</li>
 </ul>
-<div id="fig-setup-fiji" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-setup-fiji-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="media/Video1-Start_Fiji_and_install_Mastodon.mp4"></video></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setup-fiji-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Start Fiji and install Mastodon.
-</figcaption>
-</figure>
-</div>
 </section>
 </section>
 <section id="sec-open-project" class="level2">
@@ -1041,7 +1100,38 @@ Schindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark
     </div>
   </div>
 </footer>
-<script>videojs(video_shortcode_videojs_video1);</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
