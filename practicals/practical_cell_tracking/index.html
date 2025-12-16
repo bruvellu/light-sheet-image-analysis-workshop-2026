@@ -100,17 +100,15 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cell_tracking/media/01-dataset-zip.png">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cell_tracking/media/47-detect-preview.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta property="og:image:alt" content="Your working directory after downloading and unzipping the dataset file.">
-<meta property="og:image:height" content="882">
-<meta property="og:image:width" content="994">
+<meta property="og:image:height" content="1163">
+<meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="Cell tracking using Mastodon in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cell_tracking/media/01-dataset-zip.png">
-<meta name="twitter:image:alt" content="Your working directory after downloading and unzipping the dataset file.">
-<meta name="twitter:image-height" content="882">
-<meta name="twitter:image-width" content="994">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cell_tracking/media/47-detect-preview.png">
+<meta name="twitter:image-height" content="1163">
+<meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -364,7 +362,12 @@ div.csl-indent {
   <li><a href="#sec-inspect-dataset" id="toc-sec-inspect-dataset" class="nav-link" data-scroll-target="#sec-inspect-dataset">Inspect the Dataset</a></li>
   <li><a href="#sec-manual-tracking" id="toc-sec-manual-tracking" class="nav-link" data-scroll-target="#sec-manual-tracking">Manual Tracking</a></li>
   <li><a href="#sec-semiauto-tracking" id="toc-sec-semiauto-tracking" class="nav-link" data-scroll-target="#sec-semiauto-tracking">Semi-Automated Tracking</a></li>
-  <li><a href="#sec-auto-tracking" id="toc-sec-auto-tracking" class="nav-link" data-scroll-target="#sec-auto-tracking">Automatic Detection and Linking</a></li>
+  <li><a href="#sec-auto-tracking" id="toc-sec-auto-tracking" class="nav-link" data-scroll-target="#sec-auto-tracking">Automated Tracking</a>
+  <ul class="collapse">
+  <li><a href="#sec-auto-detection" id="toc-sec-auto-detection" class="nav-link" data-scroll-target="#sec-auto-detection">Detection</a></li>
+  <li><a href="#sec-auto-cleaning" id="toc-sec-auto-cleaning" class="nav-link" data-scroll-target="#sec-auto-cleaning">Cleaning</a></li>
+  <li><a href="#sec-auto-linking" id="toc-sec-auto-linking" class="nav-link" data-scroll-target="#sec-auto-linking">Linking</a></li>
+  </ul></li>
   <li><a href="#sec-feature-visualization" id="toc-sec-feature-visualization" class="nav-link" data-scroll-target="#sec-feature-visualization">Basic Feature Visualization</a></li>
   <li><a href="#sec-graph-plotting" id="toc-sec-graph-plotting" class="nav-link" data-scroll-target="#sec-graph-plotting">Graph Plotting</a></li>
   <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references">References</a></li>
@@ -529,26 +532,63 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="sec-open-project">Open Mastodon Project</h2>
 <ul>
 <li>In Fiji click on <code>Plugins &gt; Tracking &gt; Mastodon &gt; Mastodon Launcher</code></li>
+</ul>
+<p><a href="media/13-mastodon-launch.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="media/13-mastodon-launch.png" class="img-fluid"></a></p>
+<ul>
 <li>Mastodon Launcher window will open</li>
 <li>Click on “open Mastodon project” (top left) and “Open another project” (bottom right)</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/14-mastodon-window.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="media/14-mastodon-window.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/15-mastodon-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="media/15-mastodon-project.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>Navigate to the directory <code>Mastodon_Auto-Tracking_Demo_Ph-limb-dev/</code></li>
 <li>Select the file <code>Parhyale_LimbDev_30tps.mastodon</code></li>
+</ul>
+<p><a href="media/16-mastodon-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="media/16-mastodon-open.png" class="img-fluid"></a></p>
+<ul>
 <li>Several new windows will open (Console, Mastodon, BigDataViewer, TrackScheme, Data table)</li>
 </ul>
+<p><a href="media/17-mastodon-windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="media/17-mastodon-windows.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-inspect-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="sec-inspect-dataset">Inspect the Dataset</h2>
 <ul>
 <li>Let’s focus on the Mastodon window. Close Console, BigDataViewer, TrackScheme, Data table</li>
+</ul>
+<p><a href="media/18-mastodon-main.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="media/18-mastodon-main.png" class="img-fluid"></a></p>
+<ul>
 <li>This is the main project menu from where you can open windows, set options, process data and save the project</li>
 <li>The most important buttons for this tutorial are <code>bdv</code> (BigDataViewer) and <code>trackscheme</code></li>
 <li>Click on <code>bdv</code> and make the window larger</li>
+</ul>
+<p><a href="media/19-mastodon-bdv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="media/19-mastodon-bdv.png" class="img-fluid"></a></p>
+<ul>
 <li>Drag the timepoint slider at the bottom to see cells moving and dividing</li>
 <li>Using your acquired BigDataViewer skills, focus on the surface of the embryo</li>
 <li>If you get lost, press <code>Shift+Z</code> to re-orient the embryo</li>
 <li>Find a cell that divides before timepoint 15 and looks trackable</li>
 <li>Zoom on it using <code>Ctrl+Shift+scroll</code> and center it by holding the right button and dragging the mouse</li>
 <li>Use <code>Shift+scroll</code> to navigate through z and <code>M-N</code> to go through time</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/20-nucleus-before.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="media/20-nucleus-before.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/21-nucleus-after.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="media/21-nucleus-after.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>You are ready to track</li>
 </ul>
 </section>
@@ -557,66 +597,212 @@ div.csl-indent {
 <ul>
 <li>On the Mastodon project window, click on the <code>trackscheme</code> button</li>
 <li>The TrackScheme window will appear</li>
+</ul>
+<p><a href="media/22-trackscheme-window.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="media/22-trackscheme-window.png" class="img-fluid"></a></p>
+<ul>
 <li>Resize the bdv window to be side-by-side with the TrackScheme</li>
 <li>Click on the bdv window, set the timepoint to some frames before mitosis, <code>Shift+scroll</code> to find the center of the nucleus, put your mouse pointer there and press <code>A</code></li>
 <li>A round magenta circle will appear over the nucleus and in the TrackScheme</li>
+</ul>
+<p><a href="media/23-manual-add.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="media/23-manual-add.png" class="img-fluid"></a></p>
+<ul>
 <li>With your mouse over the circle, use <code>Shift+Q</code> and <code>Shift+E</code> to adjust the size of the spot to roughly the nucleus diameter</li>
+</ul>
+<p><a href="media/24-manual-resize.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="media/24-manual-resize.png" class="img-fluid"></a></p>
+<ul>
 <li>Zoom in on the new spot in the TrackScheme, hover and click on it and watch what happens in the bdv window</li>
+</ul>
+<p><a href="media/25-click-spot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="media/25-click-spot.png" class="img-fluid"></a></p>
+<ul>
 <li>Go back to the bdv, hover the pointer over the circle and hold the spacebar to adjust the position of the circle and the nucleus</li>
+</ul>
+<p><a href="media/26-adjust-position.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="media/26-adjust-position.png" class="img-fluid"></a></p>
+<ul>
 <li>Now let’s add a second spot</li>
-<li>Hover the mouse inside the circle and hold <code>A</code>. This will advance to the next frame showing you the first spot in white dashed line and the second spot in white solid line with a white solid link between the two. Still holding <code>A</code>, position the second spot, then release <code>A</code> to create the new linked spot</li>
+<li>Hover the mouse inside the circle and hold <code>A</code>. This will advance to the next frame showing you the first spot in white dashed line and the second spot in white solid line with a white solid link between the two.</li>
+</ul>
+<p><a href="media/27-hold-a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="media/27-hold-a.png" class="img-fluid"></a></p>
+<ul>
+<li>Still holding <code>A</code>, position the second spot, then release <code>A</code> to create the new linked spot</li>
 <li>Check how the second spot and a link were created in the TrackScheme automatically</li>
-<li>Continue to track the nucleus for a few more frames, until the frame immediately before division</li>
-<li>Note that when you click on a spot in the bdv window, the corresponding spot is highlighted in the TrackScheme window</li>
-<li>See what happens to the bdv when clicking the spots in TrackScheme… (nothing, unless it is the spot in view)</li>
-<li>Let’s change that</li>
-<li>In the menu bar of bdv and TrackScheme windows there are locks 1, 2, 3. Click on lock 1 in both windows</li>
+</ul>
+<p><a href="media/28-release-a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="media/28-release-a.png" class="img-fluid"></a></p>
+<ul>
+<li><p>Continue to track the nucleus for a few more frames, until the frame immediately before division</p></li>
+<li><p>Note that when you click on a spot in the bdv window, the corresponding spot is highlighted in the TrackScheme window</p></li>
+<li><p>See what happens to the bdv when clicking the spots in TrackScheme… (nothing, unless it is the spot in view)</p></li>
+<li><p>Let’s change that</p></li>
+<li><p>In the menu bar of bdv and TrackScheme windows there are locks 1, 2, 3. Click on lock 1 in both windows</p></li>
+</ul>
+<p><a href="media/29-lock-windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="media/29-lock-windows.png" class="img-fluid"></a></p>
+<ul>
 <li>Now click through spots in the TrackScheme; the view in the bdv will change to show the selected spot at the center</li>
+</ul>
+<p><a href="media/30-locked-behavior.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img src="media/30-locked-behavior.png" class="img-fluid"></a></p>
+<ul>
 <li>Before we continue tracking the cell division, let’s check one of the amazing Mastodon features</li>
 <li>Click on the <code>bdv</code> button in the Mastodon project window and another bdv window will open</li>
-<li>Now activate lock 1 and click on one of the TrackScheme spots; both windows will be synchronized!</li>
-<li>Why is this useful for manual tracking? Adjust the view to center the spot in the second bdv window, press <code>Shift+Y</code>, and select a spot from the TrackScheme. Now we have both XY and ZY views of the same nucleus! Which is great for tracking in 3D. You can check, for instance, that your spot is well centered in Z and adjust it in this window</li>
-<li>OK. Continue the tracking of one of the daughter cells. Select the last spot in the TrackScheme, go to the XY bdv, hover the mouse over the circle and hold <code>A</code>, move the spot, and release <code>A</code> to add it. Do it for a few frames</li>
-<li>Then go back to the pre-division spot and do the same for the other daughter cell</li>
-<li>This will create the first branch of the lineage tree (adjust the TrackScheme view to see it)</li>
 </ul>
+<p><a href="media/31-bdv-new.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img src="media/31-bdv-new.png" class="img-fluid"></a></p>
+<ul>
+<li>Now activate lock 1 and click on one of the TrackScheme spots; both windows will be synchronized!</li>
+</ul>
+<p><a href="media/32-bdv-sync.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32"><img src="media/32-bdv-sync.png" class="img-fluid"></a></p>
+<ul>
+<li>Why is this useful for manual tracking?</li>
+<li>Adjust the view to center the spot in the second bdv window, press <code>Shift+Y</code>, and select a spot from the TrackScheme. Now we have both XY and ZY views of the same nucleus!</li>
+</ul>
+<p><a href="media/33-bdv-ortho.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img src="media/33-bdv-ortho.png" class="img-fluid"></a></p>
+<ul>
+<li>Which is great for tracking in 3D. You can check, for instance, that your spot is well centered in Z and adjust it in this window</li>
+</ul>
+<p><a href="media/34-bdv-division.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img src="media/34-bdv-division.png" class="img-fluid"></a></p>
+<ul>
+<li>Continue the tracking of one of the daughter cells. Select the last spot in the TrackScheme, go to the XY bdv, hover the mouse over the circle and hold <code>A</code>, move the spot, and release <code>A</code> to add it.</li>
+<li>Do it for a few frames</li>
+<li>Then go back to the pre-division spot and add a linked spot corresponding to the other daughter cell</li>
+<li>This will create the first branch of the lineage tree</li>
+</ul>
+<p><a href="media/35-add-split.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img src="media/35-add-split.png" class="img-fluid"></a></p>
+<ul>
+<li>Continue tracking the second daughter cell for a few frames</li>
+</ul>
+<p><a href="media/36-track-daughter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img src="media/36-track-daughter.png" class="img-fluid"></a></p>
+<ul>
+<li>If you zoom out the TrackScheme view you will be able to see the full branched tree</li>
+</ul>
+<p><a href="media/37-tree-branch.png" class="lightbox" data-gallery="quarto-lightbox-gallery-37"><img src="media/37-tree-branch.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-semiauto-tracking" class="level2">
 <h2 class="anchored" data-anchor-id="sec-semiauto-tracking">Semi-Automated Tracking</h2>
 <ul>
 <li>This mode will try to guess where the next nucleus is and automatically create the spots and links</li>
-<li>It requires you to set one spot, so let’s pick a different nucleus. Choose a bright one you like</li>
-<li>Now, hovering above the circle press <code>Ctrl+T</code></li>
-<li>A lineage will appear in the TrackScheme. Check how accurate it is by clicking on the spots and watching their position relative to the nucleus in the bdv windows</li>
+<li>To start, choose a different nucleus to track and press <code>A</code> to add a new spot</li>
+</ul>
+<p><a href="media/38-semi-spot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-38"><img src="media/38-semi-spot.png" class="img-fluid"></a></p>
+<ul>
+<li>Now, hovering the pointer above the spot press <code>Ctrl+T</code></li>
+<li>A lineage will appear in the TrackScheme.</li>
+</ul>
+<p><a href="media/39-semi-auto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-39"><img src="media/39-semi-auto.png" class="img-fluid"></a></p>
+<ul>
+<li>Check how accurate it is by clicking on the spots and watching their position relative to the nucleus in the bdv windows</li>
 <li>Try going further by hovering on a spot and pressing <code>Ctrl+T</code> to continue the semi-automated tracking. See how long you can go, how it behaves with cell divisions, and which cells work well with it and which don’t</li>
+</ul>
+<p><a href="media/40-semi-more.png" class="lightbox" data-gallery="quarto-lightbox-gallery-40"><img src="media/40-semi-more.png" class="img-fluid"></a></p>
+<ul>
 <li>There are many parameters that can be adjusted to tweak the semi-automated tracking behavior, check the documentation</li>
 </ul>
 </section>
 <section id="sec-auto-tracking" class="level2">
-<h2 class="anchored" data-anchor-id="sec-auto-tracking">Automatic Detection and Linking</h2>
+<h2 class="anchored" data-anchor-id="sec-auto-tracking">Automated Tracking</h2>
 <ul>
 <li>The final part of this tutorial is to try automatic detection and linking of spots</li>
 <li>This is the dream: loading your data and getting out your lineage. However, in practice, it’s a lot messier. Cleaning, fixing, and curating the data is required to get a nice informative lineage</li>
 <li>We will use a simplified version of the protocol included in this dataset in the file <code>Protocol_Auto-Detection_Auto-Linking.docx</code></li>
+</ul>
+<p><a href="media/41-auto-doc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41"><img src="media/41-auto-doc.png" class="img-fluid"></a></p>
+<section id="sec-auto-detection" class="level3">
+<h3 class="anchored" data-anchor-id="sec-auto-detection">Detection</h3>
+<ul>
 <li>In the Mastodon window, go to <code>Plugins &gt; Tracking &gt; Detection...</code></li>
+</ul>
+<p><a href="media/42-auto-detect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42"><img src="media/42-auto-detect.png" class="img-fluid"></a></p>
+<ul>
 <li>Press <code>Next</code> twice (leave options as is)</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/43-detect-info.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43"><img src="media/43-detect-info.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/44-detect-roi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-44"><img src="media/44-detect-roi.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>Choose <code>Advanced DoG detector</code> and press <code>Next</code></li>
 <li>Keep <code>Detect: bright blobs</code>, change <code>Estimated diameter</code> to <code>35px</code> and <code>Quality threshold</code> to <code>100</code>. <code>Behavior</code> should remain as <code>Add</code></li>
-<li>Click <code>Preview</code> and see how well the detection will work by exploring a new bdv window. Do you observe too many false positives? You can change the diameter, for example, and try the preview again to see what happens to the detected spots</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/45-detect-dog.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45"><img src="media/45-detect-dog.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/46-detect-params.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46"><img src="media/46-detect-params.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Click <code>Preview</code> and see how well the detection will work by exploring a new bdv window.</li>
+</ul>
+<p><a href="media/47-detect-preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47"><img src="media/47-detect-preview.png" class="img-fluid"></a></p>
+<ul>
+<li>Do you observe too many false positives? You can change the diameter, for example, and try the preview again to see what happens to the detected spots</li>
 <li>Once satisfied, press <code>Next</code> and wait</li>
+</ul>
+<p><a href="media/48-detect-run.png" class="lightbox" data-gallery="quarto-lightbox-gallery-48"><img src="media/48-detect-run.png" class="img-fluid"></a></p>
+<ul>
 <li>When the detection is done, press <code>Finish</code></li>
-<li>The bdv windows and the TrackScheme will be showing all the spots. Explore a bit the bdv and TrackScheme. If you zoom in a lot you’ll see the unlinked, individual spots per frame</li>
+</ul>
+<p><a href="media/49-detect-done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-49"><img src="media/49-detect-done.png" class="img-fluid"></a></p>
+<ul>
+<li>The bdv windows and the TrackScheme will be showing a lot of new spots.</li>
+<li>Explore the spots in the BigDataViewer and TrackScheme windows. If you zoom in a lot you’ll see the unlinked, individual spots per frame</li>
+</ul>
+<p><a href="media/50-detect-detail.png" class="lightbox" data-gallery="quarto-lightbox-gallery-50"><img src="media/50-detect-detail.png" class="img-fluid"></a></p>
+</section>
+<section id="sec-auto-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="sec-auto-cleaning">Cleaning</h3>
+<ul>
 <li>Before we try to automatically link these spots, let’s remove low quality detections</li>
 <li>On the Mastodon window click on <code>Table</code>, resize it to have more space, and resize the column <code>Detection q...</code> to show <code>Detection quality</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/51-table-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-51"><img src="media/51-table-open.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/52-table-resize.png" class="lightbox" data-gallery="quarto-lightbox-gallery-52"><img src="media/52-table-resize.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>Click on <code>Detection quality</code> to sort the table</li>
+</ul>
+<p><a href="media/53-table-sort.png" class="lightbox" data-gallery="quarto-lightbox-gallery-53"><img src="media/53-table-sort.png" class="img-fluid"></a></p>
+<ul>
 <li>Click on the first row to select it. Select all rows where <code>Detection quality</code> is &lt;400</li>
 <li>Then click <code>Edit &gt; Delete Selection</code></li>
+</ul>
+<p><a href="media/54-table-delete.png" class="lightbox" data-gallery="quarto-lightbox-gallery-54"><img src="media/54-table-delete.png" class="img-fluid"></a></p>
+<ul>
 <li>Close the table</li>
 <li>You can also manually delete obviously wrong spots by hovering and pressing <code>D</code>. Clean up the ones outside the embryo</li>
+</ul>
+</section>
+<section id="sec-auto-linking" class="level3">
+<h3 class="anchored" data-anchor-id="sec-auto-linking">Linking</h3>
+<ul>
 <li>Now let’s try linking</li>
 <li>In the main Mastodon window click on <code>Plugins &gt; Tracking &gt; Linking...</code></li>
 <li>Keep <code>All spots</code> selected for all timepoints (0-29) and press <code>Next</code></li>
 <li>Choose <code>Lap linker</code> and click <code>Next</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/55-link-timepoints.png" class="lightbox" data-gallery="quarto-lightbox-gallery-55"><img src="media/55-link-timepoints.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/56-link-lap.png" class="lightbox" data-gallery="quarto-lightbox-gallery-56"><img src="media/56-link-lap.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>Change the parameters to:
 <ul>
 <li><code>Frame to frame linking</code>: <code>Max distance</code> to <code>40px</code></li>
@@ -624,23 +810,77 @@ div.csl-indent {
 <li><code>Track division</code>: Check <code>Allow track division</code>, set <code>Max distance</code> to <code>40px</code>, and press <code>+</code> to add a <code>Feature penalty</code> and set it to <code>Center ch1</code> to <code>0.3</code></li>
 </ul></li>
 <li>Press <code>Next</code> to start linking and wait… then press <code>Finish</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/57-link-params.png" class="lightbox" data-gallery="quarto-lightbox-gallery-57"><img src="media/57-link-params.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/58-link-finish.png" class="lightbox" data-gallery="quarto-lightbox-gallery-58"><img src="media/58-link-finish.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>Note that there are now tracks in the bdv and TrackScheme windows. Explore them a bit</li>
+</ul>
+<p><a href="media/59-link-explore.png" class="lightbox" data-gallery="quarto-lightbox-gallery-59"><img src="media/59-link-explore.png" class="img-fluid"></a></p>
+<ul>
 <li>Mastodon can calculate features (position, displacement, velocity, etc.) of individual spots, links and branches. Let’s do that</li>
 <li>In the main Mastodon window press <code>compute features</code>. A Feature calculation window will open</li>
-<li>Press <code>compute</code> and wait… when it’s done, close it</li>
 </ul>
+<p><a href="media/60-compute-features.png" class="lightbox" data-gallery="quarto-lightbox-gallery-60"><img src="media/60-compute-features.png" class="img-fluid"></a></p>
+<ul>
+<li>Press <code>compute</code> and wait… when it’s done, close it.</li>
+<li>Note that now the tracks in the BigDataViewer is showing colored links</li>
+</ul>
+<p><a href="media/61-computed-tracks.png" class="lightbox" data-gallery="quarto-lightbox-gallery-61"><img src="media/61-computed-tracks.png" class="img-fluid"></a></p>
+<ul>
+<li>Open the table window from the main window</li>
+<li>It’ll be filled with computed features</li>
+</ul>
+<p><a href="media/62-computed-features.png" class="lightbox" data-gallery="quarto-lightbox-gallery-62"><img src="media/62-computed-features.png" class="img-fluid"></a></p>
+</section>
 </section>
 <section id="sec-feature-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="sec-feature-visualization">Basic Feature Visualization</h2>
 <ul>
 <li>Finally, let’s visualize the computed features that might be interesting or useful</li>
 <li>In the bdv window press <code>File &gt; Preferences</code> to open the feature color coding visualization parameters</li>
+</ul>
+<p><a href="media/63-open-settings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-63"><img src="media/63-open-settings.png" class="img-fluid"></a></p>
+<ul>
 <li>On <code>Settings &gt; Feature Color Modes</code> click on <code>Duplicate</code> (it’ll generate a <code>Number of links (2)</code>) and then <code>Rename</code>. Rename it to <code>Velocity</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/64-colormode-settings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-64"><img src="media/64-colormode-settings.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/65-colormode-duplicate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-65"><img src="media/65-colormode-duplicate.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
 <li>On the <code>Coloring Spots</code> change <code>Read spot color from</code> to <code>Incoming link</code> and change <code>Feature</code> to <code>Link velocity</code>. Then click on <code>autoscale</code> in the range</li>
 <li>On the <code>Coloring Links</code> change <code>Read link color from</code> to <code>Link</code> and change <code>Feature</code> to <code>Link velocity</code>. Then also click on <code>autoscale</code></li>
 <li>Click <code>Apply</code> (nothing will happen) then <code>OK</code></li>
+</ul>
+<p><a href="media/66-colormode-params.png" class="lightbox" data-gallery="quarto-lightbox-gallery-66"><img src="media/66-colormode-params.png" class="img-fluid"></a></p>
+<ul>
 <li>On the bdv window press <code>View &gt; Coloring &gt; Velocity</code></li>
+</ul>
+<p><a href="media/67-velocity-apply.png" class="lightbox" data-gallery="quarto-lightbox-gallery-67"><img src="media/67-velocity-apply.png" class="img-fluid"></a></p>
+<ul>
+<li>The spots and links in the BigDataViewer window will change colors</li>
+</ul>
+<p><a href="media/68-velocity-colors.png" class="lightbox" data-gallery="quarto-lightbox-gallery-68"><img src="media/68-velocity-colors.png" class="img-fluid"></a></p>
+<ul>
 <li>Do the same for the other bdv window and the TrackScheme</li>
+</ul>
+<p><a href="media/69-velocity-tracks.png" class="lightbox" data-gallery="quarto-lightbox-gallery-69"><img src="media/69-velocity-tracks.png" class="img-fluid"></a></p>
+<ul>
 <li>This gives a visual representation of cells which have a high displacement per frame. These might be artifacts in linking unrelated spots or, in a good processed lineage, reveal some biological process like cell migration</li>
 </ul>
 </section>
@@ -649,9 +889,16 @@ div.csl-indent {
 <ul>
 <li>To finalize, a simple example of plotting</li>
 <li>Click on <code>grapher</code> in the main Mastodon window, a plot window will open</li>
+</ul>
+<p><a href="media/70-grapher-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-70"><img src="media/70-grapher-open.png" class="img-fluid"></a></p>
+<ul>
 <li>Press the lock 1 to lock the windows, select <code>Link velocity - outgoing</code> for X axis and <code>Detection quality</code> for Y axis and press <code>Plot</code></li>
+</ul>
+<p><a href="media/71-grapher-plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-71"><img src="media/71-grapher-plot.png" class="img-fluid"></a></p>
+<ul>
 <li>Find out if the spots with the highest link velocity are properly linked or if it is an artifact</li>
 </ul>
+<p><a href="media/72-grapher-analysis.png" class="lightbox" data-gallery="quarto-lightbox-gallery-72"><img src="media/72-grapher-analysis.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-references" class="level2">
 <h2 class="anchored" data-anchor-id="sec-references">References</h2>
