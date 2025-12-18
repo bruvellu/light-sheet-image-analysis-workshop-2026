@@ -17,6 +17,8 @@ Welcome! This website contains the materials for the [Light-Sheet Image Analysis
 
 The *Light-Sheet Image Analysis Workshop* is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data.
 
+The workshop is composed of theory sessions in the mornings and practical sessions in the afternoon. Participants will work on projects using the provided datasets or their own data and perform short presentations with what they learned and achieved during the course.
+
 ::: {.columns}
 
 ::: {.column width="50%"}
