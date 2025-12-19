@@ -660,29 +660,93 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="open-a-3d-stack">1. Open a 3D stack</h3>
 <p>Drag and drop the file or</p>
 <p><code>File → Open File</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-load.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Brightness/Contrast histogram"><img src="images/Napari-load.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
 <p>We will be able to see and explore the stack, and we can change to a 3D rendering with the option <code>Toogle 2D/3D view</code> in the lower left button pannel. We can also make orthogonal views by clicking the button to the right <code>Change order of the visible axis</code>.</p>
 <p>In the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.</p>
 </section>
 <section id="remove-background-binarization-and-labeling" class="level3">
 <h3 class="anchored" data-anchor-id="remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</h3>
 <p>Select <code>Remove Background → White top hat  → radius = 10</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-bkg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Brightness/Contrast histogram"><img src="images/Napari-bkg.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
 <p>Then select <code>Binarize → Threshold Yen</code>, making sure to select the Result of White top-hat image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-thresh.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Brightness/Contrast histogram"><img src="images/Napari-thresh.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
+<p>I recommend looking at the result in 3D.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-3D.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Brightness/Contrast histogram"><img src="images/Napari-3D.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
 <p>Finally, we can select <code>Label → Connected component labeling</code>, make sure to select the Result of Threshold image. We can additionally select the <code>exclude on edges option</code>.</p>
-<p>Then explore the labels in 3D. Some of them are stuck together. Let’s try and fix that.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-labels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Brightness/Contrast histogram"><img src="images/Napari-labels.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
+<p>Some of them are stuck together. Let’s try and fix that.</p>
 </section>
 <section id="fix-labels" class="level3">
 <h3 class="anchored" data-anchor-id="fix-labels">3. Fix labels</h3>
 <p>Let’s select again the previous layer Result of Threshold. Then select <code>Process labels → Binary erosion → radius = 3</code>. This will reduce the objects of the binary segmentation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-erode.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Brightness/Contrast histogram"><img src="images/Napari-erode.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
 <p>Now let’s recreate the labels <code>Label → Connected component labeling</code>, make sure to select the Result of Binary Erosion.</p>
 <p>Then <code>Process labels → Expand Labels → radius = 3</code>. Explore the labels in 3D.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-extend.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Brightness/Contrast histogram"><img src="images/Napari-extend.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
 <p>Now we can accurately measure morphological features of these labels. You can close the assistant pannel now.</p>
 </section>
 <section id="measure-morphological-properties" class="level3">
 <h3 class="anchored" data-anchor-id="measure-morphological-properties">4. Measure morphological properties</h3>
 <p>Select <code>Tools → Measure Tables → Object Features/Properties</code>. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img src="images/Napari-table.png" class="img-fluid" alt="Brightness/Contrast histogram"> <img src="images/Napari-table2.png" class="img-fluid" alt="Brightness/Contrast histogram"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.</p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Napari-colorcoded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Brightness/Contrast histogram"><img src="images/Napari-colorcoded.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
+</div>
 
+</div>
+<div class="quarto-layout-row">
 
+</div>
+</div>
 </section>
 </section>
 
