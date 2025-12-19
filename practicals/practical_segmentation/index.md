@@ -253,11 +253,9 @@ Now we can accurately measure morphological features of these labels. You can cl
 
 Select `Tools → Measure Tables → Object Features/Properties`. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format. 
 
-::: {layout-ncol=2}
 ![Brightness/Contrast histogram](images/Napari-table.png)
 
 ![Brightness/Contrast histogram](images/Napari-table2.png)
-:::
 
 by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.
 
