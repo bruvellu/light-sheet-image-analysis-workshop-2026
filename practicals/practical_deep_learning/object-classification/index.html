@@ -423,47 +423,31 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Select the raw data for training and the labels layer for ground truth. Then click Train. Observe the results in 3D. For better visualization you can hide the labels layer.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/04-train01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Brightness/Contrast histogram"><img src="images/04-train01.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/05-3Dlabels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Brightness/Contrast histogram"><img src="images/05-3Dlabels.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-</div>
-</div>
 <p>From this first round of training, very likely the result is not perfect. This is because our ground truth anotation was done on a single z slice, so the classifier will perform well only around that depth. We can do several rounds of training.</p>
 <p>Select again the labels image, and in the 2D mode go to a different z. Perform new anotations, preserving the label orders for background and object. Then just click Train again and observe the new results. Repeat as needed.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/06-retrain.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Brightness/Contrast histogram"><img src="images/06-retrain.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/07-newlabels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Brightness/Contrast histogram"><img src="images/07-newlabels.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 </section>
 <section id="filter-small-objects-and-quantify-parameters" class="level2">
@@ -471,49 +455,33 @@ ul.task-list li input[type="checkbox"] {
 <p>Now there might be some small objects that we want to filter. Go to</p>
 <p><code>Tools → Segmentation post-processing → Exclude small labels</code></p>
 <p>Then select the layer <code>Result of ObjectSegmentation</code> and impose a minimum size of 20 (it will say maximum size in napari, but it is a mistake from the developers). Run it and observe the final labels (hide the old labels for better visualization).</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/08-exclude.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Brightness/Contrast histogram"><img src="images/08-exclude.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/09-finallabels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Brightness/Contrast histogram"><img src="images/09-finallabels.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-</div>
-</div>
 <p>Now that we have a nice set of labels in 3D, we will quantify intensity and morphology based parameters for further analysis.</p>
 <p>Go to</p>
 <p><code>Tools → Measurement tables → Regionprops</code></p>
 <p>Select all parameters except moments and click run.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/10-regionprops.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Brightness/Contrast histogram"><img src="images/10-regionprops.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/11-resultrp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Brightness/Contrast histogram"><img src="images/11-resultrp.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 <p>We can export this table or visualize some of the data using the cluster plotter.</p>
 </section>
@@ -522,47 +490,31 @@ ul.task-list li input[type="checkbox"] {
 <p>Go to</p>
 <p><code>Plugins → napari-clusters-plotter → Plotter widget</code></p>
 <p>In here you can select any measurement (column) from the region props table and make scatter plots.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/12-plotterwid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Brightness/Contrast histogram"><img src="images/12-plotterwid.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/13-plotterwid2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Brightness/Contrast histogram"><img src="images/13-plotterwid2.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-</div>
-</div>
 <p>A very useful tool is that we can draw in the plot closed curves and the objects falling inside will be automatically colorcoded and visualized in the 3D rendered image. I recommend hiding all the other layers except the raw image.</p>
 <p>By pressing shift, we can draw further subgroups.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/14-plotterwid3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Brightness/Contrast histogram"><img src="images/14-plotterwid3.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/15-plotterwid4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Brightness/Contrast histogram"><img src="images/15-plotterwid4.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 <p>This manual selection generates a new column in the regionprops table with the identifier for us to export and further analyse in other software.</p>
 </section>
@@ -571,46 +523,30 @@ ul.task-list li input[type="checkbox"] {
 <p>Go to</p>
 <p><code>Plugins → napari-clusters-plotter → Dimensionality Reduction Widget</code></p>
 <p>This is a very useful tool in which we can apply a variety of dimensionality reduction methods to our list of parameters. In this example I used UMAPS. We can select how many components we want and after hitting run they will be added to our regionprops table.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/16-dimred.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Brightness/Contrast histogram"><img src="images/16-dimred.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/17-dimred2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Brightness/Contrast histogram"><img src="images/17-dimred2.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-</div>
-</div>
 <p>After doing this, we can come back to the Plotter Widget and plot this two components of the UMAP and generate more complex clustering of the data manually.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/18-plotterwid5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Brightness/Contrast histogram"><img src="images/18-plotterwid5.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/19-plotterwid6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Brightness/Contrast histogram"><img src="images/19-plotterwid6.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 </section>
 <section id="unsupervised-clustering" class="level2">
@@ -618,25 +554,17 @@ ul.task-list li input[type="checkbox"] {
 <p>But what if we don’t want to be biased when clustering the data in subgroups? We can use unsupervised methods includded in this plugin. Go to</p>
 <p><code>Plugins → napari-clusters-plotter → Clustering Widget</code></p>
 <p>Select the K-MEANS method, impose 3 clusters and run. This will generate a new column with the cluster ID for each object.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/20-cluster.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Brightness/Contrast histogram"><img src="images/20-cluster.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/22-cluster3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Brightness/Contrast histogram"><img src="images/22-cluster3.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
 <figcaption>Brightness/Contrast histogram</figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 <p>Now going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.</p>
 <div class="quarto-figure quarto-figure-center">
