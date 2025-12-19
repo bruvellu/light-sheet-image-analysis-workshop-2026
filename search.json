@@ -674,6 +674,102 @@
     ]
   },
   {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html",
+    "href": "practicals/practical_deep_learning/object-classification/index.html",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "In this exercise we will:\n\nTrain an object classifier with Napari\nFilter labels\nExtract morphological and intensity based parameters\nPlot parameters in 2D\nApply a dimensionality reduction method\nVisualize the results\nCluster subgroups of objects using K-means\n\nThese steps form a complete workflow: raw image → segmentation → cleanup → labeling → measurement → data viz\nWe’ll use Lund.tif as the example image https://zenodo.org/records/17986091\nRequirements: - Everything you need is in the toml file in the Pixi/napari-devbio folder https://github.com/cuenca-mb/pixi-napari-devbio\n\n\nIn the terminal, go to the directory Pixi/napari-devbio and run:\npixi run napari\n\n\n\nDrag and drop the file or\nFile → Open File\n\n\n\nBrightness/Contrast histogram\n\n\nWe will be able to see and explore the stack, and we can change to a 3D rendering with the option Toogle 2D/3D view in the lower left button pannel. We will create a labels layer to anotate some ground truth for our object classifier.\nIn the left pannel, select the brush tool and make some background anotations with the brush. Then change to label 2 and make some object annotations (cells).\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nGo to\nTools → Segmentation / labeling → Object segmentation (APOC)\n\n\n\nBrightness/Contrast histogram\n\n\nSelect the raw data for training and the labels layer for ground truth. Then click Train. Observe the results in 3D. For better visualization you can hide the labels layer.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nFrom this first round of training, very likely the result is not perfect. This is because our ground truth anotation was done on a single z slice, so the classifier will perform well only around that depth. We can do several rounds of training.\nSelect again the labels image, and in the 2D mode go to a different z. Perform new anotations, preserving the label orders for background and object. Then just click Train again and observe the new results. Repeat as needed.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\n\nNow there might be some small objects that we want to filter. Go to\nTools → Segmentation post-processing → Exclude small labels\nThen select the layer Result of ObjectSegmentation and impose a minimum size of 20 (it will say maximum size in napari, but it is a mistake from the developers). Run it and observe the final labels (hide the old labels for better visualization).\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nNow that we have a nice set of labels in 3D, we will quantify intensity and morphology based parameters for further analysis.\nGo to\nTools → Measurement tables → Regionprops\nSelect all parameters except moments and click run.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nWe can export this table or visualize some of the data using the cluster plotter.\n\n\n\nGo to\nPlugins → napari-clusters-plotter → Plotter widget\nIn here you can select any measurement (column) from the region props table and make scatter plots.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nA very useful tool is that we can draw in the plot closed curves and the objects falling inside will be automatically colorcoded and visualized in the 3D rendered image. I recommend hiding all the other layers except the raw image.\nBy pressing shift, we can draw further subgroups.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nThis manual selection generates a new column in the regionprops table with the identifier for us to export and further analyse in other software.\n\n\n\nGo to\nPlugins → napari-clusters-plotter → Dimensionality Reduction Widget\nThis is a very useful tool in which we can apply a variety of dimensionality reduction methods to our list of parameters. In this example I used UMAPS. We can select how many components we want and after hitting run they will be added to our regionprops table.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nAfter doing this, we can come back to the Plotter Widget and plot this two components of the UMAP and generate more complex clustering of the data manually.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\n\nBut what if we don’t want to be biased when clustering the data in subgroups? We can use unsupervised methods includded in this plugin. Go to\nPlugins → napari-clusters-plotter → Clustering Widget\nSelect the K-MEANS method, impose 3 clusters and run. This will generate a new column with the cluster ID for each object.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nNow going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.\n\n\n\nBrightness/Contrast histogram",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#open-the-image-and-inspect-the-histogram",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#open-the-image-and-inspect-the-histogram",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "In the terminal, go to the directory Pixi/napari-devbio and run:\npixi run napari",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#open-the-image-and-create-manual-anotations",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#open-the-image-and-create-manual-anotations",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "Drag and drop the file or\nFile → Open File\n\n\n\nBrightness/Contrast histogram\n\n\nWe will be able to see and explore the stack, and we can change to a 3D rendering with the option Toogle 2D/3D view in the lower left button pannel. We will create a labels layer to anotate some ground truth for our object classifier.\nIn the left pannel, select the brush tool and make some background anotations with the brush. Then change to label 2 and make some object annotations (cells).\n\n\n\nBrightness/Contrast histogram",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#train-the-object-classifier",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#train-the-object-classifier",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "Go to\nTools → Segmentation / labeling → Object segmentation (APOC)\n\n\n\nBrightness/Contrast histogram\n\n\nSelect the raw data for training and the labels layer for ground truth. Then click Train. Observe the results in 3D. For better visualization you can hide the labels layer.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nFrom this first round of training, very likely the result is not perfect. This is because our ground truth anotation was done on a single z slice, so the classifier will perform well only around that depth. We can do several rounds of training.\nSelect again the labels image, and in the 2D mode go to a different z. Perform new anotations, preserving the label orders for background and object. Then just click Train again and observe the new results. Repeat as needed.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#filter-small-objects-and-quantify-parameters",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#filter-small-objects-and-quantify-parameters",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "Now there might be some small objects that we want to filter. Go to\nTools → Segmentation post-processing → Exclude small labels\nThen select the layer Result of ObjectSegmentation and impose a minimum size of 20 (it will say maximum size in napari, but it is a mistake from the developers). Run it and observe the final labels (hide the old labels for better visualization).\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nNow that we have a nice set of labels in 3D, we will quantify intensity and morphology based parameters for further analysis.\nGo to\nTools → Measurement tables → Regionprops\nSelect all parameters except moments and click run.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nWe can export this table or visualize some of the data using the cluster plotter.",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#data-visualization-with-clusters-plotter",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#data-visualization-with-clusters-plotter",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "Go to\nPlugins → napari-clusters-plotter → Plotter widget\nIn here you can select any measurement (column) from the region props table and make scatter plots.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nA very useful tool is that we can draw in the plot closed curves and the objects falling inside will be automatically colorcoded and visualized in the 3D rendered image. I recommend hiding all the other layers except the raw image.\nBy pressing shift, we can draw further subgroups.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nThis manual selection generates a new column in the regionprops table with the identifier for us to export and further analyse in other software.",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#dimensionality-reduction",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#dimensionality-reduction",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "Go to\nPlugins → napari-clusters-plotter → Dimensionality Reduction Widget\nThis is a very useful tool in which we can apply a variety of dimensionality reduction methods to our list of parameters. In this example I used UMAPS. We can select how many components we want and after hitting run they will be added to our regionprops table.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nAfter doing this, we can come back to the Plotter Widget and plot this two components of the UMAP and generate more complex clustering of the data manually.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_deep_learning/object-classification/index.html#unsupervised-clustering",
+    "href": "practicals/practical_deep_learning/object-classification/index.html#unsupervised-clustering",
+    "title": "Object-classification, dimensionality reduction and clustering",
+    "section": "",
+    "text": "But what if we don’t want to be biased when clustering the data in subgroups? We can use unsupervised methods includded in this plugin. Go to\nPlugins → napari-clusters-plotter → Clustering Widget\nSelect the K-MEANS method, impose 3 clusters and run. This will generate a new column with the cluster ID for each object.\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\n\n\nBrightness/Contrast histogram\n\n\n\n\n\nNow going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.\n\n\n\nBrightness/Contrast histogram",
+    "crumbs": [
+      "Practicals",
+      "Practical Deep Learning",
+      "Object-classification, dimensionality reduction and clustering"
+    ]
+  },
+  {
     "objectID": "talks/talk_multiview_cartography.html",
     "href": "talks/talk_multiview_cartography.html",
     "title": "Multiview reconstruction and tissue cartography",
