@@ -208,7 +208,7 @@ These steps form a complete workflow:
 We’ll use `Lund.tif` as the example image https://zenodo.org/records/17986091.
 
 Requirements:
-- Everything you need is in the toml file in the Pixi/napari-assistant folder
+- Everything you need is in the toml file in the Pixi/napari-assistant folder https://github.com/cuenca-mb/pixi-napari-assistant
 
 ### 0. Open Napari assistant using Pixi
 In the terminal, go to the directory Pixi/napari-assistant and run:
