@@ -338,6 +338,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#d-segmentation-in-napari" id="toc-d-segmentation-in-napari" class="nav-link" data-scroll-target="#d-segmentation-in-napari">3D segmentation in Napari</a>
   <ul>
+  <li><a href="#open-napari-assistant-using-pixi" id="toc-open-napari-assistant-using-pixi" class="nav-link" data-scroll-target="#open-napari-assistant-using-pixi">0. Open Napari assistant using Pixi</a></li>
   <li><a href="#open-a-3d-stack" id="toc-open-a-3d-stack" class="nav-link" data-scroll-target="#open-a-3d-stack">1. Open a 3D stack</a></li>
   <li><a href="#remove-background-binarization-and-labeling" id="toc-remove-background-binarization-and-labeling" class="nav-link" data-scroll-target="#remove-background-binarization-and-labeling">2. Remove background, binarization and labeling</a></li>
   <li><a href="#fix-labels" id="toc-fix-labels" class="nav-link" data-scroll-target="#fix-labels">3. Fix labels</a></li>
@@ -399,7 +400,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Filter segmented objects based on size or other properties.</li>
 </ul>
 <p>These steps form a complete workflow: <strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
-<p>We’ll use <code>MAX_Lund.tif</code> as the example image.</p>
+<p>We’ll use <code>MAX_Lund.tif</code> as the example image https://zenodo.org/records/17986091</p>
+<p>Requirements: - Fiji - MorphoLibJ plugin https://imagej.net/plugins/morpholibj</p>
 <section id="open-the-image-and-inspect-the-histogram" class="level3">
 <h3 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">1. Open the image and inspect the histogram</h3>
 <ol type="1">
@@ -655,7 +657,13 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>These steps form a complete workflow:<br>
 <strong>raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering</strong></p>
-<p>We’ll use <code>Lund.tif</code> as the example image.</p>
+<p>We’ll use <code>Lund.tif</code> as the example image https://zenodo.org/records/17986091.</p>
+<p>Requirements: - Everything you need is in the toml file in the Pixi/napari-assistant folder</p>
+<section id="open-napari-assistant-using-pixi" class="level3">
+<h3 class="anchored" data-anchor-id="open-napari-assistant-using-pixi">0. Open Napari assistant using Pixi</h3>
+<p>In the terminal, go to the directory Pixi/napari-assistant and run:</p>
+<p><code>pixi run assistant</code></p>
+</section>
 <section id="open-a-3d-stack" class="level3">
 <h3 class="anchored" data-anchor-id="open-a-3d-stack">1. Open a 3D stack</h3>
 <p>Drag and drop the file or</p>
