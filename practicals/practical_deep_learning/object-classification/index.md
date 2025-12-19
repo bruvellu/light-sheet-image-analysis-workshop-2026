@@ -135,7 +135,7 @@ After doing this, we can come back to the Plotter Widget and plot this two compo
 
 ![Brightness/Contrast histogram](images/18-plotterwid5.png)
 
-![Brightness/Contrast histogram](images/19-plotterwid6.png)
+![Brightness/Contrast histogram](images/19-plotterwid.png)
 
 ## 6. Unsupervised clustering
 
