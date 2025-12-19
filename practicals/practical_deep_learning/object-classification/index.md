@@ -151,4 +151,4 @@ Select the K-MEANS method, impose 3 clusters and run. This will generate a new c
 
 Now going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.
 
-![Automatic clustering](images/22-cluster4.png)
+![Automatic clustering](images/23-cluster4.png)
