@@ -674,17 +674,6 @@
     ]
   },
   {
-    "objectID": "practicals/practical_deep_learning/index.html",
-    "href": "practicals/practical_deep_learning/index.html",
-    "title": "3D segmentation using machine/deep learning",
-    "section": "",
-    "text": "3D segmentation using machine/deep learning\nPractical - Machine and Deep learning - Segmentation of 3D structures (2h)\n\nPixel classification in labkit and napari (MC) (30 min) https://scads.github.io/napari-tutorial-2023/intro.html https://www.youtube.com/watch?v=QDS5t7oZH-c https://f1000research.com/slides/12-972\nCellpose - BioImage Zoo (pre-trained models, fine tunning) Is this Agus? (1 hr)",
-    "crumbs": [
-      "Practicals",
-      "3D segmentation using machine/deep learning"
-    ]
-  },
-  {
     "objectID": "talks/talk_multiview_cartography.html",
     "href": "talks/talk_multiview_cartography.html",
     "title": "Multiview reconstruction and tissue cartography",
