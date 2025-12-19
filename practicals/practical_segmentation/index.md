@@ -26,7 +26,7 @@ We’ll use `MAX_Lund.tif` as the example image.
 1. Start **Fiji**.  
 2. Open the image:  
    `File → Open… → MAX_Lund.tif`  
-   ![Brightness/Contrast histogram](images/MAX_Lund.png)
+![Brightness/Contrast histogram](images/MAX_Lund.png)
 3. Open the histogram and visualization tools:  
    `Image → Adjust → Brightness/Contrast…`
 
@@ -209,6 +209,8 @@ Drag and drop the file or
 
 `File → Open File`
 
+![Brightness/Contrast histogram](images/Napari-load.png)
+
 We will be able to see and explore the stack, and we can change to a 3D rendering with the option `Toogle 2D/3D view` in the lower left button pannel. We can also make orthogonal views by clicking the button to the right `Change order of the visible axis`.
 
 In the right pannel we will see the Assistant plugin, where it suggests operations in the appropriate order. The amount of operations and options depends on your installed plugins. Some of them are redundant.
@@ -217,19 +219,33 @@ In the right pannel we will see the Assistant plugin, where it suggests operatio
 
 Select `Remove Background → White top hat  → radius = 10`
 
+![Brightness/Contrast histogram](images/Napari-bkg.png)
+
 Then select `Binarize → Threshold Yen`, making sure to select the Result of White top-hat image.
+
+![Brightness/Contrast histogram](images/Napari-thresh.png)
+
+I recommend looking at the result in 3D.
+
+![Brightness/Contrast histogram](images/Napari-3D.png)
 
 Finally, we can select `Label → Connected component labeling`, make sure to select the Result of Threshold image. We can additionally select the `exclude on edges option`.
 
-Then explore the labels in 3D. Some of them are stuck together. Let's try and fix that.
+![Brightness/Contrast histogram](images/Napari-labels.png)
+
+Some of them are stuck together. Let's try and fix that.
 
 ### 3. Fix labels
 
 Let's select again the previous layer Result of Threshold. Then select `Process labels → Binary erosion → radius = 3`. This will reduce the objects of the binary segmentation.
 
+![Brightness/Contrast histogram](images/Napari-erode.png)
+
 Now let's recreate the labels `Label → Connected component labeling`, make sure to select the Result of Binary Erosion.
 
 Then `Process labels → Expand Labels → radius = 3`. Explore the labels in 3D.
+
+![Brightness/Contrast histogram](images/Napari-extend.png)
 
 Now we can accurately measure morphological features of these labels. You can close the assistant pannel now.
 
@@ -237,5 +253,11 @@ Now we can accurately measure morphological features of these labels. You can cl
 
 Select `Tools → Measure Tables → Object Features/Properties`. Here make sure to select the Result of Expanded Labels image. You can select different features, includding intensity features extracted from the raw data. After running a table should appear which can be exported in csv format. 
 
+::: {layout-ncol=2}
+![Brightness/Contrast histogram](images/Napari-table.png)
+![Brightness/Contrast histogram](images/Napari-table2.png)
+
 by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.
+
+![Brightness/Contrast histogram](images/Napari-colorcoded.png)
 
