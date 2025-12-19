@@ -19,7 +19,11 @@ In this exercise we will:
 These steps form a complete workflow:
 **raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering**
 
-We’ll use `MAX_Lund.tif` as the example image.
+We’ll use `MAX_Lund.tif` as the example image https://zenodo.org/records/17986091 
+
+Requirements:
+- Fiji
+- MorphoLibJ plugin https://imagej.net/plugins/morpholibj
 
 ### 1. Open the image and inspect the histogram
 
@@ -201,7 +205,15 @@ In this exercise we will:
 These steps form a complete workflow:  
 **raw image → pre-processing → segmentation → cleanup → labeling → measurement → filtering**
 
-We’ll use `Lund.tif` as the example image.
+We’ll use `Lund.tif` as the example image https://zenodo.org/records/17986091.
+
+Requirements:
+- Everything you need is in the toml file in the Pixi/napari-assistant folder
+
+### 0. Open Napari assistant using Pixi
+In the terminal, go to the directory Pixi/napari-assistant and run:
+
+`pixi run assistant`
 
 ### 1. Open a 3D stack
 
