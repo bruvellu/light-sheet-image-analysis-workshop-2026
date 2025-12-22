@@ -334,6 +334,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#add-a-scale-bar" id="toc-add-a-scale-bar" class="nav-link" data-scroll-target="#add-a-scale-bar">5. Add a Scale Bar</a></li>
   <li><a href="#convert-the-image-to-rgb" id="toc-convert-the-image-to-rgb" class="nav-link" data-scroll-target="#convert-the-image-to-rgb">6. Convert the Image to RGB</a></li>
   <li><a href="#save-the-final-image" id="toc-save-the-final-image" class="nav-link" data-scroll-target="#save-the-final-image">7. Save the Final Image</a></li>
+  <li><a href="#making-the-code-general" id="toc-making-the-code-general" class="nav-link" data-scroll-target="#making-the-code-general">8. Making the code general</a></li>
   </ul></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
@@ -497,6 +498,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Click <strong>Save</strong>.</li>
 </ol>
 <p>You have now manually completed the same workflow that will later be automated using a Fiji macro. Go to the recorder and click <code>Create</code>. Now let’s run it! You will obtain the same result of your manual pipeline and you can apply this to other images from the same experiment to compare visually using the same B&amp;C parameters and get png images ready for publications.</p>
+<p><strong>Note that the command <code>run</code> contains the instructions to run the specific functions in string format with a sintaxis that is very specific. Minor variations might occurr from MacOS/Ubuntu to Windows. Other commands such as <code>saveAs</code> include the specific title of the image we are processing, or directory where is being saved. We will pay attention to these when running the analysis in another image or directory.</strong></p>
+</section>
+<section id="making-the-code-general" class="level4">
+<h4 class="anchored" data-anchor-id="making-the-code-general">8. Making the code general</h4>
+<p>Let’s asume we would like to run this code in an image we previously opened. We can then remove the first line of code that opens the sample image.</p>
+<p>Next, the title of the opened image is being used throughout the code, it’s includded by default in the title of each channel after splitting, in the merge command and in the <code>saveAs</code> function. A good way to generalize the code is to create a variable with the title of the open image, whichever that is. For this wew use the function <code>getTitle()</code>. We can then replace VERY carefully, the title of the image by our variable.</p>
+<p>Reaching the end of the code, we would like to have an interactive way to select the directory where the image will be saved. We can use the function <code>getDirectory()</code> to browse the folder we want and save that path as a variable to insert in the function. We usually would like to put this at the beginning of the code since it requires user input and if the analysis is long we would need to wait to select the saving directory. Now we can replace the <code>dir</code> and <code>title</code> variables in the <code>saveAs</code> function.</p>
+<p>Test and save the macro.</p>
 <hr>
 </section>
 </section>
