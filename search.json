@@ -253,12 +253,166 @@
   {
     "objectID": "practicals/practical_multiview/index.html",
     "href": "practicals/practical_multiview/index.html",
-    "title": "Multiview reconstruction",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
     "section": "",
-    "text": "Multiview reconstruction\n\nDefining dataset\nresaving h5\nvisualizing\nregistering\nfusing.",
+    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch2010-uu?; Horl2019-vx?) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch2015-md?), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction"
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-summary",
+    "href": "practicals/practical_multiview/index.html#sec-summary",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "",
+    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch2010-uu?; Horl2019-vx?) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch2015-md?), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-requirements",
+    "href": "practicals/practical_multiview/index.html#sec-requirements",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Requirements",
+    "text": "Requirements\n\nMultiview lightsheet dataset\nFiji/ImageJ\nBigStitcher plugin",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-setup",
+    "href": "practicals/practical_multiview/index.html#sec-setup",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Setup",
+    "text": "Setup\n\nDefine working directory\n\nCreate a directory in your computer to put the files needed for this tutorial.\n\n\n\nDownload dataset\n\nGo to Zenodo URL and download 5angles-beads dataset\nUnzip the file to your working directory\nYou should see a single CZI file named Dmel_Gap43-mCherry_5Angles_2Channels_1Timepoint_60Slices_Beads\nAs described in the file name, this single CZI file contains 5 different angles, each with 2 channels and a single timepoint with 60 z-slices\nThe XY resolution is 0.276 µm and the Z resolution is 3 µm\nThe dataset also has fluorescent beads around the sample, which we will use to register the views\nThe dataset is ready\n\n\n\nDownload Fiji and BigStitcher\n\nGo to https://fiji.sc\nChoose Distribution: Stable\nClick the big download button\nCopy fiji-stable-linux64-jdk.zip to working directory and unzip it\n\n\n\nOpen the new directory fiji-stable-linux64-jdk/Fiji.app/\nDouble-click on fiji-linux-x64 launcher\nFiji will open\n\n\n\nClick on Help &gt; Update…\n\n\n\nThe updater will run and open open and say if Fiji is up-to-date\nClick Manage Update Sites\n\n\n\nA window will open with a list of plugins available to install in Fiji\n\n\n\nFind BigStitcher in the list and click on the checkbox\nClick Apply and Close\n\n\n\nThen Apply Changes\n\n\n\nWait… until the downloads are finished. Then, click OK\n\n\n\nRestart Fiji (close window and double-click the launcher)\nCheck if BigStitcher is installed under Plugins &gt; BigStitcher\n\n\n\nYou are ready!",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-inspect-dataset",
+    "href": "practicals/practical_multiview/index.html#sec-inspect-dataset",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Inspect dataset",
+    "text": "Inspect dataset\n\nNow let’s first inspect the dataset in Fiji\n\n\nOpen file\n\nDrag and drop the CZI file in Fiji’s main window\n\n\n\nA Bio-Formats Import Options should open\nThat’s the default importer for proprietary file formats\nThere are many options but for now simply click OK\n\n\n\nA Bio-Formats Series Options window will open\nBio-Formats recognized that this file contains more than one view (series) and is asking which ones do we want to open\nWe just want to inspect one view since they will be quite similar, so simply press OK\n\n\n\n\nAdjust contrast\n\nA big window with a black background will open\nCheck if the dimensions were correctly assigned (information line at the top and sliders at the bottom)\n\n\n\nTo see something, we first need to adjust the levels\nOpen the Brightness/Contrast (B&C) tool with Image &gt; Adjust &gt; Brightness/Contrast… (or ctrl+shift+c) and the Channels Tool with Image &gt; Color &gt; Channels Tool… (or ctrl+shift+z)\n\n\n\nPress Reset to adjust the levels of Channel 1 then slide the Z position to the middle of the sample and press reset again\n\n\n\n\n\n\n\n\n\n\n\n\nNow move the Channel slider to Channel 2 and press Reset\n\n\n\nIn the Channels window change the menu Color to Composite\n\n\n\nThe sample is ready to be visualized\n\n\n\nOpen orthogonal views\n\nTo get a sense of the data tridimentionality we want to look at the XY, XZ, and YZ optical sections\nClick on Image &gt; Stacks &gt; Orthogonal Views (or ctrl+shift+H)\nIt takes a moment. XZ and YZ panels will open\n\n\n\nResize the main window to fit the screen\nThe sample is a fly embryo which resembles a cylinder in 3D\nExplore the dataset by clicking and sliding the mouse pointer through the different images\n\n\n\nWhen done, please close the stack",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-define-dataset",
+    "href": "practicals/practical_multiview/index.html#sec-define-dataset",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Define dataset",
+    "text": "Define dataset\n\nBefore we begin, we need to define a multiview dataset and resave the dataset\nDefining multiview dataset will create an XML file where all the dataset metadata and information and data from the registration process will be stored\nGo to Plugins &gt; BigStitcher &gt; General &gt; Define Multi-View Dataset\n\n\n\nA window named Choose method to define dataset will open\nOn the Define Dataset using field choose Zeiss Lightsheet Z.1 Dataset Loader (Bioformats) from the dropdown menu, since our testing dataset is from Zeiss Lightsheet Z.1, then press OK\n\n\n\nClick browse in the next window, select the CZI file, and press OK\n\n\n\nBigStitcher will read the metadata of the CZI and show a dialog with the details\nCheck that five angles are present, that there are two channels and that the XYZ resolution matches the expected values (see above)\nThen press OK\n\n\n\nIf you look into the working directory, an XML file named dataset will have appeared there\n\n\n\nYou can open this file in a text editor to see the information stored there\nRight-click the file, select Open With… and choose Text Editor\nThe file has the file name, the image dimensions, the XYZ resolution, etc\n\n\n\nNote that the XML only stores metadata from the dataset and not the actual image data",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-resave-dataset",
+    "href": "practicals/practical_multiview/index.html#sec-resave-dataset",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Resave dataset",
+    "text": "Resave dataset\n\nNext, we need to convert the actual image, which is still stored in the CZI, to a format that allow us to open and visualize this heavy dataset in an efficient and lightweight manner\nFor that, we will resave the data into HDF5 format\nGo to Plugins &gt; BigStitcher &gt; I/O &gt; Resave as HDF5 (local)\n\n\n\nThe new window Select dataset for Resaving as HDF5 will automatically load the last used XML file, in this case, our dataset.xml\nYou can choose whether you want to convert every angle, all channels, all timepoints, or only a subset of those\nWe want it all, press OK\n\n\n\nAnother window will appear with some resaving options\nLeave the options as is, but make sure that the Export path is pointing to the dataset.xml file (click on Browse and, if the file is not selected, navigate and select dataset.xml)\nPress OK and wait…\n\n\n\nResaving this dataset takes about 3 min. But consider that larger datasets will take significantly longer (with several timepoints, for example)\nThe Log window will show that it’s done\n\n\n\nNote that another XML file named dataset.xml~1 and a new HDF5 file named dataset.h5 were created\nEvery time the dataset file is saved, BigStitcher creates a backup copy. dataset.xml~1 was the original dataset.xml which was renamed after the resaving\nIf you inspect the new dataset.xml in a Text Editor you will see that it now points to the dataset.h5 file\n\n\n\nWhenever we refere to the multiview dataset we are referring to the XML/HDF5 pair",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-visualize-dataset",
+    "href": "practicals/practical_multiview/index.html#sec-visualize-dataset",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Visualize dataset",
+    "text": "Visualize dataset\n\nWe can finally open the main BigStitcher application\n\n\nStart BigStitcher\n\nGo to Plugins &gt; BigStitcher &gt; BigStitcher\n\n\n\nThe last dataset.xml file will be automatically loaded in the select dataset window, click OK\n\n\n\nThis will open two windows, the BigDataViewer and the Multiview Explorer\n\n\n\nThe Multiview Explorer shows a table with the individual views of the dataset. We have 5 views, each with 2 channels. Therefore, we have in total 10 views.\nClicking in a row will show the data in the BigDataViewer. You can select multiple rows freely. You can also sort the table by channel or angle for example\nSelect the five views from Channel 561 (channel 2)\n\n\n\nThe image is too bright, we need to adjust the contrast\nFor that, go to Settings &gt; Brightness & Color\nA new window will open\n\n\n\nChange the max value of channel 2 to 2500\n\n\n\nNow we can visualize the dataset in more detail\n\n\n\nLearn BigDataViewer\n\nIt is important to familiarize yourself with the BigDataViewer commands and shortcuts\nBigDataViewer is very intuitive to use but a quick look at the Help is important to not get lost\nSome of the most important commands are as follow:\nShift+X, Shift+Y, Shift+Z: That’s your compass. If you get lost, pressing one of these shortcuts will get you back to the original XY, YZ, ZX orientation\nIn this scope the rotation axis is Y\nTherefore, pressing shift+y will show you the separate angles\n\n\n\nHold left mouse button to rotate the data around the pointer\nHold right mouse button to drag the view\nCtrl+shift+scroll+up or down will zoom in/out fast (don’t use shift for normal speed)\nTip, select the Explorer window with the five views selected and press C. This will autocolor the views which is great for visualization\nTip, select the BigDataViewer and press i to activate interpolation for better visualization\n\n\n\n\n\n\n\n\n\n\n\n\nTake some time to explore the data, the different views, zoom in and out, find the beads, and get familiar with the BigDataViewer\nThen finish with the 5-views oriented as in the image",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-detect-points",
+    "href": "practicals/practical_multiview/index.html#sec-detect-points",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Detect points",
+    "text": "Detect points\n\nWe can now start the first processing step of the pipeline, detecting points of interest to be used for the registration\nThe Multiview Explorer is always the starting point\nSelect the five views of channel 561 (if not selected)\nIn this case, we want only the views of channel 2 to be selected since it is in this channel that the beads are visible\nThen, then right click the rows with the mouse\nA long menu will appear. This is the main menu of BigStitcher. Anything that we select will only be applied to the selected views.\nAfter right-clicking, find the section Processing and select Detect Interest Points…\n\n\n\nIn this first window we can choose the type of detection (Default: Difference of Gaussian) and a label to describe these interest points\nOne dataset can have multiple sets of interest points\nWe will keep the default options and press OK\n\n\n\nWe can set different parameters for the Difference of Gaussian approach\nWhat is important to us at this point is to make sure that Interactive… is set for Interest point specification and that you change Downsample XY from Match Z Resolution (less downsampling) to 2x. The latter is not essential for all datasets but it works better for this dataset which has relatively high anisotropy (lower Z resolution compared to XY). Keep Downsample Z as 1x.\nPress OK\n\n\n\nIn case, we can select which view we will open the interactive window and if we will load the entire stack. Simply press OK to load the entire first view\n\n\n\nA stack will open with a rectangular ROI placed at the top left corner\nThe ROI shows a live view of detected points for the current parameters Sigma and Threshold present in the other window\n\n\n\nSigma is the size (radius) of the point and Threshold is the intensity-based cut value to discard low-quality detections\nThe default is to Find DoG maxima (red) or, in other words, bright spots. You can also find dark spots surrounded by bright areas (useful for some samples)\nThis is a normal ImageJ window, so you can zoom, adjust contrast, and if you lose the ROI you can simply draw a new rectangular ROI\nYou can drag the ROI around by clicking inside it and holding/dragging it\n\n\n\nWhat we want to do now is to adjust the Sigma and Threshold so that most of the beads outside the embryo are properly detect with the least of spurious detections\nThe best way to begin is to zoom in into a bead outside the embryo and check if the circle size is matching well the bead. Move the Sigma slider, aiming for a circle slightly larger than the bead\nRemember to also move through the Z slices of the stack to see how the detection behaves\nIf the size looks good, now increase the Threshold until real beads begin to not be detect. Once you reach this point roll the slider back until most beads are detected\nNote that, no matter how much you tweak these parameters, there’ll always be many detections in the sample tissues. These non-bead detections will not have a strong influence on the registration given that you have enough detected real beads\nOnce satisfied, press Done\n\n\n\nBead detection takes some time\nOnce DONE, go to the Multiview Explorer window and press Save\n\n\n\nThis is important because the detections are initially saved in memory and will be only written to disk after pressing Save (detections are saved in a directory named interestpoints.n5)\nYou can notice that the column #InterestPoints in the Multiview Explorer now shows 1 for the five views of channel 561 (but not for channel 488)",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-register-views",
+    "href": "practicals/practical_multiview/index.html#sec-register-views",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Register views",
+    "text": "Register views\n\nNow we can try to register these views using the detected interest points\nWith the 5-views selected, right-click and run Register using Interest Points…\n\n\n\nWe can change different registration parameters like the algorithm to be used or the specific set of previously interest points\nWe want to go with the default Fast descriptor-based (rotation invariant) Registration algorithm as it works well for bead-based registration with Z.1 datasets\nSince our views are very further apart with almost no overlap, we want to change the option Registration in between views to Compare all views against each other\nLeave the other options as is making sure we are using the Interest points labeled as beads\nClick OK\n\n\n\nA novel window will open with several other parameters to tweak. Please refer to the BigStitcher documentation for the specific function of these\nFor us, it is important to note two. The option Fix views set to Fix first view means that all other views will be mapped to the first angle. And the Transformation model set to Affine means that the data will be transformed non-rigidly to fit the individual views. This is important since different portions of the stack might have a certain degree of distortion from the objective lenses and an affine transformation helps to fit the views better together\nThe other parameters we will only need to change if our registration fails\nPress OK\n\n\n\nThis small window with Regularization Parameters can be kept as is (Rigid and 0.10). Press OK\nSame for the interest point grouping options. Press OK\n\n\n\n\n\n\n\n\n\n\n\n\nThe registration will begin and be over in a few seconds. Don’t blink or you will miss it! If successful, you will see that the individual views will now have moved over (registered) the first view and they are all overlapping in the BigDataViewer window\n\n\n\n\n\n\n\n\n\n\n\n\nNow that the views are registered, explore the dataset to verify that the registration worked well. The best way to do this is visually\nOne of the first things that you can do is to press shift+y and zoom in into a bead close to the embryo’s surface\n\n\n\nYou will see the point spread function of one bead in each individual view forming a star with generally four views (as the fifth view is too further away).\nIf the sample is registered well, the center of the point spread functions of the different views should match in the middle of the star\n\n\n\nAnother thing that you can do is to find a structure you know well in the sample and check that the tissues are actually registered. It can happen that the beads are nicely registered, but the tissues themselves are a bit off\nOne way to do this is to select only two contiguous views and check them closely\nWhen done, make sure to Save the project again\n\n\n\nAfter saving, the #Registrations column should now show the number 3 for the selected views (if not deselect and select them again to update the counter)",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-set-bounding",
+    "href": "practicals/practical_multiview/index.html#sec-set-bounding",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Set bounding box",
+    "text": "Set bounding box\n\nOur dataset is registered, but before fusing the views it is important to set a bounding box around the sample. This reduces the final dimensions and file size of the fused data.\nFor that, right-click and select Define Bounding Box…\n\n\n\nWe want to define it interactively, so leave the Bounding Box option as isotropic\nYou can give the bounding box a custom name and define different bounding boxes for different purposes, but the default name is good enough for this tutorial. Click OK\n\n\n\nTwo windows will open: BigDataViewer with the sample and some purple shade and a bounding box window full of sliders\n\n\n\nFor defining the bounding box I follow a specific procedure, always in the same order, to avoid inadvertently leaving out a part of your sample when fusing\nFirst, press shift+x to orient the sample on XY\n\n\n\nGo through the sample (Z) top to bottom to get a sense of the entire volume and stop back at the middle\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMove the x min slider to the right to cut out the region on the left of the sample (the dashed line is the reference edge). Get close to the sample, but leave a gap\n\n\n\nOnce the placed x min, go again top to bottom through Z to make sure nothing was cut out\nNow do the same of x max to cut out the region on the right side of the sample\n\n\n\nNext we want to cut a bit from the top and bottom regions\nMove the slider y min to cut from the top and y max to cut from the bottom. Remember to go through Z to make sure it is not cutting the tip off the embryo (it happens)\n\n\n\n\n\n\n\n\n\n\n\n\nFinally, press shift+y to cut out the exceeding portions in the Z direction\n\n\n\nUse z min to cut from the top (in this orientation), always going through Y to check!\nThen adjust z max to cut from the bottom (in this orientation), also going through Y.\n\n\n\n\n\n\n\n\n\n\n\n\nWhen done, press OK in the bounding box window\n\n\n\nThe dimensions of the interactively defined bounding box and the estimated sized of the fused image will appear.\nPress OK and Save",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-fuse-single",
+    "href": "practicals/practical_multiview/index.html#sec-fuse-single",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Fuse dataset (one channel)",
+    "text": "Fuse dataset (one channel)\n\nFinally, let’s begin the fusing of registered views\nSelect the five registered views in the Multiview Explorer, right-click and press Image Fusion…\n\n\n\nThe window with fusion options will appear\n\n\n\nOur “My Bounding Box” is automatically selected for the Bounding Box\nWe can choose to downsample the fused image. I highly recommend downsampling 2x, 4x, or even 8x, depending on the dataset, if you are fusing a dataset for the first time.\nFusing without downsampling (1x) can take a really long time for large samples (many hours), so it is good practice to downsample the fused image to make sure the fusing parameters are good for your dataset before fusing the whole thing.\nBut for this tutorial, you can leave at 1x\nFor Interpolation leave Linear interpolation as it gives better outputs\nFusion type is an important parameter to choose wisely\nThe simplest is Avg, which averages the signal of every view per pixel. This is quick but it is combining the good contrast of one view with the blurred side of another view and the resulting contrast will be suboptimal.\nAvg, Blending is the same as Avg, but it blends smoothly the edges of the different views giving a slightly better fusing than simple Avg\nAvg, Blending & Content Based improves the other two options by adding a step that checks and keeps only the best information for each coordinate (keep good contrast, discard blurred information). This option gives the best results. However, it is also the one that requires more memory and takes longer to finish (much longer)\nTherefore, I would start with 2x or 4x downsample using Avg, Blending before trying less downsampling and the content based fusion\nFor the Pixel type I often use 16-bit, but it depends on what is your goal with the fused image. If it is only to have a volume visualization, 8-bit might be enough. If further processing and analysis is expected, definitely go for 16-bit or, in special cases, 32-bit.\nBigStitcher also has an option for using the interest points information during the fusion step to obtain better results (Non-Rigid fusion). This is for advanced users and I have not tried it enough to have an opinion about it.\nGenerally, we want to have one fused image per timepoint per channel\nAnd I always Save as (compressed) TIFF stacks for the Fused image option. Choosing Display using ImageJ can be dangerous as the fused image will be large and your computer can run out of memory and crash. Writing to disk is safer.\nAfter pressing OK there’ll be another window to define the min/max levels, but they are automatically detected. Press OK\n\n\n\nThe output directory will be the same where the dataset.xml is. You can add a Filename addition to distinguish different types of fusion and downsampling (useful when doing it multiple times)\nPress OK and fusion will start\n\n\n\nOnce done, drag and drop the fused dataset named avg_blend_1x_fused_tp_0_ch_1 in Fiji to open it and adjust the contrast with the Brightness/Contrast tool to see the data\n\n\n\n\n\n\n\n\n\n\n\n\nInspect the fusion result, checking for artifacts. If your sample has a membrane staining, for example, check for doubled membranes\nNote that this is an isotropic dataset",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-duplicate-transformation",
+    "href": "practicals/practical_multiview/index.html#sec-duplicate-transformation",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Duplicate transformation",
+    "text": "Duplicate transformation\n\nNow that we have successfully registered and fused the views of one channel, we can simply apply the series of transformations to the other channel without the need to detect interest points or register the channel independently\n\n\n\nYou can do so using the tool Duplicate Transformations from BigStitcher\nFirst, close the Multiview Explorer and the Select dataset window that pops-up\nThen go to Plugins &gt; BigStitcher &gt; General &gt; Tools &gt; Duplicate Transformations\n\n\n\nSelect the option One channel to other channels\n\n\n\nA Select dataset window will open with the last dataset.xml already opened. Press OK\n\n\n\nNow choose the source channel. Remember that we registered the Channel 561 (channel 2).\nThe Target channel(s) is All Channels (all the other channels except for the source one).\nThe last option, Duplicate which transformations is important. Generally, Replace all transformations work for most cases. However, I often prefer to use Add last transformation only. This will take the last transformation from the source channel and apply to the target channel.\nNote, however, that for this to work, the source channel can only be one transformation ahead of the target. If for instance, we ran two subsequent transformations for the source channel, then applying only the last would not duplicate all the transformations. Always check the #Registrations in the Multiview Explorer.\n\n\n\nOnce you press OK, the transformations will be applied in the XML file. It’s quick.\nNow open BigStitcher again and check if the 5 views of the other channel are registered (they should)",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-fuse-all",
+    "href": "practicals/practical_multiview/index.html#sec-fuse-all",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "Fuse dataset (all channels)",
+    "text": "Fuse dataset (all channels)\n\nWe have now both channels registered, but only one fused\nTo fuse both channels select all the views in the Multiview Explorer\n\n\n\nThen set the desired parameters for fusion (optimized previously) and run the fusion again as described above\nThis time there will be two files as output: avg_blend_1x_fused_tp_0_ch_0.tif and avg_blend_1x_fused_tp_0_ch_1.tif\n\n\n\nOpen both files in Fiji and adjust their contrast\n\n\n\nThen go to Image &gt; Color &gt; Merge Channels…\n\n\n\nSelect ch_0 for C1 and ch_1 for C2 and press OK\n\n\n\nA red-green 2-channel stack will open\nAs red-green isn’t good, use the LUT tool to update the colors to green for C1 and magenta for C2.\n\n\n\n\n\n\n\n\n\n\n\n\nWe can even compare this fused dataset with one single view of the original dataset.\nDrag and drop the CZI file, select the first view only to import, and put the stacks side-by-side for a comparison slice by slice",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#references",
+    "href": "practicals/practical_multiview/index.html#references",
+    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "section": "References",
+    "text": "References\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher in Fiji"
     ]
   },
   {
