@@ -23,6 +23,7 @@ By the end of this tutorial, participants will be able to:
 - Adapt existing macros to new datasets and experimental conditions.
 
 ---
+
 ## Basic Macro concepts
 
 ### 1. Opening the Macro Editor in Fiji
