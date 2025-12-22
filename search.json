@@ -255,7 +255,7 @@
     "href": "practicals/practical_multiview/index.html",
     "title": "Multiview reconstruction using BigStitcher in Fiji",
     "section": "",
-    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch2010-uu?; Horl2019-vx?) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch2015-md?), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
+    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher in Fiji"
@@ -266,7 +266,7 @@
     "href": "practicals/practical_multiview/index.html#sec-summary",
     "title": "Multiview reconstruction using BigStitcher in Fiji",
     "section": "",
-    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch2010-uu?; Horl2019-vx?) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch2015-md?), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
+    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher in Fiji"
@@ -409,7 +409,7 @@
     "href": "practicals/practical_multiview/index.html#references",
     "title": "Multiview reconstruction using BigStitcher in Fiji",
     "section": "References",
-    "text": "References\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
+    "text": "References\n\n\nHörl, David, Fabio Rojas Rusak, Friedrich Preusser, Paul Tillberg, Nadine Randel, Raghav K Chhetri, Albert Cardona, et al. 2019. “BigStitcher: Reconstructing High-Resolution Image Datasets of Cleared and Expanded Samples.” Nat. Methods 16 (September): 870–74. https://doi.org/10.1038/s41592-019-0501-0.\n\n\nPietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. “BigDataViewer: Visualization and Processing for Large Image Data Sets.” Nat. Methods 12 (June): 481–83. https://doi.org/10.1038/nmeth.3392.\n\n\nPreibisch, Stephan, Stephan Saalfeld, Johannes Schindelin, and Pavel Tomancak. 2010. “Software for Bead-Based Registration of Selective Plane Illumination Microscopy Data.” Nat. Methods 7 (June): 418–19. https://doi.org/10.1038/nmeth0610-418.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher in Fiji"
