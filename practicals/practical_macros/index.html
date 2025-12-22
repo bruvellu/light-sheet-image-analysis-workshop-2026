@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marina Cuenca">
+<meta name="dcterms.date" content="2026-01-05">
 
-<title>index – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Macro programming in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,10 +75,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:title" content="Macro programming in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:title" content="Macro programming in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -103,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_multiview/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_macros/index.html">ImageJ macros</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_multiview/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_macros/index.html">Macro programming in Fiji</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -186,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_macros/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">ImageJ macros</span></a>
+ <span class="menu-text">Macro programming in Fiji</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -313,21 +315,196 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#imagej-macros" id="toc-imagej-macros" class="nav-link active" data-scroll-target="#imagej-macros">ImageJ macros</a></li>
+  <li><a href="#introduction-to-macro-programming-in-fiji" id="toc-introduction-to-macro-programming-in-fiji" class="nav-link active" data-scroll-target="#introduction-to-macro-programming-in-fiji">Introduction to Macro Programming in Fiji</a>
+  <ul>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#basic-macro-concepts" id="toc-basic-macro-concepts" class="nav-link" data-scroll-target="#basic-macro-concepts">Basic Macro concepts</a>
+  <ul class="collapse">
+  <li><a href="#opening-the-macro-editor-in-fiji" id="toc-opening-the-macro-editor-in-fiji" class="nav-link" data-scroll-target="#opening-the-macro-editor-in-fiji">1. Opening the Macro Editor in Fiji</a></li>
+  <li><a href="#comments-variables-and-strings" id="toc-comments-variables-and-strings" class="nav-link" data-scroll-target="#comments-variables-and-strings">2. Comments, variables and strings</a></li>
+  <li><a href="#colorcode-and-debugging" id="toc-colorcode-and-debugging" class="nav-link" data-scroll-target="#colorcode-and-debugging">3. Colorcode and debugging</a></li>
+  <li><a href="#the-macro-recorder" id="toc-the-macro-recorder" class="nav-link" data-scroll-target="#the-macro-recorder">4. The macro recorder</a></li>
+  </ul></li>
+  <li><a href="#reproducible-and-automatic-pipeline" id="toc-reproducible-and-automatic-pipeline" class="nav-link" data-scroll-target="#reproducible-and-automatic-pipeline">Reproducible and automatic pipeline</a>
+  <ul class="collapse">
+  <li><a href="#open-a-sample-image" id="toc-open-a-sample-image" class="nav-link" data-scroll-target="#open-a-sample-image">1. Open a Sample Image</a></li>
+  <li><a href="#split-the-image-into-channels" id="toc-split-the-image-into-channels" class="nav-link" data-scroll-target="#split-the-image-into-channels">2. Split the Image into Channels</a></li>
+  <li><a href="#adjust-display-contrast-for-each-channel" id="toc-adjust-display-contrast-for-each-channel" class="nav-link" data-scroll-target="#adjust-display-contrast-for-each-channel">3. Adjust Display Contrast for Each Channel</a></li>
+  <li><a href="#merge-channels-into-a-composite-image" id="toc-merge-channels-into-a-composite-image" class="nav-link" data-scroll-target="#merge-channels-into-a-composite-image">4. Merge Channels into a Composite Image</a></li>
+  <li><a href="#add-a-scale-bar" id="toc-add-a-scale-bar" class="nav-link" data-scroll-target="#add-a-scale-bar">5. Add a Scale Bar</a></li>
+  <li><a href="#convert-the-image-to-rgb" id="toc-convert-the-image-to-rgb" class="nav-link" data-scroll-target="#convert-the-image-to-rgb">6. Convert the Image to RGB</a></li>
+  <li><a href="#save-the-final-image" id="toc-save-the-final-image" class="nav-link" data-scroll-target="#save-the-final-image">7. Save the Final Image</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_macros/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_multiview/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_macros/index.html">ImageJ macros</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_multiview/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_macros/index.html">Macro programming in Fiji</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Macro programming in Fiji</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="imagej-macros" class="level1">
-<h1>ImageJ macros</h1>
-<p>Marina could do this with no prob. https://f1000research.com/slides/11-973 - Why? - Types of macros - How to record</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marina Cuenca </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="introduction-to-macro-programming-in-fiji" class="level1">
+<h1>Introduction to Macro Programming in Fiji</h1>
+<p>Fiji includes a built-in macro language that allows you to automate repetitive image-processing tasks, ensure reproducibility, and scale analyses to large datasets. Macros can record actions performed in the graphical user interface (GUI) and translate them into editable code, making them an excellent entry point into scripting.</p>
+<p>This tutorial introduces the basics of working with macros in Fiji.</p>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this tutorial, participants will be able to:</p>
+<ul>
+<li>Use the Fiji Macro Editor and Macro Recorder to create and modify ImageJ macros.</li>
+<li>Build batch-processing macros to analyze large image datasets automatically.</li>
+<li>Design interactive macros that accept user-defined parameters via dialogs.</li>
+<li>Write clear, reusable macro code using variables, loops, and functions.</li>
+<li>Implement reproducible image-analysis workflows that can be shared and rerun.</li>
+<li>Adapt existing macros to new datasets and experimental conditions.</li>
+</ul>
+<hr>
+</section>
+<section id="basic-macro-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="basic-macro-concepts">Basic Macro concepts</h2>
+<section id="opening-the-macro-editor-in-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="opening-the-macro-editor-in-fiji">1. Opening the Macro Editor in Fiji</h3>
+<p>To write or edit macros in Fiji, you will use the <strong>Script Editor</strong>, which includes support for the ImageJ Macro language.</p>
+<ol type="1">
+<li>Open <strong>Fiji</strong>.</li>
+<li>From the top menu bar, go to<br>
+<strong><code>File → New → Script…</code></strong> A new window will open. This is the <strong>Macro Editor</strong>, where you can write, edit, and run macro code.</li>
+<li>From the top menu bar, go to<br>
+<strong><code>Language → ImageJ Macro</code></strong></li>
+</ol>
+<p>Once the editor is open, you can start writing macros or paste code generated by the Macro Recorder.</p>
+</section>
+<section id="comments-variables-and-strings" class="level3">
+<h3 class="anchored" data-anchor-id="comments-variables-and-strings">2. Comments, variables and strings</h3>
+<ol type="1">
+<li>To write comments that won’t run in your script use <code>//</code>.</li>
+<li>Variables hold values and can be defined by operators.</li>
+<li>We need to explicit the end of a line of code using semicolons.</li>
+<li>Strings are chain of characters inside <code>""</code>.</li>
+<li>We can print variables or strings with the function <code>print()</code></li>
+</ol>
+</section>
+<section id="colorcode-and-debugging" class="level3">
+<h3 class="anchored" data-anchor-id="colorcode-and-debugging">3. Colorcode and debugging</h3>
+<p>Macro code contains colorcoded text. Pink = strings Yellow = commands Green = comments</p>
+<p>If something is off, likely you made a mistake in the code. And if so, when you run the code you’ll have a pop up window with a very broad description of what might have gone wrong and where (in general not very helpful).</p>
+</section>
+<section id="the-macro-recorder" class="level3">
+<h3 class="anchored" data-anchor-id="the-macro-recorder">4. The macro recorder</h3>
+<p>The life changing tool that will make you grow fond of Fiji. Go to <strong><code>Plugins → Macro → Record...</code></strong></p>
+<p>Now everything we do will be “recorded” and we can turn it into reproducible image analysis pipelines that run automatically.</p>
+<hr>
+</section>
+</section>
+<section id="reproducible-and-automatic-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-and-automatic-pipeline">Reproducible and automatic pipeline</h2>
+<p>Now, with the recorder open we will create a Macro that changes automatically Brightness and contrast features of a multi channel image and creates a png figure with scale bar.</p>
+<section id="open-a-sample-image" class="level4">
+<h4 class="anchored" data-anchor-id="open-a-sample-image">1. Open a Sample Image</h4>
+<ol type="1">
+<li>Open <strong>Fiji</strong>.</li>
+<li>From the menu bar, go to:<br>
+<strong><code>File → Open Samples → Fluorescent Cells</code></strong></li>
+</ol>
+<p>This will load a multichannel fluorescence image provided with Fiji.</p>
+</section>
+<section id="split-the-image-into-channels" class="level4">
+<h4 class="anchored" data-anchor-id="split-the-image-into-channels">2. Split the Image into Channels</h4>
+<ol type="1">
+<li>With the image window active, go to:<br>
+<strong><code>Image → Color → Split Channels</code></strong></li>
+</ol>
+<p>Fiji will create separate grayscale images for each fluorescence channel (e.g.&nbsp;C1, C2, C3).</p>
+</section>
+<section id="adjust-display-contrast-for-each-channel" class="level4">
+<h4 class="anchored" data-anchor-id="adjust-display-contrast-for-each-channel">3. Adjust Display Contrast for Each Channel</h4>
+<p>Adjust the display range of each channel individually.</p>
+<ol type="1">
+<li>Go to:<br>
+<strong><code>Image → Adjust → Brightness/Contrast…</code></strong></li>
+<li>Change the minimum or maximum values. Do it arbitrarily, it’s just a test!</li>
+<li>Click <strong>Set</strong> or <strong>Apply</strong>.</li>
+<li>Repeat for the other channels</li>
+</ol>
+<blockquote class="blockquote">
+<p>Note: These values affect only the display, not the underlying pixel data.</p>
+</blockquote>
+</section>
+<section id="merge-channels-into-a-composite-image" class="level4">
+<h4 class="anchored" data-anchor-id="merge-channels-into-a-composite-image">4. Merge Channels into a Composite Image</h4>
+<ol type="1">
+<li>Go to:<br>
+<strong><code>Image → Color → Merge Channels…</code></strong></li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p>A merged multichannel image will be created.</p>
+</section>
+<section id="add-a-scale-bar" class="level4">
+<h4 class="anchored" data-anchor-id="add-a-scale-bar">5. Add a Scale Bar</h4>
+<ol type="1">
+<li>Select the merged image window.</li>
+<li>Go to:<br>
+<strong><code>Analyze → Tools → Scale Bar…</code></strong> Ideally, the scale bar will be in microns but in this sample image it will be in pixels.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+</section>
+<section id="convert-the-image-to-rgb" class="level4">
+<h4 class="anchored" data-anchor-id="convert-the-image-to-rgb">6. Convert the Image to RGB</h4>
+<ol type="1">
+<li>With the merged image selected, go to:<br>
+<strong><code>Image → Type → RGB Color</code></strong></li>
+</ol>
+<p>This step is required before saving the image in common formats such as PNG.</p>
+</section>
+<section id="save-the-final-image" class="level4">
+<h4 class="anchored" data-anchor-id="save-the-final-image">7. Save the Final Image</h4>
+<ol type="1">
+<li>Go to:<br>
+<strong><code>File → Save As → PNG…</code></strong></li>
+<li>Choose a destination folder.</li>
+<li>Name the file (e.g.&nbsp;<code>FluorescentCells.png</code>).</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>You have now manually completed the same workflow that will later be automated using a Fiji macro. Go to the recorder and click <code>Create</code>. Now let’s run it! You will obtain the same result of your manual pipeline and you can apply this to other images from the same experiment to compare visually using the same B&amp;C parameters and get png images ready for publications.</p>
+<hr>
+</section>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
