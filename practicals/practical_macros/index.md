@@ -137,6 +137,18 @@ This step is required before saving the image in common formats such as PNG.
 You have now manually completed the same workflow that will later be automated using a Fiji macro.
 Go to the recorder and click `Create`. Now let's run it! You will obtain the same result of your manual pipeline and you can apply this to other images from the same experiment to compare visually using the same B&C parameters and get png images ready for publications. 
 
+**Note that the command `run` contains the instructions to run the specific functions in string format with a sintaxis that is very specific. Minor variations might occurr from MacOS/Ubuntu to Windows. Other commands such as `saveAs` include the specific title of the image we are processing, or directory where is being saved. We will pay attention to these when running the analysis in another image or directory.**
+
+#### 8. Making the code general
+
+Let's asume we would like to run this code in an image we previously opened. We can then remove the first line of code that opens the sample image.
+
+Next, the title of the opened image is being used throughout the code, it's includded by default in the title of each channel after splitting, in the merge command and in the `saveAs` function. A good way to generalize the code is to create a variable with the title of the open image, whichever that is. For this wew use the function `getTitle()`. We can then replace VERY carefully, the title of the image by our variable.
+
+Reaching the end of the code, we would like to have an interactive way to select the directory where the image will be saved. We can use the function `getDirectory()` to browse the folder we want and save that path as a variable to insert in the function. We usually would like to put this at the beginning of the code since it requires user input and if the analysis is long we would need to wait to select the saving directory. Now we can replace the `dir` and `title` variables in the `saveAs` function.
+
+Test and save the macro.
+
 ---
 
 ## 
