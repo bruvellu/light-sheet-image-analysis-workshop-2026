@@ -68,14 +68,14 @@ Wednesday, 7 Jan 2026
 
 <!--TODO: Subdivide these talks into tools?-->
 
-- 09:00--09:30 - [Talk from companies] (Company 3-Bruker)
-- 09:30--11:00 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Bruno)
+- 09:00--10:30 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Bruno)
 
-### 🫖 Coffee break (11:00--11:30)
+### 🫖 Coffee break (10:30-11:00)
 
-### 🖥️ Practical morning session (11:30–13:00)
+### 🖥️ Practical morning session (11:00–12:30)
 
-- 11:30--13:00 - [3D segmentation using machine/deep learning](practicals/practical_3d_segmentation.md) (Marina/Agustín)
+- 11:00--12:30 - [3D segmentation using machine/deep learning](practicals/practical_3d_segmentation.md) (Marina/Agustín)
+- 12:30--13:00 - [Talk from companies] (Company 3-Bruker)
 
 ### 🥗 Lunch break (13:00--14:00)
 
