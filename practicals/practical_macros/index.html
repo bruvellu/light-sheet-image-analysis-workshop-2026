@@ -584,6 +584,18 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>Final version of the code:</p>
+<p>```ijm //This macro process a 3 channel image with stainings A, B and C. Adjusts B&amp;C, //Creates a png with scale bar and saves //Marina Cuenca 2026</p>
+<p>dir = getDirectory(“Saving directory”);</p>
+<p>title = getTitle();</p>
+<p>run(“Split Channels”);</p>
+<p>selectImage(“C1-” + title); setMinAndMax(0, 182);</p>
+<p>selectImage(“C2-” + title); setMinAndMax(0, 182);</p>
+<p>selectImage(“C3-” + title); setMinAndMax(0, 157);</p>
+<p>run(“Merge Channels…”, “c1=C1-” + title + ” c2=C2-” + title + ” c3=C3-” + title + ” create”);</p>
+<p>run(“Scale Bar…”, “width=50 height=50 location=[Upper Right] bold overlay”);</p>
+<p>run(“RGB Color”);</p>
+<p>saveAs(“PNG”, dir + “/” + title);```</p>
 <hr>
 </section>
 </section>
