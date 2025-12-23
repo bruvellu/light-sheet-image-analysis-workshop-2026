@@ -208,7 +208,6 @@ Now we will build step by step a script to process images belonging to the same 
 
 We will use the dataset in folder `Drosophila-CartographicProjection` (https://zenodo.org/records/18020241)
 
----
 
 ### Building the code from the manual Workflow: 
 
