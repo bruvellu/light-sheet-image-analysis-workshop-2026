@@ -197,7 +197,8 @@ run("Scale Bar...", "width=50 height=50 location=[Upper Right] bold overlay");
 
 run("RGB Color"); 
 
-saveAs("PNG", dir + "/" + title);```
+saveAs("PNG", dir + "/" + title);
+```
 
 ---
 
@@ -434,5 +435,6 @@ for (i = 0; i < fileList.length; i++) { //Loop through images
 	
 }
 
-print("Done");```
+print("Done");
+```
 
