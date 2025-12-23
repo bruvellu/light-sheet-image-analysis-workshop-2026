@@ -618,7 +618,6 @@ saveAs("PNG", dir + "/" + title);</code></pre>
 <h2 class="anchored" data-anchor-id="batch-processing">Batch processing</h2>
 <p>Now we will build step by step a script to process images belonging to the same experiment stored in the same folder, from which we want to quantify morphology of the cells. We will have to automatically search what is inside the folder and loop through the contents, applying the pipeline to each image, storing the results, and closing the open windows before moving to the next image. This might sound overwheelming, but the strategy is to make it work for one image, generalize de code and then wrap it in a loop.</p>
 <p>We will use the dataset in folder <code>Drosophila-CartographicProjection</code> (https://zenodo.org/records/18020241)</p>
-<hr>
 <section id="building-the-code-from-the-manual-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="building-the-code-from-the-manual-workflow">Building the code from the manual Workflow:</h3>
 <p>This section describes how to manually perform image segmentation and region-based morphometric analysis in Fiji, following the same steps that will later be automated using a macro.</p>
