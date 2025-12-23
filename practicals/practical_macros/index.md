@@ -1,6 +1,6 @@
 ---
 title: Macro programming in Fiji
-author: Marina Cuenca
+author: Marina Cuenca - Some contented adapted from Robert Haase (https://doi.org/10.7490/f1000research.1119102.1)
 date: 05 January 2026
 ---
 
@@ -79,7 +79,7 @@ Now everything we do will be "recorded" and we can turn it into reproducible ima
 
 Now, with the recorder open we will create a Macro that changes automatically Brightness and contrast features of a multi channel image and creates a png figure with scale bar.
 
-#### 1. Open a Sample Image
+### 1. Open a Sample Image
 
 1. Open **Fiji**.
 2. From the menu bar, go to:  
@@ -88,7 +88,7 @@ Now, with the recorder open we will create a Macro that changes automatically Br
 This will load a multichannel fluorescence image provided with Fiji.
 
 
-#### 2. Split the Image into Channels
+### 2. Split the Image into Channels
 
 1. With the image window active, go to:  
    **`Image → Color → Split Channels`**
@@ -96,7 +96,7 @@ This will load a multichannel fluorescence image provided with Fiji.
 Fiji will create separate grayscale images for each fluorescence channel (e.g. C1, C2, C3).
 
 
-#### 3. Adjust Display Contrast for Each Channel
+### 3. Adjust Display Contrast for Each Channel
 
 Adjust the display range of each channel individually.
 
@@ -109,7 +109,7 @@ Adjust the display range of each channel individually.
 > Note: These values affect only the display, not the underlying pixel data.
 
 
-#### 4. Merge Channels into a Composite Image
+### 4. Merge Channels into a Composite Image
 
 1. Go to:  
    **`Image → Color → Merge Channels…`**
@@ -118,7 +118,7 @@ Adjust the display range of each channel individually.
 A merged multichannel image will be created.
 
 
-#### 5. Add a Scale Bar
+### 5. Add a Scale Bar
 
 1. Select the merged image window.
 2. Go to:  
@@ -127,7 +127,7 @@ A merged multichannel image will be created.
 3. Click **OK**.
 
 
-#### 6. Convert the Image to RGB
+### 6. Convert the Image to RGB
 
 1. With the merged image selected, go to:  
    **`Image → Type → RGB Color`**
@@ -135,7 +135,7 @@ A merged multichannel image will be created.
 This step is required before saving the image in common formats such as PNG.
 
 
-#### 7. Save the Final Image
+### 7. Save the Final Image
 
 1. Go to:  
    **`File → Save As → PNG…`**
@@ -151,7 +151,7 @@ Go to the recorder and click `Create`. Now let's run it! You will obtain the sam
 
 **Note that the command `run` contains the instructions to run the specific functions in string format with a sintaxis that is very specific. Minor variations might occurr from MacOS/Ubuntu to Windows. Other commands such as `saveAs` include the specific title of the image we are processing, or directory where is being saved. We will pay attention to these when running the analysis in another image or directory.**
 
-#### 8. Making the code general
+### 8. Making the code general
 
 Let's asume we would like to run this code in an image we previously opened. We can then remove the first line of code that opens the sample image.
 
@@ -165,13 +165,244 @@ Test and save the macro.
 
 ![Raw macro](images/04-rawmacro.png)
 
-![Edited macro](images/04-editedmacro.png)
+![Edited macro](images/05-editedmacro.png)
 
 :::
 
 ---
 
-## 
+## Batch processing
 
+Now we will build step by step a script to process images belonging to the same experiment stored in the same folder, from which we want to quantify morphology of the cells. We will have to automatically search what is inside the folder and loop through the contents, applying the pipeline to each image, storing the results, and closing the open windows before moving to the next image. This might sound overwheelming, but the strategy is to make it work for one image, generalize de code and then wrap it in a loop.
 
+We will use the dataset in folder `Drosophila-CartographicProjection` (https://zenodo.org/records/18020241)
+
+---
+
+### Building the code from the manual Workflow: 
+
+This section describes how to manually perform image segmentation and region-based morphometric analysis in Fiji, following the same steps that will later be automated using a macro.
+
+Make sure the recorder is clear.
+
+#### 1. Open a single Image
+
+1. Open **Fiji**.
+2. Drop the file or Go to:  
+   **`File → Open…`**
+and open one of the images in the folder. Any is fine.
+
+#### 2. Convert the Image to 8-bit
+
+1. Make sure the image window is active.
+2. Go to:  
+   **`Image → Type → 8-bit`**
+
+This step converts the image to 8-bit grayscale, which is required by many thresholding and segmentation algorithms.
+
+#### 3. Apply Local Thresholding
+
+1. With the image selected, go to:  
+   **`Image → Adjust → Auto Local Threshold…`**
+2. In the dialog, set:
+   - **Method:** `Otsu`
+   - **Radius:** `15`
+   - Leave other parameters at their default values
+3. Click **OK**
+
+This will generate a binary image separating foreground objects from the background.
+
+#### 4. Label Connected Components
+
+1. With the thresholded (binary) image active, go to:  
+   **`Plugins → MorphoLibJ → Binary Images → Connected Components Labeling`**
+2. Set:
+   - **Connectivity:** `4`
+   - **Output type:** `16 bits`
+3. Click **OK**
+
+Each connected object in the image will be assigned a unique label.
+
+#### 5. Remove Objects Touching the Image Borders
+
+1. Select the labeled image.
+2. Go to:  
+   **`Plugins → MorphoLibJ → Label Images → Remove Border Labels`**
+3. Ensure all borders are selected:
+   - **Left**
+   - **Right**
+   - **Top**
+   - **Bottom**
+4. Click **OK**
+
+Objects touching the image borders will be removed from the label image.
+
+#### 6. Measure Morphometric Properties of Regions
+
+1. With the cleaned label image selected, go to:  
+   **`Plugins → MorphoLibJ → Analyze → Analyze Regions`**
+2. Select the following measurements:
+   - Area
+   - Perimeter
+   - Circularity
+3. Click **OK**
+
+A **Results table** containing the selected morphometric measurements will appear.
+
+#### 7. Save the Results Table
+
+1. Click on the **Results** window.
+2. Go to:  
+   **`File → Save As…`**
+3. Save the table as a CSV file, for example:  
+   **`Btd-cp000-Morphometry.csv`***
+
+#### 8. Save the Labeled Image
+
+1. Select the labeled image window.
+2. Go to:  
+   **`File → Save As → Tiff…`**
+3. Save the image, for example as:  
+   **`Btd-cp000-lbl-killBorders.tif`**
+
+You have now manually completed a full workflow including image preprocessing, segmentation, object filtering, and quantitative morphometric analysis.
+
+When clicking `Create` in the macro recorder, you will see a script like this:
+
+![Manual macro](images/06-batchmacro.png)
+
+---
+
+### Edit the macro to make it general
+
+The first line of code is to `open` the image, we will ignore this until the loop comes into place.
+
+Let's get the title of the image to generalize the rest of the code. This will need to happen once the image is open.
+
+::: {layout-ncol=2}
+
+![Before](images/06-batchmacro.png)
+
+![After](images/07-batchmacro2.png)
+
+:::
+
+Try the macro. As result we have several open windows we would like to close before opening the next image in the folder. For this, we will use the command `close`. We can specify the name of the window we want to close by `close('name')`, close the current selected window `close` or close everything `close(*)`, which is what we want in this case. Sadly, the `Result` windows are special windows that do not respond to this command, we do have to specify its name.
+
+::: {layout-ncol=2}
+
+![Before](images/07-batchmacro2.png)
+
+![After](images/08-batchmacro3.png)
+
+:::
+
+Try the macro again. As result we get the processing done and no image open. Data will be saved in whichever directory we specified at the beginning. 
+
+### Wrap the code in a loop
+
+#### 1. Browse folder contents:
+
+First we need to get the name of the source directory and get the file names inside. For this we will use the `getDirectory` and `getFileList` functions. I do recommend at this point to print the contents of the folder to make sure we are in the right place and for future debugging. We have to do this with a `for` loop, through all the values inside out file list:  
+
+`sourceDir = getDirectory("Source directory"); //select where images are
+
+fileList = getFileList(sourceDir); //list of files inside the sourceDir
+
+for (i = 0; i < fileList.length; i++) { //fileList.lenght is an integer
+    print(fileList[i]); //element i inside fileList (starts counting from 0)
+}`
+
+::: {layout-ncol=2}
+
+![Before](images/08-batchmacro3.png)
+
+![After](images/09-batchmacro4.png)
+
+:::
+
+Run the macro.
+
+#### 2. Create output directory
+
+Right now our log returns all the files inside the source directory, which now contains also the result of our analysis. It is best practice to create an `Analysis` folder, where data will be stored. In this way our raw data and our processed data remain separate. The easiest way is to create it ourselved by hand and use the `getDirectory` function, but you can also add an option in the code to create it if it does not exists already (safest).
+
+`outputDir = sourceDir + "/Analysis"; //name of the saving folder within the iamge containing folder
+if (!File.exists(outputDir)) { 
+    File.makeDirectory(outputDir); //creates folder if it does not exist already
+}`
+
+::: {layout-ncol=2}
+
+![Before](images/09-batchmacro4.png)
+
+![After](images/10-batchmacro5.png)
+
+:::
+
+#### 3. Wrap the code and make it general :
+
+Now let's loop through the files ending with `.tif` and introduce the sourceDir, fileList and outputDir variables. Note that the `fileName` elements are identical to the titles, so we can change that variable.
+
+::: {layout-ncol=2}
+
+![Before](images/10-batchmacro5.png)
+
+![After](images/11-batchmacro6.png)
+
+:::
+
+Run the code. At this point you should be seeing each image open individually, processing, and closing. In the `Analysis` folder you should get the output of the analysis.
+
+If images are big and take time to open, we can activate `BatchMode` by includding the line of code `setBatchmode(true)` anywhere in the code (before looping through files and opening them).
+
+The final version of the code is here:
+
+```ijm
+//Opens individual 2D membrane images from Drosophila-CarographicProjections
+//Segments, labels and quantifies area, perimeter and circularity of the cells
+//Saves labels and csv file in Analysis folder
+//Marina Cuenca 2026
+
+sourceDir = getDirectory("Source directory"); //select where images are
+
+fileList = getFileList(sourceDir); //list of files inside the sourceDir
+
+for (i = 0; i < fileList.length; i++) { //fileList.lenght is an integer
+    print(fileList[i]); //element i inside fileList (starts counting from 0)
+}
+
+outputDir = sourceDir + "/Analysis"; //name of the saving folder within the iamge containing folder
+if (!File.exists(outputDir)) { 
+    File.makeDirectory(outputDir); //creates folder if it does not exist already
+}
+
+setBatchMode(true); //Won't show the images when open
+
+for (i = 0; i < fileList.length; i++) { //Loop through images
+	
+	title = fileList[i];
+	
+	if (!endsWith(title, ".tif")) //only runs the code if file is an image .tif
+        continue;
+
+	open(sourceDir + "/" + title);
+	
+	selectImage(title);
+	
+	run("8-bit");
+	run("Auto Local Threshold", "method=Otsu radius=15 parameter_1=0 parameter_2=0");
+	run("Connected Components Labeling", "connectivity=4 type=[16 bits]");
+	run("Remove Border Labels", "left right top bottom");
+	run("Analyze Regions", "area perimeter circularity");
+	
+	saveAs("Results", outputDir + "/" + title + "-Morphometry.csv");
+	saveAs("Tiff", outputDir + "/" + title + "-lbl-killBorders.tif");
+	
+	close("*");
+	close( title + "-Morphometry.csv");
+	
+}
+
+print("Done");```
 
