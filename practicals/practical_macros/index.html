@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marina Cuenca">
+<meta name="author" content="Marina Cuenca - Some contented adapted from Robert Haase (https://doi.org/10.7490/f1000research.1119102.1)">
 <meta name="dcterms.date" content="2026-01-05">
 
 <title>Macro programming in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
@@ -347,7 +347,27 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#save-the-final-image" id="toc-save-the-final-image" class="nav-link" data-scroll-target="#save-the-final-image">7. Save the Final Image</a></li>
   <li><a href="#making-the-code-general" id="toc-making-the-code-general" class="nav-link" data-scroll-target="#making-the-code-general">8. Making the code general</a></li>
   </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#batch-processing" id="toc-batch-processing" class="nav-link" data-scroll-target="#batch-processing">Batch processing</a>
+  <ul class="collapse">
+  <li><a href="#building-the-code-from-the-manual-workflow" id="toc-building-the-code-from-the-manual-workflow" class="nav-link" data-scroll-target="#building-the-code-from-the-manual-workflow">Building the code from the manual Workflow:</a>
+  <ul class="collapse">
+  <li><a href="#open-a-single-image" id="toc-open-a-single-image" class="nav-link" data-scroll-target="#open-a-single-image">1. Open a single Image</a></li>
+  <li><a href="#convert-the-image-to-8-bit" id="toc-convert-the-image-to-8-bit" class="nav-link" data-scroll-target="#convert-the-image-to-8-bit">2. Convert the Image to 8-bit</a></li>
+  <li><a href="#apply-local-thresholding" id="toc-apply-local-thresholding" class="nav-link" data-scroll-target="#apply-local-thresholding">3. Apply Local Thresholding</a></li>
+  <li><a href="#label-connected-components" id="toc-label-connected-components" class="nav-link" data-scroll-target="#label-connected-components">4. Label Connected Components</a></li>
+  <li><a href="#remove-objects-touching-the-image-borders" id="toc-remove-objects-touching-the-image-borders" class="nav-link" data-scroll-target="#remove-objects-touching-the-image-borders">5. Remove Objects Touching the Image Borders</a></li>
+  <li><a href="#measure-morphometric-properties-of-regions" id="toc-measure-morphometric-properties-of-regions" class="nav-link" data-scroll-target="#measure-morphometric-properties-of-regions">6. Measure Morphometric Properties of Regions</a></li>
+  <li><a href="#save-the-results-table" id="toc-save-the-results-table" class="nav-link" data-scroll-target="#save-the-results-table">7. Save the Results Table</a></li>
+  <li><a href="#save-the-labeled-image" id="toc-save-the-labeled-image" class="nav-link" data-scroll-target="#save-the-labeled-image">8. Save the Labeled Image</a></li>
+  </ul></li>
+  <li><a href="#edit-the-macro-to-make-it-general" id="toc-edit-the-macro-to-make-it-general" class="nav-link" data-scroll-target="#edit-the-macro-to-make-it-general">Edit the macro to make it general</a></li>
+  <li><a href="#wrap-the-code-in-a-loop" id="toc-wrap-the-code-in-a-loop" class="nav-link" data-scroll-target="#wrap-the-code-in-a-loop">Wrap the code in a loop</a>
+  <ul class="collapse">
+  <li><a href="#browse-folder-contents" id="toc-browse-folder-contents" class="nav-link" data-scroll-target="#browse-folder-contents">1. Browse folder contents:</a></li>
+  <li><a href="#create-output-directory" id="toc-create-output-directory" class="nav-link" data-scroll-target="#create-output-directory">2. Create output directory</a></li>
+  <li><a href="#wrap-the-code-and-make-it-general" id="toc-wrap-the-code-and-make-it-general" class="nav-link" data-scroll-target="#wrap-the-code-and-make-it-general">3. Wrap the code and make it general :</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_macros/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -367,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Marina Cuenca </p>
+             <p>Marina Cuenca - Some contented adapted from Robert Haase (https://doi.org/10.7490/f1000research.1119102.1) </p>
           </div>
   </div>
     
@@ -463,8 +483,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="reproducible-and-automatic-pipeline" class="level2">
 <h2 class="anchored" data-anchor-id="reproducible-and-automatic-pipeline">Reproducible and automatic pipeline</h2>
 <p>Now, with the recorder open we will create a Macro that changes automatically Brightness and contrast features of a multi channel image and creates a png figure with scale bar.</p>
-<section id="open-a-sample-image" class="level4">
-<h4 class="anchored" data-anchor-id="open-a-sample-image">1. Open a Sample Image</h4>
+<section id="open-a-sample-image" class="level3">
+<h3 class="anchored" data-anchor-id="open-a-sample-image">1. Open a Sample Image</h3>
 <ol type="1">
 <li>Open <strong>Fiji</strong>.</li>
 <li>From the menu bar, go to:<br>
@@ -472,16 +492,16 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>This will load a multichannel fluorescence image provided with Fiji.</p>
 </section>
-<section id="split-the-image-into-channels" class="level4">
-<h4 class="anchored" data-anchor-id="split-the-image-into-channels">2. Split the Image into Channels</h4>
+<section id="split-the-image-into-channels" class="level3">
+<h3 class="anchored" data-anchor-id="split-the-image-into-channels">2. Split the Image into Channels</h3>
 <ol type="1">
 <li>With the image window active, go to:<br>
 <strong><code>Image → Color → Split Channels</code></strong></li>
 </ol>
 <p>Fiji will create separate grayscale images for each fluorescence channel (e.g.&nbsp;C1, C2, C3).</p>
 </section>
-<section id="adjust-display-contrast-for-each-channel" class="level4">
-<h4 class="anchored" data-anchor-id="adjust-display-contrast-for-each-channel">3. Adjust Display Contrast for Each Channel</h4>
+<section id="adjust-display-contrast-for-each-channel" class="level3">
+<h3 class="anchored" data-anchor-id="adjust-display-contrast-for-each-channel">3. Adjust Display Contrast for Each Channel</h3>
 <p>Adjust the display range of each channel individually.</p>
 <ol type="1">
 <li>Go to:<br>
@@ -494,8 +514,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Note: These values affect only the display, not the underlying pixel data.</p>
 </blockquote>
 </section>
-<section id="merge-channels-into-a-composite-image" class="level4">
-<h4 class="anchored" data-anchor-id="merge-channels-into-a-composite-image">4. Merge Channels into a Composite Image</h4>
+<section id="merge-channels-into-a-composite-image" class="level3">
+<h3 class="anchored" data-anchor-id="merge-channels-into-a-composite-image">4. Merge Channels into a Composite Image</h3>
 <ol type="1">
 <li>Go to:<br>
 <strong><code>Image → Color → Merge Channels…</code></strong></li>
@@ -503,8 +523,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>A merged multichannel image will be created.</p>
 </section>
-<section id="add-a-scale-bar" class="level4">
-<h4 class="anchored" data-anchor-id="add-a-scale-bar">5. Add a Scale Bar</h4>
+<section id="add-a-scale-bar" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-scale-bar">5. Add a Scale Bar</h3>
 <ol type="1">
 <li>Select the merged image window.</li>
 <li>Go to:<br>
@@ -512,16 +532,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Click <strong>OK</strong>.</li>
 </ol>
 </section>
-<section id="convert-the-image-to-rgb" class="level4">
-<h4 class="anchored" data-anchor-id="convert-the-image-to-rgb">6. Convert the Image to RGB</h4>
+<section id="convert-the-image-to-rgb" class="level3">
+<h3 class="anchored" data-anchor-id="convert-the-image-to-rgb">6. Convert the Image to RGB</h3>
 <ol type="1">
 <li>With the merged image selected, go to:<br>
 <strong><code>Image → Type → RGB Color</code></strong></li>
 </ol>
 <p>This step is required before saving the image in common formats such as PNG.</p>
 </section>
-<section id="save-the-final-image" class="level4">
-<h4 class="anchored" data-anchor-id="save-the-final-image">7. Save the Final Image</h4>
+<section id="save-the-final-image" class="level3">
+<h3 class="anchored" data-anchor-id="save-the-final-image">7. Save the Final Image</h3>
 <ol type="1">
 <li>Go to:<br>
 <strong><code>File → Save As → PNG…</code></strong></li>
@@ -538,8 +558,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><strong>Note that the command <code>run</code> contains the instructions to run the specific functions in string format with a sintaxis that is very specific. Minor variations might occurr from MacOS/Ubuntu to Windows. Other commands such as <code>saveAs</code> include the specific title of the image we are processing, or directory where is being saved. We will pay attention to these when running the analysis in another image or directory.</strong></p>
 </section>
-<section id="making-the-code-general" class="level4">
-<h4 class="anchored" data-anchor-id="making-the-code-general">8. Making the code general</h4>
+<section id="making-the-code-general" class="level3">
+<h3 class="anchored" data-anchor-id="making-the-code-general">8. Making the code general</h3>
 <p>Let’s asume we would like to run this code in an image we previously opened. We can then remove the first line of code that opens the sample image.</p>
 <p>Next, the title of the opened image is being used throughout the code, it’s includded by default in the title of each channel after splitting, in the merge command and in the <code>saveAs</code> function. A good way to generalize the code is to create a variable with the title of the open image, whichever that is. For this wew use the function <code>getTitle()</code>. We can then replace VERY carefully, the title of the image by our variable.</p>
 <p>Reaching the end of the code, we would like to have an interactive way to select the directory where the image will be saved. We can use the function <code>getDirectory()</code> to browse the folder we want and save that path as a variable to insert in the function. We usually would like to put this at the beginning of the code since it requires user input and if the analysis is long we would need to wait to select the saving directory. Now we can replace the <code>dir</code> and <code>title</code> variables in the <code>saveAs</code> function.</p>
@@ -557,7 +577,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/04-editedmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Edited macro"><img src="images/04-editedmacro.png" class="img-fluid figure-img" alt="Edited macro"></a></p>
+<p><a href="images/05-editedmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Edited macro"><img src="images/05-editedmacro.png" class="img-fluid figure-img" alt="Edited macro"></a></p>
 <figcaption>Edited macro</figcaption>
 </figure>
 </div>
@@ -567,10 +587,284 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="batch-processing" class="level2">
+<h2 class="anchored" data-anchor-id="batch-processing">Batch processing</h2>
+<p>Now we will build step by step a script to process images belonging to the same experiment stored in the same folder, from which we want to quantify morphology of the cells. We will have to automatically search what is inside the folder and loop through the contents, applying the pipeline to each image, storing the results, and closing the open windows before moving to the next image. This might sound overwheelming, but the strategy is to make it work for one image, generalize de code and then wrap it in a loop.</p>
+<p>We will use the dataset in folder <code>Drosophila-CartographicProjection</code> (https://zenodo.org/records/18020241)</p>
+<hr>
+<section id="building-the-code-from-the-manual-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="building-the-code-from-the-manual-workflow">Building the code from the manual Workflow:</h3>
+<p>This section describes how to manually perform image segmentation and region-based morphometric analysis in Fiji, following the same steps that will later be automated using a macro.</p>
+<p>Make sure the recorder is clear.</p>
+<section id="open-a-single-image" class="level4">
+<h4 class="anchored" data-anchor-id="open-a-single-image">1. Open a single Image</h4>
+<ol type="1">
+<li>Open <strong>Fiji</strong>.</li>
+<li>Drop the file or Go to:<br>
+<strong><code>File → Open…</code></strong> and open one of the images in the folder. Any is fine.</li>
+</ol>
+</section>
+<section id="convert-the-image-to-8-bit" class="level4">
+<h4 class="anchored" data-anchor-id="convert-the-image-to-8-bit">2. Convert the Image to 8-bit</h4>
+<ol type="1">
+<li>Make sure the image window is active.</li>
+<li>Go to:<br>
+<strong><code>Image → Type → 8-bit</code></strong></li>
+</ol>
+<p>This step converts the image to 8-bit grayscale, which is required by many thresholding and segmentation algorithms.</p>
+</section>
+<section id="apply-local-thresholding" class="level4">
+<h4 class="anchored" data-anchor-id="apply-local-thresholding">3. Apply Local Thresholding</h4>
+<ol type="1">
+<li>With the image selected, go to:<br>
+<strong><code>Image → Adjust → Auto Local Threshold…</code></strong></li>
+<li>In the dialog, set:
+<ul>
+<li><strong>Method:</strong> <code>Otsu</code></li>
+<li><strong>Radius:</strong> <code>15</code></li>
+<li>Leave other parameters at their default values</li>
+</ul></li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>This will generate a binary image separating foreground objects from the background.</p>
+</section>
+<section id="label-connected-components" class="level4">
+<h4 class="anchored" data-anchor-id="label-connected-components">4. Label Connected Components</h4>
+<ol type="1">
+<li>With the thresholded (binary) image active, go to:<br>
+<strong><code>Plugins → MorphoLibJ → Binary Images → Connected Components Labeling</code></strong></li>
+<li>Set:
+<ul>
+<li><strong>Connectivity:</strong> <code>4</code></li>
+<li><strong>Output type:</strong> <code>16 bits</code></li>
+</ul></li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>Each connected object in the image will be assigned a unique label.</p>
+</section>
+<section id="remove-objects-touching-the-image-borders" class="level4">
+<h4 class="anchored" data-anchor-id="remove-objects-touching-the-image-borders">5. Remove Objects Touching the Image Borders</h4>
+<ol type="1">
+<li>Select the labeled image.</li>
+<li>Go to:<br>
+<strong><code>Plugins → MorphoLibJ → Label Images → Remove Border Labels</code></strong></li>
+<li>Ensure all borders are selected:
+<ul>
+<li><strong>Left</strong></li>
+<li><strong>Right</strong></li>
+<li><strong>Top</strong></li>
+<li><strong>Bottom</strong></li>
+</ul></li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>Objects touching the image borders will be removed from the label image.</p>
+</section>
+<section id="measure-morphometric-properties-of-regions" class="level4">
+<h4 class="anchored" data-anchor-id="measure-morphometric-properties-of-regions">6. Measure Morphometric Properties of Regions</h4>
+<ol type="1">
+<li>With the cleaned label image selected, go to:<br>
+<strong><code>Plugins → MorphoLibJ → Analyze → Analyze Regions</code></strong></li>
+<li>Select the following measurements:
+<ul>
+<li>Area</li>
+<li>Perimeter</li>
+<li>Circularity</li>
+</ul></li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>A <strong>Results table</strong> containing the selected morphometric measurements will appear.</p>
+</section>
+<section id="save-the-results-table" class="level4">
+<h4 class="anchored" data-anchor-id="save-the-results-table">7. Save the Results Table</h4>
+<ol type="1">
+<li>Click on the <strong>Results</strong> window.</li>
+<li>Go to:<br>
+<strong><code>File → Save As…</code></strong></li>
+<li>Save the table as a CSV file, for example:<br>
+<strong><code>Btd-cp000-Morphometry.csv</code></strong>*</li>
+</ol>
+</section>
+<section id="save-the-labeled-image" class="level4">
+<h4 class="anchored" data-anchor-id="save-the-labeled-image">8. Save the Labeled Image</h4>
+<ol type="1">
+<li>Select the labeled image window.</li>
+<li>Go to:<br>
+<strong><code>File → Save As → Tiff…</code></strong></li>
+<li>Save the image, for example as:<br>
+<strong><code>Btd-cp000-lbl-killBorders.tif</code></strong></li>
+</ol>
+<p>You have now manually completed a full workflow including image preprocessing, segmentation, object filtering, and quantitative morphometric analysis.</p>
+<p>When clicking <code>Create</code> in the macro recorder, you will see a script like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/06-batchmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Manual macro"><img src="images/06-batchmacro.png" class="img-fluid figure-img" alt="Manual macro"></a></p>
+<figcaption>Manual macro</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+</section>
+<section id="edit-the-macro-to-make-it-general" class="level3">
+<h3 class="anchored" data-anchor-id="edit-the-macro-to-make-it-general">Edit the macro to make it general</h3>
+<p>The first line of code is to <code>open</code> the image, we will ignore this until the loop comes into place.</p>
+<p>Let’s get the title of the image to generalize the rest of the code. This will need to happen once the image is open.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/06-batchmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Before"><img src="images/06-batchmacro.png" class="img-fluid figure-img" alt="Before"></a></p>
+<figcaption>Before</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/07-batchmacro2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="After"><img src="images/07-batchmacro2.png" class="img-fluid figure-img" alt="After"></a></p>
+<figcaption>After</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Try the macro. As result we have several open windows we would like to close before opening the next image in the folder. For this, we will use the command <code>close</code>. We can specify the name of the window we want to close by <code>close('name')</code>, close the current selected window <code>close</code> or close everything <code>close(*)</code>, which is what we want in this case. Sadly, the <code>Result</code> windows are special windows that do not respond to this command, we do have to specify its name.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/07-batchmacro2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Before"><img src="images/07-batchmacro2.png" class="img-fluid figure-img" alt="Before"></a></p>
+<figcaption>Before</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/08-batchmacro3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="After"><img src="images/08-batchmacro3.png" class="img-fluid figure-img" alt="After"></a></p>
+<figcaption>After</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Try the macro again. As result we get the processing done and no image open. Data will be saved in whichever directory we specified at the beginning.</p>
+</section>
+<section id="wrap-the-code-in-a-loop" class="level3">
+<h3 class="anchored" data-anchor-id="wrap-the-code-in-a-loop">Wrap the code in a loop</h3>
+<section id="browse-folder-contents" class="level4">
+<h4 class="anchored" data-anchor-id="browse-folder-contents">1. Browse folder contents:</h4>
+<p>First we need to get the name of the source directory and get the file names inside. For this we will use the <code>getDirectory</code> and <code>getFileList</code> functions. I do recommend at this point to print the contents of the folder to make sure we are in the right place and for future debugging. We have to do this with a <code>for</code> loop, through all the values inside out file list:</p>
+<p>`sourceDir = getDirectory(“Source directory”); //select where images are</p>
+<p>fileList = getFileList(sourceDir); //list of files inside the sourceDir</p>
+<p>for (i = 0; i &lt; fileList.length; i++) { //fileList.lenght is an integer print(fileList[i]); //element i inside fileList (starts counting from 0) }`</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/08-batchmacro3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Before"><img src="images/08-batchmacro3.png" class="img-fluid figure-img" alt="Before"></a></p>
+<figcaption>Before</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/09-batchmacro4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="After"><img src="images/09-batchmacro4.png" class="img-fluid figure-img" alt="After"></a></p>
+<figcaption>After</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Run the macro.</p>
+</section>
+<section id="create-output-directory" class="level4">
+<h4 class="anchored" data-anchor-id="create-output-directory">2. Create output directory</h4>
+<p>Right now our log returns all the files inside the source directory, which now contains also the result of our analysis. It is best practice to create an <code>Analysis</code> folder, where data will be stored. In this way our raw data and our processed data remain separate. The easiest way is to create it ourselved by hand and use the <code>getDirectory</code> function, but you can also add an option in the code to create it if it does not exists already (safest).</p>
+<p><code>outputDir = sourceDir + "/Analysis"; //name of the saving folder within the iamge containing folder if (!File.exists(outputDir)) {      File.makeDirectory(outputDir); //creates folder if it does not exist already }</code></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/09-batchmacro4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Before"><img src="images/09-batchmacro4.png" class="img-fluid figure-img" alt="Before"></a></p>
+<figcaption>Before</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/10-batchmacro5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="After"><img src="images/10-batchmacro5.png" class="img-fluid figure-img" alt="After"></a></p>
+<figcaption>After</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="wrap-the-code-and-make-it-general" class="level4">
+<h4 class="anchored" data-anchor-id="wrap-the-code-and-make-it-general">3. Wrap the code and make it general :</h4>
+<p>Now let’s loop through the files ending with <code>.tif</code> and introduce the sourceDir, fileList and outputDir variables. Note that the <code>fileName</code> elements are identical to the titles, so we can change that variable.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/10-batchmacro5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Before"><img src="images/10-batchmacro5.png" class="img-fluid figure-img" alt="Before"></a></p>
+<figcaption>Before</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/11-batchmacro6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="After"><img src="images/11-batchmacro6.png" class="img-fluid figure-img" alt="After"></a></p>
+<figcaption>After</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Run the code. At this point you should be seeing each image open individually, processing, and closing. In the <code>Analysis</code> folder you should get the output of the analysis.</p>
+<p>If images are big and take time to open, we can activate <code>BatchMode</code> by includding the line of code <code>setBatchmode(true)</code> anywhere in the code (before looping through files and opening them).</p>
+<p>The final version of the code is here:</p>
+<p>```ijm //Opens individual 2D membrane images from Drosophila-CarographicProjections //Segments, labels and quantifies area, perimeter and circularity of the cells //Saves labels and csv file in Analysis folder //Marina Cuenca 2026</p>
+<p>sourceDir = getDirectory(“Source directory”); //select where images are</p>
+<p>fileList = getFileList(sourceDir); //list of files inside the sourceDir</p>
+<p>for (i = 0; i &lt; fileList.length; i++) { //fileList.lenght is an integer print(fileList[i]); //element i inside fileList (starts counting from 0) }</p>
+<p>outputDir = sourceDir + “/Analysis”; //name of the saving folder within the iamge containing folder if (!File.exists(outputDir)) { File.makeDirectory(outputDir); //creates folder if it does not exist already }</p>
+<p>setBatchMode(true); //Won’t show the images when open</p>
+<p>for (i = 0; i &lt; fileList.length; i++) { //Loop through images</p>
+<pre><code>title = fileList[i];
+
+if (!endsWith(title, ".tif")) //only runs the code if file is an image .tif
+    continue;
+
+open(sourceDir + "/" + title);
+
+selectImage(title);
+
+run("8-bit");
+run("Auto Local Threshold", "method=Otsu radius=15 parameter_1=0 parameter_2=0");
+run("Connected Components Labeling", "connectivity=4 type=[16 bits]");
+run("Remove Border Labels", "left right top bottom");
+run("Analyze Regions", "area perimeter circularity");
+
+saveAs("Results", outputDir + "/" + title + "-Morphometry.csv");
+saveAs("Tiff", outputDir + "/" + title + "-lbl-killBorders.tif");
+
+close("*");
+close( title + "-Morphometry.csv");</code></pre>
+<p>}</p>
+<p>print(“Done”);```</p>
 
 
+</section>
+</section>
 </section>
 </section>
 
