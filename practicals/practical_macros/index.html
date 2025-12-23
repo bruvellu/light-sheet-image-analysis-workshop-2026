@@ -45,6 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,10 +80,18 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Macro programming in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_macros/images/01-Variables.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:image:alt" content="Types of variables">
+<meta property="og:image:height" content="412">
+<meta property="og:image:width" content="1134">
 <meta name="twitter:title" content="Macro programming in Fiji – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_macros/images/01-Variables.png">
+<meta name="twitter:image:alt" content="Types of variables">
+<meta name="twitter:image-height" content="412">
+<meta name="twitter:image-width" content="1134">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -415,6 +426,21 @@ ul.task-list li input[type="checkbox"] {
 <li>Strings are chain of characters inside <code>""</code>.</li>
 <li>We can print variables or strings with the function <code>print()</code></li>
 </ol>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/01-Variables.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Types of variables"><img src="images/01-Variables.png" class="img-fluid figure-img" alt="Types of variables"></a></p>
+<figcaption>Types of variables</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="images/02-strings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/02-strings.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="colorcode-and-debugging" class="level3">
 <h3 class="anchored" data-anchor-id="colorcode-and-debugging">3. Colorcode and debugging</h3>
@@ -424,6 +450,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-macro-recorder" class="level3">
 <h3 class="anchored" data-anchor-id="the-macro-recorder">4. The macro recorder</h3>
 <p>The life changing tool that will make you grow fond of Fiji. Go to <strong><code>Plugins → Macro → Record...</code></strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/03-Recorder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Recorder"><img src="images/03-Recorder.png" class="img-fluid figure-img" alt="Recorder"></a></p>
+<figcaption>Recorder</figcaption>
+</figure>
+</div>
 <p>Now everything we do will be “recorded” and we can turn it into reproducible image analysis pipelines that run automatically.</p>
 <hr>
 </section>
@@ -498,6 +530,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Click <strong>Save</strong>.</li>
 </ol>
 <p>You have now manually completed the same workflow that will later be automated using a Fiji macro. Go to the recorder and click <code>Create</code>. Now let’s run it! You will obtain the same result of your manual pipeline and you can apply this to other images from the same experiment to compare visually using the same B&amp;C parameters and get png images ready for publications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/04-rawmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Raw macro"><img src="images/04-rawmacro.png" class="img-fluid figure-img" alt="Raw macro"></a></p>
+<figcaption>Raw macro</figcaption>
+</figure>
+</div>
 <p><strong>Note that the command <code>run</code> contains the instructions to run the specific functions in string format with a sintaxis that is very specific. Minor variations might occurr from MacOS/Ubuntu to Windows. Other commands such as <code>saveAs</code> include the specific title of the image we are processing, or directory where is being saved. We will pay attention to these when running the analysis in another image or directory.</strong></p>
 </section>
 <section id="making-the-code-general" class="level4">
@@ -506,6 +544,26 @@ ul.task-list li input[type="checkbox"] {
 <p>Next, the title of the opened image is being used throughout the code, it’s includded by default in the title of each channel after splitting, in the merge command and in the <code>saveAs</code> function. A good way to generalize the code is to create a variable with the title of the open image, whichever that is. For this wew use the function <code>getTitle()</code>. We can then replace VERY carefully, the title of the image by our variable.</p>
 <p>Reaching the end of the code, we would like to have an interactive way to select the directory where the image will be saved. We can use the function <code>getDirectory()</code> to browse the folder we want and save that path as a variable to insert in the function. We usually would like to put this at the beginning of the code since it requires user input and if the analysis is long we would need to wait to select the saving directory. Now we can replace the <code>dir</code> and <code>title</code> variables in the <code>saveAs</code> function.</p>
 <p>Test and save the macro.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/04-rawmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Raw macro"><img src="images/04-rawmacro.png" class="img-fluid figure-img" alt="Raw macro"></a></p>
+<figcaption>Raw macro</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/04-editedmacro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Edited macro"><img src="images/04-editedmacro.png" class="img-fluid figure-img" alt="Edited macro"></a></p>
+<figcaption>Edited macro</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <hr>
 </section>
 </section>
@@ -949,6 +1007,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
