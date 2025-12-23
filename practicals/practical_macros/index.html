@@ -585,17 +585,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Final version of the code:</p>
-<p>```ijm //This macro process a 3 channel image with stainings A, B and C. Adjusts B&amp;C, //Creates a png with scale bar and saves //Marina Cuenca 2026</p>
-<p>dir = getDirectory(“Saving directory”);</p>
-<p>title = getTitle();</p>
-<p>run(“Split Channels”);</p>
-<p>selectImage(“C1-” + title); setMinAndMax(0, 182);</p>
-<p>selectImage(“C2-” + title); setMinAndMax(0, 182);</p>
-<p>selectImage(“C3-” + title); setMinAndMax(0, 157);</p>
-<p>run(“Merge Channels…”, “c1=C1-” + title + ” c2=C2-” + title + ” c3=C3-” + title + ” create”);</p>
-<p>run(“Scale Bar…”, “width=50 height=50 location=[Upper Right] bold overlay”);</p>
-<p>run(“RGB Color”);</p>
-<p>saveAs(“PNG”, dir + “/” + title);```</p>
+<pre class="ijm"><code>//This macro process a 3 channel image with stainings A, B and C. Adjusts B&amp;C, 
+//Creates a png with scale bar and saves
+//Marina Cuenca 2026
+
+dir = getDirectory("Saving directory");
+
+title = getTitle();
+
+run("Split Channels");
+
+selectImage("C1-" + title);
+setMinAndMax(0, 182);
+
+selectImage("C2-" + title);
+setMinAndMax(0, 182);
+
+selectImage("C3-" + title);
+setMinAndMax(0, 157);
+
+run("Merge Channels...", "c1=C1-" + title + " c2=C2-" + title + " c3=C3-" + title + " create");
+
+run("Scale Bar...", "width=50 height=50 location=[Upper Right] bold overlay");
+
+run("RGB Color"); 
+
+saveAs("PNG", dir + "/" + title);</code></pre>
 <hr>
 </section>
 </section>
@@ -844,35 +859,52 @@ ul.task-list li input[type="checkbox"] {
 <p>Run the code. At this point you should be seeing each image open individually, processing, and closing. In the <code>Analysis</code> folder you should get the output of the analysis.</p>
 <p>If images are big and take time to open, we can activate <code>BatchMode</code> by includding the line of code <code>setBatchmode(true)</code> anywhere in the code (before looping through files and opening them).</p>
 <p>The final version of the code is here:</p>
-<p>```ijm //Opens individual 2D membrane images from Drosophila-CarographicProjections //Segments, labels and quantifies area, perimeter and circularity of the cells //Saves labels and csv file in Analysis folder //Marina Cuenca 2026</p>
-<p>sourceDir = getDirectory(“Source directory”); //select where images are</p>
-<p>fileList = getFileList(sourceDir); //list of files inside the sourceDir</p>
-<p>for (i = 0; i &lt; fileList.length; i++) { //fileList.lenght is an integer print(fileList[i]); //element i inside fileList (starts counting from 0) }</p>
-<p>outputDir = sourceDir + “/Analysis”; //name of the saving folder within the iamge containing folder if (!File.exists(outputDir)) { File.makeDirectory(outputDir); //creates folder if it does not exist already }</p>
-<p>setBatchMode(true); //Won’t show the images when open</p>
-<p>for (i = 0; i &lt; fileList.length; i++) { //Loop through images</p>
-<pre><code>title = fileList[i];
+<pre class="ijm"><code>//Opens individual 2D membrane images from Drosophila-CarographicProjections
+//Segments, labels and quantifies area, perimeter and circularity of the cells
+//Saves labels and csv file in Analysis folder
+//Marina Cuenca 2026
 
-if (!endsWith(title, ".tif")) //only runs the code if file is an image .tif
-    continue;
+sourceDir = getDirectory("Source directory"); //select where images are
 
-open(sourceDir + "/" + title);
+fileList = getFileList(sourceDir); //list of files inside the sourceDir
 
-selectImage(title);
+for (i = 0; i &lt; fileList.length; i++) { //fileList.lenght is an integer
+    print(fileList[i]); //element i inside fileList (starts counting from 0)
+}
 
-run("8-bit");
-run("Auto Local Threshold", "method=Otsu radius=15 parameter_1=0 parameter_2=0");
-run("Connected Components Labeling", "connectivity=4 type=[16 bits]");
-run("Remove Border Labels", "left right top bottom");
-run("Analyze Regions", "area perimeter circularity");
+outputDir = sourceDir + "/Analysis"; //name of the saving folder within the iamge containing folder
+if (!File.exists(outputDir)) { 
+    File.makeDirectory(outputDir); //creates folder if it does not exist already
+}
 
-saveAs("Results", outputDir + "/" + title + "-Morphometry.csv");
-saveAs("Tiff", outputDir + "/" + title + "-lbl-killBorders.tif");
+setBatchMode(true); //Won't show the images when open
 
-close("*");
-close( title + "-Morphometry.csv");</code></pre>
-<p>}</p>
-<p>print(“Done”);```</p>
+for (i = 0; i &lt; fileList.length; i++) { //Loop through images
+    
+    title = fileList[i];
+    
+    if (!endsWith(title, ".tif")) //only runs the code if file is an image .tif
+        continue;
+
+    open(sourceDir + "/" + title);
+    
+    selectImage(title);
+    
+    run("8-bit");
+    run("Auto Local Threshold", "method=Otsu radius=15 parameter_1=0 parameter_2=0");
+    run("Connected Components Labeling", "connectivity=4 type=[16 bits]");
+    run("Remove Border Labels", "left right top bottom");
+    run("Analyze Regions", "area perimeter circularity");
+    
+    saveAs("Results", outputDir + "/" + title + "-Morphometry.csv");
+    saveAs("Tiff", outputDir + "/" + title + "-lbl-killBorders.tif");
+    
+    close("*");
+    close( title + "-Morphometry.csv");
+    
+}
+
+print("Done");</code></pre>
 
 
 </section>
