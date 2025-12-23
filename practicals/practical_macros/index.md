@@ -169,6 +169,36 @@ Test and save the macro.
 
 :::
 
+Final version of the code:
+
+```ijm
+//This macro process a 3 channel image with stainings A, B and C. Adjusts B&C, 
+//Creates a png with scale bar and saves
+//Marina Cuenca 2026
+
+dir = getDirectory("Saving directory");
+
+title = getTitle();
+
+run("Split Channels");
+
+selectImage("C1-" + title);
+setMinAndMax(0, 182);
+
+selectImage("C2-" + title);
+setMinAndMax(0, 182);
+
+selectImage("C3-" + title);
+setMinAndMax(0, 157);
+
+run("Merge Channels...", "c1=C1-" + title + " c2=C2-" + title + " c3=C3-" + title + " create");
+
+run("Scale Bar...", "width=50 height=50 location=[Upper Right] bold overlay");
+
+run("RGB Color"); 
+
+saveAs("PNG", dir + "/" + title);```
+
 ---
 
 ## Batch processing
