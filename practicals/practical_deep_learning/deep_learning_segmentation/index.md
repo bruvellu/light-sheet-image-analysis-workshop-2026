@@ -6,7 +6,7 @@ date: 05 January 2026
 
 # 3D Deep Learning Segmentation
 
-This [guide](https://github.com/acorbat/workshop_3d_dl_segmentation/blob/v1.0.0/workshop.md) will walk you through the excercises for this workshop
+This [guide](https://github.com/acorbat/workshop_3d_dl_segmentation/blob/v1.0.1/workshop.md) will walk you through the excercises for this workshop
 
 # Key Learning Objectives
 
