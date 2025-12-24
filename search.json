@@ -4,7 +4,17 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "Compilation of tools and resources for image analysis focused on what we will use.\nTODO: Add more links for tools and resources here.\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "text": "Compilation of tools and resources for image analysis focused on what we will use.\n\n\n\nhttps://zenodo.org/communities/lsmunimayor\n\n\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#datasets",
+    "href": "resources.html#datasets",
+    "title": "Resources",
+    "section": "",
+    "text": "https://zenodo.org/communities/lsmunimayor",
     "crumbs": [
       "Resources"
     ]
@@ -621,16 +631,6 @@
     "text": "Time, location, etc",
     "crumbs": [
       "Help"
-    ]
-  },
-  {
-    "objectID": "datasets.html",
-    "href": "datasets.html",
-    "title": "Datasets",
-    "section": "",
-    "text": "Datasets\nFind here the example datasets available for the course.",
-    "crumbs": [
-      "Datasets"
     ]
   },
   {
