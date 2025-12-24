@@ -1,13 +1,5 @@
 # Program
 
-
-:::{.callout-note}
-
-This is the current program. Edit this page! The original draft program is [here](internal/draft_program.md).
-
-:::
-
-
 ## 🗓️ Day 1: Light-Sheet principles and digital images
 
 Monday, 5 Jan 2026
