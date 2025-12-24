@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.md"
+    - "!talks/"
+    - "!internal/"
 
 website:
   title: "🔬 Light-Sheet Image Analysis Workshop 2026"
