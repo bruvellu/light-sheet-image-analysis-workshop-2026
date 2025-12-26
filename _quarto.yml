@@ -9,7 +9,7 @@ project:
 website:
   title: "🔬 Light-Sheet Image Analysis Workshop 2026"
   #image: "quarto-dark-bg.jpeg"
-  favicon: "🔬"
+  favicon: "https://www.flaticon.com/free-icons/microscope"
   open-graph: true
   twitter-card: true
   site-url: https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026
@@ -27,6 +27,8 @@ website:
     center:
       - text: "LiSIUM"
         href: https://lightsheetchile.cl/light-sheet-image-analysis-workshop-2026-2/
+    right:
+      - text: "microscope favicon created by Freepik - Flaticon"
     #left: LiSIUM
     #center:
     #  - text: "About"
