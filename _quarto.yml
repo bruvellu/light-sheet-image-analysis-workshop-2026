@@ -9,7 +9,7 @@ project:
 website:
   title: "🔬 Light-Sheet Image Analysis Workshop 2026"
   #image: "quarto-dark-bg.jpeg"
-  #favicon: "favicon.png"
+  favicon: "🔬"
   open-graph: true
   twitter-card: true
   site-url: https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026
