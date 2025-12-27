@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Bruno Vellutini">
+<meta name="dcterms.date" content="2026-01-05">
 
-<title>index – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Visualization of 3D data – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +22,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,6 +101,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +134,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:title" content="Visualization of 3D data – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_3d/media/01-sample-open.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:width" content="1920">
+<meta name="twitter:title" content="Visualization of 3D data – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_3d/media/01-sample-open.png">
+<meta name="twitter:image-height" content="1200">
+<meta name="twitter:image-width" content="1920">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -102,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_3d/index.html">Visualization of 3D images</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_3d/index.html">Visualization of 3D data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -150,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_3d/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Visualization of 3D images</span></a>
+ <span class="menu-text">Visualization of 3D data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -168,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_multiview/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multiview reconstruction using BigStitcher in Fiji</span></a>
+ <span class="menu-text">Multiview reconstruction using BigStitcher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -180,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_tracking/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cell tracking using Mastodon in Fiji</span></a>
+ <span class="menu-text">Cell tracking using Mastodon</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
@@ -218,29 +286,1065 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#visualization-of-3d-images" id="toc-visualization-of-3d-images" class="nav-link active" data-scroll-target="#visualization-of-3d-images">Visualization of 3D images</a></li>
+  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link active" data-scroll-target="#sec-summary">Summary</a></li>
+  <li><a href="#sec-requirements" id="toc-sec-requirements" class="nav-link" data-scroll-target="#sec-requirements">Requirements</a></li>
+  <li><a href="#sec-setup" id="toc-sec-setup" class="nav-link" data-scroll-target="#sec-setup">Setup</a>
+  <ul>
+  <li><a href="#install-fiji" id="toc-install-fiji" class="nav-link" data-scroll-target="#install-fiji">Install Fiji</a></li>
+  <li><a href="#install-3dscript" id="toc-install-3dscript" class="nav-link" data-scroll-target="#install-3dscript">Install 3Dscript</a></li>
+  <li><a href="#download-3d-datasets" id="toc-download-3d-datasets" class="nav-link" data-scroll-target="#download-3d-datasets">Download 3D datasets</a></li>
+  </ul></li>
+  <li><a href="#sec-open-dataset" id="toc-sec-open-dataset" class="nav-link" data-scroll-target="#sec-open-dataset">Open dataset</a></li>
+  <li><a href="#sec-orthogonal-views" id="toc-sec-orthogonal-views" class="nav-link" data-scroll-target="#sec-orthogonal-views">Orthogonal Views</a></li>
+  <li><a href="#sec-volume-viewer" id="toc-sec-volume-viewer" class="nav-link" data-scroll-target="#sec-volume-viewer">Volume Viewer</a></li>
+  <li><a href="#sec-bigdata-viewer" id="toc-sec-bigdata-viewer" class="nav-link" data-scroll-target="#sec-bigdata-viewer">BigDataViewer</a></li>
+  <li><a href="#sec-threed-project" id="toc-sec-threed-project" class="nav-link" data-scroll-target="#sec-threed-project">3D Project</a></li>
+  <li><a href="#sec-threed-viewer" id="toc-sec-threed-viewer" class="nav-link" data-scroll-target="#sec-threed-viewer">3D Viewer</a></li>
+  <li><a href="#sec-bigvolume-browser" id="toc-sec-bigvolume-browser" class="nav-link" data-scroll-target="#sec-bigvolume-browser">BigVolumeBrowser</a></li>
+  <li><a href="#sec-threedscript" id="toc-sec-threedscript" class="nav-link" data-scroll-target="#sec-threedscript">3Dscript</a>
+  <ul>
+  <li><a href="#contrast" id="toc-contrast" class="nav-link" data-scroll-target="#contrast">Contrast</a></li>
+  <li><a href="#transformation" id="toc-transformation" class="nav-link" data-scroll-target="#transformation">Transformation</a></li>
+  <li><a href="#cropping" id="toc-cropping" class="nav-link" data-scroll-target="#cropping">Cropping</a></li>
+  <li><a href="#bookmark" id="toc-bookmark" class="nav-link" data-scroll-target="#bookmark">Bookmark</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  <li><a href="#animation-3d" id="toc-animation-3d" class="nav-link" data-scroll-target="#animation-3d">Animation 3D</a>
+  <ul class="collapse">
+  <li><a href="#rotate-horizontally" id="toc-rotate-horizontally" class="nav-link" data-scroll-target="#rotate-horizontally">Rotate horizontally</a></li>
+  <li><a href="#make-it-smoother" id="toc-make-it-smoother" class="nav-link" data-scroll-target="#make-it-smoother">Make it smoother</a></li>
+  <li><a href="#add-easing" id="toc-add-easing" class="nav-link" data-scroll-target="#add-easing">Add easing</a></li>
+  <li><a href="#animate-cropping" id="toc-animate-cropping" class="nav-link" data-scroll-target="#animate-cropping">Animate cropping</a></li>
+  <li><a href="#define-multiple-commands" id="toc-define-multiple-commands" class="nav-link" data-scroll-target="#define-multiple-commands">Define multiple commands</a></li>
+  <li><a href="#set-initial-conditions" id="toc-set-initial-conditions" class="nav-link" data-scroll-target="#set-initial-conditions">Set initial conditions</a></li>
+  <li><a href="#tweak-appearance" id="toc-tweak-appearance" class="nav-link" data-scroll-target="#tweak-appearance">Tweak appearance</a></li>
+  </ul></li>
+  <li><a href="#animation-4d" id="toc-animation-4d" class="nav-link" data-scroll-target="#animation-4d">Animation 4D</a>
+  <ul class="collapse">
+  <li><a href="#open-virtual-stack" id="toc-open-virtual-stack" class="nav-link" data-scroll-target="#open-virtual-stack">Open virtual stack</a></li>
+  <li><a href="#start-3dscript" id="toc-start-3dscript" class="nav-link" data-scroll-target="#start-3dscript">Start 3Dscript</a></li>
+  <li><a href="#animate-timepoints" id="toc-animate-timepoints" class="nav-link" data-scroll-target="#animate-timepoints">Animate timepoints</a></li>
+  <li><a href="#adjust-channel-1" id="toc-adjust-channel-1" class="nav-link" data-scroll-target="#adjust-channel-1">Adjust channel 1</a></li>
+  <li><a href="#adjust-channel-2" id="toc-adjust-channel-2" class="nav-link" data-scroll-target="#adjust-channel-2">Adjust channel 2</a></li>
+  <li><a href="#adjust-orientation" id="toc-adjust-orientation" class="nav-link" data-scroll-target="#adjust-orientation">Adjust orientation</a></li>
+  <li><a href="#tweak-appearance-1" id="toc-tweak-appearance-1" class="nav-link" data-scroll-target="#tweak-appearance-1">Tweak appearance</a></li>
+  <li><a href="#make-it-smoother-1" id="toc-make-it-smoother-1" class="nav-link" data-scroll-target="#make-it-smoother-1">Make it smoother</a></li>
+  <li><a href="#save-animation" id="toc-save-animation" class="nav-link" data-scroll-target="#save-animation">Save animation</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_3d/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_3d/index.html">Visualization of 3D images</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_3d/index.html">Visualization of 3D data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Visualization of 3D data</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="visualization-of-3d-images" class="level1">
-<h1>Visualization of 3D images</h1>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bruno Vellutini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-summary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-summary">Summary</h2>
+<p>This tutorial shows different approaches to visualize 3D microscopy data in Fiji <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span>. It provides a quick introduction to some of the tools bundled in Fiji, such as Orthogonal Views, Volume Viewer, 3D Viewer <span class="citation" data-cites="Schmid2010-ep">(<a href="#ref-Schmid2010-ep" role="doc-biblioref">Schmid et al. 2010</a>)</span>, and BigDataViewer <span class="citation" data-cites="Pietzsch2015-md">(<a href="#ref-Pietzsch2015-md" role="doc-biblioref">Pietzsch et al. 2015</a>)</span>, and a more in-depth explanation of the plugin 3Dscript <span class="citation" data-cites="Schmid2019-bm">(<a href="#ref-Schmid2019-bm" role="doc-biblioref">Schmid et al. 2019</a>)</span>.</p>
+</section>
+<section id="sec-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="sec-requirements">Requirements</h2>
 <ul>
-<li>Max projections<br>
-</li>
-<li>Orthogonal views<br>
-</li>
-<li>Reslicing<br>
-</li>
-<li>BigData viewer<br>
-</li>
-<li>3D script</li>
+<li>Fiji <a href="https://fiji.sc" class="uri">https://fiji.sc</a></li>
+<li>3Dscript <a href="https://bene51.github.io/3Dscript/" class="uri">https://bene51.github.io/3Dscript/</a></li>
 </ul>
+</section>
+<section id="sec-setup" class="level2">
+<h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
+<section id="install-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="install-fiji">Install Fiji</h3>
+<ul>
+<li>Go to <a href="https://fiji.sc" class="uri">https://fiji.sc</a>, choose <code>Distribution: Stable</code>, and click the download button</li>
+<li>Copy the downloaded archive to your working directory and unzip it</li>
+<li>Open the <code>Fiji.app</code> directory and double-click on the launcher</li>
+<li>The main window of Fiji will open</li>
+</ul>
+</section>
+<section id="install-3dscript" class="level3">
+<h3 class="anchored" data-anchor-id="install-3dscript">Install 3Dscript</h3>
+<ul>
+<li>Click on <code>Help</code> &gt; <code>Update...</code> and wait</li>
+<li>Click on <code>Manage Update Sites</code></li>
+<li>A list of plugins will open</li>
+<li>Search for <code>3Dscript</code> and click on the checkbox</li>
+<li>Click <code>Apply and Close</code> and then <code>Apply Changes</code></li>
+<li>Wait until the downloads are finished. Then, click <code>OK</code></li>
+<li>Restart Fiji (close it and double-click the launcher)</li>
+<li>Check if <code>3Dscript</code> is installed under <code>Plugins</code> &gt; <code>3Dscript</code></li>
+<li>You are ready!</li>
+</ul>
+</section>
+<section id="download-3d-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="download-3d-datasets">Download 3D datasets</h3>
+<ul>
+<li><code>T1 Head (16-bits)</code> dataset is included in Fiji (no need to download in advance)</li>
+<li><code>btd-gap-stg_3_z3_t53s_E3_4x.tif</code> dataset downloadable from Zenodo</li>
+</ul>
+</section>
+</section>
+<section id="sec-open-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="sec-open-dataset">Open dataset</h2>
+<p>We will begin by visualizing an MRI dataset of a human head that is bundled in Fiji.</p>
+<ul>
+<li>Go to <code>File</code> &gt; <code>Open Samples</code> &gt; <code>T1 Head (16-bits)</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/01-sample-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="media/01-sample-open.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/02-open-head.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="media/02-open-head.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Increase the zoom to 200% for better visualization</li>
+</ul>
+<p><a href="media/03-head-zoomed.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/03-head-zoomed.png" class="img-fluid"></a></p>
+</section>
+<section id="sec-orthogonal-views" class="level2">
+<h2 class="anchored" data-anchor-id="sec-orthogonal-views">Orthogonal Views</h2>
+<p>Orthogonal Views is a tool that shows the optical sections through the orthogonal planes of XY: XZ and YZ. It is an easy and quick way to get a sense of the tridimensionality of your dataset. Whenever I’m opening a dataset for the first time I use Orthogonal Views. To activate it:</p>
+<ul>
+<li>Click on <code>Image</code> &gt; <code>Stacks</code> &gt; <code>Orthogonal Views</code> (or press ctrl+shift+H)</li>
+<li>The XZ and YZ panels will open next to your XY stack</li>
+</ul>
+<p><a href="media/04-ortho-views.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/04-ortho-views.png" class="img-fluid"></a></p>
+<ul>
+<li>The yellow lines are synchronized between the panels</li>
+<li>Click around the different parts of the head to inspect the same position under different angles</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/05-ortho-first.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/05-ortho-first.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/06-ortho-second.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="media/06-ortho-second.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Orthogonal Views is a great way to start understanding your 3D data.</p>
+</section>
+<section id="sec-volume-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="sec-volume-viewer">Volume Viewer</h2>
+<p>Volume Viewer is a more powerful plugin for 3D visualization as it supports slicing, projections, and rendering. The interface is interactive and intuitive to use. To open it:</p>
+<ul>
+<li>Go to <code>Plugins</code> &gt; <code>Volume Viewer</code>. The main interface will open in the <code>Slice</code> mode.</li>
+</ul>
+<p><a href="media/07-volume-viewer.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/07-volume-viewer.png" class="img-fluid"></a></p>
+<ul>
+<li>Click around and move the sample to see optical sections from different angles.</li>
+<li>Then, activate the <code>Volume</code> mode to render the sample’s surface in 3D and explore it as well, playing with the different rendering parameters</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/08-volume-render.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="media/08-volume-render.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/09-volume-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/09-volume-options.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Volume Viewer also provides a way to take snapshots of the current view.</p>
+</section>
+<section id="sec-bigdata-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bigdata-viewer">BigDataViewer</h2>
+<p>BigDataViewer <span class="citation" data-cites="Pietzsch2015-md">(<a href="#ref-Pietzsch2015-md" role="doc-biblioref">Pietzsch et al. 2015</a>)</span> is one of the most important tools for visualizing large, multidimensional datasets. It provides a simple and intuitive interface and shortcuts to swiftly navigate through your sample even in a regular laptop. This is possible because of the underlying file format used by the BigDataViewer: the XML/HDF5 combo. Therefore, before opening the plugin, we must convert our dataset.</p>
+<ul>
+<li>Go to <code>Plugins</code> &gt; <code>BigDataViewer</code> &gt; <code>Export Current Image as XML/HDF5</code></li>
+</ul>
+<p><a href="media/10-bdv-export.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="media/10-bdv-export.png" class="img-fluid"></a></p>
+<p>A dialog with export options will open.</p>
+<ul>
+<li>Under <code>Export path</code>, click on <code>Browse</code> to select the output directory for <code>t1-head.xml</code></li>
+</ul>
+<p><a href="media/11-bdv-path.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="media/11-bdv-path.png" class="img-fluid"></a></p>
+<p>The export process will start. Since this is a small dataset, it’ll be fast. But, for large datasets, this can take hours.</p>
+<p>When done, you will find two new files in your working directory: <code>t1-head.xml</code> and <code>t1-head.h5</code></p>
+<p><a href="media/12-bdv-files.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="media/12-bdv-files.png" class="img-fluid"></a></p>
+<p>The XML file stores metadata information about the image. The HDF5 file stores actual image data. These two files will always be in a pair. To open the XML/HDF5:</p>
+<ul>
+<li>Go to <code>Plugins</code> &gt; <code>BigDataViewer</code> &gt; <code>Open XML/HDF5</code> and select the <code>t1-head.xml</code></li>
+</ul>
+<p><a href="media/13-bdv-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="media/13-bdv-open.png" class="img-fluid"></a></p>
+<p>The BigDataViewer interface will open showing an optical section of the head sample.</p>
+<p><a href="media/14-bdv-interface.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="media/14-bdv-interface.png" class="img-fluid"></a></p>
+<p>Getting familiar with the BigDataViewer is an essential skill for navigating large 3D datasets. It’ll also be important for the multiview registration pipeline. So, take the time to learn the basic commands and shortcuts. It is nicely intuitive. The <a href="https://imagej.net/plugins/bdv/">BigDataViewer’s page</a> on the <a href="https://imagej.net">ImageJ Docs</a> has the official documentation and we can also go to <code>Help</code> &gt; <code>Show Help</code> for an up-to-date overview.</p>
+<p>Some of the movements to try:</p>
+<ul>
+<li><code>left+click+drag</code>: turn the sample around the mouse pointer at any arbitrary angle.</li>
+<li><code>right+click+drag</code>: move the sample in the XY plane (of the view).</li>
+<li><code>scroll</code>: move through the Z plane (of the view). Use shift+scroll to move fast.</li>
+<li><code>ctrl+shift+scroll</code>: zoom in or out.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/15-left-drag.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="left-click"><img src="media/15-left-drag.png" class="img-fluid figure-img" alt="left-click"></a></p>
+<figcaption>left-click</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/16-right-drag.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="right-click"><img src="media/16-right-drag.png" class="img-fluid figure-img" alt="right-click"></a></p>
+<figcaption>right-click</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/17-shift-scroll.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="scroll"><img src="media/17-shift-scroll.png" class="img-fluid figure-img" alt="scroll"></a></p>
+<figcaption>scroll</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/18-ctrl-shift.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="zoom"><img src="media/18-ctrl-shift.png" class="img-fluid figure-img" alt="zoom"></a></p>
+<figcaption>zoom</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>But, most importantly, are the commands to put your sample back to its original orientation or along any of the original dimension axes:</p>
+<ul>
+<li><code>shift+z</code>: orient the sample on the XY plane.</li>
+<li><code>shift+x</code>: orient the sample on the ZY plane.</li>
+<li><code>shift+y</code>: orient the sample on the ZX plane.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/19-bdv-xy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="XY"><img src="media/19-bdv-xy.png" class="img-fluid figure-img" alt="XY"></a></p>
+<figcaption>XY</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/20-bdv-zy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="ZY"><img src="media/20-bdv-zy.png" class="img-fluid figure-img" alt="ZY"></a></p>
+<figcaption>ZY</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/21-bdv-zx.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="ZX"><img src="media/21-bdv-zx.png" class="img-fluid figure-img" alt="ZX"></a></p>
+<figcaption>ZX</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Finally, a visual tip. The default interpolation between image slices is <code>nearest-neighbors</code>. Press <code>i</code> to activate the <code>tri-linear</code> interpolation to obtain a much smoother (and improved) data visualization.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/22-bdv-nearest.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="nearest-neighbors"><img src="media/22-bdv-nearest.png" class="img-fluid figure-img" alt="nearest-neighbors"></a></p>
+<figcaption>nearest-neighbors</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/23-bdv-trilinear.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="tri-linear"><img src="media/23-bdv-trilinear.png" class="img-fluid figure-img" alt="tri-linear"></a></p>
+<figcaption>tri-linear</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-threed-project" class="level2">
+<h2 class="anchored" data-anchor-id="sec-threed-project">3D Project</h2>
+<p>This is a simple tool to quickly generate a 3D animation (e.g., 360-degree rotation) from an image stack. There are basic parameters for adjusting the rendering, like projection method and opacity, and for controlling the animation. There’s only a bit of <a href="https://imagej.net/imaging/z-functions#3d-project">documentation</a>. To try:</p>
+<ul>
+<li>Go to <code>Image</code> &gt; <code>Stacks</code> &gt; <code>3D Project...</code> and click <code>OK</code> to generate a basic animation</li>
+</ul>
+<p><a href="media/24-3d-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="media/24-3d-project.png" class="img-fluid"></a></p>
+<p>As noticeable above, 3D Project doesn’t do so well with our MRI dataset. However, it works OK for fluorescent microscopy images, so I encourage you to try with other datasets in the future.</p>
+</section>
+<section id="sec-threed-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="sec-threed-viewer">3D Viewer</h2>
+<p>The 3D Viewer <span class="citation" data-cites="Schmid2010-ep">(<a href="#ref-Schmid2010-ep" role="doc-biblioref">Schmid et al. 2010</a>)</span> is a 3D visualization plugin bundled in Fiji. It has been the default 3D rendering engine for many years and provides a good starting point for visualizing and interacting with 3D images. The interface provides some rendering and animation options, but it is possible to create more advanced visualizations and animations with code. For more details, please consult the <a href="https://imagej.net/plugins/3d-viewer/">documentation</a>.</p>
+<p>Here, we’ll only open our dataset with 3D Viewer for visualization.</p>
+<ul>
+<li>Go to <code>Plugins</code> &gt; <code>3D Viewer</code></li>
+</ul>
+<p><a href="media/25-3dviewer-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="media/25-3dviewer-open.png" class="img-fluid"></a></p>
+<p>An import dialog will open. In addition, to the image field itself, pay attention to the <code>Resampling factor</code> parameter. The default is 2, which means 2x downsampling of the original stack. Always downsample at least 2x because 3D Viewer will crash when trying to open large datasets.</p>
+<ul>
+<li>Click <code>OK</code> on the options dialog and when asked about converting to 8-bit</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/26-3dviewer-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="media/26-3dviewer-options.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/27-3dviewer-convert.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="media/27-3dviewer-convert.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>The main interface will open.</p>
+<ul>
+<li>Explore the sample interactively.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/28-3dviewer-interface.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="media/28-3dviewer-interface.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/29-3dviewer-interactive.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="media/29-3dviewer-interactive.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-bigvolume-browser" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bigvolume-browser">BigVolumeBrowser</h2>
+<p>BigVolumeBrowser is a Fiji plugin to render and interact with 3D data. It’s a fork of the unreleased BigVolumeViewer (a BigDataViewer cousin). The project is being actively developed and seems to have a <a href="https://github.com/UU-cellbiology/bigvolumebrowser/wiki">good documentation</a> already. It’s a good candidate for some testing and for keeping an eye in the future. However, we’ll not cover it in this tutorial as it’s simply too recent.</p>
+</section>
+<section id="sec-threedscript" class="level2">
+<h2 class="anchored" data-anchor-id="sec-threedscript">3Dscript</h2>
+<p>3Dscript is a GPU-accelerated Fiji plugin to generate animations of 3D/4D data <span class="citation" data-cites="Schmid2019-bm">(<a href="#ref-Schmid2019-bm" role="doc-biblioref">Schmid et al. 2019</a>)</span>. It supports stacks with multiple channels and timepoints, has several options to control the rendering appearance, allows custom transformations and cropping of the data, and generates animations using natural language. The latter is specially useful to have precise control over the animation. Once properly installed, 3Dscript is incredibly fast to generate the animations and doesn’t require a lot of RAM as the datasets can be opened as virtual stacks (more about this below).</p>
+<p>To get start, make sure the head dataset is still open.</p>
+<ul>
+<li>Go to <code>Plugins</code> &gt; <code>3Dscript</code> &gt; <code>Interactive Animation</code></li>
+</ul>
+<p><a href="media/30-3dscript-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img src="media/30-3dscript-open.png" class="img-fluid"></a></p>
+<p>Two new windows will open: <code>3D Animation</code> with the initial rendering of the data and <code>Interactive Raycaster</code> with all the fields to control the rendering parameters.</p>
+<p><a href="media/31-3dscript-windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img src="media/31-3dscript-windows.png" class="img-fluid"></a></p>
+<section id="contrast" class="level3">
+<h3 class="anchored" data-anchor-id="contrast">Contrast</h3>
+<p>The Contrast section shows a histogram of pixel intensities of the image for each channel, which we can choose using the dropdown menu. We can set the minimum, gamma, and maximum values for the intensity and alpha (transparency) properties of each pixel. The weight option controls the general opacity of the channel (0=invisible, 100=visible). There’s also more advanced options like lighting and rendering algorithm which we’ll simply use the default states as it is usually good for most of the use cases.</p>
+<p>Adjusting the intensity and alpha values is the most impactful way to improve the 3D rendering. With the intensity setting we can define which pixel value in the image corresponds to total black (minimum) and which corresponds to total white. It’s the same as in the standard <code>Brightness &amp; Contrast</code> tool. By default, 3Dscript will load these values from the original stack. In this case, it loaded min=3 and max=521.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/32-3dscript-default.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32"><img src="media/32-3dscript-default.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/33-3dscript-default.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img src="media/33-3dscript-default.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Let’s change these values to see how it impacts the 3D rendering.</p>
+<ul>
+<li>Change the intensity minimum to 250</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/34-3dscript-intmin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img src="media/34-3dscript-intmin.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/35-3dscript-intmin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img src="media/35-3dscript-intmin.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>You will see that the darkest parts of the rendering will become even darker and no longer visible. We are losing real information from the data; we do not want that.</p>
+<ul>
+<li>Set the min to 0, for now.</li>
+<li>Then, change the max to 250.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/36-3dscript-intmax.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img src="media/36-3dscript-intmax.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/37-3dscript-intmax.png" class="lightbox" data-gallery="quarto-lightbox-gallery-37"><img src="media/37-3dscript-intmax.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>The brightest parts of the rendering will become all white. It is so bright that we can no longer resolve details of the surface. We are losing information and also do not want that.</p>
+<ul>
+<li>Set the max to 500.</li>
+</ul>
+<p>Note that when you change a intensity value, the min/max black line in the histogram moves. You can also grab the line and move the line manually to change the values.</p>
+<p>The blue line represents the alpha values. In 3D rendering, a pixel has a transparency value linked to its intensity. The alpha min defines the value for full transparency and the max the value for full opacity.</p>
+<ul>
+<li>Set the alpha min to 250.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/38-3dscript-alpmin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-38"><img src="media/38-3dscript-alpmin.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/39-3dscript-alpmin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-39"><img src="media/39-3dscript-alpmin.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>This will make darker pixels more transparent and information gets lost.</p>
+<ul>
+<li>Set it to 0.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/40-3dscript-gamma2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-40"><img src="media/40-3dscript-gamma2.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/41-3dscript-gamma2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41"><img src="media/41-3dscript-gamma2.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>By default 3Dscript sets the gamma value of alpha to 2.0. That’s a good default for fluorescence microscopy (see the next dataset below), but since this is MRI data, we need to tweak it a little different.</p>
+<ul>
+<li>Set the alpha gamma value to 1.0.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/42-3dscript-gamma1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42"><img src="media/42-3dscript-gamma1.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/43-3dscript-gamma1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43"><img src="media/43-3dscript-gamma1.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Note that this improves the visualization as the head’s surface becomes better visible.</p>
+<ul>
+<li>Now set the alpha max to 250.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/44-3dscript-alpmax.png" class="lightbox" data-gallery="quarto-lightbox-gallery-44"><img src="media/44-3dscript-alpmax.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/45-3dscript-alpmax.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45"><img src="media/45-3dscript-alpmax.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>The surface will become even more solid because we are defining that pixels that have a value above 250 will be fully opaque.</p>
+<ul>
+<li>To compare, set alpha max to 5000.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/46-3dscript-alpmaxhi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46"><img src="media/46-3dscript-alpmaxhi.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/47-3dscript-alpmaxhi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47"><img src="media/47-3dscript-alpmaxhi.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>You will notice that the sample will become more transparent. Even the brain inside the skull will be visible.</p>
+<ul>
+<li>Set alpha max back to 500</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/48-3dscript-contrast.png" class="lightbox" data-gallery="quarto-lightbox-gallery-48"><img src="media/48-3dscript-contrast.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/49-3dscript-contrast.png" class="lightbox" data-gallery="quarto-lightbox-gallery-49"><img src="media/49-3dscript-contrast.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Generally, setting the intensity and alpha to the same values is a good sane start for optimizing the rendering.</p>
+</section>
+<section id="transformation" class="level3">
+<h3 class="anchored" data-anchor-id="transformation">Transformation</h3>
+<p>The transformation menu has controls for rotating, translating, and scaling the sample. We can either add values or manually interact with the <code>3D Animation</code> window to reorient the sample. Let’s try the latter.</p>
+<ul>
+<li>Left-click on the head and move it around.</li>
+</ul>
+<p><a href="media/50-transform-click.png" class="lightbox" data-gallery="quarto-lightbox-gallery-50"><img src="media/50-transform-click.png" class="img-fluid"></a></p>
+<p>That’s a great way to see your sample from different angles. And note that the values in the Transformation panel get updated every time you move the sample interactively. In this way you can roughly position the sample and then check and update the precise values for the target transformation.</p>
+<ul>
+<li>Press <code>Reset</code> and change the <code>Rotation Y</code> to 180 to look at the right side of the head</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/51-transform-right.png" class="lightbox" data-gallery="quarto-lightbox-gallery-51"><img src="media/51-transform-right.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/52-transform-right.png" class="lightbox" data-gallery="quarto-lightbox-gallery-52"><img src="media/52-transform-right.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Now change <code>Scale</code> to 5 and <code>Translation X</code> to -500 to focus on the nose</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/53-transform-nose.png" class="lightbox" data-gallery="quarto-lightbox-gallery-53"><img src="media/53-transform-nose.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/54-transform-nose.png" class="lightbox" data-gallery="quarto-lightbox-gallery-54"><img src="media/54-transform-nose.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Press Reset to return the sample to its original position</li>
+</ul>
+</section>
+<section id="cropping" class="level3">
+<h3 class="anchored" data-anchor-id="cropping">Cropping</h3>
+<p>Another useful 3Dscript option is the ability to crop the bounding box to show the inside of the sample. We can do it in the XYZ directions or in the near/far axis, defined from the user point of view.</p>
+<ul>
+<li>Set the Z range minimum value to 60 (you can also drag the slider) to slice the sample through the Z axis.</li>
+</ul>
+<p><a href="media/55-cropz-min.png" class="lightbox" data-gallery="quarto-lightbox-gallery-55"><img src="media/55-cropz-min.png" class="img-fluid"></a></p>
+<ul>
+<li>Now rotate the sample to see the cropped region from other angles</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/56-cropz-cropped.png" class="lightbox" data-gallery="quarto-lightbox-gallery-56"><img src="media/56-cropz-cropped.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/57-cropz-rotation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-57"><img src="media/57-cropz-rotation.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Set the Y range min to 125 and rotate around</li>
+</ul>
+<p><a href="media/58-transform-wild.png" class="lightbox" data-gallery="quarto-lightbox-gallery-58"><img src="media/58-transform-wild.png" class="img-fluid"></a></p>
+<ul>
+<li>Finally, reset the position and cropping parameters and set the Near/Far minimum to 0</li>
+</ul>
+<p>and move the sample around to see the dynamic reslice of the sample with this cropping parameter</p>
+<p><a href="media/59-transform-near.png" class="lightbox" data-gallery="quarto-lightbox-gallery-59"><img src="media/59-transform-near.png" class="img-fluid"></a></p>
+<ul>
+<li>Reset transformations and cropping parameters</li>
+</ul>
+</section>
+<section id="bookmark" class="level3">
+<h3 class="anchored" data-anchor-id="bookmark">Bookmark</h3>
+<p>3Dscript allows you to bookmark a view for later inspection. Add the current Contrast, Transformation, and Cropping parameters to the bookmark.</p>
+<ul>
+<li>For that, simply click on the green icon</li>
+</ul>
+<p><a href="media/60-transform-bookmark.png" class="lightbox" data-gallery="quarto-lightbox-gallery-60"><img src="media/60-transform-bookmark.png" class="img-fluid"></a></p>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+<p>This panel last panel defines the dimensions of the output animation. By default it uses the original stack dimensions.</p>
+<p><a href="media/61-transform-outbox.png" class="lightbox" data-gallery="quarto-lightbox-gallery-61"><img src="media/61-transform-outbox.png" class="img-fluid"></a></p>
+<p>You can also define if the bounding box or the scale bar will be visible (enabled by default)</p>
+</section>
+<section id="animation-3d" class="level3">
+<h3 class="anchored" data-anchor-id="animation-3d">Animation 3D</h3>
+<p>Now that we learned the basics of setting up the rendering and view parameters, we can start generating animations of the data.</p>
+<ul>
+<li>Click on the <code>Animation</code> section and on the <code>Start text-based animation editor</code> button</li>
+</ul>
+<p><a href="media/62-animation-button.png" class="lightbox" data-gallery="quarto-lightbox-gallery-62"><img src="media/62-animation-button.png" class="img-fluid"></a></p>
+<p>This will open a special editor window for writing the animation script.</p>
+<p><a href="media/63-animation-editor.png" class="lightbox" data-gallery="quarto-lightbox-gallery-63"><img src="media/63-animation-editor.png" class="img-fluid"></a></p>
+<section id="rotate-horizontally" class="level4">
+<h4 class="anchored" data-anchor-id="rotate-horizontally">Rotate horizontally</h4>
+<p>Let’s start with the simplest animation: a rotation of the head around 360 degrees. We need to define the number of frames that the animation will have and what will happen during these frames. We can start by defining that the animation will have ten frames.</p>
+<p>Note: frame counting in 3Dscript begins from 0 (frame 0 to 9 has 10 frames).</p>
+<p>The editor has a strong autocomplete; you only need to type one letter at a time to be able to write the exact text needed for the animation.</p>
+<ul>
+<li>Type <code>f</code>. The editor will autocomplete with <code>From frame &lt;frame&gt;</code>.</li>
+<li>Type <code>0</code> and space. The autocomplete will fill with <code>From frame 0 to frame &lt;frame&gt;</code>.</li>
+<li>Type <code>9</code> and space. The autocomplete will show a dropdown menu with several options (<code>rotate by</code>, <code>translate</code>, <code>zoom by a factor of</code>, <code>reset transformation</code>, and <code>change</code>).</li>
+<li>Choose <code>rotate by</code> and press <code>TAB</code>. The autocomplete will show <code>From frame 0 to frame 9 rotate by &lt;degrees&gt;</code></li>
+<li>Type <code>360</code> and space. The sentence will be <code>From frame 0 to frame 9 rotate by 360 degrees</code> and a dropdown will show the options <code>horizontally</code>, <code>vertically</code>, and <code>around</code>.</li>
+<li>Choose <code>horizontally</code> and on the next menu choose <code>(none)</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/64-animation-frame.png" class="lightbox" data-gallery="quarto-lightbox-gallery-64"><img src="media/64-animation-frame.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/65-animation-rotation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-65"><img src="media/65-animation-rotation.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>We have our first animation script and it’s just this single sentence:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 9 rotate by 360 degrees horizontally</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Press <code>Run</code></li>
+</ul>
+<p>A new window will show up with an image stack of 10 frames containing the generated animation</p>
+<p><a href="media/66-animation-first.png" class="lightbox" data-gallery="quarto-lightbox-gallery-66"><img src="media/66-animation-first.png" class="img-fluid"></a></p>
+<ul>
+<li>Press play or &nbsp;and watch the head turn 360 degrees during these 10 frames.</li>
+</ul>
+<p>Note that we did not need to define how many degrees the head would turn for each frame. We can simply state that we need the head to turn 360 in these 10 frames and 3Dscript will deal with it.</p>
+</section>
+<section id="make-it-smoother" class="level4">
+<h4 class="anchored" data-anchor-id="make-it-smoother">Make it smoother</h4>
+<p>Our first animation is cool, but a bit jumpy. To make it smoother we can add more frames.</p>
+<ul>
+<li>Change the final frame from 9 to 35, so that the animation will have 36 frames in total</li>
+</ul>
+<p><a href="media/67-animation-smoother.png" class="lightbox" data-gallery="quarto-lightbox-gallery-67"><img src="media/67-animation-smoother.png" class="img-fluid"></a></p>
+<p>Now each frame rotates by 1 degree and the animation is much smoother.</p>
+</section>
+<section id="add-easing" class="level4">
+<h4 class="anchored" data-anchor-id="add-easing">Add easing</h4>
+<p>The standard animation creates a linear rotation; every frame turns a fixed number of degrees. 3Dscript can add easing to create non-linear transitions by accelerating or decelerating the rotation.</p>
+<ul>
+<li>Type <code>ease</code> at the end of the script sentence</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 35 rotate by 360 degrees horizontally</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Then, press <code>Run</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/68-animation-easing1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-68" title="0°"><img src="media/68-animation-easing1.png" class="img-fluid figure-img" alt="0°"></a></p>
+<figcaption>0°</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/69-animation-easing2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-69" title="90°"><img src="media/69-animation-easing2.png" class="img-fluid figure-img" alt="90°"></a></p>
+<figcaption>90°</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/70-animation-easing3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-70" title="180°"><img src="media/70-animation-easing3.png" class="img-fluid figure-img" alt="180°"></a></p>
+<figcaption>180°</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/71-animation-easing4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-71" title="270°"><img src="media/71-animation-easing4.png" class="img-fluid figure-img" alt="270°"></a></p>
+<figcaption>270°</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The left head is the one without easing (linear transition) and the right head is the animation with easing. Note how the right head accelerates the rotation at the beginning, turning much faster, and then decelerates towards the end of the rotation. Both end the rotation at the same time. Play both animations side-by-side to see the difference (it’s very clear, once you see it).</p>
+</section>
+<section id="animate-cropping" class="level4">
+<h4 class="anchored" data-anchor-id="animate-cropping">Animate cropping</h4>
+<p>Let’s add a couple more commands below our rotation sentence. We want that, after the 360 degree rotation, the animation slices through the head to show the tissues inside. For that, we can change the cropping parameters to control the position of the bounding box during the animation.</p>
+<ul>
+<li>After the first sentence, write the two commands as shown below</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 35 rotate by 360 degrees horizontally</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>From frame 36 to frame 71 change channel 1 bounding box min z to 60</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>From frame 72 to frame 99 change channel 1 bounding box min z to 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Press <code>Run</code></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/72-animation-box1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-72"><img src="media/72-animation-box1.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/73-animation-box2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-73"><img src="media/73-animation-box2.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/74-animation-box3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-74"><img src="media/74-animation-box3.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/75-animation-box4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-75"><img src="media/75-animation-box4.png" class="img-fluid"></a></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/76-animation-box5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-76"><img src="media/76-animation-box5.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/77-animation-box6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-77"><img src="media/77-animation-box6.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/78-animation-box7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-78"><img src="media/78-animation-box7.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/79-animation-box8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-79"><img src="media/79-animation-box8.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>The script is saying to rotate 360 degrees horizontally, as before, set the Z range minimum to 60 (roughly half way through the sample) for about 30 frames, and then set the Z range minimum back to 0 in the subsequent 30 frames. And that’s what we get.</p>
+</section>
+<section id="define-multiple-commands" class="level4">
+<h4 class="anchored" data-anchor-id="define-multiple-commands">Define multiple commands</h4>
+<p>Another useful 3Dscript feature is the ability to issue multiple commands to happen simultaneously, within the defined frames. For example, we can make a script that defines a horizontal rotation and Z cropping at the same time.</p>
+<ul>
+<li>Write the code below in the editor and press <code>Run</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 71:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>- rotate by 270 degrees horizontally </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 60</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/80-animation-multi1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-80"><img src="media/80-animation-multi1.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/81-animation-multi2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-81"><img src="media/81-animation-multi2.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/82-animation-multi3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-82"><img src="media/82-animation-multi3.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/83-animation-multi4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-83"><img src="media/83-animation-multi4.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Now cropping is happening simultaneously with the rotation.</p>
+</section>
+<section id="set-initial-conditions" class="level4">
+<h4 class="anchored" data-anchor-id="set-initial-conditions">Set initial conditions</h4>
+<p>If you simply re-run the command above, the head will already start cropped. That’s because 3Dscript takes the current parameters as the initial conditions for the animation. Since the previous animation changed the bounding box without changing it back, the value remains set at the current value (cropping the head). In fact, all the options set manually in the Raycaster window will be applied to the current animation. This can cause problems if you need to generate the animation again after closing 3Dscript and can’t remember the exact parameters.</p>
+<p>To prevent this issue, we can set the initial conditions of the animation. This is highly recommended in general, but it’s also necessary when you want to start the animation with the sample in an orientation that is different than the default sample orientation. You can set the initial conditions using the <code>At frame 0:</code> construction.</p>
+<ul>
+<li>Write the code below in the editor and press <code>Run</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>- rotate by 90 degrees around (0, 1, 0) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box z to (0, 129)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 71:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>- rotate by 150 degrees horizontally </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 60</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/84-animation-initial1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-84"><img src="media/84-animation-initial1.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/85-animation-initial2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-85"><img src="media/85-animation-initial2.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/86-animation-initial3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-86"><img src="media/86-animation-initial3.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/87-animation-initial4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-87"><img src="media/87-animation-initial4.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="tweak-appearance" class="level4">
+<h4 class="anchored" data-anchor-id="tweak-appearance">Tweak appearance</h4>
+<p>We can now also tweak the animation to reach the final appearance that we want. For example, we can change scale bar width and height and hide the bounding box lines around the sample.</p>
+<ul>
+<li>Write the code below in the editor and press <code>Run</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>- rotate by 90 degrees around (0, 1, 0) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box z to (0, 129)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>- change bounding box visibility to off</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>- change scalebar length to 50</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>- change scalebar width to 10</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>- change scalebar offset to 20</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 71:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 60</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 2</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>From frame 72 to frame 100:</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 129</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 0.5 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/88-animation-zoom1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-88"><img src="media/88-animation-zoom1.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/89-animation-zoom2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-89"><img src="media/89-animation-zoom2.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/90-animation-zoom3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-90"><img src="media/90-animation-zoom3.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><a href="media/91-animation-zoom4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-91"><img src="media/91-animation-zoom4.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Note how there’s no longer a bounding box and the scale bar is much more visible.</p>
+<p>To end this part of the tutorial using a single-channel, single-timepoint dataset. Save the animation script to file for later re-use or incremental improvements.</p>
+</section>
+</section>
+<section id="animation-4d" class="level3">
+<h3 class="anchored" data-anchor-id="animation-4d">Animation 4D</h3>
+<p>Let’s now try a more challenging sample with two channels and several timepoints. This dataset is shows a fly embryo during early development. The file is named <code>btd-gap-stg_3_z3_t53s_E3_4x.tif</code>. It has 2 channels, 30 slices, and 200 timepoints taken every 53s. The original file size is 37GB, but here we will use the 4x downsampled dataset of 2.3GB.</p>
+<section id="open-virtual-stack" class="level4">
+<h4 class="anchored" data-anchor-id="open-virtual-stack">Open virtual stack</h4>
+<p>Even though the original dataset would not even fit in the memory of today’s high-end laptops, we would still be able to generate animations using 3Dscript. That’s because, 3Dscript works with the so called <code>Virtual Stacks</code> in Fiji. This is a way to open large stacks without loading all the image data into memory (only what’s current on view is loaded). Virtual stacks are really, really great. Let’s open and inspect the new dataset as a virtual stack.</p>
+<ul>
+<li>Close all the previous 3Dscript windows (including the editor)</li>
+<li>Go to <code>File</code> &gt; <code>Import</code> &gt; <code>TIFF Virtual Stack...</code> or drag and drop the file on top of the <code>&gt;&gt;</code> arrows at the right corner of the Fiji window (secret trick) to open the dataset as a virtual stack</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/92-virtual-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-92"><img src="media/92-virtual-menu.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/93-virtual-drag.png" class="lightbox" data-gallery="quarto-lightbox-gallery-93"><img src="media/93-virtual-drag.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Zoom in to 200% and inspect the dataset using with <code>Orthogonal Views</code></li>
+</ul>
+<p><a href="media/94-virtual-ortho.png" class="lightbox" data-gallery="quarto-lightbox-gallery-94"><img src="media/94-virtual-ortho.png" class="img-fluid"></a></p>
+<ul>
+<li>Close the orthogonal views</li>
+</ul>
+</section>
+<section id="start-3dscript" class="level4">
+<h4 class="anchored" data-anchor-id="start-3dscript">Start 3Dscript</h4>
+<p>3Dscript will use the current image dimensions to generate the animation. For this reason, it is extremely important to return the stack’s zoom to 100% before opening 3Dscript! Otherwise the upsampled data may create image artifacts.</p>
+<ul>
+<li>Open 3Dscript and zoom the <code>3D animation</code> window to 200% (this one is fine)</li>
+</ul>
+<p><a href="media/95-3dscript-stack.png" class="lightbox" data-gallery="quarto-lightbox-gallery-95"><img src="media/95-3dscript-stack.png" class="img-fluid"></a></p>
+<p>The initial 3D rendering is always showing the position and timepoint of the original stack (if you change the timepoint of the original stack and re-open 3Dscript the current timepoint would be rendered).</p>
+<ul>
+<li>Rotate the sample interactively to see the other side, where the surface of the embryo is.</li>
+<li>Then, reset the transformation and change the <code>Rotation Y</code> to <code>180</code></li>
+</ul>
+<p><a href="media/96-3dscript-rotate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-96"><img src="media/96-3dscript-rotate.png" class="img-fluid"></a></p>
+</section>
+<section id="animate-timepoints" class="level4">
+<h4 class="anchored" data-anchor-id="animate-timepoints">Animate timepoints</h4>
+<p>This time, before we start optimizing the rendering, we will generate a simple animation across timepoints to have an overview of how the sample changes over time. This is generally good practice as the signal of live samples tend to vary over time.</p>
+<ul>
+<li>Click on <code>Animation</code> &gt; <code>Start text-based animation editor</code></li>
+<li>Write the initial conditions of frame 0 as shown below (set to timepoint 1 and rotate sample 180 degrees horizontally), and generate a 10-frame animation from timepoint 1 to 200 (the last).</li>
+<li>Then, press <code>Run</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>- change timepoint to 1</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 9 change timepoint to 200</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="media/97-3dscript-animate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-97"><img src="media/97-3dscript-animate.png" class="img-fluid"></a></p>
+<p>3Dscript will generate the 10-frame animation and set the <code>3D Animation</code> window to the last timepoint. Unfortunately, there’s no way to set the timepoint for the <code>3D Animation</code> window manually (it always show the last timepoint of the most recent animation).</p>
+<p>From this first animation, we can observe three things that we want to improve.</p>
+<ol type="1">
+<li>The signal from channel 1 is overexposed in the last timepoint. The intensity of this channel changes over time. The signal becomes so strong in the last timepoints that it becomes overexposed. We will fix this.</li>
+<li>The signal from channel 2 is not so bright. We want to increase the contrast.</li>
+<li>The sample is tilted upwards (the right side is pointing up). We want to make the sample completely horizontal, parallel to the bounding box.</li>
+</ol>
+</section>
+<section id="adjust-channel-1" class="level4">
+<h4 class="anchored" data-anchor-id="adjust-channel-1">Adjust channel 1</h4>
+<ul>
+<li>Change channel 1’s intensity and alpha maximum values from 600 to 1500.</li>
+</ul>
+<p><a href="media/98-3dscript-channel1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-98"><img src="media/98-3dscript-channel1.png" class="img-fluid"></a></p>
+<p>Note how the details along the bright stripe over the embryo are now more visible. As we have manually changed a <code>Contrast</code> value, we should add this information to the initial conditions of the animation.</p>
+<ul>
+<li>Add the new values of min/max intensity/alpha for channel 1 in the script</li>
+<li>Then press <code>Run</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>- change timepoint to 1</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>- change channel 1 min intensity to 200</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>- change channel 1 max intensity to 1500</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>- change channel 1 min alpha to 200</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>- change channel 1 max alpha to 1500</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 9 change timepoint to 200</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="adjust-channel-2" class="level4">
+<h4 class="anchored" data-anchor-id="adjust-channel-2">Adjust channel 2</h4>
+<p>Now we will improve the contrast of the other channel.</p>
+<ul>
+<li>Switch to channel 2 in the Contrast menu.</li>
+</ul>
+<p><a href="media/99-3dscript-channel2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-99"><img src="media/99-3dscript-channel2.png" class="img-fluid"></a></p>
+<ul>
+<li>Change channel 2’s intensity and alpha maximum values from 7000 to 3000.</li>
+</ul>
+<p><a href="media/100-3dscript-adjusted.png" class="lightbox" data-gallery="quarto-lightbox-gallery-100"><img src="media/100-3dscript-adjusted.png" class="img-fluid"></a></p>
+<p>Note how the gray signal is now brighter and the sample surface looks more solid and less porous. That’s because we changed the alpha maximum value to make all the pixels above 3000 to have 100% opacity.</p>
+<p>Unfortunately, the increase in brightness of channel 2 led to some regions of channel 1 to become a little overexposed. Before writing the new values to the code, let’s make a small correction to channel 1. We don’t want to change the intensity, but we can make the pixels more transparent, so that they don’t become so bright.</p>
+<ul>
+<li>Set channel 2’s alpha maximum value from 1500 to 3000</li>
+<li>Then, update the script as below and <code>Run</code> it</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>- change timepoint to 1</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>- change channel 1 min intensity to 200</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>- change channel 1 max intensity to 1500</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>- change channel 1 min alpha to 200</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>- change channel 1 max alpha to 3000</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>- change channel 2 min intensity to 150</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>- change channel 2 max intensity to 3000</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>- change channel 2 min alpha to 150</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>- change channel 2 max alpha to 3000</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 9 change timepoint to 200</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="media/101-3dscript-both.png" class="lightbox" data-gallery="quarto-lightbox-gallery-101"><img src="media/101-3dscript-both.png" class="img-fluid"></a></p>
+<p>Great, the animation is looking nice now.</p>
+</section>
+<section id="adjust-orientation" class="level4">
+<h4 class="anchored" data-anchor-id="adjust-orientation">Adjust orientation</h4>
+<p>The last detail to adjust is the sample orientation around the Z axis.</p>
+<ul>
+<li>Change the <code>Rotation Z</code> to <code>-4</code> in the Transformation menu</li>
+</ul>
+<p><a href="media/102-3dscript-rotate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-102"><img src="media/102-3dscript-rotate.png" class="img-fluid"></a></p>
+<p>The sample will become parallel to the Y axis of the window. The bounding box will appear tilted.</p>
+<p>We can now make this change permanent.</p>
+<ul>
+<li>Add the following line to the script and <code>Run</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>- rotate by 4 degrees around (0, 0, 1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="media/103-3dscript-rotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-103"><img src="media/103-3dscript-rotated.png" class="img-fluid"></a></p>
+<p>This notation is a little different, but it just means that it is rotating 4 degrees around the Z axis (X, Y, Z).</p>
+</section>
+<section id="tweak-appearance-1" class="level4">
+<h4 class="anchored" data-anchor-id="tweak-appearance-1">Tweak appearance</h4>
+<p>Great. The core editing is done. We can now change some general parameters of the animation like we did for the previous dataset. We want to hide the bounding box and make the scale bar more visible.</p>
+<ul>
+<li>Add the corresponding lines to the script, then <code>Run</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>- change timepoint to 1</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>- rotate by 4 degrees around (0, 0, 1)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>- change channel 1 min intensity to 200</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>- change channel 1 max intensity to 1500</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>- change channel 1 min alpha to 200</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>- change channel 1 max alpha to 3000</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>- change channel 2 min intensity to 150</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>- change channel 2 max intensity to 3000</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>- change channel 2 min alpha to 150</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>- change channel 2 max alpha to 3000</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>- change bounding box visibility to off</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>- change scalebar length to 50</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>- change scalebar width to 5</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>- change scalebar offset to 10</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 9 change timepoint to 200</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="media/104-3dscript-tweaked.png" class="lightbox" data-gallery="quarto-lightbox-gallery-104"><img src="media/104-3dscript-tweaked.png" class="img-fluid"></a></p>
+</section>
+<section id="make-it-smoother-1" class="level4">
+<h4 class="anchored" data-anchor-id="make-it-smoother-1">Make it smoother</h4>
+<p>We can now finish off the animation by increasing the number of frames to make it smoother. The maximum number of frames is 200, as we have 200 timepoints. If you add more frames, you’ll get duplicated frames and the animation might lag.</p>
+<ul>
+<li>Change the last frame from 9 to 199, then <code>Run</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 199 change timepoint to 200</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="media/105-3dscript-smooth.png" class="lightbox" data-gallery="quarto-lightbox-gallery-105"><img src="media/105-3dscript-smooth.png" class="img-fluid"></a></p>
+<p>Each frame is now a timepoint and the animation is as smooth as it can be, given the original data.</p>
+</section>
+<section id="save-animation" class="level4">
+<h4 class="anchored" data-anchor-id="save-animation">Save animation</h4>
+<p>We are done with this animation, let’s save it. Always save the original animation as a <code>.tif</code> stack.</p>
+<ul>
+<li>Press ctrl+s or <code>File</code> &gt; <code>Save</code> or <code>File</code> &gt; <code>Save As</code> &gt; <code>Tiff...</code></li>
+</ul>
+<p><a href="media/106-3dscript-tiff.png" class="lightbox" data-gallery="quarto-lightbox-gallery-106"><img src="media/106-3dscript-tiff.png" class="img-fluid"></a></p>
+<p>I normally add the <code>3D</code> prefix to the filename.</p>
+<p>Then, also save the animation as a <code>.avi</code> video file.</p>
+<ul>
+<li>Go to <code>File</code> &gt; <code>Save As</code> &gt; <code>AVI...</code></li>
+<li>Change the <code>Compression</code> to <code>None</code> (otherwise your image quality will be degraded) and choose the frame rate for the video (15fps works fine in this case).</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/107-3dscript-avi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-107"><img src="media/107-3dscript-avi.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="media/108-3dscript-compress.png" class="lightbox" data-gallery="quarto-lightbox-gallery-108"><img src="media/108-3dscript-compress.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>This will create an uncompressed <code>.avi</code> file. You can usually play this file on your video player.</p>
+<p><a href="media/109-3dscript-play.png" class="lightbox" data-gallery="quarto-lightbox-gallery-109"><img src="media/109-3dscript-play.png" class="img-fluid"></a></p>
+<p>However, this video can be large. So for presentation purposes and other usages, it is good practice to compress the video into a <code>.mp4</code> container using a high-quality compression parameter to reduce the file size without affecting the image quality. A good software for this is <a href="https://handbrake.fr">HandBrake</a>.</p>
+</section>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Pietzsch2015-md" class="csl-entry" role="listitem">
+Pietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. <span>“BigDataViewer: Visualization and Processing for Large Image Data Sets.”</span> <em>Nat. Methods</em> 12 (June): 481–83. <a href="https://doi.org/10.1038/nmeth.3392">https://doi.org/10.1038/nmeth.3392</a>.
+</div>
+<div id="ref-Schindelin2012-di" class="csl-entry" role="listitem">
+Schindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. <span>“Fiji: An Open-Source Platform for Biological-Image Analysis.”</span> <em>Nat. Methods</em> 9 (June): 676–82. <a href="https://doi.org/10.1038/nmeth.2019">https://doi.org/10.1038/nmeth.2019</a>.
+</div>
+<div id="ref-Schmid2010-ep" class="csl-entry" role="listitem">
+Schmid, Benjamin, Johannes Schindelin, Albert Cardona, Mark Longair, and Martin Heisenberg. 2010. <span>“A High-Level 3D Visualization API for Java and ImageJ.”</span> <em>BMC Bioinformatics</em> 11 (December): 274. <a href="https://doi.org/10.1186/1471-2105-11-274">https://doi.org/10.1186/1471-2105-11-274</a>.
+</div>
+<div id="ref-Schmid2019-bm" class="csl-entry" role="listitem">
+Schmid, Benjamin, Philipp Tripal, Tina Fraaß, Christina Kersten, Barbara Ruder, Anika Grüneboom, Jan Huisken, and Ralf Palmisano. 2019. <span>“3Dscript: Animating 3D/4D Microscopy Data Using a Natural-Language-Based Syntax.”</span> <em>Nat. Methods</em> 16 (April): 278–80. <a href="https://doi.org/10.1038/s41592-019-0359-1">https://doi.org/10.1038/s41592-019-0359-1</a>.
+</div>
+</div>
 
 
 </section>
@@ -682,6 +1786,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -52,298 +52,298 @@
   {
     "objectID": "practicals/practical_tracking/index.html",
     "href": "practicals/practical_tracking/index.html",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "",
     "text": "This is a (very) basic tutorial on how to track cells using Mastodon (Girstmair et al. 2025) in Fiji (Schindelin et al. 2012).\n\nObjectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis\nWe will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688\nThe original data is from this paper https://elifesciences.org/articles/34410\nMastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-summary",
     "href": "practicals/practical_tracking/index.html#sec-summary",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "",
     "text": "This is a (very) basic tutorial on how to track cells using Mastodon (Girstmair et al. 2025) in Fiji (Schindelin et al. 2012).\n\nObjectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis\nWe will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688\nThe original data is from this paper https://elifesciences.org/articles/34410\nMastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-requirements",
     "href": "practicals/practical_tracking/index.html#sec-requirements",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Requirements",
     "text": "Requirements\n\nParhyale dataset\nFiji/ImageJ\nMastodon",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-setup",
     "href": "practicals/practical_tracking/index.html#sec-setup",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Setup",
     "text": "Setup\n\nDownload Dataset\nNote! If you are following this during the course, the dataset has already been downloaded.\n\nGo to https://zenodo.org/records/13944688\nClick to download https://zenodo.org/records/13944688/files/Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip?download=1\nWait. It’s a 4.3GB ZIP file\nMove the file to a working directory\nUnzip Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip\nWait. It’ll be unzipped to 23GB\n\n\n\n\n\n\n\nYour working directory after downloading and unzipping the dataset file.\n\n\n\n\n\n\n\nContents of the dataset directory.\n\n\n\n\n\n\n\nDownload Fiji\n\nGo to https://fiji.sc\nChoose Distribution: Stable\nClick the big download button\nCopy fiji-stable-linux64-jdk.zip to working directory and unzip it\nOpen the new directory fiji-stable-linux64-jdk/Fiji.app/\nDouble-click on fiji-linux-x64 launcher\nFiji will open\n\n\n\n\nInstall Mastodon\n\nClick on Help &gt; Update...\n\n\n\nThe updater will open and say Fiji is up-to-date\nClick Manage Update Sites\n\n\n\n\n\n\n\n\n\n\n\n\nA window will open with a list of plugins available to install in Fiji\n\n\n\nSearch for “mastodon”\n\n\n\nSeveral Mastodon related plugins will appear\nClick on the checkbox for Mastodon\n\n\n\nClick Apply and Close and then Apply Changes\n\n\n\nWait… until the downloads are finished. Then, click OK\n\n\n\n\n\n\n\n\n\n\n\n\nRestart Fiji (close window and double-click the launcher)",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-open-project",
     "href": "practicals/practical_tracking/index.html#sec-open-project",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Open Mastodon Project",
     "text": "Open Mastodon Project\n\nIn Fiji click on Plugins &gt; Tracking &gt; Mastodon &gt; Mastodon Launcher\n\n\n\nMastodon Launcher window will open\nClick on “open Mastodon project” (top left) and “Open another project” (bottom right)\n\n\n\n\n\n\n\n\n\n\n\n\nNavigate to the directory Mastodon_Auto-Tracking_Demo_Ph-limb-dev/\nSelect the file Parhyale_LimbDev_30tps.mastodon\n\n\n\nSeveral new windows will open (Console, Mastodon, BigDataViewer, TrackScheme, Data table)",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-inspect-dataset",
     "href": "practicals/practical_tracking/index.html#sec-inspect-dataset",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Inspect the Dataset",
     "text": "Inspect the Dataset\n\nLet’s focus on the Mastodon window. Close Console, BigDataViewer, TrackScheme, Data table\n\n\n\nThis is the main project menu from where you can open windows, set options, process data and save the project\nThe most important buttons for this tutorial are bdv (BigDataViewer) and trackscheme\nClick on bdv and make the window larger\n\n\n\nDrag the timepoint slider at the bottom to see cells moving and dividing\nUsing your acquired BigDataViewer skills, focus on the surface of the embryo\nIf you get lost, press Shift+Z to re-orient the embryo\nFind a cell that divides before timepoint 15 and looks trackable\nZoom on it using Ctrl+Shift+scroll and center it by holding the right button and dragging the mouse\nUse Shift+scroll to navigate through z and M-N to go through time\n\n\n\n\n\n\n\n\n\n\n\n\nYou are ready to track",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-manual-tracking",
     "href": "practicals/practical_tracking/index.html#sec-manual-tracking",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Manual Tracking",
     "text": "Manual Tracking\n\nOn the Mastodon project window, click on the trackscheme button\nThe TrackScheme window will appear\n\n\n\nResize the bdv window to be side-by-side with the TrackScheme\nClick on the bdv window, set the timepoint to some frames before mitosis, Shift+scroll to find the center of the nucleus, put your mouse pointer there and press A\nA round magenta circle will appear over the nucleus and in the TrackScheme\n\n\n\nWith your mouse over the circle, use Shift+Q and Shift+E to adjust the size of the spot to roughly the nucleus diameter\n\n\n\nZoom in on the new spot in the TrackScheme, hover and click on it and watch what happens in the bdv window\n\n\n\nGo back to the bdv, hover the pointer over the circle and hold the spacebar to adjust the position of the circle and the nucleus\n\n\n\nNow let’s add a second spot\nHover the mouse inside the circle and hold A. This will advance to the next frame showing you the first spot in white dashed line and the second spot in white solid line with a white solid link between the two.\n\n\n\nStill holding A, position the second spot, then release A to create the new linked spot\nCheck how the second spot and a link were created in the TrackScheme automatically\n\n\n\nContinue to track the nucleus for a few more frames, until the frame immediately before division\nNote that when you click on a spot in the bdv window, the corresponding spot is highlighted in the TrackScheme window\nSee what happens to the bdv when clicking the spots in TrackScheme… (nothing, unless it is the spot in view)\nLet’s change that\nIn the menu bar of bdv and TrackScheme windows there are locks 1, 2, 3. Click on lock 1 in both windows\n\n\n\nNow click through spots in the TrackScheme; the view in the bdv will change to show the selected spot at the center\n\n\n\nBefore we continue tracking the cell division, let’s check one of the amazing Mastodon features\nClick on the bdv button in the Mastodon project window and another bdv window will open\n\n\n\nNow activate lock 1 and click on one of the TrackScheme spots; both windows will be synchronized!\n\n\n\nWhy is this useful for manual tracking?\nAdjust the view to center the spot in the second bdv window, press Shift+Y, and select a spot from the TrackScheme. Now we have both XY and ZY views of the same nucleus!\n\n\n\nWhich is great for tracking in 3D. You can check, for instance, that your spot is well centered in Z and adjust it in this window\n\n\n\nContinue the tracking of one of the daughter cells. Select the last spot in the TrackScheme, go to the XY bdv, hover the mouse over the circle and hold A, move the spot, and release A to add it.\nDo it for a few frames\nThen go back to the pre-division spot and add a linked spot corresponding to the other daughter cell\nThis will create the first branch of the lineage tree\n\n\n\nContinue tracking the second daughter cell for a few frames\n\n\n\nIf you zoom out the TrackScheme view you will be able to see the full branched tree",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-semiauto-tracking",
     "href": "practicals/practical_tracking/index.html#sec-semiauto-tracking",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Semi-Automated Tracking",
     "text": "Semi-Automated Tracking\n\nThis mode will try to guess where the next nucleus is and automatically create the spots and links\nTo start, choose a different nucleus to track and press A to add a new spot\n\n\n\nNow, hovering the pointer above the spot press Ctrl+T\nA lineage will appear in the TrackScheme.\n\n\n\nCheck how accurate it is by clicking on the spots and watching their position relative to the nucleus in the bdv windows\nTry going further by hovering on a spot and pressing Ctrl+T to continue the semi-automated tracking. See how long you can go, how it behaves with cell divisions, and which cells work well with it and which don’t\n\n\n\nThere are many parameters that can be adjusted to tweak the semi-automated tracking behavior, check the documentation",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-auto-tracking",
     "href": "practicals/practical_tracking/index.html#sec-auto-tracking",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Automated Tracking",
     "text": "Automated Tracking\n\nThe final part of this tutorial is to try automatic detection and linking of spots\nThis is the dream: loading your data and getting out your lineage. However, in practice, it’s a lot messier. Cleaning, fixing, and curating the data is required to get a nice informative lineage\nWe will use a simplified version of the protocol included in this dataset in the file Protocol_Auto-Detection_Auto-Linking.docx\n\n\n\nDetection\n\nIn the Mastodon window, go to Plugins &gt; Tracking &gt; Detection...\n\n\n\nPress Next twice (leave options as is)\n\n\n\n\n\n\n\n\n\n\n\n\nChoose Advanced DoG detector and press Next\nKeep Detect: bright blobs, change Estimated diameter to 35px and Quality threshold to 100. Behavior should remain as Add\n\n\n\n\n\n\n\n\n\n\n\n\nClick Preview and see how well the detection will work by exploring a new bdv window.\n\n\n\nDo you observe too many false positives? You can change the diameter, for example, and try the preview again to see what happens to the detected spots\nOnce satisfied, press Next and wait\n\n\n\nWhen the detection is done, press Finish\n\n\n\nThe bdv windows and the TrackScheme will be showing a lot of new spots.\nExplore the spots in the BigDataViewer and TrackScheme windows. If you zoom in a lot you’ll see the unlinked, individual spots per frame\n\n\n\n\nCleaning\n\nBefore we try to automatically link these spots, let’s remove low quality detections\nOn the Mastodon window click on Table, resize it to have more space, and resize the column Detection q... to show Detection quality\n\n\n\n\n\n\n\n\n\n\n\n\nClick on Detection quality to sort the table\n\n\n\nClick on the first row to select it. Select all rows where Detection quality is &lt;400\nThen click Edit &gt; Delete Selection\n\n\n\nClose the table\nYou can also manually delete obviously wrong spots by hovering and pressing D. Clean up the ones outside the embryo\n\n\n\nLinking\n\nNow let’s try linking\nIn the main Mastodon window click on Plugins &gt; Tracking &gt; Linking...\nKeep All spots selected for all timepoints (0-29) and press Next\nChoose Lap linker and click Next\n\n\n\n\n\n\n\n\n\n\n\n\nChange the parameters to:\n\nFrame to frame linking: Max distance to 40px\nGap closing: Max distance to 60px (keep others as is)\nTrack division: Check Allow track division, set Max distance to 40px, and press + to add a Feature penalty and set it to Center ch1 to 0.3\n\nPress Next to start linking and wait… then press Finish\n\n\n\n\n\n\n\n\n\n\n\n\nNote that there are now tracks in the bdv and TrackScheme windows. Explore them a bit\n\n\n\nMastodon can calculate features (position, displacement, velocity, etc.) of individual spots, links and branches. Let’s do that\nIn the main Mastodon window press compute features. A Feature calculation window will open\n\n\n\nPress compute and wait… when it’s done, close it.\nNote that now the tracks in the BigDataViewer is showing colored links\n\n\n\nOpen the table window from the main window\nIt’ll be filled with computed features",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-feature-visualization",
     "href": "practicals/practical_tracking/index.html#sec-feature-visualization",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Basic Feature Visualization",
     "text": "Basic Feature Visualization\n\nFinally, let’s visualize the computed features that might be interesting or useful\nIn the bdv window press File &gt; Preferences to open the feature color coding visualization parameters\n\n\n\nOn Settings &gt; Feature Color Modes click on Duplicate (it’ll generate a Number of links (2)) and then Rename. Rename it to Velocity\n\n\n\n\n\n\n\n\n\n\n\n\nOn the Coloring Spots change Read spot color from to Incoming link and change Feature to Link velocity. Then click on autoscale in the range\nOn the Coloring Links change Read link color from to Link and change Feature to Link velocity. Then also click on autoscale\nClick Apply (nothing will happen) then OK\n\n\n\nOn the bdv window press View &gt; Coloring &gt; Velocity\n\n\n\nThe spots and links in the BigDataViewer window will change colors\n\n\n\nDo the same for the other bdv window and the TrackScheme\n\n\n\nThis gives a visual representation of cells which have a high displacement per frame. These might be artifacts in linking unrelated spots or, in a good processed lineage, reveal some biological process like cell migration",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-graph-plotting",
     "href": "practicals/practical_tracking/index.html#sec-graph-plotting",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "Graph Plotting",
     "text": "Graph Plotting\n\nTo finalize, a simple example of plotting\nClick on grapher in the main Mastodon window, a plot window will open\n\n\n\nPress the lock 1 to lock the windows, select Link velocity - outgoing for X axis and Detection quality for Y axis and press Plot\n\n\n\nFind out if the spots with the highest link velocity are properly linked or if it is an artifact",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_tracking/index.html#sec-references",
     "href": "practicals/practical_tracking/index.html#sec-references",
-    "title": "Cell tracking using Mastodon in Fiji",
+    "title": "Cell tracking using Mastodon",
     "section": "References",
     "text": "References\n\n\nGirstmair, Johannes, Tobias Pietzsch, Vladimir Ulman, Stefan Hahmann, Matthias Arzt, Mette Handberg-Thorsager, Ko Sugawara, et al. 2025. “Mastodon: The Command Center for Large-Scale Lineage-Tracing Microscopy Datasets.” bioRxiv, December, 2025.12.10.693416. https://doi.org/10.64898/2025.12.10.693416.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
     "crumbs": [
       "Practicals",
-      "Cell tracking using Mastodon in Fiji"
+      "Cell tracking using Mastodon"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html",
     "href": "practicals/practical_multiview/index.html",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "",
     "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-summary",
     "href": "practicals/practical_multiview/index.html#sec-summary",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "",
     "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-requirements",
     "href": "practicals/practical_multiview/index.html#sec-requirements",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Requirements",
     "text": "Requirements\n\nMultiview lightsheet dataset\nFiji/ImageJ\nBigStitcher plugin",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-setup",
     "href": "practicals/practical_multiview/index.html#sec-setup",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Setup",
     "text": "Setup\n\nDefine working directory\n\nCreate a directory in your computer to put the files needed for this tutorial.\n\n\n\nDownload dataset\n\nGo to Zenodo URL and download 5angles-beads dataset\nUnzip the file to your working directory\nYou should see a single CZI file named Dmel_Gap43-mCherry_5Angles_2Channels_1Timepoint_60Slices_Beads\nAs described in the file name, this single CZI file contains 5 different angles, each with 2 channels and a single timepoint with 60 z-slices\nThe XY resolution is 0.276 µm and the Z resolution is 3 µm\nThe dataset also has fluorescent beads around the sample, which we will use to register the views\nThe dataset is ready\n\n\n\nDownload Fiji and BigStitcher\n\nGo to https://fiji.sc\nChoose Distribution: Stable\nClick the big download button\nCopy fiji-stable-linux64-jdk.zip to working directory and unzip it\n\n\n\nOpen the new directory fiji-stable-linux64-jdk/Fiji.app/\nDouble-click on fiji-linux-x64 launcher\nFiji will open\n\n\n\nClick on Help &gt; Update…\n\n\n\nThe updater will run and open open and say if Fiji is up-to-date\nClick Manage Update Sites\n\n\n\nA window will open with a list of plugins available to install in Fiji\n\n\n\nFind BigStitcher in the list and click on the checkbox\nClick Apply and Close\n\n\n\nThen Apply Changes\n\n\n\nWait… until the downloads are finished. Then, click OK\n\n\n\nRestart Fiji (close window and double-click the launcher)\nCheck if BigStitcher is installed under Plugins &gt; BigStitcher\n\n\n\nYou are ready!",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-inspect-dataset",
     "href": "practicals/practical_multiview/index.html#sec-inspect-dataset",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Inspect dataset",
     "text": "Inspect dataset\n\nNow let’s first inspect the dataset in Fiji\n\n\nOpen file\n\nDrag and drop the CZI file in Fiji’s main window\n\n\n\nA Bio-Formats Import Options should open\nThat’s the default importer for proprietary file formats\nThere are many options but for now simply click OK\n\n\n\nA Bio-Formats Series Options window will open\nBio-Formats recognized that this file contains more than one view (series) and is asking which ones do we want to open\nWe just want to inspect one view since they will be quite similar, so simply press OK\n\n\n\n\nAdjust contrast\n\nA big window with a black background will open\nCheck if the dimensions were correctly assigned (information line at the top and sliders at the bottom)\n\n\n\nTo see something, we first need to adjust the levels\nOpen the Brightness/Contrast (B&C) tool with Image &gt; Adjust &gt; Brightness/Contrast… (or ctrl+shift+c) and the Channels Tool with Image &gt; Color &gt; Channels Tool… (or ctrl+shift+z)\n\n\n\nPress Reset to adjust the levels of Channel 1 then slide the Z position to the middle of the sample and press reset again\n\n\n\n\n\n\n\n\n\n\n\n\nNow move the Channel slider to Channel 2 and press Reset\n\n\n\nIn the Channels window change the menu Color to Composite\n\n\n\nThe sample is ready to be visualized\n\n\n\nOpen orthogonal views\n\nTo get a sense of the data tridimentionality we want to look at the XY, XZ, and YZ optical sections\nClick on Image &gt; Stacks &gt; Orthogonal Views (or ctrl+shift+H)\nIt takes a moment. XZ and YZ panels will open\n\n\n\nResize the main window to fit the screen\nThe sample is a fly embryo which resembles a cylinder in 3D\nExplore the dataset by clicking and sliding the mouse pointer through the different images\n\n\n\nWhen done, please close the stack",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-define-dataset",
     "href": "practicals/practical_multiview/index.html#sec-define-dataset",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Define dataset",
     "text": "Define dataset\n\nBefore we begin, we need to define a multiview dataset and resave the dataset\nDefining multiview dataset will create an XML file where all the dataset metadata and information and data from the registration process will be stored\nGo to Plugins &gt; BigStitcher &gt; General &gt; Define Multi-View Dataset\n\n\n\nA window named Choose method to define dataset will open\nOn the Define Dataset using field choose Zeiss Lightsheet Z.1 Dataset Loader (Bioformats) from the dropdown menu, since our testing dataset is from Zeiss Lightsheet Z.1, then press OK\n\n\n\nClick browse in the next window, select the CZI file, and press OK\n\n\n\nBigStitcher will read the metadata of the CZI and show a dialog with the details\nCheck that five angles are present, that there are two channels and that the XYZ resolution matches the expected values (see above)\nThen press OK\n\n\n\nIf you look into the working directory, an XML file named dataset will have appeared there\n\n\n\nYou can open this file in a text editor to see the information stored there\nRight-click the file, select Open With… and choose Text Editor\nThe file has the file name, the image dimensions, the XYZ resolution, etc\n\n\n\nNote that the XML only stores metadata from the dataset and not the actual image data",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-resave-dataset",
     "href": "practicals/practical_multiview/index.html#sec-resave-dataset",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Resave dataset",
     "text": "Resave dataset\n\nNext, we need to convert the actual image, which is still stored in the CZI, to a format that allow us to open and visualize this heavy dataset in an efficient and lightweight manner\nFor that, we will resave the data into HDF5 format\nGo to Plugins &gt; BigStitcher &gt; I/O &gt; Resave as HDF5 (local)\n\n\n\nThe new window Select dataset for Resaving as HDF5 will automatically load the last used XML file, in this case, our dataset.xml\nYou can choose whether you want to convert every angle, all channels, all timepoints, or only a subset of those\nWe want it all, press OK\n\n\n\nAnother window will appear with some resaving options\nLeave the options as is, but make sure that the Export path is pointing to the dataset.xml file (click on Browse and, if the file is not selected, navigate and select dataset.xml)\nPress OK and wait…\n\n\n\nResaving this dataset takes about 3 min. But consider that larger datasets will take significantly longer (with several timepoints, for example)\nThe Log window will show that it’s done\n\n\n\nNote that another XML file named dataset.xml~1 and a new HDF5 file named dataset.h5 were created\nEvery time the dataset file is saved, BigStitcher creates a backup copy. dataset.xml~1 was the original dataset.xml which was renamed after the resaving\nIf you inspect the new dataset.xml in a Text Editor you will see that it now points to the dataset.h5 file\n\n\n\nWhenever we refere to the multiview dataset we are referring to the XML/HDF5 pair",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-visualize-dataset",
     "href": "practicals/practical_multiview/index.html#sec-visualize-dataset",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Visualize dataset",
     "text": "Visualize dataset\n\nWe can finally open the main BigStitcher application\n\n\nStart BigStitcher\n\nGo to Plugins &gt; BigStitcher &gt; BigStitcher\n\n\n\nThe last dataset.xml file will be automatically loaded in the select dataset window, click OK\n\n\n\nThis will open two windows, the BigDataViewer and the Multiview Explorer\n\n\n\nThe Multiview Explorer shows a table with the individual views of the dataset. We have 5 views, each with 2 channels. Therefore, we have in total 10 views.\nClicking in a row will show the data in the BigDataViewer. You can select multiple rows freely. You can also sort the table by channel or angle for example\nSelect the five views from Channel 561 (channel 2)\n\n\n\nThe image is too bright, we need to adjust the contrast\nFor that, go to Settings &gt; Brightness & Color\nA new window will open\n\n\n\nChange the max value of channel 2 to 2500\n\n\n\nNow we can visualize the dataset in more detail\n\n\n\nLearn BigDataViewer\n\nIt is important to familiarize yourself with the BigDataViewer commands and shortcuts\nBigDataViewer is very intuitive to use but a quick look at the Help is important to not get lost\nSome of the most important commands are as follow:\nShift+X, Shift+Y, Shift+Z: That’s your compass. If you get lost, pressing one of these shortcuts will get you back to the original XY, YZ, ZX orientation\nIn this scope the rotation axis is Y\nTherefore, pressing shift+y will show you the separate angles\n\n\n\nHold left mouse button to rotate the data around the pointer\nHold right mouse button to drag the view\nCtrl+shift+scroll+up or down will zoom in/out fast (don’t use shift for normal speed)\nTip, select the Explorer window with the five views selected and press C. This will autocolor the views which is great for visualization\nTip, select the BigDataViewer and press i to activate interpolation for better visualization\n\n\n\n\n\n\n\n\n\n\n\n\nTake some time to explore the data, the different views, zoom in and out, find the beads, and get familiar with the BigDataViewer\nThen finish with the 5-views oriented as in the image",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-detect-points",
     "href": "practicals/practical_multiview/index.html#sec-detect-points",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Detect points",
     "text": "Detect points\n\nWe can now start the first processing step of the pipeline, detecting points of interest to be used for the registration\nThe Multiview Explorer is always the starting point\nSelect the five views of channel 561 (if not selected)\nIn this case, we want only the views of channel 2 to be selected since it is in this channel that the beads are visible\nThen, then right click the rows with the mouse\nA long menu will appear. This is the main menu of BigStitcher. Anything that we select will only be applied to the selected views.\nAfter right-clicking, find the section Processing and select Detect Interest Points…\n\n\n\nIn this first window we can choose the type of detection (Default: Difference of Gaussian) and a label to describe these interest points\nOne dataset can have multiple sets of interest points\nWe will keep the default options and press OK\n\n\n\nWe can set different parameters for the Difference of Gaussian approach\nWhat is important to us at this point is to make sure that Interactive… is set for Interest point specification and that you change Downsample XY from Match Z Resolution (less downsampling) to 2x. The latter is not essential for all datasets but it works better for this dataset which has relatively high anisotropy (lower Z resolution compared to XY). Keep Downsample Z as 1x.\nPress OK\n\n\n\nIn case, we can select which view we will open the interactive window and if we will load the entire stack. Simply press OK to load the entire first view\n\n\n\nA stack will open with a rectangular ROI placed at the top left corner\nThe ROI shows a live view of detected points for the current parameters Sigma and Threshold present in the other window\n\n\n\nSigma is the size (radius) of the point and Threshold is the intensity-based cut value to discard low-quality detections\nThe default is to Find DoG maxima (red) or, in other words, bright spots. You can also find dark spots surrounded by bright areas (useful for some samples)\nThis is a normal ImageJ window, so you can zoom, adjust contrast, and if you lose the ROI you can simply draw a new rectangular ROI\nYou can drag the ROI around by clicking inside it and holding/dragging it\n\n\n\nWhat we want to do now is to adjust the Sigma and Threshold so that most of the beads outside the embryo are properly detect with the least of spurious detections\nThe best way to begin is to zoom in into a bead outside the embryo and check if the circle size is matching well the bead. Move the Sigma slider, aiming for a circle slightly larger than the bead\nRemember to also move through the Z slices of the stack to see how the detection behaves\nIf the size looks good, now increase the Threshold until real beads begin to not be detect. Once you reach this point roll the slider back until most beads are detected\nNote that, no matter how much you tweak these parameters, there’ll always be many detections in the sample tissues. These non-bead detections will not have a strong influence on the registration given that you have enough detected real beads\nOnce satisfied, press Done\n\n\n\nBead detection takes some time\nOnce DONE, go to the Multiview Explorer window and press Save\n\n\n\nThis is important because the detections are initially saved in memory and will be only written to disk after pressing Save (detections are saved in a directory named interestpoints.n5)\nYou can notice that the column #InterestPoints in the Multiview Explorer now shows 1 for the five views of channel 561 (but not for channel 488)",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-register-views",
     "href": "practicals/practical_multiview/index.html#sec-register-views",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Register views",
     "text": "Register views\n\nNow we can try to register these views using the detected interest points\nWith the 5-views selected, right-click and run Register using Interest Points…\n\n\n\nWe can change different registration parameters like the algorithm to be used or the specific set of previously interest points\nWe want to go with the default Fast descriptor-based (rotation invariant) Registration algorithm as it works well for bead-based registration with Z.1 datasets\nSince our views are very further apart with almost no overlap, we want to change the option Registration in between views to Compare all views against each other\nLeave the other options as is making sure we are using the Interest points labeled as beads\nClick OK\n\n\n\nA novel window will open with several other parameters to tweak. Please refer to the BigStitcher documentation for the specific function of these\nFor us, it is important to note two. The option Fix views set to Fix first view means that all other views will be mapped to the first angle. And the Transformation model set to Affine means that the data will be transformed non-rigidly to fit the individual views. This is important since different portions of the stack might have a certain degree of distortion from the objective lenses and an affine transformation helps to fit the views better together\nThe other parameters we will only need to change if our registration fails\nPress OK\n\n\n\nThis small window with Regularization Parameters can be kept as is (Rigid and 0.10). Press OK\nSame for the interest point grouping options. Press OK\n\n\n\n\n\n\n\n\n\n\n\n\nThe registration will begin and be over in a few seconds. Don’t blink or you will miss it! If successful, you will see that the individual views will now have moved over (registered) the first view and they are all overlapping in the BigDataViewer window\n\n\n\n\n\n\n\n\n\n\n\n\nNow that the views are registered, explore the dataset to verify that the registration worked well. The best way to do this is visually\nOne of the first things that you can do is to press shift+y and zoom in into a bead close to the embryo’s surface\n\n\n\nYou will see the point spread function of one bead in each individual view forming a star with generally four views (as the fifth view is too further away).\nIf the sample is registered well, the center of the point spread functions of the different views should match in the middle of the star\n\n\n\nAnother thing that you can do is to find a structure you know well in the sample and check that the tissues are actually registered. It can happen that the beads are nicely registered, but the tissues themselves are a bit off\nOne way to do this is to select only two contiguous views and check them closely\nWhen done, make sure to Save the project again\n\n\n\nAfter saving, the #Registrations column should now show the number 3 for the selected views (if not deselect and select them again to update the counter)",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-set-bounding",
     "href": "practicals/practical_multiview/index.html#sec-set-bounding",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Set bounding box",
     "text": "Set bounding box\n\nOur dataset is registered, but before fusing the views it is important to set a bounding box around the sample. This reduces the final dimensions and file size of the fused data.\nFor that, right-click and select Define Bounding Box…\n\n\n\nWe want to define it interactively, so leave the Bounding Box option as isotropic\nYou can give the bounding box a custom name and define different bounding boxes for different purposes, but the default name is good enough for this tutorial. Click OK\n\n\n\nTwo windows will open: BigDataViewer with the sample and some purple shade and a bounding box window full of sliders\n\n\n\nFor defining the bounding box I follow a specific procedure, always in the same order, to avoid inadvertently leaving out a part of your sample when fusing\nFirst, press shift+x to orient the sample on XY\n\n\n\nGo through the sample (Z) top to bottom to get a sense of the entire volume and stop back at the middle\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMove the x min slider to the right to cut out the region on the left of the sample (the dashed line is the reference edge). Get close to the sample, but leave a gap\n\n\n\nOnce the placed x min, go again top to bottom through Z to make sure nothing was cut out\nNow do the same of x max to cut out the region on the right side of the sample\n\n\n\nNext we want to cut a bit from the top and bottom regions\nMove the slider y min to cut from the top and y max to cut from the bottom. Remember to go through Z to make sure it is not cutting the tip off the embryo (it happens)\n\n\n\n\n\n\n\n\n\n\n\n\nFinally, press shift+y to cut out the exceeding portions in the Z direction\n\n\n\nUse z min to cut from the top (in this orientation), always going through Y to check!\nThen adjust z max to cut from the bottom (in this orientation), also going through Y.\n\n\n\n\n\n\n\n\n\n\n\n\nWhen done, press OK in the bounding box window\n\n\n\nThe dimensions of the interactively defined bounding box and the estimated sized of the fused image will appear.\nPress OK and Save",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-fuse-single",
     "href": "practicals/practical_multiview/index.html#sec-fuse-single",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Fuse dataset (one channel)",
     "text": "Fuse dataset (one channel)\n\nFinally, let’s begin the fusing of registered views\nSelect the five registered views in the Multiview Explorer, right-click and press Image Fusion…\n\n\n\nThe window with fusion options will appear\n\n\n\nOur “My Bounding Box” is automatically selected for the Bounding Box\nWe can choose to downsample the fused image. I highly recommend downsampling 2x, 4x, or even 8x, depending on the dataset, if you are fusing a dataset for the first time.\nFusing without downsampling (1x) can take a really long time for large samples (many hours), so it is good practice to downsample the fused image to make sure the fusing parameters are good for your dataset before fusing the whole thing.\nBut for this tutorial, you can leave at 1x\nFor Interpolation leave Linear interpolation as it gives better outputs\nFusion type is an important parameter to choose wisely\nThe simplest is Avg, which averages the signal of every view per pixel. This is quick but it is combining the good contrast of one view with the blurred side of another view and the resulting contrast will be suboptimal.\nAvg, Blending is the same as Avg, but it blends smoothly the edges of the different views giving a slightly better fusing than simple Avg\nAvg, Blending & Content Based improves the other two options by adding a step that checks and keeps only the best information for each coordinate (keep good contrast, discard blurred information). This option gives the best results. However, it is also the one that requires more memory and takes longer to finish (much longer)\nTherefore, I would start with 2x or 4x downsample using Avg, Blending before trying less downsampling and the content based fusion\nFor the Pixel type I often use 16-bit, but it depends on what is your goal with the fused image. If it is only to have a volume visualization, 8-bit might be enough. If further processing and analysis is expected, definitely go for 16-bit or, in special cases, 32-bit.\nBigStitcher also has an option for using the interest points information during the fusion step to obtain better results (Non-Rigid fusion). This is for advanced users and I have not tried it enough to have an opinion about it.\nGenerally, we want to have one fused image per timepoint per channel\nAnd I always Save as (compressed) TIFF stacks for the Fused image option. Choosing Display using ImageJ can be dangerous as the fused image will be large and your computer can run out of memory and crash. Writing to disk is safer.\nAfter pressing OK there’ll be another window to define the min/max levels, but they are automatically detected. Press OK\n\n\n\nThe output directory will be the same where the dataset.xml is. You can add a Filename addition to distinguish different types of fusion and downsampling (useful when doing it multiple times)\nPress OK and fusion will start\n\n\n\nOnce done, drag and drop the fused dataset named avg_blend_1x_fused_tp_0_ch_1 in Fiji to open it and adjust the contrast with the Brightness/Contrast tool to see the data\n\n\n\n\n\n\n\n\n\n\n\n\nInspect the fusion result, checking for artifacts. If your sample has a membrane staining, for example, check for doubled membranes\nNote that this is an isotropic dataset",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-duplicate-transformation",
     "href": "practicals/practical_multiview/index.html#sec-duplicate-transformation",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Duplicate transformation",
     "text": "Duplicate transformation\n\nNow that we have successfully registered and fused the views of one channel, we can simply apply the series of transformations to the other channel without the need to detect interest points or register the channel independently\n\n\n\nYou can do so using the tool Duplicate Transformations from BigStitcher\nFirst, close the Multiview Explorer and the Select dataset window that pops-up\nThen go to Plugins &gt; BigStitcher &gt; General &gt; Tools &gt; Duplicate Transformations\n\n\n\nSelect the option One channel to other channels\n\n\n\nA Select dataset window will open with the last dataset.xml already opened. Press OK\n\n\n\nNow choose the source channel. Remember that we registered the Channel 561 (channel 2).\nThe Target channel(s) is All Channels (all the other channels except for the source one).\nThe last option, Duplicate which transformations is important. Generally, Replace all transformations work for most cases. However, I often prefer to use Add last transformation only. This will take the last transformation from the source channel and apply to the target channel.\nNote, however, that for this to work, the source channel can only be one transformation ahead of the target. If for instance, we ran two subsequent transformations for the source channel, then applying only the last would not duplicate all the transformations. Always check the #Registrations in the Multiview Explorer.\n\n\n\nOnce you press OK, the transformations will be applied in the XML file. It’s quick.\nNow open BigStitcher again and check if the 5 views of the other channel are registered (they should)",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#sec-fuse-all",
     "href": "practicals/practical_multiview/index.html#sec-fuse-all",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "Fuse dataset (all channels)",
     "text": "Fuse dataset (all channels)\n\nWe have now both channels registered, but only one fused\nTo fuse both channels select all the views in the Multiview Explorer\n\n\n\nThen set the desired parameters for fusion (optimized previously) and run the fusion again as described above\nThis time there will be two files as output: avg_blend_1x_fused_tp_0_ch_0.tif and avg_blend_1x_fused_tp_0_ch_1.tif\n\n\n\nOpen both files in Fiji and adjust their contrast\n\n\n\nThen go to Image &gt; Color &gt; Merge Channels…\n\n\n\nSelect ch_0 for C1 and ch_1 for C2 and press OK\n\n\n\nA red-green 2-channel stack will open\nAs red-green isn’t good, use the LUT tool to update the colors to green for C1 and magenta for C2.\n\n\n\n\n\n\n\n\n\n\n\n\nWe can even compare this fused dataset with one single view of the original dataset.\nDrag and drop the CZI file, select the first view only to import, and put the stacks side-by-side for a comparison slice by slice",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
     "objectID": "practicals/practical_multiview/index.html#references",
     "href": "practicals/practical_multiview/index.html#references",
-    "title": "Multiview reconstruction using BigStitcher in Fiji",
+    "title": "Multiview reconstruction using BigStitcher",
     "section": "References",
     "text": "References\n\n\nHörl, David, Fabio Rojas Rusak, Friedrich Preusser, Paul Tillberg, Nadine Randel, Raghav K Chhetri, Albert Cardona, et al. 2019. “BigStitcher: Reconstructing High-Resolution Image Datasets of Cleared and Expanded Samples.” Nat. Methods 16 (September): 870–74. https://doi.org/10.1038/s41592-019-0501-0.\n\n\nPietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. “BigDataViewer: Visualization and Processing for Large Image Data Sets.” Nat. Methods 12 (June): 481–83. https://doi.org/10.1038/nmeth.3392.\n\n\nPreibisch, Stephan, Stephan Saalfeld, Johannes Schindelin, and Pavel Tomancak. 2010. “Software for Bead-Based Registration of Selective Plane Illumination Microscopy Data.” Nat. Methods 7 (June): 418–19. https://doi.org/10.1038/nmeth0610-418.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
     "crumbs": [
       "Practicals",
-      "Multiview reconstruction using BigStitcher in Fiji"
+      "Multiview reconstruction using BigStitcher"
     ]
   },
   {
@@ -447,7 +447,7 @@
     "href": "practicals/practical_cartography/index.html",
     "title": "Tissue cartography using Blender",
     "section": "",
-    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released known as Blender Tissue Cartography (Claussen et al. 2025). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThe tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), there is another tutorial explaining how to set up and run the pipeline (Vellutini 2022).\nUV Editing - Go to UV - Remove cube - Orient sample vertically - Deselect bounding box - Change mode to face select (3) - Select all vertices/edges - UV &gt; Cylinder projection",
+    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released known as Blender Tissue Cartography (Claussen et al. 2025). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThe tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), there is another tutorial explaining how to set up and run the pipeline (Vellutini 2022).",
     "crumbs": [
       "Practicals",
       "Tissue cartography using Blender"
@@ -458,7 +458,7 @@
     "href": "practicals/practical_cartography/index.html#sec-summary",
     "title": "Tissue cartography using Blender",
     "section": "",
-    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released known as Blender Tissue Cartography (Claussen et al. 2025). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThe tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), there is another tutorial explaining how to set up and run the pipeline (Vellutini 2022).\nUV Editing - Go to UV - Remove cube - Orient sample vertically - Deselect bounding box - Change mode to face select (3) - Select all vertices/edges - UV &gt; Cylinder projection",
+    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released known as Blender Tissue Cartography (Claussen et al. 2025). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThe tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), there is another tutorial explaining how to set up and run the pipeline (Vellutini 2022).",
     "crumbs": [
       "Practicals",
       "Tissue cartography using Blender"
@@ -657,12 +657,144 @@
   {
     "objectID": "practicals/practical_3d/index.html",
     "href": "practicals/practical_3d/index.html",
-    "title": "Visualization of 3D images",
+    "title": "Visualization of 3D data",
     "section": "",
-    "text": "Visualization of 3D images\n\nMax projections\n\nOrthogonal views\n\nReslicing\n\nBigData viewer\n\n3D script",
+    "text": "This tutorial shows different approaches to visualize 3D microscopy data in Fiji (Schindelin et al. 2012). It provides a quick introduction to some of the tools bundled in Fiji, such as Orthogonal Views, Volume Viewer, 3D Viewer (Schmid et al. 2010), and BigDataViewer (Pietzsch et al. 2015), and a more in-depth explanation of the plugin 3Dscript (Schmid et al. 2019).",
     "crumbs": [
       "Practicals",
-      "Visualization of 3D images"
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-summary",
+    "href": "practicals/practical_3d/index.html#sec-summary",
+    "title": "Visualization of 3D data",
+    "section": "",
+    "text": "This tutorial shows different approaches to visualize 3D microscopy data in Fiji (Schindelin et al. 2012). It provides a quick introduction to some of the tools bundled in Fiji, such as Orthogonal Views, Volume Viewer, 3D Viewer (Schmid et al. 2010), and BigDataViewer (Pietzsch et al. 2015), and a more in-depth explanation of the plugin 3Dscript (Schmid et al. 2019).",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-requirements",
+    "href": "practicals/practical_3d/index.html#sec-requirements",
+    "title": "Visualization of 3D data",
+    "section": "Requirements",
+    "text": "Requirements\n\nFiji https://fiji.sc\n3Dscript https://bene51.github.io/3Dscript/",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-setup",
+    "href": "practicals/practical_3d/index.html#sec-setup",
+    "title": "Visualization of 3D data",
+    "section": "Setup",
+    "text": "Setup\n\nInstall Fiji\n\nGo to https://fiji.sc, choose Distribution: Stable, and click the download button\nCopy the downloaded archive to your working directory and unzip it\nOpen the Fiji.app directory and double-click on the launcher\nThe main window of Fiji will open\n\n\n\nInstall 3Dscript\n\nClick on Help &gt; Update... and wait\nClick on Manage Update Sites\nA list of plugins will open\nSearch for 3Dscript and click on the checkbox\nClick Apply and Close and then Apply Changes\nWait until the downloads are finished. Then, click OK\nRestart Fiji (close it and double-click the launcher)\nCheck if 3Dscript is installed under Plugins &gt; 3Dscript\nYou are ready!\n\n\n\nDownload 3D datasets\n\nT1 Head (16-bits) dataset is included in Fiji (no need to download in advance)\nbtd-gap-stg_3_z3_t53s_E3_4x.tif dataset downloadable from Zenodo",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-open-dataset",
+    "href": "practicals/practical_3d/index.html#sec-open-dataset",
+    "title": "Visualization of 3D data",
+    "section": "Open dataset",
+    "text": "Open dataset\nWe will begin by visualizing an MRI dataset of a human head that is bundled in Fiji.\n\nGo to File &gt; Open Samples &gt; T1 Head (16-bits)\n\n\n\n\n\n\n\n\n\n\n\n\nIncrease the zoom to 200% for better visualization",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-orthogonal-views",
+    "href": "practicals/practical_3d/index.html#sec-orthogonal-views",
+    "title": "Visualization of 3D data",
+    "section": "Orthogonal Views",
+    "text": "Orthogonal Views\nOrthogonal Views is a tool that shows the optical sections through the orthogonal planes of XY: XZ and YZ. It is an easy and quick way to get a sense of the tridimensionality of your dataset. Whenever I’m opening a dataset for the first time I use Orthogonal Views. To activate it:\n\nClick on Image &gt; Stacks &gt; Orthogonal Views (or press ctrl+shift+H)\nThe XZ and YZ panels will open next to your XY stack\n\n\n\nThe yellow lines are synchronized between the panels\nClick around the different parts of the head to inspect the same position under different angles\n\n\n\n\n\n\n\n\n\n\n\nOrthogonal Views is a great way to start understanding your 3D data.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-volume-viewer",
+    "href": "practicals/practical_3d/index.html#sec-volume-viewer",
+    "title": "Visualization of 3D data",
+    "section": "Volume Viewer",
+    "text": "Volume Viewer\nVolume Viewer is a more powerful plugin for 3D visualization as it supports slicing, projections, and rendering. The interface is interactive and intuitive to use. To open it:\n\nGo to Plugins &gt; Volume Viewer. The main interface will open in the Slice mode.\n\n\n\nClick around and move the sample to see optical sections from different angles.\nThen, activate the Volume mode to render the sample’s surface in 3D and explore it as well, playing with the different rendering parameters\n\n\n\n\n\n\n\n\n\n\n\nVolume Viewer also provides a way to take snapshots of the current view.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-bigdata-viewer",
+    "href": "practicals/practical_3d/index.html#sec-bigdata-viewer",
+    "title": "Visualization of 3D data",
+    "section": "BigDataViewer",
+    "text": "BigDataViewer\nBigDataViewer (Pietzsch et al. 2015) is one of the most important tools for visualizing large, multidimensional datasets. It provides a simple and intuitive interface and shortcuts to swiftly navigate through your sample even in a regular laptop. This is possible because of the underlying file format used by the BigDataViewer: the XML/HDF5 combo. Therefore, before opening the plugin, we must convert our dataset.\n\nGo to Plugins &gt; BigDataViewer &gt; Export Current Image as XML/HDF5\n\n\nA dialog with export options will open.\n\nUnder Export path, click on Browse to select the output directory for t1-head.xml\n\n\nThe export process will start. Since this is a small dataset, it’ll be fast. But, for large datasets, this can take hours.\nWhen done, you will find two new files in your working directory: t1-head.xml and t1-head.h5\n\nThe XML file stores metadata information about the image. The HDF5 file stores actual image data. These two files will always be in a pair. To open the XML/HDF5:\n\nGo to Plugins &gt; BigDataViewer &gt; Open XML/HDF5 and select the t1-head.xml\n\n\nThe BigDataViewer interface will open showing an optical section of the head sample.\n\nGetting familiar with the BigDataViewer is an essential skill for navigating large 3D datasets. It’ll also be important for the multiview registration pipeline. So, take the time to learn the basic commands and shortcuts. It is nicely intuitive. The BigDataViewer’s page on the ImageJ Docs has the official documentation and we can also go to Help &gt; Show Help for an up-to-date overview.\nSome of the movements to try:\n\nleft+click+drag: turn the sample around the mouse pointer at any arbitrary angle.\nright+click+drag: move the sample in the XY plane (of the view).\nscroll: move through the Z plane (of the view). Use shift+scroll to move fast.\nctrl+shift+scroll: zoom in or out.\n\n\n\n\n\n\n\nleft-click\n\n\n\n\n\n\n\nright-click\n\n\n\n\n\n\n\nscroll\n\n\n\n\n\n\n\nzoom\n\n\n\n\n\nBut, most importantly, are the commands to put your sample back to its original orientation or along any of the original dimension axes:\n\nshift+z: orient the sample on the XY plane.\nshift+x: orient the sample on the ZY plane.\nshift+y: orient the sample on the ZX plane.\n\n\n\n\n\n\n\nXY\n\n\n\n\n\n\n\nZY\n\n\n\n\n\n\n\nZX\n\n\n\n\n\nFinally, a visual tip. The default interpolation between image slices is nearest-neighbors. Press i to activate the tri-linear interpolation to obtain a much smoother (and improved) data visualization.\n\n\n\n\n\n\nnearest-neighbors\n\n\n\n\n\n\n\ntri-linear",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-threed-project",
+    "href": "practicals/practical_3d/index.html#sec-threed-project",
+    "title": "Visualization of 3D data",
+    "section": "3D Project",
+    "text": "3D Project\nThis is a simple tool to quickly generate a 3D animation (e.g., 360-degree rotation) from an image stack. There are basic parameters for adjusting the rendering, like projection method and opacity, and for controlling the animation. There’s only a bit of documentation. To try:\n\nGo to Image &gt; Stacks &gt; 3D Project... and click OK to generate a basic animation\n\n\nAs noticeable above, 3D Project doesn’t do so well with our MRI dataset. However, it works OK for fluorescent microscopy images, so I encourage you to try with other datasets in the future.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-threed-viewer",
+    "href": "practicals/practical_3d/index.html#sec-threed-viewer",
+    "title": "Visualization of 3D data",
+    "section": "3D Viewer",
+    "text": "3D Viewer\nThe 3D Viewer (Schmid et al. 2010) is a 3D visualization plugin bundled in Fiji. It has been the default 3D rendering engine for many years and provides a good starting point for visualizing and interacting with 3D images. The interface provides some rendering and animation options, but it is possible to create more advanced visualizations and animations with code. For more details, please consult the documentation.\nHere, we’ll only open our dataset with 3D Viewer for visualization.\n\nGo to Plugins &gt; 3D Viewer\n\n\nAn import dialog will open. In addition, to the image field itself, pay attention to the Resampling factor parameter. The default is 2, which means 2x downsampling of the original stack. Always downsample at least 2x because 3D Viewer will crash when trying to open large datasets.\n\nClick OK on the options dialog and when asked about converting to 8-bit\n\n\n\n\n\n\n\n\n\n\n\nThe main interface will open.\n\nExplore the sample interactively.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-bigvolume-browser",
+    "href": "practicals/practical_3d/index.html#sec-bigvolume-browser",
+    "title": "Visualization of 3D data",
+    "section": "BigVolumeBrowser",
+    "text": "BigVolumeBrowser\nBigVolumeBrowser is a Fiji plugin to render and interact with 3D data. It’s a fork of the unreleased BigVolumeViewer (a BigDataViewer cousin). The project is being actively developed and seems to have a good documentation already. It’s a good candidate for some testing and for keeping an eye in the future. However, we’ll not cover it in this tutorial as it’s simply too recent.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#sec-threedscript",
+    "href": "practicals/practical_3d/index.html#sec-threedscript",
+    "title": "Visualization of 3D data",
+    "section": "3Dscript",
+    "text": "3Dscript\n3Dscript is a GPU-accelerated Fiji plugin to generate animations of 3D/4D data (Schmid et al. 2019). It supports stacks with multiple channels and timepoints, has several options to control the rendering appearance, allows custom transformations and cropping of the data, and generates animations using natural language. The latter is specially useful to have precise control over the animation. Once properly installed, 3Dscript is incredibly fast to generate the animations and doesn’t require a lot of RAM as the datasets can be opened as virtual stacks (more about this below).\nTo get start, make sure the head dataset is still open.\n\nGo to Plugins &gt; 3Dscript &gt; Interactive Animation\n\n\nTwo new windows will open: 3D Animation with the initial rendering of the data and Interactive Raycaster with all the fields to control the rendering parameters.\n\n\nContrast\nThe Contrast section shows a histogram of pixel intensities of the image for each channel, which we can choose using the dropdown menu. We can set the minimum, gamma, and maximum values for the intensity and alpha (transparency) properties of each pixel. The weight option controls the general opacity of the channel (0=invisible, 100=visible). There’s also more advanced options like lighting and rendering algorithm which we’ll simply use the default states as it is usually good for most of the use cases.\nAdjusting the intensity and alpha values is the most impactful way to improve the 3D rendering. With the intensity setting we can define which pixel value in the image corresponds to total black (minimum) and which corresponds to total white. It’s the same as in the standard Brightness & Contrast tool. By default, 3Dscript will load these values from the original stack. In this case, it loaded min=3 and max=521.\n\n\n\n\n\n\n\n\n\n\nLet’s change these values to see how it impacts the 3D rendering.\n\nChange the intensity minimum to 250\n\n\n\n\n\n\n\n\n\n\n\nYou will see that the darkest parts of the rendering will become even darker and no longer visible. We are losing real information from the data; we do not want that.\n\nSet the min to 0, for now.\nThen, change the max to 250.\n\n\n\n\n\n\n\n\n\n\n\nThe brightest parts of the rendering will become all white. It is so bright that we can no longer resolve details of the surface. We are losing information and also do not want that.\n\nSet the max to 500.\n\nNote that when you change a intensity value, the min/max black line in the histogram moves. You can also grab the line and move the line manually to change the values.\nThe blue line represents the alpha values. In 3D rendering, a pixel has a transparency value linked to its intensity. The alpha min defines the value for full transparency and the max the value for full opacity.\n\nSet the alpha min to 250.\n\n\n\n\n\n\n\n\n\n\n\nThis will make darker pixels more transparent and information gets lost.\n\nSet it to 0.\n\n\n\n\n\n\n\n\n\n\n\nBy default 3Dscript sets the gamma value of alpha to 2.0. That’s a good default for fluorescence microscopy (see the next dataset below), but since this is MRI data, we need to tweak it a little different.\n\nSet the alpha gamma value to 1.0.\n\n\n\n\n\n\n\n\n\n\n\nNote that this improves the visualization as the head’s surface becomes better visible.\n\nNow set the alpha max to 250.\n\n\n\n\n\n\n\n\n\n\n\nThe surface will become even more solid because we are defining that pixels that have a value above 250 will be fully opaque.\n\nTo compare, set alpha max to 5000.\n\n\n\n\n\n\n\n\n\n\n\nYou will notice that the sample will become more transparent. Even the brain inside the skull will be visible.\n\nSet alpha max back to 500\n\n\n\n\n\n\n\n\n\n\n\nGenerally, setting the intensity and alpha to the same values is a good sane start for optimizing the rendering.\n\n\nTransformation\nThe transformation menu has controls for rotating, translating, and scaling the sample. We can either add values or manually interact with the 3D Animation window to reorient the sample. Let’s try the latter.\n\nLeft-click on the head and move it around.\n\n\nThat’s a great way to see your sample from different angles. And note that the values in the Transformation panel get updated every time you move the sample interactively. In this way you can roughly position the sample and then check and update the precise values for the target transformation.\n\nPress Reset and change the Rotation Y to 180 to look at the right side of the head\n\n\n\n\n\n\n\n\n\n\n\n\nNow change Scale to 5 and Translation X to -500 to focus on the nose\n\n\n\n\n\n\n\n\n\n\n\n\nPress Reset to return the sample to its original position\n\n\n\nCropping\nAnother useful 3Dscript option is the ability to crop the bounding box to show the inside of the sample. We can do it in the XYZ directions or in the near/far axis, defined from the user point of view.\n\nSet the Z range minimum value to 60 (you can also drag the slider) to slice the sample through the Z axis.\n\n\n\nNow rotate the sample to see the cropped region from other angles\n\n\n\n\n\n\n\n\n\n\n\n\nSet the Y range min to 125 and rotate around\n\n\n\nFinally, reset the position and cropping parameters and set the Near/Far minimum to 0\n\nand move the sample around to see the dynamic reslice of the sample with this cropping parameter\n\n\nReset transformations and cropping parameters\n\n\n\nBookmark\n3Dscript allows you to bookmark a view for later inspection. Add the current Contrast, Transformation, and Cropping parameters to the bookmark.\n\nFor that, simply click on the green icon\n\n\n\n\nOutput\nThis panel last panel defines the dimensions of the output animation. By default it uses the original stack dimensions.\n\nYou can also define if the bounding box or the scale bar will be visible (enabled by default)\n\n\nAnimation 3D\nNow that we learned the basics of setting up the rendering and view parameters, we can start generating animations of the data.\n\nClick on the Animation section and on the Start text-based animation editor button\n\n\nThis will open a special editor window for writing the animation script.\n\n\nRotate horizontally\nLet’s start with the simplest animation: a rotation of the head around 360 degrees. We need to define the number of frames that the animation will have and what will happen during these frames. We can start by defining that the animation will have ten frames.\nNote: frame counting in 3Dscript begins from 0 (frame 0 to 9 has 10 frames).\nThe editor has a strong autocomplete; you only need to type one letter at a time to be able to write the exact text needed for the animation.\n\nType f. The editor will autocomplete with From frame &lt;frame&gt;.\nType 0 and space. The autocomplete will fill with From frame 0 to frame &lt;frame&gt;.\nType 9 and space. The autocomplete will show a dropdown menu with several options (rotate by, translate, zoom by a factor of, reset transformation, and change).\nChoose rotate by and press TAB. The autocomplete will show From frame 0 to frame 9 rotate by &lt;degrees&gt;\nType 360 and space. The sentence will be From frame 0 to frame 9 rotate by 360 degrees and a dropdown will show the options horizontally, vertically, and around.\nChoose horizontally and on the next menu choose (none)\n\n\n\n\n\n\n\n\n\n\n\nWe have our first animation script and it’s just this single sentence:\nFrom frame 0 to frame 9 rotate by 360 degrees horizontally\n\nPress Run\n\nA new window will show up with an image stack of 10 frames containing the generated animation\n\n\nPress play or  and watch the head turn 360 degrees during these 10 frames.\n\nNote that we did not need to define how many degrees the head would turn for each frame. We can simply state that we need the head to turn 360 in these 10 frames and 3Dscript will deal with it.\n\n\nMake it smoother\nOur first animation is cool, but a bit jumpy. To make it smoother we can add more frames.\n\nChange the final frame from 9 to 35, so that the animation will have 36 frames in total\n\n\nNow each frame rotates by 1 degree and the animation is much smoother.\n\n\nAdd easing\nThe standard animation creates a linear rotation; every frame turns a fixed number of degrees. 3Dscript can add easing to create non-linear transitions by accelerating or decelerating the rotation.\n\nType ease at the end of the script sentence\n\nFrom frame 0 to frame 35 rotate by 360 degrees horizontally\n\nThen, press Run\n\n\n\n\n\n\n\n0°\n\n\n\n\n\n\n\n90°\n\n\n\n\n\n\n\n\n\n180°\n\n\n\n\n\n\n\n270°\n\n\n\n\n\nThe left head is the one without easing (linear transition) and the right head is the animation with easing. Note how the right head accelerates the rotation at the beginning, turning much faster, and then decelerates towards the end of the rotation. Both end the rotation at the same time. Play both animations side-by-side to see the difference (it’s very clear, once you see it).\n\n\nAnimate cropping\nLet’s add a couple more commands below our rotation sentence. We want that, after the 360 degree rotation, the animation slices through the head to show the tissues inside. For that, we can change the cropping parameters to control the position of the bounding box during the animation.\n\nAfter the first sentence, write the two commands as shown below\n\nFrom frame 0 to frame 35 rotate by 360 degrees horizontally\nFrom frame 36 to frame 71 change channel 1 bounding box min z to 60\nFrom frame 72 to frame 99 change channel 1 bounding box min z to 0\n\nPress Run\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe script is saying to rotate 360 degrees horizontally, as before, set the Z range minimum to 60 (roughly half way through the sample) for about 30 frames, and then set the Z range minimum back to 0 in the subsequent 30 frames. And that’s what we get.\n\n\nDefine multiple commands\nAnother useful 3Dscript feature is the ability to issue multiple commands to happen simultaneously, within the defined frames. For example, we can make a script that defines a horizontal rotation and Z cropping at the same time.\n\nWrite the code below in the editor and press Run\n\nFrom frame 0 to frame 71:\n- rotate by 270 degrees horizontally \n- change channel 1 bounding box max z to 60\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow cropping is happening simultaneously with the rotation.\n\n\nSet initial conditions\nIf you simply re-run the command above, the head will already start cropped. That’s because 3Dscript takes the current parameters as the initial conditions for the animation. Since the previous animation changed the bounding box without changing it back, the value remains set at the current value (cropping the head). In fact, all the options set manually in the Raycaster window will be applied to the current animation. This can cause problems if you need to generate the animation again after closing 3Dscript and can’t remember the exact parameters.\nTo prevent this issue, we can set the initial conditions of the animation. This is highly recommended in general, but it’s also necessary when you want to start the animation with the sample in an orientation that is different than the default sample orientation. You can set the initial conditions using the At frame 0: construction.\n\nWrite the code below in the editor and press Run.\n\nAt frame 0:\n- rotate by 90 degrees around (0, 1, 0) \n- change channel 1 bounding box z to (0, 129)\n\nFrom frame 0 to frame 71:\n- rotate by 150 degrees horizontally \n- change channel 1 bounding box max z to 60\n- zoom by a factor of 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTweak appearance\nWe can now also tweak the animation to reach the final appearance that we want. For example, we can change scale bar width and height and hide the bounding box lines around the sample.\n\nWrite the code below in the editor and press Run.\n\nAt frame 0:\n- rotate by 90 degrees around (0, 1, 0) \n- change channel 1 bounding box z to (0, 129)\n- change bounding box visibility to off\n- change scalebar length to 50\n- change scalebar width to 10\n- change scalebar offset to 20\n\nFrom frame 0 to frame 71:\n- rotate by 180 degrees horizontally \n- change channel 1 bounding box max z to 60\n- zoom by a factor of 2\n\nFrom frame 72 to frame 100:\n- change channel 1 bounding box max z to 129\n- zoom by a factor of 0.5 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote how there’s no longer a bounding box and the scale bar is much more visible.\nTo end this part of the tutorial using a single-channel, single-timepoint dataset. Save the animation script to file for later re-use or incremental improvements.\n\n\n\nAnimation 4D\nLet’s now try a more challenging sample with two channels and several timepoints. This dataset is shows a fly embryo during early development. The file is named btd-gap-stg_3_z3_t53s_E3_4x.tif. It has 2 channels, 30 slices, and 200 timepoints taken every 53s. The original file size is 37GB, but here we will use the 4x downsampled dataset of 2.3GB.\n\nOpen virtual stack\nEven though the original dataset would not even fit in the memory of today’s high-end laptops, we would still be able to generate animations using 3Dscript. That’s because, 3Dscript works with the so called Virtual Stacks in Fiji. This is a way to open large stacks without loading all the image data into memory (only what’s current on view is loaded). Virtual stacks are really, really great. Let’s open and inspect the new dataset as a virtual stack.\n\nClose all the previous 3Dscript windows (including the editor)\nGo to File &gt; Import &gt; TIFF Virtual Stack... or drag and drop the file on top of the &gt;&gt; arrows at the right corner of the Fiji window (secret trick) to open the dataset as a virtual stack\n\n\n\n\n\n\n\n\n\n\n\n\nZoom in to 200% and inspect the dataset using with Orthogonal Views\n\n\n\nClose the orthogonal views\n\n\n\nStart 3Dscript\n3Dscript will use the current image dimensions to generate the animation. For this reason, it is extremely important to return the stack’s zoom to 100% before opening 3Dscript! Otherwise the upsampled data may create image artifacts.\n\nOpen 3Dscript and zoom the 3D animation window to 200% (this one is fine)\n\n\nThe initial 3D rendering is always showing the position and timepoint of the original stack (if you change the timepoint of the original stack and re-open 3Dscript the current timepoint would be rendered).\n\nRotate the sample interactively to see the other side, where the surface of the embryo is.\nThen, reset the transformation and change the Rotation Y to 180\n\n\n\n\nAnimate timepoints\nThis time, before we start optimizing the rendering, we will generate a simple animation across timepoints to have an overview of how the sample changes over time. This is generally good practice as the signal of live samples tend to vary over time.\n\nClick on Animation &gt; Start text-based animation editor\nWrite the initial conditions of frame 0 as shown below (set to timepoint 1 and rotate sample 180 degrees horizontally), and generate a 10-frame animation from timepoint 1 to 200 (the last).\nThen, press Run\n\nAt frame 0:\n- change timepoint to 1\n- rotate by 180 degrees horizontally\n\nFrom frame 0 to frame 9 change timepoint to 200\n\n3Dscript will generate the 10-frame animation and set the 3D Animation window to the last timepoint. Unfortunately, there’s no way to set the timepoint for the 3D Animation window manually (it always show the last timepoint of the most recent animation).\nFrom this first animation, we can observe three things that we want to improve.\n\nThe signal from channel 1 is overexposed in the last timepoint. The intensity of this channel changes over time. The signal becomes so strong in the last timepoints that it becomes overexposed. We will fix this.\nThe signal from channel 2 is not so bright. We want to increase the contrast.\nThe sample is tilted upwards (the right side is pointing up). We want to make the sample completely horizontal, parallel to the bounding box.\n\n\n\nAdjust channel 1\n\nChange channel 1’s intensity and alpha maximum values from 600 to 1500.\n\n\nNote how the details along the bright stripe over the embryo are now more visible. As we have manually changed a Contrast value, we should add this information to the initial conditions of the animation.\n\nAdd the new values of min/max intensity/alpha for channel 1 in the script\nThen press Run\n\nAt frame 0:\n- change timepoint to 1\n- rotate by 180 degrees horizontally\n- change channel 1 min intensity to 200\n- change channel 1 max intensity to 1500\n- change channel 1 min alpha to 200\n- change channel 1 max alpha to 1500\n\nFrom frame 0 to frame 9 change timepoint to 200\n\n\nAdjust channel 2\nNow we will improve the contrast of the other channel.\n\nSwitch to channel 2 in the Contrast menu.\n\n\n\nChange channel 2’s intensity and alpha maximum values from 7000 to 3000.\n\n\nNote how the gray signal is now brighter and the sample surface looks more solid and less porous. That’s because we changed the alpha maximum value to make all the pixels above 3000 to have 100% opacity.\nUnfortunately, the increase in brightness of channel 2 led to some regions of channel 1 to become a little overexposed. Before writing the new values to the code, let’s make a small correction to channel 1. We don’t want to change the intensity, but we can make the pixels more transparent, so that they don’t become so bright.\n\nSet channel 2’s alpha maximum value from 1500 to 3000\nThen, update the script as below and Run it\n\nAt frame 0:\n- change timepoint to 1\n- rotate by 180 degrees horizontally\n- change channel 1 min intensity to 200\n- change channel 1 max intensity to 1500\n- change channel 1 min alpha to 200\n- change channel 1 max alpha to 3000\n- change channel 2 min intensity to 150\n- change channel 2 max intensity to 3000\n- change channel 2 min alpha to 150\n- change channel 2 max alpha to 3000\n\nFrom frame 0 to frame 9 change timepoint to 200\n\nGreat, the animation is looking nice now.\n\n\nAdjust orientation\nThe last detail to adjust is the sample orientation around the Z axis.\n\nChange the Rotation Z to -4 in the Transformation menu\n\n\nThe sample will become parallel to the Y axis of the window. The bounding box will appear tilted.\nWe can now make this change permanent.\n\nAdd the following line to the script and Run\n\n- rotate by 4 degrees around (0, 0, 1)\n\nThis notation is a little different, but it just means that it is rotating 4 degrees around the Z axis (X, Y, Z).\n\n\nTweak appearance\nGreat. The core editing is done. We can now change some general parameters of the animation like we did for the previous dataset. We want to hide the bounding box and make the scale bar more visible.\n\nAdd the corresponding lines to the script, then Run\n\nAt frame 0:\n- change timepoint to 1\n- rotate by 180 degrees horizontally\n- rotate by 4 degrees around (0, 0, 1)\n- change channel 1 min intensity to 200\n- change channel 1 max intensity to 1500\n- change channel 1 min alpha to 200\n- change channel 1 max alpha to 3000\n- change channel 2 min intensity to 150\n- change channel 2 max intensity to 3000\n- change channel 2 min alpha to 150\n- change channel 2 max alpha to 3000\n- change bounding box visibility to off\n- change scalebar length to 50\n- change scalebar width to 5\n- change scalebar offset to 10\n\nFrom frame 0 to frame 9 change timepoint to 200\n\n\n\nMake it smoother\nWe can now finish off the animation by increasing the number of frames to make it smoother. The maximum number of frames is 200, as we have 200 timepoints. If you add more frames, you’ll get duplicated frames and the animation might lag.\n\nChange the last frame from 9 to 199, then Run\n\nFrom frame 0 to frame 199 change timepoint to 200\n\nEach frame is now a timepoint and the animation is as smooth as it can be, given the original data.\n\n\nSave animation\nWe are done with this animation, let’s save it. Always save the original animation as a .tif stack.\n\nPress ctrl+s or File &gt; Save or File &gt; Save As &gt; Tiff...\n\n\nI normally add the 3D prefix to the filename.\nThen, also save the animation as a .avi video file.\n\nGo to File &gt; Save As &gt; AVI...\nChange the Compression to None (otherwise your image quality will be degraded) and choose the frame rate for the video (15fps works fine in this case).\n\n\n\n\n\n\n\n\n\n\n\nThis will create an uncompressed .avi file. You can usually play this file on your video player.\n\nHowever, this video can be large. So for presentation purposes and other usages, it is good practice to compress the video into a .mp4 container using a high-quality compression parameter to reduce the file size without affecting the image quality. A good software for this is HandBrake.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_3d/index.html#references",
+    "href": "practicals/practical_3d/index.html#references",
+    "title": "Visualization of 3D data",
+    "section": "References",
+    "text": "References\n\n\nPietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. “BigDataViewer: Visualization and Processing for Large Image Data Sets.” Nat. Methods 12 (June): 481–83. https://doi.org/10.1038/nmeth.3392.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.\n\n\nSchmid, Benjamin, Johannes Schindelin, Albert Cardona, Mark Longair, and Martin Heisenberg. 2010. “A High-Level 3D Visualization API for Java and ImageJ.” BMC Bioinformatics 11 (December): 274. https://doi.org/10.1186/1471-2105-11-274.\n\n\nSchmid, Benjamin, Philipp Tripal, Tina Fraaß, Christina Kersten, Barbara Ruder, Anika Grüneboom, Jan Huisken, and Ralf Palmisano. 2019. “3Dscript: Animating 3D/4D Microscopy Data Using a Natural-Language-Based Syntax.” Nat. Methods 16 (April): 278–80. https://doi.org/10.1038/s41592-019-0359-1.",
+    "crumbs": [
+      "Practicals",
+      "Visualization of 3D data"
     ]
   },
   {
