@@ -10,8 +10,9 @@ This tutorial shows different approaches to visualize 3D microscopy data in Fiji
 
 ## Requirements {#sec-requirements}
 
-- Fiji <https://fiji.sc>
-- 3Dscript <https://bene51.github.io/3Dscript/>
+- [Fiji](https://fiji.sc) [@Schindelin2012-di]
+- [3Dscript](https://bene51.github.io/3Dscript/) plugin [@Schmid2019-bm]
+- [Fly Embryo Timelapse](https://doi.org/10.5281/zenodo.18065738) dataset (4x downsampled) [@Vellutini2025-le]
 
 ## Setup {#sec-setup}
 
@@ -36,8 +37,8 @@ This tutorial shows different approaches to visualize 3D microscopy data in Fiji
 
 ### Download 3D datasets
 
-- `T1 Head (16-bits)` dataset is included in Fiji (no need to download in advance)
-- `btd-gap-stg_3_z3_t53s_E3_4x.tif` dataset downloadable from Zenodo
+- `T1 Head (16-bits)` dataset is included in Fiji; no need to download in advance.
+- `btd-gap-stg_3_z3_t53s_E3_4x.tif` dataset from this [Zenodo repository](https://doi.org/10.5281/zenodo.18065738) [@Vellutini2025-le]. The direct link to the file is [here](https://zenodo.org/records/18065739/files/btd-gap-stg_3_z3_t53s_E3_4x.tif?download=1) (2.3GB).
 
 ## Open dataset {#sec-open-dataset}
 
@@ -223,7 +224,7 @@ The main interface will open.
 
 ## BigVolumeBrowser {#sec-bigvolume-browser}
 
-BigVolumeBrowser is a Fiji plugin to render and interact with 3D data. It’s a fork of the unreleased BigVolumeViewer (a BigDataViewer cousin). The project is being actively developed and seems to have a [good documentation](https://github.com/UU-cellbiology/bigvolumebrowser/wiki) already. It’s a good candidate for some testing and for keeping an eye in the future. However, we’ll not cover it in this tutorial as it’s simply too recent. 
+BigVolumeBrowser is a Fiji plugin to render and interact with 3D data. It’s a fork of the unreleased BigVolumeViewer (a BigDataViewer cousin). The project is being actively developed and seems to have a [good documentation](https://github.com/UU-cellbiology/bigvolumebrowser/wiki) already. It’s a good candidate for some testing and for keeping an eye in the future. However, we’ll not cover it in this tutorial as it’s simply too recent.
 
 ## 3Dscript {#sec-threedscript}
 
@@ -440,7 +441,7 @@ You can also define if the bounding box or the scale bar will be visible (enable
 
 Now that we learned the basics of setting up the rendering and view parameters, we can start generating animations of the data.
 
-- Click on the `Animation` section and on the `Start text-based animation editor` button 
+- Click on the `Animation` section and on the `Start text-based animation editor` button
 
 ![](media/62-animation-button.png)
 
@@ -568,7 +569,7 @@ Another useful 3Dscript feature is the ability to issue multiple commands to hap
 
 ```default
 From frame 0 to frame 71:
-- rotate by 270 degrees horizontally 
+- rotate by 270 degrees horizontally
 - change channel 1 bounding box max z to 60
 ```
 
@@ -597,11 +598,11 @@ To prevent this issue, we can set the initial conditions of the animation. This 
 
 ```default
 At frame 0:
-- rotate by 90 degrees around (0, 1, 0) 
+- rotate by 90 degrees around (0, 1, 0)
 - change channel 1 bounding box z to (0, 129)
 
 From frame 0 to frame 71:
-- rotate by 150 degrees horizontally 
+- rotate by 150 degrees horizontally
 - change channel 1 bounding box max z to 60
 - zoom by a factor of 2
 ```
@@ -626,7 +627,7 @@ We can now also tweak the animation to reach the final appearance that we want. 
 
 ```default
 At frame 0:
-- rotate by 90 degrees around (0, 1, 0) 
+- rotate by 90 degrees around (0, 1, 0)
 - change channel 1 bounding box z to (0, 129)
 - change bounding box visibility to off
 - change scalebar length to 50
@@ -634,13 +635,13 @@ At frame 0:
 - change scalebar offset to 20
 
 From frame 0 to frame 71:
-- rotate by 180 degrees horizontally 
+- rotate by 180 degrees horizontally
 - change channel 1 bounding box max z to 60
 - zoom by a factor of 2
 
 From frame 72 to frame 100:
 - change channel 1 bounding box max z to 129
-- zoom by a factor of 0.5 
+- zoom by a factor of 0.5
 ```
 
 ::: {layout-ncol=4}
@@ -695,7 +696,7 @@ Even though the original dataset would not even fit in the memory of today’s h
 The initial 3D rendering is always showing the position and timepoint of the original stack (if you change the timepoint of the original stack and re-open 3Dscript the current timepoint would be rendered).
 
 - Rotate the sample interactively to see the other side, where the surface of the embryo is.
-- Then, reset the transformation and change the `Rotation Y` to `180` 
+- Then, reset the transformation and change the `Rotation Y` to `180`
 
 ![](media/96-3dscript-rotate.png)
 
@@ -881,7 +882,15 @@ This will create an uncompressed `.avi` file. You can usually play this file on 
 
 However, this video can be large. So for presentation purposes and other usages, it is good practice to compress the video into a `.mp4` container using a high-quality compression parameter to reduce the file size without affecting the image quality. A good software for this is [HandBrake](https://handbrake.fr).
 
-## References
+## Citation {#sec-citation}
+
+Vellutini, Bruno C. 2025. 3D-Tutorial: Visualization of 3D Data in Fiji Using Built-in Tools and the Plugin 3Dscript. GitHub. <https://github.com/bruvellu/3d-tutorial> (Zenodo archive and DOI will be available soon).
+
+## License
+
+This tutorial is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+## References {#sec-references}
 
 ::: {#refs}
 :::
