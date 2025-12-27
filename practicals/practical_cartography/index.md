@@ -14,16 +14,6 @@ The tutorial below is a simplified version of the Blender Tissue Cartography tut
 
 If you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox  [@Heemskerk2015-kv], there is another tutorial explaining how to set up and run the pipeline [@Vellutini2022-ya].
 
-
-UV Editing
-- Go to UV
-- Remove cube
-- Orient sample vertically
-- Deselect bounding box
-- Change mode to face select (3)
-- Select all vertices/edges
-- UV > Cylinder projection
-
 ## Requirements {#sec-requirements}
 
 - [Fiji/ImageJ](https://fiji.sc)
