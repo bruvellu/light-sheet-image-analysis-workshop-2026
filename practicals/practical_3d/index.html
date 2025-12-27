@@ -138,12 +138,12 @@ div.csl-indent {
 <meta property="og:description" content="">
 <meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_3d/media/01-sample-open.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta property="og:image:height" content="1200">
+<meta property="og:image:height" content="1067">
 <meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="Visualization of 3D data – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_3d/media/01-sample-open.png">
-<meta name="twitter:image-height" content="1200">
+<meta name="twitter:image-height" content="1067">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -331,7 +331,9 @@ div.csl-indent {
   <li><a href="#save-animation" id="toc-save-animation" class="nav-link" data-scroll-target="#save-animation">Save animation</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#sec-citation" id="toc-sec-citation" class="nav-link" data-scroll-target="#sec-citation">Citation</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_3d/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -376,8 +378,9 @@ div.csl-indent {
 <section id="sec-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="sec-requirements">Requirements</h2>
 <ul>
-<li>Fiji <a href="https://fiji.sc" class="uri">https://fiji.sc</a></li>
-<li>3Dscript <a href="https://bene51.github.io/3Dscript/" class="uri">https://bene51.github.io/3Dscript/</a></li>
+<li><a href="https://fiji.sc">Fiji</a> <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span></li>
+<li><a href="https://bene51.github.io/3Dscript/">3Dscript</a> plugin <span class="citation" data-cites="Schmid2019-bm">(<a href="#ref-Schmid2019-bm" role="doc-biblioref">Schmid et al. 2019</a>)</span></li>
+<li><a href="https://doi.org/10.5281/zenodo.18065738">Fly Embryo Timelapse</a> dataset (4x downsampled) <span class="citation" data-cites="Vellutini2025-le">(<a href="#ref-Vellutini2025-le" role="doc-biblioref">Vellutini 2025</a>)</span></li>
 </ul>
 </section>
 <section id="sec-setup" class="level2">
@@ -408,8 +411,8 @@ div.csl-indent {
 <section id="download-3d-datasets" class="level3">
 <h3 class="anchored" data-anchor-id="download-3d-datasets">Download 3D datasets</h3>
 <ul>
-<li><code>T1 Head (16-bits)</code> dataset is included in Fiji (no need to download in advance)</li>
-<li><code>btd-gap-stg_3_z3_t53s_E3_4x.tif</code> dataset downloadable from Zenodo</li>
+<li><code>T1 Head (16-bits)</code> dataset is included in Fiji; no need to download in advance.</li>
+<li><code>btd-gap-stg_3_z3_t53s_E3_4x.tif</code> dataset from this <a href="https://doi.org/10.5281/zenodo.18065738">Zenodo repository</a> <span class="citation" data-cites="Vellutini2025-le">(<a href="#ref-Vellutini2025-le" role="doc-biblioref">Vellutini 2025</a>)</span>. The direct link to the file is <a href="https://zenodo.org/records/18065739/files/btd-gap-stg_3_z3_t53s_E3_4x.tif?download=1">here</a> (2.3GB).</li>
 </ul>
 </section>
 </section>
@@ -1036,7 +1039,7 @@ div.csl-indent {
 <li>Write the code below in the editor and press <code>Run</code></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 71:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>- rotate by 270 degrees horizontally </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>- rotate by 270 degrees horizontally</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 60</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="4">
 <div class="quarto-layout-row">
@@ -1064,11 +1067,11 @@ div.csl-indent {
 <li>Write the code below in the editor and press <code>Run</code>.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>- rotate by 90 degrees around (0, 1, 0) </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>- rotate by 90 degrees around (0, 1, 0)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box z to (0, 129)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 71:</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>- rotate by 150 degrees horizontally </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>- rotate by 150 degrees horizontally</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 60</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="4">
@@ -1095,7 +1098,7 @@ div.csl-indent {
 <li>Write the code below in the editor and press <code>Run</code>.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>At frame 0:</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>- rotate by 90 degrees around (0, 1, 0) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>- rotate by 90 degrees around (0, 1, 0)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box z to (0, 129)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>- change bounding box visibility to off</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>- change scalebar length to 50</span>
@@ -1103,13 +1106,13 @@ div.csl-indent {
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>- change scalebar offset to 20</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>From frame 0 to frame 71:</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>- rotate by 180 degrees horizontally</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 60</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 2</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>From frame 72 to frame 100:</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>- change channel 1 bounding box max z to 129</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 0.5 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>- zoom by a factor of 0.5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="4">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
@@ -1329,8 +1332,16 @@ div.csl-indent {
 </section>
 </section>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="sec-citation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-citation">Citation</h2>
+<p>Vellutini, Bruno C. 2025. 3D-Tutorial: Visualization of 3D Data in Fiji Using Built-in Tools and the Plugin 3Dscript. GitHub. <a href="https://github.com/bruvellu/3d-tutorial" class="uri">https://github.com/bruvellu/3d-tutorial</a> (Zenodo archive and DOI will be available soon).</p>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>This tutorial is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</section>
+<section id="sec-references" class="level2">
+<h2 class="anchored" data-anchor-id="sec-references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Pietzsch2015-md" class="csl-entry" role="listitem">
 Pietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. <span>“BigDataViewer: Visualization and Processing for Large Image Data Sets.”</span> <em>Nat. Methods</em> 12 (June): 481–83. <a href="https://doi.org/10.1038/nmeth.3392">https://doi.org/10.1038/nmeth.3392</a>.
@@ -1343,6 +1354,9 @@ Schmid, Benjamin, Johannes Schindelin, Albert Cardona, Mark Longair, and Martin 
 </div>
 <div id="ref-Schmid2019-bm" class="csl-entry" role="listitem">
 Schmid, Benjamin, Philipp Tripal, Tina Fraaß, Christina Kersten, Barbara Ruder, Anika Grüneboom, Jan Huisken, and Ralf Palmisano. 2019. <span>“3Dscript: Animating 3D/4D Microscopy Data Using a Natural-Language-Based Syntax.”</span> <em>Nat. Methods</em> 16 (April): 278–80. <a href="https://doi.org/10.1038/s41592-019-0359-1">https://doi.org/10.1038/s41592-019-0359-1</a>.
+</div>
+<div id="ref-Vellutini2025-le" class="csl-entry" role="listitem">
+Vellutini, Bruno C. 2025. <em>Fly Embryo Timelapse Lightsheet Dataset</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.18065738">https://doi.org/10.5281/zenodo.18065738</a>.
 </div>
 </div>
 
