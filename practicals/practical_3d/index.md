@@ -884,7 +884,7 @@ However, this video can be large. So for presentation purposes and other usages,
 
 ## Citation {#sec-citation}
 
-Vellutini, Bruno C. 2025. 3D-Tutorial: Visualization of 3D Data in Fiji Using Built-in Tools and the Plugin 3Dscript. GitHub. <https://github.com/bruvellu/3d-tutorial> (Zenodo archive and DOI will be available soon).
+Vellutini, Bruno C. 2025. 3D Tutorial: Visualization of 3D Data in Fiji Using Built-in Tools and the Plugin 3Dscript. Zenodo. <https://doi.org/10.5281/zenodo.18070016>.
 
 ## License
 
