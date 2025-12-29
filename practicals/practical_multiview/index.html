@@ -103,12 +103,12 @@ div.csl-indent {
 <meta property="og:description" content="">
 <meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_multiview/media/01-fiji-unzip.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta property="og:image:height" content="1200">
+<meta property="og:image:height" content="979">
 <meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="Multiview reconstruction using BigStitcher – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_multiview/media/01-fiji-unzip.png">
-<meta name="twitter:image-height" content="1200">
+<meta name="twitter:image-height" content="979">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -255,9 +255,9 @@ div.csl-indent {
   <li><a href="#sec-requirements" id="toc-sec-requirements" class="nav-link" data-scroll-target="#sec-requirements">Requirements</a></li>
   <li><a href="#sec-setup" id="toc-sec-setup" class="nav-link" data-scroll-target="#sec-setup">Setup</a>
   <ul>
-  <li><a href="#define-working-directory" id="toc-define-working-directory" class="nav-link" data-scroll-target="#define-working-directory">Define working directory</a></li>
+  <li><a href="#install-fiji" id="toc-install-fiji" class="nav-link" data-scroll-target="#install-fiji">Install Fiji</a></li>
+  <li><a href="#install-bigstitcher" id="toc-install-bigstitcher" class="nav-link" data-scroll-target="#install-bigstitcher">Install BigStitcher</a></li>
   <li><a href="#download-dataset" id="toc-download-dataset" class="nav-link" data-scroll-target="#download-dataset">Download dataset</a></li>
-  <li><a href="#download-fiji-and-bigstitcher" id="toc-download-fiji-and-bigstitcher" class="nav-link" data-scroll-target="#download-fiji-and-bigstitcher">Download Fiji and BigStitcher</a></li>
   </ul></li>
   <li><a href="#sec-inspect-dataset" id="toc-sec-inspect-dataset" class="nav-link" data-scroll-target="#sec-inspect-dataset">Inspect dataset</a>
   <ul>
@@ -325,120 +325,100 @@ div.csl-indent {
 <section id="sec-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="sec-requirements">Requirements</h2>
 <ul>
-<li>Multiview lightsheet dataset</li>
-<li>Fiji/ImageJ</li>
-<li>BigStitcher plugin</li>
+<li><a href="https://fiji.sc">Fiji</a> <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span></li>
+<li><a href="https://imagej.net/plugins/bigstitcher">BigStitcher</a> plugin <span class="citation" data-cites="Preibisch2010-uu Horl2019-vx">(<a href="#ref-Preibisch2010-uu" role="doc-biblioref">Preibisch et al. 2010</a>; <a href="#ref-Horl2019-vx" role="doc-biblioref">Hörl et al. 2019</a>)</span></li>
+<li><a href="">Multiview Lightsheet</a> dataset <span class="citation" data-cites="Vellutini2025">(<a href="#ref-Vellutini2025" role="doc-biblioref"><strong>Vellutini2025?</strong></a>)</span></li>
 </ul>
 </section>
 <section id="sec-setup" class="level2">
 <h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
-<section id="define-working-directory" class="level3">
-<h3 class="anchored" data-anchor-id="define-working-directory">Define working directory</h3>
+<section id="install-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="install-fiji">Install Fiji</h3>
 <ul>
-<li>Create a directory in your computer to put the files needed for this tutorial.</li>
+<li>Go to <a href="https://fiji.sc" class="uri">https://fiji.sc</a>, choose <code>Distribution: Stable</code>, and click the download button.</li>
+<li>Copy the downloaded archive to your working directory and unzip it.</li>
 </ul>
+<p><a href="media/01-fiji-unzip.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="media/01-fiji-unzip.png" class="img-fluid"></a></p>
+<ul>
+<li>Open the <code>Fiji.app</code> directory and double-click on the launcher.</li>
+</ul>
+<p><a href="media/02-fiji-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="media/02-fiji-open.png" class="img-fluid"></a></p>
+<p>The main window of Fiji will open.</p>
+</section>
+<section id="install-bigstitcher" class="level3">
+<h3 class="anchored" data-anchor-id="install-bigstitcher">Install BigStitcher</h3>
+<ul>
+<li>Click on <code>Help</code> &gt; <code>Update...</code>.</li>
+</ul>
+<p><a href="media/03-fiji-update.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/03-fiji-update.png" class="img-fluid"></a></p>
+<p>The updater will run and say if Fiji is up-to-date.</p>
+<ul>
+<li>Click on <code>Manage Update Sites</code>.</li>
+</ul>
+<p><a href="media/04-fiji-manage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/04-fiji-manage.png" class="img-fluid"></a></p>
+<p>A window will open with a list of plugins available to install in Fiji.</p>
+<p><a href="media/05-fiji-plugins.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/05-fiji-plugins.png" class="img-fluid"></a></p>
+<ul>
+<li>Find BigStitcher in the list and click on the checkbox and <code>Apply and Close</code>.</li>
+</ul>
+<p><a href="media/06-fiji-bigstitcher.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="media/06-fiji-bigstitcher.png" class="img-fluid"></a></p>
+<ul>
+<li>Then click on <code>Apply Changes</code>.</li>
+</ul>
+<p><a href="media/07-fiji-changes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/07-fiji-changes.png" class="img-fluid"></a></p>
+<ul>
+<li>Wait… until the downloads are finished. Then, click <code>OK</code>.</li>
+</ul>
+<p><a href="media/08-fiji-ok.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="media/08-fiji-ok.png" class="img-fluid"></a></p>
+<ul>
+<li>Restart Fiji (close window and double-click the launcher).</li>
+<li>Check if BigStitcher is installed under <code>Plugins</code> &gt; <code>BigStitcher</code>.</li>
+</ul>
+<p><a href="media/09-fiji-ready.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/09-fiji-ready.png" class="img-fluid"></a></p>
+<p>Fiji and BigStitcher are ready!</p>
 </section>
 <section id="download-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="download-dataset">Download dataset</h3>
 <ul>
-<li>Go to Zenodo URL and download 5angles-beads dataset</li>
-<li>Unzip the file to your working directory</li>
-<li>You should see a single CZI file named Dmel_Gap43-mCherry_5Angles_2Channels_1Timepoint_60Slices_Beads</li>
-<li>As described in the file name, this single CZI file contains 5 different angles, each with 2 channels and a single timepoint with 60 z-slices</li>
-<li>The XY resolution is 0.276 µm and the Z resolution is 3 µm</li>
-<li>The dataset also has fluorescent beads around the sample, which we will use to register the views</li>
-<li>The dataset is ready</li>
-</ul>
-</section>
-<section id="download-fiji-and-bigstitcher" class="level3">
-<h3 class="anchored" data-anchor-id="download-fiji-and-bigstitcher">Download Fiji and BigStitcher</h3>
-<ul>
-<li>Go to https://fiji.sc</li>
-<li>Choose Distribution: Stable</li>
-<li>Click the big download button</li>
-<li>Copy fiji-stable-linux64-jdk.zip to working directory and unzip it</li>
-</ul>
-<p><a href="media/01-fiji-unzip.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="media/01-fiji-unzip.png" class="img-fluid"></a></p>
-<ul>
-<li>Open the new directory fiji-stable-linux64-jdk/Fiji.app/</li>
-<li>Double-click on fiji-linux-x64 launcher</li>
-<li>Fiji will open</li>
-</ul>
-<p><a href="media/02-fiji-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="media/02-fiji-open.png" class="img-fluid"></a></p>
-<ul>
-<li>Click on Help &gt; Update…</li>
-</ul>
-<p><a href="media/03-fiji-update.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/03-fiji-update.png" class="img-fluid"></a></p>
-<ul>
-<li>The updater will run and open open and say if Fiji is up-to-date</li>
-<li>Click Manage Update Sites</li>
-</ul>
-<p><a href="media/04-fiji-manage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/04-fiji-manage.png" class="img-fluid"></a></p>
-<ul>
-<li>A window will open with a list of plugins available to install in Fiji</li>
-</ul>
-<p><a href="media/05-fiji-plugins.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/05-fiji-plugins.png" class="img-fluid"></a></p>
-<ul>
-<li>Find BigStitcher in the list and click on the checkbox</li>
-<li>Click Apply and Close</li>
-</ul>
-<p><a href="media/06-fiji-bigstitcher.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="media/06-fiji-bigstitcher.png" class="img-fluid"></a></p>
-<ul>
-<li>Then Apply Changes</li>
-</ul>
-<p><a href="media/07-fiji-changes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/07-fiji-changes.png" class="img-fluid"></a></p>
-<ul>
-<li>Wait… until the downloads are finished. Then, click OK</li>
-</ul>
-<p><a href="media/08-fiji-ok.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="media/08-fiji-ok.png" class="img-fluid"></a></p>
-<ul>
-<li>Restart Fiji (close window and double-click the launcher)</li>
-<li>Check if BigStitcher is installed under Plugins &gt; BigStitcher</li>
-</ul>
-<p><a href="media/09-fiji-ready.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/09-fiji-ready.png" class="img-fluid"></a></p>
-<ul>
-<li>You are ready!</li>
+<li><code>Dmel_btd-gap_1tp_5v_2c_beads.czi</code> dataset from this <a href="https://doi.org/10.5281/zenodo.18078062">Zenodo repository</a> <span class="citation" data-cites="Vellutini2025">(<a href="#ref-Vellutini2025" role="doc-biblioref"><strong>Vellutini2025?</strong></a>)</span>. The direct link to the file is <a href="https://zenodo.org/records/18078062/files/Dmel_btd-gap_1tp_5v_2c_beads.czi?download=1">here</a> (3.2GB).</li>
 </ul>
 </section>
 </section>
 <section id="sec-inspect-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="sec-inspect-dataset">Inspect dataset</h2>
-<ul>
-<li>Now let’s first inspect the dataset in Fiji</li>
-</ul>
+<p>The dataset is a single CZI file that contains a single timepoint with 5 different views, each view with 2 channels and 60 slices. The XY resolution is 0.276 µm and the Z resolution is 3 µm. The dataset has fluorescent beads around the sample, which we will use to register the views.</p>
+<p>Let’s inspect the dataset in Fiji.</p>
 <section id="open-file" class="level3">
 <h3 class="anchored" data-anchor-id="open-file">Open file</h3>
 <ul>
-<li>Drag and drop the CZI file in Fiji’s main window</li>
+<li>Drag and drop the CZI file in Fiji’s main window.</li>
 </ul>
 <p><a href="media/10-open-czi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="media/10-open-czi.png" class="img-fluid"></a></p>
+<p>A Bio-Formats Import Options window should open. That’s the default importer for proprietary file formats with many options, but for now we go with the default.</p>
 <ul>
-<li>A Bio-Formats Import Options should open</li>
-<li>That’s the default importer for proprietary file formats</li>
-<li>There are many options but for now simply click OK</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/11-open-bioformats.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="media/11-open-bioformats.png" class="img-fluid"></a></p>
+<p>A Bio-Formats Series Options window will open. Bio-Formats recognized that this file contains more than one view (series) and is asking which ones do we want to open. We just want to inspect the first view since they will be quite similar.</p>
 <ul>
-<li>A Bio-Formats Series Options window will open</li>
-<li>Bio-Formats recognized that this file contains more than one view (series) and is asking which ones do we want to open</li>
-<li>We just want to inspect one view since they will be quite similar, so simply press OK</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/12-open-series.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="media/12-open-series.png" class="img-fluid"></a></p>
 </section>
 <section id="adjust-contrast" class="level3">
 <h3 class="anchored" data-anchor-id="adjust-contrast">Adjust contrast</h3>
+<p>A big window with a black background will open.</p>
 <ul>
-<li>A big window with a black background will open</li>
-<li>Check if the dimensions were correctly assigned (information line at the top and sliders at the bottom)</li>
+<li>Check if the dimensions were correctly assigned (information line at the top and sliders at the bottom).</li>
 </ul>
 <p><a href="media/13-open-stack.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="media/13-open-stack.png" class="img-fluid"></a></p>
+<p>To see something, we first need to adjust the levels.</p>
 <ul>
-<li>To see something, we first need to adjust the levels</li>
-<li>Open the Brightness/Contrast (B&amp;C) tool with Image &gt; Adjust &gt; Brightness/Contrast… (or ctrl+shift+c) and the Channels Tool with Image &gt; Color &gt; Channels Tool… (or ctrl+shift+z)</li>
+<li>Open the <code>Brightness/Contrast (B&amp;C)</code> tool with <code>Image</code> &gt; <code>Adjust</code> &gt; <code>Brightness/Contrast...</code> (or <code>Ctrl+Shift+C</code>) and the <code>Channels Tool</code> with <code>Image</code> &gt; <code>Color</code> &gt; <code>Channels Tool...</code> (or <code>Ctrl+Shift+Z</code>).</li>
 </ul>
 <p><a href="media/14-stack-tools.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="media/14-stack-tools.png" class="img-fluid"></a></p>
 <ul>
-<li>Press Reset to adjust the levels of Channel 1 then slide the Z position to the middle of the sample and press reset again</li>
+<li>Press <code>Reset</code> to adjust the levels of <code>Channel 1</code> then slide the Z position to the middle of the sample and press <code>Reset</code> again.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -451,164 +431,141 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Now move the Channel slider to Channel 2 and press Reset</li>
+<li>Now move the Channel slider to <code>Channel 2</code> and press <code>Reset</code>.</li>
 </ul>
 <p><a href="media/17-stack-channel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="media/17-stack-channel.png" class="img-fluid"></a></p>
 <ul>
-<li>In the Channels window change the menu Color to Composite</li>
+<li>In the Channels window, change the menu <code>Color</code> to <code>Composite</code>.</li>
 </ul>
 <p><a href="media/18-stack-composite.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="media/18-stack-composite.png" class="img-fluid"></a></p>
-<ul>
-<li>The sample is ready to be visualized</li>
-</ul>
+<p>The sample is ready to be visualized.</p>
 </section>
 <section id="open-orthogonal-views" class="level3">
 <h3 class="anchored" data-anchor-id="open-orthogonal-views">Open orthogonal views</h3>
+<p>To get a sense of the data tridimensionality we want to look at the XY, XZ, and YZ optical sections.</p>
 <ul>
-<li>To get a sense of the data tridimentionality we want to look at the XY, XZ, and YZ optical sections</li>
-<li>Click on Image &gt; Stacks &gt; Orthogonal Views (or ctrl+shift+H)</li>
-<li>It takes a moment. XZ and YZ panels will open</li>
+<li>Click on <code>Image</code> &gt; <code>Stacks</code> &gt; <code>Orthogonal Views</code> (or <code>Ctrl+Shift+H</code>). It takes a moment; XZ and YZ panels will open.</li>
 </ul>
 <p><a href="media/19-stack-orthogonal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="media/19-stack-orthogonal.png" class="img-fluid"></a></p>
 <ul>
-<li>Resize the main window to fit the screen</li>
-<li>The sample is a fly embryo which resembles a cylinder in 3D</li>
-<li>Explore the dataset by clicking and sliding the mouse pointer through the different images</li>
+<li>Resize the main window to fit the screen.</li>
 </ul>
 <p><a href="media/20-stack-explore.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="media/20-stack-explore.png" class="img-fluid"></a></p>
+<p>The sample is a fly embryo which resembles a cylinder in 3D.</p>
 <ul>
-<li>When done, please close the stack</li>
+<li>Explore the dataset by clicking and sliding the mouse pointer through the different images.</li>
+<li>When done, close the stack.</li>
 </ul>
 </section>
 </section>
 <section id="sec-define-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="sec-define-dataset">Define dataset</h2>
+<p>Before we begin, we need to define a multiview dataset and resave the dataset. Defining a multiview dataset will create an XML file where all the dataset metadata and information and data from the registration process will be stored.</p>
 <ul>
-<li>Before we begin, we need to define a multiview dataset and resave the dataset</li>
-<li>Defining multiview dataset will create an XML file where all the dataset metadata and information and data from the registration process will be stored</li>
-<li>Go to Plugins &gt; BigStitcher &gt; General &gt; Define Multi-View Dataset</li>
+<li>Go to <code>Plugins</code> &gt; <code>BigStitcher</code> &gt; <code>General</code> &gt; <code>Define Multi-View Dataset</code>.</li>
 </ul>
 <p><a href="media/21-dataset-define.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="media/21-dataset-define.png" class="img-fluid"></a></p>
+<p>A window named Choose method to define dataset will open.</p>
 <ul>
-<li>A window named Choose method to define dataset will open</li>
-<li>On the Define Dataset using field choose Zeiss Lightsheet Z.1 Dataset Loader (Bioformats) from the dropdown menu, since our testing dataset is from Zeiss Lightsheet Z.1, then press OK</li>
+<li>On the <code>Define Dataset</code> field choose <code>Zeiss Lightsheet Z.1 Dataset Loader (Bioformats)</code> from the dropdown menu, since our testing dataset is from Zeiss Lightsheet Z.1.</li>
+<li>Then, press <code>OK</code>.</li>
 </ul>
 <p><a href="media/22-dataset-zeiss.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="media/22-dataset-zeiss.png" class="img-fluid"></a></p>
 <ul>
-<li>Click browse in the next window, select the CZI file, and press OK</li>
+<li>Click <code>Browse</code>, select the CZI file, and press <code>OK</code>.</li>
 </ul>
 <p><a href="media/23-dataset-browse.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="media/23-dataset-browse.png" class="img-fluid"></a></p>
+<p>BigStitcher will read the metadata of the CZI and show a dialog with the details.</p>
 <ul>
-<li>BigStitcher will read the metadata of the CZI and show a dialog with the details</li>
-<li>Check that five angles are present, that there are two channels and that the XYZ resolution matches the expected values (see above)</li>
-<li>Then press OK</li>
+<li>Check if five angles are present, if there are two channels, and if the XYZ resolution matches the expected values (see above).</li>
+<li>Then, press <code>OK</code>.</li>
 </ul>
 <p><a href="media/24-dataset-metadata.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="media/24-dataset-metadata.png" class="img-fluid"></a></p>
-<ul>
-<li>If you look into the working directory, an XML file named <code>dataset</code> will have appeared there</li>
-</ul>
+<p>If we look into the working directory, an XML file named <code>dataset</code> will have appeared there.</p>
 <p><a href="media/25-dataset-xml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="media/25-dataset-xml.png" class="img-fluid"></a></p>
+<p>We can open this file in a text editor to see the information stored there.</p>
 <ul>
-<li>You can open this file in a text editor to see the information stored there</li>
-<li>Right-click the file, select Open With… and choose Text Editor</li>
-<li>The file has the file name, the image dimensions, the XYZ resolution, etc</li>
+<li>Right-click the file, select <code>Open With...</code> and choose <code>Text Editor</code>.</li>
+<li>The file has the file name, the image dimensions, the XYZ resolution, etc.</li>
 </ul>
 <p><a href="media/26-dataset-contents.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="media/26-dataset-contents.png" class="img-fluid"></a></p>
-<ul>
-<li>Note that the XML only stores metadata from the dataset and not the actual image data</li>
-</ul>
+<p>Note: the XML only stores metadata from the dataset and not the actual image data.</p>
 </section>
 <section id="sec-resave-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="sec-resave-dataset">Resave dataset</h2>
+<p>Next, we need to convert the actual image, which is still stored in the CZI, to a format that allows us to open and visualize this heavy dataset in an efficient and lightweight manner. For that, we will resave the data into HDF5 format.</p>
 <ul>
-<li>Next, we need to convert the actual image, which is still stored in the CZI, to a format that allow us to open and visualize this heavy dataset in an efficient and lightweight manner</li>
-<li>For that, we will resave the data into HDF5 format</li>
-<li>Go to Plugins &gt; BigStitcher &gt; I/O &gt; Resave as HDF5 (local)</li>
+<li>Go to <code>Plugins</code> &gt; <code>BigStitcher</code> &gt; <code>I/O</code> &gt; <code>Resave as HDF5 (local)</code>.</li>
 </ul>
 <p><a href="media/27-resave-start.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="media/27-resave-start.png" class="img-fluid"></a></p>
+<p>The new window Select dataset for Resaving as HDF5 will automatically load the last used XML file, in this case, our <code>dataset.xml</code>. We can choose whether we want to convert every angle, all channels, all timepoints, or only a subset of those.</p>
 <ul>
-<li>The new window Select dataset for Resaving as HDF5 will automatically load the last used XML file, in this case, our <code>dataset.xml</code></li>
-<li>You can choose whether you want to convert every angle, all channels, all timepoints, or only a subset of those</li>
-<li>We want it all, press OK</li>
+<li>We want it all, press <code>OK</code>.</li>
 </ul>
 <p><a href="media/28-resave-all.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="media/28-resave-all.png" class="img-fluid"></a></p>
+<p>Another window will appear with some resaving options. Leave the options as is, but make sure that the <code>Export path</code> is pointing to the <code>dataset.xml</code> file.</p>
 <ul>
-<li>Another window will appear with some resaving options</li>
-<li>Leave the options as is, but make sure that the Export path is pointing to the <code>dataset.xml</code> file (click on Browse and, if the file is not selected, navigate and select <code>dataset.xml</code>)</li>
-<li>Press OK and wait…</li>
+<li>Click on <code>Browse</code> and, if the file is not selected, navigate and select <code>dataset.xml</code>.</li>
+<li>Press <code>OK</code> and wait…</li>
 </ul>
 <p><a href="media/29-resave-file.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="media/29-resave-file.png" class="img-fluid"></a></p>
-<ul>
-<li>Resaving this dataset takes about 3 min. But consider that larger datasets will take significantly longer (with several timepoints, for example)</li>
-<li>The Log window will show that it’s done</li>
-</ul>
+<p>Resaving this dataset takes about 3 min. However, larger datasets with several timepoints, for example, will take significantly longer. The Log window will show that it’s done.</p>
 <p><a href="media/30-resave-done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img src="media/30-resave-done.png" class="img-fluid"></a></p>
+<p>Note that another XML file named <code>dataset.xml~1</code> and a new HDF5 file named <code>dataset.h5</code> were created. Every time the dataset file is saved, BigStitcher creates a backup copy. <code>dataset.xml~1</code> was the original <code>dataset.xml</code> which was renamed after the resaving. If we inspect the new <code>dataset.xml</code> in a Text Editor we will see that it now points to the <code>dataset.h5</code> file.</p>
 <ul>
-<li>Note that another XML file named <code>dataset.xml~1</code> and a new HDF5 file named <code>dataset.h5</code> were created</li>
-<li>Every time the dataset file is saved, BigStitcher creates a backup copy. <code>dataset.xml~1</code> was the original dataset.xml which was renamed after the resaving</li>
-<li>If you inspect the new dataset.xml in a Text Editor you will see that it now points to the dataset.h5 file</li>
+<li>Open the new <code>dataset.xml</code> in a text editor.</li>
 </ul>
 <p><a href="media/31-resave-xml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img src="media/31-resave-xml.png" class="img-fluid"></a></p>
-<ul>
-<li>Whenever we refere to the multiview dataset we are referring to the XML/HDF5 pair</li>
-</ul>
+<p>Whenever we refer to the multiview dataset, we mean the XML/HDF5 pair; they are always together.</p>
 </section>
 <section id="sec-visualize-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="sec-visualize-dataset">Visualize dataset</h2>
-<ul>
-<li>We can finally open the main BigStitcher application</li>
-</ul>
+<p>We can finally open the main BigStitcher application and begin the multiview reconstruction.</p>
 <section id="start-bigstitcher" class="level3">
 <h3 class="anchored" data-anchor-id="start-bigstitcher">Start BigStitcher</h3>
 <ul>
-<li>Go to Plugins &gt; BigStitcher &gt; BigStitcher</li>
+<li>Go to <code>Plugins</code> &gt; <code>BigStitcher</code> &gt; <code>BigStitcher</code>.</li>
 </ul>
 <p><a href="media/32-bigstitcher-start.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32"><img src="media/32-bigstitcher-start.png" class="img-fluid"></a></p>
+<p>The last <code>dataset.xml</code> file will be automatically loaded in the select dataset window.</p>
 <ul>
-<li>The last dataset.xml file will be automatically loaded in the select dataset window, click OK</li>
+<li>Click <code>OK</code>.</li>
 </ul>
 <p><a href="media/33-bigstitcher-latest.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img src="media/33-bigstitcher-latest.png" class="img-fluid"></a></p>
-<ul>
-<li>This will open two windows, the BigDataViewer and the Multiview Explorer</li>
-</ul>
+<p>This will open two windows, the BigDataViewer and the Multiview Explorer.</p>
 <p><a href="media/34-bigstitcher-windows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img src="media/34-bigstitcher-windows.png" class="img-fluid"></a></p>
+<p>The Multiview Explorer shows a table with the individual views of the dataset. We have 5 views, each with 2 channels. Therefore, we have in total 10 views. Clicking in a row will show the data in the BigDataViewer. We can also sort the table by channel or angle.</p>
 <ul>
-<li>The Multiview Explorer shows a table with the individual views of the dataset. We have 5 views, each with 2 channels. Therefore, we have in total 10 views.</li>
-<li>Clicking in a row will show the data in the BigDataViewer. You can select multiple rows freely. You can also sort the table by channel or angle for example</li>
-<li>Select the five views from Channel 561 (channel 2)</li>
+<li>Select multiple rows freely and try sorting it.</li>
+<li>Then, select the five views from <code>Channel 561</code> (channel 2).</li>
 </ul>
 <p><a href="media/35-bigstitcher-bright.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img src="media/35-bigstitcher-bright.png" class="img-fluid"></a></p>
+<p>The image is too bright, we need to adjust the contrast.</p>
 <ul>
-<li>The image is too bright, we need to adjust the contrast</li>
-<li>For that, go to Settings &gt; Brightness &amp; Color</li>
-<li>A new window will open</li>
+<li>Go to <code>Settings</code> &gt; <code>Brightness &amp; Color</code>.</li>
 </ul>
 <p><a href="media/36-bigstitcher-contrast.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img src="media/36-bigstitcher-contrast.png" class="img-fluid"></a></p>
+<p>A new window will open.</p>
 <ul>
-<li>Change the max value of channel 2 to 2500</li>
+<li>Change the max value of channel 2 to <code>2500</code>.</li>
 </ul>
 <p><a href="media/37-bigstitcher-adjusted.png" class="lightbox" data-gallery="quarto-lightbox-gallery-37"><img src="media/37-bigstitcher-adjusted.png" class="img-fluid"></a></p>
-<ul>
-<li>Now we can visualize the dataset in more detail</li>
-</ul>
+<p>Now we can visualize the dataset in more detail.</p>
 </section>
 <section id="learn-bigdataviewer" class="level3">
 <h3 class="anchored" data-anchor-id="learn-bigdataviewer">Learn BigDataViewer</h3>
+<p>It is important to familiarize yourself with the BigDataViewer commands and shortcuts. BigDataViewer is very intuitive to use but a quick look at the Help is important to not get lost.</p>
+<p><code>Shift+X</code>, <code>Shift+Y</code>, <code>Shift+Z</code> are our compass. If we get lost, pressing one of these shortcuts will get us back to the original XY, YZ, ZX orientation. In this scope the rotation axis is Y. Therefore, pressing <code>Shift+Y</code> will show the different angles from “above”.</p>
 <ul>
-<li>It is important to familiarize yourself with the BigDataViewer commands and shortcuts</li>
-<li>BigDataViewer is very intuitive to use but a quick look at the Help is important to not get lost</li>
-<li>Some of the most important commands are as follow:</li>
-<li>Shift+X, Shift+Y, Shift+Z: That’s your compass. If you get lost, pressing one of these shortcuts will get you back to the original XY, YZ, ZX orientation</li>
-<li>In this scope the rotation axis is Y</li>
-<li>Therefore, pressing shift+y will show you the separate angles</li>
+<li>Press <code>Shift+Y</code> and adjust the view to see the five angles.</li>
 </ul>
 <p><a href="media/38-bigstitcher-shifty.png" class="lightbox" data-gallery="quarto-lightbox-gallery-38"><img src="media/38-bigstitcher-shifty.png" class="img-fluid"></a></p>
+<p>Some of the most important commands are as follows:</p>
 <ul>
-<li>Hold left mouse button to rotate the data around the pointer</li>
-<li>Hold right mouse button to drag the view</li>
-<li>Ctrl+shift+scroll+up or down will zoom in/out fast (don’t use shift for normal speed)</li>
-<li>Tip, select the Explorer window with the five views selected and press C. This will autocolor the views which is great for visualization</li>
-<li>Tip, select the BigDataViewer and press i to activate interpolation for better visualization</li>
+<li><code>Left-click and drag</code> to rotate the data around the mouse pointer.</li>
+<li><code>Right-click and drag</code> to move the view across XY plane.</li>
+<li><code>Ctrl+Shift+Scroll</code> to zoom in/out fast (<code>Ctrl+Scroll</code> for normal speed).</li>
+<li>Select the BigDataViewer window and press <code>I</code> to activate tri-linear interpolation for better visualization.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -621,97 +578,95 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Take some time to explore the data, the different views, zoom in and out, find the beads, and get familiar with the BigDataViewer</li>
-<li>Then finish with the 5-views oriented as in the image</li>
+<li>Select the Multiview Explorer window with the five views selected and press <code>C</code>. This will autocolor the views which is great for visualization.</li>
 </ul>
 <p><a href="media/41-bigstitcher-ready.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41"><img src="media/41-bigstitcher-ready.png" class="img-fluid"></a></p>
+<p>Take some time to explore the data, the different views, zoom in and out, find the beads, and get familiar with the BigDataViewer. Then finish with the 5-views oriented as in the image above.</p>
 </section>
 </section>
 <section id="sec-detect-points" class="level2">
 <h2 class="anchored" data-anchor-id="sec-detect-points">Detect points</h2>
+<p>We can now start the first processing step of the pipeline, detecting points of interest to be used for the registration. The Multiview Explorer is always the starting point.</p>
 <ul>
-<li>We can now start the first processing step of the pipeline, detecting points of interest to be used for the registration</li>
-<li>The Multiview Explorer is always the starting point</li>
-<li>Select the five views of channel 561 (if not selected)</li>
-<li>In this case, we want only the views of channel 2 to be selected since it is in this channel that the beads are visible</li>
-<li>Then, then right click the rows with the mouse</li>
-<li>A long menu will appear. This is the main menu of BigStitcher. Anything that we select will only be applied to the selected views.</li>
-<li>After right-clicking, find the section Processing and select Detect Interest Points…</li>
+<li>Select the five views of channel 561 (if not selected).</li>
+</ul>
+<p>In this case, we want only the views of channel 2 to be selected since it is in this channel that the beads are visible.</p>
+<ul>
+<li>Then, right-click the rows with the mouse.</li>
+</ul>
+<p>A long menu will appear. This is the main menu of BigStitcher. Anything that we select will only be applied to the selected views.</p>
+<ul>
+<li>Find the section <code>Processing</code> and select <code>Detect Interest Points...</code>.</li>
 </ul>
 <p><a href="media/42-detect-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42"><img src="media/42-detect-menu.png" class="img-fluid"></a></p>
+<p>In this first window we can choose the <code>Type of interest point detection</code> (Default: <code>Difference of Gaussian</code>) and a label to describe these interest points. One dataset can have multiple sets of interest points.</p>
 <ul>
-<li>In this first window we can choose the type of detection (Default: Difference of Gaussian) and a label to describe these interest points</li>
-<li>One dataset can have multiple sets of interest points</li>
-<li>We will keep the default options and press OK</li>
+<li>We will keep the default options and press <code>OK</code>.</li>
 </ul>
 <p><a href="media/43-detect-points.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43"><img src="media/43-detect-points.png" class="img-fluid"></a></p>
+<p>We can set different parameters for the <code>Difference of Gaussian</code> approach. What is important to us at this point is to make sure that <code>Interactive...</code> is set for <code>Interest point specification</code> and that we change <code>Downsample XY</code> from <code>Match Z Resolution (less downsampling)</code> to <code>2x</code>. The latter is not essential for all datasets but it works better for this dataset which has relatively high anisotropy (lower Z resolution compared to XY). Keep <code>Downsample Z</code> as <code>1x</code>.</p>
 <ul>
-<li>We can set different parameters for the Difference of Gaussian approach</li>
-<li>What is important to us at this point is to make sure that Interactive… is set for Interest point specification and that you change Downsample XY from Match Z Resolution (less downsampling) to 2x. The latter is not essential for all datasets but it works better for this dataset which has relatively high anisotropy (lower Z resolution compared to XY). Keep Downsample Z as 1x.</li>
-<li>Press OK</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/44-detect-details.png" class="lightbox" data-gallery="quarto-lightbox-gallery-44"><img src="media/44-detect-details.png" class="img-fluid"></a></p>
+<p>In this case, we can select which view we will open the interactive window for and if we will load the entire stack.</p>
 <ul>
-<li>In case, we can select which view we will open the interactive window and if we will load the entire stack. Simply press OK to load the entire first view</li>
+<li>Press <code>OK</code> to load the entire first view.</li>
 </ul>
 <p><a href="media/45-detect-views.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45"><img src="media/45-detect-views.png" class="img-fluid"></a></p>
-<ul>
-<li>A stack will open with a rectangular ROI placed at the top left corner</li>
-<li>The ROI shows a live view of detected points for the current parameters Sigma and Threshold present in the other window</li>
-</ul>
+<p>A stack will open with a rectangular ROI placed at the top left corner. The ROI shows a live view of detected points for the current parameters <code>Sigma</code> and <code>Threshold</code> in the other window.</p>
 <p><a href="media/46-detect-interactive.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46"><img src="media/46-detect-interactive.png" class="img-fluid"></a></p>
-<ul>
-<li>Sigma is the size (radius) of the point and Threshold is the intensity-based cut value to discard low-quality detections</li>
-<li>The default is to Find DoG maxima (red) or, in other words, bright spots. You can also find dark spots surrounded by bright areas (useful for some samples)</li>
-<li>This is a normal ImageJ window, so you can zoom, adjust contrast, and if you lose the ROI you can simply draw a new rectangular ROI</li>
-<li>You can drag the ROI around by clicking inside it and holding/dragging it</li>
-</ul>
+<p><code>Sigma</code> is the size (radius) of the point and <code>Threshold</code> is the intensity-based cut value to discard low-quality detections. The default is to <code>Find DoG maxima (red)</code>, in other words, bright spots. We can also find dark spots surrounded by bright areas (useful for some samples). Note that this is a normal ImageJ window, so we can zoom, adjust contrast, and if we lose the ROI, we can simply draw a new rectangular ROI. We can drag the ROI around by clicking inside it and holding and dragging it.</p>
 <p><a href="media/47-detect-zoom.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47"><img src="media/47-detect-zoom.png" class="img-fluid"></a></p>
+<p>What we want to do now is to adjust the <code>Sigma</code> and <code>Threshold</code> so that most of the beads outside the embryo are properly detected with the least spurious detections. The best way to begin is to:</p>
 <ul>
-<li>What we want to do now is to adjust the Sigma and Threshold so that most of the beads outside the embryo are properly detect with the least of spurious detections</li>
-<li>The best way to begin is to zoom in into a bead outside the embryo and check if the circle size is matching well the bead. Move the Sigma slider, aiming for a circle slightly larger than the bead</li>
-<li>Remember to also move through the Z slices of the stack to see how the detection behaves</li>
-<li>If the size looks good, now increase the Threshold until real beads begin to not be detect. Once you reach this point roll the slider back until most beads are detected</li>
-<li>Note that, no matter how much you tweak these parameters, there’ll always be many detections in the sample tissues. These non-bead detections will not have a strong influence on the registration given that you have enough detected real beads</li>
-<li>Once satisfied, press Done</li>
+<li>Zoom in on a bead outside the embryo.</li>
+<li>Check if the circle size is matching well the bead.</li>
+<li>Move the <code>Sigma</code> slider, aiming for a circle slightly larger than the bead.</li>
+</ul>
+<p>Remember to also move through the Z slices of the stack to see how the detection behaves.</p>
+<ul>
+<li>If the size looks good, increase the <code>Threshold</code> until real beads begin to not be detected, then roll the slider back until most real beads are detected.</li>
+</ul>
+<p>Note that, no matter how much we tweak these parameters, there’ll always be many non-bead detections in the sample tissues. These detections will not have a strong influence on the registration given that we have enough real beads in the sample.</p>
+<ul>
+<li>When satisfied, press <code>Done</code>.</li>
 </ul>
 <p><a href="media/48-detect-start.png" class="lightbox" data-gallery="quarto-lightbox-gallery-48"><img src="media/48-detect-start.png" class="img-fluid"></a></p>
+<p>Bead detection takes some time.</p>
 <ul>
-<li>Bead detection takes some time</li>
-<li>Once DONE, go to the Multiview Explorer window and press Save</li>
+<li>Once DONE, go to the <code>Multiview Explorer</code> window and press <code>Save</code>.</li>
 </ul>
 <p><a href="media/49-detect-done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-49"><img src="media/49-detect-done.png" class="img-fluid"></a></p>
-<ul>
-<li>This is important because the detections are initially saved in memory and will be only written to disk after pressing Save (detections are saved in a directory named interestpoints.n5)</li>
-<li>You can notice that the column #InterestPoints in the Multiview Explorer now shows 1 for the five views of channel 561 (but not for channel 488)</li>
-</ul>
+<p>This is important because the detections are initially saved in memory and will only be written to disk after pressing <code>Save</code> (detections are saved in a directory named <code>interestpoints.n5</code>).</p>
+<p>Note that the column <code>#InterestPoints</code> in the <code>Multiview Explorer</code> now shows <code>1</code> for the five views of channel 561 (but not for channel 488).</p>
 <p><a href="media/50-detect-increment.png" class="lightbox" data-gallery="quarto-lightbox-gallery-50"><img src="media/50-detect-increment.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-register-views" class="level2">
 <h2 class="anchored" data-anchor-id="sec-register-views">Register views</h2>
+<p>Now we can try to register these views using the detected interest points.</p>
 <ul>
-<li>Now we can try to register these views using the detected interest points</li>
-<li>With the 5-views selected, right-click and run Register using Interest Points…</li>
+<li>With the 5 views selected, right-click and run <code>Register using Interest Points...</code>.</li>
 </ul>
 <p><a href="media/51-register-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-51"><img src="media/51-register-menu.png" class="img-fluid"></a></p>
+<p>We can change different registration parameters like the algorithm to be used or the specific set of previously detected interest points. We want to go with the default <code>Fast descriptor-based (rotation invariant)</code> as <code>Registration algorithm</code> since this works well for bead-based registration with Z.1 datasets.</p>
 <ul>
-<li>We can change different registration parameters like the algorithm to be used or the specific set of previously interest points</li>
-<li>We want to go with the default Fast descriptor-based (rotation invariant) Registration algorithm as it works well for bead-based registration with Z.1 datasets</li>
-<li>Since our views are very further apart with almost no overlap, we want to change the option Registration in between views to Compare all views against each other</li>
-<li>Leave the other options as is making sure we are using the Interest points labeled as <code>beads</code></li>
-<li>Click OK</li>
+<li>Because our views have almost no overlap, change the option <code>Registration in between views</code> to <code>Compare all views against each other</code>.</li>
+</ul>
+<p>Leave the other options as is making sure we are using the Interest points labeled as <code>beads</code>.</p>
+<ul>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/52-register-type.png" class="lightbox" data-gallery="quarto-lightbox-gallery-52"><img src="media/52-register-type.png" class="img-fluid"></a></p>
+<p>A window will open with several other parameters to tweak. Please refer to the BigStitcher documentation for the specific function of these. For us, it is important to note two.</p>
+<p>The option <code>Fix views</code> set to <code>Fix first view</code> means that all other views will be mapped to the first angle. The option <code>Transformation model</code> set to <code>Affine</code> means that the data will be transformed non-rigidly to fit the individual views. This is important since different portions of the stack might have a certain degree of distortion from the objective lenses and an affine transformation helps to fit the views better together. The other parameters we will only need to change if our initial registration fails.</p>
 <ul>
-<li>A novel window will open with several other parameters to tweak. Please refer to the BigStitcher documentation for the specific function of these</li>
-<li>For us, it is important to note two. The option Fix views set to Fix first view means that all other views will be mapped to the first angle. And the Transformation model set to Affine means that the data will be transformed non-rigidly to fit the individual views. This is important since different portions of the stack might have a certain degree of distortion from the objective lenses and an affine transformation helps to fit the views better together</li>
-<li>The other parameters we will only need to change if our registration fails</li>
-<li>Press OK</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/53-register-affine.png" class="lightbox" data-gallery="quarto-lightbox-gallery-53"><img src="media/53-register-affine.png" class="img-fluid"></a></p>
+<p>The next two small windows to open, <code>Regularization Parameters</code> (<code>Rigid</code> and <code>0.10</code>) and <code>Select interest point grouping</code> (<code>Group interest points</code> and <code>5</code>) can be kept as is.</p>
 <ul>
-<li>This small window with Regularization Parameters can be kept as is (Rigid and 0.10). Press OK</li>
-<li>Same for the interest point grouping options. Press OK</li>
+<li>Press <code>OK</code> on both.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -723,9 +678,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<ul>
-<li>The registration will begin and be over in a few seconds. Don’t blink or you will miss it! If successful, you will see that the individual views will now have moved over (registered) the first view and they are all overlapping in the BigDataViewer window</li>
-</ul>
+<p>The registration will begin and be over in a few seconds. Don’t blink or you will miss it! If successful, you will see that the individual views will now have moved over (registered) the first view and they are all overlapping in the BigDataViewer window.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -736,50 +689,42 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Now that the views are registered, explore the dataset to verify that the registration worked well. The best way to do this is visually. One of the first things that you can do is to:</p>
 <ul>
-<li>Now that the views are registered, explore the dataset to verify that the registration worked well. The best way to do this is visually</li>
-<li>One of the first things that you can do is to press shift+y and zoom in into a bead close to the embryo’s surface</li>
+<li>Press <code>Shift+Y</code> and zoom in on a bead close to the embryo’s surface.</li>
 </ul>
 <p><a href="media/58-register-check.png" class="lightbox" data-gallery="quarto-lightbox-gallery-58"><img src="media/58-register-check.png" class="img-fluid"></a></p>
-<ul>
-<li>You will see the point spread function of one bead in each individual view forming a star with generally four views (as the fifth view is too further away).</li>
-<li>If the sample is registered well, the center of the point spread functions of the different views should match in the middle of the star</li>
-</ul>
+<p>You will see the point spread function of one bead in each individual view forming a star with generally four views (as the fifth view is too far away). If the sample is registered well, the center of the point spread functions of the different views should match in the middle of the star.</p>
 <p><a href="media/59-register-bead.png" class="lightbox" data-gallery="quarto-lightbox-gallery-59"><img src="media/59-register-bead.png" class="img-fluid"></a></p>
+<p>Another thing that you can do is to find a structure you know well in the sample and check that the tissues are actually registered. It can happen that the beads are nicely registered, but the tissues themselves are a bit off.</p>
 <ul>
-<li>Another thing that you can do is to find a structure you know well in the sample and check that the tissues are actually registered. It can happen that the beads are nicely registered, but the tissues themselves are a bit off</li>
-<li>One way to do this is to select only two contiguous views and check them closely</li>
-<li>When done, make sure to Save the project again</li>
+<li>When done checking, make sure to <code>Save</code> the project again.</li>
 </ul>
 <p><a href="media/60-register-save.png" class="lightbox" data-gallery="quarto-lightbox-gallery-60"><img src="media/60-register-save.png" class="img-fluid"></a></p>
-<ul>
-<li>After saving, the #Registrations column should now show the number 3 for the selected views (if not deselect and select them again to update the counter)</li>
-</ul>
+<p>After saving, the <code>#Registrations</code> column should now show the number <code>3</code> for the selected views (if not, deselect and select them again to update the counter).</p>
 <p><a href="media/61-register-increment.png" class="lightbox" data-gallery="quarto-lightbox-gallery-61"><img src="media/61-register-increment.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-set-bounding" class="level2">
 <h2 class="anchored" data-anchor-id="sec-set-bounding">Set bounding box</h2>
+<p>Our dataset is now registered, but before fusing the views it is important to set a bounding box around the sample. This reduces the final dimensions and file size of the fused data.</p>
 <ul>
-<li>Our dataset is registered, but before fusing the views it is important to set a bounding box around the sample. This reduces the final dimensions and file size of the fused data.</li>
-<li>For that, right-click and select Define Bounding Box…</li>
+<li>For that, right-click and select <code>Define Bounding Box...</code>.</li>
 </ul>
 <p><a href="media/62-bounding-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-62"><img src="media/62-bounding-menu.png" class="img-fluid"></a></p>
+<p>We want to define it interactively, so leave the <code>Bounding Box</code> option as <code>Define using the BigDataViewer interactively</code>. You can give the bounding box a custom name and define different bounding boxes for different purposes, but the default name is good enough for this tutorial.</p>
 <ul>
-<li>We want to define it interactively, so leave the Bounding Box option as isotropic</li>
-<li>You can give the bounding box a custom name and define different bounding boxes for different purposes, but the default name is good enough for this tutorial. Click OK</li>
+<li>Click <code>OK</code>.</li>
 </ul>
 <p><a href="media/63-bounding-interactive.png" class="lightbox" data-gallery="quarto-lightbox-gallery-63"><img src="media/63-bounding-interactive.png" class="img-fluid"></a></p>
-<ul>
-<li>Two windows will open: BigDataViewer with the sample and some purple shade and a bounding box window full of sliders</li>
-</ul>
+<p>Two windows will open: BigDataViewer with the sample and some purple shade and a bounding box window full of sliders.</p>
 <p><a href="media/64-bounding-box.png" class="lightbox" data-gallery="quarto-lightbox-gallery-64"><img src="media/64-bounding-box.png" class="img-fluid"></a></p>
+<p>For defining the bounding box I follow a specific procedure, always in the same order, to avoid inadvertently leaving out a part of your sample when fusing.</p>
 <ul>
-<li>For defining the bounding box I follow a specific procedure, always in the same order, to avoid inadvertently leaving out a part of your sample when fusing</li>
-<li>First, press shift+x to orient the sample on XY</li>
+<li>First, press <code>Shift+X</code> to orient the sample on XY.</li>
 </ul>
 <p><a href="media/65-bounding-shiftx.png" class="lightbox" data-gallery="quarto-lightbox-gallery-65"><img src="media/65-bounding-shiftx.png" class="img-fluid"></a></p>
 <ul>
-<li>Go through the sample (Z) top to bottom to get a sense of the entire volume and stop back at the middle</li>
+<li>Go through the sample (Z) top to bottom to get a sense of the entire volume and stop back at the middle.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -795,18 +740,20 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Move the x min slider to the right to cut out the region on the left of the sample (the dashed line is the reference edge). Get close to the sample, but leave a gap</li>
+<li>Move the <code>x min</code> slider to the right to cut out the region on the left of the sample (the dashed line is the reference edge).</li>
+<li>Get close to the sample, but leave a gap.</li>
 </ul>
 <p><a href="media/69-bounding-xmin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-69"><img src="media/69-bounding-xmin.png" class="img-fluid"></a></p>
 <ul>
-<li>Once the placed x min, go again top to bottom through Z to make sure nothing was cut out</li>
-<li>Now do the same of x max to cut out the region on the right side of the sample</li>
+<li>Once the <code>x min</code> is set, go again top to bottom through Z to make sure nothing was cut out.</li>
+<li>Now do the same for <code>x max</code> to cut out the region on the right side of the sample.</li>
 </ul>
 <p><a href="media/70-bounding-xmax.png" class="lightbox" data-gallery="quarto-lightbox-gallery-70"><img src="media/70-bounding-xmax.png" class="img-fluid"></a></p>
+<p>Next we want to cut a bit from the top and bottom regions.</p>
 <ul>
-<li>Next we want to cut a bit from the top and bottom regions</li>
-<li>Move the slider y min to cut from the top and y max to cut from the bottom. Remember to go through Z to make sure it is not cutting the tip off the embryo (it happens)</li>
+<li>Move the slider <code>y min</code> to cut from the top and <code>y max</code> to cut from the bottom.</li>
 </ul>
+<p>Remember to go through Z to make sure it is not cutting the tip off the embryo (it happens).</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -818,12 +765,12 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Finally, press shift+y to cut out the exceeding portions in the Z direction</li>
+<li>Finally, press <code>Shift+Y</code> to cut out the exceeding portions in the Z direction.</li>
 </ul>
 <p><a href="media/73-bounding-shifty.png" class="lightbox" data-gallery="quarto-lightbox-gallery-73"><img src="media/73-bounding-shifty.png" class="img-fluid"></a></p>
 <ul>
-<li>Use z min to cut from the top (in this orientation), always going through Y to check!</li>
-<li>Then adjust z max to cut from the bottom (in this orientation), also going through Y.</li>
+<li>Use <code>z min</code> to cut from the top (in this orientation) always going through Y to check!</li>
+<li>Then adjust <code>z max</code> to cut from the bottom (in this orientation), also going through Y.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -836,51 +783,70 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>When done, press OK in the bounding box window</li>
+<li>When done, press <code>OK</code> in the bounding box window.</li>
 </ul>
 <p><a href="media/76-bounding-ok.png" class="lightbox" data-gallery="quarto-lightbox-gallery-76"><img src="media/76-bounding-ok.png" class="img-fluid"></a></p>
+<p>The dimensions of the interactively defined bounding box and the estimated size of the fused image will appear.</p>
 <ul>
-<li>The dimensions of the interactively defined bounding box and the estimated sized of the fused image will appear.</li>
-<li>Press OK and Save</li>
+<li>Press <code>OK</code> and <code>Save</code>.</li>
 </ul>
 <p><a href="media/77-bounding-dimensions.png" class="lightbox" data-gallery="quarto-lightbox-gallery-77"><img src="media/77-bounding-dimensions.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-fuse-single" class="level2">
 <h2 class="anchored" data-anchor-id="sec-fuse-single">Fuse dataset (one channel)</h2>
+<p>Finally, let’s begin the fusing of registered views.</p>
 <ul>
-<li>Finally, let’s begin the fusing of registered views</li>
-<li>Select the five registered views in the Multiview Explorer, right-click and press Image Fusion…</li>
+<li>Select the five registered views in the Multiview Explorer, right-click and press <code>Image Fusion...</code>.</li>
 </ul>
 <p><a href="media/78-fuse-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-78"><img src="media/78-fuse-menu.png" class="img-fluid"></a></p>
-<ul>
-<li>The window with fusion options will appear</li>
-</ul>
+<p>The window with fusion options will appear.</p>
 <p><a href="media/79-fuse-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-79"><img src="media/79-fuse-options.png" class="img-fluid"></a></p>
+<p>Our “My Bounding Box” is automatically selected for the <code>Bounding Box</code>.</p>
+<p>We can choose to downsample the fused image. I highly recommend downsampling 2x, 4x, or even 8x, when fusing a dataset for the first time. Fusing without downsampling (1x) can take a really long time for large samples (many hours), so it is good practice to downsample the fused image to make sure the fusing parameters are good for the dataset before fusing the whole thing.</p>
 <ul>
-<li>Our “My Bounding Box” is automatically selected for the Bounding Box</li>
-<li>We can choose to downsample the fused image. I highly recommend downsampling 2x, 4x, or even 8x, depending on the dataset, if you are fusing a dataset for the first time.</li>
-<li>Fusing without downsampling (1x) can take a really long time for large samples (many hours), so it is good practice to downsample the fused image to make sure the fusing parameters are good for your dataset before fusing the whole thing.</li>
-<li>But for this tutorial, you can leave at 1x</li>
-<li>For Interpolation leave Linear interpolation as it gives better outputs</li>
-<li>Fusion type is an important parameter to choose wisely</li>
-<li>The simplest is Avg, which averages the signal of every view per pixel. This is quick but it is combining the good contrast of one view with the blurred side of another view and the resulting contrast will be suboptimal.</li>
-<li>Avg, Blending is the same as Avg, but it blends smoothly the edges of the different views giving a slightly better fusing than simple Avg</li>
-<li>Avg, Blending &amp; Content Based improves the other two options by adding a step that checks and keeps only the best information for each coordinate (keep good contrast, discard blurred information). This option gives the best results. However, it is also the one that requires more memory and takes longer to finish (much longer)</li>
-<li>Therefore, I would start with 2x or 4x downsample using Avg, Blending before trying less downsampling and the content based fusion</li>
-<li>For the Pixel type I often use 16-bit, but it depends on what is your goal with the fused image. If it is only to have a volume visualization, 8-bit might be enough. If further processing and analysis is expected, definitely go for 16-bit or, in special cases, 32-bit.</li>
-<li>BigStitcher also has an option for using the interest points information during the fusion step to obtain better results (Non-Rigid fusion). This is for advanced users and I have not tried it enough to have an opinion about it.</li>
-<li>Generally, we want to have one fused image per timepoint per channel</li>
-<li>And I always Save as (compressed) TIFF stacks for the Fused image option. Choosing Display using ImageJ can be dangerous as the fused image will be large and your computer can run out of memory and crash. Writing to disk is safer.</li>
-<li>After pressing OK there’ll be another window to define the min/max levels, but they are automatically detected. Press OK</li>
+<li>For this tutorial, leave <code>Downsampling</code> at <code>1x</code>.</li>
+<li>For <code>Interpolation</code> keep <code>Linear interpolation</code>, as it gives better outputs.</li>
+</ul>
+<p>The <code>Fusion type</code> is an important parameter to choose wisely.</p>
+<ol type="1">
+<li>The simplest is <code>Avg</code>, which averages the signal of every view per pixel. This is quick but it is combining the good contrast of one view with the blurred side of another view and the resulting contrast will be suboptimal.</li>
+<li><code>Avg, Blending</code> is the same as <code>Avg</code>, but it blends smoothly the edges of the different views giving a slightly better fusing than simple <code>Avg</code>.</li>
+<li><code>Avg, Blending &amp; Content Based</code> improves the other two options by adding a step that checks and keeps only the best information for each coordinate (keep good contrast, discard blurred information). This option gives the best results. However, it is also the one that requires more memory and takes longer to finish (much longer).</li>
+</ol>
+<p>A sane start would be 2x or 4x downsample using <code>Avg, Blending</code> before trying less downsampling and the content based fusion.</p>
+<ul>
+<li>For this tutorial, set <code>Fusion type</code> to <code>Avg, Blending</code>.</li>
+</ul>
+<p>For the <code>Pixel type</code> I often use 16-bit, but it depends on what the goal of the fused image is. If it is only to have a volume visualization, 8-bit might be enough. If further processing and analysis is expected, definitely go for 16-bit or, in special cases, 32-bit.</p>
+<ul>
+<li>Set <code>Pixel type</code> to <code>16-bit unsigned integer</code>.</li>
+</ul>
+<p>BigStitcher also has an option for using the interest points information during the fusion step to obtain better results (<code>Interest Points for Non-Rigid</code>). This is a newer feature for advanced use cases and I have not tried it enough to have an opinion about it.</p>
+<ul>
+<li>Leave <code>Interest Points for Non-Rigid</code> as <code>-= Disable Non-Rigid =-</code>.</li>
+</ul>
+<p>Generally, we want to have one fused image per timepoint per channel.</p>
+<ul>
+<li>Set <code>Produce one fused image for</code> to <code>Each timepoint &amp; channel</code>.</li>
+</ul>
+<p>And I always save the fused image to TIFF stacks. Choosing <code>Display using ImageJ</code> can be dangerous as the fused image will be large and the computer can run out of memory and crash. Writing to disk is safer.</p>
+<ul>
+<li><p>Set <code>Fused image</code> to <code>Save as (compressed) TIFF stacks</code>.</p></li>
+<li><p>Press <code>OK</code>.</p></li>
+<li><p>A window with min/max levels will open.</p></li>
+<li><p>Press <code>OK</code>.</p></li>
 </ul>
 <p><a href="media/80-fuse-minmax.png" class="lightbox" data-gallery="quarto-lightbox-gallery-80"><img src="media/80-fuse-minmax.png" class="img-fluid"></a></p>
+<p>The output directory is the same where the <code>dataset.xml</code> is. We can add a prefix to the filename to distinguish different types of fusion and downsampling (useful when doing it multiple times).</p>
 <ul>
-<li>The output directory will be the same where the dataset.xml is. You can add a Filename addition to distinguish different types of fusion and downsampling (useful when doing it multiple times)</li>
-<li>Press OK and fusion will start</li>
+<li>Set <code>Filename addition</code> to <code>avg_blend_1x</code>.</li>
+<li>Press <code>OK</code> and fusion will start.</li>
 </ul>
 <p><a href="media/81-fuse-filename.png" class="lightbox" data-gallery="quarto-lightbox-gallery-81"><img src="media/81-fuse-filename.png" class="img-fluid"></a></p>
+<p>When done, open the fused dataset in Fiji.</p>
 <ul>
-<li>Once done, drag and drop the fused dataset named <code>avg_blend_1x_fused_tp_0_ch_1</code> in Fiji to open it and adjust the contrast with the Brightness/Contrast tool to see the data</li>
+<li>Drag and drop the file <code>avg_blend_1x_fused_tp_0_ch_1</code> into Fiji’s window.</li>
+<li>Then, adjust the contrast to see the data.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -892,72 +858,76 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Inspect the fusion result, checking for artifacts. If the sample has a membrane staining, for example, check for doubled membranes.</p>
 <ul>
-<li>Inspect the fusion result, checking for artifacts. If your sample has a membrane staining, for example, check for doubled membranes</li>
-<li>Note that this is an isotropic dataset</li>
+<li>Check the fused dataset with the Orthogonal Views.</li>
 </ul>
 <p><a href="media/84-fuse-isotropic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-84"><img src="media/84-fuse-isotropic.png" class="img-fluid"></a></p>
+<p>Note that the resulting fused image is isotropic.</p>
 </section>
 <section id="sec-duplicate-transformation" class="level2">
 <h2 class="anchored" data-anchor-id="sec-duplicate-transformation">Duplicate transformation</h2>
-<ul>
-<li>Now that we have successfully registered and fused the views of one channel, we can simply apply the series of transformations to the other channel without the need to detect interest points or register the channel independently</li>
-</ul>
+<p>Now that we have successfully registered and fused the views of one channel, we can simply apply the series of transformations to the other channel without the need to detect interest points or register the channel independently.</p>
 <p><a href="media/85-duplicate-unregistered.png" class="lightbox" data-gallery="quarto-lightbox-gallery-85"><img src="media/85-duplicate-unregistered.png" class="img-fluid"></a></p>
+<p>We can do so using the tool Duplicate Transformations from BigStitcher.</p>
 <ul>
-<li>You can do so using the tool Duplicate Transformations from BigStitcher</li>
-<li>First, close the Multiview Explorer and the Select dataset window that pops-up</li>
-<li>Then go to Plugins &gt; BigStitcher &gt; General &gt; Tools &gt; Duplicate Transformations</li>
+<li>First, take a note of which channel we have registered (it’s the <code>561</code>).</li>
+<li>Then, close the <code>Multiview Explorer</code> and the <code>Select dataset</code> window that pops up.</li>
+<li>Finally, go to <code>Plugins</code> &gt; <code>BigStitcher</code> &gt; <code>General</code> &gt; <code>Tools</code> &gt; <code>Duplicate Transformations</code>.</li>
 </ul>
 <p><a href="media/86-duplicate-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-86"><img src="media/86-duplicate-open.png" class="img-fluid"></a></p>
 <ul>
-<li>Select the option One channel to other channels</li>
+<li>Select the option <code>One channel to other channels</code>.</li>
 </ul>
 <p><a href="media/87-duplicate-channels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-87"><img src="media/87-duplicate-channels.png" class="img-fluid"></a></p>
+<p>A <code>Select dataset</code> window will open with the last <code>dataset.xml</code> already opened.</p>
 <ul>
-<li>A Select dataset window will open with the last dataset.xml already opened. Press OK</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/88-duplicate-dataset.png" class="lightbox" data-gallery="quarto-lightbox-gallery-88"><img src="media/88-duplicate-dataset.png" class="img-fluid"></a></p>
 <ul>
-<li>Now choose the source channel. Remember that we registered the Channel 561 (channel 2).</li>
-<li>The Target channel(s) is All Channels (all the other channels except for the source one).</li>
-<li>The last option, Duplicate which transformations is important. Generally, Replace all transformations work for most cases. However, I often prefer to use Add last transformation only. This will take the last transformation from the source channel and apply to the target channel.</li>
-<li>Note, however, that for this to work, the source channel can only be one transformation ahead of the target. If for instance, we ran two subsequent transformations for the source channel, then applying only the last would not duplicate all the transformations. Always check the #Registrations in the Multiview Explorer.</li>
+<li>Set the <code>Source channel</code> to <code>561</code>.</li>
+<li>Set <code>Target channel(s)</code> to <code>All Channels</code> (all the other channels except for the source one).</li>
+</ul>
+<p>The last option, <code>Duplicate which transformations</code> is important. Generally, <code>Replace all transformations</code> works for most cases. However, I often prefer to use <code>Add last transformation only</code>. This will take the last transformation from the source channel and apply it to the target channel. For this to work, however, the source channel can only be one transformation ahead of the target. If, for instance, we had run two subsequent transformations on the source channel, then applied only the last one to the other channels, we would not entirely duplicate all the transformations between the channels. So, always check the <code>#Registrations</code> in the <code>Multiview Explorer</code> to be sure if only the last duplication would work, or simply replace all transformations.</p>
+<ul>
+<li>For now, set <code>Duplicate which transformations</code> to <code>Add last transformation only</code>.</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <p><a href="media/89-duplicate-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-89"><img src="media/89-duplicate-options.png" class="img-fluid"></a></p>
+<p>The transformations will be applied and recorded in the XML file. It’s quick.</p>
 <ul>
-<li>Once you press OK, the transformations will be applied in the XML file. It’s quick.</li>
-<li>Now open BigStitcher again and check if the 5 views of the other channel are registered (they should)</li>
+<li>Open BigStitcher again and check if the 5 views of the other channel are registered (they should be).</li>
 </ul>
 <p><a href="media/90-duplicate-registered.png" class="lightbox" data-gallery="quarto-lightbox-gallery-90"><img src="media/90-duplicate-registered.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-fuse-all" class="level2">
 <h2 class="anchored" data-anchor-id="sec-fuse-all">Fuse dataset (all channels)</h2>
+<p>We now have both channels registered, but only one was fused.</p>
 <ul>
-<li>We have now both channels registered, but only one fused</li>
-<li>To fuse both channels select all the views in the Multiview Explorer</li>
+<li>To fuse both channels select all the views in the <code>Multiview Explorer</code>, right-click, and select <code>Image Fusion...</code>.</li>
 </ul>
 <p><a href="media/91-fuse-all.png" class="lightbox" data-gallery="quarto-lightbox-gallery-91"><img src="media/91-fuse-all.png" class="img-fluid"></a></p>
 <ul>
-<li>Then set the desired parameters for fusion (optimized previously) and run the fusion again as described above</li>
-<li>This time there will be two files as output: avg_blend_1x_fused_tp_0_ch_0.tif and avg_blend_1x_fused_tp_0_ch_1.tif</li>
+<li>Set the desired parameters for fusion (optimized previously) and run the fusion again as described above.</li>
 </ul>
+<p>This time there will be two files as output: <code>avg_blend_1x_fused_tp_0_ch_0.tif</code> and <code>avg_blend_1x_fused_tp_0_ch_1.tif</code>.</p>
 <p><a href="media/92-fuse-outputs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-92"><img src="media/92-fuse-outputs.png" class="img-fluid"></a></p>
 <ul>
-<li>Open both files in Fiji and adjust their contrast</li>
+<li>Open both files in Fiji and adjust their contrast.</li>
 </ul>
 <p><a href="media/93-fuse-contrast.png" class="lightbox" data-gallery="quarto-lightbox-gallery-93"><img src="media/93-fuse-contrast.png" class="img-fluid"></a></p>
 <ul>
-<li>Then go to Image &gt; Color &gt; Merge Channels…</li>
+<li>Then go to <code>Image</code> &gt; <code>Color</code> &gt; <code>Merge Channels...</code>.</li>
 </ul>
 <p><a href="media/94-fuse-merge.png" class="lightbox" data-gallery="quarto-lightbox-gallery-94"><img src="media/94-fuse-merge.png" class="img-fluid"></a></p>
 <ul>
-<li>Select ch_0 for C1 and ch_1 for C2 and press OK</li>
+<li>Select <code>ch_0</code> for <code>C1</code> and <code>ch_1</code> for <code>C2</code> and press <code>OK</code>.</li>
 </ul>
 <p><a href="media/95-fuse-merged.png" class="lightbox" data-gallery="quarto-lightbox-gallery-95"><img src="media/95-fuse-merged.png" class="img-fluid"></a></p>
+<p>A red-green 2-channel stack will open. But, red-green combination isn’t good.</p>
 <ul>
-<li>A red-green 2-channel stack will open</li>
-<li>As red-green isn’t good, use the LUT tool to update the colors to green for C1 and magenta for C2.</li>
+<li>Update the red to magenta using the LUT tool.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -969,11 +939,12 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>We can even compare this fused dataset with one of the views of the original dataset.</p>
 <ul>
-<li>We can even compare this fused dataset with one single view of the original dataset.</li>
-<li>Drag and drop the CZI file, select the first view only to import, and put the stacks side-by-side for a comparison slice by slice</li>
+<li>Drag and drop the CZI file, select the first view only to import, and put the stacks side-by-side for a comparison slice by slice.</li>
 </ul>
 <p><a href="media/98-fuse-versus.png" class="lightbox" data-gallery="quarto-lightbox-gallery-98"><img src="media/98-fuse-versus.png" class="img-fluid"></a></p>
+<p>Note how the missing data in the single view is nicely present in the fused dataset.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
