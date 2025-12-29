@@ -103,13 +103,13 @@ div.csl-indent {
 <meta property="og:description" content="">
 <meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cartography/media/14-features-window.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta property="og:image:height" content="1200">
-<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="397">
+<meta property="og:image:width" content="661">
 <meta name="twitter:title" content="Tissue cartography using Blender – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cartography/media/14-features-window.png">
-<meta name="twitter:image-height" content="1200">
-<meta name="twitter:image-width" content="1920">
+<meta name="twitter:image-height" content="397">
+<meta name="twitter:image-width" content="661">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -335,142 +335,140 @@ div.csl-indent {
 <section id="sec-summary" class="level2">
 <h2 class="anchored" data-anchor-id="sec-summary">Summary</h2>
 <p>Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.</p>
-<p>The state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>. However, more recently, a Blender-based tool was released known as <em>Blender Tissue Cartography</em> <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span>. This tool has an <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/">extensive documentation</a> and several <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/00_tissue_cartography_overview.html#tutorials">in-depth tutorials</a> that I highly recommend anyone interested in tissue cartography to read.</p>
+<p>The state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>. However, more recently, a Blender-based tool was released known as <em>Blender Tissue Cartography</em> <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span> (<a href="https://github.com/nikolas-claussen/blender-tissue-cartography">code repository</a>). This tool has an <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/">extensive documentation</a> and several <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/00_tissue_cartography_overview.html#tutorials">in-depth tutorials</a> that I highly recommend anyone interested in tissue cartography to read.</p>
 <p>The tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.</p>
-<p>If you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>, there is another tutorial explaining how to set up and run the pipeline <span class="citation" data-cites="Vellutini2022-ya">(<a href="#ref-Vellutini2022-ya" role="doc-biblioref">Vellutini 2022</a>)</span>.</p>
+<p>If you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>, please check the <a href="https://github.com/bruvellu/imsane-tutorial">imsane-tutorial</a> which explains how to set up and run the pipeline <span class="citation" data-cites="Vellutini2022-ya">(<a href="#ref-Vellutini2022-ya" role="doc-biblioref">Vellutini 2022</a>)</span>.</p>
 </section>
 <section id="sec-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="sec-requirements">Requirements</h2>
 <ul>
-<li><a href="https://fiji.sc">Fiji/ImageJ</a></li>
-<li><a href="https://www.ilastik.org">ilastik</a> 1.4.1.post1</li>
-<li><a href="https://www.blender.org">Blender</a> 4.2.9</li>
-<li><a href="https://github.com/nikolas-claussen/blender-tissue-cartography">Blender Tissue Cartography</a> (Blender add-on)</li>
-<li><code>Drosophila_CAAX-mCherry.tif</code> dataset from Blender Tissue Cartography (available <a href="https://github.com/nikolas-claussen/blender-tissue-cartography/blob/main/nbs/Tutorials/drosophila_example/">here</a>)</li>
+<li><a href="https://fiji.sc">Fiji</a> <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span></li>
+<li><a href="https://www.ilastik.org">ilastik</a> v1.4.1.post1 <span class="citation" data-cites="Berg2019-ab">(<a href="#ref-Berg2019-ab" role="doc-biblioref">Berg et al. 2019</a>)</span></li>
+<li><a href="https://www.blender.org">Blender</a> v4.2.9 <span class="citation" data-cites="Blender-Foundation2002-jm">(<a href="#ref-Blender-Foundation2002-jm" role="doc-biblioref">Blender Foundation 2002</a>)</span></li>
+<li><a href="https://github.com/nikolas-claussen/blender-tissue-cartography">Blender Tissue Cartography</a> (Blender add-on) <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span></li>
+<li><code>Drosophila_CAAX-mCherry.tif</code> dataset from Blender Tissue Cartography (available <a href="https://github.com/nikolas-claussen/blender-tissue-cartography/blob/main/nbs/Tutorials/drosophila_example/">here</a>) <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span></li>
 </ul>
 </section>
 <section id="sec-setup" class="level2">
 <h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
-<p>Note! If you are following this during the course, the dataset has already been downloaded.</p>
 <section id="download-blender-tissue-cartography" class="level3">
 <h3 class="anchored" data-anchor-id="download-blender-tissue-cartography">Download Blender Tissue Cartography</h3>
 <ul>
-<li>Go to <a href="https://github.com/nikolas-claussen/blender-tissue-cartography" class="uri">https://github.com/nikolas-claussen/blender-tissue-cartography</a></li>
-<li>Press the green button named <code>Code</code> &gt; <code>Download ZIP</code> to begin the download (or press <a href="https://github.com/nikolas-claussen/blender-tissue-cartography/archive/refs/heads/main.zip">here</a>)</li>
-<li>Unzip the contents in your working directory</li>
-<li>You should see a new directory named <code>blender-tissue-cartography</code></li>
-<li>Copy the file <code>Drosophila_CAAX-mCherry.tif</code> located at <code>blender-tissue-cartography/nbs/Tutorials/drosophila_example/</code> to your working directory</li>
+<li>Go to <a href="https://github.com/nikolas-claussen/blender-tissue-cartography" class="uri">https://github.com/nikolas-claussen/blender-tissue-cartography</a>.</li>
+<li>Press the green button named <code>Code</code> &gt; <code>Download ZIP</code> to begin the download (or press <a href="https://github.com/nikolas-claussen/blender-tissue-cartography/archive/refs/heads/main.zip">here</a>).</li>
+<li>Unzip the contents in your working directory.</li>
+<li>You should see a new directory named <code>blender-tissue-cartography</code>.</li>
+<li>Copy the file <code>Drosophila_CAAX-mCherry.tif</code> located at <code>blender-tissue-cartography/nbs/Tutorials/drosophila_example/</code> to your working directory.</li>
 </ul>
 </section>
 <section id="download-blender" class="level3">
 <h3 class="anchored" data-anchor-id="download-blender">Download Blender</h3>
 <ul>
-<li>Got to <a href="https://download.blender.org/release/Blender4.2/" class="uri">https://download.blender.org/release/Blender4.2/</a></li>
-<li>Download Blender 4.2.9 (direct link for <a href="https://download.blender.org/release/Blender4.2/blender-4.2.9-linux-x64.tar.xz">linux</a>)</li>
-<li>Unzip the file into your working directory</li>
-<li>You should see a new directory named <code>blender-4.2.9-linux-x64</code></li>
+<li>Go to <a href="https://download.blender.org/release/Blender4.2/" class="uri">https://download.blender.org/release/Blender4.2/</a>.</li>
+<li>Download Blender 4.2.9 (direct link for <a href="https://download.blender.org/release/Blender4.2/blender-4.2.9-linux-x64.tar.xz">Linux</a>/<a href="https://download.blender.org/release/Blender4.2/blender-4.2.9-macos-x64.dmg">MacOS</a>/<a href="https://download.blender.org/release/Blender4.2/blender-4.2.9-windows-x64.msi">Windows</a>).</li>
+<li>Unzip the file into your working directory.</li>
+<li>You should see a new directory named <code>blender-4.2.9-linux-x64</code> (or similar for other systems).</li>
 </ul>
+<p>Note that older or newer versions of Blender might not work. Use v4.2.9 as it is known to work with this tutorial.</p>
 </section>
 <section id="install-blender-tissue-cartography" class="level3">
 <h3 class="anchored" data-anchor-id="install-blender-tissue-cartography">Install Blender Tissue Cartography</h3>
 <ul>
-<li>Open the directory <code>blender-4.2.9-linux-x64</code></li>
-<li>Double-click the file <code>blender</code> to open the program</li>
-<li>Go to <code>Edit</code> &gt; <code>Preferences</code> &gt; <code>Add-ons</code> &gt; <code>Add-ons Settings</code> (down arrow) &gt; <code>Install from Disk...</code></li>
-<li>Select the file <code>blender_tissue_cartography-1.0.0-linux_x64.zip</code> located in the directory <code>blender-tissue-cartography/blender_addon/</code></li>
-<li>Close Blender</li>
+<li>Open the directory <code>blender-4.2.9-linux-x64</code>.</li>
+<li>Double-click the file <code>blender</code> to open the program.</li>
+<li>Go to <code>Edit</code> &gt; <code>Preferences</code> &gt; <code>Add-ons</code> &gt; <code>Add-ons Settings</code> (down arrow) &gt; <code>Install from Disk...</code>.</li>
+<li>Select the file <code>blender_tissue_cartography-1.0.0-linux_x64.zip</code> located in the directory <code>blender-tissue-cartography/blender_addon/</code>.</li>
+<li>Close Blender.</li>
 </ul>
 </section>
 <section id="download-ilastik" class="level3">
 <h3 class="anchored" data-anchor-id="download-ilastik">Download ilastik</h3>
 <ul>
-<li>Go to <a href="https://www.ilastik.org/download" class="uri">https://www.ilastik.org/download</a></li>
-<li>Download ilastik 1.4.1.post1 (direct link for <a href="https://files.ilastik.org/ilastik-1.4.1.post1-Linux.tar.bz2">linux</a>)</li>
-<li>Unzip the file into your working directory</li>
-<li>You should see a new directory named <code>ilastik-1.4.1.post1-Linux</code></li>
+<li>Go to <a href="https://www.ilastik.org/download" class="uri">https://www.ilastik.org/download</a>.</li>
+<li>Download ilastik 1.4.1.post1 (direct link for <a href="https://files.ilastik.org/ilastik-1.4.1.post1-Linux.tar.bz2">Linux</a>/<a href="https://files.ilastik.org/ilastik-1.4.1.post1-OSX.zip">MacOS</a>/<a href="https://files.ilastik.org/ilastik-1.4.1.post1-win64.exe">Windows</a>).</li>
+<li>Unzip the file into your working directory.</li>
+<li>You should see a new directory named <code>ilastik-1.4.1.post1-Linux</code>.</li>
 </ul>
 </section>
 <section id="download-fiji" class="level3">
 <h3 class="anchored" data-anchor-id="download-fiji">Download Fiji</h3>
 <ul>
-<li>Go to <a href="https://fiji.sc" class="uri">https://fiji.sc</a></li>
-<li>Choose <code>Distribution: Stable</code> then click the big download button</li>
-<li>Unzip the file into your working directory</li>
-<li>You should see a new directory named <code>fiji-stable-linux64-jdk</code></li>
+<li>Go to <a href="https://fiji.sc" class="uri">https://fiji.sc</a>.</li>
+<li>Choose <code>Distribution: Stable</code> then click the big download button.</li>
+<li>Unzip the file into your working directory.</li>
+<li>You should see a new directory named <code>fiji-stable-linux64-jdk</code>.</li>
 </ul>
 </section>
 </section>
 <section id="sec-inspect-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="sec-inspect-dataset">Inspect dataset in Fiji</h2>
+<p>Before starting, let’s inspect the <code>Drosophila_CAAX-mCherry.tif</code> dataset in Fiji.</p>
 <ul>
-<li>Before starting, let’s inspect the <code>Drosophila_CAAX-mCherry.tif</code> dataset in Fiji</li>
-<li>Opening the directory <code>fiji-stable-linux64-jdk/Fiji.app/</code> and double-click the <code>fiji-linux-x64</code> launcher</li>
+<li>Open the directory <code>fiji-stable-linux64-jdk/Fiji.app/</code> and double-click the <code>fiji-linux-x64</code> launcher.</li>
 </ul>
 <p><a href="media/01-fiji-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="media/01-fiji-open.png" class="img-fluid"></a></p>
 <ul>
-<li>Drag and drop <code>Drosophila_CAAX-mCherry.tif</code> in the Fiji window to open it</li>
-<li>Scroll through the Z slices of the stack</li>
+<li>Drag and drop <code>Drosophila_CAAX-mCherry.tif</code> in the Fiji window to open it.</li>
+<li>Scroll through the Z slices of the stack.</li>
 </ul>
 <p><a href="media/02-data-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="media/02-data-open.png" class="img-fluid"></a></p>
 <ul>
-<li>To get more information, activate the orthogonal views with <code>Image</code> &gt; <code>Stacks</code> &gt; <code>Orthogonal Views</code> (or <code>ctrl+shift+h</code></li>
+<li>To get more information, activate the orthogonal views with <code>Image</code> &gt; <code>Stacks</code> &gt; <code>Orthogonal Views</code> (or <code>Ctrl+Shift+H</code>).</li>
 </ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="media/03-orthogonal-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="media/03-orthogonal-open.png" class="img-fluid"></a></p>
-<ul>
-<li>Explore the sample to understand well its shape</li>
-<li>Try to understand which side is dorsal, which is ventral, and what is left/right</li>
-<li>Also notice what are the characteristics of the tissue and background</li>
-<li>Think about the potential issues we might encounter with this dataset</li>
-</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="media/04-orthogonal-views.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="media/04-orthogonal-views.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Explore the sample to understand well its shape. Try to figure out which side of the embryo is dorsal, which is ventral, and what is left/right. Also notice what are the characteristics of the tissues and of the background regions and think about the potential issues we might encounter with this dataset.</p>
 <ul>
-<li>Once done, close the orthogonal views and stack (leave Fiji open)</li>
+<li>Once done, close the orthogonal views and stack (leave Fiji open).</li>
 </ul>
 </section>
 <section id="sec-segment-tissues" class="level2">
 <h2 class="anchored" data-anchor-id="sec-segment-tissues">Segment tissues in ilastik</h2>
+<p>The first step we need is to segment the stack in 3D to distinguish what is tissue and what is background. This is required to create a 3D mesh in Blender that has the shape of the sample. To accomplish that, we will use ilastik.</p>
 <ul>
-<li>The first step we need is to segment the stack in 3D to distinguish what is tissue and what is background</li>
-<li>This is required to create a 3D mesh in Blender that has the shape of the sample</li>
-<li>To accomplish that, we will use ilastik</li>
-<li>Open the directory <code>ilastik-1.4.1.post1-Linux</code>, right-click the file <code>run_ilastik.sh</code>, and select <code>Run as a Program</code> to open ilastik</li>
+<li>Open the directory <code>ilastik-1.4.1.post1-Linux</code>, right-click the file <code>run_ilastik.sh</code>, and select <code>Run as a Program</code> to open ilastik.</li>
 </ul>
 <p><a href="media/05-ilastik-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="media/05-ilastik-open.png" class="img-fluid"></a></p>
 <section id="create-project" class="level3">
 <h3 class="anchored" data-anchor-id="create-project">Create project</h3>
 <ul>
-<li>Maximize the interface (we will need it)</li>
-<li>Under <code>Create New Project</code>, click on <code>Pixel Classification</code></li>
+<li>Maximize the interface (we will need it).</li>
+<li>Under <code>Create New Project</code>, click on <code>Pixel Classification</code>.</li>
 </ul>
 <p><a href="media/06-ilastik-pixel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="media/06-ilastik-pixel.png" class="img-fluid"></a></p>
+<p>The window <code>Create Ilastik Project</code> will open.</p>
 <ul>
-<li>The window <code>Create Ilastik Project</code> will open</li>
-<li>Navigate to your working directory and click save</li>
-<li>A file named <code>MyProject.ilp</code> will be created</li>
+<li>Navigate to your working directory and click <code>Save</code>.</li>
 </ul>
 <p><a href="media/07-ilastik-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/07-ilastik-project.png" class="img-fluid"></a></p>
+<p>A file named <code>MyProject.ilp</code> will be created.</p>
 </section>
 <section id="input-data" class="level3">
 <h3 class="anchored" data-anchor-id="input-data">Input Data</h3>
+<p>The ilastik interface is ready to define our input data.</p>
 <ul>
-<li>The ilastik interface is ready to define our input data</li>
-<li>Under the <code>Raw Data</code> tab, click on <code>Add New...</code> &gt; <code>Add separate Image(s)...</code></li>
+<li>Under the <code>Raw Data</code> tab, click on <code>Add New...</code> &gt; <code>Add separate Image(s)...</code>.</li>
 </ul>
 <p><a href="media/08-ilastik-add.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="media/08-ilastik-add.png" class="img-fluid"></a></p>
 <ul>
-<li>Then select the file <code>Drosophila_CAAX-mCherry.tif</code></li>
+<li>Then, select the file <code>Drosophila_CAAX-mCherry.tif</code>.</li>
 </ul>
 <p><a href="media/09-ilastik-select.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/09-ilastik-select.png" class="img-fluid"></a></p>
-<ul>
-<li>ilastik will open the dataset in three orthogonal views</li>
-<li>XY (blue), XZ (green), YZ (red)</li>
-</ul>
+<p>ilastik will open the dataset in three orthogonal views: XY (blue), XZ (green), YZ (red).</p>
 <p><a href="media/10-ilastik-dataset.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="media/10-ilastik-dataset.png" class="img-fluid"></a></p>
+<p>Note, however, that the images are too dark; let’s fix this.</p>
 <ul>
-<li>Note, however, that the images are too dark; let’s fix this</li>
-<li>Right-click the dataset row and select <code>Edit properties...</code></li>
-<li>Change the value of <code>Normalize Display</code> to <code>True</code> and set the <code>Range</code> maximum value to <code>10000</code></li>
-<li>Press OK</li>
+<li>Right-click the dataset row and select <code>Edit properties...</code>.</li>
+<li>Change the value of <code>Normalize Display</code> to <code>True</code> and set the <code>Range</code> maximum value to <code>10000</code>.</li>
+<li>Press <code>OK</code>.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -482,18 +480,16 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<ul>
-<li>The contrast will be much better now</li>
-</ul>
+<p>The contrast will be much better now.</p>
 <p><a href="media/13-ilastik-adjusted.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="media/13-ilastik-adjusted.png" class="img-fluid"></a></p>
 </section>
 <section id="feature-selection" class="level3">
 <h3 class="anchored" data-anchor-id="feature-selection">Feature Selection</h3>
+<p>Next we need to select the image features to take into account for the segmentation.</p>
 <ul>
-<li>Next we need to select the image features to take into account for the segmentation</li>
-<li>On the left column press <code>2. Feature Selection</code>; the interface will update</li>
-<li>Then press <code>Select Features...</code> to open the <code>Features</code> window</li>
-<li>Select all the features and press <code>OK</code></li>
+<li>On the left column press <code>2. Feature Selection</code>; the interface will update.</li>
+<li>Then press <code>Select Features...</code> to open the <code>Features</code> window.</li>
+<li>Select all the features and press <code>OK</code>.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -509,133 +505,128 @@ div.csl-indent {
 <section id="training" class="level3">
 <h3 class="anchored" data-anchor-id="training">Training</h3>
 <ul>
-<li>On the left column, click <code>3. Training</code></li>
-<li>A new toolbox will open underneath showing two labels, Label 1 (yellow) and Label 2 (blue), buttons for paint or eraser modes, a size drop-down menu, and a <code>Live Update</code> button</li>
+<li>On the left column, click <code>3. Training</code>.</li>
 </ul>
+<p>A new toolbox will open underneath showing two labels, Label 1 (yellow) and Label 2 (blue), buttons for paint or eraser modes, a size drop-down menu, and a <code>Live Update</code> button.</p>
 <p><a href="media/16-training-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="media/16-training-open.png" class="img-fluid"></a></p>
+<p>Now is a good time to get familiar with the basic ilastik commands.</p>
 <ul>
-<li>Now is a good time to get familiar with the basic ilastik commands</li>
-<li><code>scroll+forward</code>: go down through the slices of the orthogonal dimension</li>
-<li><code>scroll+backward</code>: go up through the slices of the orthogonal dimension</li>
-<li><code>ctrl+scroll+forward</code>: zoom in</li>
-<li><code>ctrl+scroll+backward</code>: zoom out</li>
-<li><code>middle-click+hold</code>: drag view around</li>
-<li>Learn how to zoom in/out, go through the slices, and drag the view</li>
-<li>If you can zoom in significantly, and reach the top or bottom of a view by dragging, you are ready for painting</li>
+<li><code>Scroll forward</code>: go down through the slices of the orthogonal dimension.</li>
+<li><code>Scroll backward</code>: go up through the slices of the orthogonal dimension.</li>
+<li><code>Ctrl+Scroll forward</code>: zoom in.</li>
+<li><code>Ctrl+Scroll backward</code>: zoom out.</li>
+<li><code>Middle-click and hold</code>: drag view around.</li>
 </ul>
+<p>Learn how to zoom in/out, go through the slices, and drag the view. If we are able to zoom in significantly, and reach the top or bottom of a view by dragging, we are ready for painting.</p>
 <p><a href="media/17-training-drag.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="media/17-training-drag.png" class="img-fluid"></a></p>
+<p>Our goal is to paint tissues in yellow and background in blue. But to accomplish that, we only need a few strokes at the right regions of the image.</p>
 <ul>
-<li>Our goal is to paint tissues in yellow and background in blue</li>
-<li>But to accomplish that, we only need a few strokes at the right regions of the image</li>
-<li>Begin by zooming in at the top region of the XZ (green) view</li>
-<li>Select Label 2 (blue), change the size to 7, and paint a line right above the tissue</li>
-<li>Now select Label 1 (yellow) and paint the tissue immediately below the blue line</li>
-<li>These two simple lines are indicating to ilastik that all the image features in this region very close to the tissue corresponds to “background”, and that the image features of the tissue below correspond to “foreground”. Putting the two linnes adjacent to each other also help ilastik to understand where the boundaries are</li>
+<li>Begin by zooming in at the top region of the XZ (green) view.</li>
+<li>Select Label 2 (blue), change the size to <code>7</code>, and paint a line right above the tissue.</li>
+<li>Now select Label 1 (yellow) and paint the tissue immediately below the blue line.</li>
 </ul>
 <p><a href="media/18-training-paint.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="media/18-training-paint.png" class="img-fluid"></a></p>
+<p>These two simple lines are indicating to ilastik that all the image features in this region very close to the tissue correspond to “background”, and that the image features of the tissue below correspond to “foreground”. Putting the two lines adjacent to each other also helps ilastik to understand where the boundaries are.</p>
 <ul>
-<li>Since we want that all of the tissue is segmented (and not just the surface), paint a line until the center of the embryo</li>
-<li>This is enough to get started. Based on these simple strokes, ilastik will learn and apply this to the entire dataset</li>
-<li>To start the training, press the button <code>Live Update</code></li>
-<li>ilastik will overlay the current segmentation model over the image</li>
-<li>You should see that most of the tissue regions are yellow and that the region around the embryo are more blue</li>
-<li>The more vivid the color, the more confident the model is about that specific region</li>
+<li>Since we want all of the tissue to be segmented (and not just the surface), also paint a line until the center of the embryo.</li>
+</ul>
+<p>This is enough to get started. Based on these simple strokes, ilastik will learn and apply this to the entire dataset.</p>
+<ul>
+<li>To start the training, press the button <code>Live Update</code>.</li>
 </ul>
 <p><a href="media/19-training-live.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="media/19-training-live.png" class="img-fluid"></a></p>
-<ul>
-<li>Now start painting with simple strokes areas which are wrong or pale</li>
-<li>For example the corners of the images are background and should be blue; any area inside the sample, should be yellow; use different brush sizes if needed; or the eraser</li>
-<li>This sample also has giant, super bright beads; they are not tissue, we want them blue</li>
-<li>Note that the segmentation model and overlay colors update upon each stroke, so you can see if what you did improved or worsen the segmentation. If it got worse, you can always erase the annotation</li>
-</ul>
+<p>ilastik will overlay the current segmentation model over the image. We should see that most of the tissue regions are yellow and that the region around the embryo is more blue. The more vivid the color, the more confident the model is about that specific region.</p>
+<p>Now start painting with simple strokes areas which are wrong or pale. For example the corners of the images are background and should be blue; any area inside the sample should be yellow; use different brush sizes if needed; or the eraser. This sample also has giant, super bright beads; they are not tissue, we want them blue.</p>
+<p>Note that the segmentation model and overlay colors update upon each stroke, so we can see if what we did improved or worsened the segmentation. If it got worse, we can always erase the annotation.</p>
 <p><a href="media/20-training-better.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="media/20-training-better.png" class="img-fluid"></a></p>
+<p>Be meticulous and pay special attention to the edges of the image. We do not want tissue (yellow) to be touching the border, because this will create a hole in the segmentation. The better the segmentation is, the better will be our visualization and cartographic projection.</p>
+<p>There are ways that we can fix segmentation issues after converting it to a mesh, but they will not be covered in this tutorial. So, for this image, it is important to take care of the tip of the very top part of the sample because it is touching the edge.</p>
 <ul>
-<li>Be meticulous and pay special attention to the edges of the image, we do not want tissue (yellow) to be touching the border, because this will create a hole in the segmentation</li>
-<li>The better the segmentation is, the better will be our visualization and cartographic projection</li>
-<li>That said, there are many ways that you can fix issues and improve the segmentation after converting it to a mesh</li>
-<li>In this image, it is important to take care of the tip of the very top part of the sample because it is touching the edge</li>
-<li>Use a size 1 brush to place a couple of blue lines there</li>
+<li>Use a size <code>1</code> brush to place a couple of blue lines at the very top.</li>
 </ul>
 <p><a href="media/21-training-tip.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="media/21-training-tip.png" class="img-fluid"></a></p>
 <ul>
-<li>Go through the slices in each of the orthogonal views to fix any left over segmentation uncertainties</li>
-<li>The segmentation overlay should be showing a clearly separated yellow and blue regions that match the embryo and background</li>
+<li>Go through the slices in each of the orthogonal views to fix any leftover segmentation uncertainties.</li>
 </ul>
 <p><a href="media/22-training-done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="media/22-training-done.png" class="img-fluid"></a></p>
+<p>The segmentation overlay should be showing clearly separated yellow and blue regions that match the embryo and background.</p>
 </section>
 <section id="prediction-export" class="level3">
 <h3 class="anchored" data-anchor-id="prediction-export">Prediction Export</h3>
+<p>We can now export the segmentation prediction.</p>
 <ul>
-<li>We can now export the segmentation prediction</li>
-<li>On the left column, click on <code>4. Prediction Export</code></li>
-<li>Under <code>Export Settings</code> keep the <code>Source</code> value as <code>Probabilities</code></li>
+<li>On the left column, click on <code>4. Prediction Export</code>.</li>
+<li>Under <code>Export Settings</code> keep the <code>Source</code> value as <code>Probabilities</code>.</li>
 </ul>
 <p><a href="media/23-prediction-export.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="media/23-prediction-export.png" class="img-fluid"></a></p>
 <ul>
-<li>Then press <code>Choose Export Image Settings...</code> to open the <code>Image Export Options</code> window</li>
-<li>There are two options that we need to change</li>
-<li>Under <code>Cutout Subregion</code> uncheck the row <code>c</code> (for channels) and change the stop value to <code>1</code></li>
-<li>Since this image has only one channel, changing this option avoids loading a duplicated channel into Blender</li>
-<li>Under <code>Output File Info</code> change the value of <code>Format</code> to <code>multipage tiff</code></li>
-<li>This is required to be able to load the segmentation into Blender</li>
-<li>Press <code>OK</code> close the window</li>
-<li>Then press the <code>Export All</code> button and wait…</li>
+<li>Then, press <code>Choose Export Image Settings...</code> to open the <code>Image Export Options</code> window.</li>
 </ul>
 <p><a href="media/24-prediction-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="media/24-prediction-options.png" class="img-fluid"></a></p>
+<p>There are two options that we need to change.</p>
 <ul>
-<li>When the prediction is done, you will find a new file in your working directory named <code>Drosophila_CAAX-mCherry_Probabilities.tiff</code></li>
+<li>Under <code>Cutout Subregion</code> uncheck the row <code>c</code> (for channels) and change the stop value to <code>1</code>.</li>
 </ul>
+<p>Since this image has only one channel, changing this option avoids loading a duplicated channel into Blender.</p>
+<ul>
+<li>Under <code>Output File Info</code> change the value of <code>Format</code> to <code>multipage tiff</code>.</li>
+</ul>
+<p>This is required to be able to load the segmentation into Blender.</p>
+<ul>
+<li>Press <code>OK</code> to close the window.</li>
+<li>Then press the <code>Export All</code> button and wait…</li>
+</ul>
+<p>When the prediction is done, a new file will appear in the working directory named <code>Drosophila_CAAX-mCherry_Probabilities.tiff</code>.</p>
 <p><a href="media/25-prediction-done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="media/25-prediction-done.png" class="img-fluid"></a></p>
 <ul>
-<li>Try opening this file in Fiji to see how it looks before our next step in the tutorial</li>
+<li>Open this file in Fiji to see how it looks before our next step in the tutorial.</li>
 </ul>
 <p><a href="media/26-fiji-probabilities.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="media/26-fiji-probabilities.png" class="img-fluid"></a></p>
 <ul>
-<li>Now close the file and let’s start with the actual projection</li>
+<li>Now close the file and let’s start with generating the actual projection.</li>
 </ul>
 </section>
 </section>
 <section id="sec-import-blender" class="level2">
 <h2 class="anchored" data-anchor-id="sec-import-blender">Import data to Blender</h2>
-<ul>
-<li>We can now import the image stack and segmentation probabilities into Blender</li>
-</ul>
+<p>We can now import the image stack and segmentation probabilities into Blender.</p>
 <section id="open-blender" class="level3">
 <h3 class="anchored" data-anchor-id="open-blender">Open Blender</h3>
 <ul>
-<li>Enter the directory <code>blender-4.2.9-linux-x64</code> and double-click the file <code>blender</code></li>
+<li>Enter the directory <code>blender-4.2.9-linux-x64</code> and double-click the file <code>blender</code>.</li>
 </ul>
 <p><a href="media/27-blender-open.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="media/27-blender-open.png" class="img-fluid"></a></p>
+<p>Blender will open with a nice splash screen at the center.</p>
 <ul>
-<li>Blender will open with a nice splash screen at the center, click anywhere to close it</li>
+<li>Click anywhere to close it.</li>
 </ul>
 <p><a href="media/28-blender-clean.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="media/28-blender-clean.png" class="img-fluid"></a></p>
+<p>Notice at the top left region that we are in the <code>Layout</code> tab (important for later). There’s a gray cube at the center, we want to get rid of it.</p>
 <ul>
-<li>Notice at the top left region that we are in the <code>Layout</code> tab (important for later)</li>
-<li>You’ll see a gray cube at the center, we want to get rid of it</li>
-<li>In the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code>, right-click the <code>Cube</code> line and select <code>Delete</code></li>
+<li>In the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code>, right-click the <code>Cube</code> line and select <code>Delete</code>.</li>
 </ul>
 <p><a href="media/29-blender-cube.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="media/29-blender-cube.png" class="img-fluid"></a></p>
+<p>Great. Let’s focus now at the bottom right corner, it is busy, full of icons and menus. Don’t get overwhelmed, we only need to select and use one of the modes.</p>
 <ul>
-<li>Great. Let’s focus now at the bottom right corner, it is busy, full of icons and menus. Don’t get overwhelmed, we only need to select and use one of the modes</li>
-<li>If not yet selected, click on the <code>Scene</code> icon (it is the white triangle with two circles) to activate this panel</li>
-<li>Then locate the tab named <code>Tissue Cartography</code> at the bottom</li>
+<li>If not yet selected, click on the <code>Scene</code> icon (it is the white triangle with two circles) to activate this panel.</li>
+<li>Then locate the tab named <code>Tissue Cartography</code> at the bottom.</li>
 </ul>
 <p><a href="media/30-blender-btc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img src="media/30-blender-btc.png" class="img-fluid"></a></p>
 <ul>
-<li>Scroll down and make the side panels wider to be able to read the options of <code>Tissue Cartography</code></li>
-<li>This is the main interface of the <code>Blender Tissue Cartography</code> add-on</li>
-<li>It is through here that we will control most of the steps of this pipeline</li>
+<li>Scroll down and make the side panels wider to be able to read the options of <code>Tissue Cartography</code>.</li>
 </ul>
 <p><a href="media/31-blender-wider.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img src="media/31-blender-wider.png" class="img-fluid"></a></p>
+<p>This is the main interface of the <code>Blender Tissue Cartography</code> add-on. It is through here that we will control most of the steps of this pipeline.</p>
 </section>
 <section id="load-sample" class="level3">
 <h3 class="anchored" data-anchor-id="load-sample">Load sample</h3>
+<p>The first thing we need to do is to load the sample.</p>
 <ul>
-<li>The first thing we need to do is to load the sample</li>
-<li>Click on the folder icon in the <code>Tissue Cartography</code> &gt; <code>File Path</code>, navigate to your working directory, and select the file <code>Drosophila_CAAX-mCherry.tiff</code></li>
-<li>Tip: bookmark the directory for easy access in the future</li>
-<li>Click <code>Accept</code></li>
+<li>Click on the folder icon in the <code>Tissue Cartography</code> &gt; <code>File Path</code>, navigate to the working directory, and select the file <code>Drosophila_CAAX-mCherry.tiff</code>.</li>
+</ul>
+<p>Tip: bookmark the directory for easy access in the future.</p>
+<ul>
+<li>Click <code>Accept</code>.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -648,35 +639,30 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Then press <code>Load .tiff file</code> to load it into Blender</li>
-<li>A new row will appear at the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code> named <code>Drosophila_CAAX-mCherry_BoundingBox</code> and the bounding box of the image stack will be visible in the main window as orange lines</li>
+<li>Then press <code>Load .tiff file</code> to load it into Blender.</li>
 </ul>
 <p><a href="media/34-blender-loaded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img src="media/34-blender-loaded.png" class="img-fluid"></a></p>
+<p>A new row will appear at the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code> named <code>Drosophila_CAAX-mCherry_BoundingBox</code> and the bounding box of the image stack will be visible in the main window as orange lines.</p>
+<p>Only a portion of the bounding box is visible, but we want to see the whole thing. The controls to navigate the 3D space are at the top right corner of the main window. We have XYZ handles (red, green, blue), a zoom tool (magnifier lens), and a move tool (open hand).</p>
 <ul>
-<li>Only a portion of the bounding box is visible, but we want to see the whole thing</li>
-<li>The controls to navigate the 3D space are at the top right corner of the main window</li>
-<li>You have XYZ handles (red, green, blue), a zoom tool (magnifier lens), and a move tool (open hand)</li>
-<li>Click, hold, and drag any of these to move around</li>
-<li>Clicking on the X, Y, or Z will reorient your sample along these axes (very useful)</li>
-<li>Take some time to practice and finish by placing the bounding box at the center of the main window as in the image below</li>
+<li>Click, hold, and drag any of these to move around.</li>
+<li>Clicking on the X, Y, or Z will reorient the sample along these axes (very useful).</li>
 </ul>
 <p><a href="media/35-blender-box.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img src="media/35-blender-box.png" class="img-fluid"></a></p>
+<p>Take some time to practice and finish by placing the bounding box at the center of the main window as in the image below.</p>
 </section>
 <section id="load-probabilities" class="level3">
 <h3 class="anchored" data-anchor-id="load-probabilities">Load probabilities</h3>
+<p>Now let’s load the probabilities files.</p>
 <ul>
-<li>Now let’s load the probabilities files</li>
-<li>Click in the folder icon of the <code>Tissue Cartography</code> &gt; <code>Segmentation File Path</code>, navigate to your working directory, and select the file <code>Drosophila_CAAX-mCherry_Probabilities.tiff</code></li>
-<li>Click <code>Accept</code></li>
+<li>Click on the folder icon of the <code>Tissue Cartography</code> &gt; <code>Segmentation File Path</code>, navigate to the working directory, and select the file <code>Drosophila_CAAX-mCherry_Probabilities.tiff</code>.</li>
+<li>Click <code>Accept</code>.</li>
 </ul>
 <p><a href="media/36-blender-probabilities.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img src="media/36-blender-probabilities.png" class="img-fluid"></a></p>
+<p>The file name will appear in the field, but before loading we want to adjust one parameter. Blender will take the segmentation probabilities and convert it into a tridimensional mesh. Generally, the raw segmentation is full of sharp angles, which will not look very nice when we map the image information onto the mesh for visualization. Therefore, it is generally a good idea to apply a degree of smoothing upon importing the segmentation.</p>
+<p>We can control the smoothing in the small field below and to the right of <code>Segmentation File Path</code> named <code>S... 0.00</code>. It should read <code>Smoothing (µm)</code> but the panel is too narrow to show the full name.</p>
 <ul>
-<li>The file name will appear in the field, but before loading we want to adjust one parameter</li>
-<li>Blender will take the segmentation probabilities and convert it into a tridimensional mesh</li>
-<li>Generally, the raw segmentation is full of sharp angles, which will not look very nice when we map the image information onto the mesh for visualization</li>
-<li>Therefore, it is generally a good idea to apply a degree of smoothing upon importing the segmentation</li>
-<li>You can control the smoothing in the small field below and to the right of <code>Segmentation File Path</code> named <code>S... 0.00</code>. It should read <code>Smoothing (µm)</code> but the panel is too narrow to show the full name</li>
-<li>Click on it and set it to <code>1.0</code></li>
+<li>Click on it and set it to <code>1.0</code>.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -689,48 +675,38 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Now click on <code>Get mesh(es) from binary segmentation .tiff file(s)</code> to generate the mesh</li>
-<li>It takes a second</li>
-<li>A gray mesh shaped like our sample will appear inside the bounding box in the main window</li>
-<li>Also notice that a new row appeared at the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code> named <code>Drosophila_CAAX-mCherry_Probabilities_c0</code></li>
+<li>Now click on <code>Get mesh(es) from binary segmentation .tiff file(s)</code> to generate the mesh (it takes a second).</li>
 </ul>
 <p><a href="media/39-blender-mesh.png" class="lightbox" data-gallery="quarto-lightbox-gallery-39"><img src="media/39-blender-mesh.png" class="img-fluid"></a></p>
-<ul>
-<li>Congratulations! You have successfully generated a 3D mesh of your sample. That’s already a powerful visualization method</li>
-<li>Celebrate by exploring your sample. Rotate all around, zoom in to see details, and check how good the mesh is. Are there any holes or other artifacts?</li>
-</ul>
+<p>A gray mesh shaped like our sample will appear inside the bounding box in the main window. Also notice that a new row appeared at the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code> named <code>Drosophila_CAAX-mCherry_Probabilities_c0</code>.</p>
+<p>Congratulations! We have successfully generated a 3D mesh of the sample. That’s already a powerful visualization method. Celebrate by exploring the sample. Rotate all around, zoom in to see details, and check how good the mesh is. Are there any holes or other artifacts?</p>
 </section>
 <section id="apply-shading" class="level3">
 <h3 class="anchored" data-anchor-id="apply-shading">Apply shading</h3>
+<p>The mesh is nice, but it would be even better to see the actual image data overlaid on the mesh. We can accomplish that using the shading view and function of Blender.</p>
 <ul>
-<li>The mesh is nice, but it would even better to see the actual image data overlaid on the mesh</li>
-<li>We can accomplish that using the shading view and function of Blender</li>
-<li>First we need to activate the shading viewport at the top right corner of the main window, an icon that looks like a pie chart</li>
+<li>First, we need to activate the Shading workspace at the top right corner of the main window (an icon that looks like a pie chart).</li>
 </ul>
 <p><a href="media/40-shading-viewport.png" class="lightbox" data-gallery="quarto-lightbox-gallery-40"><img src="media/40-shading-viewport.png" class="img-fluid"></a></p>
-<ul>
-<li>Once clicked, the mesh will become almost white</li>
-</ul>
+<p>Once clicked, the mesh will become almost white.</p>
 <p><a href="media/41-shading-blank.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41"><img src="media/41-shading-blank.png" class="img-fluid"></a></p>
-<ul>
-<li>Before applying the shading, there’s one important parameter to set: <code>Vertex ... 0.00</code> or, in full, <code>Vertex Shader Normal Offset (µm)</code></li>
-</ul>
+<p>Before applying the shading, there’s one important parameter to set: <code>Vertex ... 0.00</code> or, in full, <code>Vertex Shader Normal Offset (µm)</code>.</p>
 <p><a href="media/42-offset-zero.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42"><img src="media/42-offset-zero.png" class="img-fluid"></a></p>
+<p>When this parameter is <code>0</code>, the image data that corresponds to the limits of the segmentation is applied onto the mesh. In this case, this is the surface of the sample which, in this case, does not have much information. The fluorescent signal of the tissue, in this case, is a few microns deeper. Therefore, we can use the offset parameter to adjust the exact layer to be applied to the mesh as shading.</p>
 <ul>
-<li>When this parameter is <code>0</code>, the image data that corresponds to the limits of the segmentation is applied onto the mesh. In this case, this is the surface of the sample which, in this case, does not have much information. The fluorescent signal of the tissue, in this case, is a few microns deeper. Therefore, we can use the offset parameter to adjust the exact layer to be applied to the mesh as shading</li>
-<li>In this case, a value of <code>5</code> works well</li>
+<li>In this case, a value of <code>5</code> works well.</li>
 </ul>
 <p><a href="media/43-offset-five.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43"><img src="media/43-offset-five.png" class="img-fluid"></a></p>
+<p>Every time we want to apply or refresh the shading, we need to select the bounding box and probabilities entries in the <code>Scene Collection</code> &gt; <code>Collection</code> top right panel.</p>
 <ul>
-<li>Now, every time we want to apply or refresh the shading, we need to select the bounding box and probabilities entries in the <code>Scene Collection</code> &gt; <code>Collection</code> top right panel</li>
-<li>You can do so by clicking on one and ctrl+clicking on the other</li>
+<li>We can do so by clicking on one and <code>Ctrl+Click</code> on the other to select both.</li>
 </ul>
 <p><a href="media/44-shading-boxprob.png" class="lightbox" data-gallery="quarto-lightbox-gallery-44"><img src="media/44-shading-boxprob.png" class="img-fluid"></a></p>
 <ul>
-<li>Finally, to apply the shading press <code>Initialize/refresh vertex shading</code> and wait</li>
-<li>After a few seconds, you should see cell membranes overlaid onto the mesh</li>
+<li>Finally, press <code>Initialize/refresh vertex shading</code> to apply the shading and wait…</li>
 </ul>
 <p><a href="media/45-shading-applied.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45"><img src="media/45-shading-applied.png" class="img-fluid"></a></p>
+<p>After a few seconds, we should see cell membranes overlaid onto the mesh.</p>
 <ul>
 <li>Take the chance to explore the sample again, now with some biological information projected into 3D!</li>
 </ul>
@@ -738,21 +714,21 @@ div.csl-indent {
 </section>
 <section id="sec-generate-projection" class="level2">
 <h2 class="anchored" data-anchor-id="sec-generate-projection">Generate projection</h2>
+<p>We are ready to generate our first cartographic projection. This is done in the <code>UV Editing</code> workspace.</p>
 <ul>
-<li>We are ready to generate our first cartographic projection</li>
-<li>This is done in the <code>UV Editing</code> workspace, click on the tab to activate it</li>
+<li>Click on the <code>UV Editing</code> tab to activate it.</li>
 </ul>
 <p><a href="media/46-uv-workspace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46"><img src="media/46-uv-workspace.png" class="img-fluid"></a></p>
+<p>The workspace will be divided in two. On the left we will see the projected mesh and on the right it is the mesh of the original sample in 3D.</p>
 <section id="sec-setup-uv" class="level3">
 <h3 class="anchored" data-anchor-id="sec-setup-uv">Set up UV Editing</h3>
+<p>Before starting, we need to make sure that the correct options are enabled.</p>
 <ul>
-<li>Before starting, we need to make sure that the correct options are enabled</li>
-<li>First, zoom out the right side window for the entire sample to be visible</li>
+<li>First, zoom out the right side window for the entire sample to be visible.</li>
 </ul>
 <p><a href="media/47-uv-sample.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47"><img src="media/47-uv-sample.png" class="img-fluid"></a></p>
 <ul>
-<li>Then, we want to disable the bounding box entry in the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code></li>
-<li>You can do so by ctrl+clicking on the square nodes symbol on the left of the bounding box entry as shown below</li>
+<li>Then, disable the bounding box entry in the top right panel under <code>Scene Collection</code> &gt; <code>Collection</code> by <code>Ctrl+Click</code> on the square nodes symbol on the left of the bounding box entry as shown below.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -765,7 +741,7 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Next we want to change the <code>Select Mode</code> from <code>Vertex</code> to <code>Face</code></li>
+<li>Next, change the <code>Select Mode</code> from <code>Vertex</code> to <code>Face</code>.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -777,109 +753,98 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<ul>
-<li>In the right hand workspace, we should see the sample (not the bounding box) highlighted in light orange</li>
-</ul>
+<p>In the right hand workspace, we should see the sample (not the bounding box) highlighted in light orange.</p>
 <p><a href="media/52-uv-ready.png" class="lightbox" data-gallery="quarto-lightbox-gallery-52"><img src="media/52-uv-ready.png" class="img-fluid"></a></p>
-<ul>
-<li>If you accidentaly clicked somewhere and now the mesh is visible in black, worry not! Simply press <code>A</code> or click on <code>Select</code> &gt; <code>All</code></li>
-</ul>
+<p>We might accidentally click somewhere and the mesh will become black.</p>
 <p><a href="media/53-uv-all.png" class="lightbox" data-gallery="quarto-lightbox-gallery-53"><img src="media/53-uv-all.png" class="img-fluid"></a></p>
+<p>If this happens, worry not!</p>
 <ul>
-<li>To finish the setup, click on the Y axis handles until the sample is oriented vertically with the pointy side upward</li>
+<li>Simply press <code>A</code> or click on <code>Select</code> &gt; <code>All</code> to select all the mesh.</li>
+</ul>
+<p>To finish the setup, we need to orient the sample properly for the projection, it matters!</p>
+<ul>
+<li>Click on the Y axis handle until the sample is oriented vertically with the narrower tip pointing upward.</li>
 </ul>
 <p><a href="media/54-uv-orient.png" class="lightbox" data-gallery="quarto-lightbox-gallery-54"><img src="media/54-uv-orient.png" class="img-fluid"></a></p>
-<ul>
-<li>We are now ready to project the mesh</li>
-</ul>
+<p>We are ready to project the mesh.</p>
 </section>
 <section id="sec-project-mesh" class="level3">
 <h3 class="anchored" data-anchor-id="sec-project-mesh">Project mesh</h3>
+<p>While the right side shows the sample, the left side shows how the projected mesh looks like; it is initially empty.</p>
 <ul>
-<li>While the right side shows your sample, the left side shows how the projected mesh looks like; it is initially empty</li>
-<li>To make the first projection, go to <code>UV</code> &gt; <code>Cylinder Projection</code> to project the mesh over the curved wall of a cylinder</li>
+<li>To make the first projection, go to <code>UV</code> &gt; <code>Cylinder Projection</code> to project the mesh over the curved wall of a cylinder.</li>
 </ul>
 <p><a href="media/55-uv-cylinder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-55"><img src="media/55-uv-cylinder.png" class="img-fluid"></a></p>
-<ul>
-<li>A crazy, palisade wall will appear</li>
-<li>Don’t despair and click on the tiny menu named <code>Cylinder Projection</code> that appeared at the bottom of the workspace</li>
-</ul>
+<p>A crazy, palisade-like wall will appear.</p>
 <p><a href="media/56-uv-palisade.png" class="lightbox" data-gallery="quarto-lightbox-gallery-56"><img src="media/56-uv-palisade.png" class="img-fluid"></a></p>
+<p>But don’t despair.</p>
 <ul>
-<li>The options for the cylinder projection will appear</li>
-<li>There you can define the orientation of the axes and other options to change how the 3D mesh is transformed into a 2D surface</li>
-<li>What we need for now is to activate the checkbox <code>Scale to Bounds</code></li>
-<li>This will nicely contain the projection into the squared bounding area</li>
+<li>Click on the tiny menu named <code>Cylinder Projection</code> that appeared at the bottom of the workspace.</li>
+</ul>
+<p>The options for the cylinder projection will appear. There we can define the orientation of the axes and other options to change how the 3D mesh is transformed into a 2D surface. What we need for now is to contain the projection into the squared bounding area.</p>
+<ul>
+<li>Activate the checkbox <code>Scale to Bounds</code>.</li>
 </ul>
 <p><a href="media/57-uv-scale.png" class="lightbox" data-gallery="quarto-lightbox-gallery-57"><img src="media/57-uv-scale.png" class="img-fluid"></a></p>
-<ul>
-<li>And… that’s it. We have our first projected mesh</li>
-<li>How good is it? Ideally, the mesh should occupy the entire area</li>
-<li>Our projected mesh has a couple of portions slightly bulging outside the area, and we have an empty vertical portion on the right side</li>
-<li>This could be fixed with some editing</li>
-<li>However, for now, it looks good enough for a first try</li>
-</ul>
+<p>This will nicely limit the mesh to the projection area.</p>
+<p>That’s it. We have our first projected mesh. How good is it? Ideally, the mesh should occupy the entire projection area. Our projected mesh has a couple of portions slightly bulging outside the area, and we have an empty vertical portion on the right side. This could be fixed with some editing. However, for now, it looks good enough for a first try.</p>
 </section>
 <section id="sec-project-data" class="level3">
 <h3 class="anchored" data-anchor-id="sec-project-data">Project data</h3>
+<p>The next step is to project the actual image data onto this projected mesh surface.</p>
 <ul>
-<li>We need to project the actual image data onto this surface</li>
-<li>Change back to the <code>Layout</code> workspace, select both <code>Drosophila_CAAX-mCherry_BoundingBox</code> and <code>Drosophila_CAAX-mCherry_Probabilities_c0</code> under <code>Scene Collection</code> &gt; <code>Collection</code>, and change the option <code>Normal Offs...</code> (<code>Normal Offsets (µm)</code>) to <code>5</code> to match the <code>Vertex Shader Normal Offset (µm)</code> options</li>
-<li>Note: that <code>Normal Offsets (µm)</code> accepts a comma-separated lists of values. We can put <code>0,1,2,3,4,5</code> to generate a projection with 6 slices representing onion layers deeper into the tissues</li>
-<li>The click on <code>Create Projection</code></li>
+<li>Change back to the <code>Layout</code> workspace, select both <code>Drosophila_CAAX-mCherry_BoundingBox</code> and <code>Drosophila_CAAX-mCherry_Probabilities_c0</code> under <code>Scene Collection</code> &gt; <code>Collection</code>, and change the option <code>Normal Offs...</code> (<code>Normal Offsets (µm)</code>) to <code>5</code> to match the <code>Vertex Shader Normal Offset (µm)</code> option.</li>
+</ul>
+<p>Note: <code>Normal Offsets (µm)</code> accepts a comma-separated list of values. We can put <code>0,1,2,3,4,5</code> to generate a projection with 6 slices representing onion layers deeper into the tissues.</p>
+<ul>
+<li>Then, click on <code>Create Projection</code>.</li>
 </ul>
 <p><a href="media/58-create-projection.png" class="lightbox" data-gallery="quarto-lightbox-gallery-58"><img src="media/58-create-projection.png" class="img-fluid"></a></p>
-<ul>
-<li>Wait… the interface might become unresponsive. If a dialog appears, click on <code>Wait</code></li>
-<li>When done, the shading over the sample will blink. It should look very similar to how it was before (if it doesn’t, it is a sign that something went wrong)</li>
-</ul>
+<p>Wait… the interface might become unresponsive. If a dialog appears, click on <code>Wait</code> and wait. When done, the shading over the sample will blink. But, it should look very similar to how it was before (and if it doesn’t, it is a sign that something went wrong).</p>
 </section>
 <section id="sec-check-projection" class="level3">
 <h3 class="anchored" data-anchor-id="sec-check-projection">Check projection</h3>
 <ul>
-<li>To visually inspect the projected data we need to change back to the UV Editing workspace</li>
+<li>To visually inspect the projected data, change back to the <code>UV Editing</code> workspace.</li>
 </ul>
 <p><a href="media/59-uv-after.png" class="lightbox" data-gallery="quarto-lightbox-gallery-59"><img src="media/59-uv-after.png" class="img-fluid"></a></p>
 <ul>
-<li>Zoom out on the left side window to see the entire projection</li>
-<li>Then click anywhere outside the sample or projection to unselect the mesh</li>
-<li>The sample mesh will become visible in black, and the cartographic projection should appear on the left side window</li>
-<li>The orientation of the sample will match that of the sample (if the sample is upside down when you project the mesh, the projected mesh will also be upside down)</li>
+<li>Zoom out on the left side window to see the entire projection.</li>
+<li>Then click anywhere outside the sample or projection to unselect the mesh.</li>
 </ul>
 <p><a href="media/60-uv-projected.png" class="lightbox" data-gallery="quarto-lightbox-gallery-60"><img src="media/60-uv-projected.png" class="img-fluid"></a></p>
-<ul>
-<li>So what happened here? We projected the sample mesh to 2D using the cylinder approach. Then the add-on Blender Tissue Cartography used this projected mesh to create a projection of the image data from the original stack. Quite nice!</li>
-<li>Every time you create a new projection, the projected data is stored as an image which is available for Blender to display as an image data-block</li>
-<li>You can see them by clicking on the picture icon in the top menu</li>
-<li>This first projection is named <code>Channel_0_Layer_0</code>. The next will be named <code>Channel_0_Layer_0.001</code>, <code>Channel_0_Layer_0.002</code>, and so on</li>
-</ul>
+<p>The sample mesh will become visible in black, and the cartographic projection should appear on the left side window. The orientation of the sample will match that of the projection (if the sample is upside down when projecting the mesh, the projected mesh will also be upside down).</p>
+<p>So, what happened here? We projected the sample mesh to 2D using the cylinder approach. Then the add-on Blender Tissue Cartography used this projected mesh to create a projection of the image data from the original stack. Quite nice!</p>
+<p>Every time we create a new projection, the projected data is stored as an image which is available for Blender to display as an image “data-block”. We can see them by clicking on the picture icon in the top menu.</p>
 <p><a href="media/61-uv-datablock.png" class="lightbox" data-gallery="quarto-lightbox-gallery-61"><img src="media/61-uv-datablock.png" class="img-fluid"></a></p>
+<p>This first projection is named <code>Channel_0_Layer_0</code>. The next will be named <code>Channel_0_Layer_0.001</code>, <code>Channel_0_Layer_0.002</code>, and so on.</p>
 </section>
 <section id="sec-save-projection" class="level3">
 <h3 class="anchored" data-anchor-id="sec-save-projection">Save projection</h3>
+<p>The projection now exists in Blender, but we need to export it to file.</p>
 <ul>
-<li>The projection now exists in Blender, but we need to export it to file</li>
-<li>For that, go back to the <code>Layout</code> workspace, select both <code>Drosophila_CAAX-mCherry_BoundingBox</code> and <code>Drosophila_CAAX-mCherry_Probabilities_c0</code> under <code>Scene Collection</code> &gt; <code>Collection</code> again, then click on <code>Save Projection</code></li>
+<li>For that, go back to the <code>Layout</code> workspace, select both <code>Drosophila_CAAX-mCherry_BoundingBox</code> and <code>Drosophila_CAAX-mCherry_Probabilities_c0</code> under <code>Scene Collection</code> &gt; <code>Collection</code> again, then click on <code>Save Projection</code>.</li>
 </ul>
 <p><a href="media/62-save-projection.png" class="lightbox" data-gallery="quarto-lightbox-gallery-62"><img src="media/62-save-projection.png" class="img-fluid"></a></p>
+<p>A <code>Blender File View</code> window will open.</p>
 <ul>
-<li>A <code>Blender File View</code> window will open</li>
-<li>Navigate to your working directory</li>
-<li>In the file name field put the name of the file with <code>_cylinder</code> appended to it, to read <code>Drosophila_CAAX-mCherry_cylinder.tif</code></li>
-<li>Then press <code>Save Projection</code></li>
-<li>Three new files will appear on your working directory with <code>BakedData</code>, <code>BakedNormals</code>, and <code>BakedPositions</code> suffixes appended to the dataset filename</li>
+<li>Navigate to the working directory.</li>
+<li>In the file name field put the name of the file with <code>_cylinder</code> appended to it, to read <code>Drosophila_CAAX-mCherry_cylinder.tif</code>.</li>
+<li>Then press <code>Save Projection</code>.</li>
 </ul>
+<p>Three new files will appear in the working directory with <code>BakedData</code>, <code>BakedNormals</code>, and <code>BakedPositions</code> suffixes appended to the dataset filename.</p>
 <p><a href="media/63-projection-saved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-63"><img src="media/63-projection-saved.png" class="img-fluid"></a></p>
 <ul>
-<li><code>BakedData</code> shows the original image data projected on the surface</li>
-<li><code>BakedPositions</code> shows the original XYZ positions projected on the surface in RGB</li>
-<li><code>BakedNormals</code> shows the XYZ surface directions perpendicular to each point in RGB</li>
+<li><code>BakedData</code> shows the original image data projected on the surface.</li>
+<li><code>BakedPositions</code> shows the original XYZ positions projected on the surface in RGB.</li>
+<li><code>BakedNormals</code> shows the XYZ surface directions perpendicular to each point in RGB.</li>
 </ul>
 </section>
 <section id="sec-open-projection" class="level3">
 <h3 class="anchored" data-anchor-id="sec-open-projection">Open projection</h3>
+<p>Let’s open the files in Fiji for inspection.</p>
 <ul>
-<li>Let’s open the files in Fiji for inspection</li>
+<li>Drag and drop the files into Fiji.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -894,47 +859,38 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<ul>
-<li>Explore them in more detail, check with <code>Image</code> &gt; <code>Color</code> &gt; <code>Channels Tool...</code> (ctrl+shift+z) how the individual channels look like</li>
-<li>These files provide important information to reconstruct back the 3D information from the projected surface in downstream analyses</li>
-</ul>
+<p>Explore them in more detail, check with <code>Image</code> &gt; <code>Color</code> &gt; <code>Channels Tool...</code> (<code>Ctrl+Shift+Z</code>) how the individual channels look like. These files provide important information to reconstruct back the 3D information from the projected surface in downstream analyses.</p>
 </section>
 </section>
 <section id="sec-optimize-projection" class="level2">
 <h2 class="anchored" data-anchor-id="sec-optimize-projection">Optimize projection</h2>
-<ul>
-<li>Our initial projection is satisfactory, but there are many ways to optimize it to your specific needs</li>
-<li>One immediate thing is to try a <code>Sphere Projection</code> instead of <code>Cylinder Projection</code>. They are quite similar, but I found the sphere projection to be more consistent and predictable and might work better for more spherical samples</li>
-<li>But another common use case is to be able to determine where the mesh will unwrap. This might be important for downstream analyses</li>
-<li>In our sample, for example, the projection put the dorsal side on the left side (where a clump of germ cells are visible at the bottom) and the ventral side on the right side. However, let’s say that I need for my analyses the dorsal side at the center of the projection</li>
-<li>To accomplish that we can manually mark a seam on our mesh to define the unwrapping position</li>
-</ul>
+<p>Our initial projection is satisfactory, but there are many ways to optimize it to our specific needs. One immediate thing is to try a <code>Sphere Projection</code> instead of <code>Cylinder Projection</code>. They are quite similar, but I found the sphere projection to be more consistent and predictable and might work better for more spherical samples.</p>
+<p>Another common use case is to be able to determine where the mesh will unwrap. This might be important for downstream analyses. In our sample, for example, the projection put the dorsal side on the left side (where a clump of germ cells are visible at the bottom) and the ventral side on the right side. However, let’s say that I need for my analyses the dorsal side at the center of the projection.</p>
+<p>To accomplish that we can manually mark a seam on our mesh to define the unwrapping position.</p>
 <section id="sec-mark-seam" class="level3">
 <h3 class="anchored" data-anchor-id="sec-mark-seam">Mark seam on mesh</h3>
 <ul>
-<li>Go to the <code>UV Editing</code> workspace and change the <code>Select Mode</code> to <code>Edge select</code></li>
+<li>Go to the <code>UV Editing</code> workspace and change the <code>Select Mode</code> to <code>Edge select</code>.</li>
 </ul>
 <p><a href="media/67-seam-edge.png" class="lightbox" data-gallery="quarto-lightbox-gallery-67"><img src="media/67-seam-edge.png" class="img-fluid"></a></p>
+<p>In this mode, when we click on the mesh an edge is selected and when we subsequently <code>Ctrl+Click</code> on another edge, the shortest path between the two edges will be selected. Like this we can quickly select a line along the sample to mark the unwrapping position. What we want is to trace a line through the ventral side of the sample. This is the region opposite to the germ cell clump.</p>
 <ul>
-<li>In this mode, when you click on the mesh an edge is selected and when you subsequently ctrl+click on another edge, the shortest path between the two edges will be selected. Like this you can quickly select a line along your sample to mark the unwrapping position</li>
-<li>What we want is to trace a line through the ventral side of the sample. This is the region opposite to the germ cell clump</li>
-<li>Using the handle buttons, reorient the sample sideways with the ventral side facing you</li>
+<li>Using the handle buttons, reorient the sample sideways with the ventral side facing us.</li>
 </ul>
 <p><a href="media/68-seam-zoom.png" class="lightbox" data-gallery="quarto-lightbox-gallery-68"><img src="media/68-seam-zoom.png" class="img-fluid"></a></p>
+<p>We will start by selecting an edge on one of the poles.</p>
 <ul>
-<li>We need to start by selecting an edge at one of the poles</li>
-<li>Turn the sample to show one of the poles and zoom in to see the edges clearly</li>
-<li>Then click on one at the center of the pole to select it</li>
+<li>Turn the sample to show one of the poles and zoom in to see the edges clearly.</li>
+<li>Then click on one edge at the center of the pole to select it.</li>
 </ul>
 <p><a href="media/69-seam-first.png" class="lightbox" data-gallery="quarto-lightbox-gallery-69"><img src="media/69-seam-first.png" class="img-fluid"></a></p>
 <ul>
-<li>Zoom out slightly, turn the sample, and ctrl+click on another edge further from the pole</li>
-<li>A yellow line will appear connecting the pole with the current edge</li>
+<li>Zoom out slightly, turn the sample, and <code>Ctrl+Click</code> on another edge further away from the pole.</li>
+<li>A yellow line will appear connecting the pole with the current edge.</li>
 </ul>
 <p><a href="media/70-seam-second.png" class="lightbox" data-gallery="quarto-lightbox-gallery-70"><img src="media/70-seam-second.png" class="img-fluid"></a></p>
 <ul>
-<li>Continue ctrl+clicking edges along the sample until the opposite pole</li>
-<li>Don’t worry if the line is not perfectly straight</li>
+<li>Continue <code>Ctrl+Click</code> on edges along the sample until the opposite pole (don’t worry if the line isn’t perfectly straight).</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="3" data-layout-nrow="2">
 <div class="quarto-layout-row">
@@ -961,31 +917,25 @@ div.csl-indent {
 </div>
 </div>
 <ul>
-<li>Now press ctrl+e to open a menu with edge options and select <code>Mark Seam</code></li>
+<li>Now press <code>Ctrl+E</code> to open a menu with edge options and select <code>Mark Seam</code>.</li>
 </ul>
 <p><a href="media/77-seam-mark.png" class="lightbox" data-gallery="quarto-lightbox-gallery-77"><img src="media/77-seam-mark.png" class="img-fluid"></a></p>
-<ul>
-<li>The seam will be marked in red (below it’s mixed with yellow line from the edge selection)</li>
-</ul>
+<p>The seam will be marked in red (below it’s mixed with yellow line from the edge selection).</p>
 <p><a href="media/78-seam-done.png" class="lightbox" data-gallery="quarto-lightbox-gallery-78"><img src="media/78-seam-done.png" class="img-fluid"></a></p>
 </section>
 <section id="sec-project-mesh-seam" class="level3">
 <h3 class="anchored" data-anchor-id="sec-project-mesh-seam">Project mesh with seam</h3>
 <ul>
-<li>Now reorient the sample vertically again with the narrow tip up and change the <code>Select Mode</code> back to <code>Face select</code></li>
+<li>Now reorient the sample vertically again with the narrow tip up and change the <code>Select Mode</code> back to <code>Face select</code>.</li>
 </ul>
 <p><a href="media/79-seam-orient.png" class="lightbox" data-gallery="quarto-lightbox-gallery-79"><img src="media/79-seam-orient.png" class="img-fluid"></a></p>
 <ul>
-<li>Press <code>A</code> to select all the mesh (they will turn orange)</li>
-<li>Go to <code>UV</code> &gt; <code>Cylinder Projection</code></li>
-<li>Then check <code>Preserve Seams</code> in the option box</li>
+<li>Press <code>A</code> to select all the mesh (they will turn orange).</li>
+<li>Go to <code>UV</code> &gt; <code>Cylinder Projection</code>.</li>
+<li>Then check <code>Preserve Seams</code> in the option box.</li>
 </ul>
 <p><a href="media/80-seam-preserve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-80"><img src="media/80-seam-preserve.png" class="img-fluid"></a></p>
-<ul>
-<li>As you can see, the projection changed</li>
-<li>It is squeezed at the center of the projection area due to the very long protruding mesh at the top left and bottom right regions</li>
-<li>Let’s evaluate how good it is by projecting the data</li>
-</ul>
+<p>As we can see, the projection changed. It is squeezed at the center of the projection area due to the very long protruding mesh at the top left and bottom right regions. Let’s evaluate how good it is by projecting the data.</p>
 </section>
 <section id="sec-project-data-seam" class="level3">
 <h3 class="anchored" data-anchor-id="sec-project-data-seam">Project data with seam</h3>
@@ -994,32 +944,31 @@ div.csl-indent {
 </ul>
 <p><a href="media/81-projection-seam.png" class="lightbox" data-gallery="quarto-lightbox-gallery-81"><img src="media/81-projection-seam.png" class="img-fluid"></a></p>
 <ul>
-<li>When done, go back to the <code>UV Editing</code> workspace and click anywhere outside the sample to unselect the mesh</li>
-<li>The new data projection should be visible on the left side</li>
-<li>If not, click on the image data-block picture icon and select <code>Channel_0_Layer_0.001</code></li>
+<li>When done, go back to the <code>UV Editing</code> workspace and click anywhere outside the sample to unselect the mesh.</li>
+</ul>
+<p>The new data projection should be visible on the left side.</p>
+<ul>
+<li>If not, click on the image data-block picture icon and select <code>Channel_0_Layer_0.001</code>.</li>
 </ul>
 <p><a href="media/82-projection-squeezed.png" class="lightbox" data-gallery="quarto-lightbox-gallery-82"><img src="media/82-projection-squeezed.png" class="img-fluid"></a></p>
-<ul>
-<li>We have successfully changed the position of the unwrapping using the seam</li>
-<li>The clump of germ cells is now at the center of the projection</li>
-<li>This projection is OK, but the contents are squeezed and it is not occupying the full area</li>
-<li>We can improve this by editing the projection mesh</li>
-</ul>
+<p>We have successfully changed the position of the unwrapping using the seam. The clump of germ cells is now at the center of the projection.</p>
+<p>This projection is OK, but the contents are squeezed and it is not occupying the full bounding area. We can improve this by editing the projection mesh.</p>
 </section>
 <section id="sec-edit-projected-mesh" class="level3">
 <h3 class="anchored" data-anchor-id="sec-edit-projected-mesh">Edit projected mesh</h3>
 <ul>
-<li>Press <code>A</code> to select the entire mesh</li>
-<li>Select the tool <code>Transform</code> on the left side menu</li>
+<li>Press <code>A</code> to select the entire mesh.</li>
+<li>Select the tool <code>Transform</code> on the left side menu.</li>
 </ul>
 <p><a href="media/83-projection-transform.png" class="lightbox" data-gallery="quarto-lightbox-gallery-83"><img src="media/83-projection-transform.png" class="img-fluid"></a></p>
 <ul>
-<li>Hover the mouse on the right side edge to reveal the scale handle</li>
+<li>Hover the mouse on the right side edge to reveal the scale handle.</li>
 </ul>
 <p><a href="media/84-projection-scale.png" class="lightbox" data-gallery="quarto-lightbox-gallery-84"><img src="media/84-projection-scale.png" class="img-fluid"></a></p>
 <ul>
-<li>Drag it to the right to extend the mesh until the edge of the projection area</li>
-<li>Then drag the other size and make the final scaling adjustments so that the projected mesh is covering most of the projection area</li>
+<li>Drag the right side to the right to extend the orange mesh until the edge of the projection area.</li>
+<li>Then, drag the other side to extend the mesh to the left side.</li>
+<li>Finally, make adjustments so that the projected mesh is covering most of the projection area as shown below.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -1031,8 +980,10 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Now we can use the <code>Pinch</code> or <code>Grab</code> tools to edit the mesh at the corners, so that they are not clipped out. Or, we can leave them as is (they will be clipped out of the projection).</p>
 <ul>
-<li>Now you can use the <code>Pinch</code> or <code>Grab</code> tools to edit the mesh at the corners, so that they are not clipped out (you can also leave them as is, they will not appear in the projected data)</li>
+<li>Use <code>Pinch</code> to drag finer portions of the mesh to the corners.</li>
+<li>Use <code>Grab</code> to drag larger portions of the mesh to the corners.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -1047,23 +998,24 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>At the end, the mesh should be filling more or less the projection area.</p>
 </section>
 <section id="sec-check-edited-mesh" class="level3">
 <h3 class="anchored" data-anchor-id="sec-check-edited-mesh">Check edited projection</h3>
+<p>To check the new projection with the edited mesh, we need to re-create the image data projection onto the edited mesh.</p>
 <ul>
-<li>To check the new projection with the edited mesh, we need to re-create the data projection</li>
 <li>Go to the <code>Layout</code> workspace, select both the bounding box and probabilities under <code>Scene Collection</code>, and press <code>Create Projection</code>; then, wait…</li>
-<li>When done, switch to the <code>UV Editing</code> workspace and deselect the mesh and check the new projection (select the latest image data-block, likely <code>Channel_0_Layer_0.002</code>)</li>
-<li>Despite the unevenness of the corners (next time we can do better), this edited projection is better than the first one</li>
+<li>When done, switch to the <code>UV Editing</code> workspace and deselect the mesh and check the new projection (select the latest image data-block, likely <code>Channel_0_Layer_0.002</code>).</li>
 </ul>
 <p><a href="media/90-check-edited.png" class="lightbox" data-gallery="quarto-lightbox-gallery-90"><img src="media/90-check-edited.png" class="img-fluid"></a></p>
+<p>Despite the unevenness of the corners (next time we can improve our pinching and grabbing skills), the edited projection is better than the first one and the tissue is oriented the way we needed. Let’s save the projection to disk.</p>
 <ul>
-<li>Let’s save the projection to disk by going to the <code>Layout</code> workspace, selecting both the bounding box and probabilities entries under <code>Scene Collection</code> &gt; <code>Collection</code>, and clicking on <code>Save Projection</code></li>
-<li>Then navigate to your working directory and give the file a different suffix</li>
+<li>Go to the <code>Layout</code> workspace, select both the bounding box and probabilities entries under <code>Scene Collection</code> &gt; <code>Collection</code>, and click on <code>Save Projection</code>.</li>
+<li>Then navigate to the working directory and give the file a different suffix.</li>
 </ul>
 <p><a href="media/91-save-edited.png" class="lightbox" data-gallery="quarto-lightbox-gallery-91"><img src="media/91-save-edited.png" class="img-fluid"></a></p>
 <ul>
-<li>Finally, open the newly generated files in Fiji to investigate</li>
+<li>Finally, open the newly generated files in Fiji to investigate.</li>
 </ul>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
@@ -1078,16 +1030,27 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>The projection is ready for image analyses.</p>
+<p>There are several other use cases that are not covered in the current version of this tutorial. For example, how can we generate a projection with more layers, or create and register projections for different timepoints. But, if you are interested, these use cases are described in the <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/">Blender Tissue Cartography</a> paper and documentation <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span>.</p>
 </section>
 </section>
 <section id="sec-references" class="level2">
 <h2 class="anchored" data-anchor-id="sec-references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Berg2019-ab" class="csl-entry" role="listitem">
+Berg, Stuart, Dominik Kutra, Thorben Kroeger, Christoph N Straehle, Bernhard X Kausler, Carsten Haubold, Martin Schiegg, et al. 2019. <span>“<span class="nocase">i</span>lastik: Interactive Machine Learning for (Bio)image Analysis.”</span> <em>Nat. Methods</em>, September. <a href="https://doi.org/10.1038/s41592-019-0582-9">https://doi.org/10.1038/s41592-019-0582-9</a>.
+</div>
+<div id="ref-Blender-Foundation2002-jm" class="csl-entry" role="listitem">
+Blender Foundation. 2002. <span>“Blender - the Free and Open Source 3D Creation Software.”</span> Computer software. <a href="https://www.blender.org/">https://www.blender.org/</a>.
+</div>
 <div id="ref-Claussen2025-pv" class="csl-entry" role="listitem">
 Claussen, Nikolas, Cécile Regis, Susan Wopat, and Sebastian Streichan. 2025. <span>“Blender Tissue Cartography: An Intuitive Tool for the Analysis of Dynamic 3D Microscopy Data.”</span> <em>bioRxiv</em>, July, 2025.02.04.636523. <a href="https://doi.org/10.1101/2025.02.04.636523">https://doi.org/10.1101/2025.02.04.636523</a>.
 </div>
 <div id="ref-Heemskerk2015-kv" class="csl-entry" role="listitem">
 Heemskerk, Idse, and Sebastian J Streichan. 2015. <span>“Tissue Cartography: Compressing Bio-Image Data by Dimensional Reduction.”</span> <em>Nat. Methods</em> 12 (December): 1139–42. <a href="https://doi.org/10.1038/nmeth.3648">https://doi.org/10.1038/nmeth.3648</a>.
+</div>
+<div id="ref-Schindelin2012-di" class="csl-entry" role="listitem">
+Schindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. <span>“Fiji: An Open-Source Platform for Biological-Image Analysis.”</span> <em>Nat. Methods</em> 9 (June): 676–82. <a href="https://doi.org/10.1038/nmeth.2019">https://doi.org/10.1038/nmeth.2019</a>.
 </div>
 <div id="ref-Vellutini2022-ya" class="csl-entry" role="listitem">
 Vellutini, Bruno C. 2022. <em>How to Make Cartographic Projections Using <span>ImSAnE</span></em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.7628299">https://doi.org/10.5281/zenodo.7628299</a>.
