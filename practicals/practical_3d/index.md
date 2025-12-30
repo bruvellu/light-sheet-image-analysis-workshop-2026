@@ -12,7 +12,7 @@ This tutorial shows different approaches to visualize 3D microscopy data in Fiji
 
 - [Fiji](https://fiji.sc) [@Schindelin2012-di]
 - [3Dscript](https://bene51.github.io/3Dscript/) plugin [@Schmid2019-bm]
-- [Fly Embryo Timelapse](https://doi.org/10.5281/zenodo.18065738) dataset (4x downsampled) [@Vellutini2025-le]
+- [Fly Embryo Timelapse Lightsheet](https://doi.org/10.5281/zenodo.18065738) dataset (4x downsampled) [@Vellutini2025-le]
 
 ## Setup {#sec-setup}
 
@@ -882,9 +882,9 @@ However, this video can be large. So for presentation purposes and other usages,
 
 ## Citation {#sec-citation}
 
-Vellutini, Bruno C. 2025. 3D Tutorial: Visualization of 3D Data in Fiji Using Built-in Tools and the Plugin 3Dscript. Zenodo. <https://doi.org/10.5281/zenodo.18070016>.
+Vellutini, B. C. (2026). Visualization of 3D data in Fiji using built-in tools and 3Dscript. Zenodo. <https://doi.org/10.5281/zenodo.18070016>
 
-## License
+## License {#sec-license}
 
 This tutorial is available under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 

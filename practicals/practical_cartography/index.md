@@ -8,9 +8,9 @@ date: 05 January 2026
 
 Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.
 
-The state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox [@Heemskerk2015-kv]. However, more recently, a Blender-based tool was released known as *Blender Tissue Cartography* [@Claussen2025-pv] ([code repository](https://github.com/nikolas-claussen/blender-tissue-cartography)). This tool has an [extensive documentation](https://nikolas-claussen.github.io/blender-tissue-cartography/) and several [in-depth tutorials](https://nikolas-claussen.github.io/blender-tissue-cartography/00_tissue_cartography_overview.html#tutorials) that I highly recommend anyone interested in tissue cartography to read.
+The state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox [@Heemskerk2015-kv]. However, more recently, a Blender-based tool was released, known as *Blender Tissue Cartography* [@Claussen2025-pv] ([code repository](https://github.com/nikolas-claussen/blender-tissue-cartography)). This tool has an [extensive documentation](https://nikolas-claussen.github.io/blender-tissue-cartography/) and several [in-depth tutorials](https://nikolas-claussen.github.io/blender-tissue-cartography/00_tissue_cartography_overview.html#tutorials) that I highly recommend anyone interested in tissue cartography to read.
 
-The tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.
+This tutorial is a simplified version of the Blender Tissue Cartography tutorials. It is targeted to beginners wanting to learn the basics of tissue cartography, focusing on a single approach. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.
 
 If you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox [@Heemskerk2015-kv], please check the [imsane-tutorial](https://github.com/bruvellu/imsane-tutorial) which explains how to set up and run the pipeline [@Vellutini2022-ya].
 
@@ -714,6 +714,14 @@ Despite the unevenness of the corners (next time we can improve our pinching and
 The projection is ready for image analyses.
 
 There are several other use cases that are not covered in the current version of this tutorial. For example, how can we generate a projection with more layers, or create and register projections for different timepoints. But, if you are interested, these use cases are described in the [Blender Tissue Cartography](https://nikolas-claussen.github.io/blender-tissue-cartography/) paper and documentation [@Claussen2025-pv].
+
+## Citation {#sec-citation}
+
+Vellutini, B. C. (2026). Tissue cartography using Blender. Zenodo. <https://doi.org/10.5281/zenodo.18090965>
+
+## License {#sec-license}
+
+This tutorial is available under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
 ## References {#sec-references}
 

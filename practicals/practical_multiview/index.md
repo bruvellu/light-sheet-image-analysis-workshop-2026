@@ -8,7 +8,7 @@ date: 05 January 2026
 
 Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.
 
-This is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher [@Preibisch2010-uu; @Horl2019-vx] in Fiji [@Schindelin2012-di].
+This tutorial shows how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher [@Preibisch2010-uu; @Horl2019-vx] in Fiji [@Schindelin2012-di].
 
 We will cover how to convert the raw data for visualization in the BigDataViewer [@Pietzsch2015-md], how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.
 
@@ -16,7 +16,7 @@ We will cover how to convert the raw data for visualization in the BigDataViewer
 
 - [Fiji](https://fiji.sc) [@Schindelin2012-di]
 - [BigStitcher](https://imagej.net/plugins/bigstitcher) plugin [@Preibisch2010-uu; @Horl2019-vx]
-- [Multiview Lightsheet]() dataset [@Vellutini2025]
+- [Fly Embryo Multiview Lightsheet](https://doi.org/10.5281/zenodo.18078061) dataset [@Vellutini2025-rl]
 
 ## Setup {#sec-setup}
 
@@ -70,7 +70,7 @@ Fiji and BigStitcher are ready!
 
 ### Download dataset
 
-- `Dmel_btd-gap_1tp_5v_2c_beads.czi` dataset from this [Zenodo repository](https://doi.org/10.5281/zenodo.18078062) [@Vellutini2025]. The direct link to the file is [here](https://zenodo.org/records/18078062/files/Dmel_btd-gap_1tp_5v_2c_beads.czi?download=1) (3.2GB).
+- `Dmel_btd-gap_1tp_5v_2c_beads.czi` dataset from this [Zenodo repository](https://doi.org/10.5281/zenodo.18078061) [@Vellutini2025-rl]. The direct link to the file is [here](https://zenodo.org/records/18078061/files/Dmel_btd-gap_1tp_5v_2c_beads.czi?download=1) (3.2GB).
 
 ## Inspect dataset {#sec-inspect-dataset}
 
@@ -678,6 +678,14 @@ We can even compare this fused dataset with one of the views of the original dat
 ![](media/98-fuse-versus.png)
 
 Note how the missing data in the single view is nicely present in the fused dataset.
+
+## Citation {#sec-citation}
+
+Vellutini, B. C. (2026). Multiview reconstruction in Fiji using BigStitcher. Zenodo. <https://doi.org/10.5281/zenodo.18090752>
+
+## License {#sec-license}
+
+This tutorial is available under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
 ## References
 
