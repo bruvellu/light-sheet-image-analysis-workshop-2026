@@ -3,6 +3,8 @@ project:
   output-dir: _site
   render:
     - "*.md"
+    - "!help.md"
+    - "!resources.md"
     - "!talks/"
     - "!internal/"
 

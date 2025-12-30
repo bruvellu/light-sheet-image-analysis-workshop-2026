@@ -16,17 +16,21 @@ Welcome! This website contains the materials for the [Light-Sheet Image Analysis
 
 :::
 
-::: {.callout-warning}
+<!--::: {.callout-warning}-->
 
-This website is under construction!
+<!--This website is under construction!-->
 
-:::
+<!--:::-->
 
 
-## Shortcuts
+<!--## Shortcuts-->
+
+::: {style="text-align: center; padding-top: 1rem;"}
 
 [Program](program.md){.btn .btn-primary .rounded}
-[Resources](resources.md){.btn .btn-primary .rounded}
+[Resources](https://lightsheetchile.cl/resources-image-analysis-workshop-2026/){.btn .btn-primary .rounded}
+
+:::
 
 ## About
 
