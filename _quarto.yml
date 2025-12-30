@@ -4,7 +4,6 @@ project:
   render:
     - "*.md"
     - "!help.md"
-    - "!resources.md"
     - "!talks/"
     - "!internal/"
 
