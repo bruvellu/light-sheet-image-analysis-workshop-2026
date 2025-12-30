@@ -54,7 +54,7 @@
     "href": "practicals/practical_tracking/index.html",
     "title": "Cell tracking using Mastodon",
     "section": "",
-    "text": "This is a (very) basic tutorial on how to track cells using Mastodon (Girstmair et al. 2025) in Fiji (Schindelin et al. 2012).\n\nObjectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis\nWe will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688\nThe original data is from this paper https://elifesciences.org/articles/34410\nMastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/",
+    "text": "This is a basic tutorial on how to track cells in Fiji (Schindelin et al. 2012) using Mastodon (Girstmair et al. 2025). The goals are to learn how to load and create Mastodon datasets, get familiar with navigating the BigDataViewer and TrackScheme windows, perform manual cell tracking with cell divisions and simple editing of lineages, perform semi-automated detection and tracking, and try some lineage analysis. We will use a demo Mastodon dataset (Girstmair 2024) generated with lightsheet data from the isopod Parhyale hawaiensis (Wolff et al. 2018). For more information and detailed instructions, please check Mastodon’s official documentation.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -65,7 +65,7 @@
     "href": "practicals/practical_tracking/index.html#sec-summary",
     "title": "Cell tracking using Mastodon",
     "section": "",
-    "text": "This is a (very) basic tutorial on how to track cells using Mastodon (Girstmair et al. 2025) in Fiji (Schindelin et al. 2012).\n\nObjectives: load/create Mastodon dataset, get familiar with navigating BigDataViewer and lineage windows, perform basic manual cell tracking with cell divisions, basic editing of lineages, try semi-automated detection and tracking, and some advanced analysis\nWe will use the Mastodon dataset from Girstmair, J. (2024). Mastodon Auto-Tracking Demo on Parhyale hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/zenodo.13944688\nThe original data is from this paper https://elifesciences.org/articles/34410\nMastodon has a detailed documentation. Please check it out for more details https://mastodon.readthedocs.io/",
+    "text": "This is a basic tutorial on how to track cells in Fiji (Schindelin et al. 2012) using Mastodon (Girstmair et al. 2025). The goals are to learn how to load and create Mastodon datasets, get familiar with navigating the BigDataViewer and TrackScheme windows, perform manual cell tracking with cell divisions and simple editing of lineages, perform semi-automated detection and tracking, and try some lineage analysis. We will use a demo Mastodon dataset (Girstmair 2024) generated with lightsheet data from the isopod Parhyale hawaiensis (Wolff et al. 2018). For more information and detailed instructions, please check Mastodon’s official documentation.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -76,7 +76,7 @@
     "href": "practicals/practical_tracking/index.html#sec-requirements",
     "title": "Cell tracking using Mastodon",
     "section": "Requirements",
-    "text": "Requirements\n\nParhyale dataset\nFiji/ImageJ\nMastodon",
+    "text": "Requirements\n\nFiji (Schindelin et al. 2012)\nMastodon plugin (Girstmair et al. 2025)\nMastodon_Auto-Tracking_Demo_Ph-limb-dev.zip dataset (Girstmair 2024)",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -87,7 +87,7 @@
     "href": "practicals/practical_tracking/index.html#sec-setup",
     "title": "Cell tracking using Mastodon",
     "section": "Setup",
-    "text": "Setup\n\nDownload Dataset\nNote! If you are following this during the course, the dataset has already been downloaded.\n\nGo to https://zenodo.org/records/13944688\nClick to download https://zenodo.org/records/13944688/files/Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip?download=1\nWait. It’s a 4.3GB ZIP file\nMove the file to a working directory\nUnzip Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip\nWait. It’ll be unzipped to 23GB\n\n\n\n\n\n\n\nYour working directory after downloading and unzipping the dataset file.\n\n\n\n\n\n\n\nContents of the dataset directory.\n\n\n\n\n\n\n\nDownload Fiji\n\nGo to https://fiji.sc\nChoose Distribution: Stable\nClick the big download button\nCopy fiji-stable-linux64-jdk.zip to working directory and unzip it\nOpen the new directory fiji-stable-linux64-jdk/Fiji.app/\nDouble-click on fiji-linux-x64 launcher\nFiji will open\n\n\n\n\nInstall Mastodon\n\nClick on Help &gt; Update...\n\n\n\nThe updater will open and say Fiji is up-to-date\nClick Manage Update Sites\n\n\n\n\n\n\n\n\n\n\n\n\nA window will open with a list of plugins available to install in Fiji\n\n\n\nSearch for “mastodon”\n\n\n\nSeveral Mastodon related plugins will appear\nClick on the checkbox for Mastodon\n\n\n\nClick Apply and Close and then Apply Changes\n\n\n\nWait… until the downloads are finished. Then, click OK\n\n\n\n\n\n\n\n\n\n\n\n\nRestart Fiji (close window and double-click the launcher)",
+    "text": "Setup\n\nDownload Dataset\n\nDownload Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip dataset from this Zenodo repository (Girstmair 2024). The direct link to the file is here (4.3GB).\nMove the ZIP file to a working directory.\nUnzip Mastodon_Auto-Tracking_Demo_Ph-limb-dev.zip.\n\n\n\n\n\n\n\nWorking directory after downloading and unzipping the dataset file.\n\n\n\n\n\n\n\nContents of the dataset directory.\n\n\n\n\n\nAfter unzipping, the contents will occupy 23GB of disk space.\n\n\nDownload Fiji\n\nGo to https://fiji.sc, choose Distribution: Stable, and click the download button.\nCopy the downloaded archive to the working directory and unzip it.\nOpen the Fiji.app directory and double-click on the launcher.\nThe main window of Fiji will open.\n\n\n\n\nInstall Mastodon\n\nClick on Help &gt; Update....\n\n\n\nThe updater will open and say Fiji is up-to-date.\nClick Manage Update Sites.\n\n\n\n\n\n\n\n\n\n\n\n\nA window will open with a list of plugins available to install in Fiji.\n\n\n\nSearch for “mastodon”.\n\n\n\nSeveral Mastodon-related plugins will appear.\nClick on the checkbox for Mastodon.\n\n\n\nClick Apply and Close and then Apply Changes.\n\n\n\nWait… until the downloads are finished. Then, click OK.\n\n\n\n\n\n\n\n\n\n\n\n\nRestart Fiji (close window and double-click the launcher).",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -98,7 +98,7 @@
     "href": "practicals/practical_tracking/index.html#sec-open-project",
     "title": "Cell tracking using Mastodon",
     "section": "Open Mastodon Project",
-    "text": "Open Mastodon Project\n\nIn Fiji click on Plugins &gt; Tracking &gt; Mastodon &gt; Mastodon Launcher\n\n\n\nMastodon Launcher window will open\nClick on “open Mastodon project” (top left) and “Open another project” (bottom right)\n\n\n\n\n\n\n\n\n\n\n\n\nNavigate to the directory Mastodon_Auto-Tracking_Demo_Ph-limb-dev/\nSelect the file Parhyale_LimbDev_30tps.mastodon\n\n\n\nSeveral new windows will open (Console, Mastodon, BigDataViewer, TrackScheme, Data table)",
+    "text": "Open Mastodon Project\n\nIn Fiji click on Plugins &gt; Tracking &gt; Mastodon &gt; Mastodon Launcher.\n\n\nThe Mastodon Launcher window will open.\n\nClick on open Mastodon project (top left) and Open another project (bottom right).\n\n\n\n\n\n\n\n\n\n\n\n\nNavigate to the directory Mastodon_Auto-Tracking_Demo_Ph-limb-dev/.\nSelect the file Parhyale_LimbDev_30tps.mastodon.\n\n\nSeveral new windows will open (Console, Mastodon, BigDataViewer, TrackScheme, Data table).",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -109,7 +109,7 @@
     "href": "practicals/practical_tracking/index.html#sec-inspect-dataset",
     "title": "Cell tracking using Mastodon",
     "section": "Inspect the Dataset",
-    "text": "Inspect the Dataset\n\nLet’s focus on the Mastodon window. Close Console, BigDataViewer, TrackScheme, Data table\n\n\n\nThis is the main project menu from where you can open windows, set options, process data and save the project\nThe most important buttons for this tutorial are bdv (BigDataViewer) and trackscheme\nClick on bdv and make the window larger\n\n\n\nDrag the timepoint slider at the bottom to see cells moving and dividing\nUsing your acquired BigDataViewer skills, focus on the surface of the embryo\nIf you get lost, press Shift+Z to re-orient the embryo\nFind a cell that divides before timepoint 15 and looks trackable\nZoom on it using Ctrl+Shift+scroll and center it by holding the right button and dragging the mouse\nUse Shift+scroll to navigate through z and M-N to go through time\n\n\n\n\n\n\n\n\n\n\n\n\nYou are ready to track",
+    "text": "Inspect the Dataset\nLet’s focus on the Mastodon window.\n\nClose Console, BigDataViewer, TrackScheme, and Data table windows.\n\n\nThis is the main project menu from where we can open windows, set options, process data and save the project. The most important buttons for this tutorial are bdv (BigDataViewer) and trackscheme.\n\nClick on bdv and make the window larger.\n\n\n\nDrag the timepoint slider at the bottom to see cells moving and dividing.\nUsing our acquired BigDataViewer skills, focus on the surface of the embryo.\nIf you get lost, press Shift+Z to re-orient the embryo.\nFind a cell that divides before timepoint 15 and looks trackable and zoom on it using Ctrl+Shift+Scroll.\nThen center the view on it by holding the right button and dragging the mouse.\nUse Shift+Scroll to navigate through Z and M/N to go through time.\n\n\n\n\n\n\n\n\n\n\n\nWe are ready to track.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -120,7 +120,7 @@
     "href": "practicals/practical_tracking/index.html#sec-manual-tracking",
     "title": "Cell tracking using Mastodon",
     "section": "Manual Tracking",
-    "text": "Manual Tracking\n\nOn the Mastodon project window, click on the trackscheme button\nThe TrackScheme window will appear\n\n\n\nResize the bdv window to be side-by-side with the TrackScheme\nClick on the bdv window, set the timepoint to some frames before mitosis, Shift+scroll to find the center of the nucleus, put your mouse pointer there and press A\nA round magenta circle will appear over the nucleus and in the TrackScheme\n\n\n\nWith your mouse over the circle, use Shift+Q and Shift+E to adjust the size of the spot to roughly the nucleus diameter\n\n\n\nZoom in on the new spot in the TrackScheme, hover and click on it and watch what happens in the bdv window\n\n\n\nGo back to the bdv, hover the pointer over the circle and hold the spacebar to adjust the position of the circle and the nucleus\n\n\n\nNow let’s add a second spot\nHover the mouse inside the circle and hold A. This will advance to the next frame showing you the first spot in white dashed line and the second spot in white solid line with a white solid link between the two.\n\n\n\nStill holding A, position the second spot, then release A to create the new linked spot\nCheck how the second spot and a link were created in the TrackScheme automatically\n\n\n\nContinue to track the nucleus for a few more frames, until the frame immediately before division\nNote that when you click on a spot in the bdv window, the corresponding spot is highlighted in the TrackScheme window\nSee what happens to the bdv when clicking the spots in TrackScheme… (nothing, unless it is the spot in view)\nLet’s change that\nIn the menu bar of bdv and TrackScheme windows there are locks 1, 2, 3. Click on lock 1 in both windows\n\n\n\nNow click through spots in the TrackScheme; the view in the bdv will change to show the selected spot at the center\n\n\n\nBefore we continue tracking the cell division, let’s check one of the amazing Mastodon features\nClick on the bdv button in the Mastodon project window and another bdv window will open\n\n\n\nNow activate lock 1 and click on one of the TrackScheme spots; both windows will be synchronized!\n\n\n\nWhy is this useful for manual tracking?\nAdjust the view to center the spot in the second bdv window, press Shift+Y, and select a spot from the TrackScheme. Now we have both XY and ZY views of the same nucleus!\n\n\n\nWhich is great for tracking in 3D. You can check, for instance, that your spot is well centered in Z and adjust it in this window\n\n\n\nContinue the tracking of one of the daughter cells. Select the last spot in the TrackScheme, go to the XY bdv, hover the mouse over the circle and hold A, move the spot, and release A to add it.\nDo it for a few frames\nThen go back to the pre-division spot and add a linked spot corresponding to the other daughter cell\nThis will create the first branch of the lineage tree\n\n\n\nContinue tracking the second daughter cell for a few frames\n\n\n\nIf you zoom out the TrackScheme view you will be able to see the full branched tree",
+    "text": "Manual Tracking\n\nOn the Mastodon project window, click on the trackscheme button.\n\n\nThe TrackScheme window will appear.\n\nResize the BigDataViewer window to be side-by-side with the TrackScheme.\nClick on the BigDataViewer window, set the timepoint to some frames before mitosis, Shift+Scroll to find the center of the nucleus, put the mouse pointer there and press A.\n\n\nA round magenta circle will appear over the nucleus and in the TrackScheme.\n\nWith the mouse over the circle, use Shift+Q and Shift+E to adjust the size of the spot to roughly the nucleus diameter.\n\n\n\nZoom in on the new spot in the TrackScheme, hover and click on it and watch what happens in the BigDataViewer window.\n\n\n\nGo back to the BigDataViewer, hover the pointer over the circle and hold the spacebar to adjust the position of the circle and the nucleus.\n\n\nNow let’s add a second spot.\n\nHover the mouse inside the circle and hold A. This will advance to the next frame showing the first spot in white dashed line and the second spot in white solid line with a white solid link between the two.\n\n\n\nStill holding A, position the second spot, then release A to create the new linked spot.\n\n\nCheck how the second spot and a link were created in the TrackScheme automatically.\n\nContinue to track the nucleus for a few more frames, until the frame immediately before division.\n\nNote that when clicking on a spot in the BigDataViewer window, the corresponding spot is highlighted in the TrackScheme window.\n\nNow click on the spots in the TrackScheme and see what happens to the BigDataViewer (nothing will happen).\n\nLet’s change that and link the BigDataViewer and TrackScheme windows. In the menu bar of BigDataViewer and TrackScheme windows there are lock symbols 1, 2, 3.\n\nClick on Lock 1 in both windows.\n\n\n\nNow click through spots in the TrackScheme.\n\n\nThe view in the BigDataViewer will change to show the selected spot at the center.\nBefore we continue tracking the cell division, let’s check one of the amazing Mastodon features.\n\nClick on the BigDataViewer button in the Mastodon project window and another BigDataViewer window will open.\n\n\n\nNow activate Lock 1 and click on one of the TrackScheme spots.\n\n\nBoth windows will be synchronized!\nWhy is this useful for manual tracking?\n\nAdjust the view to center the spot in the second BigDataViewer window, press Shift+Y, and select a spot from the TrackScheme.\n\n\nWe can have both XY and ZY views of the same nucleus! This is great for tracking in 3D. We can check, for instance, that our spot is well centered in Z and adjust it in this window.\n\nContinue tracking one of the daughter cells.\n\nSelect the last spot in the TrackScheme, go to the XY BigDataViewer, hover the mouse over the circle and hold A, move the spot, and release A to add it.\nDo it for a few frames.\nThen go back to the pre-division spot and add a linked spot corresponding to the other daughter cell.\n\n\nThis will create the first branch of the lineage tree.\n\nContinue tracking the second daughter cell for a few frames.\n\n\n\nZoom out the TrackScheme view to see the full branched tree.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -131,7 +131,7 @@
     "href": "practicals/practical_tracking/index.html#sec-semiauto-tracking",
     "title": "Cell tracking using Mastodon",
     "section": "Semi-Automated Tracking",
-    "text": "Semi-Automated Tracking\n\nThis mode will try to guess where the next nucleus is and automatically create the spots and links\nTo start, choose a different nucleus to track and press A to add a new spot\n\n\n\nNow, hovering the pointer above the spot press Ctrl+T\nA lineage will appear in the TrackScheme.\n\n\n\nCheck how accurate it is by clicking on the spots and watching their position relative to the nucleus in the bdv windows\nTry going further by hovering on a spot and pressing Ctrl+T to continue the semi-automated tracking. See how long you can go, how it behaves with cell divisions, and which cells work well with it and which don’t\n\n\n\nThere are many parameters that can be adjusted to tweak the semi-automated tracking behavior, check the documentation",
+    "text": "Semi-Automated Tracking\nThis mode will try to guess where the next nucleus is and automatically create the spots and links.\n\nTo start, choose a different nucleus to track and press A to add a new spot.\n\n\n\nNow, hovering the pointer above the spot press Ctrl+T.\n\n\nA lineage will appear in the TrackScheme.\nCheck how accurate it is by clicking on the spots and watching their position relative to the nucleus in the BigDataViewer windows. Try going further with the semi-automated tracking.\n\nHover a spot and press Ctrl+T to continue the semi-automated tracking.\n\n\nSee how long you can go, how it behaves with cell divisions, and which cells work well with it and which don’t. There are many parameters that can be adjusted to tweak the semi-automated tracking behavior. Please check Mastodon’s documentation for more details.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -142,7 +142,7 @@
     "href": "practicals/practical_tracking/index.html#sec-auto-tracking",
     "title": "Cell tracking using Mastodon",
     "section": "Automated Tracking",
-    "text": "Automated Tracking\n\nThe final part of this tutorial is to try automatic detection and linking of spots\nThis is the dream: loading your data and getting out your lineage. However, in practice, it’s a lot messier. Cleaning, fixing, and curating the data is required to get a nice informative lineage\nWe will use a simplified version of the protocol included in this dataset in the file Protocol_Auto-Detection_Auto-Linking.docx\n\n\n\nDetection\n\nIn the Mastodon window, go to Plugins &gt; Tracking &gt; Detection...\n\n\n\nPress Next twice (leave options as is)\n\n\n\n\n\n\n\n\n\n\n\n\nChoose Advanced DoG detector and press Next\nKeep Detect: bright blobs, change Estimated diameter to 35px and Quality threshold to 100. Behavior should remain as Add\n\n\n\n\n\n\n\n\n\n\n\n\nClick Preview and see how well the detection will work by exploring a new bdv window.\n\n\n\nDo you observe too many false positives? You can change the diameter, for example, and try the preview again to see what happens to the detected spots\nOnce satisfied, press Next and wait\n\n\n\nWhen the detection is done, press Finish\n\n\n\nThe bdv windows and the TrackScheme will be showing a lot of new spots.\nExplore the spots in the BigDataViewer and TrackScheme windows. If you zoom in a lot you’ll see the unlinked, individual spots per frame\n\n\n\n\nCleaning\n\nBefore we try to automatically link these spots, let’s remove low quality detections\nOn the Mastodon window click on Table, resize it to have more space, and resize the column Detection q... to show Detection quality\n\n\n\n\n\n\n\n\n\n\n\n\nClick on Detection quality to sort the table\n\n\n\nClick on the first row to select it. Select all rows where Detection quality is &lt;400\nThen click Edit &gt; Delete Selection\n\n\n\nClose the table\nYou can also manually delete obviously wrong spots by hovering and pressing D. Clean up the ones outside the embryo\n\n\n\nLinking\n\nNow let’s try linking\nIn the main Mastodon window click on Plugins &gt; Tracking &gt; Linking...\nKeep All spots selected for all timepoints (0-29) and press Next\nChoose Lap linker and click Next\n\n\n\n\n\n\n\n\n\n\n\n\nChange the parameters to:\n\nFrame to frame linking: Max distance to 40px\nGap closing: Max distance to 60px (keep others as is)\nTrack division: Check Allow track division, set Max distance to 40px, and press + to add a Feature penalty and set it to Center ch1 to 0.3\n\nPress Next to start linking and wait… then press Finish\n\n\n\n\n\n\n\n\n\n\n\n\nNote that there are now tracks in the bdv and TrackScheme windows. Explore them a bit\n\n\n\nMastodon can calculate features (position, displacement, velocity, etc.) of individual spots, links and branches. Let’s do that\nIn the main Mastodon window press compute features. A Feature calculation window will open\n\n\n\nPress compute and wait… when it’s done, close it.\nNote that now the tracks in the BigDataViewer is showing colored links\n\n\n\nOpen the table window from the main window\nIt’ll be filled with computed features",
+    "text": "Automated Tracking\nThe final part of this tutorial is to try automatic detection and linking of spots. This is the dream: loading data and getting out a full lineage. However, in practice, it’s a lot messier. Cleaning, fixing, and curating the data is required to get a nice informative lineage. We will use a simplified version of the protocol included in this demo dataset. It is described in the file Protocol_Auto-Detection_Auto-Linking.docx.\n\n\nDetection\n\nIn the Mastodon window, go to Plugins &gt; Tracking &gt; Detection....\n\n\n\nPress Next twice (leave options as is).\n\n\n\n\n\n\n\n\n\n\n\n\nChoose Advanced DoG detector and press Next.\nKeep Detect: bright blobs.\nChange Estimated diameter to 35px.\nChange Quality threshold to 100.\nKeep Behavior as Add.\nThen, press Next.\n\n\n\n\n\n\n\n\n\n\n\n\nClick Preview and see how well the detection will work by exploring a new BigDataViewer window.\n\n\nAre there too many false positives? Try changing the diameter, for example, and run the preview again to see what happens to the detected spots.\n\nOnce satisfied, press Next and wait.\n\n\n\nWhen the detection is done, press Finish.\n\n\nThe BigDataViewer windows and the TrackScheme will be showing a lot of new spots.\n\nExplore the spots in the BigDataViewer and TrackScheme windows.\nZoom in to see the unlinked, individual spots per frame.\n\n\n\n\nCleaning\nBefore we try to automatically link these spots, let’s remove low quality detections.\n\nOn the Mastodon window click on Table, resize it to have more space, and resize the column Detection q... to show Detection quality.\n\n\n\n\n\n\n\n\n\n\n\n\nClick on Detection quality to sort the table.\n\n\n\nClick on the first row to select it. Select all rows where Detection quality is &lt;400.\nThen click Edit &gt; Delete Selection.\n\n\n\nClose the table.\n\nWe can also manually delete obviously wrong spots by hovering and pressing D.\n\nGive it a try by cleaning up the spots outside the embryo.\n\n\n\nLinking\nNow let’s try linking spots.\n\nIn the main Mastodon window click on Plugins &gt; Tracking &gt; Linking....\nKeep All spots selected for all timepoints (0-29) and press Next.\nChoose Lap linker and click Next.\n\n\n\n\n\n\n\n\n\n\n\n\nChange the parameters to:\n\nFrame to frame linking: Max distance to 40px.\nGap closing: Max distance to 60px (keep others as is).\nTrack division: Check Allow track division, set Max distance to 40px, and press + to add a Feature penalty and set it to Center ch1 to 0.3.\n\nPress Next to start linking and wait… then press Finish.\n\n\n\n\n\n\n\n\n\n\n\nNote that there are now tracks in the BigDataViewer and TrackScheme windows.\n\nExplore them a bit.\n\n\nMastodon can calculate features (position, displacement, velocity, etc.) of individual spots, links and branches. Let’s do that.\n\nIn the main Mastodon window press compute features.\n\n\nA Feature calculation window will open.\n\nPress compute and wait… when it’s done, close it.\n\n\nNote that now the tracks in the BigDataViewer are showing colored links.\n\nOpen the table window from the main window.\n\n\nIt’ll be filled with computed features.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -153,7 +153,7 @@
     "href": "practicals/practical_tracking/index.html#sec-feature-visualization",
     "title": "Cell tracking using Mastodon",
     "section": "Basic Feature Visualization",
-    "text": "Basic Feature Visualization\n\nFinally, let’s visualize the computed features that might be interesting or useful\nIn the bdv window press File &gt; Preferences to open the feature color coding visualization parameters\n\n\n\nOn Settings &gt; Feature Color Modes click on Duplicate (it’ll generate a Number of links (2)) and then Rename. Rename it to Velocity\n\n\n\n\n\n\n\n\n\n\n\n\nOn the Coloring Spots change Read spot color from to Incoming link and change Feature to Link velocity. Then click on autoscale in the range\nOn the Coloring Links change Read link color from to Link and change Feature to Link velocity. Then also click on autoscale\nClick Apply (nothing will happen) then OK\n\n\n\nOn the bdv window press View &gt; Coloring &gt; Velocity\n\n\n\nThe spots and links in the BigDataViewer window will change colors\n\n\n\nDo the same for the other bdv window and the TrackScheme\n\n\n\nThis gives a visual representation of cells which have a high displacement per frame. These might be artifacts in linking unrelated spots or, in a good processed lineage, reveal some biological process like cell migration",
+    "text": "Basic Feature Visualization\nFinally, let’s visualize the computed features that might be interesting or useful.\n\nIn the BigDataViewer window press File &gt; Preferences to open the feature color coding visualization parameters.\n\n\n\nOn Settings &gt; Feature Color Modes click on Duplicate (it’ll generate a Number of links (2)) and then Rename.\nRename it to Velocity.\n\n\n\n\n\n\n\n\n\n\n\n\nOn the Coloring Spots change Read spot color from to Incoming link and change Feature to Link velocity. Then click on autoscale in the range.\nOn the Coloring Links change Read link color from to Link and change Feature to Link velocity. Then also click on autoscale.\nClick Apply (nothing will happen), then OK.\n\n\n\nOn the BigDataViewer window press View &gt; Coloring &gt; Velocity.\n\n\nThe spots and links in the BigDataViewer window will change colors.\n\n\nDo the same for the other BigDataViewer window and the TrackScheme.\n\n\nThis gives a visual representation of cells which have a high displacement per frame. These might be artifacts in linking unrelated spots or, in a good processed lineage, reveal some biological process like cell migration.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -164,7 +164,29 @@
     "href": "practicals/practical_tracking/index.html#sec-graph-plotting",
     "title": "Cell tracking using Mastodon",
     "section": "Graph Plotting",
-    "text": "Graph Plotting\n\nTo finalize, a simple example of plotting\nClick on grapher in the main Mastodon window, a plot window will open\n\n\n\nPress the lock 1 to lock the windows, select Link velocity - outgoing for X axis and Detection quality for Y axis and press Plot\n\n\n\nFind out if the spots with the highest link velocity are properly linked or if it is an artifact",
+    "text": "Graph Plotting\nTo finalize, a simple example of plotting the lineage data.\n\nClick on grapher in the main Mastodon window, a plot window will open.\n\n\n\nPress the Lock 1 to lock the windows, select Link velocity - outgoing for X axis and Detection quality for Y axis and press Plot.\n\n\n\nFind out if the spots with the highest link velocity are properly linked or if it is an artifact.",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_tracking/index.html#sec-citation",
+    "href": "practicals/practical_tracking/index.html#sec-citation",
+    "title": "Cell tracking using Mastodon",
+    "section": "Citation",
+    "text": "Citation\nVellutini, B. C. (2026). Cell tracking in Fiji using Mastodon. Zenodo. https://doi.org/10.5281/zenodo.18090897",
+    "crumbs": [
+      "Practicals",
+      "Cell tracking using Mastodon"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_tracking/index.html#sec-license",
+    "href": "practicals/practical_tracking/index.html#sec-license",
+    "title": "Cell tracking using Mastodon",
+    "section": "License",
+    "text": "License\nThis tutorial is available under a Creative Commons Attribution 4.0 International License.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -175,7 +197,7 @@
     "href": "practicals/practical_tracking/index.html#sec-references",
     "title": "Cell tracking using Mastodon",
     "section": "References",
-    "text": "References\n\n\nGirstmair, Johannes, Tobias Pietzsch, Vladimir Ulman, Stefan Hahmann, Matthias Arzt, Mette Handberg-Thorsager, Ko Sugawara, et al. 2025. “Mastodon: The Command Center for Large-Scale Lineage-Tracing Microscopy Datasets.” bioRxiv, December, 2025.12.10.693416. https://doi.org/10.64898/2025.12.10.693416.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
+    "text": "References\n\n\nGirstmair, Johannes. 2024. Mastodon Auto-Tracking Demo on Parhyale Hawaiensis Limb Development. Zenodo. https://doi.org/10.5281/ZENODO.13944688.\n\n\nGirstmair, Johannes, Tobias Pietzsch, Vladimir Ulman, Stefan Hahmann, Matthias Arzt, Mette Handberg-Thorsager, Ko Sugawara, et al. 2025. “Mastodon: The Command Center for Large-Scale Lineage-Tracing Microscopy Datasets.” bioRxiv, December, 2025.12.10.693416. https://doi.org/10.64898/2025.12.10.693416.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.\n\n\nWolff, Carsten, Jean-Yves Tinevez, Tobias Pietzsch, Evangelia Stamataki, Benjamin Harich, Léo Guignard, Stephan Preibisch, et al. 2018. “Multi-View Light-Sheet Imaging and Tracking with the MaMuT Software Reveals the Cell Lineage of a Direct Developing Arthropod Limb.” Elife 7 (March). https://doi.org/10.7554/eLife.34410.",
     "crumbs": [
       "Practicals",
       "Cell tracking using Mastodon"
@@ -186,7 +208,7 @@
     "href": "practicals/practical_multiview/index.html",
     "title": "Multiview reconstruction using BigStitcher",
     "section": "",
-    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
+    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis tutorial shows how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher"
@@ -197,7 +219,7 @@
     "href": "practicals/practical_multiview/index.html#sec-summary",
     "title": "Multiview reconstruction using BigStitcher",
     "section": "",
-    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
+    "text": "Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.\nThis tutorial shows how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher (Preibisch et al. 2010; Hörl et al. 2019) in Fiji (Schindelin et al. 2012).\nWe will cover how to convert the raw data for visualization in the BigDataViewer (Pietzsch et al. 2015), how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher"
@@ -208,7 +230,7 @@
     "href": "practicals/practical_multiview/index.html#sec-requirements",
     "title": "Multiview reconstruction using BigStitcher",
     "section": "Requirements",
-    "text": "Requirements\n\nFiji (Schindelin et al. 2012)\nBigStitcher plugin (Preibisch et al. 2010; Hörl et al. 2019)\nMultiview Lightsheet dataset (Vellutini2025?)",
+    "text": "Requirements\n\nFiji (Schindelin et al. 2012)\nBigStitcher plugin (Preibisch et al. 2010; Hörl et al. 2019)\nFly Embryo Multiview Lightsheet dataset (Vellutini 2025)",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher"
@@ -219,7 +241,7 @@
     "href": "practicals/practical_multiview/index.html#sec-setup",
     "title": "Multiview reconstruction using BigStitcher",
     "section": "Setup",
-    "text": "Setup\n\nInstall Fiji\n\nGo to https://fiji.sc, choose Distribution: Stable, and click the download button.\nCopy the downloaded archive to your working directory and unzip it.\n\n\n\nOpen the Fiji.app directory and double-click on the launcher.\n\n\nThe main window of Fiji will open.\n\n\nInstall BigStitcher\n\nClick on Help &gt; Update....\n\n\nThe updater will run and say if Fiji is up-to-date.\n\nClick on Manage Update Sites.\n\n\nA window will open with a list of plugins available to install in Fiji.\n\n\nFind BigStitcher in the list and click on the checkbox and Apply and Close.\n\n\n\nThen click on Apply Changes.\n\n\n\nWait… until the downloads are finished. Then, click OK.\n\n\n\nRestart Fiji (close window and double-click the launcher).\nCheck if BigStitcher is installed under Plugins &gt; BigStitcher.\n\n\nFiji and BigStitcher are ready!\n\n\nDownload dataset\n\nDmel_btd-gap_1tp_5v_2c_beads.czi dataset from this Zenodo repository (Vellutini2025?). The direct link to the file is here (3.2GB).",
+    "text": "Setup\n\nInstall Fiji\n\nGo to https://fiji.sc, choose Distribution: Stable, and click the download button.\nCopy the downloaded archive to your working directory and unzip it.\n\n\n\nOpen the Fiji.app directory and double-click on the launcher.\n\n\nThe main window of Fiji will open.\n\n\nInstall BigStitcher\n\nClick on Help &gt; Update....\n\n\nThe updater will run and say if Fiji is up-to-date.\n\nClick on Manage Update Sites.\n\n\nA window will open with a list of plugins available to install in Fiji.\n\n\nFind BigStitcher in the list and click on the checkbox and Apply and Close.\n\n\n\nThen click on Apply Changes.\n\n\n\nWait… until the downloads are finished. Then, click OK.\n\n\n\nRestart Fiji (close window and double-click the launcher).\nCheck if BigStitcher is installed under Plugins &gt; BigStitcher.\n\n\nFiji and BigStitcher are ready!\n\n\nDownload dataset\n\nDmel_btd-gap_1tp_5v_2c_beads.czi dataset from this Zenodo repository (Vellutini 2025). The direct link to the file is here (3.2GB).",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher"
@@ -336,11 +358,33 @@
     ]
   },
   {
+    "objectID": "practicals/practical_multiview/index.html#sec-citation",
+    "href": "practicals/practical_multiview/index.html#sec-citation",
+    "title": "Multiview reconstruction using BigStitcher",
+    "section": "Citation",
+    "text": "Citation\nVellutini, B. C. (2026). Multiview reconstruction in Fiji using BigStitcher. Zenodo. https://doi.org/10.5281/zenodo.18090752",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_multiview/index.html#sec-license",
+    "href": "practicals/practical_multiview/index.html#sec-license",
+    "title": "Multiview reconstruction using BigStitcher",
+    "section": "License",
+    "text": "License\nThis tutorial is available under a Creative Commons Attribution 4.0 International License.",
+    "crumbs": [
+      "Practicals",
+      "Multiview reconstruction using BigStitcher"
+    ]
+  },
+  {
     "objectID": "practicals/practical_multiview/index.html#references",
     "href": "practicals/practical_multiview/index.html#references",
     "title": "Multiview reconstruction using BigStitcher",
     "section": "References",
-    "text": "References\n\n\nHörl, David, Fabio Rojas Rusak, Friedrich Preusser, Paul Tillberg, Nadine Randel, Raghav K Chhetri, Albert Cardona, et al. 2019. “BigStitcher: Reconstructing High-Resolution Image Datasets of Cleared and Expanded Samples.” Nat. Methods 16 (September): 870–74. https://doi.org/10.1038/s41592-019-0501-0.\n\n\nPietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. “BigDataViewer: Visualization and Processing for Large Image Data Sets.” Nat. Methods 12 (June): 481–83. https://doi.org/10.1038/nmeth.3392.\n\n\nPreibisch, Stephan, Stephan Saalfeld, Johannes Schindelin, and Pavel Tomancak. 2010. “Software for Bead-Based Registration of Selective Plane Illumination Microscopy Data.” Nat. Methods 7 (June): 418–19. https://doi.org/10.1038/nmeth0610-418.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.",
+    "text": "References\n\n\nHörl, David, Fabio Rojas Rusak, Friedrich Preusser, Paul Tillberg, Nadine Randel, Raghav K Chhetri, Albert Cardona, et al. 2019. “BigStitcher: Reconstructing High-Resolution Image Datasets of Cleared and Expanded Samples.” Nat. Methods 16 (September): 870–74. https://doi.org/10.1038/s41592-019-0501-0.\n\n\nPietzsch, Tobias, Stephan Saalfeld, Stephan Preibisch, and Pavel Tomancak. 2015. “BigDataViewer: Visualization and Processing for Large Image Data Sets.” Nat. Methods 12 (June): 481–83. https://doi.org/10.1038/nmeth.3392.\n\n\nPreibisch, Stephan, Stephan Saalfeld, Johannes Schindelin, and Pavel Tomancak. 2010. “Software for Bead-Based Registration of Selective Plane Illumination Microscopy Data.” Nat. Methods 7 (June): 418–19. https://doi.org/10.1038/nmeth0610-418.\n\n\nSchindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. “Fiji: An Open-Source Platform for Biological-Image Analysis.” Nat. Methods 9 (June): 676–82. https://doi.org/10.1038/nmeth.2019.\n\n\nVellutini, Bruno C. 2025. “Fly Embryo Multiview Lightsheet Dataset.” Zenodo. https://doi.org/10.5281/zenodo.18078061.",
     "crumbs": [
       "Practicals",
       "Multiview reconstruction using BigStitcher"
@@ -447,7 +491,7 @@
     "href": "practicals/practical_cartography/index.html",
     "title": "Tissue cartography using Blender",
     "section": "",
-    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released known as Blender Tissue Cartography (Claussen et al. 2025) (code repository). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThe tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), please check the imsane-tutorial which explains how to set up and run the pipeline (Vellutini 2022).",
+    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released, known as Blender Tissue Cartography (Claussen et al. 2025) (code repository). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThis tutorial is a simplified version of the Blender Tissue Cartography tutorials. It is targeted to beginners wanting to learn the basics of tissue cartography, focusing on a single approach. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), please check the imsane-tutorial which explains how to set up and run the pipeline (Vellutini 2022).",
     "crumbs": [
       "Practicals",
       "Tissue cartography using Blender"
@@ -458,7 +502,7 @@
     "href": "practicals/practical_cartography/index.html#sec-summary",
     "title": "Tissue cartography using Blender",
     "section": "",
-    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released known as Blender Tissue Cartography (Claussen et al. 2025) (code repository). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThe tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), please check the imsane-tutorial which explains how to set up and run the pipeline (Vellutini 2022).",
+    "text": "Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.\nThe state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015). However, more recently, a Blender-based tool was released, known as Blender Tissue Cartography (Claussen et al. 2025) (code repository). This tool has an extensive documentation and several in-depth tutorials that I highly recommend anyone interested in tissue cartography to read.\nThis tutorial is a simplified version of the Blender Tissue Cartography tutorials. It is targeted to beginners wanting to learn the basics of tissue cartography, focusing on a single approach. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.\nIf you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox (Heemskerk and Streichan 2015), please check the imsane-tutorial which explains how to set up and run the pipeline (Vellutini 2022).",
     "crumbs": [
       "Practicals",
       "Tissue cartography using Blender"
@@ -536,6 +580,28 @@
     "title": "Tissue cartography using Blender",
     "section": "Optimize projection",
     "text": "Optimize projection\nOur initial projection is satisfactory, but there are many ways to optimize it to our specific needs. One immediate thing is to try a Sphere Projection instead of Cylinder Projection. They are quite similar, but I found the sphere projection to be more consistent and predictable and might work better for more spherical samples.\nAnother common use case is to be able to determine where the mesh will unwrap. This might be important for downstream analyses. In our sample, for example, the projection put the dorsal side on the left side (where a clump of germ cells are visible at the bottom) and the ventral side on the right side. However, let’s say that I need for my analyses the dorsal side at the center of the projection.\nTo accomplish that we can manually mark a seam on our mesh to define the unwrapping position.\n\nMark seam on mesh\n\nGo to the UV Editing workspace and change the Select Mode to Edge select.\n\n\nIn this mode, when we click on the mesh an edge is selected and when we subsequently Ctrl+Click on another edge, the shortest path between the two edges will be selected. Like this we can quickly select a line along the sample to mark the unwrapping position. What we want is to trace a line through the ventral side of the sample. This is the region opposite to the germ cell clump.\n\nUsing the handle buttons, reorient the sample sideways with the ventral side facing us.\n\n\nWe will start by selecting an edge on one of the poles.\n\nTurn the sample to show one of the poles and zoom in to see the edges clearly.\nThen click on one edge at the center of the pole to select it.\n\n\n\nZoom out slightly, turn the sample, and Ctrl+Click on another edge further away from the pole.\nA yellow line will appear connecting the pole with the current edge.\n\n\n\nContinue Ctrl+Click on edges along the sample until the opposite pole (don’t worry if the line isn’t perfectly straight).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow press Ctrl+E to open a menu with edge options and select Mark Seam.\n\n\nThe seam will be marked in red (below it’s mixed with yellow line from the edge selection).\n\n\n\nProject mesh with seam\n\nNow reorient the sample vertically again with the narrow tip up and change the Select Mode back to Face select.\n\n\n\nPress A to select all the mesh (they will turn orange).\nGo to UV &gt; Cylinder Projection.\nThen check Preserve Seams in the option box.\n\n\nAs we can see, the projection changed. It is squeezed at the center of the projection area due to the very long protruding mesh at the top left and bottom right regions. Let’s evaluate how good it is by projecting the data.\n\n\nProject data with seam\n\nGo to the Layout workspace, select both the bounding box and probabilities under Scene Collection, and press Create Projection; then, wait…\n\n\n\nWhen done, go back to the UV Editing workspace and click anywhere outside the sample to unselect the mesh.\n\nThe new data projection should be visible on the left side.\n\nIf not, click on the image data-block picture icon and select Channel_0_Layer_0.001.\n\n\nWe have successfully changed the position of the unwrapping using the seam. The clump of germ cells is now at the center of the projection.\nThis projection is OK, but the contents are squeezed and it is not occupying the full bounding area. We can improve this by editing the projection mesh.\n\n\nEdit projected mesh\n\nPress A to select the entire mesh.\nSelect the tool Transform on the left side menu.\n\n\n\nHover the mouse on the right side edge to reveal the scale handle.\n\n\n\nDrag the right side to the right to extend the orange mesh until the edge of the projection area.\nThen, drag the other side to extend the mesh to the left side.\nFinally, make adjustments so that the projected mesh is covering most of the projection area as shown below.\n\n\n\n\n\n\n\n\n\n\n\nNow we can use the Pinch or Grab tools to edit the mesh at the corners, so that they are not clipped out. Or, we can leave them as is (they will be clipped out of the projection).\n\nUse Pinch to drag finer portions of the mesh to the corners.\nUse Grab to drag larger portions of the mesh to the corners.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAt the end, the mesh should be filling more or less the projection area.\n\n\nCheck edited projection\nTo check the new projection with the edited mesh, we need to re-create the image data projection onto the edited mesh.\n\nGo to the Layout workspace, select both the bounding box and probabilities under Scene Collection, and press Create Projection; then, wait…\nWhen done, switch to the UV Editing workspace and deselect the mesh and check the new projection (select the latest image data-block, likely Channel_0_Layer_0.002).\n\n\nDespite the unevenness of the corners (next time we can improve our pinching and grabbing skills), the edited projection is better than the first one and the tissue is oriented the way we needed. Let’s save the projection to disk.\n\nGo to the Layout workspace, select both the bounding box and probabilities entries under Scene Collection &gt; Collection, and click on Save Projection.\nThen navigate to the working directory and give the file a different suffix.\n\n\n\nFinally, open the newly generated files in Fiji to investigate.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe projection is ready for image analyses.\nThere are several other use cases that are not covered in the current version of this tutorial. For example, how can we generate a projection with more layers, or create and register projections for different timepoints. But, if you are interested, these use cases are described in the Blender Tissue Cartography paper and documentation (Claussen et al. 2025).",
+    "crumbs": [
+      "Practicals",
+      "Tissue cartography using Blender"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cartography/index.html#sec-citation",
+    "href": "practicals/practical_cartography/index.html#sec-citation",
+    "title": "Tissue cartography using Blender",
+    "section": "Citation",
+    "text": "Citation\nVellutini, B. C. (2026). Tissue cartography using Blender. Zenodo. https://doi.org/10.5281/zenodo.18090965",
+    "crumbs": [
+      "Practicals",
+      "Tissue cartography using Blender"
+    ]
+  },
+  {
+    "objectID": "practicals/practical_cartography/index.html#sec-license",
+    "href": "practicals/practical_cartography/index.html#sec-license",
+    "title": "Tissue cartography using Blender",
+    "section": "License",
+    "text": "License\nThis tutorial is available under a Creative Commons Attribution 4.0 International License.",
     "crumbs": [
       "Practicals",
       "Tissue cartography using Blender"
@@ -681,7 +747,7 @@
     "href": "practicals/practical_3d/index.html#sec-requirements",
     "title": "Visualization of 3D data",
     "section": "Requirements",
-    "text": "Requirements\n\nFiji (Schindelin et al. 2012)\n3Dscript plugin (Schmid et al. 2019)\nFly Embryo Timelapse dataset (4x downsampled) (Vellutini 2025)",
+    "text": "Requirements\n\nFiji (Schindelin et al. 2012)\n3Dscript plugin (Schmid et al. 2019)\nFly Embryo Timelapse Lightsheet dataset (4x downsampled) (Vellutini 2025)",
     "crumbs": [
       "Practicals",
       "Visualization of 3D data"
@@ -791,15 +857,15 @@
     "href": "practicals/practical_3d/index.html#sec-citation",
     "title": "Visualization of 3D data",
     "section": "Citation",
-    "text": "Citation\nVellutini, Bruno C. 2025. 3D Tutorial: Visualization of 3D Data in Fiji Using Built-in Tools and the Plugin 3Dscript. Zenodo. https://doi.org/10.5281/zenodo.18070016.",
+    "text": "Citation\nVellutini, B. C. (2026). Visualization of 3D data in Fiji using built-in tools and 3Dscript. Zenodo. https://doi.org/10.5281/zenodo.18070016",
     "crumbs": [
       "Practicals",
       "Visualization of 3D data"
     ]
   },
   {
-    "objectID": "practicals/practical_3d/index.html#license",
-    "href": "practicals/practical_3d/index.html#license",
+    "objectID": "practicals/practical_3d/index.html#sec-license",
+    "href": "practicals/practical_3d/index.html#sec-license",
     "title": "Visualization of 3D data",
     "section": "License",
     "text": "License\nThis tutorial is available under a Creative Commons Attribution 4.0 International License.",

@@ -278,6 +278,8 @@ div.csl-indent {
   <li><a href="#sec-fuse-single" id="toc-sec-fuse-single" class="nav-link" data-scroll-target="#sec-fuse-single">Fuse dataset (one channel)</a></li>
   <li><a href="#sec-duplicate-transformation" id="toc-sec-duplicate-transformation" class="nav-link" data-scroll-target="#sec-duplicate-transformation">Duplicate transformation</a></li>
   <li><a href="#sec-fuse-all" id="toc-sec-fuse-all" class="nav-link" data-scroll-target="#sec-fuse-all">Fuse dataset (all channels)</a></li>
+  <li><a href="#sec-citation" id="toc-sec-citation" class="nav-link" data-scroll-target="#sec-citation">Citation</a></li>
+  <li><a href="#sec-license" id="toc-sec-license" class="nav-link" data-scroll-target="#sec-license">License</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_multiview/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -319,7 +321,7 @@ div.csl-indent {
 <section id="sec-summary" class="level2">
 <h2 class="anchored" data-anchor-id="sec-summary">Summary</h2>
 <p>Multiview reconstruction is the process of registering and fusing microscopy data acquired from multiple angles into a single, isotropic stack.</p>
-<p>This is a tutorial on how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher <span class="citation" data-cites="Preibisch2010-uu Horl2019-vx">(<a href="#ref-Preibisch2010-uu" role="doc-biblioref">Preibisch et al. 2010</a>; <a href="#ref-Horl2019-vx" role="doc-biblioref">Hörl et al. 2019</a>)</span> in Fiji <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span>.</p>
+<p>This tutorial shows how to register and fuse multiview lightsheet microscopy datasets using the plugin BigStitcher <span class="citation" data-cites="Preibisch2010-uu Horl2019-vx">(<a href="#ref-Preibisch2010-uu" role="doc-biblioref">Preibisch et al. 2010</a>; <a href="#ref-Horl2019-vx" role="doc-biblioref">Hörl et al. 2019</a>)</span> in Fiji <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span>.</p>
 <p>We will cover how to convert the raw data for visualization in the BigDataViewer <span class="citation" data-cites="Pietzsch2015-md">(<a href="#ref-Pietzsch2015-md" role="doc-biblioref">Pietzsch et al. 2015</a>)</span>, how to best detect interests points for registration, the different approaches to register views, and how to fuse the views to reconstruct an isotropic dataset.</p>
 </section>
 <section id="sec-requirements" class="level2">
@@ -327,7 +329,7 @@ div.csl-indent {
 <ul>
 <li><a href="https://fiji.sc">Fiji</a> <span class="citation" data-cites="Schindelin2012-di">(<a href="#ref-Schindelin2012-di" role="doc-biblioref">Schindelin et al. 2012</a>)</span></li>
 <li><a href="https://imagej.net/plugins/bigstitcher">BigStitcher</a> plugin <span class="citation" data-cites="Preibisch2010-uu Horl2019-vx">(<a href="#ref-Preibisch2010-uu" role="doc-biblioref">Preibisch et al. 2010</a>; <a href="#ref-Horl2019-vx" role="doc-biblioref">Hörl et al. 2019</a>)</span></li>
-<li><a href="">Multiview Lightsheet</a> dataset <span class="citation" data-cites="Vellutini2025">(<a href="#ref-Vellutini2025" role="doc-biblioref"><strong>Vellutini2025?</strong></a>)</span></li>
+<li><a href="https://doi.org/10.5281/zenodo.18078061">Fly Embryo Multiview Lightsheet</a> dataset <span class="citation" data-cites="Vellutini2025-rl">(<a href="#ref-Vellutini2025-rl" role="doc-biblioref">Vellutini 2025</a>)</span></li>
 </ul>
 </section>
 <section id="sec-setup" class="level2">
@@ -380,7 +382,7 @@ div.csl-indent {
 <section id="download-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="download-dataset">Download dataset</h3>
 <ul>
-<li><code>Dmel_btd-gap_1tp_5v_2c_beads.czi</code> dataset from this <a href="https://doi.org/10.5281/zenodo.18078062">Zenodo repository</a> <span class="citation" data-cites="Vellutini2025">(<a href="#ref-Vellutini2025" role="doc-biblioref"><strong>Vellutini2025?</strong></a>)</span>. The direct link to the file is <a href="https://zenodo.org/records/18078062/files/Dmel_btd-gap_1tp_5v_2c_beads.czi?download=1">here</a> (3.2GB).</li>
+<li><code>Dmel_btd-gap_1tp_5v_2c_beads.czi</code> dataset from this <a href="https://doi.org/10.5281/zenodo.18078061">Zenodo repository</a> <span class="citation" data-cites="Vellutini2025-rl">(<a href="#ref-Vellutini2025-rl" role="doc-biblioref">Vellutini 2025</a>)</span>. The direct link to the file is <a href="https://zenodo.org/records/18078061/files/Dmel_btd-gap_1tp_5v_2c_beads.czi?download=1">here</a> (3.2GB).</li>
 </ul>
 </section>
 </section>
@@ -946,6 +948,14 @@ div.csl-indent {
 <p><a href="media/98-fuse-versus.png" class="lightbox" data-gallery="quarto-lightbox-gallery-98"><img src="media/98-fuse-versus.png" class="img-fluid"></a></p>
 <p>Note how the missing data in the single view is nicely present in the fused dataset.</p>
 </section>
+<section id="sec-citation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-citation">Citation</h2>
+<p>Vellutini, B. C. (2026). Multiview reconstruction in Fiji using BigStitcher. Zenodo. <a href="https://doi.org/10.5281/zenodo.18090752" class="uri">https://doi.org/10.5281/zenodo.18090752</a></p>
+</section>
+<section id="sec-license" class="level2">
+<h2 class="anchored" data-anchor-id="sec-license">License</h2>
+<p>This tutorial is available under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -960,6 +970,9 @@ Preibisch, Stephan, Stephan Saalfeld, Johannes Schindelin, and Pavel Tomancak. 2
 </div>
 <div id="ref-Schindelin2012-di" class="csl-entry" role="listitem">
 Schindelin, Johannes, Ignacio Arganda-Carreras, Erwin Frise, Verena Kaynig, Mark Longair, Tobias Pietzsch, Stephan Preibisch, et al. 2012. <span>“Fiji: An Open-Source Platform for Biological-Image Analysis.”</span> <em>Nat. Methods</em> 9 (June): 676–82. <a href="https://doi.org/10.1038/nmeth.2019">https://doi.org/10.1038/nmeth.2019</a>.
+</div>
+<div id="ref-Vellutini2025-rl" class="csl-entry" role="listitem">
+Vellutini, Bruno C. 2025. <span>“Fly Embryo Multiview Lightsheet Dataset.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.18078061">https://doi.org/10.5281/zenodo.18078061</a>.
 </div>
 </div>
 

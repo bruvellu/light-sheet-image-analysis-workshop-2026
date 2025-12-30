@@ -294,6 +294,8 @@ div.csl-indent {
   <li><a href="#sec-edit-projected-mesh" id="toc-sec-edit-projected-mesh" class="nav-link" data-scroll-target="#sec-edit-projected-mesh">Edit projected mesh</a></li>
   <li><a href="#sec-check-edited-mesh" id="toc-sec-check-edited-mesh" class="nav-link" data-scroll-target="#sec-check-edited-mesh">Check edited projection</a></li>
   </ul></li>
+  <li><a href="#sec-citation" id="toc-sec-citation" class="nav-link" data-scroll-target="#sec-citation">Citation</a></li>
+  <li><a href="#sec-license" id="toc-sec-license" class="nav-link" data-scroll-target="#sec-license">License</a></li>
   <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_cartography/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -335,8 +337,8 @@ div.csl-indent {
 <section id="sec-summary" class="level2">
 <h2 class="anchored" data-anchor-id="sec-summary">Summary</h2>
 <p>Tissue cartography is the art of projecting a tridimensional surface, usually of a biological sample, into a 2D surface. This is useful to visualize and analyze complex 3D microscopy data.</p>
-<p>The state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>. However, more recently, a Blender-based tool was released known as <em>Blender Tissue Cartography</em> <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span> (<a href="https://github.com/nikolas-claussen/blender-tissue-cartography">code repository</a>). This tool has an <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/">extensive documentation</a> and several <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/00_tissue_cartography_overview.html#tutorials">in-depth tutorials</a> that I highly recommend anyone interested in tissue cartography to read.</p>
-<p>The tutorial below is a simplified version of the Blender Tissue Cartography tutorials, focusing on one of the approaches. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.</p>
+<p>The state-of-the-art approach to generate cartographic projections was the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>. However, more recently, a Blender-based tool was released, known as <em>Blender Tissue Cartography</em> <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span> (<a href="https://github.com/nikolas-claussen/blender-tissue-cartography">code repository</a>). This tool has an <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/">extensive documentation</a> and several <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/00_tissue_cartography_overview.html#tutorials">in-depth tutorials</a> that I highly recommend anyone interested in tissue cartography to read.</p>
+<p>This tutorial is a simplified version of the Blender Tissue Cartography tutorials. It is targeted to beginners wanting to learn the basics of tissue cartography, focusing on a single approach. It shows how to generate cartographic projections from 3D lightsheet microscopy data using Fiji to inspect data, ilastik to segment the tissues, and Blender with the Blender Tissue Cartography add-on to create the projections.</p>
 <p>If you want to generate cartographic projections using the MATLAB-based ImSAnE toolbox <span class="citation" data-cites="Heemskerk2015-kv">(<a href="#ref-Heemskerk2015-kv" role="doc-biblioref">Heemskerk and Streichan 2015</a>)</span>, please check the <a href="https://github.com/bruvellu/imsane-tutorial">imsane-tutorial</a> which explains how to set up and run the pipeline <span class="citation" data-cites="Vellutini2022-ya">(<a href="#ref-Vellutini2022-ya" role="doc-biblioref">Vellutini 2022</a>)</span>.</p>
 </section>
 <section id="sec-requirements" class="level2">
@@ -1033,6 +1035,14 @@ div.csl-indent {
 <p>The projection is ready for image analyses.</p>
 <p>There are several other use cases that are not covered in the current version of this tutorial. For example, how can we generate a projection with more layers, or create and register projections for different timepoints. But, if you are interested, these use cases are described in the <a href="https://nikolas-claussen.github.io/blender-tissue-cartography/">Blender Tissue Cartography</a> paper and documentation <span class="citation" data-cites="Claussen2025-pv">(<a href="#ref-Claussen2025-pv" role="doc-biblioref">Claussen et al. 2025</a>)</span>.</p>
 </section>
+</section>
+<section id="sec-citation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-citation">Citation</h2>
+<p>Vellutini, B. C. (2026). Tissue cartography using Blender. Zenodo. <a href="https://doi.org/10.5281/zenodo.18090965" class="uri">https://doi.org/10.5281/zenodo.18090965</a></p>
+</section>
+<section id="sec-license" class="level2">
+<h2 class="anchored" data-anchor-id="sec-license">License</h2>
+<p>This tutorial is available under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </section>
 <section id="sec-references" class="level2">
 <h2 class="anchored" data-anchor-id="sec-references">References</h2>
