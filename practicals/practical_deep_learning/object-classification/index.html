@@ -228,6 +228,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#object-classification-in-napari" id="toc-object-classification-in-napari" class="nav-link active" data-scroll-target="#object-classification-in-napari">Object classification in Napari</a>
   <ul>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
   <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link" data-scroll-target="#open-the-image-and-inspect-the-histogram">0. Open the image and inspect the histogram</a></li>
   <li><a href="#open-the-image-and-create-manual-anotations" id="toc-open-the-image-and-create-manual-anotations" class="nav-link" data-scroll-target="#open-the-image-and-create-manual-anotations">1. Open the image and create manual anotations</a></li>
   <li><a href="#train-the-object-classifier" id="toc-train-the-object-classifier" class="nav-link" data-scroll-target="#train-the-object-classifier">2. Train the object classifier</a></li>
@@ -275,7 +276,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="object-classification-in-napari" class="level1">
 <h1>Object classification in Napari</h1>
-<p>In this exercise we will:</p>
+<p>Pixel classification, dimensionality reduction, and automatic clustering are common data-driven approaches used to analyze complex image data. Pixel classification assigns each pixel to a class based on its intensity or multi-channel feature values, enabling tasks such as segmentation or tissue labeling without explicit object detection. Dimensionality reduction methods (such as PCA, UMAP, or t-SNE) compress high-dimensional feature spaces into fewer dimensions while preserving key patterns or relationships, making large imaging datasets easier to visualize and interpret. Automatic clustering methods (e.g.&nbsp;k-means or similar algorithms) then group pixels or objects into clusters based on feature similarity, allowing unbiased identification of recurring patterns or phenotypes without predefined labels.</p>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this tutorial, participants will be able to:</p>
 <ul>
 <li>Train an object classifier with Napari</li>
 <li>Filter labels</li>
@@ -288,6 +292,8 @@ ul.task-list li input[type="checkbox"] {
 <p>These steps form a complete workflow: <strong>raw image → segmentation → cleanup → labeling → measurement → data viz</strong></p>
 <p>We’ll use <code>Lund.tif</code> as the example image https://zenodo.org/records/17986091</p>
 <p>Requirements: - Everything you need is in the toml file in the Pixi/napari-devbio folder https://github.com/cuenca-mb/pixi-napari-devbio</p>
+<p>–</p>
+</section>
 <section id="open-the-image-and-inspect-the-histogram" class="level2">
 <h2 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">0. Open the image and inspect the histogram</h2>
 <p>In the terminal, go to the directory Pixi/napari-devbio and run:</p>
