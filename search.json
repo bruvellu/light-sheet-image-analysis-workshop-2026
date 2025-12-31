@@ -4,7 +4,7 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "Compilation of tools and resources for image analysis focused on what we will use.\n\n\n\nhttps://zenodo.org/communities/lsmunimayor\n\n\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "text": "Compilation of tools and resources for image analysis focused on what we will use.\n\n\n\nhttps://zenodo.org/communities/lsmunimayor\n\n\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/\n\n\n\n\n\nTribolium z-stack https://git.mpi-cbg.de/rhaase/clij2_example_data/blob/master/lund1051_resampled.tif",
     "crumbs": [
       "Resources"
     ]
@@ -45,6 +45,16 @@
     "title": "Resources",
     "section": "",
     "text": "Other curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#additional-datasets",
+    "href": "resources.html#additional-datasets",
+    "title": "Resources",
+    "section": "",
+    "text": "Tribolium z-stack https://git.mpi-cbg.de/rhaase/clij2_example_data/blob/master/lund1051_resampled.tif",
     "crumbs": [
       "Resources"
     ]
