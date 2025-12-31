@@ -51,7 +51,7 @@ Tuesday, 6 Jan 2026
 
 - 14:00--14:30 - [Talk from companies] (Company 2-Galenica)
 - 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_segmentation/index.md) (Marina)
-- 16:00--17:30 - [ImageJ macro programming](practicals/practical_imagej_macros.md) (Marina)
+- 16:00--17:30 - [ImageJ macro programming](practicals/practical_macros/index.md) (Marina)
 
 ## 🗓️ Day 3: Machine learning and advanced workflows
 
@@ -67,7 +67,7 @@ Wednesday, 7 Jan 2026
 
 ### 🖥️ Practical morning session (11:00–12:30)
 
-- 11:00--12:30 - [3D segmentation using machine/deep learning](practicals/practical_3d_segmentation.md) (Marina/Agustín)
+- 11:00--12:30 - [3D segmentation using machine/deep learning](practicals/practical_deep_learning/index.md) (Marina/Agustín)
 - 12:30--13:00 - [Talk from companies] (Company 3-Bruker)
 
 ### 🥗 Lunch break (13:00--14:00)
