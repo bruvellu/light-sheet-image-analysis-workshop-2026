@@ -26,3 +26,7 @@ Other curated lists of tools and resources for scientific image analysis.
 
 - <https://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/>
 - <https://github.com/hallvaaw/awesome-biological-image-analysis/>
+
+## Additional datasets
+- Tribolium z-stack <https://git.mpi-cbg.de/rhaase/clij2_example_data/blob/master/lund1051_resampled.tif>
+- 
