@@ -398,7 +398,7 @@
     "text": "Pixel classification, dimensionality reduction, and automatic clustering are common data-driven approaches used to analyze complex image data. Pixel classification assigns each pixel to a class based on its intensity or multi-channel feature values, enabling tasks such as segmentation or tissue labeling without explicit object detection. Dimensionality reduction methods (such as PCA, UMAP, or t-SNE) compress high-dimensional feature spaces into fewer dimensions while preserving key patterns or relationships, making large imaging datasets easier to visualize and interpret. Automatic clustering methods (e.g. k-means or similar algorithms) then group pixels or objects into clusters based on feature similarity, allowing unbiased identification of recurring patterns or phenotypes without predefined labels.\n\n\nBy the end of this tutorial, participants will be able to:\n\nTrain an object classifier with Napari\nFilter labels\nExtract morphological and intensity based parameters\nPlot parameters in 2D\nApply a dimensionality reduction method\nVisualize the results\nCluster subgroups of objects using K-means\n\nThese steps form a complete workflow: raw image → segmentation → cleanup → labeling → measurement → data viz\nWe’ll use Lund.tif as the example image https://zenodo.org/records/17986091\nRequirements: - Everything you need is in the toml file in the Pixi/napari-devbio folder https://github.com/cuenca-mb/pixi-napari-devbio\n–\n\n\n\nIn the terminal, go to the directory Pixi/napari-devbio and run:\npixi run napari\n\n\n\nDrag and drop the file or\nFile → Open File\n\n\n\nLoad image and generate labels layer\n\n\nWe will be able to see and explore the stack, and we can change to a 3D rendering with the option Toogle 2D/3D view in the lower left button pannel. We will create a labels layer to anotate some ground truth for our object classifier.\nIn the left pannel, select the brush tool and make some background anotations with the brush. Then change to label 2 and make some object annotations (cells).\n\n\n\nDraw the labels\n\n\n\n\n\nGo to\nTools → Segmentation / labeling → Object segmentation (APOC)\n\n\n\nBrightness/Contrast histogram\n\n\nSelect the raw data for training and the labels layer for ground truth. Then click Train. Observe the results in 3D. For better visualization you can hide the labels layer.\n\n\n\nTrain\n\n\n\n\n\nObserve labels result\n\n\nFrom this first round of training, very likely the result is not perfect. This is because our ground truth anotation was done on a single z slice, so the classifier will perform well only around that depth. We can do several rounds of training.\nSelect again the labels image, and in the 2D mode go to a different z. Perform new anotations, preserving the label orders for background and object. Then just click Train again and observe the new results. Repeat as needed. Note that a classifier file will be produced and overwritten after each training. This can be used for batch segmentation of data from the same experiment/microscope.\n\n\n\nModify labels layer\n\n\n\n\n\nRe-train\n\n\n\n\n\nNow there might be some small objects that we want to filter. Go to\nTools → Segmentation post-processing → Exclude small labels\nThen select the layer Result of ObjectSegmentation and impose a minimum size of 20 (it will say maximum size in napari, but it is a mistake from the developers). Run it and observe the final labels (hide the old labels for better visualization.\n\n\n\nExclude small objects\n\n\n\n\n\nObserve filtered labels\n\n\nNow that we have a nice set of labels in 3D, we will quantify intensity and morphology based parameters for further analysis.\nGo to\nTools → Measurement tables → Regionprops\nSelect all parameters except moments and click run.\n\n\n\nRegionprops\n\n\n\n\n\nTable\n\n\nWe can export this table or visualize some of the data using the cluster plotter.\n\n\n\nGo to\nPlugins → napari-clusters-plotter → Plotter widget\nIn here you can select any measurement (column) from the region props table and make scatter plots.\n\n\n\nPlotter widget\n\n\n\n\n\nScatter plot\n\n\nA very useful tool is that we can draw in the plot closed curves and the objects falling inside will be automatically colorcoded and visualized in the 3D rendered image. I recommend hiding all the other layers except the raw image.\nBy pressing shift, we can draw further subgroups.\n\n\n\nLabel IDs\n\n\n\nThis manual selection generates a new column in the regionprops table with the identifier for us to export and further analyse in other software.\n\n\n\nGo to\nPlugins → napari-clusters-plotter → Dimensionality Reduction Widget\nThis is a very useful tool in which we can apply a variety of dimensionality reduction methods to our list of parameters. In this example I used UMAPS. We can select how many components we want and after hitting run they will be added to our regionprops table.\n\n\n\nDimensionality Reduction\n\n\n\n\n\nUMAP\n\n\nAfter doing this, we can come back to the Plotter Widget and plot this two components of the UMAP and generate more complex clustering of the data manually.\n\n\n\nUMAP viz\n\n\n\n\n\nManual Cluster ID\n\n\n\n\n\nBut what if we don’t want to be biased when clustering the data in subgroups? We can use unsupervised methods includded in this plugin. Go to\nPlugins → napari-clusters-plotter → Clustering Widget\nSelect the K-MEANS method, impose 3 clusters and run. This will generate a new column with the cluster ID for each object.\n\n\n\nClustering methods\n\n\n\n\n\nK-MEANS\n\n\nNow going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.\n\n\n\nAutomatic clustering",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -410,7 +410,7 @@
     "text": "By the end of this tutorial, participants will be able to:\n\nTrain an object classifier with Napari\nFilter labels\nExtract morphological and intensity based parameters\nPlot parameters in 2D\nApply a dimensionality reduction method\nVisualize the results\nCluster subgroups of objects using K-means\n\nThese steps form a complete workflow: raw image → segmentation → cleanup → labeling → measurement → data viz\nWe’ll use Lund.tif as the example image https://zenodo.org/records/17986091\nRequirements: - Everything you need is in the toml file in the Pixi/napari-devbio folder https://github.com/cuenca-mb/pixi-napari-devbio\n–",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -422,7 +422,7 @@
     "text": "In the terminal, go to the directory Pixi/napari-devbio and run:\npixi run napari",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -434,7 +434,7 @@
     "text": "Drag and drop the file or\nFile → Open File\n\n\n\nLoad image and generate labels layer\n\n\nWe will be able to see and explore the stack, and we can change to a 3D rendering with the option Toogle 2D/3D view in the lower left button pannel. We will create a labels layer to anotate some ground truth for our object classifier.\nIn the left pannel, select the brush tool and make some background anotations with the brush. Then change to label 2 and make some object annotations (cells).\n\n\n\nDraw the labels",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -446,7 +446,7 @@
     "text": "Go to\nTools → Segmentation / labeling → Object segmentation (APOC)\n\n\n\nBrightness/Contrast histogram\n\n\nSelect the raw data for training and the labels layer for ground truth. Then click Train. Observe the results in 3D. For better visualization you can hide the labels layer.\n\n\n\nTrain\n\n\n\n\n\nObserve labels result\n\n\nFrom this first round of training, very likely the result is not perfect. This is because our ground truth anotation was done on a single z slice, so the classifier will perform well only around that depth. We can do several rounds of training.\nSelect again the labels image, and in the 2D mode go to a different z. Perform new anotations, preserving the label orders for background and object. Then just click Train again and observe the new results. Repeat as needed. Note that a classifier file will be produced and overwritten after each training. This can be used for batch segmentation of data from the same experiment/microscope.\n\n\n\nModify labels layer\n\n\n\n\n\nRe-train",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -458,7 +458,7 @@
     "text": "Now there might be some small objects that we want to filter. Go to\nTools → Segmentation post-processing → Exclude small labels\nThen select the layer Result of ObjectSegmentation and impose a minimum size of 20 (it will say maximum size in napari, but it is a mistake from the developers). Run it and observe the final labels (hide the old labels for better visualization.\n\n\n\nExclude small objects\n\n\n\n\n\nObserve filtered labels\n\n\nNow that we have a nice set of labels in 3D, we will quantify intensity and morphology based parameters for further analysis.\nGo to\nTools → Measurement tables → Regionprops\nSelect all parameters except moments and click run.\n\n\n\nRegionprops\n\n\n\n\n\nTable\n\n\nWe can export this table or visualize some of the data using the cluster plotter.",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -470,7 +470,7 @@
     "text": "Go to\nPlugins → napari-clusters-plotter → Plotter widget\nIn here you can select any measurement (column) from the region props table and make scatter plots.\n\n\n\nPlotter widget\n\n\n\n\n\nScatter plot\n\n\nA very useful tool is that we can draw in the plot closed curves and the objects falling inside will be automatically colorcoded and visualized in the 3D rendered image. I recommend hiding all the other layers except the raw image.\nBy pressing shift, we can draw further subgroups.\n\n\n\nLabel IDs\n\n\n\nThis manual selection generates a new column in the regionprops table with the identifier for us to export and further analyse in other software.",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -482,7 +482,7 @@
     "text": "Go to\nPlugins → napari-clusters-plotter → Dimensionality Reduction Widget\nThis is a very useful tool in which we can apply a variety of dimensionality reduction methods to our list of parameters. In this example I used UMAPS. We can select how many components we want and after hitting run they will be added to our regionprops table.\n\n\n\nDimensionality Reduction\n\n\n\n\n\nUMAP\n\n\nAfter doing this, we can come back to the Plotter Widget and plot this two components of the UMAP and generate more complex clustering of the data manually.\n\n\n\nUMAP viz\n\n\n\n\n\nManual Cluster ID",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -494,7 +494,7 @@
     "text": "But what if we don’t want to be biased when clustering the data in subgroups? We can use unsupervised methods includded in this plugin. Go to\nPlugins → napari-clusters-plotter → Clustering Widget\nSelect the K-MEANS method, impose 3 clusters and run. This will generate a new column with the cluster ID for each object.\n\n\n\nClustering methods\n\n\n\n\n\nK-MEANS\n\n\nNow going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.\n\n\n\nAutomatic clustering",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "Object-classification, dimensionality reduction and clustering"
     ]
   },
@@ -506,7 +506,7 @@
     "text": "3D Deep Learning Segmentation\nThis guide will walk you through the excercises for this workshop\n\n\nKey Learning Objectives\nBy the end of these notebooks, you should understand:\n\nHow deep learning models for cell segmentation work\nThe differences between Cellpose and StarDist approaches\nHow to use Napari for 3D visualization\nHow to evaluate and compare segmentation results",
     "crumbs": [
       "Practicals",
-      "index.html",
+      "3D segmentation using machine/deep lerning",
       "3D Deep Learning Segmentation"
     ]
   },
@@ -835,12 +835,12 @@
   {
     "objectID": "practicals/practical_deep_learning/index.html",
     "href": "practicals/practical_deep_learning/index.html",
-    "title": "🔬 Light-Sheet Image Analysis Workshop 2026",
+    "title": "3D segmentation using machine/deep lerning",
     "section": "",
     "text": "Pixel Classification and Dimensionality reduction (Marina)\n3D object segmentation (Agustin)",
     "crumbs": [
       "Practicals",
-      "index.html"
+      "3D segmentation using machine/deep lerning"
     ]
   },
   {
