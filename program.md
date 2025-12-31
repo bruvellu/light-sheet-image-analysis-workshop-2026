@@ -7,7 +7,7 @@ Monday, 5 Jan 2026
 ### 🧠 Theory morning session (09:00--11:00)
 
 - 09:00--09:15 - Welcome session and course overview
-- 09:15--10:00 - [Concepts in light-sheet microscopy](){title="PDF available soon"} (Marina)
+- 09:15--10:00 - [Concepts in light-sheet microscopy]{https://zenodo.org/records/17913589 title="Link to Zenodo"} (Marina)
 - 10:00--11:00 - [Experimental design and sample mounting](talks/talk_experimental_design.md) (Marina)
 
 
