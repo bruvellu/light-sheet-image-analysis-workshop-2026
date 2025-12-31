@@ -6,7 +6,11 @@ date: 05 January 2026
 
 # Object classification in Napari
 
-In this exercise we will:
+Pixel classification, dimensionality reduction, and automatic clustering are common data-driven approaches used to analyze complex image data. Pixel classification assigns each pixel to a class based on its intensity or multi-channel feature values, enabling tasks such as segmentation or tissue labeling without explicit object detection. Dimensionality reduction methods (such as PCA, UMAP, or t-SNE) compress high-dimensional feature spaces into fewer dimensions while preserving key patterns or relationships, making large imaging datasets easier to visualize and interpret. Automatic clustering methods (e.g. k-means or similar algorithms) then group pixels or objects into clusters based on feature similarity, allowing unbiased identification of recurring patterns or phenotypes without predefined labels.
+
+## Learning Outcomes
+
+By the end of this tutorial, participants will be able to:
 
 - Train an object classifier with Napari
 - Filter labels
@@ -23,6 +27,8 @@ We’ll use `Lund.tif` as the example image https://zenodo.org/records/17986091
 
 Requirements:
 - Everything you need is in the toml file in the Pixi/napari-devbio folder https://github.com/cuenca-mb/pixi-napari-devbio
+
+--
 
 ## 0. Open the image and inspect the histogram
 
