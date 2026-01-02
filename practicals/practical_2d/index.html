@@ -518,7 +518,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="excercise" class="level4">
 <h4 class="anchored" data-anchor-id="excercise">Excercise</h4>
 <p>Zoom in as much as you can into a small region. What do you see? Are the squares part of the sample or a rendering? If you hover your mouse over some pixels, what do you see at the bottom grey area of the Fiji main window?</p>
-<p>&lt;–! Students should be able to see the pixels as squares, understand that these correspond to the representation of the matrix of pixels. When hovering the mouse over pixels, Fiji window shows the coordinates in microns (and in pixels), as well as the intensity value. –&gt;</p>
 </section>
 </section>
 <section id="checking-image-properties" class="level3">
@@ -596,7 +595,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise" class="level4">
 <h4 class="anchored" data-anchor-id="exercise">Exercise</h4>
 <p>Why might you want to convert a 16-bit image to 8-bit? Consider factors like file size, processing speed, memory usage, and the type of analysis you plan to do. When would it be a bad idea?</p>
-<p>&lt;–! Students should think about trade-offs between data quality and computational efficiency. Converting 16-bit to 8-bit reduces file size and memory footprint, making it useful for large datasets or batch processing. However, it loses intensity information, which could be critical for quantitative analysis requiring fine intensity discrimination. It’s generally safe for visualization and qualitative analysis but risky for measurements and quantification. Converting images to 32-bit allows you to perform operations that can result in floating points, such as divisions. –&gt;</p>
 <hr>
 </section>
 </section>
@@ -631,7 +629,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="changing-the-lookup-table" class="level3">
 <h3 class="anchored" data-anchor-id="changing-the-lookup-table">Changing the LookUp Table</h3>
 <p>Most of the cameras or detectors are monochromatic, which means that the color with which images are represented is a false color. Go to <code>Image &gt; LookUp Tables</code> or click on the LUT button and choose a different color. What do you think the different palettes are for? Try for example HiLo, cool and 16-colors.</p>
-<p>&lt;–! The students should notice that the LUT is choosen to enhance visibility of what you want to be shown. Greys are better to distinguish differences in intensity. Cyan, magenta and greys or yellow might be more color-blind friendly to show superposition of channels. cool and divergent LUTs are good to show values above vs values below some mid-level. HiLo is great to notice under- and over-exposure. 16-colors or non-continuous LUTs are good to show labeled images after segmentation. –&gt;</p>
 </section>
 <section id="working-with-more-dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="working-with-more-dimensions">Working with more dimensions</h3>
@@ -688,6 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Plot Profile image</figcaption>
 </figure>
 </div>
+<p>What happens if you right click on the straight line button?</p>
 <section id="measure-intensity" class="level4">
 <h4 class="anchored" data-anchor-id="measure-intensity">Measure Intensity</h4>
 <ol type="1">
@@ -892,6 +890,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="license">License</h2>
 <p>This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).</p>
 <p>For more details, visit: https://creativecommons.org/licenses/by/4.0/ and https://github.com/acorbat/2D_visualization_workshop</p>
+<p>&lt;–! Answers are here –&gt;</p>
 <hr>
 <p><strong>Last Updated:</strong> January 2, 2026</p>
 
