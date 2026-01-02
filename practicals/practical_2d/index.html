@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Agustin Corbat">
+<meta name="dcterms.date" content="2026-01-05">
 
-<title>index – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Visualization of 2D data – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -44,6 +81,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +114,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:title" content="Visualization of 2D data – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_2d/assets/fiji_window.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:title" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:alt" content="Fiji window">
+<meta name="twitter:title" content="Visualization of 2D data – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_2d/assets/fiji_window.png">
+<meta name="twitter:image:alt" content="Fiji window">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -102,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Visualization of 2D images</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Visualization of 2D data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -138,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_2d/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Visualization of 2D images</span></a>
+ <span class="menu-text">Visualization of 2D data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -212,31 +256,634 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#visualization-of-2d-images" id="toc-visualization-of-2d-images" class="nav-link active" data-scroll-target="#visualization-of-2d-images">Visualization of 2D images</a></li>
+  <li><a href="#d-image-visualization-workshop-fiji-napari" id="toc-d-image-visualization-workshop-fiji-napari" class="nav-link active" data-scroll-target="#d-image-visualization-workshop-fiji-napari">2D Image Visualization Workshop: Fiji &amp; Napari</a>
+  <ul>
+  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of Contents</a></li>
+  <li><a href="#what-is-fiji" id="toc-what-is-fiji" class="nav-link" data-scroll-target="#what-is-fiji">What is Fiji?</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#common-use-cases" id="toc-common-use-cases" class="nav-link" data-scroll-target="#common-use-cases">Common Use Cases</a></li>
+  </ul></li>
+  <li><a href="#getting-started-with-fiji" id="toc-getting-started-with-fiji" class="nav-link" data-scroll-target="#getting-started-with-fiji">Getting Started with Fiji</a>
+  <ul class="collapse">
+  <li><a href="#download-and-installation" id="toc-download-and-installation" class="nav-link" data-scroll-target="#download-and-installation">Download and Installation</a>
+  <ul class="collapse">
+  <li><a href="#windows-mac-or-linux" id="toc-windows-mac-or-linux" class="nav-link" data-scroll-target="#windows-mac-or-linux">Windows, Mac, or Linux</a></li>
+  <li><a href="#verify-installation" id="toc-verify-installation" class="nav-link" data-scroll-target="#verify-installation">Verify Installation</a></li>
+  </ul></li>
+  <li><a href="#setting-up-sample-data" id="toc-setting-up-sample-data" class="nav-link" data-scroll-target="#setting-up-sample-data">Setting Up Sample Data</a></li>
+  </ul></li>
+  <li><a href="#opening-and-viewing-images" id="toc-opening-and-viewing-images" class="nav-link" data-scroll-target="#opening-and-viewing-images">Opening and Viewing Images</a>
+  <ul class="collapse">
+  <li><a href="#opening-an-image" id="toc-opening-an-image" class="nav-link" data-scroll-target="#opening-an-image">Opening an Image</a></li>
+  <li><a href="#basic-viewing-tools" id="toc-basic-viewing-tools" class="nav-link" data-scroll-target="#basic-viewing-tools">Basic Viewing Tools</a>
+  <ul class="collapse">
+  <li><a href="#excercise" id="toc-excercise" class="nav-link" data-scroll-target="#excercise">Excercise</a></li>
+  </ul></li>
+  <li><a href="#checking-image-properties" id="toc-checking-image-properties" class="nav-link" data-scroll-target="#checking-image-properties">Checking Image Properties</a></li>
+  <li><a href="#changing-the-bit-depth" id="toc-changing-the-bit-depth" class="nav-link" data-scroll-target="#changing-the-bit-depth">Changing the Bit Depth</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#essential-fiji-functions" id="toc-essential-fiji-functions" class="nav-link" data-scroll-target="#essential-fiji-functions">Essential Fiji Functions</a>
+  <ul class="collapse">
+  <li><a href="#duplicate-an-image" id="toc-duplicate-an-image" class="nav-link" data-scroll-target="#duplicate-an-image">Duplicate an image</a></li>
+  <li><a href="#adjusting-brightness-contrast" id="toc-adjusting-brightness-contrast" class="nav-link" data-scroll-target="#adjusting-brightness-contrast">Adjusting Brightness &amp; Contrast</a>
+  <ul class="collapse">
+  <li><a href="#excercise-1" id="toc-excercise-1" class="nav-link" data-scroll-target="#excercise-1">Excercise</a></li>
+  </ul></li>
+  <li><a href="#changing-the-lookup-table" id="toc-changing-the-lookup-table" class="nav-link" data-scroll-target="#changing-the-lookup-table">Changing the LookUp Table</a></li>
+  <li><a href="#working-with-more-dimensions" id="toc-working-with-more-dimensions" class="nav-link" data-scroll-target="#working-with-more-dimensions">Working with more dimensions</a>
+  <ul class="collapse">
+  <li><a href="#split-channels" id="toc-split-channels" class="nav-link" data-scroll-target="#split-channels">Split Channels</a></li>
+  <li><a href="#merge-channels" id="toc-merge-channels" class="nav-link" data-scroll-target="#merge-channels">Merge Channels</a></li>
+  <li><a href="#channel-visualization" id="toc-channel-visualization" class="nav-link" data-scroll-target="#channel-visualization">Channel Visualization</a></li>
+  </ul></li>
+  <li><a href="#quick-measurements" id="toc-quick-measurements" class="nav-link" data-scroll-target="#quick-measurements">Quick Measurements</a>
+  <ul class="collapse">
+  <li><a href="#measure-intensity" id="toc-measure-intensity" class="nav-link" data-scroll-target="#measure-intensity">Measure Intensity</a></li>
+  </ul></li>
+  <li><a href="#crop" id="toc-crop" class="nav-link" data-scroll-target="#crop">Crop</a></li>
+  </ul></li>
+  <li><a href="#alternative-napari-in-jupyter-notebooks" id="toc-alternative-napari-in-jupyter-notebooks" class="nav-link" data-scroll-target="#alternative-napari-in-jupyter-notebooks">Alternative: Napari in Jupyter Notebooks</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#install-pixi" id="toc-install-pixi" class="nav-link" data-scroll-target="#install-pixi">Install Pixi</a></li>
+  <li><a href="#initialize-a-pixi-project" id="toc-initialize-a-pixi-project" class="nav-link" data-scroll-target="#initialize-a-pixi-project">Initialize a Pixi Project</a></li>
+  <li><a href="#add-python-and-napari-to-your-environment" id="toc-add-python-and-napari-to-your-environment" class="nav-link" data-scroll-target="#add-python-and-napari-to-your-environment">Add Python and Napari to Your Environment</a></li>
+  <li><a href="#running-jupyter-with-pixi" id="toc-running-jupyter-with-pixi" class="nav-link" data-scroll-target="#running-jupyter-with-pixi">Running Jupyter with Pixi</a></li>
+  </ul></li>
+  <li><a href="#basic-napari-workflow" id="toc-basic-napari-workflow" class="nav-link" data-scroll-target="#basic-napari-workflow">Basic Napari Workflow</a>
+  <ul class="collapse">
+  <li><a href="#import-and-display-an-image" id="toc-import-and-display-an-image" class="nav-link" data-scroll-target="#import-and-display-an-image">Import and Display an Image</a></li>
+  <li><a href="#interactive-roi-selection" id="toc-interactive-roi-selection" class="nav-link" data-scroll-target="#interactive-roi-selection">Interactive ROI Selection</a></li>
+  </ul></li>
+  <li><a href="#napari-advantages" id="toc-napari-advantages" class="nav-link" data-scroll-target="#napari-advantages">Napari Advantages</a></li>
+  <li><a href="#napari-limitations-vs.-fiji" id="toc-napari-limitations-vs.-fiji" class="nav-link" data-scroll-target="#napari-limitations-vs.-fiji">Napari Limitations vs.&nbsp;Fiji</a></li>
+  </ul></li>
+  <li><a href="#additional-workshop-exercises" id="toc-additional-workshop-exercises" class="nav-link" data-scroll-target="#additional-workshop-exercises">Additional Workshop Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-basic-image-inspection-fiji" id="toc-exercise-1-basic-image-inspection-fiji" class="nav-link" data-scroll-target="#exercise-1-basic-image-inspection-fiji">Exercise 1: Basic Image Inspection (Fiji)</a></li>
+  <li><a href="#exercise-2-image-enhancement-fiji" id="toc-exercise-2-image-enhancement-fiji" class="nav-link" data-scroll-target="#exercise-2-image-enhancement-fiji">Exercise 2: Image Enhancement (Fiji)</a></li>
+  <li><a href="#exercise-3-segmentation-fiji-or-napari" id="toc-exercise-3-segmentation-fiji-or-napari" class="nav-link" data-scroll-target="#exercise-3-segmentation-fiji-or-napari">Exercise 3: Segmentation (Fiji or Napari)</a></li>
+  <li><a href="#exercise-4-reproducible-analysis-napari-in-jupyter" id="toc-exercise-4-reproducible-analysis-napari-in-jupyter" class="nav-link" data-scroll-target="#exercise-4-reproducible-analysis-napari-in-jupyter">Exercise 4: Reproducible Analysis (Napari in Jupyter)</a></li>
+  </ul></li>
+  <li><a href="#tips-tricks" id="toc-tips-tricks" class="nav-link" data-scroll-target="#tips-tricks">Tips &amp; Tricks</a>
+  <ul class="collapse">
+  <li><a href="#fiji-performance" id="toc-fiji-performance" class="nav-link" data-scroll-target="#fiji-performance">Fiji Performance</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  <li><a href="#jupyter-best-practices" id="toc-jupyter-best-practices" class="nav-link" data-scroll-target="#jupyter-best-practices">Jupyter Best Practices</a></li>
+  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_2d/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Visualization of 2D images</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Visualization of 2D data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Visualization of 2D data</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="visualization-of-2d-images" class="level1">
-<h1>Visualization of 2D images</h1>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Agustin Corbat </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="d-image-visualization-workshop-fiji-napari" class="level1">
+<h1>2D Image Visualization Workshop: Fiji &amp; Napari</h1>
+<section id="table-of-contents" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
 <ul>
-<li>Opening an image<br>
-</li>
-<li>Exploring dimensions, scale, formats, bits, metadata<br>
-</li>
-<li>B+C<br>
-</li>
-<li>LUTs<br>
-</li>
-<li>Scalebar</li>
+<li><a href="#what-is-fiji">What is Fiji?</a></li>
+<li><a href="#getting-started-with-fiji">Getting Started with Fiji</a></li>
+<li><a href="#opening-and-viewing-images">Opening and Viewing Images</a></li>
+<li><a href="#essential-fiji-functions">Essential Fiji Functions</a></li>
+<li><a href="#alternative-napari-in-jupyter-notebooks">Alternative: Napari in Jupyter Notebooks</a></li>
+</ul>
+<hr>
+</section>
+<section id="what-is-fiji" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-fiji">What is Fiji?</h2>
+<p><strong>Fiji</strong> (Fiji Is Just ImageJ) is a free, open-source image processing and analysis platform built on top of ImageJ. It’s widely used in scientific research, particularly in microscopy, medical imaging, and general image analysis.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>User-friendly GUI</strong> - No programming required for basic operations</li>
+<li><strong>Pre-installed plugins</strong> - Comes with a curated selection of image processing tools</li>
+<li><strong>Extensible</strong> - Can add additional plugins for specialized tasks</li>
+<li><strong>Multi-format support</strong> - Handles TIFF, JPEG, PNG, BMP, and many scientific formats</li>
+<li><strong>Batch processing</strong> - Automate workflows with macros</li>
+<li><strong>Active community</strong> - Extensive documentation and forum support</li>
+</ul>
+</section>
+<section id="common-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="common-use-cases">Common Use Cases</h3>
+<ul>
+<li>Microscopy image analysis</li>
+<li>Segmentation and thresholding</li>
+<li>Intensity measurements and statistics</li>
+<li>Image registration and stitching</li>
+<li>3D image visualization</li>
+<li>Time-series analysis</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="getting-started-with-fiji" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-fiji">Getting Started with Fiji</h2>
+<section id="download-and-installation" class="level3">
+<h3 class="anchored" data-anchor-id="download-and-installation">Download and Installation</h3>
+<section id="windows-mac-or-linux" class="level4">
+<h4 class="anchored" data-anchor-id="windows-mac-or-linux">Windows, Mac, or Linux</h4>
+<ol type="1">
+<li>Visit the official Fiji website: https://fiji.sc/</li>
+<li>Click <strong>“Download”</strong> and select your operating system</li>
+<li>Extract the downloaded file to your preferred location (preferably somewhere admin rights are not required to modify files)</li>
+<li>Double-click <code>Fiji.exe</code> (Windows) or the Fiji application bundle to launch</li>
+</ol>
+<p><strong>No additional installation required</strong> - Fiji is portable and comes with Java bundled.</p>
+</section>
+<section id="verify-installation" class="level4">
+<h4 class="anchored" data-anchor-id="verify-installation">Verify Installation</h4>
+<p>When you launch Fiji, you should see: - The main ImageJ window (toolbar with various tools) - A menu bar with <strong>File</strong>, <strong>Edit</strong>, <strong>Image</strong>, <strong>Process</strong>, <strong>Analyze</strong>, <strong>Plugins</strong>, <strong>Window</strong>, <strong>Help</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/fiji_window.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Fiji window"><img src="assets/fiji_window.png" class="img-fluid figure-img" alt="Fiji window"></a></p>
+<figcaption>Fiji window</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="setting-up-sample-data" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-sample-data">Setting Up Sample Data</h3>
+<p>For this workshop, we recommend having sample images available. You can: - Use your own microscopy images or photographs - Use Fiji sample data - Download sample images from: - <a href="https://fiji.sc/sample-images">Fiji sample images</a> - Scientific image repositories (e.g., Open Microscopy Environment)</p>
+<hr>
+</section>
+</section>
+<section id="opening-and-viewing-images" class="level2">
+<h2 class="anchored" data-anchor-id="opening-and-viewing-images">Opening and Viewing Images</h2>
+<section id="opening-an-image" class="level3">
+<h3 class="anchored" data-anchor-id="opening-an-image">Opening an Image</h3>
+<p>The easiest way is to use drag-and-drop on the gray area.</p>
+<p>Another option is to:</p>
+<ol type="1">
+<li><strong>File → Open</strong> (or <code>Ctrl+O</code> / <code>Cmd+O</code>)</li>
+<li>Navigate to your image file and select it</li>
+<li>Click <strong>Open</strong></li>
+</ol>
+<p>The image will display in a new window with the filename in the title bar.</p>
+<p>In many cases, the BioFormats Plugin will be automatically called to open the image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/bioformats_plugin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="BioFormats Plugin"><img src="assets/bioformats_plugin.png" class="img-fluid figure-img" alt="BioFormats Plugin"></a></p>
+<figcaption>BioFormats Plugin</figcaption>
+</figure>
+</div>
+<p>How many of these options do we understand?</p>
+</section>
+<section id="basic-viewing-tools" class="level3">
+<h3 class="anchored" data-anchor-id="basic-viewing-tools">Basic Viewing Tools</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Function</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Zoom In/Out</strong></td>
+<td>Adjust magnification to inspect details or see whole image</td>
+<td><code>+</code> / <code>-</code> or scroll wheel</td>
+</tr>
+<tr class="even">
+<td><strong>Pan</strong></td>
+<td>Move around the image when zoomed in</td>
+<td>Click and drag with spacebar</td>
+</tr>
+<tr class="odd">
+<td><strong>Color Picker</strong></td>
+<td>Sample pixel values</td>
+<td><code>I</code> key</td>
+</tr>
+<tr class="even">
+<td><strong>Measure</strong></td>
+<td>Determine distances and areas</td>
+<td><code>M</code> key</td>
+</tr>
+<tr class="odd">
+<td><strong>ROI (Region of Interest)</strong></td>
+<td>Select rectangular, oval, or free-form areas</td>
+<td>Toolbar buttons</td>
+</tr>
+</tbody>
+</table>
+<section id="excercise" class="level4">
+<h4 class="anchored" data-anchor-id="excercise">Excercise</h4>
+<p>Zoom in as much as you can into a small region. What do you see? Are the squares part of the sample or a rendering? If you hover your mouse over some pixels, what do you see at the bottom grey area of the Fiji main window?</p>
+<p>&lt;–! Students should be able to see the pixels as squares, understand that these correspond to the representation of the matrix of pixels. When hovering the mouse over pixels, Fiji window shows the coordinates in microns (and in pixels), as well as the intensity value. –&gt;</p>
+</section>
+</section>
+<section id="checking-image-properties" class="level3">
+<h3 class="anchored" data-anchor-id="checking-image-properties">Checking Image Properties</h3>
+<p>After opening an image, first check its header. What are the values on top?</p>
+<p>Can you check its metadata? (go to <code>Image&gt;Show Info...</code>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/show_info_window.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Show Info Window in Fiji"><img src="assets/show_info_window.png" class="img-fluid figure-img" alt="Show Info Window in Fiji"></a></p>
+<figcaption>Show Info Window in Fiji</figcaption>
+</figure>
+</div>
+<p>Fill in the following table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Metadata Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pixel Size (µm)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Magnification</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Numerical Aperture (NA)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bit Depth</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Image Dimensions (width × height)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Number of Channels</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Number of Slices (if z-stack)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Voxel Dimensions</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Unit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="changing-the-bit-depth" class="level3">
+<h3 class="anchored" data-anchor-id="changing-the-bit-depth">Changing the Bit Depth</h3>
+<p>Images can be stored in different formats representing different levels of intensity information:</p>
+<ul>
+<li><strong>8-bit</strong> (256 intensity levels) - Smallest file size, fastest processing, good for display</li>
+<li><strong>16-bit</strong> (65,536 intensity levels) - More detail, larger file size, common in microscopy</li>
+<li><strong>32-bit</strong> (floating-point) - Highest precision, largest file size, used for calculations</li>
+</ul>
+<p>To change the bit depth of your image:</p>
+<ol type="1">
+<li>Go to <code>Image &gt; Type</code></li>
+<li>Select your desired bit depth: <code>8-bit</code>, <code>16-bit</code>, or <code>32-bit</code></li>
+<li>If converting from higher to lower bit depth (e.g., 16-bit to 8-bit), you may lose information</li>
+</ol>
+<section id="exercise" class="level4">
+<h4 class="anchored" data-anchor-id="exercise">Exercise</h4>
+<p>Why might you want to convert a 16-bit image to 8-bit? Consider factors like file size, processing speed, memory usage, and the type of analysis you plan to do. When would it be a bad idea?</p>
+<p>&lt;–! Students should think about trade-offs between data quality and computational efficiency. Converting 16-bit to 8-bit reduces file size and memory footprint, making it useful for large datasets or batch processing. However, it loses intensity information, which could be critical for quantitative analysis requiring fine intensity discrimination. It’s generally safe for visualization and qualitative analysis but risky for measurements and quantification. Converting images to 32-bit allows you to perform operations that can result in floating points, such as divisions. –&gt;</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="essential-fiji-functions" class="level2">
+<h2 class="anchored" data-anchor-id="essential-fiji-functions">Essential Fiji Functions</h2>
+<section id="duplicate-an-image" class="level3">
+<h3 class="anchored" data-anchor-id="duplicate-an-image">Duplicate an image</h3>
+<p>Most of the operations are applied on the currently selected image, which might change its intensity values. Some operations cannot be undone, which means that you have to reopen the image and go through the whole process again if something goes wrong. To avoid this, it’s a good idea to duplicate the image just in case.</p>
+<p>Go to <code>Image &gt; Duplicate</code>.</p>
+</section>
+<section id="adjusting-brightness-contrast" class="level3">
+<h3 class="anchored" data-anchor-id="adjusting-brightness-contrast">Adjusting Brightness &amp; Contrast</h3>
+<ol type="1">
+<li><code>Image &gt; Adjust &gt; Brightness/Contrast...</code></li>
+<li>Drag sliders to enhance visibility</li>
+<li>Check <strong>Auto</strong> for automatic adjustment</li>
+<li>Use <strong>Reset</strong> to revert to original</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/b_and_c_window.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Brightness and Contrast window"><img src="assets/b_and_c_window.png" class="img-fluid figure-img" alt="Brightness and Contrast window"></a></p>
+<figcaption>Brightness and Contrast window</figcaption>
+</figure>
+</div>
+<p><em>Use case:</em> Make dim images more visible for analysis.</p>
+<section id="excercise-1" class="level4">
+<h4 class="anchored" data-anchor-id="excercise-1">Excercise</h4>
+<p>Try clicking on <strong>Apply</strong> to see what happens to the pixel values.</p>
+</section>
+</section>
+<section id="changing-the-lookup-table" class="level3">
+<h3 class="anchored" data-anchor-id="changing-the-lookup-table">Changing the LookUp Table</h3>
+<p>Most of the cameras or detectors are monochromatic, which means that the color with which images are represented is a false color. Go to <code>Image &gt; LookUp Tables</code> or click on the LUT button and choose a different color. What do you think the different palettes are for? Try for example HiLo, cool and 16-colors.</p>
+<p>&lt;–! The students should notice that the LUT is choosen to enhance visibility of what you want to be shown. Greys are better to distinguish differences in intensity. Cyan, magenta and greys or yellow might be more color-blind friendly to show superposition of channels. cool and divergent LUTs are good to show values above vs values below some mid-level. HiLo is great to notice under- and over-exposure. 16-colors or non-continuous LUTs are good to show labeled images after segmentation. –&gt;</p>
+</section>
+<section id="working-with-more-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-more-dimensions">Working with more dimensions</h3>
+<p>First choose an image with several dimension, like a z-stack with more than one channel. If you don’t have one, you can choose <code>File &gt; Open samples &gt; Mitosis (5D stack)</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/5d_stack_image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="5D stack image"><img src="assets/5d_stack_image.png" class="img-fluid figure-img" alt="5D stack image"></a></p>
+<figcaption>5D stack image</figcaption>
+</figure>
+</div>
+<p>The sliders at the bottom allow you to go through the different channels, z-planes and timepoints. Some of the sample images already have what is called a composite, where channels are shown simultaneously. Try doing the following:</p>
+<section id="split-channels" class="level4">
+<h4 class="anchored" data-anchor-id="split-channels">Split Channels</h4>
+<ol type="1">
+<li><code>Image &gt; Color &gt; Split Channels</code></li>
+<li>Each channel opens in a separate window</li>
+<li>Analyze or process channels independently</li>
+</ol>
+</section>
+<section id="merge-channels" class="level4">
+<h4 class="anchored" data-anchor-id="merge-channels">Merge Channels</h4>
+<ol type="1">
+<li><code>Image &gt; Color &gt; Merge Channels</code></li>
+<li>Select source windows for each channel</li>
+<li>Do not create a composite image</li>
+</ol>
+</section>
+<section id="channel-visualization" class="level4">
+<h4 class="anchored" data-anchor-id="channel-visualization">Channel Visualization</h4>
+<ol type="1">
+<li>Adjust color assignments for better visualization</li>
+<li>Go to <code>Image &gt; Color &gt; Make Composite</code></li>
+</ol>
+</section>
+</section>
+<section id="quick-measurements" class="level3">
+<h3 class="anchored" data-anchor-id="quick-measurements">Quick Measurements</h3>
+<p>Choose any structure in your image.</p>
+<ol type="1">
+<li>Click on <strong>straight line button</strong></li>
+<li>Draw a line across your object of interest</li>
+<li>Go to <code>Analyze &gt; Plot Profile</code></li>
+<li>Displays intensity values along the line (useful for colocalization studies)</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/line_profile_image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Line profile image"><img src="assets/line_profile_image.png" class="img-fluid figure-img" alt="Line profile image"></a></p>
+<figcaption>Line profile image</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/plot_profile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Plot Profile image"><img src="assets/plot_profile.png" class="img-fluid figure-img" alt="Plot Profile image"></a></p>
+<figcaption>Plot Profile image</figcaption>
+</figure>
+</div>
+<section id="measure-intensity" class="level4">
+<h4 class="anchored" data-anchor-id="measure-intensity">Measure Intensity</h4>
+<ol type="1">
+<li>Select an ROI (Region of Interest) using selection tools</li>
+<li><strong>Analyze → Measure</strong> (or <code>Ctrl+M</code>)</li>
+<li>Results include: Area, Mean intensity, Std Dev, Min, Max</li>
+</ol>
+</section>
+</section>
+<section id="crop" class="level3">
+<h3 class="anchored" data-anchor-id="crop">Crop</h3>
+<ol type="1">
+<li>Use rectangle selection tool to define region</li>
+<li><strong>Image → Crop</strong></li>
+<li>Image is reduced to selected area</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="alternative-napari-in-jupyter-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-napari-in-jupyter-notebooks">Alternative: Napari in Jupyter Notebooks</h2>
+<p>If you prefer a Python-based, interactive approach, <strong>napari</strong> is a fast, interactive image viewer for multi-dimensional images.</p>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>Pixi is a package manager that makes it easy to manage Python environments and dependencies. Follow these steps to set up Napari with pixi:</p>
+<section id="install-pixi" class="level4">
+<h4 class="anchored" data-anchor-id="install-pixi">Install Pixi</h4>
+<ol type="1">
+<li><p>Visit the official Pixi website: https://pixi.sh/</p></li>
+<li><p>Download and install Pixi for your operating system (Windows, Mac, or Linux)</p></li>
+<li><p>Verify installation by running in your terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+</section>
+<section id="initialize-a-pixi-project" class="level4">
+<h4 class="anchored" data-anchor-id="initialize-a-pixi-project">Initialize a Pixi Project</h4>
+<ol type="1">
+<li><p>Create a new directory for your image analysis project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my-image-analysis</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-image-analysis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Initialize a Pixi project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>This creates a <code>pixi.toml</code> configuration file for your project.</p></li>
+</ol>
+</section>
+<section id="add-python-and-napari-to-your-environment" class="level4">
+<h4 class="anchored" data-anchor-id="add-python-and-napari-to-your-environment">Add Python and Napari to Your Environment</h4>
+<p>Add Python, napari, and Jupyter to your project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> add python napari jupyter scikit-image</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This command: - Installs Python and the specified packages - Creates a <code>pixi.lock</code> file with exact versions for reproducibility - Sets up an isolated environment specific to your project</p>
+</section>
+<section id="running-jupyter-with-pixi" class="level4">
+<h4 class="anchored" data-anchor-id="running-jupyter-with-pixi">Running Jupyter with Pixi</h4>
+<p>Start Jupyter notebook directly from your pixi project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> run jupyter notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This runs Jupyter within your project’s environment, giving it access to napari, scikit-image, and all other packages you added.</p>
+</section>
+</section>
+<section id="basic-napari-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="basic-napari-workflow">Basic Napari Workflow</h3>
+<section id="import-and-display-an-image" class="level4">
+<h4 class="anchored" data-anchor-id="import-and-display-an-image">Import and Display an Image</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> napari</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load an image</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> io.imread(<span class="st">'path/to/image.tif'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create viewer and add image layer</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>viewer <span class="op">=</span> napari.view_image(image, name<span class="op">=</span><span class="st">'raw image'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="interactive-roi-selection" class="level4">
+<h4 class="anchored" data-anchor-id="interactive-roi-selection">Interactive ROI Selection</h4>
+<p>We can do this either programatically from within the Jupyter notebook, or we can do this interactively from the Napari GUI.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> napari</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skimage <span class="im">import</span> io</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> io.imread(<span class="st">'path/to/image.tif'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>viewer <span class="op">=</span> napari.Viewer()</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> viewer.add_image(image)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add shapes layer for ROI drawing</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>shapes_layer <span class="op">=</span> viewer.add_shapes(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    shape_type<span class="op">=</span><span class="st">'rectangle'</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    edge_color<span class="op">=</span><span class="st">'cyan'</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    face_color<span class="op">=</span><span class="st">'transparent'</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'ROIs'</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or:</p>
+<ol type="1">
+<li>Click on the button to generate a new Shapes Layer</li>
+<li>Add a new rectangle</li>
+</ol>
+<p>Once the rectangle is made, try accessing it via a cell in the Jupyter notebook. Access drawn shapes via <code>shapes_layer.data</code>.</p>
+</section>
+</section>
+<section id="napari-advantages" class="level3">
+<h3 class="anchored" data-anchor-id="napari-advantages">Napari Advantages</h3>
+<ul>
+<li><strong>Interactive</strong> - Real-time parameter adjustment</li>
+<li><strong>Jupyter integration</strong> - Works in notebooks for reproducible workflows</li>
+<li><strong>Python-native</strong> - Easy integration with scientific Python stack (scikit-image, scipy, etc.)</li>
+<li><strong>Multi-dimensional</strong> - Handles time series, z-stacks, and multi-channel data</li>
+<li><strong>Programmatic ROI</strong> - Extract measurements from selected regions in code</li>
+</ul>
+</section>
+<section id="napari-limitations-vs.-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="napari-limitations-vs.-fiji">Napari Limitations vs.&nbsp;Fiji</h3>
+<ul>
+<li>Less pre-built analysis functions (requires coding)</li>
+<li>Smaller ecosystem of plugins compared to Fiji</li>
+<li>Learning curve for Python programming</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="additional-workshop-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="additional-workshop-exercises">Additional Workshop Exercises</h2>
+<section id="exercise-1-basic-image-inspection-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-basic-image-inspection-fiji">Exercise 1: Basic Image Inspection (Fiji)</h3>
+<ol type="1">
+<li>Download a sample image</li>
+<li>Open in Fiji</li>
+<li>Check image properties (dimensions, bit depth, channels)</li>
+<li>Use zoom and pan tools to explore</li>
+<li>Measure a feature using the measure tool</li>
+</ol>
+</section>
+<section id="exercise-2-image-enhancement-fiji" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-image-enhancement-fiji">Exercise 2: Image Enhancement (Fiji)</h3>
+<ol type="1">
+<li>Open a dim or low-contrast image</li>
+<li>Apply Brightness/Contrast adjustment</li>
+<li>Apply Gaussian blur to reduce noise</li>
+<li>Use Unsharp Mask to enhance edges</li>
+<li>Compare original and processed versions</li>
+</ol>
+</section>
+<section id="exercise-3-segmentation-fiji-or-napari" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-segmentation-fiji-or-napari">Exercise 3: Segmentation (Fiji or Napari)</h3>
+<ol type="1">
+<li>Open a 2D image with distinct objects</li>
+<li>Apply threshold to create binary image</li>
+<li>Use morphological operations (Erode/Dilate) to clean up</li>
+<li>Run Analyze Particles to count and measure objects</li>
+<li>Generate summary statistics</li>
+</ol>
+</section>
+<section id="exercise-4-reproducible-analysis-napari-in-jupyter" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4-reproducible-analysis-napari-in-jupyter">Exercise 4: Reproducible Analysis (Napari in Jupyter)</h3>
+<ol type="1">
+<li>Load an image using scikit-image</li>
+<li>Apply preprocessing (blur, threshold)</li>
+<li>Perform segmentation</li>
+<li>Visualize results with multiple layers in napari</li>
+<li>Extract measurements from labeled regions</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="tips-tricks" class="level2">
+<h2 class="anchored" data-anchor-id="tips-tricks">Tips &amp; Tricks</h2>
+<section id="fiji-performance" class="level3">
+<h3 class="anchored" data-anchor-id="fiji-performance">Fiji Performance</h3>
+<ul>
+<li>For very large images, reduce memory usage via <strong>Edit → Options → Memory &amp; Threads</strong></li>
+<li>Disable auto-update of image window to speed up processing: <strong>Edit → Options</strong></li>
+<li>Use 8-bit images instead of 16-bit when precision isn’t critical</li>
+</ul>
+</section>
+<section id="reproducibility" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility">Reproducibility</h3>
+<ul>
+<li>Document your workflow by recording macro actions: <strong>Plugins → Macros → Record</strong></li>
+<li>Export processing steps as macro code for batch processing</li>
+</ul>
+</section>
+<section id="jupyter-best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="jupyter-best-practices">Jupyter Best Practices</h3>
+<ul>
+<li>Save images and results to standardized output directories</li>
+<li>Use consistent naming conventions for variables</li>
+<li>Document parameters used for each processing step</li>
+<li>Version your analysis notebooks in git</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><strong>Official Fiji Documentation</strong>: https://fiji.sc/</li>
+<li><strong>ImageJ User Guide</strong>: https://imagej.net/</li>
+<li><strong>Napari Documentation</strong>: https://napari.org/</li>
+<li><strong>Scientific Image Analysis Tutorials</strong>: https://imagej.net/Tutorials</li>
+<li><strong>Scikit-image (Python)</strong>: https://scikit-image.org/</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -672,6 +1319,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
