@@ -103,10 +103,6 @@ How many of these options do we understand?
 
 Zoom in as much as you can into a small region. What do you see? Are the squares part of the sample or a rendering? If you hover your mouse over some pixels, what do you see at the bottom grey area of the Fiji main window?
 
-<--!
-Students should be able to see the pixels as squares, understand that these correspond to the representation of the matrix of pixels. When hovering the mouse over pixels, Fiji window shows the coordinates in microns (and in pixels), as well as the intensity value.
--->
-
 ### Checking Image Properties
 
 After opening an image, first check its header. What are the values on top?
@@ -147,10 +143,6 @@ To change the bit depth of your image:
 
 Why might you want to convert a 16-bit image to 8-bit? Consider factors like file size, processing speed, memory usage, and the type of analysis you plan to do. When would it be a bad idea?
 
-<--!
-Students should think about trade-offs between data quality and computational efficiency. Converting 16-bit to 8-bit reduces file size and memory footprint, making it useful for large datasets or batch processing. However, it loses intensity information, which could be critical for quantitative analysis requiring fine intensity discrimination. It's generally safe for visualization and qualitative analysis but risky for measurements and quantification. Converting images to 32-bit allows you to perform operations that can result in floating points, such as divisions.
--->
-
 ---
 
 ## Essential Fiji Functions
@@ -183,15 +175,6 @@ Try clicking on **Apply** to see what happens to the pixel values.
 Most of the cameras or detectors are monochromatic, which means that the color with which images are represented is a false color.
 Go to `Image > LookUp Tables` or click on the LUT button and choose a different color.
 What do you think the different palettes are for? Try for example HiLo, cool and 16-colors.
-
-<--!
-The students should notice that the LUT is choosen to enhance visibility of what you want to be shown.
-Greys are better to distinguish differences in intensity.
-Cyan, magenta and greys or yellow might be more color-blind friendly to show superposition of channels.
-cool and divergent LUTs are good to show values above vs values below some mid-level.
-HiLo is great to notice under- and over-exposure.
-16-colors or non-continuous LUTs are good to show labeled images after segmentation.
--->
 
 ### Working with more dimensions
 
@@ -230,6 +213,8 @@ Choose any structure in your image.
 ![Line profile image](assets/line_profile_image.png)
 
 ![Plot Profile image](assets/plot_profile.png)
+
+What happens if you right click on the straight line button?
 
 #### Measure Intensity
 1. Select an ROI (Region of Interest) using selection tools
@@ -426,6 +411,8 @@ Access drawn shapes via `shapes_layer.data`.
 This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
 For more details, visit: https://creativecommons.org/licenses/by/4.0/ and https://github.com/acorbat/2D_visualization_workshop
+
+<--! Answers are here -->
 
 ---
 
