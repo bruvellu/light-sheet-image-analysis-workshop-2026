@@ -418,3 +418,15 @@ Access drawn shapes via `shapes_layer.data`.
 - **Napari Documentation**: https://napari.org/
 - **Scientific Image Analysis Tutorials**: https://imagej.net/Tutorials
 - **Scikit-image (Python)**: https://scikit-image.org/
+
+---
+
+## License
+
+This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+For more details, visit: https://creativecommons.org/licenses/by/4.0/ and https://github.com/acorbat/2D_visualization_workshop
+
+---
+
+**Last Updated:** January 2, 2026
