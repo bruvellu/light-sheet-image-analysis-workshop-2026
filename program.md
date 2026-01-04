@@ -14,7 +14,7 @@ Monday, 5 Jan 2026
 
 ### 🧠 Theory morning session (11:45--13:00)
 
-- 11:45--12:30 - Visualization and processing of digital images (Agustín)
+- 11:45--12:30 - [Visualization and processing of digital images](https://zenodo.org/records/18148523 "Link to Zenodo") (Agustín)
 - 12:30--13:00 - Best practices in microscopy data management (Bruno)
 
 ### 🥗 Lunch break (13:00--14:00)
