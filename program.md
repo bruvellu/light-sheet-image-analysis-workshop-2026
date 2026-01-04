@@ -21,7 +21,7 @@ Monday, 5 Jan 2026
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--14:30 - [Talk from MicroxChile] (Company 1)
+- 14:00--14:30 - Talk from MicroxChile (Company 1)
 - 14:30--15:30 - [Visualization of 2D images](practicals/practical_2d/index.md) (Agustín)
 - 15:30--17:30 - [Visualization of 3D images](practicals/practical_3d/index.md) (Bruno)
 
@@ -44,7 +44,7 @@ Tuesday, 6 Jan 2026
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--14:30 - [Talk from Galenica] (Company 2)
+- 14:00--14:30 - Talk from Galenica (Company 2)
 - 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_segmentation/index.md) (Marina)
 - 16:00--17:30 - [ImageJ macro programming](practicals/practical_macros/index.md) (Marina)
 
@@ -61,7 +61,7 @@ Wednesday, 7 Jan 2026
 ### 🖥️ Practical morning session (11:00–12:30)
 
 - 11:00--12:30 - [3D segmentation using machine/deep learning](practicals/practical_deep_learning/index.md) (Marina/Agustín)
-- 12:30--13:00 - [Talk from Bruker] (Company 3)
+- 12:30--13:00 - Talk from Bruker (Company 3)
 
 ### 🥗 Lunch break (13:00--14:00)
 
