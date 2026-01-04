@@ -87,11 +87,11 @@ Thursday, 8 Jan 2026
 
 ### 🖥️ Practical morning session (11:30–13:00)
 
-- 11:30--13:00 - **Project work** (Groups)
+- 11:30--13:00 - Project work (Groups)
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--17:30 - **Project work** (Groups)
+- 14:00--17:30 - Project work (Groups)
 
 ## 🗓️ Day 5: Project work and presentations
 
@@ -99,17 +99,17 @@ Friday, 9 Jan 2026
 
 ### 🖥️ Practical morning session (09:00–11:00)
 
-- 09:00--11:00 - **Project work** (Groups)
+- 09:00--11:00 - Project work (Groups)
 
 ### 🫖 Coffee break (11:30--11:30)
 
 ### 🖥️ Practical morning session (11:30–13:00)
 
-- 11:30--13:00 - **Project work** (Groups)
+- 11:30--13:00 - Project work (Groups)
 
 ### 🧠 Theory afternoon session (14:00–17:00)
 
 - 14:00--16:30 - Group presentations (Groups)
-- 16:30--17:00 - **Closing remarks** (Organizers)
-- 17:00--onwards - **Group dinner** (Everyone)
+- 16:30--17:00 - Closing remarks (Organizers)
+- 17:00--onwards - Group dinner (Everyone)
 
