@@ -38,15 +38,15 @@ Tuesday, 6 Jan 2026
 
 ### 🖥️ Practical morning session (11:45–13:00)
 
-- 11:45--13:00 - [Multiview reconstruction](practicals/practical_multiview/index.md) (Bruno)
+- 11:45--13:00 - [Pre-processing, denoising, segmentation](practicals/practical_segmentation/index.md) (Marina)
 
 ### 🥗 Lunch break (13:00--14:00)
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
 - 14:00--14:30 - Talk from Galenica (Company 2)
-- 14:30--16:00 - [Pre-processing, denoising, segmentation](practicals/practical_segmentation/index.md) (Marina)
-- 16:00--17:30 - [ImageJ macro programming](practicals/practical_macros/index.md) (Marina)
+- 14:30--16:00 - [ImageJ macro programming](practicals/practical_macros/index.md) (Marina)
+- 16:00--17:30 - [Multiview reconstruction](practicals/practical_multiview/index.md) (Bruno)
 
 ## 🗓️ Day 3: Machine learning and advanced workflows
 
