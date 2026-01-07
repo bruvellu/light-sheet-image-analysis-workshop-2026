@@ -52,7 +52,7 @@ Tuesday, 6 Jan 2026
 
 Wednesday, 7 Jan 2026
 
-### 🧠 Theory morning session (09:00–11:00)
+### 🧠 Theory morning session (09:00–10:30)
 
 - 09:00--10:30 - Deep learning (Agustín/Bruno)
 
