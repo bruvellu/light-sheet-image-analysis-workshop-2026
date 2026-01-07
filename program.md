@@ -32,7 +32,7 @@ Tuesday, 6 Jan 2026
 ### 🧠 Theory morning session (09:00–11:00)
 
 - 09:00--10:00 - Image processing and analysis (Agustín)
-- 10:00--11:00 - Multiview reconstruction and tissue cartography (Bruno)
+- 10:00--11:00 - [Multiview reconstruction and tissue cartography](https://zenodo.org/records/18174387 "Link to Zenodo") (Bruno)
 
 ### 🪧 Poster session and coffee break (11:00--11:45)
 
