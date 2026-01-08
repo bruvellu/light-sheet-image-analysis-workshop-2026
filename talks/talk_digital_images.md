@@ -18,7 +18,7 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-<iframe src="https://zenodo.org/records/18148523/Digital Image.pdf/preview" width="640" height="360" style="border: 1px solid #ccc;"></iframe>
+<iframe src="https://zenodo.org/records/18148523/Digital Image.pdf?include_deleted=0" width="640" height="360" style="border: 1px solid #ccc;"></iframe>
 
 ## Materials
 
