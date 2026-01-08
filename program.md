@@ -7,15 +7,15 @@ Monday, 5 Jan 2026
 ### 🧠 Theory morning session (09:00--11:00)
 
 - 09:00--09:15 - Welcome session and course overview
-- 09:15--10:00 - [Concepts in light-sheet microscopy](https://zenodo.org/records/18106542 "Link to Zenodo") (Marina)
-- 10:00--11:00 - [Experimental design and sample mounting](https://zenodo.org/records/17913589 "Link to Zenodo") (Marina)
+- 09:15--10:00 - [Concepts in light-sheet microscopy](talks/talk_lightsheet_concepts.md) (Marina)
+- 10:00--11:00 - [Experimental design and sample mounting](talks/talk_experimental_design.md) (Marina)
 
 ### 🪧 Poster session and coffee break (11:00--11:45)
 
 ### 🧠 Theory morning session (11:45--13:00)
 
-- 11:45--12:30 - [Visualization and processing of digital images](https://zenodo.org/records/18148523 "Link to Zenodo") (Agustín)
-- 12:30--13:00 - [Best practices in microscopy data management](https://zenodo.org/records/18174180 "Link to Zenodo") (Bruno)
+- 11:45--12:30 - [Visualization and processing of digital images](talks/talk_digital_images.md) (Agustín)
+- 12:30--13:00 - [Best practices in microscopy data management](talks/talk_data_management.md) (Bruno)
 
 ### 🥗 Lunch break (13:00--14:00)
 
@@ -31,8 +31,8 @@ Tuesday, 6 Jan 2026
 
 ### 🧠 Theory morning session (09:00–11:00)
 
-- 09:00--10:00 - Image processing and analysis (Agustín)
-- 10:00--11:00 - [Multiview reconstruction and tissue cartography](https://zenodo.org/records/18174387 "Link to Zenodo") (Bruno)
+- 09:00--10:00 - [Image processing and analysis](talks/talk_image_processing.md) (Agustín)
+- 10:00--11:00 - [Multiview reconstruction and tissue cartography](talks/talk_multiview_cartography.md) (Bruno)
 
 ### 🪧 Poster session and coffee break (11:00--11:45)
 
@@ -54,7 +54,7 @@ Wednesday, 7 Jan 2026
 
 ### 🧠 Theory morning session (09:00–10:30)
 
-- 09:00--10:30 - Deep learning (Agustín/Bruno)
+- 09:00--10:30 - [Deep learning](talks/talk_deep_learning.md) (Agustín/Bruno)
 
 ### 🫖 Coffee break (10:30-11:00)
 
