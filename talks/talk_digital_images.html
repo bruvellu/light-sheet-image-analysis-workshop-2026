@@ -46,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,10 +81,12 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Visualization and processing of digital images – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/&quot;https:/zenodo.org/records/18148523/Digital Image.pdf&quot;">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:title" content="Visualization and processing of digital images – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/&quot;https:/zenodo.org/records/18148523/Digital Image.pdf&quot;">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -329,8 +334,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<iframe src="https://zenodo.org/records/18148523/Digital Image.pdf?include_deleted=0" width="640" height="360" style="border: 1px solid #ccc;">
-</iframe>
+<p><a href="&quot;https://zenodo.org/records/18148523/Digital Image.pdf&quot;" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="&quot;https://zenodo.org/records/18148523/Digital Image.pdf&quot;" class="img-fluid"></a></p>
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
@@ -772,6 +776,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
