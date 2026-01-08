@@ -4,7 +4,7 @@ project:
   render:
     - "*.md"
     - "!help.md"
-    - "!talks/"
+    - "talks/"
     - "!internal/"
 
 website:
