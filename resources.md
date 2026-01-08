@@ -2,9 +2,13 @@
 
 Compilation of tools and resources for image analysis focused on what we will use.
 
-## Datasets
+## Course Material
 
 - <https://zenodo.org/communities/lsmunimayor>
+
+## Workshops
+
+- The instructions to generate the course folder in Windows using powershell are [here](https://github.com/acorbat/2026_lsia_umayor).
 
 ## General
 
@@ -29,4 +33,3 @@ Other curated lists of tools and resources for scientific image analysis.
 
 ## Additional datasets
 - Tribolium z-stack <https://git.mpi-cbg.de/rhaase/clij2_example_data/blob/master/lund1051_resampled.tif>
-- 
