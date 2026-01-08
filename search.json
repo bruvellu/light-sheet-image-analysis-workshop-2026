@@ -4,17 +4,27 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "Compilation of tools and resources for image analysis focused on what we will use.\n\n\n\nhttps://zenodo.org/communities/lsmunimayor\n\n\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/\n\n\n\n\n\nTribolium z-stack https://git.mpi-cbg.de/rhaase/clij2_example_data/blob/master/lund1051_resampled.tif",
+    "text": "Compilation of tools and resources for image analysis focused on what we will use.\n\n\n\nhttps://zenodo.org/communities/lsmunimayor\n\n\n\n\n\nThe instructions to generate the course folder in Windows using powershell are here.\n\n\n\n\nDesktop software for image analysis.\n\nhttps://fiji.sc/\nhttps://napari.org/\n\n\n\n\nSpaces to interact and discuss about image analysis.\n\nhttps://forum.image.sc/\nhttps://imagesc.zulipchat.com/\n\n\n\n\nOther curated lists of tools and resources for scientific image analysis.\n\nhttps://github.com/epfl-center-for-imaging/awesome-scientific-image-analysis/\nhttps://github.com/hallvaaw/awesome-biological-image-analysis/\n\n\n\n\n\nTribolium z-stack https://git.mpi-cbg.de/rhaase/clij2_example_data/blob/master/lund1051_resampled.tif",
     "crumbs": [
       "Resources"
     ]
   },
   {
-    "objectID": "resources.html#datasets",
-    "href": "resources.html#datasets",
+    "objectID": "resources.html#course-material",
+    "href": "resources.html#course-material",
     "title": "Resources",
     "section": "",
     "text": "https://zenodo.org/communities/lsmunimayor",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#workshops",
+    "href": "resources.html#workshops",
+    "title": "Resources",
+    "section": "",
+    "text": "The instructions to generate the course folder in Windows using powershell are here.",
     "crumbs": [
       "Resources"
     ]
