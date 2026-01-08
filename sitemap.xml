@@ -1,55 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/resources.html</loc>
-    <lastmod>2026-01-08T15:20:13.731Z</lastmod>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_multiview_cartography.html</loc>
+    <lastmod>2026-01-08T15:20:50.326Z</lastmod>
   </url>
   <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_tracking/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.603Z</lastmod>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_image_processing.html</loc>
+    <lastmod>2026-01-08T15:20:50.326Z</lastmod>
   </url>
   <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_multiview/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.329Z</lastmod>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_digital_images.html</loc>
+    <lastmod>2026-01-08T15:20:50.325Z</lastmod>
   </url>
   <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_deep_learning/object-classification/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.318Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_deep_learning/deep_learning_segmentation/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.122Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_3d/index.html</loc>
-    <lastmod>2026-01-08T15:20:12.768Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/index.html</loc>
-    <lastmod>2026-01-08T15:20:12.763Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_2d/index.html</loc>
-    <lastmod>2026-01-08T15:20:12.768Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cartography/index.html</loc>
-    <lastmod>2026-01-08T15:20:12.948Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_deep_learning/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.122Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_macros/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.329Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_segmentation/index.html</loc>
-    <lastmod>2026-01-08T15:20:13.602Z</lastmod>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_data_management.html</loc>
+    <lastmod>2026-01-08T15:20:50.325Z</lastmod>
   </url>
   <url>
     <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/program.html</loc>
-    <lastmod>2026-01-08T15:20:13.731Z</lastmod>
+    <lastmod>2026-01-08T15:20:50.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_segmentation/index.html</loc>
+    <lastmod>2026-01-08T15:20:50.199Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_macros/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.929Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_deep_learning/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.721Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_cartography/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.550Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_2d/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_3d/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_deep_learning/deep_learning_segmentation/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.721Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_deep_learning/object-classification/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_multiview/index.html</loc>
+    <lastmod>2026-01-08T15:20:49.929Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_tracking/index.html</loc>
+    <lastmod>2026-01-08T15:20:50.199Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/resources.html</loc>
+    <lastmod>2026-01-08T15:20:50.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_deep_learning.html</loc>
+    <lastmod>2026-01-08T15:20:50.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_experimental_design.html</loc>
+    <lastmod>2026-01-08T15:20:50.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/talks/talk_lightsheet_concepts.html</loc>
+    <lastmod>2026-01-08T15:20:50.326Z</lastmod>
   </url>
 </urlset>

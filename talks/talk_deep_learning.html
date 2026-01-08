@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Agustin A. Corbat">
-<meta name="dcterms.date" content="2026-01-05">
+<meta name="author" content="Agustin Corbat / Bruno Vellutini">
+<meta name="dcterms.date" content="2026-01-07">
 
-<title>3D Deep Learning Segmentation – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Deep learning for image analysis – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,27 +25,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../practicals/practical_deep_learning/object-classification/index.html" rel="next">
-<link href="../../../practicals/practical_deep_learning/index.html" rel="prev">
-<link href="../../../media/lisium.svg" rel="icon" type="image/svg+xml">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../talks/talk_digital_images.html" rel="next">
+<link href="../talks/talk_data_management.html" rel="prev">
+<link href="../media/lisium.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,11 +75,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="3D Deep Learning Segmentation – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Deep learning for image analysis – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:title" content="3D Deep Learning Segmentation – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:title" content="Deep learning for image analysis – 🔬 Light-Sheet Image Analysis Workshop 2026">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">🔬 Light-Sheet Image Analysis Workshop 2026</span>
     </a>
   </div>
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../../practicals/practical_deep_learning/index.html">3D segmentation using machine/deep lerning</a></li><li class="breadcrumb-item"><a href="../../../practicals/practical_deep_learning/deep_learning_segmentation/index.html">3D Deep Learning Segmentation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../talks/talk_data_management.html">Talks</a></li><li class="breadcrumb-item"><a href="../talks/talk_deep_learning.html">Deep learning for image analysis</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -120,13 +120,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../program.html" class="sidebar-item-text sidebar-link">
+  <a href="../program.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Program</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
 </li>
@@ -141,64 +141,64 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_2d/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_2d/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization of 2D data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_3d/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_3d/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization of 3D data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_cartography/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_cartography/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tissue cartography using Blender</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_macros/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_macros/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Macro programming in Fiji</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_multiview/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_multiview/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiview reconstruction using BigStitcher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_segmentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_segmentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Post-processing, segmentation and labelling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_tracking/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_tracking/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cell tracking using Mastodon</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../practicals/practical_deep_learning/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../practicals/practical_deep_learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D segmentation using machine/deep lerning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_deep_learning/deep_learning_segmentation/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../practicals/practical_deep_learning/deep_learning_segmentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D Deep Learning Segmentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../practicals/practical_deep_learning/object-classification/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/practical_deep_learning/object-classification/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Object-classification, dimensionality reduction and clustering</span></a>
   </div>
 </li>
@@ -217,43 +217,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_data_management.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_data_management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best practices in microscopy data management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_deep_learning.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_deep_learning.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Deep learning for image analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_digital_images.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_digital_images.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization and processing of digital images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_experimental_design.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_experimental_design.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Experimental design and sample mounting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_image_processing.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_image_processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Image processing and analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_lightsheet_concepts.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_lightsheet_concepts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Concepts in light-sheet microscopy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../talks/talk_multiview_cartography.html" class="sidebar-item-text sidebar-link">
+  <a href="../talks/talk_multiview_cartography.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiview reconstruction and tissue cartography</span></a>
   </div>
 </li>
@@ -269,17 +269,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#d-deep-learning-segmentation" id="toc-d-deep-learning-segmentation" class="nav-link active" data-scroll-target="#d-deep-learning-segmentation">3D Deep Learning Segmentation</a></li>
-  <li><a href="#key-learning-objectives" id="toc-key-learning-objectives" class="nav-link" data-scroll-target="#key-learning-objectives">Key Learning Objectives</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_deep_learning/deep_learning_segmentation/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/talks/talk_deep_learning.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../../practicals/practical_deep_learning/index.html">3D segmentation using machine/deep lerning</a></li><li class="breadcrumb-item"><a href="../../../practicals/practical_deep_learning/deep_learning_segmentation/index.html">3D Deep Learning Segmentation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../talks/talk_data_management.html">Talks</a></li><li class="breadcrumb-item"><a href="../talks/talk_deep_learning.html">Deep learning for image analysis</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">3D Deep Learning Segmentation</h1>
+<h1 class="title">Deep learning for image analysis</h1>
 </div>
 
 
@@ -289,14 +289,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Agustin A. Corbat </p>
+             <p>Agustin Corbat / Bruno Vellutini </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 5, 2026</p>
+      <p class="date">January 7, 2026</p>
     </div>
   </div>
   
@@ -308,19 +308,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="d-deep-learning-segmentation" class="level1">
-<h1>3D Deep Learning Segmentation</h1>
-<p>This <a href="https://github.com/acorbat/workshop_3d_dl_segmentation/blob/v1.0.1/workshop.md">guide</a> will walk you through the excercises for this workshop</p>
-</section>
-<section id="key-learning-objectives" class="level1">
-<h1>Key Learning Objectives</h1>
-<p>By the end of these notebooks, you should understand:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this session, you will be able to:</p>
 <ul>
-<li><p>How deep learning models for cell segmentation work</p></li>
-<li><p>The differences between Cellpose and StarDist approaches</p></li>
-<li><p>How to use Napari for 3D visualization</p></li>
-<li><p>How to evaluate and compare segmentation results</p></li>
+<li>Be aware of how machine and deep learning work</li>
+<li>Know where to look for models and tools that can be used</li>
+<li>Understand deep learning and neural network fundamentals</li>
+<li>Explain how convolutional networks learn spatial features</li>
+<li>Understand machine learning principles for image classification</li>
+<li>Explain how pixel classification differs from deep learning</li>
+<li>Use tools like ilastik, WEKA, and APOC for interactive classification</li>
+<li>Recognize when machine learning is appropriate versus classical methods</li>
 </ul>
+</div>
+</div>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>Lecture materials available in workshop resources.</p>
+</section>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<p><a href="https://zenodo.org/communities/lsmunimayor">Zenodo Community: LiSIUM</a></p>
 
 
 </section>
@@ -728,13 +745,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../practicals/practical_deep_learning/index.html" class="pagination-link" aria-label="3D segmentation using machine/deep lerning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3D segmentation using machine/deep lerning</span>
+      <a href="../talks/talk_data_management.html" class="pagination-link" aria-label="Best practices in microscopy data management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Best practices in microscopy data management</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../practicals/practical_deep_learning/object-classification/index.html" class="pagination-link" aria-label="Object-classification, dimensionality reduction and clustering">
-        <span class="nav-page-text">Object-classification, dimensionality reduction and clustering</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../talks/talk_digital_images.html" class="pagination-link" aria-label="Visualization and processing of digital images">
+        <span class="nav-page-text">Visualization and processing of digital images</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -752,7 +769,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_deep_learning/deep_learning_segmentation/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/talks/talk_deep_learning.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
