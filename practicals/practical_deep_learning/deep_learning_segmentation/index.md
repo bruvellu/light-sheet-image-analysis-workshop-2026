@@ -19,3 +19,8 @@ By the end of these notebooks, you should understand:
 - How to use Napari for 3D visualization
 
 - How to evaluate and compare segmentation results
+
+
+## Citation {#sec-citation}
+
+Corbat, A. A. (2026). Workshop on 3D Deep Learning Segmentation. Zenodo. <https://doi.org/10.5281/zenodo.18187178>

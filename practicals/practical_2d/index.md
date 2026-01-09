@@ -406,6 +406,12 @@ Access drawn shapes via `shapes_layer.data`.
 
 ---
 
+## Citation {#sec-citation}
+
+Corbat, A. A. (2026). Workshop on 2D Image Visualization: Fiji and Napari. Zenodo. <https://doi.org/10.5281/zenodo.18199646>
+
+---
+
 ## License
 
 This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).

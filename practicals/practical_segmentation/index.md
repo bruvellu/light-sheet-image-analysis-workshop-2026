@@ -272,4 +272,3 @@ Select `Tools → Measure Tables → Object Features/Properties`. Here make sure
 by double clicking any of the columns of this table, a new layer image will appear with colorcoded labels indicating the value of the selected measurement. Colormaps can be adjusted for preference.
 
 ![Brightness/Contrast histogram](images/Napari-colorcoded.png)
-
