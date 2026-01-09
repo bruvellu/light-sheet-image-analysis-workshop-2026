@@ -18,7 +18,7 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-![]("https://zenodo.org/records/18148523/Digital Image.pdf")
+<iframe src="https://zenodo.org/records/18148523/files/Digital%20Image.pdf" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
 
 ## Materials
 
