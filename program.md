@@ -60,14 +60,13 @@ Wednesday, 7 Jan 2026
 
 ### 🖥️ Practical morning session (11:00–12:30)
 
-- 11:00--12:30 - [3D segmentation using machine/deep learning](practicals/practical_deep_learning/index.md) (Marina/Agustín)
+- 11:00--11:45 - [Object-classification, dimensionality reduction and clustering](practicals/practical_object_classification/index.md) (Marina)
+- 11:45--12:30 - [3D Deep Learning Segmentation](practicals/practical_deep_learning_segmentation/index.md) (Agustín)
 - 12:30--13:00 - Talk from Bruker (Company 3)
 
 ### 🥗 Lunch break (13:00--14:00)
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
-
-<!--TODO: Revise the slots-->
 
 - 14:00--16:00 - [Tissue cartography](practicals/practical_cartography/index.md) (Bruno)
 - 16:00--17:30 - [Cell tracking](practicals/practical_tracking/index.md) (Bruno)
