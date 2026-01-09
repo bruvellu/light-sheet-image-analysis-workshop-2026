@@ -436,4 +436,3 @@ for (i = 0; i < fileList.length; i++) { //Loop through images
 
 print("Done");
 ```
-
