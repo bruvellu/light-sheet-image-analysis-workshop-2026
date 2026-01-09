@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marina Cuenca, Agustin Corbat">
+<meta name="author" content="Marina Cuenca">
 <meta name="dcterms.date" content="2026-01-05">
 
-<title>3D segmentation using machine/deep lerning – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
+<title>Object-classification, dimensionality reduction and clustering – 🔬 Light-Sheet Image Analysis Workshop 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../practicals/practical_deep_learning/deep_learning_segmentation/index.html" rel="next">
-<link href="../../practicals/practical_tracking/index.html" rel="prev">
+<link href="../../practicals/practical_segmentation/index.html" rel="next">
+<link href="../../practicals/practical_multiview/index.html" rel="prev">
 <link href="../../media/lisium.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -46,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-635a35c16803d16fd9db22f392043487.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,10 +79,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="3D segmentation using machine/deep lerning – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:title" content="Object-classification, dimensionality reduction and clustering – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_object_classification/images/01-load.png">
 <meta property="og:site_name" content="🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:title" content="3D segmentation using machine/deep lerning – 🔬 Light-Sheet Image Analysis Workshop 2026">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:alt" content="Load image and generate labels layer">
+<meta property="og:image:height" content="1892">
+<meta property="og:image:width" content="3020">
+<meta name="twitter:title" content="Object-classification, dimensionality reduction and clustering – 🔬 Light-Sheet Image Analysis Workshop 2026">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/practicals/practical_object_classification/images/01-load.png">
+<meta name="twitter:image:alt" content="Load image and generate labels layer">
+<meta name="twitter:image-height" content="1892">
+<meta name="twitter:image-width" content="3020">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -104,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_deep_learning/index.html">3D segmentation using machine/deep lerning</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_object_classification/index.html">Object-classification, dimensionality reduction and clustering</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,6 +170,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../practicals/practical_deep_learning_segmentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3D Deep Learning Segmentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_macros/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Macro programming in Fiji</span></a>
   </div>
@@ -165,6 +184,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../practicals/practical_multiview/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multiview reconstruction using BigStitcher</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../practicals/practical_object_classification/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Object-classification, dimensionality reduction and clustering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -179,40 +204,17 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Cell tracking using Mastodon</span></a>
   </div>
 </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../practicals/practical_deep_learning/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3D segmentation using machine/deep lerning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../practicals/practical_deep_learning/deep_learning_segmentation/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3D Deep Learning Segmentation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../practicals/practical_deep_learning/object-classification/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Object-classification, dimensionality reduction and clustering</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Talks</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../talks/talk_data_management.html" class="sidebar-item-text sidebar-link">
@@ -262,15 +264,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#object-classification-in-napari" id="toc-object-classification-in-napari" class="nav-link active" data-scroll-target="#object-classification-in-napari">Object classification in Napari</a>
+  <ul>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#open-the-image-and-inspect-the-histogram" id="toc-open-the-image-and-inspect-the-histogram" class="nav-link" data-scroll-target="#open-the-image-and-inspect-the-histogram">0. Open the image and inspect the histogram</a></li>
+  <li><a href="#open-the-image-and-create-manual-anotations" id="toc-open-the-image-and-create-manual-anotations" class="nav-link" data-scroll-target="#open-the-image-and-create-manual-anotations">1. Open the image and create manual anotations</a></li>
+  <li><a href="#train-the-object-classifier" id="toc-train-the-object-classifier" class="nav-link" data-scroll-target="#train-the-object-classifier">2. Train the object classifier</a></li>
+  <li><a href="#filter-small-objects-and-quantify-parameters" id="toc-filter-small-objects-and-quantify-parameters" class="nav-link" data-scroll-target="#filter-small-objects-and-quantify-parameters">3. Filter small objects and quantify parameters</a></li>
+  <li><a href="#data-visualization-with-clusters-plotter" id="toc-data-visualization-with-clusters-plotter" class="nav-link" data-scroll-target="#data-visualization-with-clusters-plotter">4. Data visualization with clusters plotter</a></li>
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">5. Dimensionality reduction</a></li>
+  <li><a href="#unsupervised-clustering" id="toc-unsupervised-clustering" class="nav-link" data-scroll-target="#unsupervised-clustering">6. Unsupervised clustering</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_object_classification/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_deep_learning/index.html">3D segmentation using machine/deep lerning</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practicals/practical_2d/index.html">Practicals</a></li><li class="breadcrumb-item"><a href="../../practicals/practical_object_classification/index.html">Object-classification, dimensionality reduction and clustering</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">3D segmentation using machine/deep lerning</h1>
+<h1 class="title">Object-classification, dimensionality reduction and clustering</h1>
 </div>
 
 
@@ -280,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Marina Cuenca, Agustin Corbat </p>
+             <p>Marina Cuenca </p>
           </div>
   </div>
     
@@ -299,12 +317,210 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="object-classification-in-napari" class="level1">
+<h1>Object classification in Napari</h1>
+<p>Pixel classification, dimensionality reduction, and automatic clustering are common data-driven approaches used to analyze complex image data. Pixel classification assigns each pixel to a class based on its intensity or multi-channel feature values, enabling tasks such as segmentation or tissue labeling without explicit object detection. Dimensionality reduction methods (such as PCA, UMAP, or t-SNE) compress high-dimensional feature spaces into fewer dimensions while preserving key patterns or relationships, making large imaging datasets easier to visualize and interpret. Automatic clustering methods (e.g.&nbsp;k-means or similar algorithms) then group pixels or objects into clusters based on feature similarity, allowing unbiased identification of recurring patterns or phenotypes without predefined labels.</p>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this tutorial, participants will be able to:</p>
 <ul>
-<li><p><a href="../../practicals/practical_deep_learning/object-classification/index.html">Pixel Classification and Dimensionality reduction</a> (Marina)</p></li>
-<li><p><a href="../../practicals/practical_deep_learning/deep_learning_segmentation/index.html">3D object segmentation</a> (Agustin)</p></li>
+<li>Train an object classifier with Napari</li>
+<li>Filter labels</li>
+<li>Extract morphological and intensity based parameters</li>
+<li>Plot parameters in 2D</li>
+<li>Apply a dimensionality reduction method</li>
+<li>Visualize the results</li>
+<li>Cluster subgroups of objects using K-means</li>
 </ul>
+<p>These steps form a complete workflow: <strong>raw image → segmentation → cleanup → labeling → measurement → data viz</strong></p>
+<p>We’ll use <code>Lund.tif</code> as the example image https://zenodo.org/records/17986091</p>
+<p>Requirements: - Everything you need is in the toml file in the Pixi/napari-devbio folder https://github.com/cuenca-mb/pixi-napari-devbio</p>
+<p>–</p>
+</section>
+<section id="open-the-image-and-inspect-the-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="open-the-image-and-inspect-the-histogram">0. Open the image and inspect the histogram</h2>
+<p>In the terminal, go to the directory Pixi/napari-devbio and run:</p>
+<p><code>pixi run napari</code></p>
+</section>
+<section id="open-the-image-and-create-manual-anotations" class="level2">
+<h2 class="anchored" data-anchor-id="open-the-image-and-create-manual-anotations">1. Open the image and create manual anotations</h2>
+<p>Drag and drop the file or</p>
+<p><code>File → Open File</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/01-load.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Load image and generate labels layer"><img src="images/01-load.png" class="img-fluid figure-img" alt="Load image and generate labels layer"></a></p>
+<figcaption>Load image and generate labels layer</figcaption>
+</figure>
+</div>
+<p>We will be able to see and explore the stack, and we can change to a 3D rendering with the option <code>Toogle 2D/3D view</code> in the lower left button pannel. We will create a labels layer to anotate some ground truth for our object classifier.</p>
+<p>In the left pannel, select the brush tool and make some background anotations with the brush. Then change to label 2 and make some object annotations (cells).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/02-labels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Draw the labels"><img src="images/02-labels.png" class="img-fluid figure-img" alt="Draw the labels"></a></p>
+<figcaption>Draw the labels</figcaption>
+</figure>
+</div>
+</section>
+<section id="train-the-object-classifier" class="level2">
+<h2 class="anchored" data-anchor-id="train-the-object-classifier">2. Train the object classifier</h2>
+<p>Go to</p>
+<p><code>Tools → Segmentation / labeling → Object segmentation (APOC)</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/03-os.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Brightness/Contrast histogram"><img src="images/03-os.png" class="img-fluid figure-img" alt="Brightness/Contrast histogram"></a></p>
+<figcaption>Brightness/Contrast histogram</figcaption>
+</figure>
+</div>
+<p>Select the raw data for training and the labels layer for ground truth. Then click Train. Observe the results in 3D. For better visualization you can hide the labels layer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/04-train01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Train"><img src="images/04-train01.png" class="img-fluid figure-img" alt="Train"></a></p>
+<figcaption>Train</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/05-3Dlabels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Observe labels result"><img src="images/05-3Dlabels.png" class="img-fluid figure-img" alt="Observe labels result"></a></p>
+<figcaption>Observe labels result</figcaption>
+</figure>
+</div>
+<p>From this first round of training, very likely the result is not perfect. This is because our ground truth anotation was done on a single z slice, so the classifier will perform well only around that depth. We can do several rounds of training.</p>
+<p>Select again the labels image, and in the 2D mode go to a different z. Perform new anotations, preserving the label orders for background and object. Then just click Train again and observe the new results. Repeat as needed. Note that a classifier file will be produced and overwritten after each training. This can be used for batch segmentation of data from the same experiment/microscope.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/06-retrain.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Modify labels layer"><img src="images/06-retrain.png" class="img-fluid figure-img" alt="Modify labels layer"></a></p>
+<figcaption>Modify labels layer</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/07-newlabels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Re-train"><img src="images/07-newlabels.png" class="img-fluid figure-img" alt="Re-train"></a></p>
+<figcaption>Re-train</figcaption>
+</figure>
+</div>
+</section>
+<section id="filter-small-objects-and-quantify-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="filter-small-objects-and-quantify-parameters">3. Filter small objects and quantify parameters</h2>
+<p>Now there might be some small objects that we want to filter. Go to</p>
+<p><code>Tools → Segmentation post-processing → Exclude small labels</code></p>
+<p>Then select the layer <code>Result of ObjectSegmentation</code> and impose a minimum size of 20 (it will say maximum size in napari, but it is a mistake from the developers). Run it and observe the final labels (hide the old labels for better visualization.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/08-exclude.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Exclude small objects"><img src="images/08-exclude.png" class="img-fluid figure-img" alt="Exclude small objects"></a></p>
+<figcaption>Exclude small objects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/09-finallabels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Observe filtered labels"><img src="images/09-finallabels.png" class="img-fluid figure-img" alt="Observe filtered labels"></a></p>
+<figcaption>Observe filtered labels</figcaption>
+</figure>
+</div>
+<p>Now that we have a nice set of labels in 3D, we will quantify intensity and morphology based parameters for further analysis.</p>
+<p>Go to</p>
+<p><code>Tools → Measurement tables → Regionprops</code></p>
+<p>Select all parameters except moments and click run.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/10-regionprops.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Regionprops"><img src="images/10-regionprops.png" class="img-fluid figure-img" alt="Regionprops"></a></p>
+<figcaption>Regionprops</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/11-resultrp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Table"><img src="images/11-resultrp.png" class="img-fluid figure-img" alt="Table"></a></p>
+<figcaption>Table</figcaption>
+</figure>
+</div>
+<p>We can export this table or visualize some of the data using the cluster plotter.</p>
+</section>
+<section id="data-visualization-with-clusters-plotter" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization-with-clusters-plotter">4. Data visualization with clusters plotter</h2>
+<p>Go to</p>
+<p><code>Plugins → napari-clusters-plotter → Plotter widget</code></p>
+<p>In here you can select any measurement (column) from the region props table and make scatter plots.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/12-plotterwid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Plotter widget"><img src="images/12-plotterwid.png" class="img-fluid figure-img" alt="Plotter widget"></a></p>
+<figcaption>Plotter widget</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/13-plotterwid2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Scatter plot"><img src="images/13-plotterwid2.png" class="img-fluid figure-img" alt="Scatter plot"></a></p>
+<figcaption>Scatter plot</figcaption>
+</figure>
+</div>
+<p>A very useful tool is that we can draw in the plot closed curves and the objects falling inside will be automatically colorcoded and visualized in the 3D rendered image. I recommend hiding all the other layers except the raw image.</p>
+<p>By pressing shift, we can draw further subgroups.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/14-plotterwid3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Label IDs"><img src="images/14-plotterwid3.png" class="img-fluid figure-img" alt="Label IDs"></a></p>
+<figcaption>Label IDs</figcaption>
+</figure>
+</div>
+<p><a href="images/15-plotterwid4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/15-plotterwid4.png" class="img-fluid"></a></p>
+<p>This manual selection generates a new column in the regionprops table with the identifier for us to export and further analyse in other software.</p>
+</section>
+<section id="dimensionality-reduction" class="level2">
+<h2 class="anchored" data-anchor-id="dimensionality-reduction">5. Dimensionality reduction</h2>
+<p>Go to</p>
+<p><code>Plugins → napari-clusters-plotter → Dimensionality Reduction Widget</code></p>
+<p>This is a very useful tool in which we can apply a variety of dimensionality reduction methods to our list of parameters. In this example I used UMAPS. We can select how many components we want and after hitting run they will be added to our regionprops table.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/16-dimred.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Dimensionality Reduction"><img src="images/16-dimred.png" class="img-fluid figure-img" alt="Dimensionality Reduction"></a></p>
+<figcaption>Dimensionality Reduction</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/17-dimred2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="UMAP"><img src="images/17-dimred2.png" class="img-fluid figure-img" alt="UMAP"></a></p>
+<figcaption>UMAP</figcaption>
+</figure>
+</div>
+<p>After doing this, we can come back to the Plotter Widget and plot this two components of the UMAP and generate more complex clustering of the data manually.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/18-plotterwid5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="UMAP viz"><img src="images/18-plotterwid5.png" class="img-fluid figure-img" alt="UMAP viz"></a></p>
+<figcaption>UMAP viz</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/19-plotterwid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Manual Cluster ID"><img src="images/19-plotterwid.png" class="img-fluid figure-img" alt="Manual Cluster ID"></a></p>
+<figcaption>Manual Cluster ID</figcaption>
+</figure>
+</div>
+</section>
+<section id="unsupervised-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="unsupervised-clustering">6. Unsupervised clustering</h2>
+<p>But what if we don’t want to be biased when clustering the data in subgroups? We can use unsupervised methods includded in this plugin. Go to</p>
+<p><code>Plugins → napari-clusters-plotter → Clustering Widget</code></p>
+<p>Select the K-MEANS method, impose 3 clusters and run. This will generate a new column with the cluster ID for each object.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/20-cluster.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Clustering methods"><img src="images/20-cluster.png" class="img-fluid figure-img" alt="Clustering methods"></a></p>
+<figcaption>Clustering methods</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/22-cluster3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="K-MEANS"><img src="images/22-cluster3.png" class="img-fluid figure-img" alt="K-MEANS"></a></p>
+<figcaption>K-MEANS</figcaption>
+</figure>
+</div>
+<p>Now going back to the Plotter Widget, we can select the UMAP axis AND the K-MEAN cluster IDs to automatically colorcode the objects belonging to different classes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/23-cluster4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Automatic clustering"><img src="images/23-cluster4.png" class="img-fluid figure-img" alt="Automatic clustering"></a></p>
+<figcaption>Automatic clustering</figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -709,13 +925,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../practicals/practical_tracking/index.html" class="pagination-link" aria-label="Cell tracking using Mastodon">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cell tracking using Mastodon</span>
+      <a href="../../practicals/practical_multiview/index.html" class="pagination-link" aria-label="Multiview reconstruction using BigStitcher">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Multiview reconstruction using BigStitcher</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../practicals/practical_deep_learning/deep_learning_segmentation/index.html" class="pagination-link" aria-label="3D Deep Learning Segmentation">
-        <span class="nav-page-text">3D Deep Learning Segmentation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../practicals/practical_segmentation/index.html" class="pagination-link" aria-label="Post-processing, segmentation and labelling">
+        <span class="nav-page-text">Post-processing, segmentation and labelling</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -733,12 +949,44 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_deep_learning/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/edit/main/practicals/practical_object_classification/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bruvellu/light-sheet-image-analysis-workshop-2026/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
