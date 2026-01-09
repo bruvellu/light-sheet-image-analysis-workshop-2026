@@ -17,7 +17,7 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-<iframe src="https://zenodo.org/records/18106542/preview/PrinciplesLSM-Marina.pdf" width="640" height="360" style="border: 1px solid #ccc;"></iframe>
+<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/18106542/files/PrinciplesLSM-Marina.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
 
 ## Materials
 

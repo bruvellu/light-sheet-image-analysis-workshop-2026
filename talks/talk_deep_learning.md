@@ -22,8 +22,8 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-Lecture materials available in workshop resources.
+<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/18155250/Deep Learning Segmentation.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
 
 ## Materials
 
-[Zenodo Community: LiSIUM](https://zenodo.org/communities/lsmunimayor)  
+[Zenodo Record: Visualization and processing of digital images](https://zenodo.org/records/18155250)

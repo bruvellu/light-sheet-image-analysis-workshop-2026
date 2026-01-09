@@ -17,7 +17,7 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-<iframe src="https://zenodo.org/records/17913589/preview/ExperimentalDesign-Chile2026.pdf" width="640" height="360" style="border: 1px solid #ccc;"></iframe>
+<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/17913589/files/ExperimentalDesign-Chile2026.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
 
 ## Materials
 
