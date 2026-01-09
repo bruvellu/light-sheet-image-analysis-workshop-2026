@@ -101,7 +101,7 @@ Friday, 9 Jan 2026
 
 - 09:00--11:00 - Project work (Groups)
 
-### 🫖 Coffee break (11:30--11:30)
+### 🫖 Coffee break (11:00--11:30)
 
 ### 🖥️ Practical morning session (11:30–13:00)
 
