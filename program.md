@@ -21,7 +21,7 @@ Monday, 5 Jan 2026
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--14:30 - Talk from MicroxChile (Company 1)
+- 14:00--14:30 - Talk from MicroxChile
 - 14:30--15:30 - [Visualization of 2D images](practicals/practical_2d/index.md) (Agustín)
 - 15:30--17:30 - [Visualization of 3D images](practicals/practical_3d/index.md) (Bruno)
 
