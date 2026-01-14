@@ -22,4 +22,4 @@ By the end of this session, you will be able to:
 
 ## Citation
 
-Cuenca, M. B. (2025). Experimental Design. Zenodo. <https://doi.org/10.5281/ZENODO.17913589>
+Cuenca, M. B. (2025). Experimental Design. Zenodo. <https://doi.org/10.5281/zenodo.17913589>

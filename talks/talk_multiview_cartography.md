@@ -18,7 +18,7 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/18174387/files/2026-01-06_LiSIAW_BCV_Multiview_Cartography.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
+<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/18174387/files/2026-01-06_LiSIAW_BCV_Multiview_Cartography.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #dee2e6;"></iframe>
 
 ## Materials
 
