@@ -29,6 +29,7 @@ Welcome! This website contains the materials for the [Light-Sheet Image Analysis
 
 [Program](program.md){.btn .btn-primary .rounded}
 [Resources](resources.md){.btn .btn-primary .rounded}
+[Course Website](https://lightsheetchile.cl/light-sheet-image-analysis-workshop-2026-2/){.btn .btn-primary .rounded}
 [Course Information](https://lightsheetchile.cl/resources-image-analysis-workshop-2026/){.btn .btn-primary .rounded}
 
 :::
