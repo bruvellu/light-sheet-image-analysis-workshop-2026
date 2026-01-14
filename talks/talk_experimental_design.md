@@ -18,8 +18,8 @@ By the end of this session, you will be able to:
 
 ## Slides
 
-<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/17913589/files/ExperimentalDesign-Chile2026.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
+<iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/17913589/files/ExperimentalDesign-Chile2026.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #dee2e6;"></iframe>
 
 ## Citation
 
-Cuenca, M. B. (2025). Experimental Design. Zenodo. <https://doi.org/10.5281/zenodo.17913589>
+Cuenca, M. B. (2025). Experimental Design. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. <https://doi.org/10.5281/zenodo.17913589>

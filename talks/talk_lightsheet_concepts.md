@@ -22,4 +22,4 @@ By the end of this session, you will be able to:
 
 ## Citation
 
-Cuenca, M. B. (2025). Principles of light-sheet microscopy. Zenodo. <https://doi.org/10.5281/zenodo.18106542>
+Cuenca, M. B. (2025). Principles of light-sheet microscopy. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. <https://doi.org/10.5281/zenodo.18106542>
