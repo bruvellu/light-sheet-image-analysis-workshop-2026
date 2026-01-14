@@ -88,11 +88,11 @@
     ]
   },
   {
-    "objectID": "talks/talk_digital_images.html#materials",
-    "href": "talks/talk_digital_images.html#materials",
+    "objectID": "talks/talk_digital_images.html#citation",
+    "href": "talks/talk_digital_images.html#citation",
     "title": "Visualization and processing of digital images",
-    "section": "Materials",
-    "text": "Materials\nZenodo Record: Visualization and processing of digital images",
+    "section": "Citation",
+    "text": "Citation\nCorbat, A. A. (2026). Digital Image. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. https://doi.org/10.5281/zenodo.18148523",
     "crumbs": [
       "Talks",
       "Visualization and processing of digital images"
@@ -121,11 +121,11 @@
     ]
   },
   {
-    "objectID": "talks/talk_data_management.html#materials",
-    "href": "talks/talk_data_management.html#materials",
+    "objectID": "talks/talk_data_management.html#citation",
+    "href": "talks/talk_data_management.html#citation",
     "title": "Best practices in microscopy data management",
-    "section": "Materials",
-    "text": "Materials\nZenodo Record: Best practices in microscopy data management",
+    "section": "Citation",
+    "text": "Citation\nVellutini, B. C. (2026). Best practices in microscopy data management. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. https://doi.org/10.5281/zenodo.18174180",
     "crumbs": [
       "Talks",
       "Best practices in microscopy data management"
@@ -1314,7 +1314,7 @@
     "href": "talks/talk_experimental_design.html#citation",
     "title": "Experimental design and sample mounting",
     "section": "Citation",
-    "text": "Citation\nCuenca, M. B. (2025). Experimental Design. Zenodo. https://doi.org/10.5281/zenodo.17913589",
+    "text": "Citation\nCuenca, M. B. (2025). Experimental Design. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. https://doi.org/10.5281/zenodo.17913589",
     "crumbs": [
       "Talks",
       "Experimental design and sample mounting"
@@ -1347,7 +1347,7 @@
     "href": "talks/talk_lightsheet_concepts.html#citation",
     "title": "Principles of light-sheet microscopy",
     "section": "Citation",
-    "text": "Citation\nCuenca, M. B. (2025). Principles of light-sheet microscopy. Zenodo. https://doi.org/10.5281/zenodo.18106542",
+    "text": "Citation\nCuenca, M. B. (2025). Principles of light-sheet microscopy. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. https://doi.org/10.5281/zenodo.18106542",
     "crumbs": [
       "Talks",
       "Principles of light-sheet microscopy"
