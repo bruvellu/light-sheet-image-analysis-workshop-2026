@@ -5,7 +5,8 @@ date: 06 January 2026
 ---
 
 ::: {.callout-tip}
-### Learning Objectives
+
+## Learning Objectives
 
 By the end of this session, you will be able to:
 
@@ -22,6 +23,7 @@ By the end of this session, you will be able to:
 
 <iframe src="https://docs.google.com/viewer?url=https://zenodo.org/records/18148566/files/Image%20Processing.pdf&embedded=true" width="100%" height="600" style="border: 1px solid #dee2e6;"></iframe>
 
-## Materials
+## Citation
 
-[Zenodo Record: Image processing and analysis](https://zenodo.org/records/18148566)
+Corbat, A. A. (2026). Image Analysis. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. <https://doi.org/10.5281/zenodo.18148566>
+
