@@ -5,7 +5,8 @@ date: 07 January 2026
 ---
 
 ::: {.callout-tip}
-### Learning Objectives
+
+## Learning Objectives
 
 By the end of this session, you will be able to:
 
@@ -26,4 +27,4 @@ By the end of this session, you will be able to:
 
 ## Materials
 
-[Zenodo Record: Visualization and processing of digital images](https://zenodo.org/records/18155250)
+Corbat, A. A., & Vellutini, B. (2026). 3D segmentation using machine/deep learning. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. <https://doi.org/10.5281/zenodo.18155250>

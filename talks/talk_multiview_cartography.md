@@ -23,5 +23,5 @@ By the end of this session, you will be able to:
 
 ## Citation
 
-Vellutini, B. C. (2026). Multiview Reconstruction and Tissue Cartography. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. <https://doi.org/10.5281/ZENODO.18174387>
+Vellutini, B. C. (2026). Multiview Reconstruction and Tissue Cartography. Light-Sheet Image Analysis Workshop 2026 (LiSIAW2026), Santiago, Chile. Zenodo. <https://doi.org/10.5281/zenodo.18174387>
 

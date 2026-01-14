@@ -44,7 +44,7 @@ Tuesday, 6 Jan 2026
 
 ### 🖥️ Practical afternoon session (14:00–17:00)
 
-- 14:00--14:30 - Talk from Galenica (Company 2)
+- 14:00--14:30 - Talk from Galenica
 - 14:30--16:00 - [ImageJ macro programming](practicals/practical_macros/index.md) (Marina)
 - 16:00--17:30 - [Multiview reconstruction](practicals/practical_multiview/index.md) (Bruno)
 
@@ -62,7 +62,7 @@ Wednesday, 7 Jan 2026
 
 - 11:00--11:45 - [Object-classification, dimensionality reduction and clustering](practicals/practical_object_classification/index.md) (Marina)
 - 11:45--12:30 - [3D Deep Learning Segmentation](practicals/practical_deep_learning_segmentation/index.md) (Agustín)
-- 12:30--13:00 - Talk from Bruker (Company 3)
+- 12:30--13:00 - Talk from Bruker
 
 ### 🥗 Lunch break (13:00--14:00)
 
