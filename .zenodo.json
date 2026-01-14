@@ -1,0 +1,71 @@
+{
+    "upload_type": "lesson",
+
+    "title": "Repository for the Light-Sheet Image Analysis Workshop 2026",
+
+    "description": "This repository contains the materials (program, lectures, tutorials, etc.) of the <a href=\"https://lightsheetchile.cl/light-sheet-image-analysis-workshop-2026-2/\">Light-Sheet Image Analysis Workshop</a> organized by <a href=\"https://lightsheetchile.cl/\">LiSIUM</a> that took place between 5–9 January 2026 at the <a href=\"https://cib.umayor.cl/en/about\">Center for Integrative Biology</a> of <a href=\"https://www.umayor.cl/santiago\">Universidad Mayor</a> in Santiago, Chile. All the contents of the workshop are available online at <a href=\"https://bruvellu.github.io/light-sheet-image-analysis-workshop-2026/\">bruvellu.github.io/light-sheet-image-analysis-workshop-2026</a>.",
+
+    "creators": [
+
+        {
+            "name": "Cuenca, Marina Belen",
+            "orcid": "0000-0001-6395-7246",
+            "affiliation": ["EMBL Barcelona"]
+        }
+
+        {
+            "name": "Corbat, Agustin Andres",
+            "orcid": "0000-0001-8068-3486",
+            "affiliation": ["University of Buenos Aires"]
+        }
+
+        {
+            "name": "Vellutini, Bruno C.",
+            "orcid": "0000-0002-0000-9465",
+            "affiliation": ["Universidade Federal de Minas Gerais"]
+        }
+    ],
+
+    "contributors": [
+
+        {
+            "name": "Vargas, Aníbal A.",
+            "orcid": "0000-0002-8387-3100",
+            "affiliation": ["Universidad Mayor"]
+        }
+
+        {
+            "name": "Fuentealba, Luz María",
+            "orcid": "0000-0001-5472-5267",
+            "affiliation": ["Universidad Mayor"]
+        }
+
+        {
+            "name": "Buckley, Charlotte",
+            "orcid": "0000-0002-7961-4544",
+            "affiliation": ["Universidad Mayor"]
+        }
+    ],
+
+    "publication_date": "2026-01-12",
+
+    "keywords": [
+        "Workshop",
+        "Tutorials",
+        "Image Analysis",
+        "Image Processing",
+        "Lightsheet Microscopy",
+        "Fiji",
+        "napari",
+        "ImageJ",
+        "ilastik",
+        "Blender",
+        "Segmentation",
+        "3D Visualization",
+        "Denoising",
+        "Multiview Reconstruction",
+        "Tissue Cartography",
+        "Map Projections",
+        "Cell Tracking"
+    ]
+}
