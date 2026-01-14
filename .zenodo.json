@@ -31,19 +31,22 @@
         {
             "name": "Vargas, Aníbal A.",
             "orcid": "0000-0002-8387-3100",
-            "affiliation": ["Universidad Mayor"]
+            "affiliation": ["Universidad Mayor"],
+            "type": "ProjectLeader"
         }
 
         {
             "name": "Fuentealba, Luz María",
             "orcid": "0000-0001-5472-5267",
-            "affiliation": ["Universidad Mayor"]
+            "affiliation": ["Universidad Mayor"],
+            "type": "ProjectLeader"
         }
 
         {
             "name": "Buckley, Charlotte",
             "orcid": "0000-0002-7961-4544",
-            "affiliation": ["Universidad Mayor"]
+            "affiliation": ["Universidad Mayor"],
+            "type": "ProjectLeader"
         }
     ],
 
