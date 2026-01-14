@@ -16,15 +16,6 @@ Welcome! This website contains the materials for the [Light-Sheet Image Analysis
 
 :::
 
-<!--::: {.callout-warning}-->
-
-<!--This website is under construction!-->
-
-<!--:::-->
-
-
-<!--## Shortcuts-->
-
 ::: {style="text-align: center; padding-top: 1rem;"}
 
 [Program](program.md){.btn .btn-primary .rounded}
