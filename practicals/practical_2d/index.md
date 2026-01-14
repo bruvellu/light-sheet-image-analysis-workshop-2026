@@ -418,8 +418,6 @@ This work is licensed under the Creative Commons Attribution 4.0 International L
 
 For more details, visit: https://creativecommons.org/licenses/by/4.0/ and https://github.com/acorbat/2D_visualization_workshop
 
-<--! Answers are here -->
-
 ---
 
 **Last Updated:** January 2, 2026
