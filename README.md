@@ -20,4 +20,4 @@ This repository contains the materials (program, lectures, tutorials, etc.) of t
 
 ## Citation
 
-Cuenca, M. B., Corbat, A. A., & Vellutini, B. C. (2026). Materials for the Light-Sheet Image Analysis Workshop 2026. Zenodo. https://doi.org/10.5281/zenodo.18247226
+Cuenca, M. B., Corbat, A. A., & Vellutini, B. C. (2026). Materials for the Light-Sheet Image Analysis Workshop 2026. Zenodo. <https://doi.org/10.5281/zenodo.18247226>
