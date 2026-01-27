@@ -745,7 +745,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Welcome! This website contains the materials for the Light-Sheet Image Analysis Workshop organized by the Light-Sheet Imaging at Universidad Mayor (LiSIUM). The course will be held at the Center for Integrative Biology of Universidad Mayor during 5–9 of January, 2026 in Santiago, Chile.\n\n\n\nProgram Resources Course Website Course Information\n\n\n\nThe Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data. The workshop is composed of theory sessions in the mornings and practical sessions in the afternoon. Participants will work on projects using the provided datasets or their own data and perform short presentations with what they learned and achieved during the course.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
+    "text": "Welcome! This website contains the materials for the Light-Sheet Image Analysis Workshop organized by the Light-Sheet Imaging at Universidad Mayor (LiSIUM). The course will be held at the Center for Integrative Biology of Universidad Mayor during 5–9 of January, 2026 in Santiago, Chile.\n\n\n\nProgram Resources Course Website Course Information\n\n\n\nThe Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data. The workshop is composed of theory sessions in the mornings and practical sessions in the afternoon. Participants will work on projects using the provided datasets or their own data and perform short presentations with what they learned and achieved during the course.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCuenca, M. B., Corbat, A. A., & Vellutini, B. C. (2026). Materials for the Light-Sheet Image Analysis Workshop 2026. Zenodo. https://doi.org/10.5281/zenodo.18247226"
   },
   {
     "objectID": "index.html#about",
@@ -753,6 +753,13 @@
     "title": "Home",
     "section": "",
     "text": "The Light-Sheet Image Analysis Workshop is aimed at scientists at all levels and facility staff who wish to receive training in quantitative image analysis from multidimensional light-sheet microscopy data. The workshop is composed of theory sessions in the mornings and practical sessions in the afternoon. Participants will work on projects using the provided datasets or their own data and perform short presentations with what they learned and achieved during the course.\n\n\n\n\n\nAníbal Vargas Ríos\nLuz María Fuentealba\nCharlotte Buckley\n\n\n\n\n\n\nMarina Cuenca\nAgustín Corbat\nBruno Vellutini"
+  },
+  {
+    "objectID": "index.html#citation",
+    "href": "index.html#citation",
+    "title": "Home",
+    "section": "",
+    "text": "Cuenca, M. B., Corbat, A. A., & Vellutini, B. C. (2026). Materials for the Light-Sheet Image Analysis Workshop 2026. Zenodo. https://doi.org/10.5281/zenodo.18247226"
   },
   {
     "objectID": "lectures/talk_data_management.html",
