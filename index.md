@@ -76,3 +76,7 @@ The *Light-Sheet Image Analysis Workshop* is aimed at scientists at all levels a
 ![](media/galenica.jpg)
 
 :::
+
+## Citation
+
+Cuenca, M. B., Corbat, A. A., & Vellutini, B. C. (2026). Materials for the Light-Sheet Image Analysis Workshop 2026. Zenodo. <https://doi.org/10.5281/zenodo.18247226>
