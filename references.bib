@@ -11,6 +11,26 @@
   pmc = {PMC2896381},
   pmid = {20492697},
   issn = {1471-2105},
+  abstract = {BACKGROUND: Current imaging methods such as Magnetic Resonance
+  Imaging (MRI), Confocal microscopy, Electron Microscopy (EM) or Selective
+  Plane Illumination Microscopy (SPIM) yield three-dimensional (3D) data sets in
+  need of appropriate computational methods for their analysis. The
+  reconstruction, segmentation and registration are best approached from the 3D
+  representation of the data set. RESULTS: Here we present a
+  platform-independent framework based on Java and Java 3D for accelerated
+  rendering of biological images. Our framework is seamlessly integrated into
+  ImageJ, a free image processing package with a vast collection of
+  community-developed biological image analysis tools. Our framework enriches
+  the ImageJ software libraries with methods that greatly reduce the complexity
+  of developing image analysis tools in an interactive 3D visualization
+  environment. In particular, we provide high-level access to volume rendering,
+  volume editing, surface extraction, and image annotation. The ability to rely
+  on a library that removes the low-level details enables concentrating software
+  development efforts on the algorithm implementation parts. CONCLUSIONS: Our
+  framework enables biomedical image software development to be built with 3D
+  visualization capabilities with very little effort. We offer the source code
+  and convenient binary packages along with extensive documentation at
+  http://3dviewer.neurofly.de.},
   url = {http://dx.doi.org/10.1186/1471-2105-11-274},
   keywords = {Computer Graphics; Image Interpretation, Computer-Assisted; Image
   Interpretation, Computer-Assisted: methods; Imaging, Three-Dimensional;
@@ -37,6 +57,14 @@
   pmc = {PMC3855844},
   pmid = {22743772},
   issn = {1548-7091,1548-7105},
+  abstract = {Fiji is a distribution of the popular open-source software ImageJ
+  focused on biological-image analysis. Fiji uses modern software engineering
+  practices to combine powerful software libraries with a broad range of
+  scripting languages to enable rapid prototyping of image-processing
+  algorithms. Fiji facilitates the transformation of new algorithms into ImageJ
+  plugins that can be shared with end users through an integrated update system.
+  We propose Fiji as a platform for productive collaboration between computer
+  science and biology research communities.},
   url = {http://dx.doi.org/10.1038/nmeth.2019},
   keywords = {Manuscript;Cephalic furrow mechanics;Brachiopod wnt
   landscape;MorphoEvo proposal;Light-Sheet Image Analysis Workshop 2026},
@@ -94,6 +122,17 @@
   pmc = {PMC5520999},
   pmid = {26524242},
   issn = {1548-7091,1548-7105},
+  abstract = {The high volumes of data produced by state-of-the-art optical
+  microscopes encumber research. We developed a method that reduces data size
+  and processing time by orders of magnitude while disentangling signal by
+  taking advantage of the laminar structure of many biological specimens. Our
+  Image Surface Analysis Environment automatically constructs an atlas of 2D
+  images for arbitrarily shaped, dynamic and possibly multilayered surfaces of
+  interest. Built-in correction for cartographic distortion ensures that no
+  information on the surface is lost, making the method suitable for
+  quantitative analysis. We applied our approach to 4D imaging of a range of
+  samples, including a Drosophila melanogaster embryo and a Danio rerio beating
+  heart.},
   url = {http://dx.doi.org/10.1038/nmeth.3648},
   keywords = {Cephalic furrow mechanics;Tissue Cartography;Light-Sheet Image
   Analysis Workshop 2026;imaging},
@@ -114,6 +153,22 @@
   pmc = {PMC5929908},
   pmid = {29595475},
   issn = {2050-084X},
+  abstract = {During development, coordinated cell behaviors orchestrate tissue
+  and organ morphogenesis. Detailed descriptions of cell lineages and behaviors
+  provide a powerful framework to elucidate the mechanisms of morphogenesis. To
+  study the cellular basis of limb development, we imaged transgenic
+  fluorescently-labeled embryos from the crustacean Parhyale hawaiensis with
+  multi-view light-sheet microscopy at high spatiotemporal resolution over
+  several days of embryogenesis. The cell lineage of outgrowing thoracic limbs
+  was reconstructed at single-cell resolution with new software called Massive
+  Multi-view Tracker (MaMuT). In silico clonal analyses suggested that the early
+  limb primordium becomes subdivided into anterior-posterior and dorsal-ventral
+  compartments whose boundaries intersect at the distal tip of the growing limb.
+  Limb-bud formation is associated with spatial modulation of cell
+  proliferation, while limb elongation is also driven by preferential
+  orientation of cell divisions along the proximal-distal growth axis. Cellular
+  reconstructions were predictive of the expression patterns of limb development
+  genes including the BMP morphogen Decapentaplegic.},
   url = {http://dx.doi.org/10.7554/eLife.34410},
   keywords = {Parhyale hawaiensis; amphipods; appendage development; cell
   lineage; crustaceans; developmental biology; limb morphogenesis; stem
@@ -158,6 +213,20 @@
   doi = {10.1038/s41592-018-0216-7},
   pmid = {30478326},
   issn = {1548-7091,1548-7105},
+  abstract = {Fluorescence microscopy is a key driver of discoveries in the life
+  sciences, with observable phenomena being limited by the optics of the
+  microscope, the chemistry of the fluorophores, and the maximum photon exposure
+  tolerated by the sample. These limits necessitate trade-offs between imaging
+  speed, spatial resolution, light exposure, and imaging depth. In this work we
+  show how content-aware image restoration based on deep learning extends the
+  range of biological phenomena observable by microscopy. We demonstrate on
+  eight concrete examples how microscopy images can be restored even if 60-fold
+  fewer photons are used during acquisition, how near isotropic resolution can
+  be achieved with up to tenfold under-sampling along the axial direction, and
+  how tubular and granular structures smaller than the diffraction limit can be
+  resolved at 20-times-higher frame rates compared to state-of-the-art methods.
+  All developed image restoration methods are freely available as open source
+  software in Python, FIJI, and KNIME.},
   url = {http://dx.doi.org/10.1038/s41592-018-0216-7},
   keywords = {Cephalic furrow mechanics;MorphoEvo proposal;Light-Sheet Image
   Analysis Workshop 2026},
@@ -169,6 +238,7 @@
   title = {Blender - The Free and Open Source 3D Creation Software},
   author = {{Blender Foundation}},
   date = {2002},
+  abstract = {The Freedom to Create},
   url = {https://www.blender.org/},
   urldate = {2025-12-29},
   keywords = {Light-Sheet Image Analysis Workshop 2026},
@@ -191,6 +261,15 @@
   doi = {10.1038/s41592-019-0501-0},
   pmid = {31384047},
   issn = {1548-7091,1548-7105},
+  abstract = {Light-sheet imaging of cleared and expanded samples creates
+  terabyte-sized datasets that consist of many unaligned three-dimensional image
+  tiles, which must be reconstructed before analysis. We developed the
+  BigStitcher software to address this challenge. BigStitcher enables
+  interactive visualization, fast and precise alignment, spatially resolved
+  quality estimation, real-time fusion and deconvolution of dual-illumination,
+  multitile, multiview datasets. The software also compensates for optical
+  effects, thereby improving accuracy and enabling subsequent biological
+  analysis.},
   url = {https://doi.org/10.1038/s41592-019-0501-0},
   keywords = {MorphoEvo proposal;Light-Sheet Image Analysis Workshop 2026},
   language = {en}
@@ -208,6 +287,18 @@
   doi = {10.1038/s41592-019-0582-9},
   pmid = {31570887},
   issn = {1548-7091,1548-7105},
+  abstract = {We present ilastik, an easy-to-use interactive tool that brings
+  machine-learning-based (bio)image analysis to end users without substantial
+  computational expertise. It contains pre-defined workflows for image
+  segmentation, object classification, counting and tracking. Users adapt the
+  workflows to the problem at hand by interactively providing sparse training
+  annotations for a nonlinear classifier. ilastik can process data in up to five
+  dimensions (3D, time and number of channels). Its computational back end runs
+  operations on-demand wherever possible, allowing for interactive prediction on
+  data larger than RAM. Once the classifiers are trained, ilastik workflows can
+  be applied to new data from the command line without further user interaction.
+  We describe all ilastik workflows in detail, including three case studies and
+  a discussion on the expected performance.},
   url = {http://dx.doi.org/10.1038/s41592-019-0582-9},
   keywords = {Cephalic furrow mechanics;Light-Sheet Image Analysis Workshop 2026},
   language = {en}
@@ -219,6 +310,9 @@
   publisher = {Zenodo},
   date = {2022-03-29},
   doi = {10.5281/zenodo.7628299},
+  abstract = {This tutorial shows how to make cartographic projections of fly
+  embryos using the ImSAnE Toolbox (Heemskerk and Streichan 2015). Instructions:
+  download and open the imsane-tutorial.html file on your browser.},
   url = {https://zenodo.org/doi/10.5281/zenodo.7628299},
   urldate = {2023-02-10},
   keywords = {tutorial; imsane; imagej; matlab; ilastik; fiji;Cephalic furrow
@@ -237,6 +331,28 @@
   doi = {10.1101/2025.02.04.636523},
   pmc = {PMC11838551},
   pmid = {39975091},
+  abstract = {Understanding complex, three-dimensional tissues requires
+  volumetric microscopy, but visualization, analysis, and processing of 3D image
+  data can be challenging. Tissue cartography is an emerging method that
+  exploits the sheet-like organization of many biological tissues. Extracting
+  and cartographically projecting curved surfaces from volumetric image data
+  turns 3D into 2D data, which is much easier to visualize, analyze, and
+  computationally process. However, existing tissue cartography tools both
+  require advanced coding expertise and are limited to specific tissue
+  geometries. Here, we create an interactive, visual tool for tissue cartography
+  within Blender, a popular 3D animation environment.
+  blender\_tissue\_cartography (btc), opens tissue cartography to broad use via
+  a user-friendly graphical interface, while harnessing powerful computer
+  graphics algorithms to process a wide variety of biological shapes. An
+  accompanying Python library allows faithful 3D measurements in 2D cartographic
+  projections and the creation of custom analysis pipelines. btc batch-processes
+  time-lapse data by propagating a cartographic projection from a single key
+  frame to all other frames via surface-to-surface alignment. We demonstrate btc
+  on diverse and complex tissue shapes from Drosophila, stem-cell-based
+  organoids, Arabidopsis, and zebrafish. We believe our tool will open up a
+  powerful set of analysis methods previously only accessible to specialists,
+  enabling quantitative analysis of complex three-dimensional tissues and
+  expanding our understanding of development.},
   url = {https://www.biorxiv.org/content/10.1101/2025.02.04.636523v2.abstract},
   urldate = {2025-08-25},
   keywords = {Tissue Cartography;Light-Sheet Image Analysis Workshop 2026},
@@ -248,6 +364,10 @@
   author = {Vellutini, Bruno C},
   publisher = {Zenodo},
   date = {2026},
+  abstract = {This tutorial shows different approaches to visualize 3D
+  microscopy data in Fiji. It provides a brief introduction to some tools
+  bundled in Fiji such as Orthogonal Views, Volume Viewer, 3D Viewer, and
+  BigDataViewer, and a more in-depth explanation of the plugin 3Dscript.},
   url = {https://zenodo.org/doi/10.5281/zenodo.18070016},
   urldate = {2025-12-27},
   keywords = {Fiji; ImageJ; 3D; Data Visualization; Tutorial;Light-Sheet Image
@@ -282,6 +402,18 @@
   pmc = {PMC4792175},
   pmid = {26978244},
   issn = {2052-4463,2052-4463},
+  abstract = {There is an urgent need to improve the infrastructure supporting
+  the reuse of scholarly data. A diverse set of stakeholders-representing
+  academia, industry, funding agencies, and scholarly publishers-have come
+  together to design and jointly endorse a concise and measureable set of
+  principles that we refer to as the FAIR Data Principles. The intent is that
+  these may act as a guideline for those wishing to enhance the reusability of
+  their data holdings. Distinct from peer initiatives that focus on the human
+  scholar, the FAIR Principles put specific emphasis on enhancing the ability of
+  machines to automatically find and use the data, in addition to supporting its
+  reuse by individuals. This Comment is the first formal publication of the FAIR
+  Principles, and includes the rationale behind them, and some exemplar
+  implementations in the community.},
   url = {http://dx.doi.org/10.1038/sdata.2016.18},
   urldate = {2025-12-11},
   keywords = {Light-Sheet Image Analysis Workshop 2026;Research data management},
@@ -300,6 +432,22 @@
   pages = {2025.12.10.693416},
   date = {2025-12-12},
   doi = {10.64898/2025.12.10.693416},
+  abstract = {Understanding development in living organisms requires following
+  the divisions, movements, and fates of cells across developing systems. While
+  advances in microscopy have enabled whole-embryo imaging at the cellular
+  level, extracting and analyzing cell lineages from these massive datasets
+  remains a significant computational challenge. We present Mastodon, a
+  scalable, extensible software platform for manual, semi-automated, and
+  automated cell tracking in large images. A purpose-built graph model supports
+  responsive performance for datasets with millions of annotations, making
+  Mastodon a future-proof platform for cell lineage analysis. Built as a Fiji
+  plugin, Mastodon enables interactive visualization, editing, and analysis of
+  complex lineage trees, seamlessly integrated with the raw image data.
+  Comprehension of cell lineages in complex three-dimensional geometries is
+  facilitated by interoperability with the powerful open-source render engine
+  Blender. In three distinct developmental contexts, we demonstrate how Mastodon
+  will accelerate biological insights by providing user-friendly navigation and
+  explorative analysis in complex lineage datasets.},
   url = {https://www.biorxiv.org/content/10.64898/2025.12.10.693416v1.abstract},
   urldate = {2025-12-13},
   keywords = {Light-Sheet Image Analysis Workshop 2026},
@@ -312,6 +460,25 @@
   publisher = {Zenodo},
   date = {2025},
   doi = {10.5281/zenodo.18065738},
+  abstract = {Timelapse recording of a Drosophila melanogaster embryo under
+  lightsheet microscopy. The dataset is a single lateral view of the embryo
+  acquired every 53s for 203 timepoints. Each timepoint has 30 slices with 3 µm
+  Z-resolution and two channels. The fluorescent marker Gap43-mCherry,
+  color-coded in gray, reveals the position of cell membranes, while GFP marks
+  the embryonic cells expressing the gene Krüppel, color-coded from purple to
+  yellow (mpl-inferno). There are three files:
+  btd-gap-stg\_3\_z3\_t53s\_E3\_1x.tif: Original 1x resolution of 1920x800px,
+  203tp, 30z, 2c (37.4GB) [not available yet]
+  btd-gap-stg\_3\_z3\_t53s\_E3\_2x.tif: Downsampled 2x resolution to 960x400px,
+  200tp, 30z, 2c (9.2GB) [not available yet]
+  btd-gap-stg\_3\_z3\_t53s\_E3\_4x.tif: Downsampled 4x resolution to 480x200px,
+  200tp, 30z, 2c (2.3GB) [available] Further details: species: Drosophila
+  melanogaster experiment: 2022-01-12\_btd-gap-stg author: Bruno C. Vellutini
+  stock: btd-stg genotype:
+  btd[XA]/FM7c,Kr-GFP;;Gap43-mCherry,stg[2]/Gap43-mCherry embryo:
+  btd-gap-stg\_3\_z3\_t53s\_E3 view: lateral xres: 0.2853696 µm yres: 0.2853696
+  µm zres: 3.0000000 µm slices: 30 timestep: 53s frames: 203 zygosity: double
+  heterozygote microscope: ZEISS Lightsheet Z.1 objective: 20x},
   url = {https://zenodo.org/doi/10.5281/zenodo.18065739},
   urldate = {2025-12-27},
   keywords = {Drosophila melanogaster; Microscopy; Lightsheet; Embryo;
@@ -326,6 +493,18 @@
   publisher = {Zenodo},
   date = {2024},
   doi = {10.5281/ZENODO.13944688},
+  abstract = {This small, 30 time-point time-lapse recording of Parhyale
+  hawaiensis limb development was captured using a Zeiss Lightsheet Z.1
+  microscope and was originally published by Wolff et al. in 2018. The dataset
+  is intented to demonstrate automatic (or manual and semi-automatic) tracking
+  of nuclei using Mastodon, a comprehensive tracking and track-editing framework
+  for large, multi-view images. A single view was registered spatiotemporally
+  over time (time series registration) using Fiji's BigStitcher plugin. The
+  image data was then converted into the custom HDF5/XML file formats used by
+  BigDataViewer. Unzipped, the data is 24 GB in size. It contains HDF5/XML
+  files, an empty Mastodon project (Parhyale\_LimbDev\_30tps.mastodon), and
+  instructions on how to automatically detect nuclei over time using Mastodon as
+  a word document.},
   url = {https://zenodo.org/doi/10.5281/zenodo.13944688},
   urldate = {2025-12-29},
   keywords = {Mastodon; Tracking; Parhyale; Lightsheet;Light-Sheet Image
@@ -338,6 +517,25 @@
   publisher = {Zenodo},
   date = {2025},
   doi = {10.5281/zenodo.18078061},
+  abstract = {Timelapse recording of a Drosophila melanogaster embryo under
+  lightsheet microscopy. The dataset is a single lateral view of the embryo
+  acquired every 53s for 203 timepoints. Each timepoint has 30 slices with 3 µm
+  Z-resolution and two channels. The fluorescent marker Gap43-mCherry,
+  color-coded in gray, reveals the position of cell membranes, while GFP marks
+  the embryonic cells expressing the gene Krüppel, color-coded from purple to
+  yellow (mpl-inferno). There are three files:
+  btd-gap-stg\_3\_z3\_t53s\_E3\_1x.tif: Original 1x resolution of 1920x800px,
+  203tp, 30z, 2c (37.4GB) [not available yet]
+  btd-gap-stg\_3\_z3\_t53s\_E3\_2x.tif: Downsampled 2x resolution to 960x400px,
+  200tp, 30z, 2c (9.2GB) [not available yet]
+  btd-gap-stg\_3\_z3\_t53s\_E3\_4x.tif: Downsampled 4x resolution to 480x200px,
+  200tp, 30z, 2c (2.3GB) [available] Further details: species: Drosophila
+  melanogaster experiment: 2022-01-12\_btd-gap-stg author: Bruno C. Vellutini
+  stock: btd-stg genotype:
+  btd[XA]/FM7c,Kr-GFP;;Gap43-mCherry,stg[2]/Gap43-mCherry embryo:
+  btd-gap-stg\_3\_z3\_t53s\_E3 view: lateral xres: 0.2853696 µm yres: 0.2853696
+  µm zres: 3.0000000 µm slices: 30 timestep: 53s frames: 203 zygosity: double
+  heterozygote microscope: ZEISS Lightsheet Z.1 objective: 20x},
   url = {http://dx.doi.org/10.5281/zenodo.18078061},
   urldate = {2025-12-28},
   keywords = {Drosophila melanogaster; Microscopy; Lightsheet; Embryo;
@@ -351,6 +549,8 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/zenodo.18090752},
+  abstract = {This tutorial shows how to register and fuse multiview lightsheet
+  datasets using BigStitcher in Fiji.},
   url = {https://doi.org/10.5281/zenodo.18090752},
   urldate = {2025-12-29},
   keywords = {Fiji; ImageJ; Lightsheet; Multiview Reconstruction; BigStitcher;
@@ -364,6 +564,8 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/zenodo.18090897},
+  abstract = {This is a basic tutorial on how to track cells in Fiji using
+  Mastodon.},
   url = {https://doi.org/10.5281/zenodo.18090897},
   urldate = {2025-12-29},
   keywords = {Fiji; ImageJ; Lightsheet; Cell Tracking; Mastodon; BigDataViewer;
@@ -376,6 +578,8 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/zenodo.18090965},
+  abstract = {This is a basic tutorial on how to generate map projections from
+  3D lightsheet microscopy data using Blender Tissue Cartography.},
   url = {https://doi.org/10.5281/zenodo.18090965},
   urldate = {2025-12-29},
   keywords = {Fiji; ImageJ; ilastik; Blender; Lightsheet; Map Projections;
@@ -389,6 +593,9 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/ZENODO.18174180},
+  abstract = {Slides from the talk about best practices in microscopy data
+  management that I gave at the Light-Sheet Image Analysis Workshop 2026
+  organized by LiSIUM at Universidad Mayor in Santiago, Chile.},
   url = {http://dx.doi.org/10.5281/zenodo.18174180},
   urldate = {2026-01-07},
   keywords = {Data Management; Open Science; Microscopy/standards;Light-Sheet
@@ -401,6 +608,10 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/ZENODO.18174387},
+  abstract = {Slides from the talk about multiview reconstruction and tissue
+  cartography with lightsheet datasets that I gave at the Light-Sheet Image
+  Analysis Workshop 2026 organized by LiSIUM at Universidad Mayor in Santiago,
+  Chile.},
   url = {http://dx.doi.org/10.5281/zenodo.18174387},
   urldate = {2026-01-08},
   keywords = {Lightsheet Microscopy; Multiview Reconstruction; Tissue
@@ -413,6 +624,8 @@
   publisher = {Zenodo},
   date = {2025},
   doi = {10.5281/ZENODO.18106542},
+  abstract = {Introductory talk about concepts on light-sheet microscopy for
+  LiSIAW 2026.},
   url = {http://dx.doi.org/10.5281/zenodo.18106542},
   urldate = {2026-01-14},
   keywords = {Light-Sheet Image Analysis Workshop 2026}
@@ -435,6 +648,12 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/ZENODO.18148523},
+  abstract = {Lecture about digital image, oriented to bioimaging and light
+  sheet microscopy. The lecture was prepared for the Light Sheet Image Analysis
+  Workshop 2026. The lecture lasted approximately 40 minutes. The learning
+  outcomes include: Understand how digital images represent information; Be
+  aware of how light intensity information is digitalized; Bridge concepts
+  between optical and digital resolution.},
   url = {http://dx.doi.org/10.5281/zenodo.18148523},
   urldate = {2026-01-14},
   keywords = {bioimage analysis; microscopy; light sheet microscopy;Light-Sheet
@@ -447,6 +666,12 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/ZENODO.18148566},
+  abstract = {Lecture about bioimage analysis, oriented to bioimaging and light
+  sheet microscopy. The lecture was prepared for the Light Sheet Image Analysis
+  Workshop 2026. The lecture lasted approximately 60 minutes. The learning
+  outcomes include: Acknowledging the characteristics of bioimage analysis and
+  why it is needed, an overview of classical bioimage analysis pipelines and a
+  examples of classical algorithms.},
   url = {http://dx.doi.org/10.5281/zenodo.18148566},
   urldate = {2026-01-14},
   keywords = {bioimage analysis; microscopy; bioimaging; light sheet
@@ -459,6 +684,11 @@
   publisher = {Zenodo},
   date = {2026},
   doi = {10.5281/ZENODO.18155250},
+  abstract = {Lecture about machine and deep learning, oriented to bioimaging
+  and light sheet microscopy. The lecture was prepared for the Light Sheet Image
+  Analysis Workshop 2026. The lecture lasted approximately 40 minutes. The
+  learning outcomes include: Be aware of how machine and deep learning work;
+  Know where to look for models and tools that can be used.},
   url = {http://dx.doi.org/10.5281/zenodo.18155250},
   urldate = {2026-01-14},
   keywords = {bioimage analysis; microscopy; light sheet microscopy; deep
